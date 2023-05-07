@@ -10,7 +10,10 @@
 		"start": "wp-scripts start",
 		"start:hot": "wp-scripts start --hot",
 		"format": "wp-scripts format",
-		"build": "wp-scripts build"
+		"build": "wp-scripts build",
+		"prepare": "husky install",
+		"pre-commit": "husky install",
+		"test": "wp-scripts lint"
 	},
 	"repository": {
 		"type": "git",
@@ -22,7 +25,15 @@
 		"url": "https://github.com/sovware/waxframework/issues"
 	},
 	"homepage": "https://github.com/sovware/waxframework#readme",
-	"dependencies": {
-		"@wordpress/scripts": "^25.5.1"
+	"devDependencies": {
+		"@wordpress/eslint-plugin": "^14.5.0",
+		"@wordpress/scripts": "^26.3.0",
+		"grunt": "^1.6.1",
+		"grunt-contrib-jshint": "^3.2.0"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "\\usr\\bin\\bash node_modules/husky/run .git/hooks/pre-commit && npm run pre-commit"
+		}
 	}
 }

@@ -1,0 +1,27 @@
+{
+    "extends": "@wordpress/eslint-config",
+    "globals": {
+        "_": false,
+        "wp": false,
+        "jQuery": false,
+        "console": false,
+        "alert": false
+    },
+    "rules": {
+        "curly": ["error", "multi-line"],
+        "eqeqeq": "error",
+        "forin": "error",
+        "freeze": "error",
+        "noarg": "error",
+        "noempty": "error",
+        "nonew": "error",
+        "quotmark": ["error", "single"],
+        "max-depth": ["error", 3],
+        "max-len": ["error", 80, 4],
+        "max-params": ["error", 4],
+        "max-statements": ["error", 20],
+        "strict": "error",
+        "undef": "error",
+        "unused": "error"
+    }
+}

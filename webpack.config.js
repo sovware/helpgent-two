@@ -1,5 +1,5 @@
-const path = require('path');
-const defaultConfig = require('@wordpress/scripts/config/webpack.config');
+const path = require( 'path' );
+const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
 
 const devHost = 'helpgent.test';
 
@@ -10,7 +10,7 @@ module.exports = {
 		'css/app': './resources/sass/app.scss',
 	},
 	output: {
-		path: path.resolve(__dirname, './assets/build/'),
+		path: path.resolve( __dirname, './assets/build/' ),
 		filename: '[name].js',
 		clean: false,
 	},
@@ -29,5 +29,5 @@ module.exports = {
 			},
 		},
 		headers: { 'Access-Control-Allow-Origin': '*' },
-	}
+	},
 };
