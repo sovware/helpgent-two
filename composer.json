@@ -1,9 +1,8 @@
 {
-	"name": "waxframework/waxframework",
-	"description": "Wordpress plugin framework",
+	"name": "sovware/helpgent",
 	"type": "project",
 	"license": "MIT",
-	"version": "1.0.0",
+	"version": "2.0.0",
 	"scripts": {
 		"setup": [
 			"composer install --no-cache",
@@ -25,17 +24,13 @@
 			"Database\\": "./../database/"
 		}
 	},
-	"authors": [
-		{
-			"name": "MD AL AMIN",
-			"email": "mdalaminbey@gmail.com"
-		}
-	],
 	"minimum-stability": "dev",
 	"require": {
 		"php": ">=7.4",
 		"php-di/php-di": "6.4.0",
-		"waxframework/framework": "^1.0.0"
+		"waxframework/framework": "^1.0.0",
+		"waxframework/request-validator": "dev-master",
+		"nesbot/carbon": "^2.66.0"
 	},
 	"require-dev": {
 		"waxframework/artisan": "^1.0.0",

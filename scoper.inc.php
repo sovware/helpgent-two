@@ -79,8 +79,8 @@ return [
     // For more see: https://github.com/humbug/php-scoper/blob/master/docs/configuration.md#patchers
     'exclude-files'           => [
         // 'src/an-excluded-file.php',
-        ...$polyfills_bootstraps,
-        ...$polyfills_stubs,
+        // ...$polyfills_bootstraps,
+        // ...$polyfills_stubs,
     ],
 
     // When scoping PHP files, there will be scenarios where some of the code being scoped indirectly references the

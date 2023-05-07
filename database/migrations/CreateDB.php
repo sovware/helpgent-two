@@ -27,7 +27,7 @@ class CreateDB implements Migration {
         $forms = "CREATE TABLE IF NOT EXISTS {$db_prefix}forms (
             `id` INT NOT NULL AUTO_INCREMENT,
             `title` VARCHAR(255) NOT NULL,
-            `status` VARCHAR(255) NOT NULL DEFAULT 'draft' COMMENT 'value: publish/draft',
+            `status` VARCHAR(50) NOT NULL DEFAULT 'draft' COMMENT 'value: publish/draft',
             `content` LONGTEXT NOT NULL,
             `created_by` INT NULL,
             `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,

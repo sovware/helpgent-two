@@ -1,6 +1,6 @@
 {
-	"name": "waxframework",
-	"version": "1.0.0",
+	"name": "helpgent",
+	"version": "2.0.0",
 	"description": "",
 	"main": "webpack.config.js",
 	"directories": {
@@ -11,9 +11,7 @@
 		"start:hot": "wp-scripts start --hot",
 		"format": "wp-scripts format",
 		"build": "wp-scripts build",
-		"prepare": "husky install",
-		"pre-commit": "husky install",
-		"test": "wp-scripts lint"
+		"fixtextdomain": "grunt fixtextdomain"
 	},
 	"repository": {
 		"type": "git",
@@ -26,14 +24,14 @@
 	},
 	"homepage": "https://github.com/sovware/waxframework#readme",
 	"devDependencies": {
-		"@wordpress/eslint-plugin": "^14.5.0",
 		"@wordpress/scripts": "^26.3.0",
 		"grunt": "^1.6.1",
-		"grunt-contrib-jshint": "^3.2.0"
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "\\usr\\bin\\bash node_modules/husky/run .git/hooks/pre-commit && npm run pre-commit"
-		}
+		"grunt-contrib-jshint": "^3.2.0",
+		"grunt-checktextdomain": "^1.0.1",
+		"grunt-contrib-clean": "^2.0.1",
+		"grunt-contrib-compress": "^2.0.0",
+		"grunt-contrib-copy": "^1.0.0",
+		"grunt-wp-i18n": "^1.0.3",
+		"load-grunt-tasks": "^5.1.0"
 	}
 }

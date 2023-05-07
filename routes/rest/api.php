@@ -1,6 +1,10 @@
 <?php
 
-use HelpGent\App\Http\Controllers\UserController;
+use HelpGent\App\Http\Controllers\Admin\FormController;
 use HelpGent\WaxFramework\Routing\Route;
 
-Route::get( 'user', [UserController::class, 'index'], ['admin'] );
+Route::group(
+    'admin', function() {
+        Route::resource( 'form', FormController::class );
+    }, ['admin']
+);
