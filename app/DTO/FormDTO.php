@@ -3,6 +3,8 @@
 namespace HelpGent\App\DTO;
 
 class FormDTO {
+    private int $id;
+
     private string $title;
 
     private string $status;
@@ -16,6 +18,14 @@ class FormDTO {
         $this->status     = $status;
         $this->content    = $content;
         $this->created_by = $created_by;
+    }
+
+    public function get_id() {
+        return $this->title;
+    }
+
+    public function set_id( int $id ) {
+        $this->title = $id;
     }
 
     public function get_title() {

@@ -29,8 +29,7 @@
 		"php": ">=7.4",
 		"php-di/php-di": "6.4.0",
 		"waxframework/framework": "^1.0.0",
-		"waxframework/request-validator": "dev-master",
-		"nesbot/carbon": "^2.66.0"
+		"waxframework/request-validator": "dev-master"
 	},
 	"require-dev": {
 		"waxframework/artisan": "^1.0.0",

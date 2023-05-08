@@ -2,6 +2,7 @@
 
 namespace HelpGent\App\Http\Controllers\Admin;
 
+use Exception;
 use HelpGent\App\DTO\FormDTO;
 use HelpGent\App\Http\Controllers\Controller;
 use HelpGent\App\Repositories\FormRepository;
@@ -56,5 +57,100 @@ class FormController extends Controller {
                 'message' => esc_html__( 'Form Created Successfully!', 'helpgent' )
             ]
         );
+    }
+
+    public function update( Validator $validator, WP_REST_Request $wp_rest_request ) {
+        $validator->validate(
+            [
+                'id'         => 'required|numeric',
+                'title'      => 'required|string|max:255',
+                'status'     => 'required|string|accepted:publish,draft',
+                'content'    => 'required|json',
+                'created_by' => 'required|integer'
+            ]
+        );
+
+        if ( $validator->is_fail() ) {
+            return Response::send(
+                [
+                    'messages' => $validator->errors
+                ], 422
+            );
+        }
+
+        $form_dto = new FormDTO(
+            $wp_rest_request->get_param( 'title' ),
+            $wp_rest_request->get_param( 'status' ),
+            $wp_rest_request->get_param( 'content' ),
+            $wp_rest_request->get_param( 'created_by' )
+        );
+
+        $form_dto->set_id( $wp_rest_request->get_param( 'id' ) );
+
+        try {
+            $update = $this->form_repository->update( $form_dto );
+
+            if ( 1 !== $update ) {
+                return Response::send(
+                    [
+                        'message' => esc_html__( 'Something Was Wrong!', 'helpgent' )
+                    ], 500
+                );
+            }
+
+            return Response::send(
+                [
+                    'message' => esc_html__( 'Form Updated Successfully!', 'helpgent' )
+                ]
+            );
+        } catch ( Exception $exception ) {
+            return Response::send(
+                [
+                    'message' => $exception->getMessage()
+                ],
+                $exception->getCode()
+            );
+        }
+    }
+
+    public function delete( Validator $validator, WP_REST_Request $wp_rest_request ) {
+        $validator->validate(
+            [
+                'id' => 'required|numeric',
+            ]
+        );
+
+        if ( $validator->is_fail() ) {
+            return Response::send(
+                [
+                    'messages' => $validator->errors
+                ], 422
+            );
+        }
+
+        try {
+            $delete = $this->form_repository->delete( $wp_rest_request->get_param( 'id' ) );
+
+            if ( 0 === $delete ) {
+                return Response::send(
+                    [
+                        'message' => esc_html__( 'Something Was Wrong!', 'helpgent' )
+                    ], 500
+                );
+            }
+
+            return Response::send(
+                [
+                    'message' => esc_html__( 'Form Deleted Successfully!', 'helpgent' )
+                ]
+            );
+        } catch ( Exception $exception ) {
+            return Response::send(
+                [
+                    'message' => $exception->getMessage()
+                ],
+                $exception->getCode()
+            );
+        }
     }
 }
