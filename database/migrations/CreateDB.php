@@ -24,209 +24,154 @@ class CreateDB implements Migration {
         // -- Table forms
         // -- -----------------------------------------------------
 
-        $forms = "CREATE TABLE IF NOT EXISTS {$db_prefix}forms (
-            `id` INT NOT NULL AUTO_INCREMENT,
+        $sql = "CREATE TABLE {$db_prefix}forms (
+            `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
             `title` VARCHAR(255) NOT NULL,
             `status` VARCHAR(50) NOT NULL DEFAULT 'draft' COMMENT 'value: publish/draft',
             `content` LONGTEXT NOT NULL,
-            `created_by` INT NULL,
+            `created_by` BIGINT UNSIGNED NOT NULL,
             `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
             `updated_at` TIMESTAMP NULL,
             PRIMARY KEY (`id`)
-        ) {$charset_collate}";
+        ) {$charset_collate};
 
-        // -- -----------------------------------------------------
-        // -- Table form_meta
-        // -- -----------------------------------------------------
+        -- -----------------------------------------------------
+        -- Table form_meta
+        -- ----------------------------------------------------
         
-        $forms_meta = "CREATE TABLE IF NOT EXISTS {$db_prefix}form_meta (
-            `id` INT NOT NULL AUTO_INCREMENT,
-            `form_id` INT NOT NULL,
+        CREATE TABLE {$db_prefix}form_meta (
+            `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+            `form_id` BIGINT UNSIGNED NOT NULL,
             `meta_key` VARCHAR(255) NULL,
             `meta_value` LONGTEXT NULL,
             `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
             `updated_at` TIMESTAMP NULL,
-            PRIMARY KEY (`id`, `form_id`),
-            INDEX `fk_{$db_prefix}form_meta_form1_idx` (`form_id` ASC) VISIBLE,
-            CONSTRAINT `fk_{$db_prefix}form_meta_form1` FOREIGN KEY (`form_id`) REFERENCES {$db_prefix}forms (`id`)
-            ON DELETE NO ACTION ON UPDATE NO ACTION
-        ) {$charset_collate}";
-
-        // -- -----------------------------------------------------
-        // -- Table submissions
-        // -- -----------------------------------------------------
+            PRIMARY KEY (`id`)
+        ) {$charset_collate};
         
-        $submission = "CREATE TABLE IF NOT EXISTS {$db_prefix}submissions (
-            `id` INT NOT NULL AUTO_INCREMENT,
-            `form_id` INT NOT NULL,
+        -- -----------------------------------------------------
+        -- Table submissions
+        -- -----------------------------------------------------
+
+        CREATE TABLE {$db_prefix}submissions (
+            `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+            `form_id` BIGINT UNSIGNED NOT NULL,
             `status` VARCHAR(50) NOT NULL DEFAULT 'unread' COMMENT 'value: read/unread/trashed',
-            `is_favourite` TINYINT NULL DEFAULT 0 COMMENT 'value: 0/1',
+            `is_favourite` TINYINT NOT NULL DEFAULT 0 COMMENT 'value: 0/1',
             `ip` VARCHAR(50) NULL,
             `city` VARCHAR(50) NULL,
             `country` VARCHAR(50) NULL,
-            `created_by` INT NULL,
-            `is_guest` TINYINT NULL DEFAULT 0 COMMENT 'value: 0/1',
+            `created_by` BIGINT UNSIGNED NOT NULL,
+            `is_guest` TINYINT NOT NULL DEFAULT 0 COMMENT 'value: 0/1',
             `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
             `updated_at` TIMESTAMP NULL,
-            PRIMARY KEY (`id`),
-            INDEX `fk_{$db_prefix}submission_form1_idx` (`form_id` ASC) VISIBLE,
-            CONSTRAINT `fk_{$db_prefix}submission_form1`
-            FOREIGN KEY (`form_id`)
-            REFERENCES {$db_prefix}forms (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-        ) {$charset_collate}";
+            PRIMARY KEY (`id`)
+        ) {$charset_collate};
 
-        // -- -----------------------------------------------------
-        // -- Table responses
-        // -- -----------------------------------------------------
-        
-        $response = "CREATE TABLE IF NOT EXISTS {$db_prefix}responses (
-            `id` INT NOT NULL AUTO_INCREMENT,
-            `submission_id` INT NOT NULL,
-            `form_id` INT NOT NULL,
-            `screen_id` INT NULL,
-            `input_name` VARCHAR(100) NULL,
+        -- -----------------------------------------------------
+        -- Table attachments
+        -- -----------------------------------------------------
+        CREATE TABLE {$db_prefix}attachments (
+            `id` BIGINT UNSIGNED NOT NULL,
+            `title` VARCHAR(255) NULL,
+            `mime_type` VARCHAR(255) NULL,
+            `file_size` BIGINT UNSIGNED NOT NULL,
+            `storage` VARCHAR(50) NOT NULL,
+            `file_id` LONGTEXT NULL,
+            `created_by` BIGINT UNSIGNED NOT NULL,
+            `is_guest` TINYINT NULL DEFAULT 0 COMMENT 'possible values: 1, 0',
+            `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            `updated_at` TIMESTAMP NULL,
+            PRIMARY KEY (`id`)
+        ) {$charset_collate};
+
+        -- -----------------------------------------------------
+        -- Table responses
+        -- -----------------------------------------------------
+
+        CREATE TABLE {$db_prefix}responses (
+            `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+            `submission_id` BIGINT UNSIGNED NOT NULL,
+            `form_id` BIGINT UNSIGNED NOT NULL,
+            `screen_id` BIGINT UNSIGNED NULL,
+            `input_id` VARCHAR(100) NOT NULL,
             `value` LONGTEXT NULL,
-            `attachment_id` INT NULL,
-            `attachment_storage` VARCHAR(50) NULL DEFAULT 'local' COMMENT 'value: local/other host key',
+            `is_attachment` TINYINT NOT NULL DEFAULT 0 COMMENT 'possible values: 1, 0',
             `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
             `updated_at` TIMESTAMP NULL,
-            PRIMARY KEY (`id`, `submission_id`, `form_id`),
-            INDEX `fk_{$db_prefix}response_submission1_idx` (`submission_id` ASC) VISIBLE,
-            INDEX `fk_{$db_prefix}response_form1_idx` (`form_id` ASC) VISIBLE,
-            CONSTRAINT `fk_{$db_prefix}response_submission1`
-              FOREIGN KEY (`submission_id`)
-              REFERENCES {$db_prefix}submissions (`id`)
-              ON DELETE NO ACTION
-              ON UPDATE NO ACTION,
-            CONSTRAINT `fk_{$db_prefix}response_form1`
-              FOREIGN KEY (`form_id`)
-              REFERENCES {$db_prefix}forms (`id`)
-              ON DELETE NO ACTION
-              ON UPDATE NO ACTION
-            ) {$charset_collate}";
+            PRIMARY KEY (`id`)
+        ) {$charset_collate};
 
-        // -- -----------------------------------------------------
-        // -- Table conversations
-        // -- -----------------------------------------------------
+        -- -----------------------------------------------------
+        -- Table conversations
+        -- -----------------------------------------------------
 
-        $conversations = "CREATE TABLE IF NOT EXISTS {$db_prefix}conversations (
-          `id` INT NOT NULL AUTO_INCREMENT,
-          `submission_id` INT NOT NULL,
-          `message` LONGTEXT NULL,
-          `is_read` TINYINT NULL DEFAULT 0 COMMENT 'value: 0/1',
-          `attachment_id` INT NULL,
-          `attachment_storage` VARCHAR(50) NULL DEFAULT 'local' COMMENT 'value: local/other host key',
-          `created_by` INT NULL,
-          `is_guest` TINYINT NULL DEFAULT 0 COMMENT 'value: 0/1',
-          `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-          `updated_at` TIMESTAMP NULL,
-          PRIMARY KEY (`id`),
-          INDEX `fk_{$db_prefix}conversation_submission1_idx` (`submission_id` ASC) VISIBLE,
-          CONSTRAINT `fk_{$db_prefix}conversation_submission1`
-            FOREIGN KEY (`submission_id`)
-            REFERENCES {$db_prefix}submissions (`id`)
-            ON DELETE NO ACTION
-            ON UPDATE NO ACTION
-        ) {$charset_collate}";
-
-        // -- -----------------------------------------------------
-        // -- Table reactions
-        // -- -----------------------------------------------------
-
-        $reactions = "CREATE TABLE IF NOT EXISTS {$db_prefix}reactions (
-            `id` INT NOT NULL,
-            `conversation_id` INT NOT NULL,
-            `reaction` VARCHAR(255) NULL,
-            `created_by` INT NULL,
-            `is_guest` TINYINT NULL DEFAULT 0 COMMENT 'value: 0/1',
+        CREATE TABLE {$db_prefix}conversations (
+            `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+            `submission_id` BIGINT UNSIGNED NOT NULL,
+            `message` LONGTEXT NOT NULL,
+            `is_attachment` TINYINT NOT NULL DEFAULT 0 COMMENT 'possible values: 1, 0',
+            `is_read` TINYINT NOT NULL DEFAULT 0 COMMENT 'possible values: 1, 0',
+            `is_guest` TINYINT NOT NULL DEFAULT 0 COMMENT 'possible values: 1, 0',
+            `created_by` BIGINT UNSIGNED NOT NULL,
+            `agent_trigger` TINYINT NULL COMMENT 'null = not trigger\n0 = leave\n1 = join',
             `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
             `updated_at` TIMESTAMP NULL,
-            PRIMARY KEY (`id`, `conversation_id`),
-            INDEX `fk_{$db_prefix}reaction_conversation1_idx` (`conversation_id` ASC) VISIBLE,
-            CONSTRAINT `fk_{$db_prefix}reaction_conversation1`
-            FOREIGN KEY (`conversation_id`)
-            REFERENCES {$db_prefix}conversations (`id`)
-            ON DELETE NO ACTION
-            ON UPDATE NO ACTION
-            ) {$charset_collate}";
+            PRIMARY KEY (`id`)
+        ) {$charset_collate};
 
-        // -- -----------------------------------------------------
-        // -- Table tags
-        // -- -----------------------------------------------------
+        -- -----------------------------------------------------
+        -- Table tags
+        -- -----------------------------------------------------
 
-        $tags = "CREATE TABLE IF NOT EXISTS {$db_prefix}tags (
-            `id` INT NOT NULL,
+        CREATE TABLE {$db_prefix}tags (
+            `id` BIGINT UNSIGNED NOT NULL,
             `title` VARCHAR(255) NULL,
             `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
             `updated_at` TIMESTAMP NULL,
             PRIMARY KEY (`id`)
-        ) {$charset_collate}";
+        ) {$charset_collate};
 
-        // -- -----------------------------------------------------
-        // -- Table submission_tag
-        // -- -----------------------------------------------------
+        -- -----------------------------------------------------
+        -- Table submission_tag
+        -- -----------------------------------------------------
+        CREATE TABLE {$db_prefix}submission_tag (
+            `tag_id` BIGINT UNSIGNED NOT NULL,
+            `submission_id` BIGINT UNSIGNED NOT NULL,
+            PRIMARY KEY (`tag_id`)
+        ) {$charset_collate};
 
-        $submission_tag = " CREATE TABLE IF NOT EXISTS {$db_prefix}submission_tag (
-            `tag_id` INT NOT NULL,
-            `submission_id` INT NOT NULL,
-            PRIMARY KEY (`tag_id`, `submission_id`),
-            INDEX `fk_{$db_prefix}submission_tag_submission1_idx` (`submission_id` ASC) VISIBLE,
-            CONSTRAINT `fk_submission_tag_tag1`
-                FOREIGN KEY (`tag_id`)
-                REFERENCES {$db_prefix}tags (`id`)
-                ON DELETE NO ACTION
-                ON UPDATE NO ACTION,
-            CONSTRAINT `fk_submission_tag_submission1`
-                FOREIGN KEY (`submission_id`)
-                REFERENCES {$db_prefix}submissions (`id`)
-                ON DELETE NO ACTION
-                ON UPDATE NO ACTION
-            ) {$charset_collate}";
+        -- -----------------------------------------------------
+        -- Table guest_users
+        -- -----------------------------------------------------
 
-        // -- -----------------------------------------------------
-        // -- Table guest_users
-        // -- -----------------------------------------------------
-
-        $guest_users = "CREATE TABLE IF NOT EXISTS {$db_prefix}guest_users (
-            `id` INT NOT NULL,
+        CREATE TABLE {$db_prefix}guest_users (
+            `id` BIGINT UNSIGNED NOT NULL,
             `name` VARCHAR(255) NULL,
             `email` VARCHAR(255) NULL,
+            `token` VARCHAR(255) NOT NULL,
             `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
             `updated_at` TIMESTAMP NULL,
             PRIMARY KEY (`id`)
-        ) {$charset_collate}";
+        ) {$charset_collate};
 
-        // -- -----------------------------------------------------
-        // -- Table guest_user_meta
-        // -- -----------------------------------------------------
+        -- -----------------------------------------------------
+        -- Table guest_user_meta
+        -- -----------------------------------------------------
 
-        $guest_user_meta = "CREATE TABLE IF NOT EXISTS {$db_prefix}guest_user_meta (
-            `id` INT NOT NULL,
-            `user_id` INT NOT NULL,
+        CREATE TABLE {$db_prefix}guest_user_meta (
+            `id` BIGINT UNSIGNED NOT NULL,
+            `user_id` BIGINT UNSIGNED NOT NULL,
             `meta_key` VARCHAR(255) NULL,
             `meta_value` LONGTEXT NULL,
             `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
             `updated_at` TIMESTAMP NULL,
-            PRIMARY KEY (`id`, `user_id`),
-            INDEX `fk_{$db_prefix}guest_user_meta_guest_user1_idx` (`user_id` ASC) VISIBLE,
-            CONSTRAINT `fk_{$db_prefix}guest_user_meta_guest_user1`
-              FOREIGN KEY (`user_id`)
-              REFERENCES {$db_prefix}guest_users (`id`)
-              ON DELETE NO ACTION
-              ON UPDATE NO ACTION
-            ) {$charset_collate}";
+            PRIMARY KEY (`id`)
+        ) {$charset_collate};
+        ";
 
-        dbDelta( $forms );
-        dbDelta( $forms_meta );
-        dbDelta( $submission );
-        dbDelta( $response );
-        dbDelta( $conversations );
-        dbDelta( $reactions );
-        dbDelta( $tags );
-        dbDelta( $submission_tag );
-        dbDelta( $guest_users );
-        dbDelta( $guest_user_meta );
+        dbDelta( $sql );
 
-        return false;
+        return true;
     }
 }
