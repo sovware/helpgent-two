@@ -1,12 +1,21 @@
 <?php
 
 namespace HelpGent\App\Contracts;
-use HelpGent\App\DTO\AttachmentDTO;
+
+use Exception;
+use HelpGent\App\DTO\AttachmentFileDTO;
 
 interface MediaDriver {
-    public function upload( array $file ):AttachmentDTO;
 
-    public function get( $id );
+    /**
+     * Upload
+     * 
+     * @param array $file
+     * @return AttachmentFileDTO|Exception
+     */
+    public function upload( array $file );
 
-    public function delete( $id );
+    public function get( array $attachment ) : AttachmentFileDTO;
+
+    public function delete( array $attachment ) : bool;
 }
