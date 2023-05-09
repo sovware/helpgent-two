@@ -57,7 +57,7 @@ class CreateDB implements Migration {
             `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
             `form_id` BIGINT UNSIGNED NOT NULL,
             `status` VARCHAR(50) NOT NULL DEFAULT 'unread' COMMENT 'value: read/unread/trashed',
-            `is_favourite` TINYINT NOT NULL DEFAULT 0 COMMENT 'value: 0/1',
+            `is_favorite` TINYINT NOT NULL DEFAULT 0 COMMENT 'value: 0/1',
             `ip` VARCHAR(50) NULL,
             `city` VARCHAR(50) NULL,
             `country` VARCHAR(50) NULL,
