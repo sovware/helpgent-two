@@ -85,7 +85,7 @@ class AttachmentController extends Controller {
             $uploaded_file = $this->attachment_repository->upload( $file, $storage );
         } catch ( Exception $e ) {
             return Response::send(
-                [ 'messages' => $e->getMessage() ], $e->getCode()
+                [ 'message' => $e->getMessage() ], $e->getCode()
             );
         }
 
