@@ -55,6 +55,43 @@ function helpgent_include_media_uploader_files() {
 }
 
 /**
+ * Prepare Upload Directory
+ *
+ * @return void
+ */
+function helpgent_prepare_upload_directory() {
+	$upload_dir_path = helpgent_config( 'storage.upload_dir_path' );
+
+	if ( file_exists( $upload_dir_path ) ) {
+		return;
+	}
+
+	helpgent_create_upload_directory();
+}
+
+/**
+ * Create Upload Directory
+ *
+ * @return void
+ */
+function helpgent_create_upload_directory() {
+	$upload_dir_path = helpgent_config( 'storage.upload_dir_path' );
+
+	// Create Upload Directory
+	wp_mkdir_p( $upload_dir_path );
+
+	// Create htaccess file
+	$fh = fopen( $upload_dir_path . "/.htaccess", "w" );
+
+	if ( $fh == false ) {
+		return;
+	}
+
+	fputs( $fh, 'Deny from all' );
+	fclose( $fh );
+}
+
+/**
  * Get Unique Key
  *
  * @param string $prefix

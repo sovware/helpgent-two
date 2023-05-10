@@ -16,6 +16,7 @@ class Local implements MediaDriver {
      */
     public function upload( array $file ) {
         helpgent_include_media_uploader_files();
+        helpgent_prepare_upload_directory();
 
 		add_filter( 'upload_dir', [ $this, 'change_upload_dir' ] );
 
