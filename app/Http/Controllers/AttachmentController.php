@@ -9,6 +9,7 @@ use HelpGent\App\Repositories\AttachmentRepository;
 use HelpGent\WaxFramework\Routing\Response;
 use HelpGent\WaxFramework\RequestValidator\Validator;
 use HelpGent\App\DTO\AttachmentDTO;
+use HelpGent\App\DTO\AttachmentFileDTO;
 
 class AttachmentController extends Controller {
 
@@ -17,7 +18,7 @@ class AttachmentController extends Controller {
 
     public function __construct( AttachmentRepository $attachment_repository ) {
         $this->attachment_repository = $attachment_repository;
-        $this->attachment_driver     = 'client';
+        $this->attachment_driver     = 'local';
     }
 
     public function index() {
@@ -28,8 +29,22 @@ class AttachmentController extends Controller {
         );
     }
 
-    public function show( $id ) {
-        $attachment = $this->attachment_repository->get_by_id( $id );
+    public function show( Validator $validator, WP_REST_Request $wp_rest_request ) {
+        $validator->validate(
+            [
+                'id' => 'required|numeric',
+            ]
+        );
+
+        if ( $validator->is_fail() ) {
+            return Response::send(
+                [
+                    'messages' => $validator->errors
+                ], 422
+            );
+        }
+        
+        $attachment = $this->attachment_repository->get_by_id( $wp_rest_request->get_param('id') );
 
         if ( ! $attachment ) {
             return Response::send(
@@ -61,7 +76,9 @@ class AttachmentController extends Controller {
             );
         }
 
-        $file    = $wp_rest_request->get_param( 'file' );
+        $file = $wp_rest_request->get_file_params( 'file' );
+        $file = $file['file'];
+
         $storage = $this->attachment_driver;
 
         try {
@@ -106,16 +123,24 @@ class AttachmentController extends Controller {
         }
 
         try {
-            $attachment_id = $wp_rest_request->get_param( 'id' );
-            $attachment    = $this->attachment_repository->get_by_id( $attachment_id );
+            $attachment_id   = $wp_rest_request->get_param( 'id' );
+            $attachment_data = $this->attachment_repository->get_by_id( $attachment_id );
 
-            if ( ! $attachment ) {
+            if ( ! $attachment_data ) {
                 return Response::send(
                     [
                         'message' => esc_html__( 'Attachment not found', 'helpgent' )
                     ], 404
                 );
             }
+
+            $attachment = new AttachmentFileDTO( 
+                $attachment_data->title,
+                $attachment_data->file_size,
+                $attachment_data->mime_type,
+                null,
+                $attachment_data->file_id,
+            );
 
             $delete = $this->attachment_repository->delete( $attachment_id );
 

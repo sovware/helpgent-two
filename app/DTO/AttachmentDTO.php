@@ -9,16 +9,19 @@ class AttachmentDTO {
     private string $mime_type;
     private int $file_size;
     private string $storage;
-    private string $file_id;
     private int $created_by;
+    private $file_id;
     private int $is_guest;
 
     public function __construct( string $title, string $mime_type, int $file_size, int $created_by, string $storage = 'local' ) {
+        $this->id         = 0;
         $this->title      = $title;
         $this->mime_type  = $mime_type;
         $this->file_size  = $file_size;
-        $this->created_by = $created_by;
         $this->storage    = $storage;
+        $this->created_by = $created_by;
+        $this->file_id    = null;
+        $this->is_guest   = 0;
     }
 
     public function get_id() {

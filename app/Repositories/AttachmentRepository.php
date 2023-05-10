@@ -83,7 +83,7 @@ class AttachmentRepository {
         return $driver_instance->upload( $file );
     }
 
-    public function delete_file( array $attachment, string $driver ) {
+    public function delete_file( AttachmentFileDTO $attachment, string $driver ) {
         $driver_class = helpgent_config( "media-driver.{$driver}" );
     
         if ( ! class_exists( $driver_class ) ) {

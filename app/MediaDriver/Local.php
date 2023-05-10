@@ -65,11 +65,11 @@ class Local implements MediaDriver {
     /**
      * Delete
      * 
-     * @param array $attachment
+     * @param AttachmentFileDTO $attachment
      * @return bool
      */
-    public function delete( $attachment ) : bool {
-        $file_src = trailingslashit( helpgent_config( 'storage.upload_dir_path' ) ) . $attachment['title'];
+    public function delete( AttachmentFileDTO $attachment ) : bool {
+        $file_src = trailingslashit( helpgent_config( 'storage.upload_dir_path' ) ) . $attachment->get_file_name();
 
 		if ( ! file_exists( $file_src ) ) {
 			return false;

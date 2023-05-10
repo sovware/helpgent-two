@@ -6,7 +6,7 @@ use Exception;
 use HelpGent\App\Contracts\MediaDriver;
 use HelpGent\App\DTO\AttachmentFileDTO;
 
-class GoogleDriver implements MediaDriver {
+class GoogleDrive implements MediaDriver {
 
     /**
      * Upload
@@ -42,10 +42,10 @@ class GoogleDriver implements MediaDriver {
     /**
      * Delete
      * 
-     * @param int $id
+     * @param AttachmentFileDTO $attachment
      * @return bool
      */
-    public function delete( $id ) : bool {
+    public function delete( AttachmentFileDTO $attachment ) : bool {
         return false;
     }
 }

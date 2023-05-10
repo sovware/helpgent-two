@@ -17,5 +17,6 @@ interface MediaDriver {
 
     public function get( array $attachment ) : AttachmentFileDTO;
 
-    public function delete( array $attachment ) : bool;
+    public function delete( AttachmentFileDTO $attachment ) : bool;
+
 }
