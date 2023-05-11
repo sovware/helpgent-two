@@ -7,7 +7,6 @@ use HelpGent\App\Contracts\MediaDriver;
 use HelpGent\App\DTO\AttachmentFileDTO;
 
 class Local implements MediaDriver {
-
     /**
      * @return AttachmentFileDTO|Exception
      */
