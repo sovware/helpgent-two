@@ -55,6 +55,7 @@ module.exports = (grunt) => {
 		clean: {
 			options: { force: true },
 			dist: [
+				'./vendor-src/',
 				projectConfig.distDir + '/**',
 				projectConfig.distDir.replace(/\/$/, '') + '.zip',
 			],
@@ -65,9 +66,9 @@ module.exports = (grunt) => {
 			dist: {
 				files: [
 					{
-						expand: true,
 						src: buildFileList,
 						dest: projectConfig.distDir,
+						filter: 'isFile'
 					},
 				],
 			},
