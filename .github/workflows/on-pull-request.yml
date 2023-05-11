@@ -5,8 +5,10 @@ on:
     branches:
       - master
       - development
-      - sovware:master
-      - sovware:development
+  pull_request_target:
+      branches:
+        - master
+        - development
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
