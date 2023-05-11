@@ -10,6 +10,9 @@ class AttachmentFileDTO {
 
     private string $mime_type;
 
+    /**
+     * @var string|null
+     */
     private $file_url = null;
 
     /**
@@ -49,6 +52,9 @@ class AttachmentFileDTO {
         $this->mime_type = $mime_type;
     }
 
+    /**
+     * @return string|null
+     */
     public function get_file_url() {
         return $this->file_url;
     }
@@ -58,20 +64,12 @@ class AttachmentFileDTO {
     }
 
     /**
-     * Get File ID
-     * 
      * @return string|null
     */
     public function get_file_id() {
         return $this->file_id;
     }
 
-    /**
-     * Set File ID
-     * 
-     * @param string $file_id
-     * @return void
-    */
     public function set_file_id( string $file_id ) : void {
         $this->file_id = $file_id;
     }

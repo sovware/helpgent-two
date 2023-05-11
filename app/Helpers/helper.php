@@ -42,16 +42,10 @@ function helpgent_render( string $content ) {
     echo $content;
 }
 
-
-/**
- * Include Media Uploader Files
- *
- * @return void
- */
-function helpgent_include_media_uploader_files() {
-	require_once( ABSPATH . "wp-admin" . '/includes/image.php' );
-	require_once( ABSPATH . "wp-admin" . '/includes/file.php' );
-	require_once( ABSPATH . "wp-admin" . '/includes/media.php' );
+function helpgent_include_media_uploader_files() : void {
+	require_once( ABSPATH . 'wp-admin/includes/image.php' );
+	require_once( ABSPATH . 'wp-admin/includes/file.php' );
+	require_once( ABSPATH . 'wp-admin/includes/media.php' );
 }
 
 /**
