@@ -3,7 +3,6 @@
 namespace HelpGent\App\DTO;
 
 class AttachmentDTO {
-
     private int $id;
 
     private string $title;

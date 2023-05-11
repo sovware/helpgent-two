@@ -12,8 +12,8 @@ use HelpGent\App\DTO\AttachmentDTO;
 use HelpGent\App\DTO\AttachmentFileDTO;
 
 class AttachmentController extends Controller {
-
     public AttachmentRepository $attachment_repository;
+
     public string $attachment_driver;
 
     public function __construct( AttachmentRepository $attachment_repository ) {
@@ -44,7 +44,7 @@ class AttachmentController extends Controller {
             );
         }
         
-        $attachment = $this->attachment_repository->get_by_id( $wp_rest_request->get_param('id') );
+        $attachment = $this->attachment_repository->get_by_id( $wp_rest_request->get_param( 'id' ) );
 
         if ( ! $attachment ) {
             return Response::send(
@@ -168,5 +168,4 @@ class AttachmentController extends Controller {
             );
         }
     }
-
 }
