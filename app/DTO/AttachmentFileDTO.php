@@ -53,12 +53,6 @@ class AttachmentFileDTO {
         return $this->file_url;
     }
 
-    /**
-     * Set File URL
-     * 
-     * @param string $file_url
-     * @return void
-    */
     public function set_file_url( string $file_url ) : void {
         $this->file_url = $file_url;
     }
