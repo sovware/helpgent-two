@@ -3,7 +3,6 @@
 namespace HelpGent\App\DTO;
 
 class AttachmentDTO {
-
     private $title;
 
     public function __construct( $title ) {
