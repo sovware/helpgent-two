@@ -7,10 +7,8 @@ use HelpGent\App\Contracts\MediaDriver;
 use HelpGent\App\DTO\AttachmentFileDTO;
 
 class Local implements MediaDriver {
+
     /**
-     * Upload
-     * 
-     * @param array $file
      * @return AttachmentFileDTO|Exception
      */
     public function upload( array $file ) {
@@ -35,7 +33,7 @@ class Local implements MediaDriver {
         return new AttachmentFileDTO( $file_name, $file_size, $file['type'], $file['url'] );
     }
 
-    public function change_upload_dir( $uploads ) {
+    public function change_upload_dir( array $uploads ) : array {
         $uploads['path']   = helpgent_config( 'storage.upload_dir_path' );
         $uploads['url']    = helpgent_config( 'storage.upload_dir_url' );
         $uploads['subdir'] = '';
@@ -43,13 +41,7 @@ class Local implements MediaDriver {
         return $uploads;
     }
 
-    /**
-     * Get
-     * 
-     * @param array $attachment
-     * @return AttachmentFileDTO|Exception
-     */
-    public function get( $attachment ) : AttachmentFileDTO {
+    public function get( array $attachment ) : AttachmentFileDTO {
         $file_title = $attachment['title'];
         $file_size  = $attachment['size'];
         $mime_type  = $attachment['mime_type'];
@@ -57,12 +49,6 @@ class Local implements MediaDriver {
         return new AttachmentFileDTO( $file_title, $file_size, $mime_type, null, null );
     }
 
-    /**
-     * Delete
-     * 
-     * @param AttachmentFileDTO $attachment
-     * @return bool
-     */
     public function delete( AttachmentFileDTO $attachment ) : bool {
         $file_src = trailingslashit( helpgent_config( 'storage.upload_dir_path' ) ) . $attachment->get_file_name();
 

@@ -60,10 +60,6 @@ class AttachmentRepository {
     }
 
     /**
-     * Upload
-     * 
-     * @param array $file
-     * @param string $driver
      * @return AttachmentFileDTO|Exception
      */
     public function upload( array $file, string $driver ) {
