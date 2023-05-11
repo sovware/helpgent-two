@@ -49,11 +49,6 @@ class AttachmentFileDTO {
         $this->mime_type = $mime_type;
     }
 
-    /**
-     * Get File URL
-     * 
-     * @return string|null
-    */
     public function get_file_url() {
         return $this->file_url;
     }
