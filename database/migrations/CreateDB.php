@@ -72,7 +72,7 @@ class CreateDB implements Migration {
         -- Table attachments
         -- -----------------------------------------------------
         CREATE TABLE {$db_prefix}attachments (
-            `id` BIGINT UNSIGNED NOT NULL,
+            `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
             `title` VARCHAR(255) NULL,
             `mime_type` VARCHAR(255) NULL,
             `file_size` BIGINT UNSIGNED NOT NULL,

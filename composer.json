@@ -18,7 +18,7 @@
 			"composer dump-autoload -d vendor"
 		],
 		"format": "vendor/vendor-src/bin/phpcbf --standard=phpcs.xml",
-		"phpcs": "vendor/vendor-src/bin/phpcs --standard=phpcs.xml --report-full --report-checkstyle=phpcs-report.xml",
+		"phpcs": "vendor/vendor-src/bin/phpcs --standard=phpcs.xml --report-full --report-checkstyle=./phpcs-report.xml",
 		"pre-autoload-dump": "Google\\Task\\Composer::cleanup"
 	},
 	"autoload": {
