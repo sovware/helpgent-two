@@ -3,7 +3,8 @@ name: PHPCS check
 on:
   pull_request:
     branches:
-      - main
+      - master
+      - development
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
