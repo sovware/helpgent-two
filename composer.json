@@ -9,13 +9,17 @@
 			"composer humbug/php-scoper",
 			"composer add-prefix"
 		],
+		"build": [
+            "composer -d vendor --no-plugins --no-interaction install --no-scripts --no-dev"
+        ],
 		"humbug/php-scoper": "composer bin php-scoper require --dev humbug/php-scoper:0.17.5",
 		"add-prefix": [
 			"vendor-src/bin/php-scoper add-prefix --output-dir vendor --force",
 			"composer dump-autoload -d vendor"
 		],
 		"format": "vendor/vendor-src/bin/phpcbf --standard=phpcs.xml",
-		"phpcs": "vendor/vendor-src/bin/phpcs --standard=phpcs.xml --report-full --report-checkstyle=./phpcs-report.xml"
+		"phpcs": "vendor/vendor-src/bin/phpcs --standard=phpcs.xml",
+		"pre-autoload-dump": "Google\\Task\\Composer::cleanup"
 	},
 	"autoload": {
 		"psr-4": {
@@ -29,7 +33,8 @@
 		"php": ">=7.4",
 		"php-di/php-di": "6.4.0",
 		"waxframework/framework": "^1.0.0",
-		"waxframework/request-validator": "dev-master"
+		"waxframework/request-validator": "dev-master",
+		"google/apiclient": "^2.12.2"
 	},
 	"require-dev": {
 		"waxframework/artisan": "^1.0.0",
@@ -49,6 +54,9 @@
 	"extra": {
 		"bamarni-bin": {
 			"target-directory": "vendor-src/vendor-bin"
-		}
+		},
+		"google/apiclient-services": [
+            "Drive"
+        ]
 	}
 }
