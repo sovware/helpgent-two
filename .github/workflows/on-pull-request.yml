@@ -39,7 +39,7 @@ jobs:
         run: composer setup
 
       - name: Run PHPCS checks
-        run: composer phpcs
+        run: php vendor/vendor-src/bin/phpcs --standard=phpcs.xml --report-full --report-checkstyle=./phpcs-report.xml
 
       - name: Show PHPCS results in PR
         if: ${{ github.event_name == 'pull_request' }}
