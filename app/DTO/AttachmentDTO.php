@@ -74,8 +74,6 @@ class AttachmentDTO {
     }
 
     /**
-     * Get File ID
-     * 
      * @return string|null
      */
     public function get_file_id() {
