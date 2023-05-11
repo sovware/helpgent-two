@@ -1,8 +1,8 @@
 <?php
 
 use HelpGent\App\Http\Controllers\Admin\FormController;
-use HelpGent\App\Http\Controllers\AttachmentController;
 use HelpGent\WaxFramework\Routing\Route;
+// use HelpGent\App\Http\Controllers\AttachmentController;
 
 Route::group(
     'admin', function() {
@@ -10,4 +10,4 @@ Route::group(
     }, ['admin']
 );
 
-Route::resource( 'attachment', AttachmentController::class );
+// Route::resource( 'attachment', AttachmentController::class );
