@@ -2,6 +2,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
+use HelpGent\App\Repositories\AttachmentRepository;
 use HelpGent\WaxFramework\App;
 use HelpGent\DI\Container;
 
@@ -63,7 +64,14 @@ function helpgent_get_attachment_path( string $file_name, string $path_type = 'p
  * @return int|null
  */
 function helpgent_get_attachment_id( string $file_name ) {
-	return 1;
+	$attachment_repository = new AttachmentRepository();
+	$attachment = $attachment_repository->get_first_where( [ 'title' => $file_name ] );
+
+	if ( empty( $attachment ) ) {
+		return null;
+	}
+
+	return ( int ) $attachment->id;
 }
 
 function helpgent_render_media_file( string $file_path, bool $download = false ) : void {

@@ -3,6 +3,7 @@
 namespace HelpGent\App\Providers;
 
 use HelpGent\WaxFramework\Contracts\Provider;
+use HelpGent\App\Repositories\AttachmentRepository;
 
 class MediaProtectionProvider implements Provider {
 
@@ -65,7 +66,14 @@ class MediaProtectionProvider implements Provider {
     }
 
     public function can_user_access_attachment( int $attachment_id, int $user_id ) : bool {
-        $can_user_access_attachment = true;
+        $attachment_repository = new AttachmentRepository();
+	    $attachment = $attachment_repository->get_by_id( $attachment_id );
+
+        if ( empty( $attachment ) ) {
+            return false;
+        }
+
+        $can_user_access_attachment = ( int ) $attachment->created_by === $user_id;
         $can_user_access_attachment = apply_filters( 'helpgent_can_user_access_attachment', $can_user_access_attachment, $attachment_id, $user_id );
 
         return $can_user_access_attachment;

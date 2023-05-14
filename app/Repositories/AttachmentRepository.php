@@ -15,6 +15,34 @@ class AttachmentRepository {
         return Attachment::query()->get();
     }
 
+    public function get_all_where( array $where = [], int $limit = 10, int $offset = 0, $order_by = null ) {
+        $query = $this->get_where( $where );
+
+        $query->offset( $offset );
+        $query->limit( $limit );
+
+        if ( is_array( $order_by ) && count( $order_by ) === 2 ) {
+            $query->order_by( $order_by[0], $order_by[1] );
+        }
+        
+        return $query->get();
+    }
+
+    public function get_first_where( array $where = [] ) {
+        $query = $this->get_where( $where );
+        return $query->first();
+    }
+
+    public function get_where( array $where = [] ) {
+        $query = Attachment::query();
+
+        foreach ( $where as $key => $value ) {
+            $query->where( $key, $value );
+        }
+
+        return $query;
+    }
+
     public function create( AttachmentDTO $attachment_dto ) {
         return Attachment::query()->insert_get_id(
             [
