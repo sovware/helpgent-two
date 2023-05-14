@@ -6,10 +6,8 @@ use Exception;
 use HelpGent\App\DTO\AttachmentFileDTO;
 
 interface MediaDriver {
+
     /**
-     * Upload
-     * 
-     * @param array $file
      * @return AttachmentFileDTO|Exception
      */
     public function upload( array $file );
@@ -17,4 +15,5 @@ interface MediaDriver {
     public function get( array $attachment ) : AttachmentFileDTO;
 
     public function delete( AttachmentFileDTO $attachment ) : bool;
+
 }
