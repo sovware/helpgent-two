@@ -47,6 +47,7 @@ class MediaProtectionProvider implements Provider {
             return;
 		}
 
+        // phpcs:ignore WordPress.VIP.SuperGlobalInputUsage
         $file_name = $query->query_vars[ $endpoint ] . '.' . $_GET['file_type'];
         $this->render_media( $file_name );
     }

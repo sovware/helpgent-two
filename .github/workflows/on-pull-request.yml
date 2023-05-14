@@ -5,10 +5,6 @@ on:
     branches:
       - master
       - development
-  pull_request_target:
-      branches:
-        - master
-        - development
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
@@ -39,4 +35,12 @@ jobs:
         run: composer setup
 
       - name: Run PHPCS checks
-        run: php vendor/vendor-src/bin/phpcs --standard=phpcs.xml
+        run: composer phpcs
+
+      - name: Show PHPCS results in PR
+        if: ${{ github.event_name == 'pull_request' }}
+        run: |
+          COMMENT="PHPCS results:\n\`\`\`\n$(cat ./phpcs-report.xml)\n\`\`\`"
+          GITHUB_TOKEN="${{ secrets.GITHUB_TOKEN }}"
+          API_URL=$(jq -r .repository.issue_comment_url $GITHUB_EVENT_PATH | sed 's/{.*}//')
+          curl -H "Authorization: Bearer $GITHUB_TOKEN" -H "Accept: application/vnd.github.v3+json" -X POST -d "{\"body\":\"$COMMENT\"}" "$API_URL"
