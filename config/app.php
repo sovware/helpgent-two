@@ -4,6 +4,7 @@ defined( 'ABSPATH' ) || exit;
 
 use HelpGent\App\Http\Middleware\EnsureIsUserAdmin;
 use HelpGent\App\Providers\MenuServiceProvider;
+use HelpGent\App\Providers\MediaProtectionProvider;
 use HelpGent\Database\Migrations\CreateDB;
 
 return [
@@ -19,7 +20,9 @@ return [
         'versions'  => []
     ],
 
-    'providers'               => [],
+    'providers'               => [
+        MediaProtectionProvider::class,
+    ],
 
     'admin_providers'         => [
         MenuServiceProvider::class,
