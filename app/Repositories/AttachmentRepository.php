@@ -10,7 +10,6 @@ use HelpGent\App\DTO\AttachmentDTO;
 use HelpGent\App\DTO\AttachmentFileDTO;
 
 class AttachmentRepository {
-
     public function get() {
         return Attachment::query()->get();
     }

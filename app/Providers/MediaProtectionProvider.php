@@ -6,7 +6,6 @@ use HelpGent\WaxFramework\Contracts\Provider;
 use HelpGent\App\Repositories\AttachmentRepository;
 
 class MediaProtectionProvider implements Provider {
-
     public static $rewrite_endpoint = 'helpgent_media_protection';
 
     public function boot() {
@@ -30,9 +29,9 @@ class MediaProtectionProvider implements Provider {
         $pattern    = $upload_dir . "\/([A-Za-z0-9_@.\/&+-]+)+\.([A-Za-z0-9_@.\/&+-]+)$ ";
         $path       = str_replace( trailingslashit( site_url() ), '', 'index.php' ) . "?{$endpoint}=$1&file_type=$2 [QSA,L]" . PHP_EOL;
 
-        $newRule = "\n\n# Helpgent Media Protection Rewrite Rules" . PHP_EOL;
+        $newRule  = "\n\n# Helpgent Media Protection Rewrite Rules" . PHP_EOL;
         $newRule .= "RewriteRule " . $pattern . $path;
-		$newRule .= "# Helpgent Media Protection Rewrite Rules End\n" . PHP_EOL;
+        $newRule .= "# Helpgent Media Protection Rewrite Rules End\n" . PHP_EOL;
 
         return $newRule . $rules . PHP_EOL;
     }
@@ -42,11 +41,11 @@ class MediaProtectionProvider implements Provider {
     }
 
     public function parse_query( $query ) : void {
-		$endpoint = self::$rewrite_endpoint;
+        $endpoint = self::$rewrite_endpoint;
 
-		if ( ! isset( $query->query_vars[ $endpoint ] ) ) {
+        if ( ! isset( $query->query_vars[ $endpoint ] ) ) {
             return;
-		}
+        }
 
         // phpcs:ignore WordPress.VIP.SuperGlobalInputUsage
         $file_name = $query->query_vars[ $endpoint ] . '.' . $_GET['file_type'];
@@ -67,7 +66,7 @@ class MediaProtectionProvider implements Provider {
 
     public function can_user_access_attachment( int $attachment_id, int $user_id ) : bool {
         $attachment_repository = new AttachmentRepository();
-	    $attachment = $attachment_repository->get_by_id( $attachment_id );
+        $attachment            = $attachment_repository->get_by_id( $attachment_id );
 
         if ( empty( $attachment ) ) {
             return false;
@@ -78,5 +77,4 @@ class MediaProtectionProvider implements Provider {
 
         return $can_user_access_attachment;
     }
-
 }

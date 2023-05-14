@@ -4,12 +4,19 @@ namespace HelpGent\App\DTO;
 
 class AttachmentDTO {
     private int $id;
+
     private string $title;
+
     private string $mime_type;
+
     private int $file_size;
+
     private string $storage;
+
     private int $created_by;
+
     private $file_id;
+
     private int $is_guest;
 
     public function __construct( string $title, string $mime_type, int $file_size, int $created_by, string $storage = 'local' ) {

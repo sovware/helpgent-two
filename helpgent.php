@@ -34,14 +34,18 @@ final class HelpGent {
 
     public function load() {
         // Run Activation Tasks
-        register_activation_hook( __FILE__, function() {
-            new HelpGent\App\Setup\Activation();
-        } );
+        register_activation_hook(
+            __FILE__, function() {
+                new HelpGent\App\Setup\Activation();
+            } 
+        );
 
         // Run Deactivation Tasks
-        register_deactivation_hook( __FILE__, function() {
-            new HelpGent\App\Setup\Deactivation();
-        } );
+        register_deactivation_hook(
+            __FILE__, function() {
+                new HelpGent\App\Setup\Deactivation();
+            } 
+        );
 
         $application = App::instance();
 

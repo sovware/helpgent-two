@@ -3,7 +3,6 @@
 namespace HelpGent\App\DTO;
 
 class AttachmentFileDTO {
-
     private string $file_name;
 
     private int $file_size;
