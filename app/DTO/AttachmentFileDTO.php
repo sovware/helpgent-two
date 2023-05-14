@@ -3,12 +3,16 @@
 namespace HelpGent\App\DTO;
 
 class AttachmentFileDTO {
+
     private string $file_name;
 
     private int $file_size;
 
     private string $mime_type;
 
+    /**
+     * @var string|null
+    */
     private $file_url = null;
 
     /**
@@ -48,35 +52,24 @@ class AttachmentFileDTO {
         $this->mime_type = $mime_type;
     }
 
+    /**
+     * @return string|null
+    */
     public function get_file_url() {
         return $this->file_url;
     }
 
-    /**
-     * Set File URL
-     * 
-     * @param string $file_url
-     * @return void
-    */
     public function set_file_url( string $file_url ) : void {
         $this->file_url = $file_url;
     }
 
     /**
-     * Get File ID
-     * 
      * @return string|null
     */
     public function get_file_id() {
         return $this->file_id;
     }
 
-    /**
-     * Set File ID
-     * 
-     * @param string $file_id
-     * @return void
-    */
     public function set_file_id( string $file_id ) : void {
         $this->file_id = $file_id;
     }
