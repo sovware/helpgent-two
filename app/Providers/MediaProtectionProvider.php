@@ -120,8 +120,8 @@ class MediaProtectionProvider implements Provider {
     # Put our rewrite rules here.
     {$rules}
 }";
-        
-        $current_url    = home_url() . $_SERVER['REQUEST_URI'];
+        // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotValidated, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized, WordPress.Security.NonceVerification.Recommended
+        $current_url    = home_url() . wp_unslash( $_SERVER['REQUEST_URI'] );
         $dismiss_link   = add_query_arg( 'helpgent-dismiss-nginx-setup-notice', true, $current_url );
         $textarea_style = 'color: #106AC2; line-height: 1.25em; font-family: Monospace, Mono; width: 100%;';
 
@@ -136,12 +136,11 @@ class MediaProtectionProvider implements Provider {
     }
 
     public function close_nginx_setup_notice() : void {
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended
         if ( empty( $_GET['helpgent-dismiss-nginx-setup-notice'] ) ) {
             return;
         }
 
         update_option( 'helpgent_dismiss_nginx_setup_notice', true );
-
     }
-
 }

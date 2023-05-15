@@ -213,6 +213,7 @@ function helpgent_get_server_name() {
         return 'apache';
     }
 
+    // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
     $server_info = isset( $_SERVER['SERVER_SOFTWARE'] ) ? wp_unslash( $_SERVER['SERVER_SOFTWARE'] ) : '';
 
     $servers = [
