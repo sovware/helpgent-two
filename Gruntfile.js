@@ -1,4 +1,4 @@
-module.exports = (grunt) => {
+module.exports = ( grunt ) => {
 	'use strict';
 
 	const projectConfig = {
@@ -44,19 +44,19 @@ module.exports = (grunt) => {
 		'**/Installable',
 	];
 
-	buildIgnoreFiles = buildIgnoreFiles.map((item) => {
+	buildIgnoreFiles = buildIgnoreFiles.map( ( item ) => {
 		return '!' + projectConfig.srcDir + item;
-	});
+	} );
 
-	let buildFileList = [projectConfig.srcDir + '**', ...buildIgnoreFiles];
+	let buildFileList = [ projectConfig.srcDir + '**', ...buildIgnoreFiles ];
 
-	grunt.initConfig({
+	grunt.initConfig( {
 		// clean dist directory file
 		clean: {
 			options: { force: true },
 			dist: [
 				projectConfig.distDir + '/**',
-				projectConfig.distDir.replace(/\/$/, '') + '.zip',
+				projectConfig.distDir.replace( /\/$/, '' ) + '.zip',
 			],
 		},
 
@@ -91,7 +91,7 @@ module.exports = (grunt) => {
 				},
 				expand: true,
 				cwd: projectConfig.distDir,
-				src: ['**'],
+				src: [ '**' ],
 				dest: '../' + projectConfig.name,
 			},
 		},
@@ -109,7 +109,7 @@ module.exports = (grunt) => {
 					'!' + projectConfig.srcDir + 'node_modules/**',
 					'!' + projectConfig.srcDir + 'dev-*/**',
 					'!' + projectConfig.srcDir + 'vendor/**',
-					'!' + projectConfig.srcDir + 'vendor-src/**'
+					'!' + projectConfig.srcDir + 'vendor-src/**',
 				],
 			},
 		},
@@ -143,7 +143,7 @@ module.exports = (grunt) => {
 							projectConfig.srcDir + '**/*.php',
 							'!' + projectConfig.srcDir + 'node_modules/**',
 							'!' + projectConfig.srcDir + 'vendor/**',
-							'!' + projectConfig.srcDir + 'vendor-src/**'
+							'!' + projectConfig.srcDir + 'vendor-src/**',
 						],
 						expand: true,
 					},
@@ -172,11 +172,11 @@ module.exports = (grunt) => {
 
 		screen: {
 			begin: `
-	# Project   : ${projectConfig.name}
-	# Dist      : ${projectConfig.distDir}
-	# Version   : ${projectConfig.version}`.cyan,
+	# Project   : ${ projectConfig.name }
+	# Dist      : ${ projectConfig.distDir }
+	# Version   : ${ projectConfig.version }`.cyan,
 			textdomainchecking:
-				`Checking textdomain [${projectConfig.text_domain}]`.cyan,
+				`Checking textdomain [${ projectConfig.text_domain }]`.cyan,
 			minifying: `Minifying js & css files.`.cyan,
 			finish: `
 			╭─────────────────────────────────────────────────────────────────╮
@@ -188,41 +188,41 @@ module.exports = (grunt) => {
 			╰─────────────────────────────────────────────────────────────────╯
 			`.green,
 		},
-	});
+	} );
 
 	/**
 	 * ----------------------------------
 	 * @description Register grunt tasks
 	 * ----------------------------------
 	 */
-	require('load-grunt-tasks')(grunt);
+	require( 'load-grunt-tasks' )( grunt );
 
 	/**
 	 * text domain fixing task
 	 */
-	grunt.registerTask('fixtextdomain', [
+	grunt.registerTask( 'fixtextdomain', [
 		'screen:textdomainchecking',
 		'addtextdomain',
 		'checktextdomain',
 		'makepot',
-	]);
+	] );
 
 	/**
 	 * Status Screen
 	 */
-	grunt.registerMultiTask('screen', function () {
-		grunt.log.writeln(this.data);
-	});
+	grunt.registerMultiTask( 'screen', function () {
+		grunt.log.writeln( this.data );
+	} );
 
 	/**
 	 * Build and compress task
 	 */
-	grunt.registerTask('build', [
+	grunt.registerTask( 'build', [
 		'screen:begin',
 		'clean',
 		'fixtextdomain',
 		'copy',
 		'compress',
 		'screen:finish',
-	]);
+	] );
 };

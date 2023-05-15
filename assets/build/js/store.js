@@ -13,13 +13,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ registerModule)
 /* harmony export */ });
 /**
- * 
- * @param { string } moduleName 
+ *
+ * @param { string } moduleName
  * @param { Object } module
  */
 function registerModule(moduleName, module) {
   //check if the module already exists.
-  if (window[moduleName]) {
+  if (window[moduleName][module]) {
     return;
   } else {
     window[moduleName] = {};
@@ -181,7 +181,7 @@ const store = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_0__.createReduxStore)(
   store
 });
 
-// register store to app 
+// register store to app
 (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_0__.register)(store);
 })();
 

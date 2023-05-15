@@ -1,10 +1,10 @@
-export const formsReducer = ( state = {}, action )=>{
-    switch ( action.type ) {
-        case 'SET_FORMS':
+export const formsReducer = ( state = {}, action ) => {
+	switch ( action.type ) {
+		case 'SET_FORMS':
 			return [ ...action.payload ];
-    }
+	}
 
-    return state;
+	return state;
 };
 
 export const formsActions = {
@@ -13,11 +13,11 @@ export const formsActions = {
 			type: 'SET_FORMS',
 			payload: data,
 		};
-	}
+	},
 };
 
 export const formsSelectors = {
-	getForms( { formsReducer } ){
+	getForms( { formsReducer } ) {
 		return formsReducer;
-	}
+	},
 };

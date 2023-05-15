@@ -1,7 +1,7 @@
 const path = require( 'path' );
 const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
 const DependencyExtractionWebpackPlugin = require( '@wordpress/dependency-extraction-webpack-plugin' );
-const { log } = require('console');
+const { log } = require( 'console' );
 const HELPGENT_NAMESPACE = '@helpgent/';
 
 const devHost = 'helpgent.test';
@@ -57,10 +57,10 @@ module.exports = {
 		} ),
 	],
 	resolve: {
-        alias: {
-          "@helpgent/store": path.resolve( __dirname, 'resources/js/store' ),
-        },
-    },
+		alias: {
+			'@helpgent/store': path.resolve( __dirname, 'resources/js/store' ),
+		},
+	},
 	devServer: {
 		devMiddleware: {
 			writeToDisk: true,
