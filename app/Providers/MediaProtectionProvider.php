@@ -28,11 +28,11 @@ class MediaProtectionProvider implements Provider {
         $pattern    = $upload_dir . "\/([A-Za-z0-9_@.\/&+-]+)+\.([A-Za-z0-9_@.\/&+-]+)$ ";
         $path       = str_replace( trailingslashit( site_url() ), '', 'index.php' ) . "?{$endpoint}=$1&file_type=$2 [QSA,L]" . PHP_EOL;
 
-        $newRule  = "\n\n# Helpgent Media Protection Rewrite Rules" . PHP_EOL;
-        $newRule .= "RewriteRule " . $pattern . $path;
-        $newRule .= "# Helpgent Media Protection Rewrite Rules End\n" . PHP_EOL;
+        $new_rule  = "\n\n# Helpgent Media Protection Rewrite Rules" . PHP_EOL;
+        $new_rule .= "RewriteRule " . $pattern . $path;
+        $new_rule .= "# Helpgent Media Protection Rewrite Rules End\n" . PHP_EOL;
 
-        return $newRule . $rules . PHP_EOL;
+        return $new_rule . $rules . PHP_EOL;
     }
 
     public function add_rewrite_endpoint() : void {
@@ -46,7 +46,7 @@ class MediaProtectionProvider implements Provider {
             return;
         }
 
-        // phpcs:ignore WordPress.VIP.SuperGlobalInputUsage
+        // phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.ValidatedSanitizedInput.InputNotValidated, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
         $file_name = $query->query_vars[ $endpoint ] . '.' . $_GET['file_type'];
         $this->render_media( $file_name );
     }

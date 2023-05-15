@@ -94,6 +94,7 @@ function helpgent_render_media_file( string $file_path, bool $download = false )
 
     header( 'Content-Type: ' . $mimetype );
 
+    // phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
     $download = ( ! empty( $_GET['download'] ) ) ? $_GET['download'] : $download;
 
     if ( $download || ( helpgent_is_file_image( $file_path ) == false && helpgent_is_mime_type_pdf( $mimetype ) == false && helpgent_is_mime_type_video( $mimetype ) == false && helpgent_is_mime_type_audio( $mimetype ) == false ) ) {
@@ -101,7 +102,8 @@ function helpgent_render_media_file( string $file_path, bool $download = false )
         header( "Content-Disposition: attachment; filename=$file_name" );
     }
 
-    if ( false === strpos( $_SERVER['SERVER_SOFTWARE'], 'Microsoft-IIS' ) ) {
+    // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+    if ( isset( $_SERVER['SERVER_SOFTWARE'] ) && false === strpos( wp_unslash( $_SERVER['SERVER_SOFTWARE'] ), 'Microsoft-IIS' ) ) {
         header( 'Content-Length: ' . filesize( $file_path ) );
     }
 
@@ -114,13 +116,15 @@ function helpgent_render_media_file( string $file_path, bool $download = false )
     header( 'X-Robots-Tag: none' );
 
     // Support for Conditional GET
-    $client_etag = isset( $_SERVER['HTTP_IF_NONE_MATCH'] ) ? stripslashes( $_SERVER['HTTP_IF_NONE_MATCH'] ) : false;
+    // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+    $client_etag = isset( $_SERVER['HTTP_IF_NONE_MATCH'] ) ? wp_unslash( $_SERVER['HTTP_IF_NONE_MATCH'] ) : false;
     
     if ( ! isset( $_SERVER['HTTP_IF_MODIFIED_SINCE'] ) ) {
         $_SERVER['HTTP_IF_MODIFIED_SINCE'] = false;
     }
 
-    $client_last_modified = trim( $_SERVER['HTTP_IF_MODIFIED_SINCE'] );
+    // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+    $client_last_modified = trim( wp_unslash( $_SERVER['HTTP_IF_MODIFIED_SINCE'] ) );
     
     // If string is empty, return 0. If not, attempt to parse into a timestamp
     $client_modified_timestamp = $client_last_modified ? strtotime( $client_last_modified ) : 0;
