@@ -1,18 +1,65 @@
 const path = require( 'path' );
 const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
+const DependencyExtractionWebpackPlugin = require( '@wordpress/dependency-extraction-webpack-plugin' );
+const { log } = require( 'console' );
+const HELPGENT_NAMESPACE = '@helpgent/';
 
 const devHost = 'helpgent.test';
+
+/**
+ * Given a string, returns a new string with dash separators converted to
+ * camelCase equivalent. This is not as aggressive as `_.camelCase` in
+ * converting to uppercase, where Lodash will also capitalize letters
+ * following numbers.
+ *
+ * @param {string} string Input dash-delimited string.
+ * @return {string} Camel-cased string.
+ */
+function camelCaseDash( string ) {
+	return string.replace( /-([a-z])/g, ( _, letter ) => letter.toUpperCase() );
+}
 
 module.exports = {
 	...defaultConfig,
 	entry: {
 		'js/app': './resources/js/app.js',
-		'css/app': './resources/sass/app.scss',
+		'js/store': './resources/js/store',
+		// 'css/app': './resources/sass/app.scss',
 	},
 	output: {
 		path: path.resolve( __dirname, './assets/build/' ),
 		filename: '[name].js',
 		clean: false,
+	},
+	plugins: [
+		...defaultConfig.plugins.filter(
+			( plugin ) =>
+				plugin.constructor.name !== 'DependencyExtractionWebpackPlugin'
+		),
+		new DependencyExtractionWebpackPlugin( {
+			requestToExternal( request ) {
+				if ( request.startsWith( HELPGENT_NAMESPACE ) ) {
+					return [
+						'helpgent',
+						camelCaseDash(
+							request.substring( HELPGENT_NAMESPACE.length )
+						),
+					];
+				}
+			},
+			requestToHandle( request ) {
+				if ( request.startsWith( HELPGENT_NAMESPACE ) ) {
+					return `helpgent/${ camelCaseDash(
+						request.substring( HELPGENT_NAMESPACE.length )
+					) }`;
+				}
+			},
+		} ),
+	],
+	resolve: {
+		alias: {
+			'@helpgent/store': path.resolve( __dirname, 'resources/js/store' ),
+		},
 	},
 	devServer: {
 		devMiddleware: {

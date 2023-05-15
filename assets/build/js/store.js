@@ -2,13 +2,74 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "@helpgent/store":
-/*!*************************************!*\
-  !*** external ["helpgent","store"] ***!
-  \*************************************/
-/***/ ((module) => {
+/***/ "./resources/js/module/registerModule.js":
+/*!***********************************************!*\
+  !*** ./resources/js/module/registerModule.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-module.exports = window["helpgent"]["store"];
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ registerModule)
+/* harmony export */ });
+/**
+ *
+ * @param { string } moduleName
+ * @param { Object } module
+ */
+function registerModule(moduleName, module) {
+  //check if the module already exists.
+  if (window[moduleName][module]) {
+    return;
+  } else {
+    window[moduleName] = {};
+
+    //add all the items to the module.
+    for (let itemName of Object.keys(module)) {
+      window[moduleName][itemName] = module[itemName];
+    }
+  }
+}
+
+/***/ }),
+
+/***/ "./resources/js/store/forms.js":
+/*!*************************************!*\
+  !*** ./resources/js/store/forms.js ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "formsActions": () => (/* binding */ formsActions),
+/* harmony export */   "formsReducer": () => (/* binding */ formsReducer),
+/* harmony export */   "formsSelectors": () => (/* binding */ formsSelectors)
+/* harmony export */ });
+const formsReducer = function () {
+  let state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  let action = arguments.length > 1 ? arguments[1] : undefined;
+  switch (action.type) {
+    case 'SET_FORMS':
+      return [...action.payload];
+  }
+  return state;
+};
+const formsActions = {
+  setForms(data) {
+    return {
+      type: 'SET_FORMS',
+      payload: data
+    };
+  }
+};
+const formsSelectors = {
+  getForms(_ref) {
+    let {
+      formsReducer
+    } = _ref;
+    return formsReducer;
+  }
+};
 
 /***/ }),
 
@@ -93,20 +154,37 @@ module.exports = window["wp"]["data"];
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-/*!*****************************!*\
-  !*** ./resources/js/app.js ***!
-  \*****************************/
+/*!*************************************!*\
+  !*** ./resources/js/store/index.js ***!
+  \*************************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _helpgent_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @helpgent/store */ "@helpgent/store");
-/* harmony import */ var _helpgent_store__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_helpgent_store__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
-/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./forms */ "./resources/js/store/forms.js");
+/* harmony import */ var _module_registerModule__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../module/registerModule */ "./resources/js/module/registerModule.js");
+/**
+ * WordPress dependencies
+ */
 
 
-const core = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_1__.select)('helpgent-store');
-console.log(core.getForms());
+
+const store = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_0__.createReduxStore)('helpgent-store', {
+  reducer: (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_0__.combineReducers)({
+    formsReducer: _forms__WEBPACK_IMPORTED_MODULE_1__.formsReducer
+  }),
+  actions: _forms__WEBPACK_IMPORTED_MODULE_1__.formsActions,
+  selectors: _forms__WEBPACK_IMPORTED_MODULE_1__.formsSelectors
+});
+
+// register store at window
+(0,_module_registerModule__WEBPACK_IMPORTED_MODULE_2__["default"])('helpgent', {
+  store
+});
+
+// register store to app
+(0,_wordpress_data__WEBPACK_IMPORTED_MODULE_0__.register)(store);
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=app.js.map
+//# sourceMappingURL=store.js.map

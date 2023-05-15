@@ -1,1 +1,1 @@
-<?php return array('dependencies' => array(), 'version' => '24a92d46cbd4c10bfabc');
+<?php return array('dependencies' => array('helpgent/store', 'wp-data'), 'version' => '405be246b1b90356162f');
