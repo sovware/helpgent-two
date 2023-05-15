@@ -151,7 +151,7 @@ function helpgent_is_mime_type_pdf( string $mime_type ) : bool {
     return $mime_type == "application/pdf";
 }
 
-function helpgent_is_mime_type_video( string $mime_type ) : bool{
+function helpgent_is_mime_type_video( string $mime_type ) : bool {
     return strstr( $mime_type, "video/" );
 }
 
