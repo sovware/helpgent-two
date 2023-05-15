@@ -58,7 +58,7 @@ class MediaProtectionProvider implements Provider {
         }
 
         // Render The File
-        helpgent_render_media_file( helpgent_get_upload_dir( $file_name ) );
+        helpgent_render_media_file( helpgent_upload_dir( $file_name ) );
     }
 
     public function can_user_access_attachment( int $attachment_id, int $user_id ) : bool {

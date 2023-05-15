@@ -34,7 +34,7 @@ class Local implements MediaDriver {
     }
 
     public function change_upload_dir( array $uploads ) : array {
-        $uploads['path']   = helpgent_get_upload_dir();
+        $uploads['path']   = helpgent_upload_dir();
         $uploads['url']    = helpgent_get_upload_url();
         $uploads['subdir'] = '';
 
@@ -50,7 +50,7 @@ class Local implements MediaDriver {
     }
     
     public function delete( AttachmentFileDTO $attachment ) : bool {
-        $file_src = helpgent_get_upload_dir( $attachment->get_file_name() );
+        $file_src = helpgent_upload_dir( $attachment->get_file_name() );
 
         if ( ! file_exists( $file_src ) ) {
             return false;
