@@ -205,3 +205,26 @@ function helpgent_get_extension_from_path( string $path ) : string {
 function helpgent_get_extension_from_mime_type( string $mime_type ) : string {
     return preg_replace( '/.+\//', '', $mime_type );
 }
+
+function helpgent_get_server_name() {
+    global $is_apache;
+
+    if ( $is_apache ) {
+        return 'apache';
+    }
+
+    $server_info = isset( $_SERVER['SERVER_SOFTWARE'] ) ? wp_unslash( $_SERVER['SERVER_SOFTWARE'] ) : '';
+
+    $servers = [
+        'nginx',
+        'iis',
+    ];
+
+    foreach ( $servers as $server ) {
+        if ( strpos( strtolower( $server_info ), $server ) !== false ) {
+            return $server;
+        }
+    }
+
+    return '';
+}
