@@ -9,7 +9,6 @@ class MediaProtectionProvider implements Provider {
     public static $rewrite_endpoint = 'helpgent_media_protection';
 
     public function boot() {
-        add_filter( 'mod_rewrite_rules', [ __CLASS__, 'htaccess_contents' ] );
         add_action( 'init', [ $this, 'add_rewrite_endpoint' ] );
         add_action( 'parse_query', [ $this, 'parse_query' ] );
     }
