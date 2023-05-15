@@ -13,8 +13,7 @@ class MenuServiceProvider implements Provider
     }
 
     /**
-     * Fires in head section for all admin pages.
-     *
+     * Loading menu activation js code only helpgent admin page
      */
     public function action_admin_head() : void {
         if ( 'helpgent_page_helpgent' === get_current_screen()->id ) {
