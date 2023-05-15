@@ -12,7 +12,7 @@
     <div class="helpgent-nginx-instruction-content" style="display: none">
         <p><b><?php _e( 'Instruction:', 'helpgent' ); ?></b></p>
         <ul style="list-style: decimal; padding-left: 20px;">
-            <li><?php _e( 'Copy the rewrite rules shown on above', 'helpgent' ) ?></li>
+            <li><?php _e( 'Copy the rewrite rules shown above', 'helpgent' ) ?></li>
             <li><?php _e( 'Find your website’s Nginx config file which is often located at /etc/nginx/site-available or /etc/nginx/conf/site-available (if you’re using Arch Linux)', 'helpgent' ) ?></li>
             <li>
                 <?php _e( 'Paste the copied rules in the server block', 'helpgent' ) ?>
