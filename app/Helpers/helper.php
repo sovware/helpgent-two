@@ -48,7 +48,7 @@ function helpgent_render( string $content ) {
  * @return string Path
  */
 function helpgent_get_upload_dir( string $file = '' ) : string {
-    return \rtrim( helpgent_config( 'storage.upload_dir_path' ) . '/' . \ltrim( $file, '/' ), '/' );
+    return \rtrim( WP_CONTENT_DIR . '/uploads/helpgent/' . \ltrim( $file, '/' ), '/' );
 }
 
 /**
@@ -56,7 +56,7 @@ function helpgent_get_upload_dir( string $file = '' ) : string {
  * @return string Path
  */
 function helpgent_get_upload_url( string $file = '' ) : string {
-    return \rtrim( helpgent_config( 'storage.upload_dir_url' ) . '/' . \ltrim( $file, '/' ), '/' );
+    return \rtrim( WP_CONTENT_URL . '/uploads/helpgent/' . \ltrim( $file, '/' ), '/' );
 }
 
 /**
@@ -166,9 +166,7 @@ function helpgent_include_media_uploader_files() : void {
 }
 
 function helpgent_prepare_upload_directory() : void {
-    $upload_dir_path = helpgent_config( 'storage.upload_dir_path' );
-
-    if ( file_exists( $upload_dir_path ) ) {
+    if ( file_exists( helpgent_get_upload_dir() ) ) {
         return;
     }
 
@@ -176,7 +174,7 @@ function helpgent_prepare_upload_directory() : void {
 }
 
 function helpgent_create_upload_directory() : void {
-    $upload_dir_path = helpgent_config( 'storage.upload_dir_path' );
+    $upload_dir_path = helpgent_get_upload_dir();
 
     // Create Upload Directory
     wp_mkdir_p( $upload_dir_path );
