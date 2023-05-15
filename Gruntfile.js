@@ -68,7 +68,7 @@ module.exports = ( grunt ) => {
 					{
 						src: buildFileList,
 						dest: projectConfig.distDir,
-						filter: 'isFile'
+						filter: 'isFile',
 					},
 				],
 			},

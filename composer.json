@@ -10,8 +10,8 @@
 			"composer add-prefix"
 		],
 		"build": [
-            "composer -d vendor --no-plugins --no-interaction install --no-scripts --no-dev"
-        ],
+			"composer -d vendor --no-plugins --no-interaction install --no-scripts --no-dev"
+		],
 		"humbug/php-scoper": "composer bin php-scoper require --dev humbug/php-scoper:0.17.5",
 		"add-prefix": [
 			"vendor-src/bin/php-scoper add-prefix --output-dir vendor --force",
@@ -56,7 +56,7 @@
 			"target-directory": "vendor-src/vendor-bin"
 		},
 		"google/apiclient-services": [
-            "Drive"
-        ]
+			"Drive"
+		]
 	}
 }
