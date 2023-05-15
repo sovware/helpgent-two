@@ -10,7 +10,8 @@
 		"start": "wp-scripts start",
 		"start:hot": "wp-scripts start --hot",
 		"format": "wp-scripts format",
-		"build": "wp-scripts build",
+		"minify": "wp-scripts build",
+		"build": "composer build && npm run minify && grunt build",
 		"fixtextdomain": "grunt fixtextdomain"
 	},
 	"repository": {
