@@ -3,11 +3,23 @@
 namespace HelpGent\App\Providers;
 
 use HelpGent\WaxFramework\Contracts\Provider;
+use HelpGent\WaxFramework\View\View;
 
 class MenuServiceProvider implements Provider
 {
     public function boot() {
         add_action( 'admin_menu', [$this, 'action_admin_menu'] );
+        add_action( 'admin_head', [ $this, 'action_admin_head' ] );
+    }
+
+    /**
+     * Fires in head section for all admin pages.
+     *
+     */
+    public function action_admin_head() : void {
+        if ( 'helpgent_page_helpgent' === get_current_screen()->id ) {
+            View::render( 'admin/menu-js' );
+        }
     }
 
     public function action_admin_menu() {
