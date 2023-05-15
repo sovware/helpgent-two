@@ -14,34 +14,6 @@ class AttachmentRepository {
         return Attachment::query()->get();
     }
 
-    public function get_all_where( array $where = [], int $limit = 10, int $offset = 0, $order_by = null ) {
-        $query = $this->get_where( $where );
-
-        $query->offset( $offset );
-        $query->limit( $limit );
-
-        if ( is_array( $order_by ) && count( $order_by ) === 2 ) {
-            $query->order_by( $order_by[0], $order_by[1] );
-        }
-        
-        return $query->get();
-    }
-
-    public function get_first_where( array $where = [] ) {
-        $query = $this->get_where( $where );
-        return $query->first();
-    }
-
-    public function get_where( array $where = [] ) {
-        $query = Attachment::query();
-
-        foreach ( $where as $key => $value ) {
-            $query->where( $key, $value );
-        }
-
-        return $query;
-    }
-
     public function create( AttachmentDTO $attachment_dto ) {
         return Attachment::query()->insert_get_id(
             [
@@ -88,9 +60,10 @@ class AttachmentRepository {
     }
 
     /**
-     * @return AttachmentFileDTO|Exception
+     * @throws Exception
+     * @return AttachmentFileDTO
      */
-    public function upload( array $file, string $driver ) {
+    public function upload( array $file, string $driver ) : AttachmentFileDTO {
         $driver_class = helpgent_config( "media-driver.{$driver}" );
 
         if ( ! class_exists( $driver_class ) ) {
@@ -106,7 +79,7 @@ class AttachmentRepository {
         return $driver_instance->upload( $file );
     }
 
-    public function delete_file( AttachmentFileDTO $attachment, string $driver ) {
+    public function delete_file( AttachmentFileDTO $attachment, string $driver ) : bool {
         $driver_class = helpgent_config( "media-driver.{$driver}" );
     
         if ( ! class_exists( $driver_class ) ) {
@@ -124,5 +97,9 @@ class AttachmentRepository {
 
     public function get_by_id( int $id ) {
         return Attachment::query()->where( 'id', $id )->first();
+    }
+
+    public function get_by_title( string $title ) {
+        return Attachment::query()->where( 'title', $title )->first();
     }
 }

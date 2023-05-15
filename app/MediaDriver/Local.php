@@ -9,9 +9,10 @@ use HelpGent\App\DTO\AttachmentFileDTO;
 class Local implements MediaDriver {
 
     /**
-     * @return AttachmentFileDTO|Exception
+     * @throws Exception
+     * @return AttachmentFileDTO
      */
-    public function upload( array $file ) {
+    public function upload( array $file ) : AttachmentFileDTO {
         helpgent_include_media_uploader_files();
         helpgent_prepare_upload_directory();
 

@@ -8,9 +8,10 @@ use HelpGent\App\DTO\AttachmentFileDTO;
 interface MediaDriver {
 
     /**
-     * @return AttachmentFileDTO|Exception
+     * @throws Exception
+     * @return AttachmentFileDTO
      */
-    public function upload( array $file );
+    public function upload( array $file ) : AttachmentFileDTO;
 
     public function get( array $attachment ) : AttachmentFileDTO;
 

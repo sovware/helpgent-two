@@ -25,7 +25,7 @@ class MediaProtectionProvider implements Provider {
 
     public static function htaccess_contents( string $rules ) : string {
         $endpoint   = self::$rewrite_endpoint;
-        $upload_dir = str_replace( trailingslashit( site_url() ), '', helpgent_get_upload_dir( 'url' ) );
+        $upload_dir = str_replace( trailingslashit( site_url() ), '', helpgent_get_upload_url() );
         $pattern    = $upload_dir . "\/([A-Za-z0-9_@.\/&+-]+)+\.([A-Za-z0-9_@.\/&+-]+)$ ";
         $path       = str_replace( trailingslashit( site_url() ), '', 'index.php' ) . "?{$endpoint}=$1&file_type=$2 [QSA,L]" . PHP_EOL;
 
@@ -61,7 +61,7 @@ class MediaProtectionProvider implements Provider {
         }
 
         // Render The File
-        helpgent_render_media_file( helpgent_get_attachment_path( $file_name ) );
+        helpgent_render_media_file( helpgent_get_upload_dir( $file_name ) );
     }
 
     public function can_user_access_attachment( int $attachment_id, int $user_id ) : bool {

@@ -44,28 +44,27 @@ function helpgent_render( string $content ) {
 }
 
 /**
- * @param string $path_type path | url
+ * @param string $file
  * @return string Path
  */
-function helpgent_get_upload_dir( string $path_type = 'path' ) : string {
-    return helpgent_config( "storage.upload_dir_{$path_type}" );
+function helpgent_get_upload_dir( string $file = '' ) : string {
+    return \rtrim( helpgent_config( 'storage.upload_dir_path' ) . '/' . \ltrim( $file, '/' ), '/' );
 }
 
 /**
- * @param string $file_name
- * @param string $path_type path | url
+ * @param string $file
  * @return string Path
  */
-function helpgent_get_attachment_path( string $file_name, string $path_type = 'path' ) : string {
-    return helpgent_get_upload_dir( $path_type ) . "/{$file_name}";
+function helpgent_get_upload_url( string $file = '' ) : string {
+    return \rtrim( helpgent_config( 'storage.upload_dir_url' ) . '/' . \ltrim( $file, '/' ), '/' );
 }
 
 /**
  * @return int|null
  */
 function helpgent_get_attachment_id( string $file_name ) {
-    $attachment_repository = new AttachmentRepository();
-    $attachment            = $attachment_repository->get_first_where( [ 'title' => $file_name ] );
+    $attachment_repository = helpgent_singleton( AttachmentRepository::class );
+    $attachment            = $attachment_repository->get_by_title( $file_name );
 
     if ( empty( $attachment ) ) {
         return null;
@@ -199,10 +198,6 @@ function helpgent_get_unique_key( string $prefix = '' ) {
 
 function helpgent_get_extension_from_path( string $path ) : string {
     return pathinfo( $path, PATHINFO_EXTENSION );
-}
-
-function helpgent_exclude_extension_from_path( string $path ) : string {
-    return preg_replace( '/[.]\w+$/', '', $path );
 }
 
 function helpgent_get_extension_from_mime_type( string $mime_type ) : string {
