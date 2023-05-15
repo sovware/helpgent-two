@@ -64,7 +64,7 @@ class MediaProtectionProvider implements Provider {
     }
 
     public function can_user_access_attachment( int $attachment_id, int $user_id ) : bool {
-        $attachment_repository = new AttachmentRepository();
+        $attachment_repository = helpgent_singleton( AttachmentRepository::class );
         $attachment            = $attachment_repository->get_by_id( $attachment_id );
 
         if ( empty( $attachment ) ) {
