@@ -8,7 +8,7 @@ use HelpGent\App\DTO\AttachmentFileDTO;
 
 class Local implements MediaDriver {
     /**
-     * @throws Exception
+     * @throws Exception Could not upload the file, please try again
      * @return AttachmentFileDTO
      */
     public function upload( array $file ) : AttachmentFileDTO {
