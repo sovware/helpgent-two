@@ -72,7 +72,7 @@ class CreateDB implements Migration {
         -- Table attachments
         -- -----------------------------------------------------
         CREATE TABLE {$db_prefix}attachments (
-            `id` BIGINT UNSIGNED NOT NULL,
+            `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
             `title` VARCHAR(255) NULL,
             `mime_type` VARCHAR(255) NULL,
             `file_size` BIGINT UNSIGNED NOT NULL,
@@ -125,7 +125,7 @@ class CreateDB implements Migration {
         -- -----------------------------------------------------
 
         CREATE TABLE {$db_prefix}tags (
-            `id` BIGINT UNSIGNED NOT NULL,
+            `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
             `title` VARCHAR(255) NULL,
             `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
             `updated_at` TIMESTAMP NULL,
@@ -136,7 +136,7 @@ class CreateDB implements Migration {
         -- Table submission_tag
         -- -----------------------------------------------------
         CREATE TABLE {$db_prefix}submission_tag (
-            `tag_id` BIGINT UNSIGNED NOT NULL,
+            `tag_id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
             `submission_id` BIGINT UNSIGNED NOT NULL,
             PRIMARY KEY (`tag_id`)
         ) {$charset_collate};
@@ -146,7 +146,7 @@ class CreateDB implements Migration {
         -- -----------------------------------------------------
 
         CREATE TABLE {$db_prefix}guest_users (
-            `id` BIGINT UNSIGNED NOT NULL,
+            `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
             `name` VARCHAR(255) NULL,
             `email` VARCHAR(255) NULL,
             `token` VARCHAR(255) NOT NULL,
@@ -160,7 +160,7 @@ class CreateDB implements Migration {
         -- -----------------------------------------------------
 
         CREATE TABLE {$db_prefix}guest_user_meta (
-            `id` BIGINT UNSIGNED NOT NULL,
+            `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
             `user_id` BIGINT UNSIGNED NOT NULL,
             `meta_key` VARCHAR(255) NULL,
             `meta_value` LONGTEXT NULL,
