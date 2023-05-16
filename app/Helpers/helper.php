@@ -80,24 +80,15 @@ function helpgent_render_media_file( string $file_path, bool $download = false )
 
     ignore_user_abort( true );
     set_time_limit( 0 ); // disable the time limit for this script
-    
-    $mime = wp_check_filetype( $file_path );
 
-    if ( false === $mime['type'] && function_exists( 'mime_content_type' ) ) {
-        $mime['type'] = mime_content_type( $file_path );
-    }
-    if ( $mime['type'] ) {
-        $mimetype = $mime['type'];
-    } else {
-        $mimetype = 'image/' . substr( $file_path, strrpos( $file_path, '.' ) + 1 );
-    }
+    $mimetype = helpgent_get_file_mime_type( $file_path );
 
     header( 'Content-Type: ' . $mimetype );
 
     // phpcs:ignore WordPress.Security.NonceVerification.Recommended, WordPress.Security.ValidatedSanitizedInput.MissingUnslash, WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
     $download = ( ! empty( $_GET['download'] ) ) ? $_GET['download'] : $download;
 
-    if ( $download || ( helpgent_is_file_image( $file_path ) == false && helpgent_is_mime_type_pdf( $mimetype ) == false && helpgent_is_mime_type_video( $mimetype ) == false && helpgent_is_mime_type_audio( $mimetype ) == false ) ) {
+    if ( $download || ! helpgent_is_the_file_printable( $file_path ) ) {
         $file_name = wp_basename( $file_path );
         header( "Content-Disposition: attachment; filename=$file_name" );
     }
@@ -146,21 +137,48 @@ function helpgent_render_media_file( string $file_path, bool $download = false )
     exit;
 }
 
-function helpgent_is_file_image( string $file_path ) : bool {
+function helpgent_is_the_file_printable( string $file_path ) : bool {
+    // Check if file is image
     preg_match( '/\.(gif|jpg|jpe?g|tiff|png|bmp|webp)$/i', $file_path, $matches );
-    return ! empty( $matches );
+
+    if ( ! empty( $matches ) ) {
+        return true;
+    }
+
+    $mime_type = helpgent_get_file_mime_type( $file_path );
+
+    // Check if file is PDF
+    if ( $mime_type == "application/pdf" ) {
+        return true;
+    }
+    
+    // Check if file is video
+    if ( strstr( $mime_type, "video/" ) ) {
+        return true;
+    }
+
+    // Check if file is audio
+    if ( strstr( $mime_type, "audio/" ) ) {
+        return true;
+    }
+
+    return false;
 }
 
-function helpgent_is_mime_type_pdf( string $mime_type ) : bool {
-    return $mime_type == "application/pdf";
-}
+function helpgent_get_file_mime_type( string $file_path ) : string {
+    $mime = wp_check_filetype( $file_path );
 
-function helpgent_is_mime_type_video( string $mime_type ) : bool {
-    return strstr( $mime_type, "video/" );
-}
+    if ( false === $mime['type'] && function_exists( 'mime_content_type' ) ) {
+        $mime['type'] = mime_content_type( $file_path );
+    }
 
-function helpgent_is_mime_type_audio( string $mime_type ) : bool {
-    return strstr( $mime_type, "audio/" );
+    if ( $mime['type'] ) {
+        $mime_type = $mime['type'];
+    } else {
+        $mime_type = 'image/' . substr( $file_path, strrpos( $file_path, '.' ) + 1 );
+    }
+
+    return $mime_type;
 }
 
 function helpgent_include_media_uploader_files() : void {
@@ -200,10 +218,6 @@ function helpgent_get_unique_key( string $prefix = '' ) {
 
 function helpgent_get_extension_from_path( string $path ) : string {
     return pathinfo( $path, PATHINFO_EXTENSION );
-}
-
-function helpgent_get_extension_from_mime_type( string $mime_type ) : string {
-    return preg_replace( '/.+\//', '', $mime_type );
 }
 
 function helpgent_get_server_name() {
