@@ -1,5 +1,4 @@
 /**
- *
  * @param { string } moduleName
  * @param { Object } module
  */
