@@ -9,5 +9,6 @@ Route::group(
         Route::resource( 'form', FormController::class );
         Route::get( 'submission', [SubmissionController::class, 'index'] );
         Route::delete( 'submission/{id}', [SubmissionController::class, 'delete'] );
+        Route::post( 'submission/favorite', [SubmissionController::class, 'favorite'] );
     }, ['admin']
 );

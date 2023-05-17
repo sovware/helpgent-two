@@ -31,6 +31,7 @@ class SubmissionRepository {
             ] 
         )
         ->where( 'form_id', $form_id )
+        ->order_by_desc( 'is_favorite' )
         ->order_by_desc( 'updated_at' )
         ->limit( $per_page )
         ->offset( $offset )
@@ -83,6 +84,20 @@ class SubmissionRepository {
         return Submission::query()->where( 'id', $id )->first();
     }
     
+    public function update_favorite_status( int $id, int $is_favorite ) {
+        $form_submission = $this->get_by_id( $id );
+
+        if ( ! $form_submission ) {
+            throw new Exception( esc_html__( 'Form submission not found', 'helpgent' ), 404 );
+        }
+
+        return Submission::query()->where( 'id', $id )->update(
+            [
+                'is_favorite' => $is_favorite
+            ]
+        );
+    }
+
     public function delete( int $id ) {
         $submission = $this->get_by_id( $id );
         if ( ! $submission ) {

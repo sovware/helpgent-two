@@ -87,4 +87,46 @@ class SubmissionController extends Controller {
             );
         }
     }
+
+    public function favorite( Validator $validator, WP_REST_Request $wp_rest_request ) {
+        $validator->validate(
+            [
+                'id'       => 'required|integer',
+                'favorite' => 'required|integer|accepted:0,1'
+            ]
+        );
+
+        if ( $validator->is_fail() ) {
+            return Response::send(
+                [
+                    'messages' => $validator->errors
+                ], 422
+            );
+        }
+
+        try {
+            $update = $this->submission_repository->update_favorite_status( $wp_rest_request->get_param( 'id' ), $wp_rest_request->get_param( 'favorite' ) );
+
+            if ( 0 === $update ) {
+                return Response::send(
+                    [
+                        'message' => esc_html__( 'Something Was Wrong!', 'helpgent' )
+                    ], 500
+                );
+            }
+
+            return Response::send(
+                [
+                    'message' => esc_html__( 'Favorite status updated successfully!', 'helpgent' )
+                ]
+            );
+        } catch ( Exception $exception ) {
+            return Response::send(
+                [
+                    'message' => $exception->getMessage()
+                ],
+                $exception->getCode()
+            );
+        }
+    }
 }
