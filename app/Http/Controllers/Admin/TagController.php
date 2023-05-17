@@ -41,7 +41,8 @@ class TagController extends Controller {
         }
 
         $tag_dto = new TagDTO(
-            $wp_rest_request->get_param( 'title' )
+            $wp_rest_request->get_param( 'title' ),
+            get_current_user_id()
         );
 
         try {
@@ -81,7 +82,8 @@ class TagController extends Controller {
         }
 
         $tag_dto = new TagDTO(
-            $wp_rest_request->get_param( 'title' )
+            $wp_rest_request->get_param( 'title' ),
+            get_current_user_id()
         );
         $tag_dto->set_id( $wp_rest_request->get_param( 'id' ) );
 

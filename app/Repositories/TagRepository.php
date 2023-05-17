@@ -9,7 +9,7 @@ use HelpGent\App\Utils\DateTime;
 
 class TagRepository {
     public function get() {
-        return Tag::query()->get();
+        return Tag::query()->with( 'user' )->get();
     }
 
     public function create( TagDTO $tag_dto ) {
@@ -22,7 +22,8 @@ class TagRepository {
 
         return Tag::query()->insert_get_id(
             [
-                'title' => $tag_dto->get_title()
+                'title'      => $tag_dto->get_title(),
+                'created_by' => $tag_dto->get_created_by()
             ]
         );
     }

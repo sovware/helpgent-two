@@ -12,12 +12,12 @@ class Conversation extends Model {
         return 'helpgent_conversations';
     }
 
-    public function created_by_user():BelongsToOne {
+    public function user():BelongsToOne {
         return $this->belongs_to_one( User::class, 'ID', 'created_by' )
             ->relation_where( 'is_guest', 0 );
     }
 
-    public function created_by_guest():BelongsToOne {
+    public function user_guest():BelongsToOne {
         return $this->belongs_to_one( Guest::class, 'id', 'created_by' )
         ->relation_where( 'is_guest', 1 );
     }

@@ -25,8 +25,8 @@ class SubmissionRepository {
                 'conversation' => function ( Builder $query ) {
                     $query->order_by_desc( 'helpgent_conversations.id' );
                 },
-                'conversation.created_by_user',
-                'conversation.created_by_guest'
+                'conversation.user',
+                'conversation.user_guest'
             ] 
         )->where( 'form_id', $form_id )->order_by_desc( 'is_favorite' );
 
