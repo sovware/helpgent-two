@@ -6,10 +6,15 @@ use Exception;
 use HelpGent\App\DTO\TagDTO;
 use HelpGent\App\Models\Tag;
 use HelpGent\App\Utils\DateTime;
+use HelpGent\WaxFramework\Database\Query\Builder;
 
 class TagRepository {
     public function get() {
-        return Tag::query()->with( 'user' )->get();
+        return Tag::query()->with(
+            'user', function ( Builder $query ) {
+                $query->select( 'users.ID', 'users.display_name' );
+            }, 
+        )->get();
     }
 
     public function create( TagDTO $tag_dto ) {

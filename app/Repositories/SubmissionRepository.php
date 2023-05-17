@@ -22,11 +22,15 @@ class SubmissionRepository {
 
         $query = Submission::query()->with(
             [
-                'conversation' => function ( Builder $query ) {
+                'conversation'            => function ( Builder $query ) {
                     $query->order_by_desc( 'helpgent_conversations.id' );
                 },
-                'conversation.user',
-                'conversation.user_guest'
+                'conversation.user'       => function ( Builder $query ) {
+                    $query->select( 'users.ID', 'users.display_name' );
+                },
+                'conversation.user_guest' => function ( Builder $query ) {
+                    $query->select( 'helpgent_guest_users.id', 'helpgent_guest_users.name' );
+                },
             ] 
         )->where( 'form_id', $form_id )->order_by_desc( 'is_favorite' );
 
