@@ -19,7 +19,7 @@ class SubmissionRepository {
         }
 
         $offset = ( $page - 1 ) * $per_page;
-        
+
         $query = Submission::query()->with(
             [
                 'conversation' => function ( Builder $query ) {
