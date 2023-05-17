@@ -25,7 +25,8 @@ class SubmissionController extends Controller {
             [
                 'form_id'  => 'required|numeric',
                 'per_page' => 'numeric',
-                'page'     => 'numeric'
+                'page'     => 'numeric',
+                'order_by' => 'required|string|accepted:read,unread,latest,oldest'
             ]
         );
 
@@ -38,10 +39,11 @@ class SubmissionController extends Controller {
         }
         return Response::send(
             [
-                'submission' => $this->submission_repository->get( 
+                'submissions' => $this->submission_repository->get( 
                     $wp_rest_request->get_param( 'form_id' ), 
                     intval( $wp_rest_request->get_param( 'per_page' ) ),
-                    intval( $wp_rest_request->get_param( 'page' ) )
+                    intval( $wp_rest_request->get_param( 'page' ) ),
+                    $wp_rest_request->get_param( 'order_by' )
                 )
             ]
         );

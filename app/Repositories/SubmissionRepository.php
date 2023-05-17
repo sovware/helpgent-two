@@ -9,7 +9,7 @@ use HelpGent\App\Utils\DateTime;
 use HelpGent\WaxFramework\Database\Query\Builder;
 
 class SubmissionRepository {
-    public function get( int $form_id, int $per_page, int $page ) {
+    public function get( int $form_id, int $per_page, int $page, string $order_by ) {
         if ( $per_page > 100 || $per_page < 10 ) {
             $per_page = 100;
         }
@@ -20,8 +20,7 @@ class SubmissionRepository {
 
         $offset = ( $page - 1 ) * $per_page;
         
-        return Submission::query()
-        ->with(
+        $query = Submission::query()->with(
             [
                 'conversation' => function ( Builder $query ) {
                     $query->order_by_desc( 'helpgent_conversations.id' );
@@ -29,13 +28,24 @@ class SubmissionRepository {
                 'conversation.created_by_user',
                 'conversation.created_by_guest'
             ] 
-        )
-        ->where( 'form_id', $form_id )
-        ->order_by_desc( 'is_favorite' )
-        ->order_by_desc( 'updated_at' )
-        ->limit( $per_page )
-        ->offset( $offset )
-        ->get();
+        )->where( 'form_id', $form_id )->order_by_desc( 'is_favorite' );
+
+        switch ( $order_by ) {
+            case 'latest':
+                $query->order_by_desc( 'updated_at' );
+                break;
+            case 'oldest':
+                $query->order_by( 'updated_at' );
+                break;
+            case 'read':
+                $query->order_by_raw( "(CASE WHEN status = 'read' THEN 0 WHEN status = 'unread' THEN 1 END)" );
+                break;
+            case 'unread':
+                $query->order_by_raw( "(CASE WHEN status = 'unread' THEN 0 WHEN status = 'read' THEN 1 END)" );
+                break;
+        }
+
+        return $query->limit( $per_page )->offset( $offset )->get();
     }
 
     public function total( int $form_id ) {
