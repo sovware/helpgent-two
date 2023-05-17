@@ -3,7 +3,7 @@
 defined( 'ABSPATH' ) || exit;
 
 use HelpGent\App\Http\Middleware\EnsureIsUserAdmin;
-use HelpGent\App\Providers\MenuServiceProvider;
+use HelpGent\App\Providers\Admin\MenuServiceProvider;
 use HelpGent\Database\Migrations\CreateDB;
 
 return [
