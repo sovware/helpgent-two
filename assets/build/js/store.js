@@ -13,7 +13,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ registerModule)
 /* harmony export */ });
 /**
- *
  * @param { string } moduleName
  * @param { Object } module
  */
