@@ -1,3 +1,5 @@
+import { Button } from '@wordpress/components';
+
 export default function Forms() {
-	return <h1>Hello Forms</h1>;
+	return <Button>Form Editor</Button>;
 }
