@@ -9,7 +9,7 @@ use HelpGent\App\Utils\DateTime;
 use HelpGent\WaxFramework\Database\Query\Builder;
 
 class SubmissionRepository {
-    public function get( int $form_id, int $per_page, int $page ) {
+    public function get( int $form_id, int $per_page, int $page, string $order_by ) {
         if ( $per_page > 100 || $per_page < 10 ) {
             $per_page = 100;
         }
@@ -19,22 +19,37 @@ class SubmissionRepository {
         }
 
         $offset = ( $page - 1 ) * $per_page;
-        
-        return Submission::query()
-        ->with(
+
+        $query = Submission::query()->with(
             [
-                'conversation' => function ( Builder $query ) {
+                'conversation'            => function ( Builder $query ) {
                     $query->order_by_desc( 'helpgent_conversations.id' );
                 },
-                'conversation.created_by_user',
-                'conversation.created_by_guest'
+                'conversation.user'       => function ( Builder $query ) {
+                    $query->select( 'users.ID', 'users.display_name' );
+                },
+                'conversation.user_guest' => function ( Builder $query ) {
+                    $query->select( 'helpgent_guest_users.id', 'helpgent_guest_users.name' );
+                },
             ] 
-        )
-        ->where( 'form_id', $form_id )
-        ->order_by_desc( 'updated_at' )
-        ->limit( $per_page )
-        ->offset( $offset )
-        ->get();
+        )->where( 'form_id', $form_id )->order_by_desc( 'is_favorite' );
+
+        switch ( $order_by ) {
+            case 'latest':
+                $query->order_by_desc( 'updated_at' );
+                break;
+            case 'oldest':
+                $query->order_by( 'updated_at' );
+                break;
+            case 'read':
+                $query->order_by_raw( "(CASE WHEN status = 'read' THEN 0 WHEN status = 'unread' THEN 1 END)" );
+                break;
+            case 'unread':
+                $query->order_by_raw( "(CASE WHEN status = 'unread' THEN 0 WHEN status = 'read' THEN 1 END)" );
+                break;
+        }
+
+        return $query->limit( $per_page )->offset( $offset )->get();
     }
 
     public function total( int $form_id ) {
@@ -83,6 +98,20 @@ class SubmissionRepository {
         return Submission::query()->where( 'id', $id )->first();
     }
     
+    public function update_favorite_status( int $id, int $is_favorite ) {
+        $form_submission = $this->get_by_id( $id );
+
+        if ( ! $form_submission ) {
+            throw new Exception( esc_html__( 'Form submission not found', 'helpgent' ), 404 );
+        }
+
+        return Submission::query()->where( 'id', $id )->update(
+            [
+                'is_favorite' => $is_favorite
+            ]
+        );
+    }
+
     public function delete( int $id ) {
         $submission = $this->get_by_id( $id );
         if ( ! $submission ) {

@@ -25,7 +25,8 @@ class SubmissionController extends Controller {
             [
                 'form_id'  => 'required|numeric',
                 'per_page' => 'numeric',
-                'page'     => 'numeric'
+                'page'     => 'numeric',
+                'order_by' => 'required|string|accepted:read,unread,latest,oldest'
             ]
         );
 
@@ -38,10 +39,11 @@ class SubmissionController extends Controller {
         }
         return Response::send(
             [
-                'submission' => $this->submission_repository->get( 
+                'submissions' => $this->submission_repository->get( 
                     $wp_rest_request->get_param( 'form_id' ), 
                     intval( $wp_rest_request->get_param( 'per_page' ) ),
-                    intval( $wp_rest_request->get_param( 'page' ) )
+                    intval( $wp_rest_request->get_param( 'page' ) ),
+                    $wp_rest_request->get_param( 'order_by' )
                 )
             ]
         );
@@ -76,6 +78,48 @@ class SubmissionController extends Controller {
             return Response::send(
                 [
                     'message' => esc_html__( 'Submission Deleted Successfully!', 'helpgent' )
+                ]
+            );
+        } catch ( Exception $exception ) {
+            return Response::send(
+                [
+                    'message' => $exception->getMessage()
+                ],
+                $exception->getCode()
+            );
+        }
+    }
+
+    public function favorite( Validator $validator, WP_REST_Request $wp_rest_request ) {
+        $validator->validate(
+            [
+                'id'       => 'required|integer',
+                'favorite' => 'required|integer|accepted:0,1'
+            ]
+        );
+
+        if ( $validator->is_fail() ) {
+            return Response::send(
+                [
+                    'messages' => $validator->errors
+                ], 422
+            );
+        }
+
+        try {
+            $update = $this->submission_repository->update_favorite_status( $wp_rest_request->get_param( 'id' ), $wp_rest_request->get_param( 'favorite' ) );
+
+            if ( 0 === $update ) {
+                return Response::send(
+                    [
+                        'message' => esc_html__( 'Something Was Wrong!', 'helpgent' )
+                    ], 500
+                );
+            }
+
+            return Response::send(
+                [
+                    'message' => esc_html__( 'Favorite status updated successfully!', 'helpgent' )
                 ]
             );
         } catch ( Exception $exception ) {

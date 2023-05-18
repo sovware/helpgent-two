@@ -1,6 +1,6 @@
 <?php
 
-namespace HelpGent\App\Providers;
+namespace HelpGent\App\Providers\Admin;
 
 use HelpGent\WaxFramework\Contracts\Provider;
 use HelpGent\WaxFramework\View\View;
