@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: HelpGent 2.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/helpgent-two\n"
-"POT-Creation-Date: 2023-05-11 08:50:35+00:00\n"
+"POT-Creation-Date: 2023-05-18 09:28:24+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,6 +19,9 @@ msgstr ""
 
 #: app/Http/Controllers/Admin/FormController.php:96
 #: app/Http/Controllers/Admin/FormController.php:137
+#: app/Http/Controllers/Admin/SubmissionController.php:77
+#: app/Http/Controllers/Admin/SubmissionController.php:119
+#: app/Http/Controllers/Admin/TagController.php:130
 msgid "Something Was Wrong!"
 msgstr ""
 
@@ -30,8 +33,56 @@ msgstr ""
 msgid "Form Deleted Successfully!"
 msgstr ""
 
-#: app/Http/Controllers/SubmissionController.php:56
+#: app/Http/Controllers/Admin/SubmissionController.php:84
+msgid "Submission Deleted Successfully!"
+msgstr ""
+
+#: app/Http/Controllers/Admin/SubmissionController.php:126
+msgid "Favorite status updated successfully!"
+msgstr ""
+
+#: app/Http/Controllers/Admin/SubmissionController.php:163
+msgid "Submission tag updated successfully!"
+msgstr ""
+
+#: app/Http/Controllers/Admin/TagController.php:54
+msgid "Tag Created Successfully!"
+msgstr ""
+
+#: app/Http/Controllers/Admin/TagController.php:95
+msgid "Tag Updated Successfully!"
+msgstr ""
+
+#: app/Http/Controllers/Admin/TagController.php:137
+msgid "Tag Deleted Successfully!"
+msgstr ""
+
+#: app/Http/Controllers/SubmissionController.php:48
 msgid "Submission Created Successfully!"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "HelpGent"
+msgstr ""
+
+#: app/Providers/Admin/MenuServiceProvider.php:31
+msgid "Overview"
+msgstr ""
+
+#: app/Providers/Admin/MenuServiceProvider.php:32
+msgid "Analytics"
+msgstr ""
+
+#: app/Providers/Admin/MenuServiceProvider.php:33
+msgid "Forms"
+msgstr ""
+
+#: app/Providers/Admin/MenuServiceProvider.php:34
+msgid "Submissions"
+msgstr ""
+
+#: app/Providers/Admin/MenuServiceProvider.php:35
+msgid "Settings"
 msgstr ""
 
 #: app/Repositories/FormRepository.php:30
@@ -39,12 +90,23 @@ msgstr ""
 msgid "Form not found"
 msgstr ""
 
-#: app/Repositories/SubmissionRepository.php:33
+#: app/Repositories/SubmissionRepository.php:79
+#: app/Repositories/SubmissionRepository.php:105
+#: app/Repositories/SubmissionTagRepository.php:21
 msgid "Form submission not found"
 msgstr ""
 
-#. Plugin Name of the plugin/theme
-msgid "HelpGent"
+#: app/Repositories/SubmissionRepository.php:118
+msgid "Submission not found"
+msgstr ""
+
+#: app/Repositories/SubmissionTagRepository.php:27
+#: app/Repositories/TagRepository.php:41 app/Repositories/TagRepository.php:62
+msgid "Tag not found"
+msgstr ""
+
+#: app/Repositories/TagRepository.php:25 app/Repositories/TagRepository.php:47
+msgid "%s tag is already exists"
 msgstr ""
 
 #. Description of the plugin/theme
