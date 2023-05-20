@@ -55,7 +55,7 @@ function helpgent_upload_dir( string $file = '' ) : string {
  * @param string $file
  * @return string Path
  */
-function helpgent_get_upload_url( string $file = '' ) : string {
+function helpgent_upload_url( string $file = '' ) : string {
     return \rtrim( WP_CONTENT_URL . '/uploads/helpgent/' . \ltrim( $file, '/' ), '/' );
 }
 

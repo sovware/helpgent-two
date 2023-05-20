@@ -35,7 +35,7 @@ class Local implements MediaDriver {
 
     public function change_upload_dir( array $uploads ) : array {
         $uploads['path']   = helpgent_upload_dir();
-        $uploads['url']    = helpgent_get_upload_url();
+        $uploads['url']    = helpgent_upload_url();
         $uploads['subdir'] = '';
 
         return $uploads;
