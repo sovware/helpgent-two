@@ -20,14 +20,6 @@ class SubmissionController extends Controller {
         $this->form_repository       = $form_repository;
     }
 
-    public function index() {
-        return Response::send(
-            [
-                'submission' => $this->submission_repository->get()
-            ]
-        );
-    }
-
     public function store( Validator $validator, WP_REST_Request $wp_rest_request ) {
         $validator->validate(
             [

@@ -31,11 +31,11 @@ function helpgent_singleton( string $class ) {
 }
 
 function helpgent_url( string $url = '' ) {
-    return helpgent()->get_url( $url );
+    return helpgent()::get_url( $url );
 }
 
 function helpgent_dir( string $dir = '' ) {
-    return helpgent()->get_dir( $dir );
+    return helpgent()::get_dir( $dir );
 }
 
 function helpgent_render( string $content ) {
