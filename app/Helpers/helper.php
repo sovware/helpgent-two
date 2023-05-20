@@ -188,7 +188,7 @@ function helpgent_include_media_uploader_files() : void {
 }
 
 function helpgent_prepare_upload_directory() : void {
-    if ( file_exists( helpgent_upload_dir() ) ) {
+    if ( is_dir( helpgent_upload_dir() ) ) {
         return;
     }
 
