@@ -200,16 +200,6 @@ function helpgent_create_upload_directory() : void {
 
     // Create Upload Directory
     wp_mkdir_p( $upload_dir_path );
-
-    // Create htaccess file
-    $fh = fopen( $upload_dir_path . "/.htaccess", "w" );
-
-    if ( $fh == false ) {
-        return;
-    }
-
-    fputs( $fh, 'Deny from all' );
-    fclose( $fh );
 }
 
 function helpgent_get_unique_key( string $prefix = '' ) {
