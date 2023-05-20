@@ -48,7 +48,7 @@ function helpgent_render( string $content ) {
  * @return string Path
  */
 function helpgent_upload_dir( string $file = '' ) : string {
-    return \rtrim( WP_CONTENT_DIR . '/uploads/helpgent/' . \ltrim( $file, '/' ), '/' );
+    return WP_CONTENT_DIR . '/uploads/helpgent/' . \ltrim( $file, '/' );
 }
 
 /**
@@ -56,7 +56,7 @@ function helpgent_upload_dir( string $file = '' ) : string {
  * @return string Path
  */
 function helpgent_upload_url( string $file = '' ) : string {
-    return \rtrim( WP_CONTENT_URL . '/uploads/helpgent/' . \ltrim( $file, '/' ), '/' );
+    return WP_CONTENT_URL . '/uploads/helpgent/' . \ltrim( $file, '/' );
 }
 
 /**
