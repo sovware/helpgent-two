@@ -7,7 +7,6 @@ use HelpGent\WaxFramework\Contracts\Provider;
 use HelpGent\App\Providers\MediaProtectionProvider;
 
 class AdminMediaProtectionProvider implements Provider {
-    
     public function boot() {
         add_action( 'admin_init', [ $this, 'close_nginx_setup_notice' ] );
         add_action( 'admin_init', [ $this, 'setup_admin_notice' ] );
@@ -60,5 +59,4 @@ class AdminMediaProtectionProvider implements Provider {
 
         View::render( 'admin/notice/nginx-setup-notice', $data );
     }
-
 }
