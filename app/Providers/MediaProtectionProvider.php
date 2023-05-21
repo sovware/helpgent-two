@@ -74,7 +74,7 @@ class MediaProtectionProvider implements Provider {
 
     public static function get_upload_dir_pattern() : string {
         $upload_dir = str_replace( trailingslashit( site_url() ), '', helpgent_upload_url() );
-        return $upload_dir . "\/([A-Za-z0-9_@.\/&+-]+)+\.([A-Za-z0-9_@.\/&+-]+)$";
+        return $upload_dir . "([A-Za-z0-9_@.\/&+-]+)+\.([A-Za-z0-9_@.\/&+-]+)$";
     }
 
     public static function get_apache_rewrite_rules() : string {

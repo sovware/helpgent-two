@@ -1,12 +1,12 @@
 <?php
 
-namespace HelpGent\App\Providers;
+namespace HelpGent\App\Providers\Admin;
 
 use HelpGent\WaxFramework\View\View;
 use HelpGent\WaxFramework\Contracts\Provider;
-use HelpGent\App\Providers\MediaProtectionProvider;
+use HelpGent\App\Providers\MediaProtectionProvider as PublicMediaProtectionProvider;
 
-class AdminMediaProtectionProvider implements Provider {
+class MediaProtectionProvider implements Provider {
     public function boot() {
         add_action( 'admin_init', [ $this, 'close_nginx_setup_notice' ] );
         add_action( 'admin_init', [ $this, 'setup_admin_notice' ] );
@@ -36,7 +36,7 @@ class AdminMediaProtectionProvider implements Provider {
     }
 
     public function show_nginx_setup_notice() {
-        $rules        = MediaProtectionProvider::get_nginx_rewrite_rules();
+        $rules        = PublicMediaProtectionProvider::get_nginx_rewrite_rules();
         $server_block = "server {
     location / {
         ...
