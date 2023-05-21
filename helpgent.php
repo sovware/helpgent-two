@@ -2,6 +2,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
+use HelpGent\App\Providers\MediaProtectionProvider;
 use HelpGent\WaxFramework\App;
 
 /**
@@ -33,6 +34,22 @@ final class HelpGent {
     }
 
     public function load() {
+        // Run Activation Tasks
+        register_activation_hook(
+            __FILE__, function() {
+                new HelpGent\App\Setup\Activation();
+            } 
+        );
+
+        // Run Deactivation Tasks
+        register_deactivation_hook(
+            __FILE__, function() {
+                new HelpGent\App\Setup\Deactivation();
+            } 
+        );
+
+        add_filter( 'mod_rewrite_rules', [ MediaProtectionProvider::class, 'htaccess_contents' ] );
+
         $application = App::instance();
 
         /**
@@ -53,4 +70,3 @@ final class HelpGent {
 }
 
 HelpGent::instance()->load();
-
