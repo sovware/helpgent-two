@@ -64,35 +64,27 @@ class AttachmentRepository {
      * @return AttachmentFileDTO
      */
     public function upload( array $file, string $driver ) : AttachmentFileDTO {
-        $driver_class = helpgent_config( "media-driver.{$driver}" );
-
-        if ( ! class_exists( $driver_class ) ) {
-            throw new Exception( "Please use a valid media driver", 500 );
-        }
-
-        $driver_instance = helpgent_singleton( (string) $driver_class );
-
-        if ( ! $driver_instance instanceof MediaDriver ) {
-            throw new Exception( "Please use a valid media driver", 500 );
-        }
-
+        $driver_instance = $this->get_media_driver_instance( $driver );
         return $driver_instance->upload( $file );
     }
 
     public function delete_file( AttachmentFileDTO $attachment, string $driver ) : bool {
-        $driver_class = helpgent_config( "media-driver.{$driver}" );
-    
-        if ( ! class_exists( $driver_class ) ) {
-            throw new Exception( "Please use a valid media driver", 500 );
-        }
-
-        $driver_instance = helpgent_singleton( (string) $driver_class );
-        
-        if ( ! $driver_instance instanceof MediaDriver ) {
-            throw new Exception( "Please use a valid media driver", 500 );
-        }
-
+        $driver_instance = $this->get_media_driver_instance( $driver );
         return $driver_instance->delete( $attachment );
+    }
+
+    /**
+     * @throws Exception Please use a valid media driver
+     * @return MediaDriver
+     */
+    protected function get_media_driver_instance( string $driver ) : MediaDriver {
+        $driver_class = helpgent_config( "media-driver.{$driver}" );
+
+        if ( ! class_exists( $driver_class ) ) {
+            throw new Exception( __( 'Please use a valid media driver', 'helpgent' ), 500 );
+        }
+
+        return helpgent_singleton( ( string ) $driver_class );
     }
 
     public function get_by_id( int $id ) {
