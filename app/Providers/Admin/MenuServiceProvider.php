@@ -7,6 +7,8 @@ use HelpGent\WaxFramework\View\View;
 
 class MenuServiceProvider implements Provider
 {
+    public $pro_url = 'https://wpwax.com/helpgent';
+
     public function boot() {
         add_action( 'admin_menu', [$this, 'action_admin_menu'] );
         add_action( 'admin_head', [ $this, 'action_admin_head' ] );
@@ -16,8 +18,17 @@ class MenuServiceProvider implements Provider
      * Loading menu activation js code only helpgent admin page
      */
     public function action_admin_head() : void {
+        ?>
+        <style>
+            .wp-submenu-wrap a[href="<?php helpgent_render( $this->pro_url )?>"] {
+                color: #f06060 !important; 
+                font-weight: bold;
+            }
+        </style>
+
+        <?php
         if ( 'helpgent_page_helpgent' === get_current_screen()->id ) {
-            View::render( 'admin/menu-js' );
+            View::render( 'admin/menu-js', ['pro_url' => $this->pro_url] );
         }
     }
 
@@ -33,6 +44,7 @@ class MenuServiceProvider implements Provider
         add_submenu_page( 'helpgent-menu', esc_html__( 'Forms', 'helpgent' ), esc_html__( 'Forms', 'helpgent' ), 'manage_options', $page_url . '#/forms' );
         add_submenu_page( 'helpgent-menu', esc_html__( 'Submissions', 'helpgent' ), esc_html__( 'Submissions', 'helpgent' ), 'manage_options', $page_url . '#/submissions' );
         add_submenu_page( 'helpgent-menu', esc_html__( 'Settings', 'helpgent' ), esc_html__( 'Settings', 'helpgent' ), 'manage_options', $page_url . '#/settings' );
+        add_submenu_page( 'helpgent-menu', esc_html__( 'Go Pro', 'helpgent' ), esc_html__( 'Go Pro', 'helpgent' ), 'manage_options', $this->pro_url );
         remove_submenu_page( 'helpgent-menu', 'helpgent-menu' );
     }
 
