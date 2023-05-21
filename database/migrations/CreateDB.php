@@ -127,6 +127,7 @@ class CreateDB implements Migration {
         CREATE TABLE {$db_prefix}tags (
             `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
             `title` VARCHAR(255) NULL,
+            `created_by` BIGINT UNSIGNED NOT NULL,
             `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
             `updated_at` TIMESTAMP NULL,
             PRIMARY KEY (`id`)
@@ -138,8 +139,7 @@ class CreateDB implements Migration {
         CREATE TABLE {$db_prefix}submission_tag (
             `tag_id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
             `created_by` BIGINT UNSIGNED NOT NULL,
-            `submission_id` BIGINT UNSIGNED NOT NULL,
-            PRIMARY KEY (`tag_id`)
+            `submission_id` BIGINT UNSIGNED NOT NULL
         ) {$charset_collate};
 
         -- -----------------------------------------------------

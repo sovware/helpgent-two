@@ -15,7 +15,7 @@ class SubmissionTagRepository {
         $this->submission_repository = $submission_repository;
     }
 
-    public function add_or_remove( int $submission_id, int $tag_id ) {
+    public function add_or_remove( int $submission_id, int $tag_id, int $created_by ) {
         $submission = $this->submission_repository->get_by_id( $submission_id );
 
         if ( ! $submission ) {
@@ -34,7 +34,8 @@ class SubmissionTagRepository {
             SubmissionTag::query()->insert(
                 [
                     'tag_id'        => $tag_id,
-                    'submission_id' => $submission_id
+                    'submission_id' => $submission_id,
+                    'created_by'    => $created_by
                 ]
             );
         }
