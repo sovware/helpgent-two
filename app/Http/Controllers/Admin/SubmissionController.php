@@ -30,7 +30,8 @@ class SubmissionController extends Controller {
                 'form_id'  => 'required|numeric',
                 'per_page' => 'numeric',
                 'page'     => 'numeric',
-                'order_by' => 'required|string|accepted:read,unread,latest,oldest'
+                'order_by' => 'required|string|accepted:read,unread,latest,oldest',
+                'tag_ids'  => 'array'
             ]
         );
 
@@ -47,7 +48,8 @@ class SubmissionController extends Controller {
                     $wp_rest_request->get_param( 'form_id' ), 
                     intval( $wp_rest_request->get_param( 'per_page' ) ),
                     intval( $wp_rest_request->get_param( 'page' ) ),
-                    $wp_rest_request->get_param( 'order_by' )
+                    $wp_rest_request->get_param( 'order_by' ),
+                    $wp_rest_request->get_param( 'tag_ids' )
                 )
             ]
         );
@@ -155,7 +157,8 @@ class SubmissionController extends Controller {
         try {
             $this->submission_tag_repository->add_or_remove( 
                 $wp_rest_request->get_param( 'submission_id' ), 
-                $wp_rest_request->get_param( 'tag_id' )
+                $wp_rest_request->get_param( 'tag_id' ),
+                get_current_user_id()
             );
 
             return Response::send(
