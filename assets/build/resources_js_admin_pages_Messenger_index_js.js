@@ -1,10 +1,10 @@
 "use strict";
-(globalThis["webpackChunkhelpgent"] = globalThis["webpackChunkhelpgent"] || []).push([["resources_js_containers_Messenger_index_js"],{
+(globalThis["webpackChunkhelpgent"] = globalThis["webpackChunkhelpgent"] || []).push([["resources_js_admin_pages_Messenger_index_js"],{
 
-/***/ "./resources/js/containers/Messenger/index.js":
-/*!****************************************************!*\
-  !*** ./resources/js/containers/Messenger/index.js ***!
-  \****************************************************/
+/***/ "./resources/js/admin/pages/Messenger/index.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/admin/pages/Messenger/index.js ***!
+  \*****************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -21,4 +21,4 @@ function Messenger() {
 /***/ })
 
 }]);
-//# sourceMappingURL=resources_js_containers_Messenger_index_js.js.map
+//# sourceMappingURL=resources_js_admin_pages_Messenger_index_js.js.map

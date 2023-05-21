@@ -22,8 +22,8 @@ function camelCaseDash( string ) {
 module.exports = {
 	...defaultConfig,
 	entry: {
-		'js/app': './resources/js/app.js',
-		'js/store': './resources/js/store',
+		'js/index': './resources/js/admin/index.js',
+		'js/queryStore': './resources/js/queryStore',
 		// 'css/app': './resources/sass/app.scss',
 	},
 	output: {
@@ -58,7 +58,10 @@ module.exports = {
 	],
 	resolve: {
 		alias: {
-			'@helpgent/store': path.resolve( __dirname, 'resources/js/store' ),
+			'@helpgent/queryStore': path.resolve(
+				__dirname,
+				'resources/js/queryStore'
+			),
 		},
 	},
 	devServer: {
