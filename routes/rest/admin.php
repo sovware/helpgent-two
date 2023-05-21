@@ -12,5 +12,6 @@ Route::group(
         Route::get( 'submission', [SubmissionController::class, 'index'] );
         Route::delete( 'submission/{id}', [SubmissionController::class, 'delete'] );
         Route::post( 'submission/favorite', [SubmissionController::class, 'favorite'] );
+        Route::post( 'submission/setup/tag', [SubmissionController::class, 'setup_tag'] );
     }, ['admin']
 );

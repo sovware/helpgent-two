@@ -6,6 +6,7 @@ use Exception;
 use HelpGent\App\Http\Controllers\Controller;
 use HelpGent\App\Repositories\FormRepository;
 use HelpGent\App\Repositories\SubmissionRepository;
+use HelpGent\App\Repositories\SubmissionTagRepository;
 use HelpGent\WaxFramework\RequestValidator\Validator;
 use HelpGent\WaxFramework\Routing\Response;
 use WP_REST_Request;
@@ -15,9 +16,12 @@ class SubmissionController extends Controller {
 
     public FormRepository $form_repository;
 
-    public function __construct( SubmissionRepository $submission_repository, FormRepository $form_repository ) {
-        $this->submission_repository = $submission_repository;
-        $this->form_repository       = $form_repository;
+    public SubmissionTagRepository $submission_tag_repository;
+
+    public function __construct( SubmissionRepository $submission_repository, FormRepository $form_repository, SubmissionTagRepository $submission_tag_repository ) {
+        $this->submission_repository     = $submission_repository;
+        $this->form_repository           = $form_repository;
+        $this->submission_tag_repository = $submission_tag_repository;
     }
     
     public function index( Validator $validator, WP_REST_Request $wp_rest_request ) {
@@ -26,7 +30,8 @@ class SubmissionController extends Controller {
                 'form_id'  => 'required|numeric',
                 'per_page' => 'numeric',
                 'page'     => 'numeric',
-                'order_by' => 'required|string|accepted:read,unread,latest,oldest'
+                'order_by' => 'required|string|accepted:read,unread,latest,oldest',
+                'tag_ids'  => 'array'
             ]
         );
 
@@ -43,7 +48,8 @@ class SubmissionController extends Controller {
                     $wp_rest_request->get_param( 'form_id' ), 
                     intval( $wp_rest_request->get_param( 'per_page' ) ),
                     intval( $wp_rest_request->get_param( 'page' ) ),
-                    $wp_rest_request->get_param( 'order_by' )
+                    $wp_rest_request->get_param( 'order_by' ),
+                    $wp_rest_request->get_param( 'tag_ids' )
                 )
             ]
         );
@@ -122,6 +128,45 @@ class SubmissionController extends Controller {
                     'message' => esc_html__( 'Favorite status updated successfully!', 'helpgent' )
                 ]
             );
+        } catch ( Exception $exception ) {
+            return Response::send(
+                [
+                    'message' => $exception->getMessage()
+                ],
+                $exception->getCode()
+            );
+        }
+    }
+
+    public function setup_tag( Validator $validator, WP_REST_Request $wp_rest_request ) {
+        $validator->validate(
+            [
+                'tag_id'        => 'required|integer',
+                'submission_id' => 'required|integer'
+            ]
+        );
+
+        if ( $validator->is_fail() ) {
+            return Response::send(
+                [
+                    'messages' => $validator->errors
+                ], 422
+            );
+        }
+
+        try {
+            $this->submission_tag_repository->add_or_remove( 
+                $wp_rest_request->get_param( 'submission_id' ), 
+                $wp_rest_request->get_param( 'tag_id' ),
+                get_current_user_id()
+            );
+
+            return Response::send(
+                [
+                    'message' => esc_html__( "Submission tag updated successfully!", 'helpgent' )
+                ]
+            );
+
         } catch ( Exception $exception ) {
             return Response::send(
                 [

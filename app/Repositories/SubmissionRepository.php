@@ -9,7 +9,7 @@ use HelpGent\App\Utils\DateTime;
 use HelpGent\WaxFramework\Database\Query\Builder;
 
 class SubmissionRepository {
-    public function get( int $form_id, int $per_page, int $page, string $order_by ) {
+    public function get( int $form_id, int $per_page, int $page, string $order_by, $tag_ids ) {
         if ( $per_page > 100 || $per_page < 10 ) {
             $per_page = 100;
         }
@@ -22,6 +22,13 @@ class SubmissionRepository {
 
         $query = Submission::query()->with(
             [
+                'tags',
+                'user'                    => function ( Builder $query ) {
+                    $query->select( 'users.ID', 'users.display_name' );
+                },
+                'user_guest'              => function ( Builder $query ) {
+                    $query->select( 'helpgent_guest_users.id', 'helpgent_guest_users.name' );
+                },
                 'conversation'            => function ( Builder $query ) {
                     $query->order_by_desc( 'helpgent_conversations.id' );
                 },
@@ -30,9 +37,23 @@ class SubmissionRepository {
                 },
                 'conversation.user_guest' => function ( Builder $query ) {
                     $query->select( 'helpgent_guest_users.id', 'helpgent_guest_users.name' );
-                },
+                }
             ] 
         )->where( 'form_id', $form_id )->order_by_desc( 'is_favorite' );
+
+        // If find submissions of certain tags
+        if ( ! empty( $tag_ids ) && is_array( $tag_ids ) ) {
+            $tag_ids = map_deep( $tag_ids, 'intval' );
+            $query->where_exists(
+                function( Builder $query ) use( $tag_ids ) {
+                    $query->select( 1 )
+                        ->from( 'helpgent_submission_tag' )
+                        ->where_column( 'helpgent_submission_tag.submission_id', 'helpgent_submissions.id' )
+                        ->where_in( 'helpgent_submission_tag.tag_id', $tag_ids )
+                        ->limit( 1 );
+                }
+            );
+        }
 
         switch ( $order_by ) {
             case 'latest':
