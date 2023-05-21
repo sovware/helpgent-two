@@ -39,7 +39,7 @@ class MediaProtectionProvider implements Provider {
         $rules        = PublicMediaProtectionProvider::get_nginx_rewrite_rules();
         $server_block = "server {
     location / {
-        ...
+        # ...
     }
 
     # Put our rewrite rules here.
