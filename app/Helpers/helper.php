@@ -192,14 +192,8 @@ function helpgent_prepare_upload_directory() : void {
         return;
     }
 
-    helpgent_create_upload_directory();
-}
-
-function helpgent_create_upload_directory() : void {
-    $upload_dir_path = helpgent_upload_dir();
-
     // Create Upload Directory
-    wp_mkdir_p( $upload_dir_path );
+    wp_mkdir_p( helpgent_upload_dir() );
 }
 
 function helpgent_get_unique_key( string $prefix = '' ) {
