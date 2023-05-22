@@ -12,3 +12,4 @@ phpcs-report.xml
 /assets/**/*.hot-update.*
 /assets/**/*.js.map
 /assets/css/*.js
+__*/

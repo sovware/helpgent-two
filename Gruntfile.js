@@ -5,57 +5,51 @@ module.exports = ( grunt ) => {
 		name: 'helpgent',
 		text_domain: 'helpgent',
 		srcDir: './',
-		distDir: `../dist/helpgent/`,
+		distDir: `./__build/helpgent/`,
 		version: '2.0.0',
 	};
 
 	let buildIgnoreFiles = [
-		'**/Gruntfile.js',
-		'**/.gitignore',
-		'build-package/**',
-		'node_modules/**',
-		'resources/js/**',
-		'vendor/vendor-src/bin/**',
-		'vendor-src/**',
-		'**/dev-*/**',
-		'**/*-test/**',
-		'**/*-beta/**',
-		'**/scss/**',
-		'**/sass/**',
-		'**/scoper.inc.php',
-		'**/.*',
-		'**/build/*.txt',
-		'**/*.map',
-		'**/*.config',
-		'**/*.config.js',
-		'**/package.json',
-		'**/package-lock.json',
-		'**/tsconfig.json',
-		'**/mix-manifest.json',
-		'**/phpcs.xml',
-		'**/composer.json',
-		'**/composer.lock',
-		'**/*.md',
-		'**/*.mix.js',
-		'**/none',
-		'**/artisan',
-		'**/phpcs-report.xml',
-		'**/LICENSE',
-		'**/Installable',
+		'**/tests/**',
+	];
+
+    let buildFiles = [
+		'app/**',
+		'assets/**',
+		'config/**',
+		'database/**',
+		'enqueues/**',
+		'languages/',
+		'resources/views/**',
+		'routes/**',
+		'vendor/vendor-src/**/*.php',
+		'helpgent.php'
 	];
 
 	buildIgnoreFiles = buildIgnoreFiles.map( ( item ) => {
 		return '!' + projectConfig.srcDir + item;
 	} );
 
-	let buildFileList = [ projectConfig.srcDir + '**', ...buildIgnoreFiles ];
+	buildFiles = buildFiles.map( ( item ) => {
+		return projectConfig.srcDir + item;
+	} );
+
+	const buildFileList = [ ...buildFiles, ...buildIgnoreFiles ];
+
+    const textDomainFiles = [
+        projectConfig.srcDir + '*.php',
+        projectConfig.srcDir + '**/*.php',
+        '!' + projectConfig.srcDir + '__build/**',
+        '!' + projectConfig.srcDir + 'node_modules/**',
+        '!' + projectConfig.srcDir + 'vendor/**',
+        '!' + projectConfig.srcDir + 'vendor-src/**',
+    ];
 
 	grunt.initConfig( {
 		// clean dist directory file
 		clean: {
 			options: { force: true },
 			dist: [
-				'./vendor-src/',
 				projectConfig.distDir + '/**',
 				projectConfig.distDir.replace( /\/$/, '' ) + '.zip',
 			],
@@ -104,14 +98,7 @@ module.exports = ( grunt ) => {
 				updateDomains: true, // List of text domains to replace.
 			},
 			target: {
-				src: [
-					projectConfig.srcDir + '*.php',
-					projectConfig.srcDir + '**/*.php',
-					'!' + projectConfig.srcDir + 'node_modules/**',
-					'!' + projectConfig.srcDir + 'dev-*/**',
-					'!' + projectConfig.srcDir + 'vendor/**',
-					'!' + projectConfig.srcDir + 'vendor-src/**',
-				],
+				src: textDomainFiles
 			},
 		},
 
@@ -140,12 +127,7 @@ module.exports = ( grunt ) => {
 				},
 				files: [
 					{
-						src: [
-							projectConfig.srcDir + '**/*.php',
-							'!' + projectConfig.srcDir + 'node_modules/**',
-							'!' + projectConfig.srcDir + 'vendor/**',
-							'!' + projectConfig.srcDir + 'vendor-src/**',
-						],
+						src: textDomainFiles,
 						expand: true,
 					},
 				],
