@@ -16,6 +16,7 @@ Route::group(
                 Route::post( 'important', [SubmissionController::class, 'important'] );
                 Route::post( 'setup/tag', [SubmissionController::class, 'setup_tag'] );
                 Route::post( 'status', [SubmissionController::class, 'update_status'] );
+                Route::post( 'read', [SubmissionController::class, 'update_read'] );
             } 
         );
     }, ['admin']

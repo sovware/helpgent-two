@@ -39,7 +39,7 @@ class SubmissionRepository {
                     $query->select( 'helpgent_guest_users.id', 'helpgent_guest_users.name' );
                 }
             ] 
-        )->where( 'form_id', $form_id )->where( 'status', $status )->order_by_desc( 'is_important' );
+        )->where( 'form_id', $form_id )->where( 'status', $status );
 
         // If find submissions of certain tags
         if ( ! empty( $tag_ids ) && is_array( $tag_ids ) ) {
@@ -151,6 +151,20 @@ class SubmissionRepository {
         return Submission::query()->where( 'id', $id )->update(
             [
                 'status' => $status
+            ]
+        );
+    }
+
+    public function update_read( int $id, int $is_read ) {
+        $submission = $this->get_by_id( $id );
+
+        if ( ! $submission ) {
+            throw new Exception( esc_html__( 'Form submission not found', 'helpgent' ), 404 );
+        }
+
+        return Submission::query()->where( 'id', $id )->update(
+            [
+                'is_read' => $is_read
             ]
         );
     }

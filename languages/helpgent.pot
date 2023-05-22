@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: HelpGent 2.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/helpgent-two\n"
-"POT-Creation-Date: 2023-05-22 08:57:43+00:00\n"
+"POT-Creation-Date: 2023-05-22 11:05:07+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -48,6 +48,10 @@ msgstr ""
 
 #: app/Http/Controllers/Admin/SubmissionController.php:207
 msgid "Submission status updated successfully!"
+msgstr ""
+
+#: app/Http/Controllers/Admin/SubmissionController.php:246
+msgid "Submission read status updated successfully!"
 msgstr ""
 
 #: app/Http/Controllers/Admin/TagController.php:55
@@ -125,6 +129,7 @@ msgstr ""
 #: app/Repositories/SubmissionRepository.php:100
 #: app/Repositories/SubmissionRepository.php:126
 #: app/Repositories/SubmissionRepository.php:148
+#: app/Repositories/SubmissionRepository.php:162
 #: app/Repositories/SubmissionTagRepository.php:22
 msgid "Form submission not found"
 msgstr ""

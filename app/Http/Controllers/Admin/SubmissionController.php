@@ -217,4 +217,43 @@ class SubmissionController extends Controller {
             );
         }
     }
+
+    public function update_read( Validator $validator, WP_REST_Request $wp_rest_request ) {
+        $validator->validate(
+            [
+                'submission_id' => 'required|integer',
+                'is_read'       => 'required|integer|accepted:0,1'
+            ]
+        );
+
+        
+        if ( $validator->is_fail() ) {
+            return Response::send(
+                [
+                    'messages' => $validator->errors
+                ], 422
+            );
+        }
+
+        try {
+            $this->submission_repository->update_read( 
+                $wp_rest_request->get_param( 'submission_id' ), 
+                $wp_rest_request->get_param( 'is_read' )
+            );
+
+            return Response::send(
+                [
+                    'message' => esc_html__( "Submission read status updated successfully!", 'helpgent' )
+                ]
+            );
+
+        } catch ( Exception $exception ) {
+            return Response::send(
+                [
+                    'message' => $exception->getMessage()
+                ],
+                $exception->getCode()
+            );
+        }
+    }
 }
