@@ -9,7 +9,7 @@ class SubmissionDTO {
 
     private string $status;
 
-    private int $is_favorite;
+    private int $is_important;
 
     /**
      * @var string|null $ip
@@ -30,12 +30,12 @@ class SubmissionDTO {
 
     private int $is_guest = 0;
 
-    public function __construct( int $form_id, int $created_by, int $is_guest = 0, int $is_favorite = 0, string $status = 'unread' ) {
-        $this->form_id     = $form_id;
-        $this->status      = $status;
-        $this->is_favorite = $is_favorite;
-        $this->created_by  = $created_by;
-        $this->is_favorite = $is_guest;
+    public function __construct( int $form_id, int $created_by, int $is_guest = 0, int $is_important = 0, string $status = 'active' ) {
+        $this->form_id      = $form_id;
+        $this->status       = $status;
+        $this->is_important = $is_important;
+        $this->created_by   = $created_by;
+        $this->is_important = $is_guest;
     }
 
     public function get_id() {
@@ -62,12 +62,12 @@ class SubmissionDTO {
         $this->status = $status;
     }
 
-    public function get_is_favorite() {
-        return $this->is_favorite;
+    public function get_is_important() {
+        return $this->is_important;
     }
 
-    public function set_is_favorite( int $is_favorite ) {
-        $this->is_favorite = $is_favorite;
+    public function set_is_important( int $is_important ) {
+        $this->is_important = $is_important;
     }
 
     public function get_ip() {

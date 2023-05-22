@@ -7,7 +7,7 @@
         <a href="#" class="helpgent-nginx-instruction-link"><?php esc_html_e( 'as per this instruction', 'helpgent' ); ?></a>:
     </p>
 
-    <textarea readonly="" rows="2" style="<?php esc_attr_e( $textarea_style ) ?>"><?php echo esc_textarea( $rules ) ?></textarea>
+    <textarea readonly="" rows="2" style="<?php esc_attr_e( $textarea_style, 'helpgent' ) ?>"><?php echo esc_textarea( $rules ) ?></textarea>
 
     <div class="helpgent-nginx-instruction-content" style="display: none">
         <p><b><?php esc_html_e( 'Instruction:', 'helpgent' ); ?></b></p>
@@ -16,13 +16,13 @@
             <li><?php esc_html_e( 'Find your website’s Nginx config file which is often located at /etc/nginx/site-available or /etc/nginx/conf/site-available (if you’re using Arch Linux)', 'helpgent' ) ?></li>
             <li>
                 <?php esc_html_e( 'Paste the copied rules in the server block', 'helpgent' ) ?>
-                <textarea readonly="" rows="10" style="<?php esc_attr_e( $textarea_style ) ?>"><?php echo esc_textarea( $server_block ) ?></textarea>
+                <textarea readonly="" rows="10" style="<?php esc_attr_e( $textarea_style, 'helpgent' ) ?>"><?php echo esc_textarea( $server_block ) ?></textarea>
             </li>
         </ul>
     </div>
 
     <div class="helpgent-nginx-instruction-notice-footer" style="text-align: right; margin: 10px 0;">
-        <a class="button button-primary" href="<?php esc_attr_e( $dismiss_link ); ?>"><?php esc_html_e( 'Dismiss', 'helpgent' ); ?></a>
+        <a class="button button-primary" href="<?php esc_attr_e( $dismiss_link, 'helpgent' ); ?>"><?php esc_html_e( 'Dismiss', 'helpgent' ); ?></a>
     </div>
 </div>
 

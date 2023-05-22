@@ -9,7 +9,7 @@ use HelpGent\App\Utils\DateTime;
 use HelpGent\WaxFramework\Database\Query\Builder;
 
 class SubmissionRepository {
-    public function get( int $form_id, int $per_page, int $page, string $order_by, int $is_archived, $tag_ids ) {
+    public function get( int $form_id, int $per_page, int $page, string $order_by, string $status, $tag_ids ) {
         if ( $per_page > 100 || $per_page < 10 ) {
             $per_page = 100;
         }
@@ -39,7 +39,7 @@ class SubmissionRepository {
                     $query->select( 'helpgent_guest_users.id', 'helpgent_guest_users.name' );
                 }
             ] 
-        )->where( 'form_id', $form_id )->where( 'is_archived', $is_archived )->order_by_desc( 'is_favorite' );
+        )->where( 'form_id', $form_id )->where( 'status', $status )->order_by_desc( 'is_important' );
 
         // If find submissions of certain tags
         if ( ! empty( $tag_ids ) && is_array( $tag_ids ) ) {
@@ -63,10 +63,10 @@ class SubmissionRepository {
                 $query->order_by( 'updated_at' );
                 break;
             case 'read':
-                $query->order_by_raw( "(CASE WHEN status = 'read' THEN 0 WHEN status = 'unread' THEN 1 END)" );
+                $query->order_by_desc( 'is_read' );
                 break;
             case 'unread':
-                $query->order_by_raw( "(CASE WHEN status = 'unread' THEN 0 WHEN status = 'read' THEN 1 END)" );
+                $query->order_by( 'is_read' );
                 break;
         }
 
@@ -80,15 +80,15 @@ class SubmissionRepository {
     public function create( SubmissionDTO $submission_dto ) {
         return Submission::query()->insert_get_id(
             [
-                'form_id'     => $submission_dto->get_form_id(),
-                'status'      => $submission_dto->get_status(),
-                'is_favorite' => $submission_dto->get_is_favorite(),
-                'ip'          => $submission_dto->get_ip(),
-                'city'        => $submission_dto->get_city(),
-                'country'     => $submission_dto->get_country(),
-                'created_by'  => $submission_dto->get_created_by(),
-                'is_guest'    => $submission_dto->get_is_guest(),
-                'updated_at'  => DateTime::now()
+                'form_id'      => $submission_dto->get_form_id(),
+                'status'       => $submission_dto->get_status(),
+                'is_important' => $submission_dto->get_is_important(),
+                'ip'           => $submission_dto->get_ip(),
+                'city'         => $submission_dto->get_city(),
+                'country'      => $submission_dto->get_country(),
+                'created_by'   => $submission_dto->get_created_by(),
+                'is_guest'     => $submission_dto->get_is_guest(),
+                'updated_at'   => DateTime::now()
             ]
         );
     }
@@ -102,15 +102,15 @@ class SubmissionRepository {
 
         return Submission::query()->where( 'id', $submission_dto->get_id() )->update(
             [
-                'form_id'     => $submission_dto->get_form_id(),
-                'status'      => $submission_dto->get_status(),
-                'is_favorite' => $submission_dto->get_is_favorite(),
-                'ip'          => $submission_dto->get_ip(),
-                'city'        => $submission_dto->get_city(),
-                'country'     => $submission_dto->get_country(),
-                'created_by'  => $submission_dto->get_created_by(),
-                'is_guest'    => $submission_dto->get_is_guest(),
-                'updated_at'  => DateTime::now()
+                'form_id'      => $submission_dto->get_form_id(),
+                'status'       => $submission_dto->get_status(),
+                'is_important' => $submission_dto->get_is_important(),
+                'ip'           => $submission_dto->get_ip(),
+                'city'         => $submission_dto->get_city(),
+                'country'      => $submission_dto->get_country(),
+                'created_by'   => $submission_dto->get_created_by(),
+                'is_guest'     => $submission_dto->get_is_guest(),
+                'updated_at'   => DateTime::now()
             ]
         );
     }
@@ -119,7 +119,7 @@ class SubmissionRepository {
         return Submission::query()->where( 'id', $id )->first();
     }
     
-    public function update_favorite_status( int $id, int $is_favorite ) {
+    public function update_important_status( int $id, int $is_important ) {
         $form_submission = $this->get_by_id( $id );
 
         if ( ! $form_submission ) {
@@ -128,7 +128,7 @@ class SubmissionRepository {
 
         return Submission::query()->where( 'id', $id )->update(
             [
-                'is_favorite' => $is_favorite
+                'is_important' => $is_important
             ]
         );
     }
@@ -141,7 +141,7 @@ class SubmissionRepository {
         return Submission::query()->where( 'id', $id )->delete();
     }
 
-    public function update_archive_status( int $id, int $is_archived ) {
+    public function update_status( int $id, string $status ) {
         $submission = $this->get_by_id( $id );
 
         if ( ! $submission ) {
@@ -150,7 +150,7 @@ class SubmissionRepository {
 
         return Submission::query()->where( 'id', $id )->update(
             [
-                'is_archived' => $is_archived
+                'status' => $status
             ]
         );
     }

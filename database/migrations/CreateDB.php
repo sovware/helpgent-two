@@ -56,14 +56,14 @@ class CreateDB implements Migration {
         CREATE TABLE {$db_prefix}submissions (
             `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
             `form_id` BIGINT UNSIGNED NOT NULL,
-            `status` VARCHAR(50) NOT NULL DEFAULT 'unread' COMMENT 'value: read/unread/trashed',
-            `is_favorite` TINYINT NOT NULL DEFAULT 0 COMMENT 'value: 0/1',
+            `is_important` TINYINT NOT NULL DEFAULT 0 COMMENT 'value: 0/1',
+            `is_read` TINYINT NOT NULL DEFAULT 0 COMMENT 'value: 0/1',
             `ip` VARCHAR(50) NULL,
             `city` VARCHAR(50) NULL,
             `country` VARCHAR(50) NULL,
             `created_by` BIGINT UNSIGNED NOT NULL,
             `is_guest` TINYINT NOT NULL DEFAULT 0 COMMENT 'value: 0/1',
-            `is_archived` TINYINT NOT NULL DEFAULT 0 COMMENT 'value: 0/1',
+            `status` VARCHAR(50) NOT NULL DEFAULT 'active' COMMENT 'value: active/archive/trash',
             `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
             `updated_at` TIMESTAMP NULL,
             PRIMARY KEY (`id`)

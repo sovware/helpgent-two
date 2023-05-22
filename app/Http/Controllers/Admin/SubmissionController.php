@@ -27,12 +27,12 @@ class SubmissionController extends Controller {
     public function index( Validator $validator, WP_REST_Request $wp_rest_request ) {
         $validator->validate(
             [
-                'form_id'     => 'required|numeric',
-                'per_page'    => 'numeric',
-                'page'        => 'numeric',
-                'order_by'    => 'required|string|accepted:read,unread,latest,oldest',
-                'tag_ids'     => 'array',
-                'is_archived' => 'numeric|accepted:0,1'
+                'form_id'  => 'required|numeric',
+                'per_page' => 'numeric',
+                'page'     => 'numeric',
+                'order_by' => 'required|string|accepted:read,unread,latest,oldest',
+                'status'   => 'required|string|accepted:active,archive,trash',
+                'tag_ids'  => 'array'
             ]
         );
 
@@ -50,7 +50,7 @@ class SubmissionController extends Controller {
                     intval( $wp_rest_request->get_param( 'per_page' ) ),
                     intval( $wp_rest_request->get_param( 'page' ) ),
                     $wp_rest_request->get_param( 'order_by' ),
-                    intval( $wp_rest_request->get_param( 'is_archived' ) ),
+                    $wp_rest_request->get_param( 'status' ),
                     $wp_rest_request->get_param( 'tag_ids' )
                 )
             ]
@@ -98,11 +98,11 @@ class SubmissionController extends Controller {
         }
     }
 
-    public function favorite( Validator $validator, WP_REST_Request $wp_rest_request ) {
+    public function important( Validator $validator, WP_REST_Request $wp_rest_request ) {
         $validator->validate(
             [
-                'id'       => 'required|integer',
-                'favorite' => 'required|integer|accepted:0,1'
+                'id'        => 'required|integer',
+                'important' => 'required|integer|accepted:0,1'
             ]
         );
 
@@ -115,7 +115,7 @@ class SubmissionController extends Controller {
         }
 
         try {
-            $update = $this->submission_repository->update_favorite_status( $wp_rest_request->get_param( 'id' ), $wp_rest_request->get_param( 'favorite' ) );
+            $update = $this->submission_repository->update_important_status( $wp_rest_request->get_param( 'id' ), $wp_rest_request->get_param( 'important' ) );
 
             if ( 0 === $update ) {
                 return Response::send(
@@ -127,7 +127,7 @@ class SubmissionController extends Controller {
 
             return Response::send(
                 [
-                    'message' => esc_html__( 'Favorite status updated successfully!', 'helpgent' )
+                    'message' => esc_html__( 'Important status updated successfully!', 'helpgent' )
                 ]
             );
         } catch ( Exception $exception ) {
@@ -179,11 +179,11 @@ class SubmissionController extends Controller {
         }
     }
 
-    public function update_archive_status( Validator $validator, WP_REST_Request $wp_rest_request ) {
+    public function update_status( Validator $validator, WP_REST_Request $wp_rest_request ) {
         $validator->validate(
             [
                 'submission_id' => 'required|integer',
-                'is_archived'   => 'required|integer|accepted:0,1'
+                'status'        => 'required|string|accepted:active,archive,trash'
             ]
         );
 
@@ -197,14 +197,14 @@ class SubmissionController extends Controller {
         }
 
         try {
-            $this->submission_repository->update_archive_status( 
+            $this->submission_repository->update_status( 
                 $wp_rest_request->get_param( 'submission_id' ), 
-                $wp_rest_request->get_param( 'is_archived' )
+                $wp_rest_request->get_param( 'status' )
             );
 
             return Response::send(
                 [
-                    'message' => esc_html__( "Submission archived status updated successfully!", 'helpgent' )
+                    'message' => esc_html__( "Submission status updated successfully!", 'helpgent' )
                 ]
             );
 

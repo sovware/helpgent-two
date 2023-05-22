@@ -13,13 +13,9 @@ Route::group(
             'submission', function () {
                 Route::get( '/', [SubmissionController::class, 'index'] );
                 Route::delete( '/{id}', [SubmissionController::class, 'delete'] );
-                Route::post( 'favorite', [SubmissionController::class, 'favorite'] );
+                Route::post( 'important', [SubmissionController::class, 'important'] );
                 Route::post( 'setup/tag', [SubmissionController::class, 'setup_tag'] );
-                Route::group(
-                    'status', function () {
-                        Route::post( 'archive', [SubmissionController::class, 'update_archive_status'] );
-                    } 
-                );
+                Route::post( 'status', [SubmissionController::class, 'update_status'] );
             } 
         );
     }, ['admin']

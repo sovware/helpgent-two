@@ -68,6 +68,7 @@ return [
         Finder::create()->append(
             [
                 'composer.json',
+                'composer.lock',
             ]
         )
 
