@@ -63,6 +63,7 @@ class CreateDB implements Migration {
             `country` VARCHAR(50) NULL,
             `created_by` BIGINT UNSIGNED NOT NULL,
             `is_guest` TINYINT NOT NULL DEFAULT 0 COMMENT 'value: 0/1',
+            `is_archived` TINYINT NOT NULL DEFAULT 0 COMMENT 'value: 0/1',
             `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
             `updated_at` TIMESTAMP NULL,
             PRIMARY KEY (`id`)

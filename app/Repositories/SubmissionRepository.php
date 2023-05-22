@@ -9,7 +9,7 @@ use HelpGent\App\Utils\DateTime;
 use HelpGent\WaxFramework\Database\Query\Builder;
 
 class SubmissionRepository {
-    public function get( int $form_id, int $per_page, int $page, string $order_by, $tag_ids ) {
+    public function get( int $form_id, int $per_page, int $page, string $order_by, int $is_archived, $tag_ids ) {
         if ( $per_page > 100 || $per_page < 10 ) {
             $per_page = 100;
         }
@@ -39,7 +39,7 @@ class SubmissionRepository {
                     $query->select( 'helpgent_guest_users.id', 'helpgent_guest_users.name' );
                 }
             ] 
-        )->where( 'form_id', $form_id )->order_by_desc( 'is_favorite' );
+        )->where( 'form_id', $form_id )->where( 'is_archived', $is_archived )->order_by_desc( 'is_favorite' );
 
         // If find submissions of certain tags
         if ( ! empty( $tag_ids ) && is_array( $tag_ids ) ) {
@@ -139,5 +139,19 @@ class SubmissionRepository {
             throw new Exception( esc_html__( 'Submission not found', 'helpgent' ), 404 );
         }
         return Submission::query()->where( 'id', $id )->delete();
+    }
+
+    public function update_archive_status( int $id, int $is_archived ) {
+        $submission = $this->get_by_id( $id );
+
+        if ( ! $submission ) {
+            throw new Exception( esc_html__( 'Form submission not found', 'helpgent' ), 404 );
+        }
+
+        return Submission::query()->where( 'id', $id )->update(
+            [
+                'is_archived' => $is_archived
+            ]
+        );
     }
 }

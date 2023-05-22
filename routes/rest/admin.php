@@ -6,12 +6,21 @@ use HelpGent\App\Http\Controllers\Admin\TagController;
 use HelpGent\WaxFramework\Routing\Route;
 
 Route::group(
-    'admin', function() {
+    'admin', function () {
         Route::resource( 'form', FormController::class );
         Route::resource( 'tag', TagController::class, ['items' => ['show']] );
-        Route::get( 'submission', [SubmissionController::class, 'index'] );
-        Route::delete( 'submission/{id}', [SubmissionController::class, 'delete'] );
-        Route::post( 'submission/favorite', [SubmissionController::class, 'favorite'] );
-        Route::post( 'submission/setup/tag', [SubmissionController::class, 'setup_tag'] );
+        Route::group(
+            'submission', function () {
+                Route::get( '/', [SubmissionController::class, 'index'] );
+                Route::delete( '/{id}', [SubmissionController::class, 'delete'] );
+                Route::post( 'favorite', [SubmissionController::class, 'favorite'] );
+                Route::post( 'setup/tag', [SubmissionController::class, 'setup_tag'] );
+                Route::group(
+                    'status', function () {
+                        Route::post( 'archive', [SubmissionController::class, 'update_archive_status'] );
+                    } 
+                );
+            } 
+        );
     }, ['admin']
 );

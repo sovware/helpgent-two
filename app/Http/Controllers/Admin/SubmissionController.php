@@ -27,11 +27,12 @@ class SubmissionController extends Controller {
     public function index( Validator $validator, WP_REST_Request $wp_rest_request ) {
         $validator->validate(
             [
-                'form_id'  => 'required|numeric',
-                'per_page' => 'numeric',
-                'page'     => 'numeric',
-                'order_by' => 'required|string|accepted:read,unread,latest,oldest',
-                'tag_ids'  => 'array'
+                'form_id'     => 'required|numeric',
+                'per_page'    => 'numeric',
+                'page'        => 'numeric',
+                'order_by'    => 'required|string|accepted:read,unread,latest,oldest',
+                'tag_ids'     => 'array',
+                'is_archived' => 'numeric|accepted:0,1'
             ]
         );
 
@@ -49,6 +50,7 @@ class SubmissionController extends Controller {
                     intval( $wp_rest_request->get_param( 'per_page' ) ),
                     intval( $wp_rest_request->get_param( 'page' ) ),
                     $wp_rest_request->get_param( 'order_by' ),
+                    intval( $wp_rest_request->get_param( 'is_archived' ) ),
                     $wp_rest_request->get_param( 'tag_ids' )
                 )
             ]
@@ -164,6 +166,45 @@ class SubmissionController extends Controller {
             return Response::send(
                 [
                     'message' => esc_html__( "Submission tag updated successfully!", 'helpgent' )
+                ]
+            );
+
+        } catch ( Exception $exception ) {
+            return Response::send(
+                [
+                    'message' => $exception->getMessage()
+                ],
+                $exception->getCode()
+            );
+        }
+    }
+
+    public function update_archive_status( Validator $validator, WP_REST_Request $wp_rest_request ) {
+        $validator->validate(
+            [
+                'submission_id' => 'required|integer',
+                'is_archived'   => 'required|integer|accepted:0,1'
+            ]
+        );
+
+        
+        if ( $validator->is_fail() ) {
+            return Response::send(
+                [
+                    'messages' => $validator->errors
+                ], 422
+            );
+        }
+
+        try {
+            $this->submission_repository->update_archive_status( 
+                $wp_rest_request->get_param( 'submission_id' ), 
+                $wp_rest_request->get_param( 'is_archived' )
+            );
+
+            return Response::send(
+                [
+                    'message' => esc_html__( "Submission archived status updated successfully!", 'helpgent' )
                 ]
             );
 
