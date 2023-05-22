@@ -165,7 +165,7 @@ module.exports = ( grunt ) => {
 			╭─────────────────────────────────────────────────────────────────╮
 			│                                                                 │
 			│                      All tasks completed.                       │
-			│   Built files & Installable zip copied to the dist directory.   │
+			│  Built files & Installable zip copied to the __build directory. │
 			│                         ~ SovWare ~                             │
 			│                                                                 │
 			╰─────────────────────────────────────────────────────────────────╯
