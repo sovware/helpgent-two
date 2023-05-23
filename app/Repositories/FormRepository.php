@@ -6,10 +6,15 @@ use Exception;
 use HelpGent\App\DTO\FormDTO;
 use HelpGent\App\Models\Form;
 use HelpGent\App\Utils\DateTime;
+use HelpGent\WaxFramework\Database\Query\Builder;
 
 class FormRepository {
     public function get() {
-        return Form::query()->get();
+        return Form::query()->with(
+            'user', function ( Builder $query ) {
+                $query->select( 'users.ID', 'users.display_name' );
+            },
+        )->get();
     }
 
     public function create( FormDTO $form_dto ) {

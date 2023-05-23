@@ -11,6 +11,29 @@ class MediaProtectionProvider implements Provider {
     public function boot() {
         add_action( 'init', [ $this, 'add_rewrite_endpoint' ] );
         add_action( 'parse_query', [ $this, 'parse_query' ] );
+        add_action( 'wp_head', [ $this, 'action_wp_head' ] );
+        add_action( 'admin_head', [ $this, 'action_wp_head' ] );
+    }
+
+    /**
+     * Prints scripts or data in the head tag on the front end.
+     *
+     */
+    public function action_wp_head() : void {
+        
+        ?>
+            <script>
+                var helpgent_localization = <?php helpgent_render(
+                    json_encode(
+                        [
+                            'rest_url'   => get_rest_url( null, 'helpgent' ),
+                            'rest_nonce' => wp_create_nonce( 'wp_rest' )
+                        ]
+                    )
+                )?>
+            </script>
+
+        <?php
     }
 
     public static function after_plugin_activation() {
