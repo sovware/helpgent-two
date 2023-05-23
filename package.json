@@ -12,8 +12,8 @@
 		"format": "wp-scripts format",
 		"minify": "wp-scripts build",
 		"compress": "webpack --config webpack.compress.js",
-		"build": "composer build && npm run minify && grunt build && npm run compress",
-		"fixtextdomain": "grunt fixtextdomain"
+		"fixtextdomain": "grunt fixtextdomain",
+		"build": "composer build && npm run minify && grunt build && npm run compress && grunt screen:finish"
 	},
 	"repository": {
 		"type": "git",

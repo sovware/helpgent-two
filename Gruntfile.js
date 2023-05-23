@@ -206,6 +206,6 @@ module.exports = ( grunt ) => {
 		'fixtextdomain',
 		// 'copy',
 		// 'compress',
-		'screen:finish',
+		// 'screen:finish',
 	] );
 };
