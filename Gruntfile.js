@@ -204,8 +204,8 @@ module.exports = ( grunt ) => {
 		'screen:begin',
 		'clean',
 		'fixtextdomain',
-		'copy',
-		'compress',
+		// 'copy',
+		// 'compress',
 		'screen:finish',
 	] );
 };
