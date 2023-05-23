@@ -30,7 +30,7 @@ class MediaProtectionProvider implements Provider {
                             'rest_nonce' => wp_create_nonce( 'wp_rest' )
                         ]
                     )
-                )?>
+                                            )?>
             </script>
 
         <?php
