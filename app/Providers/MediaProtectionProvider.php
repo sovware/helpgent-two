@@ -30,7 +30,7 @@ class MediaProtectionProvider implements Provider {
                             'rest_nonce' => wp_create_nonce( 'wp_rest' )
                         ]
                     )
-                                            )?>
+                );?> //phpcs:ignore PEAR.Functions.FunctionCallSignature.Indent PEAR.Functions.FunctionCallSignature.Indent
             </script>
 
         <?php
