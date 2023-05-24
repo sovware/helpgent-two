@@ -154,5 +154,5 @@ module.exports = (grunt) => {
   /**
    * Build and compress task
    */
-  grunt.registerTask("build", ["screen:begin", "fixtextdomain"]);
+  grunt.registerTask("build", ["getPluginVersion", "screen:begin", "fixtextdomain"]);
 };
