@@ -7,6 +7,7 @@ use HelpGent\App\Providers\Admin\MenuServiceProvider;
 use HelpGent\App\Providers\MediaProtectionProvider;
 use HelpGent\App\Providers\Admin\MediaProtectionProvider as AdminMediaProtectionProvider;
 use HelpGent\Database\Migrations\CreateDB;
+use HelpGent\App\Providers\LocalizationServiceProvider;
 
 return [
     'version'                 => '2.0.0',
@@ -22,7 +23,8 @@ return [
     ],
 
     'providers'               => [
-        MediaProtectionProvider::class,
+        LocalizationServiceProvider::class,
+        MediaProtectionProvider::class
     ],
 
     'admin_providers'         => [
