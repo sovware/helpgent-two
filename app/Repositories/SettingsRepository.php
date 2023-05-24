@@ -69,7 +69,7 @@ class SettingsRepository
             ],
         ];
 
-        return apply_filters( 'helpgent-setting-fields', $fields );
+        return apply_filters( 'helpgent_setting_fields', $fields );
     }
 
     private function email_general_setting_fields() {
