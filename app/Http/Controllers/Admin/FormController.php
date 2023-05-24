@@ -28,7 +28,7 @@ class FormController extends Controller {
     public function store( Validator $validator, WP_REST_Request $wp_rest_request ) {
         $validator->validate(
             [
-                'title'   => 'required|string|max:255',
+                'title'   => 'required|string|max:255|min:5',
                 'status'  => 'required|string|accepted:publish,draft',
                 'content' => 'required|json',
             ]
@@ -63,7 +63,7 @@ class FormController extends Controller {
         $validator->validate(
             [
                 'id'         => 'required|numeric',
-                'title'      => 'required|string|max:255',
+                'title'      => 'required|string|max:255|min:5',
                 'status'     => 'required|string|accepted:publish,draft',
                 'content'    => 'required|json',
                 'created_by' => 'required|integer'
