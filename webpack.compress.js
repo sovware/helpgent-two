@@ -5,18 +5,18 @@ const utility = {
         if ( Array.isArray( path ) && path.length === 2 ) {
             return {
                 source: path[0],
-                destination: `__build/zip/helpgent/${path[1]}`,
+                destination: `./__build/zip/helpgent/${path[1]}`,
             };
         }
     
         return {
             source: path,
-            destination: `__build/zip/helpgent/${path}`,
+            destination: `./__build/zip/helpgent/${path}`,
         };
     },
 
     transformBuildIgnorePaths: ( path ) => {
-        return `__build/zip/helpgent/${path}`;
+        return `./__build/zip/helpgent/${path}`;
     }
 };
 
@@ -26,11 +26,10 @@ const buildFiles = [
     'config',
     'database',
     'enqueues',
-    'languages/',
+    'languages',
     'resources/views',
     'routes',
-    [ 'vendor/vendor-src/*.php', 'vendor' ],
-    [ 'vendor/vendor-src/**/*.php', 'vendor/vendor-src' ],
+    'vendor',
     'helpgent.php'
 ].map( utility.transformBuildPaths );
 
@@ -72,18 +71,18 @@ module.exports = {
         new FileManagerPlugin({
             events: {
                 onEnd: [
-                    { delete: [ '__build' ] },
+                    { delete: [ './__build' ] },
                     { copy: buildFiles },
                     { delete: buildIgnoreFiles },
                     { archive: [{
-                        source: '__build/zip',
-                        destination: '__build/helpgent.zip',
+                        source: './__build/zip',
+                        destination: './__build/helpgent.zip',
                     }]},
                     { move: [{
-                        source: '__build/zip/helpgent',
-                        destination: '__build/helpgent',
+                        source: './__build/zip/helpgent',
+                        destination: './__build/helpgent',
                     }]},
-                    { delete: [ '__build/zip' ] },
+                    { delete: [ './__build/zip' ] },
                 ]
             }
         })
