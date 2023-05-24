@@ -1,23 +1,27 @@
 const path = require("path");
 const fs = require("fs").promises;
 
-const getPluginVersion = async () => {
+const pluginRootFile = "helpgent";
+
+const getPluginInfo = async () => {
   try {
-    const content = await fs.readFile(
-      path.join(__dirname, "config/app.php"),
-      "utf8"
-    );
-    const versionRegex = /'version'\s*=>\s*'([\d.]+)'/;
-    const matches = content.match(versionRegex);
-    const version = matches ? matches[1] : null;
-    return version;
+    const fileDir = path.join(__dirname, `${pluginRootFile}.php`);
+    const content = await fs.readFile(fileDir, "utf8");
+
+    const versionRegex = /Version:\s+([\w.-]+)/;
+    const textDomainRegex = /Text Domain:\s+\s*([\w-]+)/;
+
+    const versionMatch = content.match(versionRegex);
+    const textDomainMatch = content.match(textDomainRegex);
+
+    const version = versionMatch ? versionMatch[1] : "";
+    const textDomain = textDomainMatch ? textDomainMatch[1] : "";
+
+    return { version, textDomain };
   } catch (error) {
     console.error("Error reading file:", error);
-    return null;
+    return {};
   }
 };
 
-const pluginName = "helpgent";
-const textDomain = pluginName;
-
-module.exports = { getPluginVersion, pluginName, textDomain };
+module.exports = { pluginRootFile, getPluginInfo };
