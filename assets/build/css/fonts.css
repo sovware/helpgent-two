@@ -1,0 +1,35 @@
+/*!**************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./resources/sass/fonts.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************/
+@font-face {
+  font-family: "Inter";
+  src: url(../fonts/Inter-Regular.c58c4657.eot);
+  src: url(../fonts/Inter-Regular.c58c4657.eot?#iefix) format("embedded-opentype"), url(../fonts/Inter-Regular.ac03a6de.woff2) format("woff2"), url(../fonts/Inter-Regular.f3ce705f.woff) format("woff"), url(../fonts/Inter-Regular.e89cb199.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Inter";
+  src: url(../fonts/Inter-Medium.4779e75f.eot);
+  src: url(../fonts/Inter-Medium.4779e75f.eot?#iefix) format("embedded-opentype"), url(../fonts/Inter-Medium.d4b54413.woff2) format("woff2"), url(../fonts/Inter-Medium.484bd6e6.woff) format("woff"), url(../fonts/Inter-Medium.6dcbc9be.ttf) format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+/* Inter Semi Bold */
+@font-face {
+  font-family: "Inter";
+  src: url(../fonts/Inter-SemiBold.b6115a2c.eot);
+  src: url(../fonts/Inter-SemiBold.b6115a2c.eot?#iefix) format("embedded-opentype"), url(../fonts/Inter-SemiBold.72499514.woff2) format("woff2"), url(../fonts/Inter-SemiBold.6d7d360a.woff) format("woff"), url(../fonts/Inter-SemiBold.4d56bb21.ttf) format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+/* Inter Semi Bold */
+@font-face {
+  font-family: "Inter";
+  src: url(../fonts/Inter-Bold.881389b4.eot);
+  src: url(../fonts/Inter-Bold.881389b4.eot?#iefix) format("embedded-opentype"), url(../fonts/Inter-Bold.df454d31.woff2) format("woff2"), url(../fonts/Inter-Bold.3a84061f.woff) format("woff"), url(../fonts/Inter-Bold.88fa7ae3.ttf) format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/*# sourceMappingURL=fonts.css.map*/

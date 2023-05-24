@@ -1,0 +1,1841 @@
+/*!***************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./resources/sass/global.scss ***!
+  \***************************************************************************************************************************************************************************************************************************************************/
+:root {
+  --helpgent-color-primary: #6551f2;
+  --helpgent-color-secondary: #fc495d;
+  --helpgent-color-dark: #030308;
+  --helpgent-color-lighter: #f8f9fb;
+  --helpgent-color-light: #f4f5f7;
+  --helpgent-color-bg-white: #ffffff;
+  --helpgent-color-bg-gray: #e2e2e2;
+  --helpgent-color-bg-general: #F5F5F5;
+  --helpgent-color-bg-page: #f0f0f0;
+  --helpgent-color-bg-light: #d0d0d0;
+  --helpgent-color-border-light: #ededed;
+  --helpgent-color-border-lighter: #EBEBEB;
+  --helpgent-color-gray: #868eae;
+  --helpgent-color-gray-light: #656565;
+  --helpgent-color-info: #3f95f7;
+  --helpgent-color-danger: #EB0808;
+  --helpgent-color-disable: #dddada;
+  --helpgent-color-warning-deep: #ff7300;
+  --helpgent-color-warning-light: #f9dfac;
+  --helpgent-color-warning: #FE7D13;
+  --helpgent-color-success: #22AD58;
+  --helpgent-color-text: #898989;
+  --helpgent-color-white: #ffffff;
+  --helpgent-color-black: #000000;
+  --helpgent-font-family: "Inter",sans-serif;
+  --helpgent-font-size: "medium";
+  --helpgent-font-color: "#898989";
+  --helpgent-btn-radius: 8px;
+  --helpgent-primary-button-color: #ffffff;
+  --helpgent-primary-button-bg: #6551f2;
+  --helpgent-primary-button-border-radius: "15";
+  --helpgent-secondary-button-color: #ffffff;
+  --helpgent-secondary-button-bg: #fc495d;
+  --helpgent-secondary-button-border-radius: "15";
+  --helpgent-color-page-bg: "#030308";
+  --helpgent-color-description: rgba(255, 255, 255, 0.8);
+  --helpgent-color-footer-text: rgba(255, 255, 255, 0.8);
+  --helpgent-footer-text-font-size: "medium";
+}
+
+/* Spacing */
+.helpgent-m-0 {
+  margin: 0px;
+}
+
+.helpgent-mb-0 {
+  margin-bottom: 0 !important;
+}
+
+.helpgent-mb-10 {
+  margin-bottom: 10px !important;
+}
+
+.helpgent-mb-20 {
+  margin-bottom: 20px;
+}
+
+.helpgent-mt-10 {
+  margin-top: 10px !important;
+}
+
+.helpgent-mt-0 {
+  margin-top: 0px !important;
+}
+
+.helpgent-mt-20 {
+  margin-top: 20px;
+}
+
+.helpgent-mt-50 {
+  margin-top: 50px;
+}
+
+.helpgent-p-5 {
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.helpgent-p-20 {
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.helpgent-p-25 {
+  padding: 25px;
+  box-sizing: border-box;
+}
+
+.helpgent-p-30 {
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+.helpgent-page-inner {
+  padding: 0 30px 0 0;
+}
+
+.helpgent-text-center {
+  text-align: center;
+}
+
+.helpgent-danger-text {
+  color: var(--helpgent-color-danger);
+}
+
+.helpgent-root {
+  font-family: var(--helpgent-font-family);
+}
+
+.helpgent-page-inner {
+  padding: 20px 20px 0 0;
+}
+
+/* Wpwax Media Status */
+.helpgent-usermedia-status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 2px;
+  border-radius: 30px;
+  font-size: 10px;
+  font-weight: 500;
+  color: #fff;
+  min-width: 8px;
+  height: 8px;
+  text-align: center;
+  box-sizing: border-box;
+}
+.helpgent-usermedia-status.helpgent-usermedia-status-unread {
+  background-color: var(--helpgent-color-danger);
+}
+
+/* Button Style */
+.helpgent-btn {
+  display: inline-flex;
+  align-items: center;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 2;
+  height: 40px;
+  padding: 0 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease-out;
+  cursor: pointer;
+  color: var(--helpgent-color-white);
+}
+.helpgent-btn:hover, .helpgent-btn:focus {
+  color: var(--helpgent-color-white);
+}
+.helpgent-btn.helpgent-btn-disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+.helpgent-btn.helpgent-btn-disabled.helpgent-btn-dark:hover {
+  color: var(--helpgent-color-white);
+  background-color: var(--helpgent-color-dark);
+}
+.helpgent-btn.helpgent-btn-dark {
+  background-color: var(--helpgent-color-dark);
+  border: 1px solid var(--helpgent-color-dark);
+}
+.helpgent-btn.helpgent-btn-dark:hover {
+  color: var(--helpgent-color-dark);
+  background-color: var(--helpgent-color-white);
+}
+.helpgent-btn.helpgent-btn-dark:hover svg path {
+  fill: var(--helpgent-color-dark);
+}
+.helpgent-btn.helpgent-btn-primary {
+  background-color: var(--primary-button-bg);
+  border-radius: var(--btn-radius);
+  color: var(--primary-button-color);
+  border: 1px solid var(--primary-button-bg);
+}
+.helpgent-btn.helpgent-btn-primary:not(:hover):not(:active):not(.has-background) {
+  color: var(--primary-button-color);
+  background-color: var(--primary-button-bg);
+}
+.helpgent-btn.helpgent-btn-primary:hover {
+  color: var(--primary-button-bg);
+  background-color: var(--helpgent-color-white);
+}
+.helpgent-btn.helpgent-btn-primary:hover svg path {
+  fill: var(--primary-button-bg);
+}
+.helpgent-btn.helpgent-btn-light {
+  color: var(--helpgent-color-text);
+  background-color: var(--helpgent-color-light);
+  border: 1px solid var(--helpgent-color-light);
+}
+.helpgent-btn.helpgent-btn-light:hover {
+  color: var(--helpgent-color-dark);
+  background-color: #cfd1d4;
+}
+.helpgent-btn.helpgent-btn-gray {
+  color: var(--helpgent-color-dark);
+  background-color: var(--helpgent-color-border-lighter);
+  border: 1px solid var(--helpgent-color-border-lighter);
+}
+.helpgent-btn.helpgent-btn-gray:hover {
+  background-color: var(--helpgent-color-white);
+}
+.helpgent-btn.helpgent-btn-danger {
+  color: var(--helpgent-color-white);
+  background-color: var(--helpgent-color-danger);
+  border: 1px solid var(--helpgent-color-danger);
+}
+.helpgent-btn.helpgent-btn-danger:hover {
+  color: var(--helpgent-color-danger);
+  background-color: var(--helpgent-color-white);
+}
+.helpgent-btn.helpgent-btn-danger:hover svg path {
+  fill: var(--helpgent-color-danger);
+}
+.helpgent-btn.helpgent-btn-success {
+  color: var(--helpgent-color-white);
+  background-color: var(--helpgent-color-success);
+  border: 1px solid var(--helpgent-color-success);
+}
+.helpgent-btn.helpgent-btn-success:hover {
+  color: var(--helpgent-color-success);
+  background-color: var(--helpgent-color-white);
+}
+.helpgent-btn.helpgent-btn-success:hover svg path {
+  fill: var(--helpgent-color-success);
+}
+.helpgent-btn.helpgent-btn-info {
+  color: var(--helpgent-color-white);
+  background-color: var(--helpgent-color-info);
+  border: 1px solid var(--helpgent-color-info);
+}
+.helpgent-btn.helpgent-btn-info:hover {
+  color: var(--helpgent-color-info);
+  background-color: var(--helpgent-color-white);
+}
+.helpgent-btn.helpgent-btn-info:hover svg path {
+  fill: var(--helpgent-color-info);
+}
+.helpgent-btn.helpgent-btn-white {
+  transition: color 0.2s ease-in;
+  color: var(--helpgent-color-dark);
+  background-color: var(--helpgent-color-white);
+  border: 1px solid var(--helpgent-color-white);
+}
+.helpgent-btn.helpgent-btn-white:hover {
+  color: var(--helpgent-color-primary);
+  background-color: var(--helpgent-color-white);
+}
+
+/* Button Size */
+.helpgent-link {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--helpgent-color-primary);
+}
+
+/* Button Size */
+.helpgent-btn.helpgent-btn-lg {
+  height: 56px;
+}
+.helpgent-btn.helpgent-btn-md {
+  height: 44px;
+}
+
+/* Block Button Style */
+.helpgent-btn-block {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Rounded Button Style */
+.helpgent-btn.helpgent-btn-rounded {
+  border-radius: 15px;
+}
+
+/* Wpwax Back Button */
+.helpgent-chatbox-screen .helpgent-btn-back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease-in;
+  background-color: var(--helpgent-color-bg-general);
+}
+.helpgent-chatbox-screen .helpgent-btn-back:hover {
+  background-color: #d5d4d4;
+}
+.helpgent-chatbox-screen .helpgent-btn-back svg path {
+  fill: var(--helpgent-color-dark);
+}
+@media only screen and (max-width: 767px) {
+  .helpgent-chatbox-screen .helpgent-btn-back {
+    width: 28px;
+    height: 28px;
+  }
+  .helpgent-chatbox-screen .helpgent-btn-back svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.wpwax-helpgent-body .helpgent-btn-back:focus:not(.wp-block-button__link):not(.wp-block-file__button) {
+  background-color: #d5d4d4;
+}
+
+/* Form Elements Style */
+.helpgent-input-desc {
+  font-style: italic;
+  color: #6c6c6c;
+}
+
+.helpgent-form-group {
+  display: flex;
+  margin-bottom: 20px;
+}
+.helpgent-form-group .helpgent-input-addon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  border-radius: 0 6px 6px 0;
+  background-color: var(--helpgent-color-bg-light);
+  color: #6c6c6c;
+  width: 50px;
+}
+.helpgent-form-group .helpgent-input-addon .helpgent-input-addon__text {
+  display: inline-block;
+  line-height: 1;
+}
+.helpgent-form-group .helpgent-form__element {
+  width: 100%;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.57;
+  min-height: 40px;
+  border-radius: 6px;
+  padding: 7px 16px;
+  border: 0 none;
+  box-sizing: border-box;
+  color: var(--helpgent-color-dark);
+  border: 2px solid transparent;
+  margin: 0;
+  background-color: var(--helpgent-color-bg-general);
+}
+@media only screen and (max-width: 1199px) {
+  .helpgent-form-group .helpgent-form__element {
+    padding: 6px 16px;
+    min-height: 38px;
+  }
+}
+.helpgent-form-group .helpgent-form__element:focus {
+  outline: none;
+  box-shadow: 0 0;
+  color: var(--helpgent-color-dark);
+  border-color: var(--helpgent-color-dark);
+}
+.helpgent-form-group .helpgent-form__element:not(:last-child) {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.helpgent-form-group textarea.helpgent-form__element {
+  min-height: 100px;
+  resize: vertical;
+}
+.helpgent-form-group textarea.helpgent-form__element.helpgent-form__element-copyright {
+  min-height: 65px;
+}
+.helpgent-form-group .helpgent-form-group__label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.helpgent-form-group .helpgent-form-group__label span,
+.helpgent-form-group .helpgent-form-group__label > label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #4d4d4d;
+}
+@media only screen and (max-width: 1199px) {
+  .helpgent-form-group .helpgent-form-group__label span,
+  .helpgent-form-group .helpgent-form-group__label > label {
+    font-size: 14px !important;
+  }
+}
+.helpgent-form-group .helpgent-form-group__label .helpgent-require-sign {
+  margin: 0 0 0 6px;
+}
+
+/* Form Element with icon */
+.helpgent-form-group {
+  position: relative;
+}
+.helpgent-form-group.helpgent-form-icon-left .helpgent-input-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  line-height: 1;
+  transform: translateY(-50%);
+}
+.helpgent-form-group.helpgent-form-icon-left .helpgent-form__element {
+  padding-left: 40px;
+}
+
+.helpgent-checkbox {
+  display: flex;
+  align-items: center;
+}
+.helpgent-checkbox input[type=checkbox] {
+  width: 20px;
+  min-width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  margin: 0;
+  line-height: 1;
+  -webkit-appearance: none;
+  border: 2px solid #d9d9d9;
+}
+.helpgent-checkbox input[type=checkbox]:focus {
+  border-color: #d9d9d9;
+  box-shadow: 0 0;
+  outline: none;
+}
+.helpgent-checkbox input[type=checkbox]:checked:before {
+  display: flex;
+  align-items: center;
+  font-family: dashicons;
+  position: relative;
+  top: -2px;
+  left: -1px;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  content: "\f147";
+  font-size: 18px;
+  margin: 0;
+  background-color: var(--helpgent-color-primary);
+  color: var(--helpgent-color-white);
+}
+.helpgent-checkbox input[type=checkbox]:checked:after {
+  opacity: 0;
+}
+.helpgent-checkbox input[type=checkbox]:disabled {
+  cursor: not-allowed;
+}
+.helpgent-checkbox input[type=checkbox] + label {
+  padding-left: 0;
+}
+.helpgent-checkbox label {
+  font-size: 14px;
+  font-weight: 500;
+  position: relative;
+  top: 0;
+  line-height: 1;
+  margin-bottom: 0;
+  padding-left: 0;
+  color: var(--helpgent-color-dark);
+}
+
+.helpgent-radio input[type=radio] {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #d9d9d9;
+}
+.helpgent-radio input[type=radio]:focus {
+  border-color: #d9d9d9;
+  box-shadow: 0 0;
+}
+.helpgent-radio input[type=radio]:checked {
+  background-color: var(--helpgent-color-primary);
+  border-color: var(--helpgent-color-primary);
+}
+.helpgent-radio input[type=radio]:checked:focus {
+  border-color: var(--helpgent-color-primary);
+}
+.helpgent-radio input[type=radio]:checked:before {
+  position: relative;
+  top: 1px;
+  left: 1px;
+  background-color: var(--helpgent-color-white);
+}
+
+.helpgent-switch-list,
+.helpgent-chekbox-list,
+.helpgent-radio-list {
+  margin-top: 18px;
+}
+.helpgent-switch-list .helpgent-switch-single,
+.helpgent-switch-list .helpgent-chekbox-single,
+.helpgent-switch-list .helpgent-radio-single,
+.helpgent-chekbox-list .helpgent-switch-single,
+.helpgent-chekbox-list .helpgent-chekbox-single,
+.helpgent-chekbox-list .helpgent-radio-single,
+.helpgent-radio-list .helpgent-switch-single,
+.helpgent-radio-list .helpgent-chekbox-single,
+.helpgent-radio-list .helpgent-radio-single {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.helpgent-switch-list .helpgent-switch-single:not(:last-child),
+.helpgent-switch-list .helpgent-chekbox-single:not(:last-child),
+.helpgent-switch-list .helpgent-radio-single:not(:last-child),
+.helpgent-chekbox-list .helpgent-switch-single:not(:last-child),
+.helpgent-chekbox-list .helpgent-chekbox-single:not(:last-child),
+.helpgent-chekbox-list .helpgent-radio-single:not(:last-child),
+.helpgent-radio-list .helpgent-switch-single:not(:last-child),
+.helpgent-radio-list .helpgent-chekbox-single:not(:last-child),
+.helpgent-radio-list .helpgent-radio-single:not(:last-child) {
+  margin-bottom: 20px;
+}
+.helpgent-switch-list .helpgent-switch-single span,
+.helpgent-switch-list .helpgent-chekbox-single span,
+.helpgent-switch-list .helpgent-radio-single span,
+.helpgent-chekbox-list .helpgent-switch-single span,
+.helpgent-chekbox-list .helpgent-chekbox-single span,
+.helpgent-chekbox-list .helpgent-radio-single span,
+.helpgent-radio-list .helpgent-switch-single span,
+.helpgent-radio-list .helpgent-chekbox-single span,
+.helpgent-radio-list .helpgent-radio-single span {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  position: relative;
+  top: -2px;
+  line-height: 1;
+  color: #030308;
+}
+.helpgent-switch-list .helpgent-switch-single span svg,
+.helpgent-switch-list .helpgent-chekbox-single span svg,
+.helpgent-switch-list .helpgent-radio-single span svg,
+.helpgent-chekbox-list .helpgent-switch-single span svg,
+.helpgent-chekbox-list .helpgent-chekbox-single span svg,
+.helpgent-chekbox-list .helpgent-radio-single span svg,
+.helpgent-radio-list .helpgent-switch-single span svg,
+.helpgent-radio-list .helpgent-chekbox-single span svg,
+.helpgent-radio-list .helpgent-radio-single span svg {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+}
+.helpgent-switch-list .helpgent-switch-single span svg path,
+.helpgent-switch-list .helpgent-chekbox-single span svg path,
+.helpgent-switch-list .helpgent-radio-single span svg path,
+.helpgent-chekbox-list .helpgent-switch-single span svg path,
+.helpgent-chekbox-list .helpgent-chekbox-single span svg path,
+.helpgent-chekbox-list .helpgent-radio-single span svg path,
+.helpgent-radio-list .helpgent-switch-single span svg path,
+.helpgent-radio-list .helpgent-chekbox-single span svg path,
+.helpgent-radio-list .helpgent-radio-single span svg path {
+  fill: rgb(137, 137, 137);
+}
+
+/* Wpwax Dropdown */
+.helpgent-dropdown {
+  position: relative;
+}
+.helpgent-dropdown.helpgent-dropdown-show .helpgent-dropdown__content {
+  display: block;
+}
+.helpgent-dropdown .helpgent-dropdown__toggle {
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+}
+.helpgent-dropdown .helpgent-dropdown__toggle:focus {
+  outline: none;
+  box-shadow: 0 0;
+}
+.helpgent-dropdown .helpgent-dropdown__toggle .helpgent-dropdown__toggle--text + div {
+  position: relative;
+  top: 6px;
+  line-height: 0.1;
+}
+.helpgent-dropdown .helpgent-dropdown__content {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 10px 8px;
+  border-radius: 10px;
+  list-style: none;
+  display: none;
+  box-shadow: 0 6px 40px rgba(144, 144, 144, 0.25);
+  background-color: #fff;
+}
+.helpgent-dropdown .helpgent-dropdown__content li {
+  margin: 0;
+}
+.helpgent-dropdown .helpgent-dropdown__content li a {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0 20px;
+  border-radius: 8px;
+  min-height: 38px;
+  text-decoration: none;
+  color: var(--helpgent-color-dark);
+}
+.helpgent-dropdown .helpgent-dropdown__content li a:hover, .helpgent-dropdown .helpgent-dropdown__content li a.helpgent-active {
+  background-color: var(--helpgent-color-bg-general);
+}
+.helpgent-dropdown .helpgent-dropdown__content li a:focus {
+  outline: none;
+  box-shadow: 0 0;
+}
+
+.wpwax-helpgent-body .helpgent-dropdown .helpgent-dropdown__toggle:focus:not(.wp-block-button__link):not(.wp-block-file__button),
+.wpwax-helpgent-body .helpgent-dropdown .helpgent-dropdown__content li a:focus:not(.wp-block-button__link):not(.wp-block-file__button) {
+  outline: none;
+  box-shadow: 0 0;
+  background-color: transparent;
+  text-decoration: none;
+}
+.wpwax-helpgent-body .helpgent-usermedia .helpgent-dropdown .helpgent-dropdown__toggle:focus:not(.wp-block-button__link):not(.wp-block-file__button) {
+  background-color: var(--helpgent-color-bg-gray);
+}
+.wpwax-helpgent-body .helpgent-search-toggle:focus:not(.wp-block-button__link):not(.wp-block-file__button),
+.wpwax-helpgent-body .helpgent-btn-all-tags:focus:not(.wp-block-button__link):not(.wp-block-file__button),
+.wpwax-helpgent-body .helpgent-sidebar-top__action a:focus:not(.wp-block-button__link):not(.wp-block-file__button) {
+  outline: none;
+  box-shadow: 0 0;
+  background-color: transparent;
+  text-decoration: none;
+}
+.wpwax-helpgent-body .helpgent-chatbox-btn-close:not(:hover):not(:active):not(.has-background) {
+  outline: none;
+  box-shadow: 0 0;
+  text-decoration: none;
+}
+
+/* Wpwax Dropdown Selectable */
+.helpgent-dropdown.helpgent-dropdown-selectable .helpgent-dropdown__toggle {
+  align-items: center;
+  min-height: 44px;
+  border-radius: 6px;
+  padding: 0 20px;
+  background-color: #ededed;
+}
+.helpgent-dropdown.helpgent-dropdown-selectable .helpgent-dropdown__toggle .helpgent-dropdown__toggle--text .helpgent-dropdown__toggle--text-content {
+  margin-left: 0;
+}
+.helpgent-dropdown.helpgent-dropdown-selectable .helpgent-dropdown__content {
+  top: 45px;
+  width: -webkit-fill-available;
+  box-shadow: 0 10px 40px rgba(134, 142, 174, 0.3);
+}
+.helpgent-dropdown.helpgent-dropdown-selectable .helpgent-dropdown__content li a {
+  padding: 0 15px;
+}
+.helpgent-dropdown.helpgent-dropdown-selectable .helpgent-dropdown__content li a:hover {
+  color: var(--helpgent-color-white);
+  background-color: var(--helpgent-color-primary);
+}
+
+.helpgent-select__control .helpgent-select__multi-value {
+  background-color: #d7d6d6;
+}
+
+/* wpwax Card */
+.helpgent-card {
+  border: 1px solid var(--helpgent-color-border-light);
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+.helpgent-card .helpgent-card-header {
+  border-bottom: 1px solid var(--helpgent-color-border-light);
+  padding: 15px 20px;
+  margin-bottom: 0;
+}
+.helpgent-card .helpgent-card-header .helpgent-card-header__title {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+  color: var(--helpgent-color-dark);
+}
+.helpgent-card .helpgent-card-body {
+  padding: 15px 20px;
+}
+
+/* Wpwax Vm Media */
+.helpgent-media {
+  display: flex;
+  align-items: flex-start;
+}
+.helpgent-media .helpgent-media__body {
+  flex: 1;
+  margin-left: 10px;
+  position: relative;
+  top: 2px;
+}
+.helpgent-media .helpgent-media__body .helpgent-media__title {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0 0 4px;
+  white-space: nowrap;
+  width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: 0px;
+  color: var(--helpgent-color-dark);
+}
+.helpgent-media .helpgent-media__body .helpgent-media__meta {
+  font-size: 12px;
+  font-weight: 500;
+  display: block;
+  color: var(--helpgent-color-text);
+}
+.helpgent-media .wpwax-hg-assigned-tags {
+  display: flex;
+  align-items: center;
+  margin: 4px -2px -2px;
+}
+.helpgent-media .wpwax-hg-assigned-tags .wpwax-hg-assigned-tags__item {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-transform: capitalize;
+  min-height: 16px;
+  margin: 2px;
+  padding: 0 5px;
+  border-radius: 4px;
+  color: #4d4d4d;
+  background-color: var(--helpgent-color-bg-light);
+}
+.helpgent-media .wpwax-hg-assigned-tags .wpwax-hg-assigned-tags__item.wpwax-hg-assigned-tags__item-add {
+  color: var(--helpgent-color-dark);
+}
+.helpgent-media .wpwax-hg-assigned-tags .wpwax-hg-assigned-tags__item.wpwax-hg-assigned-tags__item-add span {
+  position: relative;
+  top: -2px;
+}
+
+.helpgent-dropdown {
+  position: relative;
+}
+.helpgent-dropdown.helpgent-dropdown-fixed .helpgent-dropdown__content {
+  min-width: 220px;
+  left: auto;
+  right: 0;
+}
+.helpgent-dropdown .helpgent-dropdown__toggle {
+  display: flex;
+  justify-content: space-between;
+  text-decoration: none;
+}
+.helpgent-dropdown .helpgent-dropdown__toggle--text {
+  display: inline-flex;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--helpgent-color-dark);
+}
+.helpgent-dropdown .helpgent-dropdown__toggle--text > div {
+  position: relative;
+  bottom: -2px;
+}
+.helpgent-dropdown .helpgent-dropdown__toggle--text .helpgent-dropdown__toggle--text-content {
+  display: inline-block;
+  margin-left: 8px;
+  color: #4d4d4d;
+}
+
+.helpgent-dropdown__content {
+  position: absolute;
+  width: calc(100% - 16px);
+  left: 0;
+  top: 20px;
+  padding: 8px;
+  border-radius: 10px;
+  display: none;
+  z-index: 100;
+  box-shadow: 0 6px 40px rgba(144, 144, 144, 0.25);
+  background-color: var(--helpgent-color-white);
+}
+.helpgent-dropdown__content.helpgent-show {
+  display: block;
+}
+.helpgent-dropdown__content li a {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  border-radius: 8px;
+  color: var(--helpgent-color-dark);
+}
+.helpgent-dropdown__content li a:hover {
+  background-color: var(--helpgent-color-bg-general);
+}
+.helpgent-dropdown__content li a .helpgent-dropdown-item-icon {
+  line-height: 1;
+  margin-right: 10px;
+}
+.helpgent-dropdown__content li a .helpgent-dropdown-item-icon svg {
+  width: 14px;
+  fill: var(--helpgent-color-text);
+}
+.helpgent-dropdown__content li a .helpgent-dropdown-item-icon svg path {
+  fill: var(-color-text);
+}
+
+/* Table Style */
+.helpgent-table-responsive {
+  display: block !important;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: visible;
+}
+
+.helpgent-table {
+  display: table;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: left;
+  border-spacing: 0;
+  empty-cells: show;
+  margin-bottom: 0;
+  margin-top: 0;
+  overflow: visible;
+}
+.helpgent-table thead {
+  background-color: var(--helpgent-color-light);
+  border-radius: 6px;
+}
+.helpgent-table thead tr th {
+  padding: 16px 20px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+  color: var(--helpgent-color-text);
+}
+.helpgent-table tbody tr:hover td {
+  background-color: var(--helpgent-color-lighter);
+}
+.helpgent-table tbody tr td {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--helpgent-color-text);
+  padding: 15px 20px;
+}
+.helpgent-table tr th,
+.helpgent-table tr td {
+  display: table-cell;
+}
+.helpgent-table tr th:first-child,
+.helpgent-table tr td:first-child {
+  border-radius: 6px 0 0 6px;
+}
+.helpgent-table tr th:last-child,
+.helpgent-table tr td:last-child {
+  border-radius: 0 6px 6px 0;
+}
+
+.helpgent-table.helpgent-table-striped {
+  background-color: var(--helpgent-color-white);
+}
+.helpgent-table.helpgent-table-striped thead {
+  background-color: transparent;
+}
+.helpgent-table.helpgent-table-striped thead tr th {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--helpgent-color-border-light);
+}
+.helpgent-table.helpgent-table-striped tbody tr td {
+  padding: 10px 0;
+}
+.helpgent-table.helpgent-table-striped tbody tr:not(:last-child) td {
+  border-bottom: 1px solid var(--helpgent-color-border-light);
+}
+
+/* Notice Style */
+.helpgent-notice {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  min-height: 40px;
+  border-radius: 8px;
+  padding: 0 15px;
+  color: var(--helpgent-color-white);
+}
+.helpgent-notice.helpgent-notice-success {
+  background-color: var(--helpgent-color-success);
+}
+.helpgent-notice.helpgent-notice-warning {
+  color: var(--helpgent-color-warning-deep);
+  background-color: var(--helpgent-color-warning-light);
+}
+.helpgent-notice.helpgent-notice-danger {
+  color: var(--helpgent-color-danger);
+  background-color: rgba(245, 34, 45, 0.15);
+}
+.helpgent-notice .helpgent-notice__text {
+  line-height: 1;
+}
+.helpgent-notice .helpgent-notice__close {
+  text-decoration: none;
+  position: absolute;
+  right: 15px;
+  top: 2px;
+  color: var(--helpgent-color-white);
+}
+.helpgent-notice.helpgent-hide {
+  display: none;
+}
+
+.helpgent-validate-danger {
+  display: inline-block;
+  font-size: 14px;
+  margin-top: 8px;
+  color: var(--helpgent-color-danger);
+}
+
+.helpgent-shortcode-contact.helpgent-notice.helpgent-notice-danger {
+  font-size: 15px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Helpgent Modal */
+.helpgent-modal {
+  font-family: var(--helpgent-font-family);
+}
+.helpgent-modal .components-modal__frame {
+  min-width: 540px;
+  border-radius: 20px;
+  background-color: var(--helpgent-color-white);
+}
+.helpgent-modal .components-modal__header {
+  height: auto;
+  padding: 15px 30px;
+}
+.helpgent-modal .components-modal__header .components-button {
+  left: auto;
+  right: 20px;
+  top: 5px;
+}
+.helpgent-modal .components-modal__header .components-button:focus {
+  outline: none;
+  box-shadow: 0 0;
+}
+.helpgent-modal .components-modal__header .components-button:hover {
+  color: var(--helpgent-color-danger);
+}
+.helpgent-modal .components-modal__content {
+  margin: 0;
+  padding: 50px 30px 15px;
+}
+.helpgent-modal.helpgent-create-modal-wrap {
+  top: -180px;
+}
+.helpgent-modal.helpgent-create-modal-wrap .components-modal__header {
+  padding: 0;
+}
+.helpgent-modal.helpgent-create-modal-wrap .components-modal__content {
+  padding-bottom: 30px;
+}
+
+.wpax-vm-overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100001;
+  display: none;
+}
+.wpax-vm-overlay.helpgent-show {
+  display: block;
+}
+
+/* Modal Basic */
+/* Not Fouond Text Style */
+.wpwax-notfound-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 600;
+  min-height: 100px;
+  color: var(--helpgent-color-dark);
+}
+
+/* Loading Animation */
+.helpgent-loading-spin {
+  display: inline-block;
+  width: 1.75em;
+  height: 1.75em;
+  position: relative;
+  transform: rotate(45deg);
+  animation: wpwaxRotate 1.2s infinite linear;
+}
+.helpgent-loading-spin .helpgent-spin-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transform: scale(0.75);
+  position: absolute;
+  opacity: 0.3;
+  animation: wpwaxSpinMove 1s infinite linear alternate;
+  background-color: var(--helpgent-color-primary);
+}
+.helpgent-loading-spin .helpgent-spin-dot:nth-child(1) {
+  left: 0;
+  top: 0;
+}
+.helpgent-loading-spin .helpgent-spin-dot:nth-child(2) {
+  right: 0;
+  top: 0;
+  animation-delay: 0.3s;
+}
+.helpgent-loading-spin .helpgent-spin-dot:nth-child(3) {
+  left: 0;
+  bottom: 0;
+  animation-delay: 0.5s;
+}
+.helpgent-loading-spin .helpgent-spin-dot:nth-child(4) {
+  right: 0;
+  bottom: 0;
+  animation-delay: 0.7s;
+}
+
+.helpgent-loder-active {
+  position: relative;
+}
+.helpgent-loder-active:after {
+  position: absolute;
+  left: -20px;
+  top: -20px;
+  width: calc(100% + 40px);
+  height: calc(100% + 40px);
+  content: "";
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+}
+
+/* helpgent Note Style */
+.helpgent-note {
+  margin-bottom: 30px;
+  padding: 30px;
+  background-color: #dcebfe;
+  border-radius: 4px;
+  display: flex;
+}
+.helpgent-note .helpgent-note__icon {
+  margin-right: 10px;
+}
+.helpgent-note .dashicons {
+  font-size: 30px;
+  opacity: 0.2;
+  margin-right: 15px;
+}
+.helpgent-note .helpgent-note__title {
+  font-size: 1rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: var(--helpgent-color-primary);
+}
+.helpgent-note .helpgent-note__single:not(:last-child) {
+  margin-bottom: 6px;
+}
+.helpgent-note .helpgent-note__single .helpgent-note__single--label {
+  font-weight: 500;
+  margin-right: 5px;
+  color: #c71585;
+}
+
+.helpgent-messagebox-reply__input textarea {
+  width: 100%;
+  max-height: 160px;
+  min-height: 20px;
+  margin: 10px 0px;
+  border: none;
+  outline: none;
+  resize: none;
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  background: transparent;
+  line-height: 1.2;
+  padding: 2px 4px;
+  color: #4D4D4D;
+}
+.helpgent-messagebox-reply__input textarea:focus, .helpgent-messagebox-reply__input textarea:active {
+  outline: none;
+  box-shadow: none;
+}
+
+.wpwax-helpgent-body .helpgent-messagebox-reply__input textarea {
+  width: 100%;
+  max-height: 160px;
+  min-height: 20px;
+  margin: 10px 0px;
+  border: none;
+  outline: none;
+  resize: none;
+  font-size: 14px;
+  font-family: "Inter", sans-serif;
+  background: transparent;
+  line-height: 1.2;
+  padding: 2px 4px;
+}
+.wpwax-helpgent-body .helpgent-messagebox-reply__input textarea:focus, .wpwax-helpgent-body .helpgent-messagebox-reply__input textarea:active {
+  outline: none;
+  box-shadow: none;
+}
+.wpwax-helpgent-body .helpgent-btn:focus:not(.wp-block-button__link):not(.wp-block-file__button) {
+  outline: none;
+}
+.wpwax-helpgent-body .helpgent-btn.helpgent-btn-gray:focus:not(.wp-block-button__link):not(.wp-block-file__button) {
+  text-decoration: none;
+  color: var(--helpgent-color-white);
+  background-color: var(--helpgent-color-primary);
+}
+.wpwax-helpgent-body .helpgent-btn.helpgent-btn-gray:focus:not(.wp-block-button__link):not(.wp-block-file__button) .helpgent-btn-icon svg path {
+  fill: var(--helpgent-color-white);
+}
+
+.helpgent-messagebox-reply__action {
+  display: flex;
+  align-items: flex-end;
+}
+
+/* scrollbar */
+.helpgent-custom-scrollbar {
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--helpgent-color-bg-gray) var(--helpgent-color-bg-gray);
+}
+.helpgent-custom-scrollbar::-webkit-scrollbar {
+  width: 11px;
+}
+.helpgent-custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--helpgent-color-light);
+}
+.helpgent-custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: var(--helpgent-color-bg-gray);
+  border-radius: 6px;
+  border: 3px solid var(--helpgent-color-light);
+}
+
+.helpgent-greet-greetings {
+  text-align: center;
+  font-family: var(--font-family);
+}
+
+.helpgent-greet-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--helpgent-color-dark);
+  margin: 10px 0;
+  font-family: var(--font-family);
+}
+
+.helpgent-greet-subtitle {
+  font-size: 16px;
+  color: var(--helpgent-color-gray);
+  margin: 5px 0;
+  font-weight: 500;
+  font-family: var(--font-family);
+}
+
+.helpgent-record-send-progress {
+  height: min(80vh, 600px);
+  font-family: var(--font-family);
+}
+.helpgent-record-send-progress .helpgent-record-send-progress__content h4,
+.helpgent-record-send-progress .helpgent-record-send-progress__content p {
+  font-family: var(--font-family);
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 0;
+}
+.helpgent-record-send-progress .helpgent-record-send-progress__content p {
+  margin-top: 12px;
+}
+
+.helpgent-record-send-progress__bar {
+  position: relative;
+  width: 164px;
+  height: 164px;
+  border-radius: 50%;
+  margin: 0 auto 40px;
+}
+.helpgent-record-send-progress__bar:after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 158px;
+  height: 158px;
+  border-radius: 50%;
+  background-color: white;
+}
+.helpgent-record-send-progress__bar:before {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-image: linear-gradient(90deg, #6551f2 0%, transparent 0%, transparent), linear-gradient(270deg, #6551f2 50%, #e8e8e8 50%, #e8e8e8);
+  animation: wpwaxVMSpiner 900ms infinite linear forwards;
+  content: "";
+}
+.helpgent-record-send-progress__bar span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  font-weight: 600;
+  z-index: 101;
+}
+
+@keyframes wpwaxVMSpiner {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.helpgent-contact-form__title {
+  font-size: 18px;
+  font-weight: 500;
+  font-family: var(--font-family);
+  line-height: 1.333;
+  margin: 0 0 30px;
+  color: var(--helpgent-color-dark);
+}
+
+.helpgent-transparent-form-control {
+  border: none;
+  outline: none;
+  background: transparent !important;
+}
+
+.helpgent-btn svg {
+  margin-left: 10px;
+}
+
+.helpgent-btn div div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.helpgent-h-20 {
+  height: 20px;
+}
+
+.helpgent-w-f {
+  width: 100%;
+}
+
+.helpgent-h-100pr {
+  height: 100%;
+}
+
+.helpgent-font-family {
+  font-family: var(--wp--preset--font-family--source-serif-pro);
+}
+
+.helpgent-font-weight-500 {
+  font-weight: 500;
+}
+
+.helpgent-font-size-16 {
+  font-size: 16px;
+}
+
+.helpgent-font-size-20 {
+  font-size: 20px;
+}
+
+.helpgent-font-w-bold {
+  font-weight: bold;
+}
+
+.helpgent-success__title {
+  font-size: var(--font-size-thank-title);
+  font-weight: 600;
+  font-family: var(--font-family);
+  margin-bottom: 16px;
+  color: var(--helpgent-color-thank-title);
+}
+
+.helpgent-d-block {
+  display: block;
+}
+
+.helpgent-d-flex {
+  display: flex;
+}
+
+.helpgent-flex-grow-1 {
+  flex-grow: 1;
+}
+
+.helpgent-flex-direction-column {
+  flex-direction: column;
+}
+
+.helpgent-justify-content-center {
+  justify-content: center;
+}
+
+.helpgent-text-center {
+  text-align: center;
+}
+
+.helpgent-text-danger {
+  color: var(--helpgent-color-danger) !important;
+}
+
+.helpgent-text-white {
+  color: #ffffff;
+}
+
+.helpgent-text-color {
+  color: var(--helpgent-color-text);
+}
+
+.helpgent-record-send-success__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background-color: #030308;
+  border-radius: 25px 25px 0 0;
+  min-height: 185px;
+}
+@media only screen and (max-width: 1299px) {
+  .helpgent-record-send-success__top {
+    min-height: 150px;
+  }
+}
+.helpgent-record-send-success__top .helpgent-record-send-success__check {
+  display: flex;
+  justify-content: center;
+}
+@media only screen and (max-width: 1299px) {
+  .helpgent-record-send-success__top .helpgent-record-send-success__check svg {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.helpgent-space-between {
+  justify-content: space-between;
+}
+
+.helpgent-empty-messagebox {
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--helpgent-color-white);
+}
+
+/* Not Fouond Text Style */
+.wpwax-notfound-text,
+.helpgent-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 600;
+  min-height: 100px;
+  font-family: "Inter", sans-serif;
+  color: var(--helpgent-color-dark);
+}
+.wpwax-notfound-text p,
+.helpgent-empty p {
+  font-size: 15px;
+  margin: 0;
+}
+
+.helpgent-alert {
+  padding: 8px 15px;
+  font-size: 15px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: lightgray;
+}
+
+.helpgent-alert-danger {
+  color: red;
+  background-color: #ffd2d2;
+}
+
+/* Empty Table Box */
+.wpwax-empty-table-box {
+  text-align: center;
+  padding: 30px 0;
+}
+.wpwax-empty-table-box .wpwax-empty-table-box__img {
+  margin-bottom: 20px;
+}
+.wpwax-empty-table-box .wpwax-empty-table-box__content p {
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 18px;
+}
+
+.helpgent-app-container-full {
+  width: 100% !important;
+  max-width: unset !important;
+}
+
+.helpgent-countdown-wrap {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999999;
+  background-color: rgba(137, 137, 137, 0.537254902);
+}
+.helpgent-countdown-wrap .helpgent-countdown-heading,
+.helpgent-countdown-wrap .helpgent-countdown-text {
+  font-family: "Roboto";
+  margin: 0;
+  color: #fff;
+  line-height: normal;
+}
+.helpgent-countdown-wrap .helpgent-countdown-heading {
+  font-size: 150px;
+}
+.helpgent-countdown-wrap .helpgent-countdown-text {
+  margin: 20px 0;
+  font-size: 50px;
+}
+
+.helpgent-blinking-text {
+  animation: wpwaxHgBlinking 1s linear infinite;
+}
+
+.helpgent-media-actions {
+  position: absolute;
+  left: 50%;
+  bottom: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+.helpgent-media-actions path {
+  fill: #000000;
+}
+
+.helpgent-modal-wrap {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5294117647);
+  z-index: 99999;
+}
+
+/* Create Form Modal */
+.helpgent-create-form-modal .helpgent-form-group {
+  flex-direction: column;
+}
+.helpgent-create-form-modal .helpgent-form-group .helpgent-form__element {
+  font-size: 16px;
+  min-height: 50px;
+}
+.helpgent-create-form-modal .helpgent-btn {
+  min-height: 50px;
+}
+
+.helpgent-dots {
+  position: relative;
+  left: -9999px;
+  width: 6px;
+  height: 6px;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #fff;
+  box-shadow: 9999px 0 0 -5px #fff;
+  animation: dotPulse 1.5s infinite linear;
+  animation-delay: 0.25s;
+}
+.helpgent-dots:after, .helpgent-dots:before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #fff;
+}
+.helpgent-dots:before {
+  box-shadow: 9984px 0 0 -5px #fff;
+  animation: dotPulseBefore 1.5s infinite linear;
+  animation-delay: 0s;
+}
+.helpgent-dots:after {
+  box-shadow: 10014px 0 0 -5px #fff;
+  animation: dotPulseAfter 1.5s infinite linear;
+  animation-delay: 0.5s;
+}
+
+/* Pagination Style */
+.helpgent-pagination {
+  display: flex;
+  margin: -3px;
+}
+.helpgent-pagination .helpgent-pagination__item {
+  margin: 3px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.helpgent-pagination .helpgent-pagination__item.disabled .helpgent-pagination__link {
+  pointer-events: none;
+  opacity: 0.7;
+}
+.helpgent-pagination .helpgent-pagination__item.disabled .helpgent-pagination__link svg {
+  opacity: 0.7;
+}
+.helpgent-pagination .helpgent-pagination__link {
+  min-height: 32px;
+  font-size: 14px;
+  text-decoration: none;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12.24px;
+  border-width: 1px;
+  border-style: solid;
+  border: 1px solid var(--helpgent-color-border-light);
+  color: var(--helpgent-color-gray);
+  line-height: normal;
+  background-color: var(--helpgent-color-white);
+}
+.helpgent-pagination .helpgent-pagination__link svg {
+  width: 7.5px;
+}
+.helpgent-pagination .helpgent-pagination__link[role=button] {
+  cursor: pointer;
+}
+.helpgent-pagination .helpgent-pagination__link:focus {
+  outline: none;
+  box-shadow: 0 0;
+}
+.helpgent-pagination .helpgent-pagination__link:hover, .helpgent-pagination .helpgent-pagination__link.helpgent-pagination__active {
+  color: var(--helpgent-color-white);
+  background-color: var(--helpgent-color-primary);
+}
+.helpgent-pagination .helpgent-pagination__link:hover svg path, .helpgent-pagination .helpgent-pagination__link.helpgent-pagination__active svg path {
+  fill: var(--helpgent-color-white);
+}
+
+/* ProgressBar */
+.helpgent-progress-bar {
+  width: 100%;
+  height: 6px;
+  position: relative;
+  border-radius: 20px;
+  background-color: var(--helpgent-color-bg-gray);
+}
+.helpgent-progress-bar .helpgent-progress-bar__status {
+  display: block;
+  height: 100%;
+  width: 50%;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-size: 1rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+.helpgent-progress-bar.helpgent-progress-bar-animate .helpgent-progress-bar__status {
+  background-image: linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  animation: wpwaxProgressBar 1.5s linear infinite;
+}
+
+/* wpwax Tooltip */
+.helpgent-tooltip {
+  position: relative;
+}
+.helpgent-tooltip .helpgent-tooltip__text {
+  position: fixed;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 13px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  z-index: -1;
+  color: #4D4D4D;
+  background-color: var(--helpgent-color-white);
+}
+.helpgent-tooltip .helpgent-tooltip__text.wpwax-tooltip-show {
+  opacity: 1;
+  visibility: visible;
+  z-index: 10;
+}
+.helpgent-tooltip .helpgent-tooltip__text svg {
+  width: 14px;
+  height: 14px;
+  margin-right: 8px;
+}
+.helpgent-tooltip .helpgent-tooltip__text:before {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 10px solid var(--helpgent-color-white);
+}
+.helpgent-tooltip .helpgent-tooltip__text.helpgent-top {
+  top: 0;
+}
+
+/* Circle Loader */
+.helpgent-circle-loader {
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--helpgent-color-primary);
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: circleRotation 1s linear infinite;
+}
+
+.helpgent-loader-icon {
+  display: inline-block;
+}
+.helpgent-loader-icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+.helpgent-skeleton-list {
+  margin: 0;
+}
+.helpgent-skeleton-list li {
+  height: 10px;
+  width: 100%;
+  margin-bottom: 15px;
+  background: #f6f7f8;
+  background-image: linear-gradient(to right, #f6f7f8 0, #edeef1 20%, #f6f7f8 40%, #f6f7f8 100%);
+  background-repeat: no-repeat;
+  background-size: 800px 104px;
+  display: inline-block;
+  position: relative;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: shimmerEffect;
+  animation-timing-function: linear;
+}
+.helpgent-skeleton-list li:last-child {
+  margin-bottom: 0;
+}
+
+.helpgent-edit-form-loader {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--helpgent-color-white);
+}
+.helpgent-edit-form-loader .helpgent-loading-spin {
+  top: 50%;
+  left: 50%;
+}
+
+/* Animation Keyframe */
+@keyframes shimmerEffect {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 200px 0;
+  }
+}
+@keyframes dotPulseBefore {
+  0% {
+    box-shadow: 9984px 0 0 -5px #fff;
+  }
+  30% {
+    box-shadow: 9984px 0 0 2px #fff;
+  }
+  60%, 100% {
+    box-shadow: 9984px 0 0 -5px #fff;
+  }
+}
+@keyframes dotPulse {
+  0% {
+    box-shadow: 9999px 0 0 -5px #fff;
+  }
+  30% {
+    box-shadow: 9999px 0 0 2px #fff;
+  }
+  60%, 100% {
+    box-shadow: 9999px 0 0 -5px #fff;
+  }
+}
+@keyframes dotPulseAfter {
+  0% {
+    box-shadow: 10014px 0 0 -5px #fff;
+  }
+  30% {
+    box-shadow: 10014px 0 0 2px #fff;
+  }
+  60%, 100% {
+    box-shadow: 10014px 0 0 -5px #fff;
+  }
+}
+@keyframes wpwaxSpinMove {
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes wpwaxRotate {
+  100% {
+    transform: rotate(410deg);
+  }
+}
+/* Wpwax circle animation */
+@keyframes circleRotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes wpwaxVideoOpen {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+@keyframes wpwaxVmScaling {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* wpwax progressbar animation */
+@keyframes wpwaxProgressBar {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1rem 1rem;
+  }
+}
+/* Responsive Css */
+@media only screen and (max-width: 1299px) {
+  .helpgent-note {
+    padding: 15px;
+  }
+  .helpgent-btn {
+    font-size: 14px;
+  }
+}
+@keyframes wpwaxHgPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 0, 0, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(239, 0, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 0, 0, 0);
+  }
+}
+@keyframes wpwaxHgBlinking {
+  50% {
+    opacity: 0;
+  }
+}
+@keyframes wpwaxBlinking {
+  0% {
+    background-color: #F8D7DA; /* Start with the original background color */
+  }
+  50% {
+    background-color: #FFC7CE; /* Change the background color */
+  }
+  100% {
+    background-color: #F8D7DA; /* Return to the original background color */
+  }
+}
+/* Responsive Css */
+@media only screen and (max-width: 1299px) {
+  .helpgent-btn.helpgent-btn-lg {
+    height: 48px;
+  }
+}
+
+/*# sourceMappingURL=global.css.map*/

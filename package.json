@@ -37,6 +37,8 @@
 	},
 	"dependencies": {
 		"@tanstack/react-query": "^4.29.7",
-		"react-router-dom": "^6.11.1"
+		"prop-types": "^15.8.1",
+		"react-router-dom": "^6.11.1",
+		"styled-components": "^6.0.0-rc.1"
 	}
 }

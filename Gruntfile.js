@@ -9,11 +9,9 @@ module.exports = ( grunt ) => {
 		version: '2.0.0',
 	};
 
-	let buildIgnoreFiles = [
-		'**/tests/**',
-	];
+	let buildIgnoreFiles = [ '**/tests/**' ];
 
-    let buildFiles = [
+	let buildFiles = [
 		'app/**',
 		'assets/**',
 		'config/**',
@@ -23,7 +21,7 @@ module.exports = ( grunt ) => {
 		'resources/views/**',
 		'routes/**',
 		'vendor/vendor-src/**/*.php',
-		'helpgent.php'
+		'helpgent.php',
 	];
 
 	buildIgnoreFiles = buildIgnoreFiles.map( ( item ) => {
@@ -36,14 +34,14 @@ module.exports = ( grunt ) => {
 
 	const buildFileList = [ ...buildFiles, ...buildIgnoreFiles ];
 
-    const textDomainFiles = [
-        projectConfig.srcDir + '*.php',
-        projectConfig.srcDir + '**/*.php',
-        '!' + projectConfig.srcDir + '__build/**',
-        '!' + projectConfig.srcDir + 'node_modules/**',
-        '!' + projectConfig.srcDir + 'vendor/**',
-        '!' + projectConfig.srcDir + 'vendor-src/**',
-    ];
+	const textDomainFiles = [
+		projectConfig.srcDir + '*.php',
+		projectConfig.srcDir + '**/*.php',
+		'!' + projectConfig.srcDir + '__build/**',
+		'!' + projectConfig.srcDir + 'node_modules/**',
+		'!' + projectConfig.srcDir + 'vendor/**',
+		'!' + projectConfig.srcDir + 'vendor-src/**',
+	];
 
 	grunt.initConfig( {
 		// clean dist directory file
@@ -98,7 +96,7 @@ module.exports = ( grunt ) => {
 				updateDomains: true, // List of text domains to replace.
 			},
 			target: {
-				src: textDomainFiles
+				src: textDomainFiles,
 			},
 		},
 

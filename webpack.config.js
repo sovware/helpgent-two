@@ -24,7 +24,8 @@ module.exports = {
 	entry: {
 		'js/index': './resources/js/admin/index.js',
 		'js/queryStore': './resources/js/queryStore',
-		// 'css/app': './resources/sass/app.scss',
+		'css/global': './resources/sass/global.scss',
+		'css/fonts': './resources/sass/fonts.scss',
 	},
 	output: {
 		path: path.resolve( __dirname, './assets/build/' ),

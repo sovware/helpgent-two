@@ -1,5 +1,15 @@
-import { Button } from '@wordpress/components';
+import { Link } from 'react-router-dom';
+import { lazy, Suspense } from '@wordpress/element';
+
+const PageHeader = lazy( () => import( './components/PageHeader.js' ) );
+const FormTable = lazy( () => import( './components/FormTable.js' ) );
 
 export default function Forms() {
-	return <Button>Form Editor</Button>;
+	return (
+		<div className="helpgent-page-inner">
+			<PageHeader />
+
+			<FormTable />
+		</div>
+	);
 }
