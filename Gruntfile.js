@@ -1,211 +1,158 @@
-module.exports = ( grunt ) => {
-	'use strict';
+const Utils = require("./utils");
 
-	const projectConfig = {
-		name: 'helpgent',
-		text_domain: 'helpgent',
-		srcDir: './',
-		distDir: `./__build/helpgent/`,
-		version: '2.0.0',
-	};
+module.exports = (grunt) => {
+  "use strict";
 
-	let buildIgnoreFiles = [
-		'**/tests/**',
-	];
+  const projectConfig = {
+    srcDir: "./"
+  };
 
-    let buildFiles = [
-		'app/**',
-		'assets/**',
-		'config/**',
-		'database/**',
-		'enqueues/**',
-		'languages/',
-		'resources/views/**',
-		'routes/**',
-		'vendor/vendor-src/**/*.php',
-		'helpgent.php'
-	];
+  const textDomainFiles = [
+    projectConfig.srcDir + "*.php",
+    projectConfig.srcDir + "**/*.php",
+    "!" + projectConfig.srcDir + "__build/**",
+    "!" + projectConfig.srcDir + "node_modules/**",
+    "!" + projectConfig.srcDir + "vendor/**",
+    "!" + projectConfig.srcDir + "vendor-src/**",
+  ];
 
-	buildIgnoreFiles = buildIgnoreFiles.map( ( item ) => {
-		return '!' + projectConfig.srcDir + item;
-	} );
+  grunt.initConfig({
+    addtextdomain: {
+      options: {
+        updateDomains: true, // List of text domains to replace.
+      },
+      target: {
+        src: textDomainFiles,
+      },
+    },
 
-	buildFiles = buildFiles.map( ( item ) => {
-		return projectConfig.srcDir + item;
-	} );
+    checktextdomain: {
+      standard: {
+        options: {
+          text_domain: Utils.textDomain, //Specify allowed domain(s)
+          // correct_domain: true, // don't use it, it has bugs
+          keywords: [
+            //List keyword specifications
+            "__:1,2d",
+            "_e:1,2d",
+            "_x:1,2c,3d",
+            "esc_html__:1,2d",
+            "esc_html_e:1,2d",
+            "esc_html_x:1,2c,3d",
+            "esc_attr__:1,2d",
+            "esc_attr_e:1,2d",
+            "esc_attr_x:1,2c,3d",
+            "_ex:1,2c,3d",
+            "_n:1,2,4d",
+            "_nx:1,2,4c,5d",
+            "_n_noop:1,2,3d",
+            "_nx_noop:1,2,3c,4d",
+          ],
+        },
+        files: [
+          {
+            src: textDomainFiles,
+            expand: true,
+          },
+        ],
+      },
+    },
 
-	const buildFileList = [ ...buildFiles, ...buildIgnoreFiles ];
+    makepot: {
+      target: {
+        options: {
+          cwd: projectConfig.srcDir, // Directory of files to internationalize.
+          mainFile: "", // Main project file.
+          type: "wp-plugin", // Type of project (wp-plugin or wp-theme).
+          updateTimestamp: false, // Whether the POT-Creation-Date should be updated without other changes.
+          updatePoFiles: false, // Whether to update PO files in the same directory as the POT file.
+        },
+      },
+    },
 
-    const textDomainFiles = [
-        projectConfig.srcDir + '*.php',
-        projectConfig.srcDir + '**/*.php',
-        '!' + projectConfig.srcDir + '__build/**',
-        '!' + projectConfig.srcDir + 'node_modules/**',
-        '!' + projectConfig.srcDir + 'vendor/**',
-        '!' + projectConfig.srcDir + 'vendor-src/**',
-    ];
+    /**
+     * -------------------------------------
+     * @description print ASCII text
+     * @see https://fsymbols.com/generators/carty/
+     * -------------------------------------
+     */
 
-	grunt.initConfig( {
-		// clean dist directory file
-		clean: {
-			options: { force: true },
-			dist: [
-				projectConfig.distDir + '/**',
-				projectConfig.distDir.replace( /\/$/, '' ) + '.zip',
-			],
-		},
+    screen: {
+      begin: {
+        options: {
+          data: {
+            version: "1.0.0", // Replace with the actual version or fetch dynamically
+          },
+        },
+        template: `
+		# Project   : ${Utils.pluginName}
+		# Dist      : ./__build/${Utils.pluginName}/
+		# Version   : <%= grunt.config.get("screen.begin.options.data.version") %>`
+          .cyan,
+      },
+      textdomainchecking: {
+        template: `Checking textdomain [${Utils.textDomain}]`.cyan,
+      },
+      finish: {
+        template: `
+		╭─────────────────────────────────────────────────────────────────╮
+		│                                                                 │
+		│                      All tasks completed.                       │
+		│  Built files & Installable zip copied to the __build directory. │
+		│                         ~ SovWare ~                             │
+		│                                                                 │
+		╰─────────────────────────────────────────────────────────────────╯
+		`.green,
+      },
+    },
+  });
 
-		// Copying project files to ../dist/ directory
-		copy: {
-			dist: {
-				files: [
-					{
-						src: buildFileList,
-						dest: projectConfig.distDir,
-						filter: 'isFile',
-					},
-				],
-			},
-		},
+  /**
+   * ----------------------------------
+   * @description Register grunt tasks
+   * ----------------------------------
+   */
+  require("load-grunt-tasks")(grunt);
 
-		// Compress Build Files into ${project}.zip
-		compress: {
-			dist: {
-				options: {
-					force: true,
-					mode: 'zip',
-					archive:
-						projectConfig.distDir.replace(
-							projectConfig.name,
-							''
-						) +
-						projectConfig.name +
-						'-' +
-						projectConfig.version +
-						'.zip',
-				},
-				expand: true,
-				cwd: projectConfig.distDir,
-				src: [ '**' ],
-				dest: '../' + projectConfig.name,
-			},
-		},
+  grunt.registerTask("getPluginVersion", async function () {
+    var done = this.async();
+    const version = await Utils.getPluginVersion(); // Fetch or determine the plugin version dynamically
+    done(version);
+    grunt.config.set("screen.begin.options.data.version", version);
+  });
 
-		// i18n
-		addtextdomain: {
-			options: {
-				// textdomain: 'foobar',
-				updateDomains: true, // List of text domains to replace.
-			},
-			target: {
-				src: textDomainFiles
-			},
-		},
+  /**
+   * text domain fixing task
+   */
+  grunt.registerTask("fixtextdomain", [
+    "screen:textdomainchecking",
+    "addtextdomain",
+    "checktextdomain",
+    "makepot",
+  ]);
 
-		checktextdomain: {
-			standard: {
-				options: {
-					text_domain: projectConfig.text_domain, //Specify allowed domain(s)
-					// correct_domain: true, // don't use it, it has bugs
-					keywords: [
-						//List keyword specifications
-						'__:1,2d',
-						'_e:1,2d',
-						'_x:1,2c,3d',
-						'esc_html__:1,2d',
-						'esc_html_e:1,2d',
-						'esc_html_x:1,2c,3d',
-						'esc_attr__:1,2d',
-						'esc_attr_e:1,2d',
-						'esc_attr_x:1,2c,3d',
-						'_ex:1,2c,3d',
-						'_n:1,2,4d',
-						'_nx:1,2,4c,5d',
-						'_n_noop:1,2,3d',
-						'_nx_noop:1,2,3c,4d',
-					],
-				},
-				files: [
-					{
-						src: textDomainFiles,
-						expand: true,
-					},
-				],
-			},
-		},
+  grunt.registerTask("screen:textdomainchecking", function () {
+    const template = grunt.config.get("screen.textdomainchecking.template");
+    const rendered = grunt.template.process(template, {});
+    grunt.log.writeln(rendered);
+  });
 
-		makepot: {
-			target: {
-				options: {
-					cwd: projectConfig.srcDir, // Directory of files to internationalize.
-					mainFile: '', // Main project file.
-					type: 'wp-plugin', // Type of project (wp-plugin or wp-theme).
-					updateTimestamp: false, // Whether the POT-Creation-Date should be updated without other changes.
-					updatePoFiles: false, // Whether to update PO files in the same directory as the POT file.
-				},
-			},
-		},
+  grunt.registerTask("screen:begin", function () {
+    const template = grunt.config.get("screen.begin.template");
+    const rendered = grunt.template.process(template, {
+      data: grunt.config.get("screen.begin.options.data"),
+    });
+    grunt.log.writeln(rendered);
+  });
 
-		/**
-		 * -------------------------------------
-		 * @description print ASCII text
-		 * @see https://fsymbols.com/generators/carty/
-		 * -------------------------------------
-		 */
+  grunt.registerTask("screen:finish", function () {
+    const template = grunt.config.get("screen.finish.template");
+    const rendered = grunt.template.process(template, {});
+    grunt.log.writeln(rendered);
+  });
 
-		screen: {
-			begin: `
-	# Project   : ${ projectConfig.name }
-	# Dist      : ${ projectConfig.distDir }
-	# Version   : ${ projectConfig.version }`.cyan,
-			textdomainchecking:
-				`Checking textdomain [${ projectConfig.text_domain }]`.cyan,
-			minifying: `Minifying js & css files.`.cyan,
-			finish: `
-			╭─────────────────────────────────────────────────────────────────╮
-			│                                                                 │
-			│                      All tasks completed.                       │
-			│  Built files & Installable zip copied to the __build directory. │
-			│                         ~ SovWare ~                             │
-			│                                                                 │
-			╰─────────────────────────────────────────────────────────────────╯
-			`.green,
-		},
-	} );
-
-	/**
-	 * ----------------------------------
-	 * @description Register grunt tasks
-	 * ----------------------------------
-	 */
-	require( 'load-grunt-tasks' )( grunt );
-
-	/**
-	 * text domain fixing task
-	 */
-	grunt.registerTask( 'fixtextdomain', [
-		'screen:textdomainchecking',
-		'addtextdomain',
-		'checktextdomain',
-		'makepot',
-	] );
-
-	/**
-	 * Status Screen
-	 */
-	grunt.registerMultiTask( 'screen', function () {
-		grunt.log.writeln( this.data );
-	} );
-
-	/**
-	 * Build and compress task
-	 */
-	grunt.registerTask( 'build', [
-		'screen:begin',
-		'clean',
-		'fixtextdomain',
-		'copy',
-		'compress',
-		'screen:finish',
-	] );
+  /**
+   * Build and compress task
+   */
+  grunt.registerTask("build", ["screen:begin", "fixtextdomain"]);
 };
