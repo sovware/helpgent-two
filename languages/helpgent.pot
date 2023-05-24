@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: HelpGent 2.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/helpgent-two\n"
-"POT-Creation-Date: 2023-05-24 07:24:39+00:00\n"
+"POT-Creation-Date: 2023-05-23 10:45:48+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,17 +13,10 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 1.0.3\n"
 
-#: __build/helpgent/app/Http/Controllers/Admin/FormController.php:57
 #: app/Http/Controllers/Admin/FormController.php:57
 msgid "Form Created Successfully!"
 msgstr ""
 
-#: __build/helpgent/app/Http/Controllers/Admin/FormController.php:96
-#: __build/helpgent/app/Http/Controllers/Admin/FormController.php:137
-#: __build/helpgent/app/Http/Controllers/Admin/SubmissionController.php:81
-#: __build/helpgent/app/Http/Controllers/Admin/SubmissionController.php:123
-#: __build/helpgent/app/Http/Controllers/Admin/TagController.php:131
-#: __build/helpgent/app/Http/Controllers/AttachmentController.php:150
 #: app/Http/Controllers/Admin/FormController.php:96
 #: app/Http/Controllers/Admin/FormController.php:137
 #: app/Http/Controllers/Admin/SubmissionController.php:81
@@ -33,60 +26,50 @@ msgstr ""
 msgid "Something Was Wrong!"
 msgstr ""
 
-#: __build/helpgent/app/Http/Controllers/Admin/FormController.php:103
 #: app/Http/Controllers/Admin/FormController.php:103
 msgid "Form Updated Successfully!"
 msgstr ""
 
-#: __build/helpgent/app/Http/Controllers/Admin/FormController.php:144
 #: app/Http/Controllers/Admin/FormController.php:144
 msgid "Form Deleted Successfully!"
 msgstr ""
 
-#: __build/helpgent/app/Http/Controllers/Admin/SubmissionController.php:88
+#: app/Http/Controllers/Admin/SettingsController.php:50
+msgid "Settings saved successfully!"
+msgstr ""
+
 #: app/Http/Controllers/Admin/SubmissionController.php:88
 msgid "Submission Deleted Successfully!"
 msgstr ""
 
-#: __build/helpgent/app/Http/Controllers/Admin/SubmissionController.php:130
 #: app/Http/Controllers/Admin/SubmissionController.php:130
 msgid "Important status updated successfully!"
 msgstr ""
 
-#: __build/helpgent/app/Http/Controllers/Admin/SubmissionController.php:168
 #: app/Http/Controllers/Admin/SubmissionController.php:168
 msgid "Submission tag updated successfully!"
 msgstr ""
 
-#: __build/helpgent/app/Http/Controllers/Admin/SubmissionController.php:207
 #: app/Http/Controllers/Admin/SubmissionController.php:207
 msgid "Submission status updated successfully!"
 msgstr ""
 
-#: __build/helpgent/app/Http/Controllers/Admin/SubmissionController.php:246
 #: app/Http/Controllers/Admin/SubmissionController.php:246
 msgid "Submission read status updated successfully!"
 msgstr ""
 
-#: __build/helpgent/app/Http/Controllers/Admin/TagController.php:55
 #: app/Http/Controllers/Admin/TagController.php:55
 msgid "Tag Created Successfully!"
 msgstr ""
 
-#: __build/helpgent/app/Http/Controllers/Admin/TagController.php:96
 #: app/Http/Controllers/Admin/TagController.php:96
 msgid "Tag Updated Successfully!"
 msgstr ""
 
-#: __build/helpgent/app/Http/Controllers/Admin/TagController.php:138
 #: app/Http/Controllers/Admin/TagController.php:138
 msgid "Tag Deleted Successfully!"
 msgstr ""
 
-#: __build/helpgent/app/Http/Controllers/AttachmentController.php:52
-#: __build/helpgent/app/Http/Controllers/AttachmentController.php:132
-#: __build/helpgent/app/Repositories/AttachmentRepository.php:35
-#: __build/helpgent/app/Repositories/AttachmentRepository.php:56
 #: app/Http/Controllers/AttachmentController.php:52
 #: app/Http/Controllers/AttachmentController.php:132
 #: app/Repositories/AttachmentRepository.php:35
@@ -94,22 +77,19 @@ msgstr ""
 msgid "Attachment not found"
 msgstr ""
 
-#: __build/helpgent/app/Http/Controllers/AttachmentController.php:105
 #: app/Http/Controllers/AttachmentController.php:105
 msgid "The Attachment Created Successfully!"
 msgstr ""
 
-#: __build/helpgent/app/Http/Controllers/AttachmentController.php:159
 #: app/Http/Controllers/AttachmentController.php:159
 msgid "The Attachment Deleted Successfully!"
 msgstr ""
 
-#: __build/helpgent/app/Http/Controllers/SubmissionController.php:48
 #: app/Http/Controllers/SubmissionController.php:48
 msgid "Submission Created Successfully!"
 msgstr ""
 
-#: __build/helpgent/app/MediaDriver/Local.php:30 app/MediaDriver/Local.php:30
+#: app/MediaDriver/Local.php:30
 msgid "Could not upload the file, please try again"
 msgstr ""
 
@@ -117,53 +97,96 @@ msgstr ""
 msgid "HelpGent"
 msgstr ""
 
-#: __build/helpgent/app/Providers/Admin/MenuServiceProvider.php:42
 #: app/Providers/Admin/MenuServiceProvider.php:42
 msgid "Overview"
 msgstr ""
 
-#: __build/helpgent/app/Providers/Admin/MenuServiceProvider.php:43
 #: app/Providers/Admin/MenuServiceProvider.php:43
 msgid "Analytics"
 msgstr ""
 
-#: __build/helpgent/app/Providers/Admin/MenuServiceProvider.php:44
 #: app/Providers/Admin/MenuServiceProvider.php:44
 msgid "Forms"
 msgstr ""
 
-#: __build/helpgent/app/Providers/Admin/MenuServiceProvider.php:45
 #: app/Providers/Admin/MenuServiceProvider.php:45
 msgid "Submissions"
 msgstr ""
 
-#: __build/helpgent/app/Providers/Admin/MenuServiceProvider.php:46
 #: app/Providers/Admin/MenuServiceProvider.php:46
 msgid "Settings"
 msgstr ""
 
-#: __build/helpgent/app/Providers/Admin/MenuServiceProvider.php:47
 #: app/Providers/Admin/MenuServiceProvider.php:47
 msgid "Go Pro"
 msgstr ""
 
-#: __build/helpgent/app/Repositories/AttachmentRepository.php:84
 #: app/Repositories/AttachmentRepository.php:84
 msgid "Please use a valid media driver"
 msgstr ""
 
-#: __build/helpgent/app/Repositories/FormRepository.php:35
-#: __build/helpgent/app/Repositories/FormRepository.php:53
 #: app/Repositories/FormRepository.php:35
 #: app/Repositories/FormRepository.php:53
 msgid "Form not found"
 msgstr ""
 
-#: __build/helpgent/app/Repositories/SubmissionRepository.php:100
-#: __build/helpgent/app/Repositories/SubmissionRepository.php:126
-#: __build/helpgent/app/Repositories/SubmissionRepository.php:148
-#: __build/helpgent/app/Repositories/SubmissionRepository.php:162
-#: __build/helpgent/app/Repositories/SubmissionTagRepository.php:22
+#: app/Repositories/SettingsRepository.php:45
+msgid "General"
+msgstr ""
+
+#: app/Repositories/SettingsRepository.php:54
+msgid "Email"
+msgstr ""
+
+#: app/Repositories/SettingsRepository.php:63
+msgid "Test"
+msgstr ""
+
+#: app/Repositories/SettingsRepository.php:78
+msgid "Enable Email Notification"
+msgstr ""
+
+#: app/Repositories/SettingsRepository.php:88
+msgid "Open Ended"
+msgstr ""
+
+#: app/Repositories/SettingsRepository.php:92
+msgid "Enable Guest Conversation"
+msgstr ""
+
+#: app/Repositories/SettingsRepository.php:98
+msgid "Chat Head Position"
+msgstr ""
+
+#: app/Repositories/SettingsRepository.php:102
+msgid "Bottom Right"
+msgstr ""
+
+#: app/Repositories/SettingsRepository.php:103
+msgid "Bottom Left"
+msgstr ""
+
+#: app/Repositories/SettingsRepository.php:104
+msgid "Bottom Middle"
+msgstr ""
+
+#: app/Repositories/SettingsRepository.php:110
+msgid "Voice And Video"
+msgstr ""
+
+#: app/Repositories/SettingsRepository.php:114
+msgid "Maximum Video Record Length"
+msgstr ""
+
+#: app/Repositories/SettingsRepository.php:116
+#: app/Repositories/SettingsRepository.php:123
+msgid "You can use maximum of 2 mins in free version."
+msgstr ""
+
+#: app/Repositories/SettingsRepository.php:121
+msgid "Maximum Voice Record Length"
+msgstr ""
+
 #: app/Repositories/SubmissionRepository.php:100
 #: app/Repositories/SubmissionRepository.php:126
 #: app/Repositories/SubmissionRepository.php:148
@@ -172,26 +195,19 @@ msgstr ""
 msgid "Form submission not found"
 msgstr ""
 
-#: __build/helpgent/app/Repositories/SubmissionRepository.php:139
 #: app/Repositories/SubmissionRepository.php:139
 msgid "Submission not found"
 msgstr ""
 
-#: __build/helpgent/app/Repositories/SubmissionTagRepository.php:28
-#: __build/helpgent/app/Repositories/TagRepository.php:41
-#: __build/helpgent/app/Repositories/TagRepository.php:62
 #: app/Repositories/SubmissionTagRepository.php:28
 #: app/Repositories/TagRepository.php:41 app/Repositories/TagRepository.php:62
 msgid "Tag not found"
 msgstr ""
 
-#: __build/helpgent/app/Repositories/TagRepository.php:25
-#: __build/helpgent/app/Repositories/TagRepository.php:47
 #: app/Repositories/TagRepository.php:25 app/Repositories/TagRepository.php:47
 msgid "%s tag is already exists"
 msgstr ""
 
-#: __build/helpgent/resources/views/admin/notice/nginx-setup-notice.php:4
 #: resources/views/admin/notice/nginx-setup-notice.php:4
 msgid ""
 "It looks like you're using NGINX web server. NGINX doesn’t have "
@@ -199,27 +215,22 @@ msgid ""
 "automatically for you. Here's how you can do it manually:"
 msgstr ""
 
-#: __build/helpgent/resources/views/admin/notice/nginx-setup-notice.php:6
 #: resources/views/admin/notice/nginx-setup-notice.php:6
 msgid "Update our rewrite rules on your NGINX server"
 msgstr ""
 
-#: __build/helpgent/resources/views/admin/notice/nginx-setup-notice.php:7
 #: resources/views/admin/notice/nginx-setup-notice.php:7
 msgid "as per this instruction"
 msgstr ""
 
-#: __build/helpgent/resources/views/admin/notice/nginx-setup-notice.php:13
 #: resources/views/admin/notice/nginx-setup-notice.php:13
 msgid "Instruction:"
 msgstr ""
 
-#: __build/helpgent/resources/views/admin/notice/nginx-setup-notice.php:15
 #: resources/views/admin/notice/nginx-setup-notice.php:15
 msgid "Copy the rewrite rules shown above"
 msgstr ""
 
-#: __build/helpgent/resources/views/admin/notice/nginx-setup-notice.php:16
 #: resources/views/admin/notice/nginx-setup-notice.php:16
 msgid ""
 "Find your website’s Nginx config file which is often located at "
@@ -227,12 +238,10 @@ msgid ""
 "using Arch Linux)"
 msgstr ""
 
-#: __build/helpgent/resources/views/admin/notice/nginx-setup-notice.php:18
 #: resources/views/admin/notice/nginx-setup-notice.php:18
 msgid "Paste the copied rules in the server block"
 msgstr ""
 
-#: __build/helpgent/resources/views/admin/notice/nginx-setup-notice.php:25
 #: resources/views/admin/notice/nginx-setup-notice.php:25
 msgid "Dismiss"
 msgstr ""

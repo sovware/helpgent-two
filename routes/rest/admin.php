@@ -1,6 +1,7 @@
 <?php
 
 use HelpGent\App\Http\Controllers\Admin\FormController;
+use HelpGent\App\Http\Controllers\Admin\SettingsController;
 use HelpGent\App\Http\Controllers\Admin\SubmissionController;
 use HelpGent\App\Http\Controllers\Admin\TagController;
 use HelpGent\WaxFramework\Routing\Route;
@@ -19,5 +20,7 @@ Route::group(
                 Route::post( 'read', [SubmissionController::class, 'update_read'] );
             } 
         );
+        Route::get( 'settings', [SettingsController::class, 'index'] );
+        Route::post( 'settings', [SettingsController::class, 'update'] );
     }, ['admin']
 );
