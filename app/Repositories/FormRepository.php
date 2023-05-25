@@ -9,12 +9,23 @@ use HelpGent\App\Utils\DateTime;
 use HelpGent\WaxFramework\Database\Query\Builder;
 
 class FormRepository {
-    public function get() {
-        return Form::query()->with(
+    public function get( int $per_page, int $page ) {
+        $forms = Form::query()
+        ->with_count(
+            'submissions as total_submissions', function( Builder $query ) {
+                $query->where( 'status', 'active' );
+            } 
+        )
+        ->with(
             'user', function ( Builder $query ) {
                 $query->select( 'users.ID', 'users.display_name' );
             },
-        )->get();
+        )->pagination( $per_page, $page );
+
+        return [
+            'forms' => $forms,
+            'total' => Form::query()->count()
+        ];
     }
 
     public function create( FormDTO $form_dto ) {

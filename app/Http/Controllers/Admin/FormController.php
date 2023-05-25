@@ -17,11 +17,27 @@ class FormController extends Controller {
         $this->form_repository = $form_repository;
     }
 
-    public function index() {
-        return Response::send(
+    public function index( Validator $validator, WP_REST_Request $wp_rest_request ) {
+        $validator->validate(
             [
-                'forms' => $this->form_repository->get()
+                'per_page' => 'numeric',
+                'page'     => 'numeric'
             ]
+        );
+
+        if ( $validator->is_fail() ) {
+            return Response::send(
+                [
+                    'messages' => $validator->errors
+                ], 422
+            );
+        }
+
+        return Response::send(
+            $this->form_repository->get(
+                intval( $wp_rest_request->get_param( 'per_page' ) ),
+                intval( $wp_rest_request->get_param( 'page' ) )
+            )
         );
     }
 

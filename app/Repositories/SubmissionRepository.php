@@ -5,21 +5,12 @@ namespace HelpGent\App\Repositories;
 use Exception;
 use HelpGent\App\DTO\SubmissionDTO;
 use HelpGent\App\Models\Submission;
+use HelpGent\App\Models\SubmissionTag;
 use HelpGent\App\Utils\DateTime;
 use HelpGent\WaxFramework\Database\Query\Builder;
 
 class SubmissionRepository {
     public function get( int $form_id, int $per_page, int $page, string $order_by, string $status, $tag_ids ) {
-        if ( $per_page > 100 || $per_page < 10 ) {
-            $per_page = 100;
-        }
-
-        if ( 0 >= $page ) {
-            $page = 1;
-        }
-
-        $offset = ( $page - 1 ) * $per_page;
-
         $query = Submission::query()->with(
             [
                 'tags',
@@ -40,19 +31,18 @@ class SubmissionRepository {
                 }
             ] 
         )->where( 'form_id', $form_id )->where( 'status', $status );
+        
+        $count_query = Submission::query()->where( 'form_id', $form_id )->where( 'status', $status );
 
         // If find submissions of certain tags
         if ( ! empty( $tag_ids ) && is_array( $tag_ids ) ) {
-            $tag_ids = map_deep( $tag_ids, 'intval' );
-            $query->where_exists(
-                function( Builder $query ) use( $tag_ids ) {
-                    $query->select( 1 )
-                        ->from( 'helpgent_submission_tag' )
-                        ->where_column( 'helpgent_submission_tag.submission_id', 'helpgent_submissions.id' )
-                        ->where_in( 'helpgent_submission_tag.tag_id', $tag_ids )
-                        ->limit( 1 );
-                }
-            );
+            $tag_ids    = map_deep( $tag_ids, 'intval' );
+            $tag_exists = SubmissionTag::query()->select( 1 )
+                            ->where_column( 'helpgent_submission_tag.submission_id', 'helpgent_submissions.id' )
+                            ->where_in( 'helpgent_submission_tag.tag_id', $tag_ids )->limit( 1 );
+
+            $query->where_exists( $tag_exists );
+            $count_query->where_exists( $tag_exists );
         }
 
         switch ( $order_by ) {
@@ -70,7 +60,10 @@ class SubmissionRepository {
                 break;
         }
 
-        return $query->limit( $per_page )->offset( $offset )->get();
+        return [
+            'submissions' => $query->pagination( $per_page, $page ),
+            'total'       => $count_query->count()
+        ] ;
     }
 
     public function total( int $form_id ) {
