@@ -11,7 +11,7 @@ use HelpGent\App\Providers\LocalizationServiceProvider;
 use HelpGent\WaxFramework\App;
 
 return [
-    'version'                 => get_plugin_data(App::$plugin_root_file)['Version'],
+    'version'                 => get_plugin_data( App::$plugin_root_file )['Version'],
 
     'rest_api'                => [
         'namespace' => 'helpgent',
