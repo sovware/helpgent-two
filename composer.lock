@@ -1558,12 +1558,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sovware/database.git",
-                "reference": "34f5492bb6be32fabb8f78c92078e49f31244953"
+                "reference": "6a289f6c6902c1ce0e93f3f1e5b7c380df1e21e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sovware/database/zipball/34f5492bb6be32fabb8f78c92078e49f31244953",
-                "reference": "34f5492bb6be32fabb8f78c92078e49f31244953",
+                "url": "https://api.github.com/repos/sovware/database/zipball/6a289f6c6902c1ce0e93f3f1e5b7c380df1e21e9",
+                "reference": "6a289f6c6902c1ce0e93f3f1e5b7c380df1e21e9",
                 "shasum": ""
             },
             "require-dev": {
@@ -1593,7 +1593,7 @@
                 "issues": "https://github.com/sovware/database/issues",
                 "source": "https://github.com/sovware/database/tree/1.0.0"
             },
-            "time": "2023-05-17T12:34:51+00:00"
+            "time": "2023-05-25T09:41:34+00:00"
         },
         {
             "name": "waxframework/framework",
@@ -1601,12 +1601,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sovware/framework.git",
-                "reference": "2b9c44fdfcfeb97adc3eb4a18e02b26e44d1a7b5"
+                "reference": "e16199374c3700df209fe1482ae1350d0a25a330"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sovware/framework/zipball/2b9c44fdfcfeb97adc3eb4a18e02b26e44d1a7b5",
-                "reference": "2b9c44fdfcfeb97adc3eb4a18e02b26e44d1a7b5",
+                "url": "https://api.github.com/repos/sovware/framework/zipball/e16199374c3700df209fe1482ae1350d0a25a330",
+                "reference": "e16199374c3700df209fe1482ae1350d0a25a330",
                 "shasum": ""
             },
             "require": {
@@ -1641,7 +1641,7 @@
                 "issues": "https://github.com/sovware/framework/issues",
                 "source": "https://github.com/sovware/framework/tree/1.0.0"
             },
-            "time": "2023-05-07T15:24:46+00:00"
+            "time": "2023-05-25T03:34:33+00:00"
         },
         {
             "name": "waxframework/request-validator",

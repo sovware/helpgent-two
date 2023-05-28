@@ -4,32 +4,38 @@ module.exports = (grunt) => {
   "use strict";
 
   const projectConfig = {
-    srcDir: "./"
+    srcDir: "./",
   };
 
   const textDomainFiles = [
-    projectConfig.srcDir + "*.php",
-    projectConfig.srcDir + "**/*.php",
-    "!" + projectConfig.srcDir + "__build/**",
-    "!" + projectConfig.srcDir + "node_modules/**",
-    "!" + projectConfig.srcDir + "vendor/**",
-    "!" + projectConfig.srcDir + "vendor-src/**",
+    "*.php",
+    "**/*.php",
+    "!node_modules/**",
+    "!vendor/**",
+    "!vendor-src/**",
   ];
 
   grunt.initConfig({
+    clean: {
+      options: { force: true },
+      dist: ["./languages/**/*.pot", "./__build/**"],
+    },
     addtextdomain: {
       options: {
         updateDomains: true, // List of text domains to replace.
       },
       target: {
-        src: textDomainFiles,
+        files: {
+          src: textDomainFiles,
+        },
       },
     },
 
     checktextdomain: {
       standard: {
         options: {
-          text_domain: Utils.textDomain, //Specify allowed domain(s)
+          text_domain:
+            '<%= grunt.config.get("screen.begin.options.data.textDomain") %>', //Specify allowed domain(s)
           // correct_domain: true, // don't use it, it has bugs
           keywords: [
             //List keyword specifications
@@ -81,17 +87,20 @@ module.exports = (grunt) => {
       begin: {
         options: {
           data: {
-            version: "1.0.0", // Replace with the actual version or fetch dynamically
+            version: "1.0.0",
+            textDomain: "myplugin",
           },
         },
         template: `
-		# Project   : ${Utils.pluginName}
-		# Dist      : ./__build/${Utils.pluginName}/
+		# Project   : ${Utils.pluginRootFile}
+		# Dist      : ./__build/${Utils.pluginRootFile}/
 		# Version   : <%= grunt.config.get("screen.begin.options.data.version") %>`
           .cyan,
       },
       textdomainchecking: {
-        template: `Checking textdomain [${Utils.textDomain}]`.cyan,
+        template:
+          `Checking textdomain [<%= grunt.config.get("screen.begin.options.data.textDomain") %>]`
+            .cyan,
       },
       finish: {
         template: `
@@ -114,17 +123,15 @@ module.exports = (grunt) => {
    */
   require("load-grunt-tasks")(grunt);
 
-  grunt.registerTask("getPluginVersion", async function () {
+  grunt.registerTask("getPluginInfo", async function () {
     var done = this.async();
-    const version = await Utils.getPluginVersion(); // Fetch or determine the plugin version dynamically
-    done(version);
-    grunt.config.set("screen.begin.options.data.version", version);
+    const version = await Utils.getPluginInfo(); // Fetch or determine the plugin version dynamically
+    grunt.config.set("screen.begin.options.data", version);
+    done(true);
   });
 
-  /**
-   * text domain fixing task
-   */
-  grunt.registerTask("fixtextdomain", [
+  grunt.registerTask("textDomainTasks", [
+    "clean",
     "screen:textdomainchecking",
     "addtextdomain",
     "checktextdomain",
@@ -152,7 +159,16 @@ module.exports = (grunt) => {
   });
 
   /**
+   * text domain fixing task
+   */
+  grunt.registerTask("fixtextdomain", ["getPluginInfo", "textDomainTasks"]);
+
+  /**
    * Build and compress task
    */
-  grunt.registerTask("build", ["screen:begin", "fixtextdomain"]);
+  grunt.registerTask("build", [
+    "getPluginInfo",
+    "screen:begin",
+    "textDomainTasks",
+  ]);
 };

@@ -3,24 +3,24 @@ const normalizePath = require("normalize-path");
 const Utils = require("./utils");
 const path = require("path");
 
-const pluginName = Utils.pluginName;
+const pluginRootFile = Utils.pluginRootFile;
 const dist = normalizePath(path.join(__dirname, "__build"));
 
 module.exports = async () => {
-  const version = await Utils.getPluginVersion();
-  const zipName = ( version ) ? `${pluginName}-${version}` : pluginName;
+  const version = (await Utils.getPluginInfo())?.version;
+  const zipName = version ? `${pluginRootFile}-${version}` : pluginRootFile;
 
   const transformBuildPaths = (path) => {
     if (Array.isArray(path) && path.length === 2) {
       return {
         source: path[0],
-        destination: `${dist}/zip/${pluginName}/${path[1]}`,
+        destination: `${dist}/zip/${pluginRootFile}/${path[1]}`,
       };
     }
 
     return {
       source: path,
-      destination: `${dist}/zip/${pluginName}/${path}`,
+      destination: `${dist}/zip/${pluginRootFile}/${path}`,
     };
   };
 
@@ -35,7 +35,7 @@ module.exports = async () => {
     "routes",
     "vendor",
     "readme.txt",
-    `${pluginName}.php`,
+    `${pluginRootFile}.php`,
   ].map(transformBuildPaths);
 
   const buildIgnoreFiles = [
@@ -67,7 +67,7 @@ module.exports = async () => {
     "**/LICENSE",
     "**/Installable",
     "**/tests",
-  ].map((path) => `${dist}/zip/${pluginName}/${path}`);
+  ].map((path) => `${dist}/zip/${pluginRootFile}/${path}`);
 
   return {
     entry: {},
@@ -90,12 +90,12 @@ module.exports = async () => {
             {
               move: [
                 {
-                  source: `${dist}/zip/${pluginName}`,
-                  destination: `${dist}/${pluginName}`,
+                  source: `${dist}/zip/${pluginRootFile}`,
+                  destination: `${dist}/${pluginRootFile}`,
                 },
               ],
             },
-            { delete: [`${dist}/zip`] },
+            { delete: [path.join(__dirname, "dist"), `${dist}/zip`] },
           ],
         },
       }),

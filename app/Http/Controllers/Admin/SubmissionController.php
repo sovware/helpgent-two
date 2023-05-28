@@ -44,16 +44,14 @@ class SubmissionController extends Controller {
             );
         }
         return Response::send(
-            [
-                'submissions' => $this->submission_repository->get( 
-                    $wp_rest_request->get_param( 'form_id' ), 
-                    intval( $wp_rest_request->get_param( 'per_page' ) ),
-                    intval( $wp_rest_request->get_param( 'page' ) ),
-                    $wp_rest_request->get_param( 'order_by' ),
-                    $wp_rest_request->get_param( 'status' ),
-                    $wp_rest_request->get_param( 'tag_ids' )
-                )
-            ]
+            $this->submission_repository->get( 
+                $wp_rest_request->get_param( 'form_id' ), 
+                intval( $wp_rest_request->get_param( 'per_page' ) ),
+                intval( $wp_rest_request->get_param( 'page' ) ),
+                $wp_rest_request->get_param( 'order_by' ),
+                $wp_rest_request->get_param( 'status' ),
+                $wp_rest_request->get_param( 'tag_ids' )
+            )
         );
     }
 
