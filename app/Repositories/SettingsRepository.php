@@ -77,8 +77,32 @@ class SettingsRepository
             'enable_email_notification' => [
                 'label' => esc_html__( "Enable Email Notification", 'helpgent' ),
                 'type'  => 'toggle',
-                'value' => 'yes'
-            ]
+                'value' => 'no'
+            ],
+            'email_admin_event'         => [
+                'label'     => esc_html__( "Admin Events", 'helpgent' ),
+                'type'      => 'radio',
+                'value'     => 'first_message_in_conversation',
+                'options'   => [
+                    ['value' => 'first_message_in_conversation', 'label' => esc_html__( 'First message in a conversation', 'helpgent' )],
+                    ['value' => 'every_message_in_conversation', 'label' => esc_html__( 'Every message in a conversion', 'helpgent' )]
+                ],
+                'condition' => [
+                    'enable_email_notification' => 'yes'
+                ]
+            ],
+            'email_user_event'          => [
+                'label'     => esc_html__( "User Events", 'helpgent' ),
+                'type'      => 'radio',
+                'value'     => 'first_message_in_conversation',
+                'options'   => [
+                    ['value' => 'first_message_in_conversation', 'label' => esc_html__( 'First message in a conversation', 'helpgent' )],
+                    ['value' => 'every_message_in_conversation', 'label' => esc_html__( 'Every message in a conversion', 'helpgent' )]
+                ],
+                'condition' => [
+                    'enable_email_notification' => 'yes'
+                ]
+            ],
         ];
     }
 
