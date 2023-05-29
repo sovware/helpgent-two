@@ -129,6 +129,44 @@ class FormController extends Controller {
         }
     }
 
+    public function update_status( Validator $validator, WP_REST_Request $wp_rest_request ) {
+        $validator->validate(
+            [
+                'id'     => 'required|numeric',
+                'status' => 'required|string|accepted:publish,draft'
+            ]
+        );
+        
+        if ( $validator->is_fail() ) {
+            return Response::send(
+                [
+                    'messages' => $validator->errors
+                ], 422
+            );
+        }
+
+        try {
+            $this->form_repository->update_status( 
+                $wp_rest_request->get_param( 'id' ), 
+                $wp_rest_request->get_param( 'status' )
+            );
+
+            return Response::send(
+                [
+                    'message' => esc_html__( "Form status updated successfully!", 'helpgent' )
+                ]
+            );
+
+        } catch ( Exception $exception ) {
+            return Response::send(
+                [
+                    'message' => $exception->getMessage()
+                ],
+                $exception->getCode()
+            );
+        }
+    }
+
     public function delete( Validator $validator, WP_REST_Request $wp_rest_request ) {
         $validator->validate(
             [
