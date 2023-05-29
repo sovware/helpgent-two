@@ -32,7 +32,8 @@ class SubmissionController extends Controller {
                 'page'     => 'numeric',
                 'order_by' => 'required|string|accepted:read,unread,latest,oldest',
                 'status'   => 'required|string|accepted:active,archive,trash',
-                'tag_ids'  => 'array'
+                'tag_ids'  => 'array',
+                'search'   => 'string'
             ]
         );
 
@@ -50,7 +51,8 @@ class SubmissionController extends Controller {
                 intval( $wp_rest_request->get_param( 'page' ) ),
                 $wp_rest_request->get_param( 'order_by' ),
                 $wp_rest_request->get_param( 'status' ),
-                $wp_rest_request->get_param( 'tag_ids' )
+                $wp_rest_request->get_param( 'tag_ids' ),
+                (string) $wp_rest_request->get_param( 'search' )
             )
         );
     }
