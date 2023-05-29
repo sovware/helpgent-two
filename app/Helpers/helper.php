@@ -3,6 +3,7 @@
 defined( 'ABSPATH' ) || exit;
 
 use HelpGent\App\Repositories\AttachmentRepository;
+use HelpGent\App\Repositories\SettingsRepository;
 use HelpGent\WaxFramework\App;
 use HelpGent\DI\Container;
 
@@ -226,4 +227,13 @@ function helpgent_get_server_name() {
     }
 
     return '';
+}
+
+function helpgent_get_setting( string $key, $default = null ) {
+    /**
+     * @var SettingsRepository $setting_repository
+     */
+    $setting_repository = helpgent_singleton( SettingsRepository::class );
+    $settings           = $setting_repository->db_settings();
+    return isset( $settings[$key] ) ? $settings[$key] : $default;
 }

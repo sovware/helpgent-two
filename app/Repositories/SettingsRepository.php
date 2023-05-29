@@ -4,6 +4,8 @@ namespace HelpGent\App\Repositories;
 
 class SettingsRepository
 {
+    protected array $settings = [];
+
     public function get_fields() {
         $db_settings = $this->db_settings();
         $menu        = $this->fields();
@@ -33,7 +35,10 @@ class SettingsRepository
     }
 
     public function db_settings() {
-        return get_option( 'helpgent-settings', [] );
+        if ( empty( $this->settings ) ) {
+            $this->settings = get_option( 'helpgent-settings', [] );
+        }
+        return $this->settings;
     }
 
     private function fields() {
@@ -46,7 +51,7 @@ class SettingsRepository
                     'type'         => 'nav-item',
                     'content_type' => 'fields',
                     'fields'       => $this->general_setting_fields(),
-                    'svg_icon'     =>  $svg_icon_dir . '/slider.svg' 
+                    'svg_icon'     => $svg_icon_dir . '/slider.svg' 
                 ]
             ],
             'email'   => [
@@ -64,7 +69,7 @@ class SettingsRepository
                     'type'         => 'nav-item',
                     'content_type' => 'hook',
                     'hook'         => 'my-custom-content-area',
-                    'svg_icon'     =>  $svg_icon_dir . '/envelope.svg' 
+                    'svg_icon'     => $svg_icon_dir . '/envelope.svg' 
                 ]
             ],
         ];
