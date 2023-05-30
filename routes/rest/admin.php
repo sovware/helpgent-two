@@ -1,6 +1,7 @@
 <?php
 
 use HelpGent\App\Http\Controllers\Admin\FormController;
+use HelpGent\App\Http\Controllers\Admin\PageController;
 use HelpGent\App\Http\Controllers\Admin\SettingsController;
 use HelpGent\App\Http\Controllers\Admin\SubmissionController;
 use HelpGent\App\Http\Controllers\Admin\TagController;
@@ -23,5 +24,6 @@ Route::group(
         );
         Route::get( 'settings', [SettingsController::class, 'index'] );
         Route::post( 'settings', [SettingsController::class, 'update'] );
+        Route::get( 'page', [PageController::class, 'index'] );
     }, ['admin']
 );
