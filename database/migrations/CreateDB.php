@@ -29,6 +29,9 @@ class CreateDB implements Migration {
             `title` VARCHAR(255) NOT NULL,
             `status` VARCHAR(50) NOT NULL DEFAULT 'draft' COMMENT 'value: publish/draft',
             `content` LONGTEXT NOT NULL,
+            `collect_user_info` TINYINT NOT NULL DEFAULT 0 COMMENT 'value: 0/1',
+            `available_pages` LONGTEXT NULL,
+            `user_info_fields` LONGTEXT NULL,
             `created_by` BIGINT UNSIGNED NOT NULL,
             `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
             `updated_at` TIMESTAMP NULL,
@@ -115,7 +118,7 @@ class CreateDB implements Migration {
             `is_read` TINYINT NOT NULL DEFAULT 0 COMMENT 'possible values: 1, 0',
             `is_guest` TINYINT NOT NULL DEFAULT 0 COMMENT 'possible values: 1, 0',
             `created_by` BIGINT UNSIGNED NOT NULL,
-            `agent_trigger` TINYINT NULL COMMENT 'null = not trigger\n0 = leave\n1 = join',
+            `agent_trigger` TINYINT NULL COMMENT 'null = not trigger, 0 = leave, 1 = join',
             `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
             `updated_at` TIMESTAMP NULL,
             PRIMARY KEY (`id`)
