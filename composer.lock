@@ -294,12 +294,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sovware/database.git",
-                "reference": "6a289f6c6902c1ce0e93f3f1e5b7c380df1e21e9"
+                "reference": "7c4cc021a6f66466bf130e2eb155c27b12482585"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sovware/database/zipball/6a289f6c6902c1ce0e93f3f1e5b7c380df1e21e9",
-                "reference": "6a289f6c6902c1ce0e93f3f1e5b7c380df1e21e9",
+                "url": "https://api.github.com/repos/sovware/database/zipball/7c4cc021a6f66466bf130e2eb155c27b12482585",
+                "reference": "7c4cc021a6f66466bf130e2eb155c27b12482585",
                 "shasum": ""
             },
             "require-dev": {
@@ -329,7 +329,7 @@
                 "issues": "https://github.com/sovware/database/issues",
                 "source": "https://github.com/sovware/database/tree/1.0.0"
             },
-            "time": "2023-05-25T09:41:34+00:00"
+            "time": "2023-05-30T09:18:43+00:00"
         },
         {
             "name": "waxframework/framework",

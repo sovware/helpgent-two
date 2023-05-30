@@ -40,6 +40,6 @@ return [
     'migration_db_option_key' => 'helpgent_migrations',
 
     'migrations'              => [
-        'create-db' => CreateDB::class,
+        // 'create-db' => CreateDB::class,
     ]
 ];
