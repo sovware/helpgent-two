@@ -33,12 +33,14 @@ class FormController extends Controller {
             );
         }
 
-        return Response::send(
-            $this->form_repository->get(
-                intval( $wp_rest_request->get_param( 'per_page' ) ),
-                intval( $wp_rest_request->get_param( 'page' ) )
-            )
+        $response = $this->form_repository->get(
+            intval( $wp_rest_request->get_param( 'per_page' ) ),
+            intval( $wp_rest_request->get_param( 'page' ) )
         );
+
+        $response['current_user_name'] = wp_get_current_user()->display_name;
+
+        return Response::send( $response );
     }
 
     public function store( Validator $validator, WP_REST_Request $wp_rest_request ) {

@@ -25,9 +25,7 @@ class PageController extends Controller {
             );
         }
 
-        $page = Post::query()->select( 'ID as id, post_title as title' )
-            ->where( 'post_type', 'page' )
-            ->order_by_desc( 'id' );
+        $page = Post::query()->select( 'ID as id, post_title as title' )->where( 'post_type', 'page' )->order_by_desc( 'id' );
             
         if ( $wp_rest_request->has_param( 'ids' ) ) {
             $ids = map_deep( $wp_rest_request->get_param( 'ids' ), 'intval' );
