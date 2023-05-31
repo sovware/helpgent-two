@@ -8,6 +8,7 @@ use HelpGent\App\Providers\MediaProtectionProvider;
 use HelpGent\App\Providers\Admin\MediaProtectionProvider as AdminMediaProtectionProvider;
 use HelpGent\Database\Migrations\CreateDB;
 use HelpGent\App\Providers\LocalizationServiceProvider;
+use HelpGent\App\Providers\PreviewServiceProvider;
 use HelpGent\App\Providers\ShortCodeServiceProvider;
 use HelpGent\WaxFramework\App;
 
@@ -27,7 +28,8 @@ return [
     'providers'               => [
         LocalizationServiceProvider::class,
         MediaProtectionProvider::class,
-        ShortCodeServiceProvider::class
+        ShortCodeServiceProvider::class,
+        PreviewServiceProvider::class
     ],
 
     'admin_providers'         => [
