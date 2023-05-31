@@ -1,0 +1,1 @@
+<h1><?php helpgent_render( $form->title )?></h1>
