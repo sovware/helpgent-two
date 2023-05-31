@@ -1,15 +1,20 @@
 import { useQuery } from '@tanstack/react-query';
-import dataFetcher from '../../lib/dataFetcher';
+import dataFetcher from '../../lib/fetchData';
+import getErrorMessage from '../../lib/getError';
 
 export default function useForms() {
-	const { data, isLoading, error } = useQuery( [ 'helpgent-forms' ], () =>
-		dataFetcher( '/helpgent/admin/formo' )
+	const { data, isLoading, error } = useQuery(
+		[ 'helpgent-forms' ],
+		() => dataFetcher( '/helpgent/admin/form' ),
+		{ refetchOnWindowFocus: false }
 	);
-	console.log( data, error );
+
 	return {
 		forms: !! error || isLoading ? {} : data.forms,
 		isLoading,
-		errorCode: !! error ? error.data.status : null,
+		errorMessage: !! error
+			? getErrorMessage( error ? error.data.status : '' )
+			: '',
 		isError: !! error,
 	};
 }

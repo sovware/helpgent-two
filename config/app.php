@@ -7,9 +7,11 @@ use HelpGent\App\Providers\Admin\MenuServiceProvider;
 use HelpGent\App\Providers\MediaProtectionProvider;
 use HelpGent\App\Providers\Admin\MediaProtectionProvider as AdminMediaProtectionProvider;
 use HelpGent\Database\Migrations\CreateDB;
+use HelpGent\App\Providers\LocalizationServiceProvider;
+use HelpGent\WaxFramework\App;
 
 return [
-    'version'                 => '2.0.0',
+    'version'                 => get_plugin_data( App::$plugin_root_file )['Version'],
 
     'rest_api'                => [
         'namespace' => 'helpgent',
@@ -22,7 +24,8 @@ return [
     ],
 
     'providers'               => [
-        MediaProtectionProvider::class,
+        LocalizationServiceProvider::class,
+        MediaProtectionProvider::class
     ],
 
     'admin_providers'         => [

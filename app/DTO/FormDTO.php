@@ -25,7 +25,7 @@ class FormDTO {
     }
 
     public function set_id( int $id ) {
-        $this->title = $id;
+        $this->id = $id;
     }
 
     public function get_title() {

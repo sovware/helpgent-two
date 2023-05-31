@@ -7,11 +7,11 @@
     --helpgent-color-lighter: #f8f9fb;
     --helpgent-color-light: #f4f5f7;
     --helpgent-color-bg-white: #ffffff;
-    --helpgent-color-bg-gray: #e2e2e2;
+    --helpgent-color-bg-gray: #efefef;
     --helpgent-color-bg-general: #F5F5F5;
     --helpgent-color-bg-page: #f0f0f0;
     --helpgent-color-bg-light: #d0d0d0;
-    --helpgent-color-border-light: #ededed;
+    --helpgent-color-border-light: #E6E6E6;
     --helpgent-color-border-lighter: #EBEBEB;
     --helpgent-color-gray: #868eae;
     --helpgent-color-gray-light: #656565;
@@ -22,7 +22,7 @@
     --helpgent-color-warning-light: #f9dfac;
     --helpgent-color-warning: #FE7D13;
     --helpgent-color-success: #22AD58; //#08bf9c;
-    --helpgent-color-text: #898989;
+    --helpgent-color-text: #404040;
     --helpgent-color-white: #ffffff;
     --helpgent-color-black: #000000;
     --helpgent-font-family: 'Inter',sans-serif;
@@ -330,6 +330,19 @@
         &:focus:not(.wp-block-button__link):not(.wp-block-file__button){
             background-color: #d5d4d4;
         }
+    }
+}
+
+/* Spinner Component */
+svg.components-spinner{
+    width: 30px;
+    height: 30px;
+    circle,
+    path{
+        stroke-width: 3px;
+    }
+    path{
+        color: var(--helpgent-color-primary);
     }
 }
 
@@ -1048,9 +1061,21 @@
         padding: 50px 30px 15px;
     }
     &.helpgent-create-modal-wrap{
-        top: -180px;
+        top: 0;
+        .components-modal__frame{
+            min-width: calc( 100% - 40px );
+        }
         .components-modal__header{
             padding: 0;
+            .components-button{
+                padding: 0;
+                width: 48px;
+                height: 48px;
+                border-radius: 50%;
+                top: 30px;
+                right: 30px;
+                background-color: var(--helpgent-color-bg-gray);
+            }
         }
         .components-modal__content{
             padding-bottom: 30px;
@@ -1578,20 +1603,6 @@
         font-size: 15px;
         margin: 0;
     }
-}
-
-// Alerts
-.helpgent-alert {
-    padding: 8px 15px;
-    font-size: 15px;
-    text-align: center;
-    border-radius: 5px;
-    background-color: lightgray;
-}
-
-.helpgent-alert-danger {
-    color: red;
-    background-color: #ffd2d2;
 }
 
 /* Empty Table Box */

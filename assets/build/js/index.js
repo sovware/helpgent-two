@@ -4444,12 +4444,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/api-fetch */ "@wordpress/api-fetch");
-/* harmony import */ var _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
-/* harmony import */ var _tanstack_react_query__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @tanstack/react-query */ "./node_modules/@tanstack/react-query/build/lib/useQuery.mjs");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/api-fetch */ "@wordpress/api-fetch");
+/* harmony import */ var _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _hooks_useFetchData_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../hooks/useFetchData.js */ "./resources/js/hooks/useFetchData.js");
+
+
 
 
 
@@ -4457,13 +4461,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const Messenger = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.lazy)(() => __webpack_require__.e(/*! import() */ "resources_js_admin_pages_Messenger_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/Messenger */ "./resources/js/admin/pages/Messenger/index.js")));
-const Forms = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.lazy)(() => __webpack_require__.e(/*! import() */ "resources_js_admin_pages_Forms_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/Forms */ "./resources/js/admin/pages/Forms/index.js")));
+const Forms = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.lazy)(() => Promise.all(/*! import() */[__webpack_require__.e("vendors-node_modules_react-toastify_dist_ReactToastify_css-node_modules_prop-types_index_js-n-e26516"), __webpack_require__.e("resources_js_admin_pages_Forms_index_js")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/Forms */ "./resources/js/admin/pages/Forms/index.js")));
 const SingleForm = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.lazy)(() => __webpack_require__.e(/*! import() */ "resources_js_admin_pages_Forms_SingleForm_js").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/Forms/SingleForm.js */ "./resources/js/admin/pages/Forms/SingleForm.js")));
 const FormMap = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.lazy)(() => __webpack_require__.e(/*! import() */ "resources_js_admin_pages_Forms_FormsMap_js").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/Forms/FormsMap.js */ "./resources/js/admin/pages/Forms/FormsMap.js")));
 const Analytics = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.lazy)(() => __webpack_require__.e(/*! import() */ "resources_js_admin_pages_Analytics_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/Analytics */ "./resources/js/admin/pages/Analytics/index.js")));
 const Settings = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.lazy)(() => __webpack_require__.e(/*! import() */ "resources_js_admin_pages_Settings_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/Settings */ "./resources/js/admin/pages/Settings/index.js")));
 const Submissions = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.lazy)(() => __webpack_require__.e(/*! import() */ "resources_js_admin_pages_Submissions_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/Submissions */ "./resources/js/admin/pages/Submissions/index.js")));
 function App() {
+  //const { data: forms, isLoading: isFormLoading, isError: isFetchFormError, errorMessage: isErrorMessage } = useFetchData('helpgent-form', '/helpgent/admin/form', 'forms');
   const [dir, setDir] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)('ltr');
   const theme = {
     direction: dir
@@ -4475,47 +4480,139 @@ function App() {
       setDir('ltr');
     }
   }, []);
-  const {
-    isLoading,
-    error,
-    data,
-    isFetching
-  } = (0,_tanstack_react_query__WEBPACK_IMPORTED_MODULE_2__.useQuery)(['data-fetch'], fetchData);
+
+  // const { isLoading, error, data, isFetching } = useQuery(
+  // 	[ 'data-fetch' ],
+  // 	fetchData
+  // );
 
   //callback for fetching data
-  function fetchData() {
-    return _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_1___default()({
-      path: '/wp/v2/posts'
-    }).then(res => res);
-  }
-  console.log(isLoading, data);
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_3__.HashRouter, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Suspense, {
+  // function fetchData() {
+  // 	return apiFetch( { path: '/wp/v2/posts' } ).then( ( res ) => res );
+  // }
+  // console.log( isLoading, data );
+
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-app-wrap"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.HashRouter, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Suspense, {
     fallback: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null)
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(styled_components__WEBPACK_IMPORTED_MODULE_4__.ThemeProvider, {
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(styled_components__WEBPACK_IMPORTED_MODULE_5__.ThemeProvider, {
     theme: theme
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Routes, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Routes, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
     index: true,
     path: `/*`,
     element: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(Messenger, null)
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
     path: "/forms",
     element: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(Forms, null)
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
     path: "/forms/single",
     element: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(SingleForm, null)
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
     path: "/forms/map",
     element: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(FormMap, null)
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
     path: "/analytics",
     element: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(Analytics, null)
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
     path: "/settings",
     element: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(Settings, null)
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_5__.Route, {
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
     path: "/submissions",
     element: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(Submissions, null)
-  })))));
+  }))))));
+}
+
+/***/ }),
+
+/***/ "./resources/js/hooks/useFetchData.js":
+/*!********************************************!*\
+  !*** ./resources/js/hooks/useFetchData.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ useFetchData)
+/* harmony export */ });
+/* harmony import */ var _tanstack_react_query__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @tanstack/react-query */ "./node_modules/@tanstack/react-query/build/lib/useQuery.mjs");
+/* harmony import */ var _lib_fetchData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../lib/fetchData */ "./resources/js/lib/fetchData.js");
+/* harmony import */ var _lib_getError__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../lib/getError */ "./resources/js/lib/getError.js");
+
+
+
+function useFetchData(queryKey, path, objectKey) {
+  const {
+    data,
+    isLoading,
+    error
+  } = (0,_tanstack_react_query__WEBPACK_IMPORTED_MODULE_2__.useQuery)([queryKey], () => (0,_lib_fetchData__WEBPACK_IMPORTED_MODULE_0__["default"])(path), {
+    refetchOnWindowFocus: false
+  });
+  return {
+    data: !!error || isLoading ? null : data[objectKey],
+    isLoading,
+    errorMessage: !!error ? (0,_lib_getError__WEBPACK_IMPORTED_MODULE_1__["default"])(error ? error.data.status : '') : "",
+    isError: !!error
+  };
+}
+
+/***/ }),
+
+/***/ "./resources/js/lib/fetchData.js":
+/*!***************************************!*\
+  !*** ./resources/js/lib/fetchData.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ fetchData)
+/* harmony export */ });
+/* harmony import */ var _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/api-fetch */ "@wordpress/api-fetch");
+/* harmony import */ var _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_0__);
+
+async function fetchData(path) {
+  return await _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_0___default()({
+    path: path
+  }).then(res => res);
+}
+
+/***/ }),
+
+/***/ "./resources/js/lib/getError.js":
+/*!**************************************!*\
+  !*** ./resources/js/lib/getError.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ getErrorMessage)
+/* harmony export */ });
+function getErrorMessage(code) {
+  let errorMessage = '';
+  switch (code) {
+    case 404:
+      errorMessage = "Resource not found";
+      break;
+    case 400:
+      errorMessage = "Invalid Request";
+      break;
+    case 422:
+      errorMessage = "Invalid data";
+      break;
+    case 500:
+      errorMessage = "Internal server error";
+      break;
+    default:
+      errorMessage = "Technical error";
+      break;
+  }
+  return errorMessage;
 }
 
 /***/ }),
@@ -12556,7 +12653,7 @@ function combine (array, callback) {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.miniCssF = (chunkId) => {
 /******/ 			// return url for filenames based on template
-/******/ 			return undefined;
+/******/ 			return "" + chunkId + ".css";
 /******/ 		};
 /******/ 	})();
 /******/ 	
@@ -12654,6 +12751,83 @@ function combine (array, callback) {
 /******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
 /******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
 /******/ 		__webpack_require__.p = scriptUrl + "../";
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/css loading */
+/******/ 	(() => {
+/******/ 		if (typeof document === "undefined") return;
+/******/ 		var createStylesheet = (chunkId, fullhref, oldTag, resolve, reject) => {
+/******/ 			var linkTag = document.createElement("link");
+/******/ 		
+/******/ 			linkTag.rel = "stylesheet";
+/******/ 			linkTag.type = "text/css";
+/******/ 			var onLinkComplete = (event) => {
+/******/ 				// avoid mem leaks.
+/******/ 				linkTag.onerror = linkTag.onload = null;
+/******/ 				if (event.type === 'load') {
+/******/ 					resolve();
+/******/ 				} else {
+/******/ 					var errorType = event && (event.type === 'load' ? 'missing' : event.type);
+/******/ 					var realHref = event && event.target && event.target.href || fullhref;
+/******/ 					var err = new Error("Loading CSS chunk " + chunkId + " failed.\n(" + realHref + ")");
+/******/ 					err.code = "CSS_CHUNK_LOAD_FAILED";
+/******/ 					err.type = errorType;
+/******/ 					err.request = realHref;
+/******/ 					if (linkTag.parentNode) linkTag.parentNode.removeChild(linkTag)
+/******/ 					reject(err);
+/******/ 				}
+/******/ 			}
+/******/ 			linkTag.onerror = linkTag.onload = onLinkComplete;
+/******/ 			linkTag.href = fullhref;
+/******/ 		
+/******/ 			if (oldTag) {
+/******/ 				oldTag.parentNode.insertBefore(linkTag, oldTag.nextSibling);
+/******/ 			} else {
+/******/ 				document.head.appendChild(linkTag);
+/******/ 			}
+/******/ 			return linkTag;
+/******/ 		};
+/******/ 		var findStylesheet = (href, fullhref) => {
+/******/ 			var existingLinkTags = document.getElementsByTagName("link");
+/******/ 			for(var i = 0; i < existingLinkTags.length; i++) {
+/******/ 				var tag = existingLinkTags[i];
+/******/ 				var dataHref = tag.getAttribute("data-href") || tag.getAttribute("href");
+/******/ 				if(tag.rel === "stylesheet" && (dataHref === href || dataHref === fullhref)) return tag;
+/******/ 			}
+/******/ 			var existingStyleTags = document.getElementsByTagName("style");
+/******/ 			for(var i = 0; i < existingStyleTags.length; i++) {
+/******/ 				var tag = existingStyleTags[i];
+/******/ 				var dataHref = tag.getAttribute("data-href");
+/******/ 				if(dataHref === href || dataHref === fullhref) return tag;
+/******/ 			}
+/******/ 		};
+/******/ 		var loadStylesheet = (chunkId) => {
+/******/ 			return new Promise((resolve, reject) => {
+/******/ 				var href = __webpack_require__.miniCssF(chunkId);
+/******/ 				var fullhref = __webpack_require__.p + href;
+/******/ 				if(findStylesheet(href, fullhref)) return resolve();
+/******/ 				createStylesheet(chunkId, fullhref, null, resolve, reject);
+/******/ 			});
+/******/ 		}
+/******/ 		// object to store loaded CSS chunks
+/******/ 		var installedCssChunks = {
+/******/ 			"js/index": 0
+/******/ 		};
+/******/ 		
+/******/ 		__webpack_require__.f.miniCss = (chunkId, promises) => {
+/******/ 			var cssChunks = {"vendors-node_modules_react-toastify_dist_ReactToastify_css-node_modules_prop-types_index_js-n-e26516":1};
+/******/ 			if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
+/******/ 			else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
+/******/ 				promises.push(installedCssChunks[chunkId] = loadStylesheet(chunkId).then(() => {
+/******/ 					installedCssChunks[chunkId] = 0;
+/******/ 				}, (e) => {
+/******/ 					delete installedCssChunks[chunkId];
+/******/ 					throw e;
+/******/ 				}));
+/******/ 			}
+/******/ 		};
+/******/ 		
+/******/ 		// no hmr
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */

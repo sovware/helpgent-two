@@ -1,109 +1,41 @@
+const Utils = require( './utils' );
+
 module.exports = ( grunt ) => {
 	'use strict';
 
 	const projectConfig = {
-		name: 'helpgent',
-		text_domain: 'helpgent',
 		srcDir: './',
-		distDir: `./__build/helpgent/`,
-		version: '2.0.0',
 	};
 
-	let buildIgnoreFiles = [ '**/tests/**' ];
-
-	let buildFiles = [
-		'app/**',
-		'assets/**',
-		'config/**',
-		'database/**',
-		'enqueues/**',
-		'languages/',
-		'resources/views/**',
-		'routes/**',
-		'vendor/vendor-src/**/*.php',
-		'helpgent.php',
-	];
-
-	buildIgnoreFiles = buildIgnoreFiles.map( ( item ) => {
-		return '!' + projectConfig.srcDir + item;
-	} );
-
-	buildFiles = buildFiles.map( ( item ) => {
-		return projectConfig.srcDir + item;
-	} );
-
-	const buildFileList = [ ...buildFiles, ...buildIgnoreFiles ];
-
 	const textDomainFiles = [
-		projectConfig.srcDir + '*.php',
-		projectConfig.srcDir + '**/*.php',
-		'!' + projectConfig.srcDir + '__build/**',
-		'!' + projectConfig.srcDir + 'node_modules/**',
-		'!' + projectConfig.srcDir + 'vendor/**',
-		'!' + projectConfig.srcDir + 'vendor-src/**',
+		'*.php',
+		'**/*.php',
+		'!node_modules/**',
+		'!vendor/**',
+		'!vendor-src/**',
 	];
 
 	grunt.initConfig( {
-		// clean dist directory file
 		clean: {
 			options: { force: true },
-			dist: [
-				projectConfig.distDir + '/**',
-				projectConfig.distDir.replace( /\/$/, '' ) + '.zip',
-			],
+			dist: [ './languages/**/*.pot', './__build/**' ],
 		},
-
-		// Copying project files to ../dist/ directory
-		copy: {
-			dist: {
-				files: [
-					{
-						src: buildFileList,
-						dest: projectConfig.distDir,
-						filter: 'isFile',
-					},
-				],
-			},
-		},
-
-		// Compress Build Files into ${project}.zip
-		compress: {
-			dist: {
-				options: {
-					force: true,
-					mode: 'zip',
-					archive:
-						projectConfig.distDir.replace(
-							projectConfig.name,
-							''
-						) +
-						projectConfig.name +
-						'-' +
-						projectConfig.version +
-						'.zip',
-				},
-				expand: true,
-				cwd: projectConfig.distDir,
-				src: [ '**' ],
-				dest: '../' + projectConfig.name,
-			},
-		},
-
-		// i18n
 		addtextdomain: {
 			options: {
-				// textdomain: 'foobar',
 				updateDomains: true, // List of text domains to replace.
 			},
 			target: {
-				src: textDomainFiles,
+				files: {
+					src: textDomainFiles,
+				},
 			},
 		},
 
 		checktextdomain: {
 			standard: {
 				options: {
-					text_domain: projectConfig.text_domain, //Specify allowed domain(s)
+					text_domain:
+						'<%= grunt.config.get("screen.begin.options.data.textDomain") %>', //Specify allowed domain(s)
 					// correct_domain: true, // don't use it, it has bugs
 					keywords: [
 						//List keyword specifications
@@ -152,22 +84,35 @@ module.exports = ( grunt ) => {
 		 */
 
 		screen: {
-			begin: `
-	# Project   : ${ projectConfig.name }
-	# Dist      : ${ projectConfig.distDir }
-	# Version   : ${ projectConfig.version }`.cyan,
-			textdomainchecking:
-				`Checking textdomain [${ projectConfig.text_domain }]`.cyan,
-			minifying: `Minifying js & css files.`.cyan,
-			finish: `
-			╭─────────────────────────────────────────────────────────────────╮
-			│                                                                 │
-			│                      All tasks completed.                       │
-			│  Built files & Installable zip copied to the __build directory. │
-			│                         ~ SovWare ~                             │
-			│                                                                 │
-			╰─────────────────────────────────────────────────────────────────╯
-			`.green,
+			begin: {
+				options: {
+					data: {
+						version: '1.0.0',
+						textDomain: 'myplugin',
+					},
+				},
+				template: `
+		# Project   : ${ Utils.pluginRootFile }
+		# Dist      : ./__build/${ Utils.pluginRootFile }/
+		# Version   : <%= grunt.config.get("screen.begin.options.data.version") %>`
+					.cyan,
+			},
+			textdomainchecking: {
+				template:
+					`Checking textdomain [<%= grunt.config.get("screen.begin.options.data.textDomain") %>]`
+						.cyan,
+			},
+			finish: {
+				template: `
+		╭─────────────────────────────────────────────────────────────────╮
+		│                                                                 │
+		│                      All tasks completed.                       │
+		│  Built files & Installable zip copied to the __build directory. │
+		│                         ~ SovWare ~                             │
+		│                                                                 │
+		╰─────────────────────────────────────────────────────────────────╯
+		`.green,
+			},
 		},
 	} );
 
@@ -178,32 +123,57 @@ module.exports = ( grunt ) => {
 	 */
 	require( 'load-grunt-tasks' )( grunt );
 
-	/**
-	 * text domain fixing task
-	 */
-	grunt.registerTask( 'fixtextdomain', [
+	grunt.registerTask( 'getPluginInfo', async function () {
+		var done = this.async();
+		const version = await Utils.getPluginInfo(); // Fetch or determine the plugin version dynamically
+		grunt.config.set( 'screen.begin.options.data', version );
+		done( true );
+	} );
+
+	grunt.registerTask( 'textDomainTasks', [
+		'clean',
 		'screen:textdomainchecking',
 		'addtextdomain',
 		'checktextdomain',
 		'makepot',
 	] );
 
-	/**
-	 * Status Screen
-	 */
-	grunt.registerMultiTask( 'screen', function () {
-		grunt.log.writeln( this.data );
+	grunt.registerTask( 'screen:textdomainchecking', function () {
+		const template = grunt.config.get(
+			'screen.textdomainchecking.template'
+		);
+		const rendered = grunt.template.process( template, {} );
+		grunt.log.writeln( rendered );
 	} );
+
+	grunt.registerTask( 'screen:begin', function () {
+		const template = grunt.config.get( 'screen.begin.template' );
+		const rendered = grunt.template.process( template, {
+			data: grunt.config.get( 'screen.begin.options.data' ),
+		} );
+		grunt.log.writeln( rendered );
+	} );
+
+	grunt.registerTask( 'screen:finish', function () {
+		const template = grunt.config.get( 'screen.finish.template' );
+		const rendered = grunt.template.process( template, {} );
+		grunt.log.writeln( rendered );
+	} );
+
+	/**
+	 * text domain fixing task
+	 */
+	grunt.registerTask( 'fixtextdomain', [
+		'getPluginInfo',
+		'textDomainTasks',
+	] );
 
 	/**
 	 * Build and compress task
 	 */
 	grunt.registerTask( 'build', [
+		'getPluginInfo',
 		'screen:begin',
-		'clean',
-		'fixtextdomain',
-		'copy',
-		'compress',
-		'screen:finish',
+		'textDomainTasks',
 	] );
 };
