@@ -237,3 +237,26 @@ function helpgent_get_setting( string $key, $default = null ) {
     $settings           = $setting_repository->db_settings();
     return isset( $settings[$key] ) ? $settings[$key] : $default;
 }
+
+function helpgent_get_current_page_id() {
+    $page_id = 0;
+
+    // Check if we are on a WooCommerce page
+    if ( function_exists( 'is_woocommerce' ) ) {
+        if ( is_cart() ) {
+            $page_id = wc_get_page_id( 'cart' );
+        } elseif ( is_checkout() ) {
+            $page_id = wc_get_page_id( 'checkout' );
+        } elseif ( is_account_page() ) {
+            $page_id = wc_get_page_id( 'myaccount' );
+        } elseif ( is_shop() ) {
+            $page_id = wc_get_page_id( 'shop' );
+        }
+    }
+
+    if ( $page_id === 0 ) {
+        $page_id = get_queried_object_id();
+    }
+
+    return $page_id;
+}

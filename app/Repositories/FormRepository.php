@@ -102,4 +102,10 @@ class FormRepository {
     public function get_by_id_publish( int $id ) {
         return Form::query()->where( 'id', $id )->where( 'status', 'publish' )->first();
     }
+
+    public function get_bubble_by_page_id( int $page_id ) {
+        return Form::query()->where( 'status', 'publish' )->where( 'chat_bubble', 1 )
+            ->where_raw( "(JSON_LENGTH(helpgent_forms.available_pages) = 0 or JSON_CONTAINS( JSON_UNQUOTE(JSON_EXTRACT(helpgent_forms.available_pages, '$')), JSON_QUOTE('{$page_id}'), '$'))" )
+            ->get();
+    }
 }

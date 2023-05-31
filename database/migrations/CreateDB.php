@@ -30,6 +30,7 @@ class CreateDB implements Migration {
             `status` VARCHAR(50) NOT NULL DEFAULT 'draft' COMMENT 'value: publish/draft',
             `content` LONGTEXT NOT NULL,
             `collect_user_info` TINYINT NOT NULL DEFAULT 0 COMMENT 'value: 0/1',
+            `chat_bubble` TINYINT NOT NULL DEFAULT 0 COMMENT 'value: 0/1',
             `available_pages` JSON NULL,
             `user_info_fields` JSON NULL,
             `created_by` BIGINT UNSIGNED NOT NULL,

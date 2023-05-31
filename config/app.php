@@ -10,6 +10,7 @@ use HelpGent\Database\Migrations\CreateDB;
 use HelpGent\App\Providers\LocalizationServiceProvider;
 use HelpGent\App\Providers\PreviewServiceProvider;
 use HelpGent\App\Providers\ShortCodeServiceProvider;
+use HelpGent\App\Providers\ChatBubbleServiceProvider;
 use HelpGent\WaxFramework\App;
 
 return [
@@ -29,7 +30,8 @@ return [
         LocalizationServiceProvider::class,
         MediaProtectionProvider::class,
         ShortCodeServiceProvider::class,
-        PreviewServiceProvider::class
+        PreviewServiceProvider::class,
+        ChatBubbleServiceProvider::class
     ],
 
     'admin_providers'         => [
