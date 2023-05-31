@@ -12,7 +12,7 @@ class PreviewServiceProvider implements Provider
     public function boot() {
         add_action( 'init', [$this, 'action_init'] );
         add_filter( 'query_vars', [$this, 'filter_query_vars'] );
-        add_action( 'template_include', [ $this, 'filter_template_include' ] );
+        add_action( 'template_include', [ $this, 'filter_template_include' ], 9999 );
     }
 
     /**
