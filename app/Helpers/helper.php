@@ -260,3 +260,38 @@ function helpgent_get_current_page_id() {
 
     return $page_id;
 }
+
+/**
+ * Get current user ip address
+ *
+ * @return string|null
+ */
+function helpgent_user_ip_address() {
+    // Check for shared Internet/ISP IP
+    if ( ! empty( $_SERVER['HTTP_CLIENT_IP'] ) && filter_var( $_SERVER['HTTP_CLIENT_IP'], FILTER_VALIDATE_IP ) ) { //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+        return sanitize_text_field( wp_unslash( $_SERVER['HTTP_CLIENT_IP'] ) );
+    }
+
+    // Check for IP addresses passed by proxies
+    if ( ! empty( $_SERVER['HTTP_X_FORWARDED_FOR'] ) ) { //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+        // Extract IP addresses
+        $ip_addresses = explode(
+            ',', sanitize_text_field( wp_unslash( $_SERVER['HTTP_X_FORWARDED_FOR'] ) )
+        );
+
+        // Check each IP address
+        foreach ( $ip_addresses as $ip ) {
+            $ip = trim( $ip );
+            if ( filter_var( $ip, FILTER_VALIDATE_IP ) ) {
+                return $ip;
+            }
+        }
+    }
+
+    // Check for the remote IP address
+    if ( ! empty( $_SERVER['REMOTE_ADDR'] ) && filter_var( $_SERVER['REMOTE_ADDR'], FILTER_VALIDATE_IP ) ) { //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+        return sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) );
+    }
+
+    return null;
+}
