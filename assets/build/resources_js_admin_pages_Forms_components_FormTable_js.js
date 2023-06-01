@@ -117,7 +117,7 @@ function useForms() {
   return {
     forms: !!error || isLoading ? {} : data.forms,
     isLoading,
-    errorMessage: !!error ? (0,_lib_getError__WEBPACK_IMPORTED_MODULE_1__["default"])(error ? error.data.status : '') : "",
+    errorMessage: !!error ? (0,_lib_getError__WEBPACK_IMPORTED_MODULE_1__["default"])(error ? error.data.status : '') : '',
     isError: !!error
   };
 }

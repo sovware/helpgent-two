@@ -47,12 +47,13 @@ const CreatePopupStyle = Styled.div`
     margin: 0 auto;
     .helpgent-createPopup{
         text-align: center;
-        margin: 80px 0;
+        margin: 50px 0;
     }
    .helpgent-createPopup__header{
         h4{
             font-size: 2rem;
             margin: 0;
+            line-height: 1.27;
             color: var(--helpgent-color-dark);
         }
         p{
@@ -132,10 +133,49 @@ const WelcomeBoxStyleWrap = Styled.div`
     }
 `;
 
+const CreateFormStyleWrap = Styled.div`
+    text-align: left;
+    .helpgent-form-group{
+        min-width: 450px;
+    }
+    .helpgent-tooltip-toggle{
+        display: inline-block;
+        margin-left: 10px;
+        line-height: .85;
+        cursor: pointer;
+    }
+    .helpgent-form__element,
+    .helpgent-form__element-inline{
+        border-radius: 12px;
+        background-color: var(--helpgent-color-bg-gray);
+    }
+    .helpgent-form__element{
+        &::placeholder{
+            color: #3C3C3C;
+        }
+    }
+    .helpgent-form__element-inline{
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 20px;
+    }
+    .helpgent-form__label{
+        display: flex;
+        align-items: center;
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--helpgent-color-dark);
+    }
+    .helpgent-select {
+        margin-top: 10px;
+    }
+`;
+
 export {
 	PageHeaderStyle,
 	FormTableStyle,
 	TitleBoxStyle,
 	CreatePopupStyle,
 	WelcomeBoxStyleWrap,
+	CreateFormStyleWrap,
 };

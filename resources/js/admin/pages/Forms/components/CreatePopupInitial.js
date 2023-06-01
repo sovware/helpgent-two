@@ -1,20 +1,31 @@
 import CreatePopupHeader from './CreatePopupHeader';
 import CreatePopupAction from './CreatePopupAction';
+import PropTypes from 'prop-types';
 import Pencil from '../../../../../../assets/svg/icon/pencil-plus.svg';
 import template from '../../../../../../assets/svg/icon/template.svg';
-export default function CreatePopupInitial() {
+export default function CreatePopupInitial( props ) {
+	const { setFormCreationStage } = props;
 	const actionsData = [
 		{
 			icon: Pencil,
 			text: 'Create From Scratch',
-			key: 'scratch',
+			step: 'scratch',
 		},
 		{
 			icon: template,
 			text: 'Start From A Template',
-			key: 'template',
+			step: 'template',
 		},
 	];
+
+	function handleCreateFormSteps( event, step ) {
+		event.preventDefault();
+		if ( step === 'scratch' ) {
+			setFormCreationStage( 'scratch' );
+		} else if ( step === 'template' ) {
+			setFormCreationStage( 'template' );
+		}
+	}
 
 	return (
 		<div className="helpgent-createPopup">
@@ -29,6 +40,8 @@ export default function CreatePopupInitial() {
 							<CreatePopupAction
 								icon={ item.icon }
 								text={ item.text }
+								step={ item.step }
+								handleCreateFormSteps={ handleCreateFormSteps }
 							/>
 						);
 					} ) }
@@ -37,3 +50,7 @@ export default function CreatePopupInitial() {
 		</div>
 	);
 }
+
+CreatePopupInitial.propTypes = {
+	setFormCreationStage: PropTypes.func,
+};

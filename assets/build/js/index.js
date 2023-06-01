@@ -4461,7 +4461,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const Messenger = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.lazy)(() => __webpack_require__.e(/*! import() */ "resources_js_admin_pages_Messenger_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/Messenger */ "./resources/js/admin/pages/Messenger/index.js")));
-const Forms = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.lazy)(() => Promise.all(/*! import() */[__webpack_require__.e("vendors-node_modules_react-toastify_dist_ReactToastify_css-node_modules_prop-types_index_js-n-e26516"), __webpack_require__.e("resources_js_admin_pages_Forms_index_js")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/Forms */ "./resources/js/admin/pages/Forms/index.js")));
+const Forms = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.lazy)(() => Promise.all(/*! import() */[__webpack_require__.e("vendors-node_modules_react-toastify_dist_ReactToastify_css-node_modules_prop-types_index_js-n-2c9a11"), __webpack_require__.e("resources_js_admin_pages_Forms_index_js")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/Forms */ "./resources/js/admin/pages/Forms/index.js")));
 const SingleForm = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.lazy)(() => __webpack_require__.e(/*! import() */ "resources_js_admin_pages_Forms_SingleForm_js").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/Forms/SingleForm.js */ "./resources/js/admin/pages/Forms/SingleForm.js")));
 const FormMap = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.lazy)(() => __webpack_require__.e(/*! import() */ "resources_js_admin_pages_Forms_FormsMap_js").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/Forms/FormsMap.js */ "./resources/js/admin/pages/Forms/FormsMap.js")));
 const Analytics = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.lazy)(() => __webpack_require__.e(/*! import() */ "resources_js_admin_pages_Analytics_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/Analytics */ "./resources/js/admin/pages/Analytics/index.js")));
@@ -4553,7 +4553,7 @@ function useFetchData(queryKey, path, objectKey) {
   return {
     data: !!error || isLoading ? null : data[objectKey],
     isLoading,
-    errorMessage: !!error ? (0,_lib_getError__WEBPACK_IMPORTED_MODULE_1__["default"])(error ? error.data.status : '') : "",
+    errorMessage: !!error ? (0,_lib_getError__WEBPACK_IMPORTED_MODULE_1__["default"])(error ? error.data.status : '') : '',
     isError: !!error
   };
 }
@@ -4597,19 +4597,19 @@ function getErrorMessage(code) {
   let errorMessage = '';
   switch (code) {
     case 404:
-      errorMessage = "Resource not found";
+      errorMessage = 'Resource not found';
       break;
     case 400:
-      errorMessage = "Invalid Request";
+      errorMessage = 'Invalid Request';
       break;
     case 422:
-      errorMessage = "Invalid data";
+      errorMessage = 'Invalid data';
       break;
     case 500:
-      errorMessage = "Internal server error";
+      errorMessage = 'Internal server error';
       break;
     default:
-      errorMessage = "Technical error";
+      errorMessage = 'Technical error';
       break;
   }
   return errorMessage;
@@ -7961,6 +7961,17 @@ if (false) {} else {
 
 "use strict";
 module.exports = window["React"];
+
+/***/ }),
+
+/***/ "react-dom":
+/*!***************************!*\
+  !*** external "ReactDOM" ***!
+  \***************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = window["ReactDOM"];
 
 /***/ }),
 
@@ -12815,7 +12826,7 @@ function combine (array, callback) {
 /******/ 		};
 /******/ 		
 /******/ 		__webpack_require__.f.miniCss = (chunkId, promises) => {
-/******/ 			var cssChunks = {"vendors-node_modules_react-toastify_dist_ReactToastify_css-node_modules_prop-types_index_js-n-e26516":1};
+/******/ 			var cssChunks = {"vendors-node_modules_react-toastify_dist_ReactToastify_css-node_modules_prop-types_index_js-n-2c9a11":1};
 /******/ 			if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 			else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 				promises.push(installedCssChunks[chunkId] = loadStylesheet(chunkId).then(() => {

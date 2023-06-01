@@ -2,13 +2,14 @@
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./resources/sass/global.scss ***!
   \***************************************************************************************************************************************************************************************************************************************************/
 :root {
-  --helpgent-color-primary: #6551f2;
+  --helpgent-color-primary: #6551F2;
   --helpgent-color-secondary: #fc495d;
-  --helpgent-color-dark: #030308;
+  --helpgent-color-dark: #000000;
   --helpgent-color-lighter: #f8f9fb;
   --helpgent-color-light: #f4f5f7;
   --helpgent-color-bg-white: #ffffff;
   --helpgent-color-bg-gray: #efefef;
+  --helpgent-color-bg-deep: #A2A2A2;
   --helpgent-color-bg-general: #F5F5F5;
   --helpgent-color-bg-page: #f0f0f0;
   --helpgent-color-bg-light: #d0d0d0;
@@ -375,10 +376,6 @@ svg.components-spinner path {
   color: var(--helpgent-color-dark);
   border-color: var(--helpgent-color-dark);
 }
-.helpgent-form-group .helpgent-form__element:not(:last-child) {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
 .helpgent-form-group textarea.helpgent-form__element {
   min-height: 100px;
   resize: vertical;
@@ -501,76 +498,26 @@ svg.components-spinner path {
   background-color: var(--helpgent-color-white);
 }
 
-.helpgent-switch-list,
-.helpgent-chekbox-list,
-.helpgent-radio-list {
-  margin-top: 18px;
+.helpgent-toggle .components-form-toggle__input:focus {
+  outline: none;
+  box-shadow: 0 0;
 }
-.helpgent-switch-list .helpgent-switch-single,
-.helpgent-switch-list .helpgent-chekbox-single,
-.helpgent-switch-list .helpgent-radio-single,
-.helpgent-chekbox-list .helpgent-switch-single,
-.helpgent-chekbox-list .helpgent-chekbox-single,
-.helpgent-chekbox-list .helpgent-radio-single,
-.helpgent-radio-list .helpgent-switch-single,
-.helpgent-radio-list .helpgent-chekbox-single,
-.helpgent-radio-list .helpgent-radio-single {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.helpgent-toggle .components-form-toggle__input:focus + .components-form-toggle__track {
+  outline: none;
+  box-shadow: 0 0;
 }
-.helpgent-switch-list .helpgent-switch-single:not(:last-child),
-.helpgent-switch-list .helpgent-chekbox-single:not(:last-child),
-.helpgent-switch-list .helpgent-radio-single:not(:last-child),
-.helpgent-chekbox-list .helpgent-switch-single:not(:last-child),
-.helpgent-chekbox-list .helpgent-chekbox-single:not(:last-child),
-.helpgent-chekbox-list .helpgent-radio-single:not(:last-child),
-.helpgent-radio-list .helpgent-switch-single:not(:last-child),
-.helpgent-radio-list .helpgent-chekbox-single:not(:last-child),
-.helpgent-radio-list .helpgent-radio-single:not(:last-child) {
-  margin-bottom: 20px;
+.helpgent-toggle .components-form-toggle__track {
+  width: 35px;
+  height: 20px;
+  border-radius: 10px;
+  border: 0 none;
+  background-color: var(--helpgent-color-bg-deep);
 }
-.helpgent-switch-list .helpgent-switch-single span,
-.helpgent-switch-list .helpgent-chekbox-single span,
-.helpgent-switch-list .helpgent-radio-single span,
-.helpgent-chekbox-list .helpgent-switch-single span,
-.helpgent-chekbox-list .helpgent-chekbox-single span,
-.helpgent-chekbox-list .helpgent-radio-single span,
-.helpgent-radio-list .helpgent-switch-single span,
-.helpgent-radio-list .helpgent-chekbox-single span,
-.helpgent-radio-list .helpgent-radio-single span {
-  display: inline-flex;
-  align-items: center;
-  font-size: 14px;
-  font-weight: 500;
-  position: relative;
-  top: -2px;
-  line-height: 1;
-  color: #030308;
-}
-.helpgent-switch-list .helpgent-switch-single span svg,
-.helpgent-switch-list .helpgent-chekbox-single span svg,
-.helpgent-switch-list .helpgent-radio-single span svg,
-.helpgent-chekbox-list .helpgent-switch-single span svg,
-.helpgent-chekbox-list .helpgent-chekbox-single span svg,
-.helpgent-chekbox-list .helpgent-radio-single span svg,
-.helpgent-radio-list .helpgent-switch-single span svg,
-.helpgent-radio-list .helpgent-chekbox-single span svg,
-.helpgent-radio-list .helpgent-radio-single span svg {
-  width: 18px;
-  height: 18px;
-  margin-right: 10px;
-}
-.helpgent-switch-list .helpgent-switch-single span svg path,
-.helpgent-switch-list .helpgent-chekbox-single span svg path,
-.helpgent-switch-list .helpgent-radio-single span svg path,
-.helpgent-chekbox-list .helpgent-switch-single span svg path,
-.helpgent-chekbox-list .helpgent-chekbox-single span svg path,
-.helpgent-chekbox-list .helpgent-radio-single span svg path,
-.helpgent-radio-list .helpgent-switch-single span svg path,
-.helpgent-radio-list .helpgent-chekbox-single span svg path,
-.helpgent-radio-list .helpgent-radio-single span svg path {
-  fill: rgb(137, 137, 137);
+.helpgent-toggle .components-form-toggle__thumb {
+  width: 14px;
+  height: 14px;
+  border: 0 none;
+  background-color: var(--helpgent-color-bg-white);
 }
 
 /* Wpwax Dropdown */
@@ -678,6 +625,79 @@ svg.components-spinner path {
 
 .helpgent-select__control .helpgent-select__multi-value {
   background-color: #d7d6d6;
+}
+
+/* Helpgent Select */
+.helpgent-select .helpgent-select__input:focus {
+  box-shadow: 0 0;
+}
+.helpgent-select .helpgent-select__input:after {
+  display: none;
+}
+.helpgent-select .helpgent-select__control {
+  border: 0 none;
+  border-radius: 12px;
+  min-height: 50px;
+  background-color: var(--helpgent-color-bg-gray);
+}
+.helpgent-select .helpgent-select__control--is-focused {
+  box-shadow: 0 0 0 2px var(--helpgent-color-dark);
+}
+.helpgent-select .helpgent-select__value-container {
+  padding: 2px 15px;
+}
+.helpgent-select .helpgent-select__indicator-separator {
+  display: none;
+}
+.helpgent-select .helpgent-select__placeholder {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--helpgent-color-dark);
+}
+.helpgent-select .helpgent-select__indicator {
+  padding-right: 15px;
+  color: #3C3C3C;
+}
+
+.helpgent-select .helpgent-select__menu {
+  border: 0 none;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 0;
+  background-color: #fff;
+  z-index: 100;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.16);
+}
+.helpgent-select .helpgent-select__option {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 10px;
+  cursor: pointer;
+  border-radius: 8px;
+  color: #000;
+}
+.helpgent-select .helpgent-select__option:not(:last-child) {
+  margin-bottom: 6px;
+}
+.helpgent-select .helpgent-select__option .helpgent-checkbox label {
+  font-size: 13px;
+  font-weight: 400;
+  margin-bottom: 0;
+  padding-left: 0;
+  color: var(--color-dark);
+}
+.helpgent-select .helpgent-select__option .helpgent-checkbox {
+  align-items: center;
+}
+.helpgent-select .helpgent-select__option .helpgent-checkbox label {
+  width: 100%;
+  padding: 0 12px 0;
+}
+.helpgent-select .helpgent-select__option:hover, .helpgent-select .helpgent-select__option.helpgent-select__option--is-focused, .helpgent-select .helpgent-select__option.helpgent-select__option--is-selected {
+  background-color: var(--color-bg-general);
+}
+.helpgent-select .helpgent-select__menu-list.helpgent-select__menu-list--is-multi .helpgent-select__option.helpgent-select__option--is-selected {
+  background-color: transparent;
 }
 
 /* wpwax Card */
@@ -979,6 +999,8 @@ svg.components-spinner path {
   top: 0;
 }
 .helpgent-modal.helpgent-create-modal-wrap .components-modal__frame {
+  height: 100%;
+  max-height: 95%;
   min-width: calc(100% - 40px);
 }
 .helpgent-modal.helpgent-create-modal-wrap .components-modal__header {
