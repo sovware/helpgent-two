@@ -2,15 +2,18 @@
 
 namespace HelpGent\App\Repositories;
 
+use wpdb;
 use Exception;
 use HelpGent\App\DTO\SubmissionDTO;
+use HelpGent\App\Models\Guest;
 use HelpGent\App\Models\Submission;
 use HelpGent\App\Models\SubmissionTag;
+use HelpGent\App\Models\User;
 use HelpGent\App\Utils\DateTime;
 use HelpGent\WaxFramework\Database\Query\Builder;
 
 class SubmissionRepository {
-    public function get( int $form_id, int $per_page, int $page, string $order_by, string $status, $tag_ids ) {
+    public function get( int $form_id, int $per_page, int $page, string $order_by, string $status, $tag_ids, string $search = '' ) {
         $query = Submission::query()->with(
             [
                 'tags',
@@ -43,6 +46,29 @@ class SubmissionRepository {
 
             $query->where_exists( $tag_exists );
             $count_query->where_exists( $tag_exists );
+        }
+
+        if ( ! empty( $search ) ) {
+            global $wpdb;
+            /**
+             * @var wpdb $wpdb;
+             */
+            $search = $wpdb->prepare( "%s", "%{$search}%" );
+    
+            $user_exists = User::query()->select( 1 )
+                ->where( 'helpgent_submissions.is_guest', 0 )
+                ->where_column( 'helpgent_submissions.created_by', 'users.ID' )
+                ->where_raw( "(users.display_name like {$search} or users.user_email like {$search})" )
+                ->limit( 1 );
+
+            $guest_exists = Guest::query()->select( 1 )
+                ->where( 'helpgent_submissions.is_guest', 1 )
+                ->where_column( 'helpgent_submissions.created_by', 'helpgent_guest_users.id' )
+                ->where_raw( "(helpgent_guest_users.name like {$search} or helpgent_guest_users.email like $search)" )
+                ->limit( 1 );
+    
+            $query->where_exists( $user_exists );
+            $query->where_exists( $guest_exists, 'or' );
         }
 
         switch ( $order_by ) {

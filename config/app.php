@@ -8,6 +8,9 @@ use HelpGent\App\Providers\MediaProtectionProvider;
 use HelpGent\App\Providers\Admin\MediaProtectionProvider as AdminMediaProtectionProvider;
 use HelpGent\Database\Migrations\CreateDB;
 use HelpGent\App\Providers\LocalizationServiceProvider;
+use HelpGent\App\Providers\PreviewServiceProvider;
+use HelpGent\App\Providers\ShortCodeServiceProvider;
+use HelpGent\App\Providers\ChatBubbleServiceProvider;
 use HelpGent\WaxFramework\App;
 
 return [
@@ -25,7 +28,10 @@ return [
 
     'providers'               => [
         LocalizationServiceProvider::class,
-        MediaProtectionProvider::class
+        MediaProtectionProvider::class,
+        ShortCodeServiceProvider::class,
+        PreviewServiceProvider::class,
+        ChatBubbleServiceProvider::class
     ],
 
     'admin_providers'         => [
@@ -40,6 +46,6 @@ return [
     'migration_db_option_key' => 'helpgent_migrations',
 
     'migrations'              => [
-        'create-db' => CreateDB::class,
+        // 'create-db' => CreateDB::class,
     ]
 ];

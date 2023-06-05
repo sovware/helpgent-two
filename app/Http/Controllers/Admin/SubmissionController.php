@@ -32,7 +32,8 @@ class SubmissionController extends Controller {
                 'page'     => 'numeric',
                 'order_by' => 'required|string|accepted:read,unread,latest,oldest',
                 'status'   => 'required|string|accepted:active,archive,trash',
-                'tag_ids'  => 'array'
+                'tag_ids'  => 'array',
+                'search'   => 'string'
             ]
         );
 
@@ -50,7 +51,8 @@ class SubmissionController extends Controller {
                 intval( $wp_rest_request->get_param( 'page' ) ),
                 $wp_rest_request->get_param( 'order_by' ),
                 $wp_rest_request->get_param( 'status' ),
-                $wp_rest_request->get_param( 'tag_ids' )
+                $wp_rest_request->get_param( 'tag_ids' ),
+                (string) $wp_rest_request->get_param( 'search' )
             )
         );
     }
@@ -99,7 +101,7 @@ class SubmissionController extends Controller {
     public function important( Validator $validator, WP_REST_Request $wp_rest_request ) {
         $validator->validate(
             [
-                'id'        => 'required|integer',
+                'id'        => 'required|numeric',
                 'important' => 'required|integer|accepted:0,1'
             ]
         );
@@ -180,8 +182,8 @@ class SubmissionController extends Controller {
     public function update_status( Validator $validator, WP_REST_Request $wp_rest_request ) {
         $validator->validate(
             [
-                'submission_id' => 'required|integer',
-                'status'        => 'required|string|accepted:active,archive,trash'
+                'id'     => 'required|numeric',
+                'status' => 'required|string|accepted:active,archive,trash'
             ]
         );
 
@@ -196,7 +198,7 @@ class SubmissionController extends Controller {
 
         try {
             $this->submission_repository->update_status( 
-                $wp_rest_request->get_param( 'submission_id' ), 
+                $wp_rest_request->get_param( 'id' ), 
                 $wp_rest_request->get_param( 'status' )
             );
 
@@ -219,8 +221,8 @@ class SubmissionController extends Controller {
     public function update_read( Validator $validator, WP_REST_Request $wp_rest_request ) {
         $validator->validate(
             [
-                'submission_id' => 'required|integer',
-                'is_read'       => 'required|integer|accepted:0,1'
+                'id'      => 'required|numeric',
+                'is_read' => 'required|integer|accepted:0,1'
             ]
         );
 
@@ -235,7 +237,7 @@ class SubmissionController extends Controller {
 
         try {
             $this->submission_repository->update_read( 
-                $wp_rest_request->get_param( 'submission_id' ), 
+                $wp_rest_request->get_param( 'id' ), 
                 $wp_rest_request->get_param( 'is_read' )
             );
 

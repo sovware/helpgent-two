@@ -4,6 +4,8 @@ namespace HelpGent\App\Repositories;
 
 class SettingsRepository
 {
+    protected array $settings = [];
+
     public function get_fields() {
         $db_settings = $this->db_settings();
         $menu        = $this->fields();
@@ -33,7 +35,10 @@ class SettingsRepository
     }
 
     public function db_settings() {
-        return get_option( 'helpgent-settings', [] );
+        if ( empty( $this->settings ) ) {
+            $this->settings = get_option( 'helpgent-settings', [] );
+        }
+        return $this->settings;
     }
 
     private function fields() {
@@ -46,7 +51,7 @@ class SettingsRepository
                     'type'         => 'nav-item',
                     'content_type' => 'fields',
                     'fields'       => $this->general_setting_fields(),
-                    'svg_icon'     =>  $svg_icon_dir . '/slider.svg' 
+                    'svg_icon'     => $svg_icon_dir . '/slider.svg' 
                 ]
             ],
             'email'   => [
@@ -64,7 +69,7 @@ class SettingsRepository
                     'type'         => 'nav-item',
                     'content_type' => 'hook',
                     'hook'         => 'my-custom-content-area',
-                    'svg_icon'     =>  $svg_icon_dir . '/envelope.svg' 
+                    'svg_icon'     => $svg_icon_dir . '/envelope.svg' 
                 ]
             ],
         ];
@@ -77,8 +82,32 @@ class SettingsRepository
             'enable_email_notification' => [
                 'label' => esc_html__( "Enable Email Notification", 'helpgent' ),
                 'type'  => 'toggle',
-                'value' => 'yes'
-            ]
+                'value' => 'no'
+            ],
+            'email_admin_event'         => [
+                'label'     => esc_html__( "Admin Events", 'helpgent' ),
+                'type'      => 'radio',
+                'value'     => 'first_message_in_conversation',
+                'options'   => [
+                    ['value' => 'first_message_in_conversation', 'label' => esc_html__( 'First message in a conversation', 'helpgent' )],
+                    ['value' => 'every_message_in_conversation', 'label' => esc_html__( 'Every message in a conversion', 'helpgent' )]
+                ],
+                'condition' => [
+                    'enable_email_notification' => 'yes'
+                ]
+            ],
+            'email_user_event'          => [
+                'label'     => esc_html__( "User Events", 'helpgent' ),
+                'type'      => 'radio',
+                'value'     => 'first_message_in_conversation',
+                'options'   => [
+                    ['value' => 'first_message_in_conversation', 'label' => esc_html__( 'First message in a conversation', 'helpgent' )],
+                    ['value' => 'every_message_in_conversation', 'label' => esc_html__( 'Every message in a conversion', 'helpgent' )]
+                ],
+                'condition' => [
+                    'enable_email_notification' => 'yes'
+                ]
+            ],
         ];
     }
 

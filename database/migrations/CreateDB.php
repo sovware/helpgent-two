@@ -29,6 +29,10 @@ class CreateDB implements Migration {
             `title` VARCHAR(255) NOT NULL,
             `status` VARCHAR(50) NOT NULL DEFAULT 'draft' COMMENT 'value: publish/draft',
             `content` LONGTEXT NOT NULL,
+            `collect_user_info` TINYINT NOT NULL DEFAULT 0 COMMENT 'value: 0/1',
+            `chat_bubble` TINYINT NOT NULL DEFAULT 0 COMMENT 'value: 0/1',
+            `available_pages` JSON NULL,
+            `user_info_fields` JSON NULL,
             `created_by` BIGINT UNSIGNED NOT NULL,
             `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
             `updated_at` TIMESTAMP NULL,
@@ -63,7 +67,7 @@ class CreateDB implements Migration {
             `country` VARCHAR(50) NULL,
             `created_by` BIGINT UNSIGNED NOT NULL,
             `is_guest` TINYINT NOT NULL DEFAULT 0 COMMENT 'value: 0/1',
-            `status` VARCHAR(50) NOT NULL DEFAULT 'active' COMMENT 'value: active/archive/trash',
+            `status` VARCHAR(50) NOT NULL DEFAULT 'active' COMMENT 'value: active/archive/trash/uncompleted',
             `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
             `updated_at` TIMESTAMP NULL,
             PRIMARY KEY (`id`)
@@ -115,7 +119,7 @@ class CreateDB implements Migration {
             `is_read` TINYINT NOT NULL DEFAULT 0 COMMENT 'possible values: 1, 0',
             `is_guest` TINYINT NOT NULL DEFAULT 0 COMMENT 'possible values: 1, 0',
             `created_by` BIGINT UNSIGNED NOT NULL,
-            `agent_trigger` TINYINT NULL COMMENT 'null = not trigger\n0 = leave\n1 = join',
+            `agent_trigger` TINYINT NULL COMMENT 'null = not trigger, 0 = leave, 1 = join',
             `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
             `updated_at` TIMESTAMP NULL,
             PRIMARY KEY (`id`)

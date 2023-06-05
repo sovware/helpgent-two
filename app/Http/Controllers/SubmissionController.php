@@ -35,6 +35,26 @@ class SubmissionController extends Controller {
             );
         }
 
+        $form = $this->form_repository->get_by_id_publish( intval( $wp_rest_request->get_param( 'form_id' ) ) );
+
+        if ( ! $form ) {
+            return Response::send(
+                [
+                    'message' => esc_html__( "Form not found", "helpgent" )
+                ], 404
+            );
+        }
+
+        $is_guest_allowed = false;
+
+        if ( ! $is_guest_allowed && ! is_user_logged_in() ) {
+            return Response::send(
+                [
+                    'message' => esc_html__( "Please login to submit the form", "helpgent" )
+                ], 500
+            );
+        }
+
         $submission_dto = new SubmissionDTO(
             $wp_rest_request->get_param( 'form_id' ),
             get_current_user_id()

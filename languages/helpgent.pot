@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: HelpGent 2.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/helpgent-two\n"
-"POT-Creation-Date: 2023-05-24 11:21:54+00:00\n"
+"POT-Creation-Date: 2023-05-29 14:36:27+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,24 +13,28 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 1.0.3\n"
 
-#: app/Http/Controllers/Admin/FormController.php:57
+#: app/Http/Controllers/Admin/FormController.php:73
 msgid "Form Created Successfully!"
 msgstr ""
 
-#: app/Http/Controllers/Admin/FormController.php:96
-#: app/Http/Controllers/Admin/FormController.php:137
-#: app/Http/Controllers/Admin/SubmissionController.php:81
-#: app/Http/Controllers/Admin/SubmissionController.php:123
+#: app/Http/Controllers/Admin/FormController.php:112
+#: app/Http/Controllers/Admin/FormController.php:191
+#: app/Http/Controllers/Admin/SubmissionController.php:79
+#: app/Http/Controllers/Admin/SubmissionController.php:121
 #: app/Http/Controllers/Admin/TagController.php:131
 #: app/Http/Controllers/AttachmentController.php:150
 msgid "Something Was Wrong!"
 msgstr ""
 
-#: app/Http/Controllers/Admin/FormController.php:103
+#: app/Http/Controllers/Admin/FormController.php:119
 msgid "Form Updated Successfully!"
 msgstr ""
 
-#: app/Http/Controllers/Admin/FormController.php:144
+#: app/Http/Controllers/Admin/FormController.php:156
+msgid "Form status updated successfully!"
+msgstr ""
+
+#: app/Http/Controllers/Admin/FormController.php:198
 msgid "Form Deleted Successfully!"
 msgstr ""
 
@@ -38,23 +42,23 @@ msgstr ""
 msgid "Settings saved successfully!"
 msgstr ""
 
-#: app/Http/Controllers/Admin/SubmissionController.php:88
+#: app/Http/Controllers/Admin/SubmissionController.php:86
 msgid "Submission Deleted Successfully!"
 msgstr ""
 
-#: app/Http/Controllers/Admin/SubmissionController.php:130
+#: app/Http/Controllers/Admin/SubmissionController.php:128
 msgid "Important status updated successfully!"
 msgstr ""
 
-#: app/Http/Controllers/Admin/SubmissionController.php:168
+#: app/Http/Controllers/Admin/SubmissionController.php:166
 msgid "Submission tag updated successfully!"
 msgstr ""
 
-#: app/Http/Controllers/Admin/SubmissionController.php:207
+#: app/Http/Controllers/Admin/SubmissionController.php:205
 msgid "Submission status updated successfully!"
 msgstr ""
 
-#: app/Http/Controllers/Admin/SubmissionController.php:246
+#: app/Http/Controllers/Admin/SubmissionController.php:244
 msgid "Submission read status updated successfully!"
 msgstr ""
 
@@ -114,6 +118,7 @@ msgid "Submissions"
 msgstr ""
 
 #: app/Providers/Admin/MenuServiceProvider.php:46
+#: app/Providers/LocalizationServiceProvider.php:38
 msgid "Settings"
 msgstr ""
 
@@ -121,81 +126,112 @@ msgstr ""
 msgid "Go Pro"
 msgstr ""
 
+#: app/Providers/LocalizationServiceProvider.php:35
+msgid "Default"
+msgstr ""
+
+#: app/Providers/LocalizationServiceProvider.php:36
+msgid "All Forms"
+msgstr ""
+
+#: app/Providers/LocalizationServiceProvider.php:37
+msgid "Create New"
+msgstr ""
+
 #: app/Repositories/AttachmentRepository.php:84
 msgid "Please use a valid media driver"
 msgstr ""
 
-#: app/Repositories/FormRepository.php:35
-#: app/Repositories/FormRepository.php:53
+#: app/Repositories/FormRepository.php:46
+#: app/Repositories/FormRepository.php:64
+#: app/Repositories/FormRepository.php:78
 msgid "Form not found"
 msgstr ""
 
-#: app/Repositories/SettingsRepository.php:45
+#: app/Repositories/SettingsRepository.php:50
 msgid "General"
 msgstr ""
 
-#: app/Repositories/SettingsRepository.php:54
+#: app/Repositories/SettingsRepository.php:59
 msgid "Email"
 msgstr ""
 
-#: app/Repositories/SettingsRepository.php:63
+#: app/Repositories/SettingsRepository.php:68
 msgid "Test"
 msgstr ""
 
-#: app/Repositories/SettingsRepository.php:78
+#: app/Repositories/SettingsRepository.php:83
 msgid "Enable Email Notification"
 msgstr ""
 
 #: app/Repositories/SettingsRepository.php:88
-msgid "Open Ended"
+msgid "Admin Events"
 msgstr ""
 
 #: app/Repositories/SettingsRepository.php:92
-msgid "Enable Guest Conversation"
-msgstr ""
-
-#: app/Repositories/SettingsRepository.php:98
-msgid "Chat Head Position"
-msgstr ""
-
-#: app/Repositories/SettingsRepository.php:102
-msgid "Bottom Right"
-msgstr ""
-
-#: app/Repositories/SettingsRepository.php:103
-msgid "Bottom Left"
-msgstr ""
-
 #: app/Repositories/SettingsRepository.php:104
-msgid "Bottom Middle"
+msgid "First message in a conversation"
 msgstr ""
 
-#: app/Repositories/SettingsRepository.php:110
-msgid "Voice And Video"
+#: app/Repositories/SettingsRepository.php:93
+#: app/Repositories/SettingsRepository.php:105
+msgid "Every message in a conversion"
 msgstr ""
 
-#: app/Repositories/SettingsRepository.php:114
-msgid "Maximum Video Record Length"
+#: app/Repositories/SettingsRepository.php:100
+msgid "User Events"
 msgstr ""
 
-#: app/Repositories/SettingsRepository.php:116
-#: app/Repositories/SettingsRepository.php:123
-msgid "You can use maximum of 2 mins in free version."
+#: app/Repositories/SettingsRepository.php:117
+msgid "Open Ended"
 msgstr ""
 
 #: app/Repositories/SettingsRepository.php:121
+msgid "Enable Guest Conversation"
+msgstr ""
+
+#: app/Repositories/SettingsRepository.php:127
+msgid "Chat Head Position"
+msgstr ""
+
+#: app/Repositories/SettingsRepository.php:131
+msgid "Bottom Right"
+msgstr ""
+
+#: app/Repositories/SettingsRepository.php:132
+msgid "Bottom Left"
+msgstr ""
+
+#: app/Repositories/SettingsRepository.php:133
+msgid "Bottom Middle"
+msgstr ""
+
+#: app/Repositories/SettingsRepository.php:139
+msgid "Voice And Video"
+msgstr ""
+
+#: app/Repositories/SettingsRepository.php:143
+msgid "Maximum Video Record Length"
+msgstr ""
+
+#: app/Repositories/SettingsRepository.php:145
+#: app/Repositories/SettingsRepository.php:152
+msgid "You can use maximum of 2 mins in free version."
+msgstr ""
+
+#: app/Repositories/SettingsRepository.php:150
 msgid "Maximum Voice Record Length"
 msgstr ""
 
-#: app/Repositories/SubmissionRepository.php:100
-#: app/Repositories/SubmissionRepository.php:126
-#: app/Repositories/SubmissionRepository.php:148
-#: app/Repositories/SubmissionRepository.php:162
+#: app/Repositories/SubmissionRepository.php:93
+#: app/Repositories/SubmissionRepository.php:119
+#: app/Repositories/SubmissionRepository.php:141
+#: app/Repositories/SubmissionRepository.php:155
 #: app/Repositories/SubmissionTagRepository.php:22
 msgid "Form submission not found"
 msgstr ""
 
-#: app/Repositories/SubmissionRepository.php:139
+#: app/Repositories/SubmissionRepository.php:132
 msgid "Submission not found"
 msgstr ""
 

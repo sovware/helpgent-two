@@ -3,6 +3,7 @@
 defined( 'ABSPATH' ) || exit;
 
 use HelpGent\App\Repositories\AttachmentRepository;
+use HelpGent\App\Repositories\SettingsRepository;
 use HelpGent\WaxFramework\App;
 use HelpGent\DI\Container;
 
@@ -226,4 +227,71 @@ function helpgent_get_server_name() {
     }
 
     return '';
+}
+
+function helpgent_get_setting( string $key, $default = null ) {
+    /**
+     * @var SettingsRepository $setting_repository
+     */
+    $setting_repository = helpgent_singleton( SettingsRepository::class );
+    $settings           = $setting_repository->db_settings();
+    return isset( $settings[$key] ) ? $settings[$key] : $default;
+}
+
+function helpgent_get_current_page_id() {
+    $page_id = 0;
+
+    // Check if we are on a WooCommerce page
+    if ( function_exists( 'is_woocommerce' ) ) {
+        if ( is_cart() ) {
+            $page_id = wc_get_page_id( 'cart' );
+        } elseif ( is_checkout() ) {
+            $page_id = wc_get_page_id( 'checkout' );
+        } elseif ( is_account_page() ) {
+            $page_id = wc_get_page_id( 'myaccount' );
+        } elseif ( is_shop() ) {
+            $page_id = wc_get_page_id( 'shop' );
+        }
+    }
+
+    if ( $page_id === 0 ) {
+        $page_id = get_queried_object_id();
+    }
+
+    return $page_id;
+}
+
+/**
+ * Get current user ip address
+ *
+ * @return string|null
+ */
+function helpgent_user_ip_address() {
+    // Check for shared Internet/ISP IP
+    if ( ! empty( $_SERVER['HTTP_CLIENT_IP'] ) && filter_var( $_SERVER['HTTP_CLIENT_IP'], FILTER_VALIDATE_IP ) ) { //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+        return sanitize_text_field( wp_unslash( $_SERVER['HTTP_CLIENT_IP'] ) );
+    }
+
+    // Check for IP addresses passed by proxies
+    if ( ! empty( $_SERVER['HTTP_X_FORWARDED_FOR'] ) ) { //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+        // Extract IP addresses
+        $ip_addresses = explode(
+            ',', sanitize_text_field( wp_unslash( $_SERVER['HTTP_X_FORWARDED_FOR'] ) )
+        );
+
+        // Check each IP address
+        foreach ( $ip_addresses as $ip ) {
+            $ip = trim( $ip );
+            if ( filter_var( $ip, FILTER_VALIDATE_IP ) ) {
+                return $ip;
+            }
+        }
+    }
+
+    // Check for the remote IP address
+    if ( ! empty( $_SERVER['REMOTE_ADDR'] ) && filter_var( $_SERVER['REMOTE_ADDR'], FILTER_VALIDATE_IP ) ) { //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash
+        return sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) );
+    }
+
+    return null;
 }
