@@ -5,6 +5,7 @@ namespace HelpGent\App\Repositories;
 use Exception;
 use HelpGent\App\DTO\FormDTO;
 use HelpGent\App\Models\Form;
+use HelpGent\App\Models\FormMeta;
 use HelpGent\App\Utils\DateTime;
 use HelpGent\WaxFramework\Database\Query\Builder;
 
@@ -42,10 +43,9 @@ class FormRepository {
                 'title'             => $form_dto->get_title(),
                 'status'            => $form_dto->get_status(),
                 'content'           => $form_dto->get_content(),
-                'created_by'        => $form_dto->get_created_by(),
+                'is_chat_bubble'  => $form_dto->get_is_chat_bubble(),
                 'available_pages'   => wp_json_encode( $form_dto->get_available_pages() ),
-                'collect_user_info' => $form_dto->get_collect_user_info(),
-                'user_info_fields'  => wp_json_encode( $form_dto->get_user_info_fields() )
+                'created_by'        => $form_dto->get_created_by()
             ]
         );
     }
@@ -59,14 +59,13 @@ class FormRepository {
 
         return Form::query()->where( 'id', $form_dto->get_id() )->update(
             [
-                'title'             => $form_dto->get_title(),
-                'status'            => $form_dto->get_status(),
-                'content'           => $form_dto->get_content(),
-                'created_by'        => $form_dto->get_created_by(),
-                'available_pages'   => wp_json_encode( $form_dto->get_available_pages() ),
-                'collect_user_info' => $form_dto->get_collect_user_info(),
-                'user_info_fields'  => wp_json_encode( $form_dto->get_user_info_fields() ),
-                'updated_at'        => DateTime::now()
+                'title'           => $form_dto->get_title(),
+                'status'          => $form_dto->get_status(),
+                'content'         => $form_dto->get_content(),
+                'is_chat_bubble'  => $form_dto->get_is_chat_bubble(),
+                'available_pages' => wp_json_encode( $form_dto->get_available_pages() ),
+                'created_by'      => $form_dto->get_created_by(),
+                'updated_at'      => DateTime::now()
             ]
         );
     }
@@ -104,8 +103,57 @@ class FormRepository {
     }
 
     public function get_bubble_by_page_id( int $page_id ) {
-        return Form::query()->where( 'status', 'publish' )->where( 'chat_bubble', 1 )
+        return Form::query()->where( 'status', 'publish' )->where( 'is_chat_bubble', 1 )
             ->where_raw( "(JSON_LENGTH(helpgent_forms.available_pages) = 0 or JSON_CONTAINS( JSON_UNQUOTE(JSON_EXTRACT(helpgent_forms.available_pages, '$')), JSON_QUOTE('{$page_id}'), '$'))" )
             ->get();
+    }
+
+    public function get_meta( int $form_id, string $meta_key ) {
+        return FormMeta::query()->where( 'form_id', $form_id )->where( 'meta_key', $meta_key )->first();
+    }
+
+    public function get_meta_value( int $form_id, string $meta_key ) {
+        $meta = $this->get_meta( $form_id, $meta_key );
+        if ( ! $meta ) {
+            return false;
+        }
+        return $meta->meta_value;
+    }
+
+    public function add_meta( int $form_id, string $meta_key, string $meta_value ) {
+        $meta = $this->get_meta( $form_id, $meta_key );
+
+        if ( $meta ) {
+            return false;
+        }
+
+        return FormMeta::query()->insert(
+            [
+                'form_id'    => $form_id,
+                'meta_key'   => $meta_key,
+                'meta_value' => $meta_value,
+            ]
+        );
+    }
+
+    public function update_meta( int $form_id, string $meta_key, string $meta_value ) {
+
+        $update = FormMeta::query()->where( 'form_id', $form_id )->where( 'meta_key', $meta_key )->update(
+            [
+                'meta_value' => $meta_value,
+            ]
+        );
+
+        if ( $update ) {
+            return $update;
+        }
+
+        return FormMeta::query()->insert(
+            [
+                'form_id'    => $form_id,
+                'meta_key'   => $meta_key,
+                'meta_value' => $meta_value,
+            ]
+        );
     }
 }

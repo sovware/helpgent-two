@@ -30,12 +30,13 @@ class SubmissionDTO {
 
     private int $is_guest = 0;
 
-    public function __construct( int $form_id, int $created_by, int $is_guest = 0, int $is_important = 0, string $status = 'active' ) {
+    public function __construct( int $form_id, int $created_by, int $is_guest = 0, int $is_important = 0, string $status = 'uncompleted' ) {
         $this->form_id      = $form_id;
         $this->status       = $status;
         $this->is_important = $is_important;
         $this->created_by   = $created_by;
         $this->is_important = $is_guest;
+        $this->ip           = helpgent_user_ip_address();
     }
 
     public function get_id() {
