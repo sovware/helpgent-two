@@ -27,7 +27,6 @@ class FormRepository {
         $forms = array_map(
             function( $form ) {
                 $form->available_pages  = json_decode( $form->available_pages );
-                $form->user_info_fields = json_decode( $form->user_info_fields );
                 return $form;
             }, $forms
         );
