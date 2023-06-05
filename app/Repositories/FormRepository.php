@@ -26,7 +26,7 @@ class FormRepository {
 
         $forms = array_map(
             function( $form ) {
-                $form->available_pages  = json_decode( $form->available_pages );
+                $form->available_pages = json_decode( $form->available_pages );
                 return $form;
             }, $forms
         );
@@ -39,12 +39,12 @@ class FormRepository {
     public function create( FormDTO $form_dto ) {
         return Form::query()->insert_get_id(
             [
-                'title'             => $form_dto->get_title(),
-                'status'            => $form_dto->get_status(),
-                'content'           => $form_dto->get_content(),
+                'title'           => $form_dto->get_title(),
+                'status'          => $form_dto->get_status(),
+                'content'         => $form_dto->get_content(),
                 'is_chat_bubble'  => $form_dto->get_is_chat_bubble(),
-                'available_pages'   => wp_json_encode( $form_dto->get_available_pages() ),
-                'created_by'        => $form_dto->get_created_by()
+                'available_pages' => wp_json_encode( $form_dto->get_available_pages() ),
+                'created_by'      => $form_dto->get_created_by()
             ]
         );
     }
