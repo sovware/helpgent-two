@@ -15,18 +15,15 @@ class FormDTO {
 
     private array $available_pages;
 
-    private int $collect_user_info;
+    private int $is_chat_bubble;
 
-    private array $user_info_fields;
-
-    public function __construct( string $title, string $status, string $content, array $available_pages, int $collect_user_info, array $user_info_fields, int $created_by ) {
-        $this->title             = $title;
-        $this->status            = $status;
-        $this->content           = $content;
-        $this->available_pages   = $available_pages;
-        $this->collect_user_info = $collect_user_info;
-        $this->user_info_fields  = $user_info_fields;
-        $this->created_by        = $created_by;
+    public function __construct( string $title, string $status, string $content, int $is_chat_bubble, array $available_pages, int $created_by ) {
+        $this->title           = $title;
+        $this->status          = $status;
+        $this->content         = $content;
+        $this->available_pages = $available_pages;
+        $this->is_chat_bubble  = $is_chat_bubble;
+        $this->created_by      = $created_by;
     }
 
     public function get_id() {
@@ -77,19 +74,11 @@ class FormDTO {
         $this->available_pages = $available_pages;
     }
 
-    public function get_collect_user_info() {
-        return $this->collect_user_info;
+    public function get_is_chat_bubble() {
+        return $this->is_chat_bubble;
     }
 
-    public function set_collect_user_info( $collect_user_info ) {
-        $this->collect_user_info = $collect_user_info;
-    }
-
-    public function get_user_info_fields() {
-        return $this->user_info_fields;
-    }
-
-    public function set_user_info_fields( $user_info_fields ) {
-        $this->user_info_fields = $user_info_fields;
+    public function set_is_chat_bubble( $is_chat_bubble ) {
+        $this->is_chat_bubble = $is_chat_bubble;
     }
 }

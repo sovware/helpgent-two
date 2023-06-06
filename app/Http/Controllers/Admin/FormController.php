@@ -46,12 +46,11 @@ class FormController extends Controller {
     public function store( Validator $validator, WP_REST_Request $wp_rest_request ) {
         $validator->validate(
             [
-                'title'             => 'required|string|max:255|min:5',
-                'status'            => 'required|string|accepted:publish,draft',
-                'content'           => 'required|json',
-                'available_pages'   => 'required|array',
-                'user_info_fields'  => 'required|array',
-                'collect_user_info' => 'required|accepted:0,1'
+                'title'           => 'required|string|max:255|min:5',
+                'status'          => 'required|string|accepted:publish,draft',
+                'content'         => 'required|json',
+                'is_chat_bubble'  => 'required|accepted:0,1',
+                'available_pages' => 'required|array'
             ]
         );
 
@@ -67,9 +66,8 @@ class FormController extends Controller {
             $wp_rest_request->get_param( 'title' ),
             $wp_rest_request->get_param( 'status' ),
             $wp_rest_request->get_param( 'content' ),
+            intval( $wp_rest_request->get_param( 'is_chat_bubble' ) ),
             $wp_rest_request->get_param( 'available_pages' ),
-            intval( $wp_rest_request->get_param( 'collect_user_info' ) ),
-            $wp_rest_request->get_param( 'user_info_fields' ),
             get_current_user_id(),
         );
 
@@ -86,13 +84,13 @@ class FormController extends Controller {
     public function update( Validator $validator, WP_REST_Request $wp_rest_request ) {
         $validator->validate(
             [
-                'id'                => 'required|numeric',
-                'title'             => 'required|string|max:255|min:5',
-                'status'            => 'required|string|accepted:publish,draft',
-                'available_pages'   => 'required|array',
-                'collect_user_info' => 'required|accepted:0,1',
-                'user_info_fields'  => 'required|array',
-                'created_by'        => 'required|integer'
+                'id'              => 'required|numeric',
+                'title'           => 'required|string|max:255|min:5',
+                'status'          => 'required|string|accepted:publish,draft',
+                'content'         => 'required|json',
+                'is_chat_bubble'  => 'required|accepted:0,1',
+                'available_pages' => 'required|array',
+                'created_by'      => 'required|integer'
             ]
         );
 
@@ -108,9 +106,8 @@ class FormController extends Controller {
             $wp_rest_request->get_param( 'title' ),
             $wp_rest_request->get_param( 'status' ),
             $wp_rest_request->get_param( 'content' ),
+            intval( $wp_rest_request->get_param( 'is_chat_bubble' ) ),
             $wp_rest_request->get_param( 'available_pages' ),
-            intval( $wp_rest_request->get_param( 'collect_user_info' ) ),
-            $wp_rest_request->get_param( 'user_info_fields' ),
             $wp_rest_request->get_param( 'created_by' )
         );
 
