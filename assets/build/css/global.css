@@ -9,7 +9,7 @@
   --helpgent-color-light: #f4f5f7;
   --helpgent-color-bg-white: #ffffff;
   --helpgent-color-bg-gray: #efefef;
-  --helpgent-color-bg-deep: #A2A2A2;
+  --helpgent-color-bg-deep: #6E6E6E;
   --helpgent-color-bg-general: #F5F5F5;
   --helpgent-color-bg-page: #f0f0f0;
   --helpgent-color-bg-light: #d0d0d0;
@@ -519,6 +519,12 @@ svg.components-spinner path {
   border: 0 none;
   background-color: var(--helpgent-color-bg-white);
 }
+.helpgent-toggle .components-form-toggle.is-checked .components-form-toggle__track {
+  background-color: var(--helpgent-color-primary);
+}
+.helpgent-toggle .components-form-toggle.is-checked .components-form-toggle__thumb {
+  transform: translateX(15px);
+}
 
 /* Wpwax Dropdown */
 .helpgent-dropdown {
@@ -624,7 +630,28 @@ svg.components-spinner path {
 }
 
 .helpgent-select__control .helpgent-select__multi-value {
-  background-color: #d7d6d6;
+  border-radius: 4px;
+  background-color: var(--helpgent-color-bg-deep);
+}
+.helpgent-select__control .helpgent-select__multi-value__label {
+  font-size: 0.67rem;
+  font-weight: 700;
+  border-radius: 4px;
+  padding: 3.5px 2px 2.5px 6px;
+  line-height: 1.32;
+  text-transform: uppercase;
+  color: var(--helpgent-color-white);
+}
+.helpgent-select__control .helpgent-select__multi-value__remove {
+  padding-right: 0;
+  padding-left: 0;
+  border-radius: 4px;
+}
+.helpgent-select__control .helpgent-select__multi-value__remove:hover {
+  background-color: var(--helpgent-color-danger);
+}
+.helpgent-select__control .helpgent-select__multi-value__remove svg {
+  fill: var(--helpgent-color-bg-white);
 }
 
 /* Helpgent Select */
@@ -638,6 +665,7 @@ svg.components-spinner path {
   border: 0 none;
   border-radius: 12px;
   min-height: 50px;
+  cursor: pointer;
   background-color: var(--helpgent-color-bg-gray);
 }
 .helpgent-select .helpgent-select__control--is-focused {
@@ -662,10 +690,11 @@ svg.components-spinner path {
 .helpgent-select .helpgent-select__menu {
   border: 0 none;
   border-radius: 12px;
-  padding: 20px;
+  padding: 10px;
   margin: 0;
-  background-color: #fff;
   z-index: 100;
+  margin-top: 10px;
+  background-color: var(--helpgent-color-white);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.16);
 }
 .helpgent-select .helpgent-select__option {
@@ -680,8 +709,8 @@ svg.components-spinner path {
   margin-bottom: 6px;
 }
 .helpgent-select .helpgent-select__option .helpgent-checkbox label {
-  font-size: 13px;
-  font-weight: 400;
+  font-size: 0.93rem;
+  font-weight: 500;
   margin-bottom: 0;
   padding-left: 0;
   color: var(--color-dark);

@@ -1,18 +1,17 @@
-import { CheckboxControl } from '@wordpress/components';
+import { useState } from '@wordpress/element';
+import Checkbox from '../../../../components/Checkbox.js';
 import { components } from 'react-select';
 const Option = ( props ) => {
-	console.log( props );
 	return (
 		<div>
 			<components.Option { ...props }>
-				<div className="helpgent-checkbox">
-					<CheckboxControl
-						id={ `helpgent-${ props.value }` }
-						label={ props.label }
-						// onChange={handleCustomPageCheckbox}
-						checked={ props.isSelected }
-					/>
-				</div>
+				<Checkbox
+					id={ `helpgent-${ props.value }` }
+					label={ props.label }
+					checked={
+						props.value === 'all' ? isAllSelected : props.isSelected
+					}
+				/>
 			</components.Option>
 		</div>
 	);

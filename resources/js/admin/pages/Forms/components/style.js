@@ -135,10 +135,13 @@ const WelcomeBoxStyleWrap = Styled.div`
 
 const CreateFormStyleWrap = Styled.div`
     text-align: left;
+    margin-top: 50px;
     .helpgent-form-group{
         min-width: 450px;
     }
     .helpgent-tooltip-toggle{
+        position: relative;
+        top: 1px;
         display: inline-block;
         margin-left: 10px;
         line-height: .85;
@@ -167,7 +170,7 @@ const CreateFormStyleWrap = Styled.div`
         color: var(--helpgent-color-dark);
     }
     .helpgent-select {
-        margin-top: 10px;
+        margin-top: 12px;
     }
 `;
 

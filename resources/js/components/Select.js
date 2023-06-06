@@ -1,12 +1,21 @@
+import { useState } from '@wordpress/element';
 import PropTypes from 'prop-types';
-import { default as ReactSelect } from 'react-select';
+//import { default as ReactSelect } from 'react-select';
+import AsyncSelect from 'react-select/async';
 
-export default function Select( props ) {
+const Select = ( props ) => {
+	const loadOptions = ( inputValue ) => {
+		return fetch(
+			`http://jsonplaceholder.typicode.com/posts?userId=5`
+		).then( ( res ) => res.json() );
+	};
+	const [ isAllSelected, setIsAllSelected ] = useState( false );
 	if ( props.allowSelectAll ) {
 		return (
-			<ReactSelect
+			<AsyncSelect
 				{ ...props }
-				options={ [ props.allOption, ...props.options ] }
+				cacheOptions
+				loadOptions={ [ props.allOption, loadOptions ] }
 				onChange={ ( selected ) => {
 					if (
 						selected !== null &&
@@ -14,27 +23,22 @@ export default function Select( props ) {
 						selected[ selected.length - 1 ].value ===
 							props.allOption.value
 					) {
+						setIsAllSelected( ! isAllSelected );
 						if ( ! isAllSelected ) {
 							return props.onChange( props.options );
 						} else {
 							return props.onChange( [] );
 						}
 					}
-					return props.onChange();
+					return props.onChange( selected );
 				} }
 			/>
 		);
 	}
-	return <ReactSelect { ...props } />;
-}
+	return <AsyncSelect { ...props } />;
+};
 
-ReactSelect.propTypes = {
-	inputId: PropTypes.string,
-	className: PropTypes.string,
-	classNamePrefix: PropTypes.string,
-	isMulti: PropTypes.bool,
-	searchable: PropTypes.bool,
-	hideSelectedOptions: PropTypes.bool,
+Select.propTypes = {
 	options: PropTypes.array,
 	value: PropTypes.any,
 	onChange: PropTypes.func,
@@ -45,9 +49,11 @@ ReactSelect.propTypes = {
 	} ),
 };
 
-ReactSelect.defaultProps = {
+Select.defaultProps = {
 	allOption: {
-		label: 'Select all',
-		value: '*',
+		label: 'Select all pages',
+		value: 'all',
 	},
 };
+
+export default Select;
