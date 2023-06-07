@@ -10,8 +10,8 @@ use HelpGent\App\Repositories\SubmissionRepository;
 use HelpGent\App\Support\Submission\Submission;
 use HelpGent\WaxFramework\RequestValidator\Validator;
 use HelpGent\WaxFramework\Routing\Response;
-use stdClass;
 use WP_REST_Request;
+use stdClass;
 
 class SubmissionController extends Controller {
     public SubmissionRepository $submission_repository;
@@ -33,6 +33,7 @@ class SubmissionController extends Controller {
                 'form_id'   => 'required|numeric',
                 'screen_id' => 'required|string',
                 'token'     => 'string',
+                'submit'    => 'accepted:1',
             ]
         );
 
@@ -79,8 +80,9 @@ class SubmissionController extends Controller {
 
     private function process_first_request() {
         try {
+            $form_id        = intval( $this->wp_rest_request->get_param( 'form_id' ) );
             $submission_dto = new SubmissionDTO(
-                $this->wp_rest_request->get_param( 'form_id' ),
+                $form_id,
                 get_current_user_id()
             );
 
@@ -104,7 +106,7 @@ class SubmissionController extends Controller {
             /**
              * Storing submission response.
              */
-            $field_handler->save_response( $this->wp_rest_request, $field, $submission_id );
+            $response_id = $field_handler->save_response( $this->wp_rest_request, $field, $submission_id );
 
             /**
              * Generating and storing token to identify the subsequent response on this submission.
@@ -113,7 +115,9 @@ class SubmissionController extends Controller {
 
             $this->form_repository->add_meta( $this->form->id, $token, $submission_id );
 
-            return Response::send( ['token' => $token], 201 );
+            $this->submit_form( $form_id, $submission_id, $token );
+
+            return Response::send( compact( 'token', 'response_id' ), 201 );
         } catch ( Exception $exception ) {
             return Response::send(
                 [
@@ -156,15 +160,17 @@ class SubmissionController extends Controller {
              * Get input field handler by field type and validate input.
              */
             $field_handler = $this->field_handler( $field['type'] );
-
+            
             $field_handler->validate( $this->wp_rest_request, $field );
 
             /**
              * Storing submission response.
              */
-            $field_handler->save_response( $this->wp_rest_request, $field, $submission_id );
+            $response_id = $field_handler->save_response( $this->wp_rest_request, $field, $submission_id );
 
-            return Response::send( [], 201 );
+            $this->submit_form( $form_id, $submission_id, $token );
+
+            return Response::send( compact( 'response_id' ), 201 );
         } catch ( Exception $exception ) {
             return Response::send(
                 [
@@ -174,9 +180,22 @@ class SubmissionController extends Controller {
         }
     }
 
+    private function submit_form( $form_id, $submission_id, $token ) {
+        if ( $this->wp_rest_request->has_param( 'submit' ) ) {
+            $this->form_repository->delete_meta( $form_id, $token );
+            $this->submission_repository->update_status( $submission_id, 'active' );
+        }
+    }
+
     private function validate_logic_map() {
         $screens = $this->screens();
+        // $form_content = json_decode( $this->form->content );
 
+        // if ( empty( $form_content['screens'] ) ) {
+        //     throw new Exception( __( "Form screens not found", "helpgent" ), 500 );
+        // }
+
+        // $screens    = $form_content['screens'];
         $screen_key = array_search( $this->wp_rest_request->get_param( 'screen_id' ), array_column( $screens,  'id' ), true );
 
         if ( ! is_int( $screen_key ) ) {
@@ -186,7 +205,7 @@ class SubmissionController extends Controller {
         $screen = $screens[$screen_key];
 
         if ( ! isset( $screen['fields'][0] ) ) {
-            return false;
+            throw new Exception( __( "Sorry, Some thing was wrong!", "helpgent" ), 500 );
         }
 
         return $screen['fields'][0];

@@ -157,4 +157,8 @@ class FormRepository {
             ]
         );
     }
+
+    public function delete_meta( int $form_id, string $meta_key ) {
+        return FormMeta::query()->where( 'form_id', $form_id )->where( 'meta_key', $meta_key )->delete();
+    }
 }
