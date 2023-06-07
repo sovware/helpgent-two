@@ -31,6 +31,7 @@ class CreateDB implements Migration {
             `content` LONGTEXT NOT NULL,
             `is_chat_bubble` TINYINT NOT NULL DEFAULT 0 COMMENT 'value: 0/1',
             `available_pages` JSON NULL,
+            `is_guest_allowed` TINYINT NOT NULL DEFAULT 0 COMMENT 'value: 0/1',
             `created_by` BIGINT UNSIGNED NOT NULL,
             `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
             `updated_at` TIMESTAMP NULL,

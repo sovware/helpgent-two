@@ -17,13 +17,16 @@ class FormDTO {
 
     private int $is_chat_bubble;
 
-    public function __construct( string $title, string $status, string $content, int $is_chat_bubble, array $available_pages, int $created_by ) {
-        $this->title           = $title;
-        $this->status          = $status;
-        $this->content         = $content;
-        $this->available_pages = $available_pages;
-        $this->is_chat_bubble  = $is_chat_bubble;
-        $this->created_by      = $created_by;
+    private int $is_guest_allowed;
+
+    public function __construct( string $title, string $status, string $content, int $is_chat_bubble, array $available_pages, int $is_guest_allowed, int $created_by ) {
+        $this->title            = $title;
+        $this->status           = $status;
+        $this->content          = $content;
+        $this->available_pages  = $available_pages;
+        $this->is_chat_bubble   = $is_chat_bubble;
+        $this->is_guest_allowed = $is_guest_allowed;
+        $this->created_by       = $created_by;
     }
 
     public function get_id() {
@@ -80,5 +83,13 @@ class FormDTO {
 
     public function set_is_chat_bubble( $is_chat_bubble ) {
         $this->is_chat_bubble = $is_chat_bubble;
+    }
+
+    public function get_is_guest_allowed() {
+        return $this->is_guest_allowed;
+    }
+
+    public function set_is_guest_allowed( $is_guest_allowed ) {
+        $this->is_guest_allowed = $is_guest_allowed;
     }
 }

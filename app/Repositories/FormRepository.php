@@ -39,12 +39,13 @@ class FormRepository {
     public function create( FormDTO $form_dto ) {
         return Form::query()->insert_get_id(
             [
-                'title'           => $form_dto->get_title(),
-                'status'          => $form_dto->get_status(),
-                'content'         => $form_dto->get_content(),
-                'is_chat_bubble'  => $form_dto->get_is_chat_bubble(),
-                'available_pages' => wp_json_encode( $form_dto->get_available_pages() ),
-                'created_by'      => $form_dto->get_created_by()
+                'title'            => $form_dto->get_title(),
+                'status'           => $form_dto->get_status(),
+                'content'          => $form_dto->get_content(),
+                'is_chat_bubble'   => $form_dto->get_is_chat_bubble(),
+                'is_guest_allowed' => $form_dto->get_is_guest_allowed(),
+                'available_pages'  => wp_json_encode( $form_dto->get_available_pages() ),
+                'created_by'       => $form_dto->get_created_by()
             ]
         );
     }
@@ -58,13 +59,14 @@ class FormRepository {
 
         return Form::query()->where( 'id', $form_dto->get_id() )->update(
             [
-                'title'           => $form_dto->get_title(),
-                'status'          => $form_dto->get_status(),
-                'content'         => $form_dto->get_content(),
-                'is_chat_bubble'  => $form_dto->get_is_chat_bubble(),
-                'available_pages' => wp_json_encode( $form_dto->get_available_pages() ),
-                'created_by'      => $form_dto->get_created_by(),
-                'updated_at'      => DateTime::now()
+                'title'            => $form_dto->get_title(),
+                'status'           => $form_dto->get_status(),
+                'content'          => $form_dto->get_content(),
+                'is_chat_bubble'   => $form_dto->get_is_chat_bubble(),
+                'is_guest_allowed' => $form_dto->get_is_guest_allowed(),
+                'available_pages'  => wp_json_encode( $form_dto->get_available_pages() ),
+                'created_by'       => $form_dto->get_created_by(),
+                'updated_at'       => DateTime::now()
             ]
         );
     }

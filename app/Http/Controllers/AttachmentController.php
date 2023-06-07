@@ -76,7 +76,7 @@ class AttachmentController extends Controller {
             );
         }
 
-        $file = $wp_rest_request->get_file_params( 'file' );
+        $file = $wp_rest_request->get_file_params();
         $file = $file['file'];
 
         $storage = $this->attachment_driver;
