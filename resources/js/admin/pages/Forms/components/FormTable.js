@@ -1,11 +1,13 @@
 import { lazy, Suspense } from '@wordpress/element';
 import { Spinner } from '@wordpress/components';
+import { FormToggle } from '@wordpress/components';
 import PropTypes from 'prop-types';
 const TitleBox = lazy( () => import( './TitleBox' ) );
 const TableActions = lazy( () => import( './TableActions.js' ) );
 const WelcomeBox = lazy( () => import( './WelcomeBox.js' ) );
 import useForms from '../../../../hooks/forms/useForms.js';
 import useFetchData from '../../../../hooks/useFetchData.js';
+import { formatDate } from '../../../../lib/formatter.js';
 import { FormTableStyle, WelcomeBoxStyleWrap } from './style.js';
 
 export default function FormTable( props ) {
@@ -26,12 +28,39 @@ export default function FormTable( props ) {
 			return <span>{ formErrorMessage }</span>;
 		}
 
+		const dateFormatOptions = {
+			year: 'numeric',
+			month: 'long',
+			day: 'numeric',
+		};
+
 		return forms.length !== 0 ? (
 			forms.map( ( form ) => (
 				<tr key={ form.id }>
+					<td>{ form.id }</td>
 					<td>{ form.title }</td>
-					<td>{ form.status }</td>
-					<td>{ form.status }</td>
+					<td className="helpgent-form-shortCode">
+						<label>
+							<input
+								type="text"
+								readOnly
+								value={ `[helpgent_form id="${ form.id }"]` }
+							/>
+						</label>
+					</td>
+					<td>{ form.total_submissions }</td>
+					<td>
+						<div className="helpgent-toggle helpgent-toggle-success">
+							<FormToggle />
+						</div>
+					</td>
+					<td>
+						{ formatDate(
+							'en-US',
+							form.created_at,
+							dateFormatOptions
+						) }
+					</td>
 					<td>
 						<Suspense fallback={ <></> }>
 							<TableActions />

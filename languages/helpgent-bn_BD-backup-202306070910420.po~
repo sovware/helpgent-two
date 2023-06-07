@@ -1,0 +1,298 @@
+# Copyright (C) 2023 SovWare
+# This file is distributed under the GPL v3 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: HelpGent 2.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/helpgent-two\n"
+"POT-Creation-Date: 2023-05-29 14:36:27+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2023-06-07 09:10+0000\n"
+"Last-Translator: \n"
+"Language-Team: বাংলা\n"
+"X-Generator: Loco https://localise.biz/\n"
+"Language: bn_BD\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Loco-Version: 2.6.4; wp-6.2.2"
+
+#: app/Http/Controllers/Admin/FormController.php:73
+msgid "Form Created Successfully!"
+msgstr ""
+
+#: app/Http/Controllers/Admin/FormController.php:112
+#: app/Http/Controllers/Admin/FormController.php:191
+#: app/Http/Controllers/Admin/SubmissionController.php:79
+#: app/Http/Controllers/Admin/SubmissionController.php:121
+#: app/Http/Controllers/Admin/TagController.php:131
+#: app/Http/Controllers/AttachmentController.php:150
+msgid "Something Was Wrong!"
+msgstr ""
+
+#: app/Http/Controllers/Admin/FormController.php:119
+msgid "Form Updated Successfully!"
+msgstr ""
+
+#: app/Http/Controllers/Admin/FormController.php:156
+msgid "Form status updated successfully!"
+msgstr ""
+
+#: app/Http/Controllers/Admin/FormController.php:198
+msgid "Form Deleted Successfully!"
+msgstr ""
+
+#: app/Http/Controllers/Admin/SettingsController.php:50
+msgid "Settings saved successfully!"
+msgstr ""
+
+#: app/Http/Controllers/Admin/SubmissionController.php:86
+msgid "Submission Deleted Successfully!"
+msgstr ""
+
+#: app/Http/Controllers/Admin/SubmissionController.php:128
+msgid "Important status updated successfully!"
+msgstr ""
+
+#: app/Http/Controllers/Admin/SubmissionController.php:166
+msgid "Submission tag updated successfully!"
+msgstr ""
+
+#: app/Http/Controllers/Admin/SubmissionController.php:205
+msgid "Submission status updated successfully!"
+msgstr ""
+
+#: app/Http/Controllers/Admin/SubmissionController.php:244
+msgid "Submission read status updated successfully!"
+msgstr ""
+
+#: app/Http/Controllers/Admin/TagController.php:55
+msgid "Tag Created Successfully!"
+msgstr ""
+
+#: app/Http/Controllers/Admin/TagController.php:96
+msgid "Tag Updated Successfully!"
+msgstr ""
+
+#: app/Http/Controllers/Admin/TagController.php:138
+msgid "Tag Deleted Successfully!"
+msgstr ""
+
+#: app/Http/Controllers/AttachmentController.php:52
+#: app/Http/Controllers/AttachmentController.php:132
+#: app/Repositories/AttachmentRepository.php:35
+#: app/Repositories/AttachmentRepository.php:56
+msgid "Attachment not found"
+msgstr ""
+
+#: app/Http/Controllers/AttachmentController.php:105
+msgid "The Attachment Created Successfully!"
+msgstr ""
+
+#: app/Http/Controllers/AttachmentController.php:159
+msgid "The Attachment Deleted Successfully!"
+msgstr ""
+
+#: app/Http/Controllers/SubmissionController.php:48
+msgid "Submission Created Successfully!"
+msgstr ""
+
+#: app/MediaDriver/Local.php:30
+msgid "Could not upload the file, please try again"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "HelpGent"
+msgstr ""
+
+#: app/Providers/Admin/MenuServiceProvider.php:42
+msgid "Overview"
+msgstr ""
+
+#: app/Providers/Admin/MenuServiceProvider.php:43
+msgid "Analytics"
+msgstr ""
+
+#: app/Providers/Admin/MenuServiceProvider.php:44
+msgid "Forms"
+msgstr ""
+
+#: app/Providers/Admin/MenuServiceProvider.php:45
+msgid "Submissions"
+msgstr ""
+
+#: app/Providers/Admin/MenuServiceProvider.php:46
+#: app/Providers/LocalizationServiceProvider.php:38
+msgid "Settings"
+msgstr ""
+
+#: app/Providers/Admin/MenuServiceProvider.php:47
+msgid "Go Pro"
+msgstr ""
+
+#: app/Providers/LocalizationServiceProvider.php:35
+msgid "Default"
+msgstr ""
+
+#: app/Providers/LocalizationServiceProvider.php:36
+msgid "All Forms"
+msgstr ""
+
+#: app/Providers/LocalizationServiceProvider.php:37
+msgid "Create New"
+msgstr ""
+
+#: app/Repositories/AttachmentRepository.php:84
+msgid "Please use a valid media driver"
+msgstr ""
+
+#: app/Repositories/FormRepository.php:46
+#: app/Repositories/FormRepository.php:64
+#: app/Repositories/FormRepository.php:78
+msgid "Form not found"
+msgstr ""
+
+#: app/Repositories/SettingsRepository.php:50
+msgid "General"
+msgstr ""
+
+#: app/Repositories/SettingsRepository.php:59
+msgid "Email"
+msgstr ""
+
+#: app/Repositories/SettingsRepository.php:68
+msgid "Test"
+msgstr ""
+
+#: app/Repositories/SettingsRepository.php:83
+msgid "Enable Email Notification"
+msgstr ""
+
+#: app/Repositories/SettingsRepository.php:88
+msgid "Admin Events"
+msgstr ""
+
+#: app/Repositories/SettingsRepository.php:92
+#: app/Repositories/SettingsRepository.php:104
+msgid "First message in a conversation"
+msgstr ""
+
+#: app/Repositories/SettingsRepository.php:93
+#: app/Repositories/SettingsRepository.php:105
+msgid "Every message in a conversion"
+msgstr ""
+
+#: app/Repositories/SettingsRepository.php:100
+msgid "User Events"
+msgstr ""
+
+#: app/Repositories/SettingsRepository.php:117
+msgid "Open Ended"
+msgstr ""
+
+#: app/Repositories/SettingsRepository.php:121
+msgid "Enable Guest Conversation"
+msgstr ""
+
+#: app/Repositories/SettingsRepository.php:127
+msgid "Chat Head Position"
+msgstr ""
+
+#: app/Repositories/SettingsRepository.php:131
+msgid "Bottom Right"
+msgstr ""
+
+#: app/Repositories/SettingsRepository.php:132
+msgid "Bottom Left"
+msgstr ""
+
+#: app/Repositories/SettingsRepository.php:133
+msgid "Bottom Middle"
+msgstr ""
+
+#: app/Repositories/SettingsRepository.php:139
+msgid "Voice And Video"
+msgstr ""
+
+#: app/Repositories/SettingsRepository.php:143
+msgid "Maximum Video Record Length"
+msgstr ""
+
+#: app/Repositories/SettingsRepository.php:145
+#: app/Repositories/SettingsRepository.php:152
+msgid "You can use maximum of 2 mins in free version."
+msgstr ""
+
+#: app/Repositories/SettingsRepository.php:150
+msgid "Maximum Voice Record Length"
+msgstr ""
+
+#: app/Repositories/SubmissionRepository.php:93
+#: app/Repositories/SubmissionRepository.php:119
+#: app/Repositories/SubmissionRepository.php:141
+#: app/Repositories/SubmissionRepository.php:155
+#: app/Repositories/SubmissionTagRepository.php:22
+msgid "Form submission not found"
+msgstr ""
+
+#: app/Repositories/SubmissionRepository.php:132
+msgid "Submission not found"
+msgstr ""
+
+#: app/Repositories/SubmissionTagRepository.php:28
+#: app/Repositories/TagRepository.php:41 app/Repositories/TagRepository.php:62
+msgid "Tag not found"
+msgstr ""
+
+#: app/Repositories/TagRepository.php:25 app/Repositories/TagRepository.php:47
+msgid "%s tag is already exists"
+msgstr ""
+
+#: resources/views/admin/notice/nginx-setup-notice.php:4
+msgid ""
+"It looks like you're using NGINX web server. NGINX doesn’t have .htaccess-"
+"type capability, HelpGent cannot modify your server configuration "
+"automatically for you. Here's how you can do it manually:"
+msgstr ""
+
+#: resources/views/admin/notice/nginx-setup-notice.php:6
+msgid "Update our rewrite rules on your NGINX server"
+msgstr ""
+
+#: resources/views/admin/notice/nginx-setup-notice.php:7
+msgid "as per this instruction"
+msgstr ""
+
+#: resources/views/admin/notice/nginx-setup-notice.php:13
+msgid "Instruction:"
+msgstr ""
+
+#: resources/views/admin/notice/nginx-setup-notice.php:15
+msgid "Copy the rewrite rules shown above"
+msgstr ""
+
+#: resources/views/admin/notice/nginx-setup-notice.php:16
+msgid ""
+"Find your website’s Nginx config file which is often located at "
+"/etc/nginx/site-available or /etc/nginx/conf/site-available (if you’re using "
+"Arch Linux)"
+msgstr ""
+
+#: resources/views/admin/notice/nginx-setup-notice.php:18
+msgid "Paste the copied rules in the server block"
+msgstr ""
+
+#: resources/views/admin/notice/nginx-setup-notice.php:25
+msgid "Dismiss"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "This plugin is build with Wax framework"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "SovWare"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://github.com/sovware"
+msgstr ""

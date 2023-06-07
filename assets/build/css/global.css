@@ -17,7 +17,7 @@
   --helpgent-color-border-lighter: #EBEBEB;
   --helpgent-color-gray: #868eae;
   --helpgent-color-gray-light: #656565;
-  --helpgent-color-info: #3f95f7;
+  --helpgent-color-info: #2188FF;
   --helpgent-color-danger: #EB0808;
   --helpgent-color-disable: #dddada;
   --helpgent-color-warning-deep: #ff7300;
@@ -526,6 +526,11 @@ svg.components-spinner path {
   transform: translateX(15px);
 }
 
+/* Helpgent Toggle Type */
+.helpgent-toggle.helpgent-toggle-success .components-form-toggle.is-checked .components-form-toggle__track {
+  background-color: var(--helpgent-color-success);
+}
+
 /* Wpwax Dropdown */
 .helpgent-dropdown {
   position: relative;
@@ -547,38 +552,45 @@ svg.components-spinner path {
   top: 6px;
   line-height: 0.1;
 }
-.helpgent-dropdown .helpgent-dropdown__content {
+
+.helpgent-dropdown__content {
   position: absolute;
+  width: calc(100% - 16px);
   left: 0;
-  width: 100%;
-  margin: 0;
-  padding: 10px 8px;
+  top: 20px;
+  padding: 8px;
   border-radius: 10px;
-  list-style: none;
   display: none;
+  z-index: 100;
   box-shadow: 0 6px 40px rgba(144, 144, 144, 0.25);
-  background-color: #fff;
+  background-color: var(--helpgent-color-white);
 }
-.helpgent-dropdown .helpgent-dropdown__content li {
-  margin: 0;
+.helpgent-dropdown__content.helpgent-show {
+  display: block;
 }
-.helpgent-dropdown .helpgent-dropdown__content li a {
+.helpgent-dropdown__content li a {
   display: flex;
   align-items: center;
+  padding: 10px 15px;
   font-size: 14px;
-  font-weight: 500;
-  padding: 0 20px;
-  border-radius: 8px;
-  min-height: 38px;
+  font-weight: 400;
   text-decoration: none;
+  border-radius: 8px;
   color: var(--helpgent-color-dark);
 }
-.helpgent-dropdown .helpgent-dropdown__content li a:hover, .helpgent-dropdown .helpgent-dropdown__content li a.helpgent-active {
+.helpgent-dropdown__content li a:hover {
   background-color: var(--helpgent-color-bg-general);
 }
-.helpgent-dropdown .helpgent-dropdown__content li a:focus {
-  outline: none;
-  box-shadow: 0 0;
+.helpgent-dropdown__content li a .helpgent-dropdown-item-icon {
+  line-height: 1;
+  margin-right: 10px;
+}
+.helpgent-dropdown__content li a .helpgent-dropdown-item-icon svg {
+  width: 14px;
+  fill: var(--helpgent-color-text);
+}
+.helpgent-dropdown__content li a .helpgent-dropdown-item-icon svg path {
+  fill: var(-color-text);
 }
 
 .wpwax-helpgent-body .helpgent-dropdown .helpgent-dropdown__toggle:focus:not(.wp-block-button__link):not(.wp-block-file__button),
@@ -833,46 +845,6 @@ svg.components-spinner path {
   display: inline-block;
   margin-left: 8px;
   color: #4d4d4d;
-}
-
-.helpgent-dropdown__content {
-  position: absolute;
-  width: calc(100% - 16px);
-  left: 0;
-  top: 20px;
-  padding: 8px;
-  border-radius: 10px;
-  display: none;
-  z-index: 100;
-  box-shadow: 0 6px 40px rgba(144, 144, 144, 0.25);
-  background-color: var(--helpgent-color-white);
-}
-.helpgent-dropdown__content.helpgent-show {
-  display: block;
-}
-.helpgent-dropdown__content li a {
-  display: flex;
-  align-items: center;
-  padding: 10px 15px;
-  font-size: 14px;
-  font-weight: 400;
-  text-decoration: none;
-  border-radius: 8px;
-  color: var(--helpgent-color-dark);
-}
-.helpgent-dropdown__content li a:hover {
-  background-color: var(--helpgent-color-bg-general);
-}
-.helpgent-dropdown__content li a .helpgent-dropdown-item-icon {
-  line-height: 1;
-  margin-right: 10px;
-}
-.helpgent-dropdown__content li a .helpgent-dropdown-item-icon svg {
-  width: 14px;
-  fill: var(--helpgent-color-text);
-}
-.helpgent-dropdown__content li a .helpgent-dropdown-item-icon svg path {
-  fill: var(-color-text);
 }
 
 /* Table Style */

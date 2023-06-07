@@ -482,6 +482,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   CreatePopupStyle: () => (/* binding */ CreatePopupStyle),
 /* harmony export */   FormTableStyle: () => (/* binding */ FormTableStyle),
 /* harmony export */   PageHeaderStyle: () => (/* binding */ PageHeaderStyle),
+/* harmony export */   SingleFormHeaderStyle: () => (/* binding */ SingleFormHeaderStyle),
+/* harmony export */   SingleFormStyle: () => (/* binding */ SingleFormStyle),
 /* harmony export */   TitleBoxStyle: () => (/* binding */ TitleBoxStyle),
 /* harmony export */   WelcomeBoxStyleWrap: () => (/* binding */ WelcomeBoxStyleWrap)
 /* harmony export */ });
@@ -658,6 +660,12 @@ const CreateFormStyleWrap = styled_components__WEBPACK_IMPORTED_MODULE_0__["defa
     .helpgent-select {
         margin-top: 12px;
     }
+`;
+const SingleFormHeaderStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div`
+    
+`;
+const SingleFormStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div`
+    
 `;
 
 

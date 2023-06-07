@@ -1,6 +1,5 @@
-import screenData from "../../../../constants";
+import screenData from '../../../../constants';
 export default async function handleCreateForm( form, createFormMutation ) {
-	
 	const screenFormData = JSON.stringify( screenData );
 
 	console.log( createFormMutation );
@@ -15,7 +14,6 @@ export default async function handleCreateForm( form, createFormMutation ) {
 	try {
 		const createFormResponse = await createFormMutation( formData );
 		console.log( createFormResponse );
-		
 	} catch ( error ) {
 		console.log( error );
 	}

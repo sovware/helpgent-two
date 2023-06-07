@@ -16,7 +16,7 @@
     --helpgent-color-border-lighter: #EBEBEB;
     --helpgent-color-gray: #868eae;
     --helpgent-color-gray-light: #656565;
-    --helpgent-color-info: #3f95f7; //#1b83fb
+    --helpgent-color-info: #2188FF; //#1b83fb
     --helpgent-color-danger: #EB0808; //#ef0000;
     --helpgent-color-disable: #dddada;
     --helpgent-color-warning-deep: #ff7300;
@@ -611,6 +611,19 @@ svg.components-spinner{
     }
 }
 
+/* Helpgent Toggle Type */
+.helpgent-toggle{
+    &.helpgent-toggle-success{
+        .components-form-toggle {
+            &.is-checked{
+                .components-form-toggle__track{
+                    background-color: var(--helpgent-color-success);
+                }
+            }
+        }
+    }
+}
+
 /* Wpwax Dropdown */
 .helpgent-dropdown {
     position: relative;
@@ -636,40 +649,48 @@ svg.components-spinner{
             line-height: .1;
         }
     }
+}
 
-    .helpgent-dropdown__content {
-        position: absolute;
-        left: 0;
-        width: 100%;
-        margin: 0;
-        padding: 10px 8px;
-        border-radius: 10px;
-        list-style: none;
-        display: none;
-        box-shadow: 0 6px 40px rgba(144, 144, 144, 0.25);
-        background-color: #fff;
+.helpgent-dropdown__content {
+    position: absolute;
+    width: calc(100% - 16px);
+    left: 0;
+    top: 20px;
+    padding: 8px;
+    border-radius: 10px;
+    display: none;
+    z-index: 100;
+    box-shadow: 0 6px 40px rgba(144, 144, 144, 0.25);
+    background-color: var(--helpgent-color-white);
 
-        li {
-            margin: 0;
-            a {
-                display: flex;
-                align-items: center;
-                font-size: 14px;
-                font-weight: 500;
-                padding: 0 20px;
-                border-radius: 8px;
-                min-height: 38px;
-                text-decoration: none;
-                color: var(--helpgent-color-dark);
+    &.helpgent-show {
+        display: block;
+    }
 
-                &:hover,
-                &.helpgent-active {
-                    background-color: var(--helpgent-color-bg-general);
-                }
+    li {
+        a {
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            font-size: 14px;
+            font-weight: 400;
+            text-decoration: none;
+            border-radius: 8px;
+            color: var(--helpgent-color-dark);
 
-                &:focus {
-                    outline: none;
-                    box-shadow: 0 0;
+            &:hover {
+                background-color: var(--helpgent-color-bg-general);
+            }
+
+            .helpgent-dropdown-item-icon {
+                line-height: 1;
+                margin-right: 10px;
+                svg {
+                    width: 14px;
+                    fill: var(--helpgent-color-text);
+                    path {
+                        fill: var(-color-text);
+                    }
                 }
             }
         }
@@ -974,52 +995,6 @@ svg.components-spinner{
             display: inline-block;
             margin-left: 8px;
             color: #4d4d4d;
-        }
-    }
-}
-
-.helpgent-dropdown__content {
-    position: absolute;
-    width: calc(100% - 16px);
-    left: 0;
-    top: 20px;
-    padding: 8px;
-    border-radius: 10px;
-    display: none;
-    z-index: 100;
-    box-shadow: 0 6px 40px rgba(144, 144, 144, 0.25);
-    background-color: var(--helpgent-color-white);
-
-    &.helpgent-show {
-        display: block;
-    }
-
-    li {
-        a {
-            display: flex;
-            align-items: center;
-            padding: 10px 15px;
-            font-size: 14px;
-            font-weight: 400;
-            text-decoration: none;
-            border-radius: 8px;
-            color: var(--helpgent-color-dark);
-
-            &:hover {
-                background-color: var(--helpgent-color-bg-general);
-            }
-
-            .helpgent-dropdown-item-icon {
-                line-height: 1;
-                margin-right: 10px;
-                svg {
-                    width: 14px;
-                    fill: var(--helpgent-color-text);
-                    path {
-                        fill: var(-color-text);
-                    }
-                }
-            }
         }
     }
 }

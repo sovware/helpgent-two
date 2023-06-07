@@ -174,6 +174,14 @@ const CreateFormStyleWrap = Styled.div`
     }
 `;
 
+const SingleFormHeaderStyle = Styled.div`
+    
+`;
+
+const SingleFormStyle = Styled.div`
+    
+`;
+
 export {
 	PageHeaderStyle,
 	FormTableStyle,
@@ -181,4 +189,6 @@ export {
 	CreatePopupStyle,
 	WelcomeBoxStyleWrap,
 	CreateFormStyleWrap,
+	SingleFormHeaderStyle,
+	SingleFormStyle,
 };

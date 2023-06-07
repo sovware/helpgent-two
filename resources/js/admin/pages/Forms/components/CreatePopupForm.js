@@ -105,7 +105,13 @@ export default function CreatePopupForm() {
 							<div className="helpgent-toggle">
 								<FormToggle
 									checked={ displayChatBubble }
-									onChange={ ()=>handleChatBubbleToggle( setDisplayChatBubble, setValue, displayChatBubble ) }
+									onChange={ () =>
+										handleChatBubbleToggle(
+											setDisplayChatBubble,
+											setValue,
+											displayChatBubble
+										)
+									}
 								/>
 							</div>
 						</div>
@@ -137,7 +143,13 @@ export default function CreatePopupForm() {
 									Option,
 								} }
 								value={ selectedPages }
-								onChange={ ()=>handlePageSelection( setSelectedPages, selected, setValue ) }
+								onChange={ () =>
+									handlePageSelection(
+										setSelectedPages,
+										selected,
+										setValue
+									)
+								}
 								allowSelectAll={ true }
 								loadOptions={ handleLoadPages }
 								defaultOptions={ defaultPages }

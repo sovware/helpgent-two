@@ -8,7 +8,6 @@ const useCreateMutation = ( path ) => {
 
 export default useCreateMutation;
 
-
 // , {
 // 	onMutate: async ( data ) => {
 // 		await queryClient.cancelQueries( [ queryKey ] );
