@@ -4461,7 +4461,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const Messenger = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.lazy)(() => __webpack_require__.e(/*! import() */ "resources_js_admin_pages_Messenger_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/Messenger */ "./resources/js/admin/pages/Messenger/index.js")));
-const Forms = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.lazy)(() => Promise.all(/*! import() */[__webpack_require__.e("vendors-node_modules_react-toastify_dist_ReactToastify_css-node_modules_prop-types_index_js-n-d1d014"), __webpack_require__.e("resources_js_admin_pages_Forms_index_js")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/Forms */ "./resources/js/admin/pages/Forms/index.js")));
+const Forms = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.lazy)(() => Promise.all(/*! import() */[__webpack_require__.e("vendors-node_modules_react-toastify_dist_ReactToastify_css-node_modules_prop-types_index_js-n-4082d0"), __webpack_require__.e("resources_js_admin_pages_Forms_index_js")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/Forms */ "./resources/js/admin/pages/Forms/index.js")));
 const SingleForm = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.lazy)(() => __webpack_require__.e(/*! import() */ "resources_js_admin_pages_Forms_SingleForm_js").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/Forms/SingleForm.js */ "./resources/js/admin/pages/Forms/SingleForm.js")));
 const FormMap = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.lazy)(() => __webpack_require__.e(/*! import() */ "resources_js_admin_pages_Forms_FormsMap_js").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/Forms/FormsMap.js */ "./resources/js/admin/pages/Forms/FormsMap.js")));
 const Analytics = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.lazy)(() => __webpack_require__.e(/*! import() */ "resources_js_admin_pages_Analytics_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/Analytics */ "./resources/js/admin/pages/Analytics/index.js")));
@@ -4506,7 +4506,7 @@ function App() {
     path: "/forms",
     element: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(Forms, null)
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
-    path: "/forms/single",
+    path: "/forms/single/:id",
     element: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(SingleForm, null)
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
     path: "/forms/map",
@@ -12826,7 +12826,7 @@ function combine (array, callback) {
 /******/ 		};
 /******/ 		
 /******/ 		__webpack_require__.f.miniCss = (chunkId, promises) => {
-/******/ 			var cssChunks = {"vendors-node_modules_react-toastify_dist_ReactToastify_css-node_modules_prop-types_index_js-n-d1d014":1};
+/******/ 			var cssChunks = {"vendors-node_modules_react-toastify_dist_ReactToastify_css-node_modules_prop-types_index_js-n-4082d0":1};
 /******/ 			if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 			else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 				promises.push(installedCssChunks[chunkId] = loadStylesheet(chunkId).then(() => {
