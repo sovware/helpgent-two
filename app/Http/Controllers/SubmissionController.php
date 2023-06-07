@@ -3,7 +3,6 @@
 namespace HelpGent\App\Http\Controllers;
 
 use Exception;
-use HelpGent\App\DTO\ResponseDTO;
 use HelpGent\App\DTO\SubmissionDTO;
 use HelpGent\App\Http\Controllers\Controller;
 use HelpGent\App\Repositories\FormRepository;
@@ -45,8 +44,6 @@ class SubmissionController extends Controller {
             );
         }
 
-        $this->wp_rest_request = $wp_rest_request;
-
         /**
          * Get submitted form by form_id
          */
@@ -60,20 +57,19 @@ class SubmissionController extends Controller {
             );
         }
 
-        $this->form = $form;
-
-        $is_guest_allowed = false;
-
         /**
          * Guest permission check
          */
-        if ( ! $is_guest_allowed && ! is_user_logged_in() ) {
+        if ( '0' == $form->is_guest_allowed && ! is_user_logged_in() ) {
             return Response::send(
                 [
                     'message' => esc_html__( "Please login to submit the form", "helpgent" )
                 ], 500
             );
         }
+
+        $this->wp_rest_request = $wp_rest_request;
+        $this->form            = $form;
 
         if ( $wp_rest_request->has_param( 'token' ) ) {
             return $this->process_token_request();
