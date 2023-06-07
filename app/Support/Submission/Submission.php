@@ -13,7 +13,7 @@ abstract class Submission {
         $this->response_repository = $response_repository;
     }
 
-    abstract public function validate( WP_REST_Request $wp_rest_request, array $field ): bool;
+    abstract public function validate( WP_REST_Request $wp_rest_request, array $field );
 
     public function save_response( WP_REST_Request $wp_rest_request, array $field, int $submission_id ) {
         $response_dto = new ResponseDTO(

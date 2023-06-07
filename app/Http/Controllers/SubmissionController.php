@@ -95,7 +95,7 @@ class SubmissionController extends Controller {
             $field_handler = $this->field_handler( $field['type'] );
 
             $field_handler->validate( $this->wp_rest_request, $field );
-            
+
             /**
              * Creating a new submission.
              */
@@ -113,7 +113,7 @@ class SubmissionController extends Controller {
 
             $this->form_repository->add_meta( $this->form->id, $token, $submission_id );
 
-            return Response::send( ['token' => $token] );
+            return Response::send( ['token' => $token], 201 );
         } catch ( Exception $exception ) {
             return Response::send(
                 [
@@ -126,12 +126,50 @@ class SubmissionController extends Controller {
     private function process_token_request() {
         $token         = $this->wp_rest_request->get_param( 'token' );
         $submission_id = $this->form_repository->get_meta_value( $this->form->id, $token );
+        $submission    = $this->submission_repository->get_by_id( $submission_id );
 
-        if ( ! $submission_id ) {
+        if ( ! $submission ) {
             return Response::send(
                 [
                     'message' => esc_html__( "Submission Not Found", "helpgent" )
                 ], 404
+            );
+        }
+
+        $form_id = intval( $this->wp_rest_request->get_param( 'form_id' ) );
+
+        if ( $form_id != $submission->form_id ) {
+            return Response::send(
+                [
+                    'message' => esc_html__( "Sorry, Something was wrong!", "helpgent" )
+                ], 404
+            );
+        }
+
+        try {
+            /**
+             * Validate screen to screen logic map
+             */
+            $field = $this->validate_logic_map();
+
+            /**
+             * Get input field handler by field type and validate input.
+             */
+            $field_handler = $this->field_handler( $field['type'] );
+
+            $field_handler->validate( $this->wp_rest_request, $field );
+
+            /**
+             * Storing submission response.
+             */
+            $field_handler->save_response( $this->wp_rest_request, $field, $submission_id );
+
+            return Response::send( [], 201 );
+        } catch ( Exception $exception ) {
+            return Response::send(
+                [
+                    'message' => $exception->getMessage()
+                ], $exception->getCode()
             );
         }
     }
@@ -177,23 +215,25 @@ class SubmissionController extends Controller {
                 'title'  => "Welcome Screen",
                 'fields' => [
                     [
-                        'id'   => 'first_name',
-                        'type' => 'file'
+                        'id'    => 'first_name',
+                        'type'  => 'text',
+                        'label' => 'First Name'
                     ]
                 ]
             ],
             [
-                'id'     => 2,
+                'id'     => "2",
                 'title'  => "Information",
                 'fields' => [
                     [
-                        'id'   => 'profile_image',
-                        'type' => 'file'
+                        'id'    => 'profile_image',
+                        'type'  => 'file',
+                        'label' => 'Profile Image'
                     ]
                 ]
             ],
             [
-                'id'     => 3,
+                'id'     => "3",
                 'title'  => "Final Screen",
                 'fields' => []
             ]
