@@ -250,7 +250,7 @@ class SubmissionController extends Controller {
                 'fields' => [
                     [
                         'id'    => 'first_name',
-                        'type'  => 'text',
+                        'type'  => 'short-text',
                         'label' => 'First Name'
                     ]
                 ]
@@ -261,7 +261,7 @@ class SubmissionController extends Controller {
                 'fields' => [
                     [
                         'id'    => 'profile_image',
-                        'type'  => 'file',
+                        'type'  => 'file-upload',
                         'label' => 'Profile Image'
                     ]
                 ]
