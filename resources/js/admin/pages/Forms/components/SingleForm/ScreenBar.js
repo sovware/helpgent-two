@@ -1,49 +1,51 @@
+import { useState } from '@wordpress/element';
 import { Link } from 'react-router-dom';
-import Dropdown from '../../../../../components/Dropdown.js';
-import ellipsisH from '../../../../../../../assets/svg/icon/ellipsis-h.svg';
-import pen from '../../../../../../../assets/svg/icon/pen-nib.svg';
-import copy from '../../../../../../../assets/svg/icon/copy.svg';
-import trash from '../../../../../../../assets/svg/icon/trash.svg';
-import { ScreenBarStyle } from './style.js';
+import ScreenItem from './ScreenItem.js';
+import ReactSVG from 'react-inlinesvg';
+import arrowSquareRight from '../../../../../../../assets/svg/icon/arrow-square-right.svg';
+import arrowSquareLeft from '../../../../../../../assets/svg/icon/arrow-square-left.svg';
+import plus from '../../../../../../../assets/svg/icon/plus.svg';
+import { ScreenBarStyle, ScreenItemStyle } from './style.js';
+import ScreenListDropdown from './ScreenListDropdown.js';
 
 export default function ScreenBar() {
-	const moreDropdown = [
-		{
-			name: 'rename',
-			icon: pen,
-			text: 'Rename',
-		},
-		{
-			name: 'duplicate',
-			icon: copy,
-			text: 'Duplicate',
-		},
-		{
-			name: 'delete',
-			icon: trash,
-			text: 'Delete',
-		},
-	];
-
+	const [ isOpenMegaDropdown, setMegaDropdown ] = useState( false );
+	function handleToggleMegaDropdown( e ) {
+		e.preventDefault();
+		setMegaDropdown( ! isOpenMegaDropdown );
+	}
 	return (
 		<ScreenBarStyle>
-			<div className="helpgent-screenBar-header"></div>
+			<div className="helpgent-screenBar-header">
+				<h5 className="helpgent-screenBar-header__title">Screens</h5>
+				<Link
+					className="helpgent-screenBar-header__add"
+					onClick={ ( e ) => handleToggleMegaDropdown( e ) }
+				>
+					{ ' ' }
+					<ReactSVG src={ plus } />
+					Add screen
+					<ScreenListDropdown
+						isOpenMegaDropdown={ isOpenMegaDropdown }
+						setMegaDropdown={ setMegaDropdown }
+					/>
+				</Link>
+			</div>
 			<div className="helpgent-screenBar-content">
-				<ul className="helpgent-screen-list">
-					<li className="helpgent-screen__item">
-						<div className="helpgent-screen__content">
-							<div className="helpgent-screen__icon"></div>
-							<h4 className="helpgent-screen__title"></h4>
-						</div>
-						<Dropdown
-							dropDownIcon={ ellipsisH }
-							dropdownList={ moreDropdown }
-						/>
-						<Link className="helpgent-screen__action">
-							<div className="helpgent-screen__dropdown"></div>
-						</Link>
-					</li>
-				</ul>
+				<div className="helpgent-screen helpgent-screen-welcome">
+					<ScreenItem
+						icon={ arrowSquareRight }
+						title="Welcome"
+						hasDropdown
+					/>
+				</div>
+				<div className="helpgent-screen helpgent-screen-end">
+					<ScreenItem
+						icon={ arrowSquareRight }
+						title="End"
+						hasDropdown
+					/>
+				</div>
 			</div>
 		</ScreenBarStyle>
 	);

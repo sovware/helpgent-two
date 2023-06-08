@@ -531,7 +531,7 @@ svg.components-spinner path {
   background-color: var(--helpgent-color-success);
 }
 
-/* Wpwax Dropdown */
+/* Helpgent Dropdown */
 .helpgent-dropdown {
   position: relative;
 }
@@ -591,6 +591,12 @@ svg.components-spinner path {
 }
 .helpgent-dropdown__content li a .helpgent-dropdown-item-icon svg path {
   fill: var(-color-text);
+}
+
+/* Dropdown Placement */
+.helpgent-dropdown.helpgent-dropdown-right .helpgent-dropdown__content {
+  left: auto;
+  right: 0;
 }
 
 .wpwax-helpgent-body .helpgent-dropdown .helpgent-dropdown__toggle:focus:not(.wp-block-button__link):not(.wp-block-file__button),

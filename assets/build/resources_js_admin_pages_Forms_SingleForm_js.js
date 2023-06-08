@@ -33,6 +33,70 @@ var SvgArrowSmallLeft = function SvgArrowSmallLeft(props) {
 
 /***/ }),
 
+/***/ "./assets/svg/icon/arrow-square-left.svg":
+/*!***********************************************!*\
+  !*** ./assets/svg/icon/arrow-square-left.svg ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgArrowSquareLeft),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path;
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var SvgArrowSquareLeft = function SvgArrowSquareLeft(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    width: 16,
+    height: 16
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    "data-name": "arrow-alt-square-down (1)",
+    d: "M6.983 11.16 4.155 8.368a.517.517 0 0 1 0-.736L6.983 4.84A.6.6 0 0 1 8 5.265V7h3a1 1 0 0 1 0 2H8v1.735a.6.6 0 0 1-1.017.425Zm5.35 4.84H3.666A3.671 3.671 0 0 1 0 12.333V3.667A3.671 3.671 0 0 1 3.667 0h8.666A3.671 3.671 0 0 1 16 3.667v8.667A3.671 3.671 0 0 1 12.333 16Zm0-2A1.669 1.669 0 0 0 14 12.333V3.667A1.669 1.669 0 0 0 12.333 2H3.666A1.669 1.669 0 0 0 2 3.667v8.667A1.669 1.669 0 0 0 3.667 14Z",
+    fill: "#3c3c3c"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4NCiAgPHBhdGggaWQ9ImFycm93LWFsdC1zcXVhcmUtZG93bl8xXyIgZGF0YS1uYW1lPSJhcnJvdy1hbHQtc3F1YXJlLWRvd24gKDEpIiBkPSJNMTEuMTYsOS4wMTcsOC4zNjgsMTEuODQ1YS41MTcuNTE3LDAsMCwxLS43MzYsMEw0Ljg0LDkuMDE3QS42LjYsMCwwLDEsNS4yNjUsOEg3VjVBMSwxLDAsMCwxLDksNVY4aDEuNzM1QS42LjYsMCwwLDEsMTEuMTYsOS4wMTdaTTE2LDMuNjY3djguNjY3QTMuNjcxLDMuNjcxLDAsMCwxLDEyLjMzMywxNkgzLjY2N0EzLjY3MSwzLjY3MSwwLDAsMSwwLDEyLjMzM1YzLjY2N0EzLjY3MSwzLjY3MSwwLDAsMSwzLjY2NywwaDguNjY3QTMuNjcxLDMuNjcxLDAsMCwxLDE2LDMuNjY3Wm0tMiwwQTEuNjY5LDEuNjY5LDAsMCwwLDEyLjMzMywySDMuNjY3QTEuNjY5LDEuNjY5LDAsMCwwLDIsMy42Njd2OC42NjdBMS42NjksMS42NjksMCwwLDAsMy42NjcsMTRoOC42NjdBMS42NjksMS42NjksMCwwLDAsMTQsMTIuMzMzWiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTYpIHJvdGF0ZSg5MCkiIGZpbGw9IiMzYzNjM2MiLz4NCjwvc3ZnPg0K");
+
+/***/ }),
+
+/***/ "./assets/svg/icon/arrow-square-right.svg":
+/*!************************************************!*\
+  !*** ./assets/svg/icon/arrow-square-right.svg ***!
+  \************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgArrowSquareRight),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path;
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var SvgArrowSquareRight = function SvgArrowSquareRight(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    width: 16,
+    height: 16
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    "data-name": "arrow-alt-square-down (1)",
+    d: "m9.017 4.84 2.828 2.792a.517.517 0 0 1 0 .736L9.017 11.16A.6.6 0 0 1 8 10.735V9H5a1 1 0 1 1 0-2h3V5.265a.6.6 0 0 1 1.017-.425ZM3.667 0h8.667A3.671 3.671 0 0 1 16 3.667v8.666A3.671 3.671 0 0 1 12.333 16H3.667A3.671 3.671 0 0 1 0 12.333V3.666A3.671 3.671 0 0 1 3.667 0Zm0 2A1.669 1.669 0 0 0 2 3.667v8.666A1.669 1.669 0 0 0 3.667 14h8.667A1.669 1.669 0 0 0 14 12.333V3.666A1.669 1.669 0 0 0 12.333 2Z",
+    fill: "#3c3c3c"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4NCiAgPHBhdGggaWQ9ImFycm93LWFsdC1zcXVhcmUtZG93bl8xXyIgZGF0YS1uYW1lPSJhcnJvdy1hbHQtc3F1YXJlLWRvd24gKDEpIiBkPSJNMTEuMTYsOS4wMTcsOC4zNjgsMTEuODQ1YS41MTcuNTE3LDAsMCwxLS43MzYsMEw0Ljg0LDkuMDE3QS42LjYsMCwwLDEsNS4yNjUsOEg3VjVBMSwxLDAsMSwxLDksNVY4aDEuNzM1QS42LjYsMCwwLDEsMTEuMTYsOS4wMTdaTTE2LDMuNjY3djguNjY3QTMuNjcxLDMuNjcxLDAsMCwxLDEyLjMzMywxNkgzLjY2N0EzLjY3MSwzLjY3MSwwLDAsMSwwLDEyLjMzM1YzLjY2N0EzLjY3MSwzLjY3MSwwLDAsMSwzLjY2NywwaDguNjY3QTMuNjcxLDMuNjcxLDAsMCwxLDE2LDMuNjY3Wm0tMiwwQTEuNjY5LDEuNjY5LDAsMCwwLDEyLjMzMywySDMuNjY3QTEuNjY5LDEuNjY5LDAsMCwwLDIsMy42Njd2OC42NjdBMS42NjksMS42NjksMCwwLDAsMy42NjcsMTRoOC42NjdBMS42NjksMS42NjksMCwwLDAsMTQsMTIuMzMzWiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAxNikgcm90YXRlKC05MCkiIGZpbGw9IiMzYzNjM2MiLz4NCjwvc3ZnPg0K");
+
+/***/ }),
+
 /***/ "./assets/svg/icon/copy.svg":
 /*!**********************************!*\
   !*** ./assets/svg/icon/copy.svg ***!
@@ -155,6 +219,70 @@ var SvgPencilDash = function SvgPencilDash(props) {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNCIgaGVpZ2h0PSIxMy40NjkiIHZpZXdCb3g9IjAgMCAxNCAxMy40NjkiPg0KICA8cGF0aCBpZD0iVW5pb25fMiIgZGF0YS1uYW1lPSJVbmlvbiAyIiBkPSJNODU4OC4xNzMtMjc3Ny43YS41Ny41NywwLDAsMS0uMTY4LS40NzVsLjM1LTIuNzcyYS41NjYuNTY2LDAsMCwxLC4xNjYtLjMzM2w5LjQ1Ni05LjI1cy4wMDktLjAwOS4wMTMtLjAxM2ExLjc2MSwxLjc2MSwwLDAsMSwxLjIzNy0uNDYyLDEuNzU5LDEuNzU5LDAsMCwxLDEuMjA5LjUxNGwuODUzLjgzM2EuMTEyLjExMiwwLDAsMSwuMDE2LjAxNSwxLjY4MSwxLjY4MSwwLDAsMSwuNDcsMS4yMDcsMS42ODgsMS42ODgsMCwwLDEtLjUyNiwxLjE4M2wtOS40MTIsOS4xNzFhLjU4NS41ODUsMCwwLDEtLjMzMy4xNjJsLTIuODM5LjM4Yy0uMDI1LDAtLjA1NCwwLS4wNzksMEEuNi42LDAsMCwxLDg1ODguMTczLTI3NzcuN1ptMS4zMTUtMi45MTQtLjIzMywxLjg0NCwxLjktLjI1Myw5LjI3Ni05LjAzOWEuMDEyLjAxMiwwLDAsMSwwLS4wMDcuNTYxLjU2MSwwLDAsMCwuMDI2LS43OWwtLjg0OS0uODI5czAsMC0uMDA2LDBhLjYuNiwwLDAsMC0uODEtLjAyNmwtLjAzMy4wMy0uNjg3LjY3NC41MzEuNTJhLjU1Ny41NTcsMCwwLDEsMCwuODA1LjU5My41OTMsMCwwLDEtLjgyNCwwbC0uNTMxLS41MThabTUuNjkyLDIuOWEuNTcuNTcsMCwwLDEtLjU2OS0uNTcuNTY5LjU2OSwwLDAsMSwuNTY5LS41N2g2LjI1YS41NjkuNTY5LDAsMCwxLC41Ny41Ny41NzEuNTcxLDAsMCwxLS41Ny41N1oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC04NTg4LjAwMSAyNzkxKSIgZmlsbD0iIzZlNmU2ZSIvPg0KPC9zdmc+DQo=");
+
+/***/ }),
+
+/***/ "./assets/svg/icon/plus.svg":
+/*!**********************************!*\
+  !*** ./assets/svg/icon/plus.svg ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgPlus),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path;
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var SvgPlus = function SvgPlus(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    width: 10,
+    height: 10
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    "data-name": "Icon awesome-plus",
+    d: "M9.286 3.929H6.071V.714A.714.714 0 0 0 5.357 0h-.714a.714.714 0 0 0-.714.714v3.215H.714A.714.714 0 0 0 0 4.643v.714a.714.714 0 0 0 .714.714h3.215v3.214a.714.714 0 0 0 .714.714h.714a.714.714 0 0 0 .714-.714V6.071h3.215A.714.714 0 0 0 10 5.357v-.714a.714.714 0 0 0-.714-.714Z",
+    fill: "#6551f2"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgdmlld0JveD0iMCAwIDEwIDEwIj4NCiAgPHBhdGggaWQ9Ikljb25fYXdlc29tZS1wbHVzIiBkYXRhLW5hbWU9Ikljb24gYXdlc29tZS1wbHVzIiBkPSJNOS4yODYsNi4xNzlINi4wNzFWMi45NjRhLjcxNC43MTQsMCwwLDAtLjcxNC0uNzE0SDQuNjQzYS43MTQuNzE0LDAsMCwwLS43MTQuNzE0VjYuMTc5SC43MTRBLjcxNC43MTQsMCwwLDAsMCw2Ljg5M3YuNzE0YS43MTQuNzE0LDAsMCwwLC43MTQuNzE0SDMuOTI5djMuMjE0YS43MTQuNzE0LDAsMCwwLC43MTQuNzE0aC43MTRhLjcxNC43MTQsMCwwLDAsLjcxNC0uNzE0VjguMzIxSDkuMjg2QS43MTQuNzE0LDAsMCwwLDEwLDcuNjA3VjYuODkzQS43MTQuNzE0LDAsMCwwLDkuMjg2LDYuMTc5WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAtMi4yNSkiIGZpbGw9IiM2NTUxZjIiLz4NCjwvc3ZnPg0K");
+
+/***/ }),
+
+/***/ "./assets/svg/icon/search.svg":
+/*!************************************!*\
+  !*** ./assets/svg/icon/search.svg ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgSearch),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path;
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var SvgSearch = function SvgSearch(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    width: 14,
+    height: 14
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    "data-name": "Union 4",
+    d: "m12.805 13.795-2.572-2.572a6.3 6.3 0 0 1-8.388-9.378A6.3 6.3 0 0 1 12.6 6.3a6.252 6.252 0 0 1-1.377 3.933l2.577 2.572a.7.7 0 1 1-.99.99ZM1.4 6.3a4.9 4.9 0 0 0 8.311 3.514.71.71 0 0 1 .049-.054.735.735 0 0 1 .055-.049A4.9 4.9 0 1 0 1.4 6.3Z",
+    fill: "#6e6e6e"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNCIgaGVpZ2h0PSIxNCIgdmlld0JveD0iMCAwIDE0IDE0Ij4NCiAgPHBhdGggaWQ9IlVuaW9uXzQiIGRhdGEtbmFtZT0iVW5pb24gNCIgZD0iTTEyLjgwNSwxMy43OTVsLTIuNTcyLTIuNTcyQTYuMyw2LjMsMCwwLDEsMS44NDUsMS44NDUsNi4zLDYuMywwLDAsMSwxMi42LDYuM2E2LjI1Miw2LjI1MiwwLDAsMS0xLjM3NywzLjkzM0wxMy44LDEyLjgwNWEuNy43LDAsMSwxLS45OS45OVpNMS40LDYuM0E0LjksNC45LDAsMCwwLDkuNzExLDkuODE0LjcxLjcxLDAsMCwxLDkuNzYsOS43NmEuNzM1LjczNSwwLDAsMSwuMDU1LS4wNDlBNC45LDQuOSwwLDEsMCwxLjQsNi4zWiIgZmlsbD0iIzZlNmU2ZSIvPg0KPC9zdmc+DQo=");
 
 /***/ }),
 
@@ -318,6 +446,73 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+/* harmony import */ var _ScreenItem_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ScreenItem.js */ "./resources/js/admin/pages/Forms/components/SingleForm/ScreenItem.js");
+/* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-inlinesvg */ "./node_modules/react-inlinesvg/esm/index.js");
+/* harmony import */ var _assets_svg_icon_arrow_square_right_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../assets/svg/icon/arrow-square-right.svg */ "./assets/svg/icon/arrow-square-right.svg");
+/* harmony import */ var _assets_svg_icon_arrow_square_left_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../../assets/svg/icon/arrow-square-left.svg */ "./assets/svg/icon/arrow-square-left.svg");
+/* harmony import */ var _assets_svg_icon_plus_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../../assets/svg/icon/plus.svg */ "./assets/svg/icon/plus.svg");
+/* harmony import */ var _style_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./style.js */ "./resources/js/admin/pages/Forms/components/SingleForm/style.js");
+/* harmony import */ var _ScreenListDropdown_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ScreenListDropdown.js */ "./resources/js/admin/pages/Forms/components/SingleForm/ScreenListDropdown.js");
+
+
+
+
+
+
+
+
+
+
+function ScreenBar() {
+  const [isOpenMegaDropdown, setMegaDropdown] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  function handleToggleMegaDropdown(e) {
+    e.preventDefault();
+    setMegaDropdown(!isOpenMegaDropdown);
+  }
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_style_js__WEBPACK_IMPORTED_MODULE_5__.ScreenBarStyle, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-screenBar-header"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h5", {
+    className: "helpgent-screenBar-header__title"
+  }, "Screens"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Link, {
+    className: "helpgent-screenBar-header__add",
+    onClick: e => handleToggleMegaDropdown(e)
+  }, " ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    src: _assets_svg_icon_plus_svg__WEBPACK_IMPORTED_MODULE_4__["default"]
+  }), "Add screen", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ScreenListDropdown_js__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    isOpenMegaDropdown: isOpenMegaDropdown,
+    setMegaDropdown: setMegaDropdown
+  }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-screenBar-content"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-screen helpgent-screen-welcome"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ScreenItem_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    icon: _assets_svg_icon_arrow_square_right_svg__WEBPACK_IMPORTED_MODULE_2__["default"],
+    title: "Welcome",
+    hasDropdown: true
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-screen helpgent-screen-end"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ScreenItem_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    icon: _assets_svg_icon_arrow_square_right_svg__WEBPACK_IMPORTED_MODULE_2__["default"],
+    title: "End",
+    hasDropdown: true
+  }))));
+}
+
+/***/ }),
+
+/***/ "./resources/js/admin/pages/Forms/components/SingleForm/ScreenItem.js":
+/*!****************************************************************************!*\
+  !*** ./resources/js/admin/pages/Forms/components/SingleForm/ScreenItem.js ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ScreenItem)
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-inlinesvg */ "./node_modules/react-inlinesvg/esm/index.js");
 /* harmony import */ var _components_Dropdown_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../components/Dropdown.js */ "./resources/js/components/Dropdown.js");
 /* harmony import */ var _assets_svg_icon_ellipsis_h_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../assets/svg/icon/ellipsis-h.svg */ "./assets/svg/icon/ellipsis-h.svg");
 /* harmony import */ var _assets_svg_icon_pen_nib_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../../assets/svg/icon/pen-nib.svg */ "./assets/svg/icon/pen-nib.svg");
@@ -332,7 +527,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function ScreenBar() {
+function ScreenItem(_ref) {
+  let {
+    icon,
+    title,
+    hasDropdown
+  } = _ref;
   const moreDropdown = [{
     name: 'rename',
     icon: _assets_svg_icon_pen_nib_svg__WEBPACK_IMPORTED_MODULE_3__["default"],
@@ -346,28 +546,126 @@ function ScreenBar() {
     icon: _assets_svg_icon_trash_svg__WEBPACK_IMPORTED_MODULE_5__["default"],
     text: 'Delete'
   }];
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_style_js__WEBPACK_IMPORTED_MODULE_6__.ScreenBarStyle, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "helpgent-screenBar-header"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "helpgent-screenBar-content"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
-    className: "helpgent-screen-list"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
+  function handleDropdownTrigger() {}
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_style_js__WEBPACK_IMPORTED_MODULE_6__.ScreenItemStyle, {
     className: "helpgent-screen__item"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-screen__content"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-screen__icon"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", {
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    src: icon
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", {
     className: "helpgent-screen__title"
-  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_Dropdown_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, title)), hasDropdown && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_Dropdown_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
     dropDownIcon: _assets_svg_icon_ellipsis_h_svg__WEBPACK_IMPORTED_MODULE_2__["default"],
-    dropdownList: moreDropdown
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_7__.Link, {
-    className: "helpgent-screen__action"
+    dropdownList: moreDropdown,
+    placement: 'right',
+    handleDropdownTrigger: handleDropdownTrigger
+  }));
+}
+
+/***/ }),
+
+/***/ "./resources/js/admin/pages/Forms/components/SingleForm/ScreenListDropdown.js":
+/*!************************************************************************************!*\
+  !*** ./resources/js/admin/pages/Forms/components/SingleForm/ScreenListDropdown.js ***!
+  \************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ScreenListDropdown)
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-inlinesvg */ "./node_modules/react-inlinesvg/esm/index.js");
+/* harmony import */ var _ScreenListType_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ScreenListType.js */ "./resources/js/admin/pages/Forms/components/SingleForm/ScreenListType.js");
+/* harmony import */ var _constants_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../constants.js */ "./resources/js/constants.js");
+/* harmony import */ var _assets_svg_icon_search_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../../assets/svg/icon/search.svg */ "./assets/svg/icon/search.svg");
+/* harmony import */ var _style_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./style.js */ "./resources/js/admin/pages/Forms/components/SingleForm/style.js");
+
+
+
+
+
+
+function ScreenListDropdown(_ref) {
+  let {
+    isOpenMegaDropdown
+  } = _ref;
+  return isOpenMegaDropdown && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_style_js__WEBPACK_IMPORTED_MODULE_4__.MegaDropdownStyle, {
+    className: "helpgent-mega-dropdown"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "helpgent-screen__dropdown"
-  }))))));
+    className: "helpgent-mega-dropdown__search"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "helpgent-mega-dropdown__search-icon"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    src: _assets_svg_icon_search_svg__WEBPACK_IMPORTED_MODULE_3__["default"]
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "text",
+    name: "helpgent-screen-search",
+    placeholder: "Find a question type"
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-mega-dropdown__content"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h3", {
+    className: "helpgent-mega-dropdown__title"
+  }, "All question types"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-screen-type-wrap"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ScreenListType_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    type: "Basic",
+    screenList: _constants_js__WEBPACK_IMPORTED_MODULE_2__.screenTypes.basic.screens
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ScreenListType_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    type: "Rating & Ranking",
+    screenList: _constants_js__WEBPACK_IMPORTED_MODULE_2__.screenTypes.ratingRanking.screens
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ScreenListType_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    type: "Contact",
+    screenList: _constants_js__WEBPACK_IMPORTED_MODULE_2__.screenTypes.contact.screens
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ScreenListType_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    type: "Answers",
+    screenList: _constants_js__WEBPACK_IMPORTED_MODULE_2__.screenTypes.answers.screens
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ScreenListType_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    type: "Choices",
+    screenList: _constants_js__WEBPACK_IMPORTED_MODULE_2__.screenTypes.choices.screens
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ScreenListType_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    type: "Screens",
+    screenList: _constants_js__WEBPACK_IMPORTED_MODULE_2__.screenTypes.initialScreen.screens
+  }))));
+}
+
+/***/ }),
+
+/***/ "./resources/js/admin/pages/Forms/components/SingleForm/ScreenListType.js":
+/*!********************************************************************************!*\
+  !*** ./resources/js/admin/pages/Forms/components/SingleForm/ScreenListType.js ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ScreenListType)
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _ScreenItem_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ScreenItem.js */ "./resources/js/admin/pages/Forms/components/SingleForm/ScreenItem.js");
+/* harmony import */ var _assets_svg_icon_arrow_square_right_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../assets/svg/icon/arrow-square-right.svg */ "./assets/svg/icon/arrow-square-right.svg");
+
+
+
+function ScreenListType(_ref) {
+  let {
+    type,
+    screenList
+  } = _ref;
+  console.log(screenList);
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-screen-type"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "helpgent-screen-type__title"
+  }, type), screenList && screenList.map(item => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ScreenItem_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    icon: _assets_svg_icon_arrow_square_right_svg__WEBPACK_IMPORTED_MODULE_2__["default"],
+    title: item.title
+  })));
 }
 
 /***/ }),
@@ -383,7 +681,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   FormStyle: () => (/* binding */ FormStyle),
 /* harmony export */   HeaderStyle: () => (/* binding */ HeaderStyle),
 /* harmony export */   MainContentStyle: () => (/* binding */ MainContentStyle),
-/* harmony export */   ScreenBarStyle: () => (/* binding */ ScreenBarStyle)
+/* harmony export */   MegaDropdownStyle: () => (/* binding */ MegaDropdownStyle),
+/* harmony export */   ScreenBarStyle: () => (/* binding */ ScreenBarStyle),
+/* harmony export */   ScreenItemStyle: () => (/* binding */ ScreenItemStyle)
 /* harmony export */ });
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 
@@ -393,6 +693,7 @@ const HeaderStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].di
     align-items: center;
     margin-left: -20px;
     padding: 0 30px;
+    margin-bottom: 20px;
     background-color: var(--helpgent-color-white);
     .helpgent-single-form-header__back-link{
         position: relative;
@@ -401,6 +702,7 @@ const HeaderStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].di
         text-decoration: none;
         padding-right: 20px;
         margin-right: 20px;
+        color: var(--helpgent-color-text);
         &:after{
             position: absolute;
             right: 0;
@@ -409,6 +711,13 @@ const HeaderStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].di
             height: 20px;
             content: '';
             background-color: var(--helpgent-color-border-light);
+        }
+        svg {
+            position: relative;
+            top: -1px;
+            path {
+                fill: var(--helpgent-color-text);
+            }
         }
     }
     .helpgent-single-form-header__title{
@@ -473,11 +782,156 @@ const HeaderStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].di
 const FormStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div`
     
 `;
+const ScreenBarStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div`
+    width: 280px;
+    border-radius: 14px;
+    background-color: var(--helpgent-color-white);
+    .helpgent-screenBar-header{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 20px;
+        border-bottom: 1px solid var(--helpgent-color-border-light);
+    }
+    .helpgent-screenBar-header__title{
+        font-size: 1rem;
+        margin: 0;
+        color: var(--helpgent-color-dark);
+    }
+    .helpgent-screenBar-header__add{
+        position: relative;
+        font-size: .87rem;
+        font-weight: 500;
+        text-decoration: none;
+        color: var(--helpgent-color-primary);
+        &:focus{
+            outline: none;
+            box-shadow: 0 0;
+        }
+        svg{
+            margin-right: 4px;
+        }
+    }
+    .helpgent-screenBar-content{
+        padding: 20px;
+        .helpgent-screen-welcome{
+            height: 60vh;
+        }
+    }
+`;
 const MainContentStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div`
     
 `;
-const ScreenBarStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div`
-    
+const ScreenItemStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color .3s ease-in-out;
+    background-color: var(--helpgent-color-bg-gray);
+    &:hover{
+        background-color: #D5D5D5;
+    }
+    &:not(:last-child){
+        margin-bottom: 10px;
+    }
+    .helpgent-screen__content{
+        display: flex;
+        align-items: center;
+    }
+    .helpgent-screen__icon{
+        width: 36px;
+        height: 36px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        margin-right: 10px;
+        background-color: var(--helpgent-color-white);
+    }
+    .helpgent-screen__title{
+        font-size: .87rem;
+        margin: 0;
+        color: var(--helpgent-color-text);
+    }
+    .helpgent-dropdown__content{
+        width: 200px;
+        margin: 0;
+        top: 40px;
+        right: -6px;
+        li{
+            margin: 0;
+        }
+        a{
+            font-size: .93rem;
+            &:hover{
+                background-color: var(--helpgent-color-bg-gray);
+            }
+        }
+    }
+    .helpgent-dropdown__toggle{
+        padding: 2px 14px;
+    }
+`;
+const MegaDropdownStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div`
+    position: absolute;
+    width: 45vw;
+    left: 100px;
+    top: -15px;
+    border-radius: 14px;
+    cursor: auto;
+    box-shadow: 0 5px 30px rgba(0,0,0,.10);
+    background-color: var(--helpgent-color-white);
+    .helpgent-mega-dropdown__title{
+        font-size: 1.07rem;
+        font-weight: 600;
+        color: var(--helpgent-color-dark);
+        margin: 0 0 20px;
+    }
+    .helpgent-screen-type__title{
+        font-size: .93rem;
+        font-weight: 500;
+        margin-bottom: 12px;
+        color: var(--helpgent-color-bg-deep);
+    }
+    .helpgent-mega-dropdown__search{
+        position: relative;
+        border-bottom: 1px solid var(--helpgent-color-bg-gray);
+        .helpgent-mega-dropdown__search-icon{
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        input{
+            width: 100%;
+            font-size: .93rem;
+            padding-left: 45px;
+            padding-right: 30px;
+            min-height: 50px;
+            border-radius: 14px 14px 0 0;
+            border: 0 none;
+            &:focus{
+                outline: none;
+                box-shadow: 0 0;
+            }
+        }
+    }
+    .helpgent-screen-type-wrap{
+        display: grid;
+        grid-gap: 25px;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    .helpgent-screen-type{
+        display: grid;
+        font-size: clamp(.93rem, 4vw, 1rem);
+    }
+    .helpgent-mega-dropdown__content{
+        padding: 20px 30px 40px;
+    }
 `;
 
 
@@ -707,17 +1161,32 @@ function Dropdown(_ref) {
     className,
     dropDownIcon,
     dropdownList,
+    placement,
     handleDropdownTrigger
   } = _ref;
   const ref = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
-  console.log(dropdownList, dropDownIcon);
   const [isDropdownOpen, setDropDownOpen] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const dropdownClassName = `helpgent-dropdown ${isDropdownOpen ? 'helpgent-dropdown-open ' : ''}${className && className} helpgent-dropdown-${placement}`;
   function handleDropdown(e) {
     e.preventDefault();
     setDropDownOpen(!isDropdownOpen);
   }
+
+  /* Focus Input field when search inopen */
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    const checkIfClickedOutside = e => {
+      if (isDropdownOpen && ref.current && !ref.current.contains(e.target)) {
+        setDropDownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", checkIfClickedOutside);
+    return () => {
+      // Cleanup the event listener
+      document.removeEventListener("mousedown", checkIfClickedOutside);
+    };
+  }, [isDropdownOpen]);
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: `${isDropdownOpen ? 'helpgent-dropdown helpgent-dropdown-open ' + className : 'helpgent-dropdown ' + className}`,
+    className: dropdownClassName,
     ref: ref
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
     href: "#",
@@ -728,7 +1197,7 @@ function Dropdown(_ref) {
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_2__["default"], {
     src: dropDownIcon
   })) : null), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
-    className: isDropdownOpen ? "helpgent-dropdown__content helpgent-show" : "helpgent-dropdown__content"
+    className: isDropdownOpen ? 'helpgent-dropdown__content helpgent-show' : 'helpgent-dropdown__content'
   }, dropdownList && dropdownList.map((item, i) => {
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
       key: i
@@ -742,6 +1211,914 @@ function Dropdown(_ref) {
     })) : '', item.text));
   })));
 }
+
+/***/ }),
+
+/***/ "./resources/js/constants.js":
+/*!***********************************!*\
+  !*** ./resources/js/constants.js ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   screenData: () => (/* binding */ screenData),
+/* harmony export */   screenTypes: () => (/* binding */ screenTypes)
+/* harmony export */ });
+/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! uuid */ "./node_modules/uuid/dist/esm-browser/v4.js");
+
+const screenData = {
+  screens: [{
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_0__["default"])(),
+    title: 'Welcome Screen',
+    position: {
+      x: -150,
+      y: 0
+    },
+    fields: [/* Text Field */
+    {
+      id: (0,uuid__WEBPACK_IMPORTED_MODULE_0__["default"])(),
+      //string
+      type: 'text',
+      // elementor, gutenburg, shortcode
+      elements: [{
+        greeting_text: ''
+      }, {
+        description: ''
+      }, {
+        is_required: '0'
+      }, {
+        is_show_timer: '0'
+      }, {
+        time_in_mins: ''
+      }, {
+        is_time_to_complete: '0'
+      }, {
+        button_text: 'Submit'
+      }],
+      allowedRules: [],
+      fieldDesign: [{
+        textStyle: [{
+          font_family: ''
+        }, {
+          font_size: ''
+        }, {
+          font_weight: ''
+        }, {
+          text_color: ''
+        }]
+      }, {
+        buttonStyle: [{
+          button_color: ''
+        }, {
+          button_radius: ''
+        }, {
+          text_color: ''
+        }, {
+          font_size: ''
+        }]
+      }, {
+        mediaStyle: [{
+          is_video_overlay: '0'
+        }, {
+          overlay_color: ''
+        }, {
+          overlay_opacity: ''
+        }]
+      }],
+      fieldLogic: []
+    }],
+    medias: [],
+    layout: 'content-right'
+  }, {
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_0__["default"])(),
+    title: 'End Screen',
+    position: {
+      x: -150,
+      y: 0
+    },
+    fields: [/* Text Field */
+    {
+      id: (0,uuid__WEBPACK_IMPORTED_MODULE_0__["default"])(),
+      //string
+      type: 'text',
+      // elementor, gutenburg, shortcode
+      elements: [{
+        greeting_text: ''
+      }, {
+        description: ''
+      }, {
+        is_required: '0'
+      }, {
+        is_show_timer: '0'
+      }, {
+        time_in_mins: ''
+      }, {
+        is_time_to_complete: '0'
+      }, {
+        button_text: 'Submit'
+      }],
+      allowedRules: [],
+      fieldDesign: [{
+        textStyle: [{
+          font_family: ''
+        }, {
+          font_size: ''
+        }, {
+          font_weight: ''
+        }, {
+          text_color: ''
+        }]
+      }, {
+        buttonStyle: [{
+          button_color: ''
+        }, {
+          button_radius: ''
+        }, {
+          text_color: ''
+        }, {
+          font_size: ''
+        }]
+      }, {
+        mediaStyle: [{
+          is_video_overlay: '0'
+        }, {
+          overlay_color: ''
+        }, {
+          overlay_opacity: ''
+        }]
+      }],
+      fieldLogic: []
+    }],
+    medias: [],
+    layout: 'content-right'
+  }]
+};
+const screenTypes = {
+  basic: {
+    screens: [{
+      id: (0,uuid__WEBPACK_IMPORTED_MODULE_0__["default"])(),
+      title: 'Welcome Screen',
+      position: {
+        x: -150,
+        y: 0
+      },
+      fields: [/* Text Field */
+      {
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_0__["default"])(),
+        //string
+        type: 'text',
+        // elementor, gutenburg, shortcode
+        elements: [{
+          greeting_text: ''
+        }, {
+          description: ''
+        }, {
+          is_required: '0'
+        }, {
+          is_show_timer: '0'
+        }, {
+          time_in_mins: ''
+        }, {
+          is_time_to_complete: '0'
+        }, {
+          button_text: 'Submit'
+        }],
+        allowedRules: [],
+        fieldDesign: [{
+          textStyle: [{
+            font_family: ''
+          }, {
+            font_size: ''
+          }, {
+            font_weight: ''
+          }, {
+            text_color: ''
+          }]
+        }, {
+          buttonStyle: [{
+            button_color: ''
+          }, {
+            button_radius: ''
+          }, {
+            text_color: ''
+          }, {
+            font_size: ''
+          }]
+        }, {
+          mediaStyle: [{
+            is_video_overlay: '0'
+          }, {
+            overlay_color: ''
+          }, {
+            overlay_opacity: ''
+          }]
+        }],
+        fieldLogic: []
+      }],
+      medias: [],
+      layout: 'content-right'
+    }, {
+      id: (0,uuid__WEBPACK_IMPORTED_MODULE_0__["default"])(),
+      title: 'End Screen',
+      position: {
+        x: -150,
+        y: 0
+      },
+      fields: [/* Text Field */
+      {
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_0__["default"])(),
+        //string
+        type: 'text',
+        // elementor, gutenburg, shortcode
+        elements: [{
+          greeting_text: ''
+        }, {
+          description: ''
+        }, {
+          is_required: '0'
+        }, {
+          is_show_timer: '0'
+        }, {
+          time_in_mins: ''
+        }, {
+          is_time_to_complete: '0'
+        }, {
+          button_text: 'Submit'
+        }],
+        allowedRules: [],
+        fieldDesign: [{
+          textStyle: [{
+            font_family: ''
+          }, {
+            font_size: ''
+          }, {
+            font_weight: ''
+          }, {
+            text_color: ''
+          }]
+        }, {
+          buttonStyle: [{
+            button_color: ''
+          }, {
+            button_radius: ''
+          }, {
+            text_color: ''
+          }, {
+            font_size: ''
+          }]
+        }, {
+          mediaStyle: [{
+            is_video_overlay: '0'
+          }, {
+            overlay_color: ''
+          }, {
+            overlay_opacity: ''
+          }]
+        }],
+        fieldLogic: []
+      }],
+      medias: [],
+      layout: 'content-right'
+    }]
+  },
+  ratingRanking: {
+    screens: [{
+      id: (0,uuid__WEBPACK_IMPORTED_MODULE_0__["default"])(),
+      title: 'Welcome Screen',
+      position: {
+        x: -150,
+        y: 0
+      },
+      fields: [/* Text Field */
+      {
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_0__["default"])(),
+        //string
+        type: 'text',
+        // elementor, gutenburg, shortcode
+        elements: [{
+          greeting_text: ''
+        }, {
+          description: ''
+        }, {
+          is_required: '0'
+        }, {
+          is_show_timer: '0'
+        }, {
+          time_in_mins: ''
+        }, {
+          is_time_to_complete: '0'
+        }, {
+          button_text: 'Submit'
+        }],
+        allowedRules: [],
+        fieldDesign: [{
+          textStyle: [{
+            font_family: ''
+          }, {
+            font_size: ''
+          }, {
+            font_weight: ''
+          }, {
+            text_color: ''
+          }]
+        }, {
+          buttonStyle: [{
+            button_color: ''
+          }, {
+            button_radius: ''
+          }, {
+            text_color: ''
+          }, {
+            font_size: ''
+          }]
+        }, {
+          mediaStyle: [{
+            is_video_overlay: '0'
+          }, {
+            overlay_color: ''
+          }, {
+            overlay_opacity: ''
+          }]
+        }],
+        fieldLogic: []
+      }],
+      medias: [],
+      layout: 'content-right'
+    }, {
+      id: (0,uuid__WEBPACK_IMPORTED_MODULE_0__["default"])(),
+      title: 'End Screen',
+      position: {
+        x: -150,
+        y: 0
+      },
+      fields: [/* Text Field */
+      {
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_0__["default"])(),
+        //string
+        type: 'text',
+        // elementor, gutenburg, shortcode
+        elements: [{
+          greeting_text: ''
+        }, {
+          description: ''
+        }, {
+          is_required: '0'
+        }, {
+          is_show_timer: '0'
+        }, {
+          time_in_mins: ''
+        }, {
+          is_time_to_complete: '0'
+        }, {
+          button_text: 'Submit'
+        }],
+        allowedRules: [],
+        fieldDesign: [{
+          textStyle: [{
+            font_family: ''
+          }, {
+            font_size: ''
+          }, {
+            font_weight: ''
+          }, {
+            text_color: ''
+          }]
+        }, {
+          buttonStyle: [{
+            button_color: ''
+          }, {
+            button_radius: ''
+          }, {
+            text_color: ''
+          }, {
+            font_size: ''
+          }]
+        }, {
+          mediaStyle: [{
+            is_video_overlay: '0'
+          }, {
+            overlay_color: ''
+          }, {
+            overlay_opacity: ''
+          }]
+        }],
+        fieldLogic: []
+      }],
+      medias: [],
+      layout: 'content-right'
+    }]
+  },
+  contact: {
+    screens: [{
+      id: (0,uuid__WEBPACK_IMPORTED_MODULE_0__["default"])(),
+      title: 'Welcome Screen',
+      position: {
+        x: -150,
+        y: 0
+      },
+      fields: [/* Text Field */
+      {
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_0__["default"])(),
+        //string
+        type: 'text',
+        // elementor, gutenburg, shortcode
+        elements: [{
+          greeting_text: ''
+        }, {
+          description: ''
+        }, {
+          is_required: '0'
+        }, {
+          is_show_timer: '0'
+        }, {
+          time_in_mins: ''
+        }, {
+          is_time_to_complete: '0'
+        }, {
+          button_text: 'Submit'
+        }],
+        allowedRules: [],
+        fieldDesign: [{
+          textStyle: [{
+            font_family: ''
+          }, {
+            font_size: ''
+          }, {
+            font_weight: ''
+          }, {
+            text_color: ''
+          }]
+        }, {
+          buttonStyle: [{
+            button_color: ''
+          }, {
+            button_radius: ''
+          }, {
+            text_color: ''
+          }, {
+            font_size: ''
+          }]
+        }, {
+          mediaStyle: [{
+            is_video_overlay: '0'
+          }, {
+            overlay_color: ''
+          }, {
+            overlay_opacity: ''
+          }]
+        }],
+        fieldLogic: []
+      }],
+      medias: [],
+      layout: 'content-right'
+    }, {
+      id: (0,uuid__WEBPACK_IMPORTED_MODULE_0__["default"])(),
+      title: 'End Screen',
+      position: {
+        x: -150,
+        y: 0
+      },
+      fields: [/* Text Field */
+      {
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_0__["default"])(),
+        //string
+        type: 'text',
+        // elementor, gutenburg, shortcode
+        elements: [{
+          greeting_text: ''
+        }, {
+          description: ''
+        }, {
+          is_required: '0'
+        }, {
+          is_show_timer: '0'
+        }, {
+          time_in_mins: ''
+        }, {
+          is_time_to_complete: '0'
+        }, {
+          button_text: 'Submit'
+        }],
+        allowedRules: [],
+        fieldDesign: [{
+          textStyle: [{
+            font_family: ''
+          }, {
+            font_size: ''
+          }, {
+            font_weight: ''
+          }, {
+            text_color: ''
+          }]
+        }, {
+          buttonStyle: [{
+            button_color: ''
+          }, {
+            button_radius: ''
+          }, {
+            text_color: ''
+          }, {
+            font_size: ''
+          }]
+        }, {
+          mediaStyle: [{
+            is_video_overlay: '0'
+          }, {
+            overlay_color: ''
+          }, {
+            overlay_opacity: ''
+          }]
+        }],
+        fieldLogic: []
+      }],
+      medias: [],
+      layout: 'content-right'
+    }]
+  },
+  answers: {
+    screens: [{
+      id: (0,uuid__WEBPACK_IMPORTED_MODULE_0__["default"])(),
+      title: 'Welcome Screen',
+      position: {
+        x: -150,
+        y: 0
+      },
+      fields: [/* Text Field */
+      {
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_0__["default"])(),
+        //string
+        type: 'text',
+        // elementor, gutenburg, shortcode
+        elements: [{
+          greeting_text: ''
+        }, {
+          description: ''
+        }, {
+          is_required: '0'
+        }, {
+          is_show_timer: '0'
+        }, {
+          time_in_mins: ''
+        }, {
+          is_time_to_complete: '0'
+        }, {
+          button_text: 'Submit'
+        }],
+        allowedRules: [],
+        fieldDesign: [{
+          textStyle: [{
+            font_family: ''
+          }, {
+            font_size: ''
+          }, {
+            font_weight: ''
+          }, {
+            text_color: ''
+          }]
+        }, {
+          buttonStyle: [{
+            button_color: ''
+          }, {
+            button_radius: ''
+          }, {
+            text_color: ''
+          }, {
+            font_size: ''
+          }]
+        }, {
+          mediaStyle: [{
+            is_video_overlay: '0'
+          }, {
+            overlay_color: ''
+          }, {
+            overlay_opacity: ''
+          }]
+        }],
+        fieldLogic: []
+      }],
+      medias: [],
+      layout: 'content-right'
+    }, {
+      id: (0,uuid__WEBPACK_IMPORTED_MODULE_0__["default"])(),
+      title: 'End Screen',
+      position: {
+        x: -150,
+        y: 0
+      },
+      fields: [/* Text Field */
+      {
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_0__["default"])(),
+        //string
+        type: 'text',
+        // elementor, gutenburg, shortcode
+        elements: [{
+          greeting_text: ''
+        }, {
+          description: ''
+        }, {
+          is_required: '0'
+        }, {
+          is_show_timer: '0'
+        }, {
+          time_in_mins: ''
+        }, {
+          is_time_to_complete: '0'
+        }, {
+          button_text: 'Submit'
+        }],
+        allowedRules: [],
+        fieldDesign: [{
+          textStyle: [{
+            font_family: ''
+          }, {
+            font_size: ''
+          }, {
+            font_weight: ''
+          }, {
+            text_color: ''
+          }]
+        }, {
+          buttonStyle: [{
+            button_color: ''
+          }, {
+            button_radius: ''
+          }, {
+            text_color: ''
+          }, {
+            font_size: ''
+          }]
+        }, {
+          mediaStyle: [{
+            is_video_overlay: '0'
+          }, {
+            overlay_color: ''
+          }, {
+            overlay_opacity: ''
+          }]
+        }],
+        fieldLogic: []
+      }],
+      medias: [],
+      layout: 'content-right'
+    }]
+  },
+  choices: {
+    screens: [{
+      id: (0,uuid__WEBPACK_IMPORTED_MODULE_0__["default"])(),
+      title: 'Welcome Screen',
+      position: {
+        x: -150,
+        y: 0
+      },
+      fields: [/* Text Field */
+      {
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_0__["default"])(),
+        //string
+        type: 'text',
+        // elementor, gutenburg, shortcode
+        elements: [{
+          greeting_text: ''
+        }, {
+          description: ''
+        }, {
+          is_required: '0'
+        }, {
+          is_show_timer: '0'
+        }, {
+          time_in_mins: ''
+        }, {
+          is_time_to_complete: '0'
+        }, {
+          button_text: 'Submit'
+        }],
+        allowedRules: [],
+        fieldDesign: [{
+          textStyle: [{
+            font_family: ''
+          }, {
+            font_size: ''
+          }, {
+            font_weight: ''
+          }, {
+            text_color: ''
+          }]
+        }, {
+          buttonStyle: [{
+            button_color: ''
+          }, {
+            button_radius: ''
+          }, {
+            text_color: ''
+          }, {
+            font_size: ''
+          }]
+        }, {
+          mediaStyle: [{
+            is_video_overlay: '0'
+          }, {
+            overlay_color: ''
+          }, {
+            overlay_opacity: ''
+          }]
+        }],
+        fieldLogic: []
+      }],
+      medias: [],
+      layout: 'content-right'
+    }, {
+      id: (0,uuid__WEBPACK_IMPORTED_MODULE_0__["default"])(),
+      title: 'End Screen',
+      position: {
+        x: -150,
+        y: 0
+      },
+      fields: [/* Text Field */
+      {
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_0__["default"])(),
+        //string
+        type: 'text',
+        // elementor, gutenburg, shortcode
+        elements: [{
+          greeting_text: ''
+        }, {
+          description: ''
+        }, {
+          is_required: '0'
+        }, {
+          is_show_timer: '0'
+        }, {
+          time_in_mins: ''
+        }, {
+          is_time_to_complete: '0'
+        }, {
+          button_text: 'Submit'
+        }],
+        allowedRules: [],
+        fieldDesign: [{
+          textStyle: [{
+            font_family: ''
+          }, {
+            font_size: ''
+          }, {
+            font_weight: ''
+          }, {
+            text_color: ''
+          }]
+        }, {
+          buttonStyle: [{
+            button_color: ''
+          }, {
+            button_radius: ''
+          }, {
+            text_color: ''
+          }, {
+            font_size: ''
+          }]
+        }, {
+          mediaStyle: [{
+            is_video_overlay: '0'
+          }, {
+            overlay_color: ''
+          }, {
+            overlay_opacity: ''
+          }]
+        }],
+        fieldLogic: []
+      }],
+      medias: [],
+      layout: 'content-right'
+    }]
+  },
+  initialScreen: {
+    screens: [{
+      id: (0,uuid__WEBPACK_IMPORTED_MODULE_0__["default"])(),
+      title: 'Welcome Screen',
+      position: {
+        x: -150,
+        y: 0
+      },
+      fields: [/* Text Field */
+      {
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_0__["default"])(),
+        //string
+        type: 'text',
+        // elementor, gutenburg, shortcode
+        elements: [{
+          greeting_text: ''
+        }, {
+          description: ''
+        }, {
+          is_required: '0'
+        }, {
+          is_show_timer: '0'
+        }, {
+          time_in_mins: ''
+        }, {
+          is_time_to_complete: '0'
+        }, {
+          button_text: 'Submit'
+        }],
+        allowedRules: [],
+        fieldDesign: [{
+          textStyle: [{
+            font_family: ''
+          }, {
+            font_size: ''
+          }, {
+            font_weight: ''
+          }, {
+            text_color: ''
+          }]
+        }, {
+          buttonStyle: [{
+            button_color: ''
+          }, {
+            button_radius: ''
+          }, {
+            text_color: ''
+          }, {
+            font_size: ''
+          }]
+        }, {
+          mediaStyle: [{
+            is_video_overlay: '0'
+          }, {
+            overlay_color: ''
+          }, {
+            overlay_opacity: ''
+          }]
+        }],
+        fieldLogic: []
+      }],
+      medias: [],
+      layout: 'content-right'
+    }, {
+      id: (0,uuid__WEBPACK_IMPORTED_MODULE_0__["default"])(),
+      title: 'End Screen',
+      position: {
+        x: -150,
+        y: 0
+      },
+      fields: [/* Text Field */
+      {
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_0__["default"])(),
+        //string
+        type: 'text',
+        // elementor, gutenburg, shortcode
+        elements: [{
+          greeting_text: ''
+        }, {
+          description: ''
+        }, {
+          is_required: '0'
+        }, {
+          is_show_timer: '0'
+        }, {
+          time_in_mins: ''
+        }, {
+          is_time_to_complete: '0'
+        }, {
+          button_text: 'Submit'
+        }],
+        allowedRules: [],
+        fieldDesign: [{
+          textStyle: [{
+            font_family: ''
+          }, {
+            font_size: ''
+          }, {
+            font_weight: ''
+          }, {
+            text_color: ''
+          }]
+        }, {
+          buttonStyle: [{
+            button_color: ''
+          }, {
+            button_radius: ''
+          }, {
+            text_color: ''
+          }, {
+            font_size: ''
+          }]
+        }, {
+          mediaStyle: [{
+            is_video_overlay: '0'
+          }, {
+            overlay_color: ''
+          }, {
+            overlay_opacity: ''
+          }]
+        }],
+        fieldLogic: []
+      }],
+      medias: [],
+      layout: 'content-right'
+    }]
+  }
+};
+
 
 /***/ })
 

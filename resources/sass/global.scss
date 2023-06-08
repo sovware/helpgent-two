@@ -624,7 +624,7 @@ svg.components-spinner{
     }
 }
 
-/* Wpwax Dropdown */
+/* Helpgent Dropdown */
 .helpgent-dropdown {
     position: relative;
 
@@ -693,6 +693,16 @@ svg.components-spinner{
                     }
                 }
             }
+        }
+    }
+}
+
+/* Dropdown Placement */
+.helpgent-dropdown {
+    &.helpgent-dropdown-right{
+        .helpgent-dropdown__content{
+            left: auto;
+            right: 0;
         }
     }
 }

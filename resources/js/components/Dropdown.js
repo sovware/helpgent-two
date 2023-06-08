@@ -1,4 +1,4 @@
-import { useState, useRef } from '@wordpress/element';
+import { useState, useRef, useEffect } from '@wordpress/element';
 import ReactSVG from 'react-inlinesvg';
 import { Link } from 'react-router-dom';
 
@@ -6,26 +6,40 @@ export default function Dropdown( {
 	className,
 	dropDownIcon,
 	dropdownList,
+	placement,
 	handleDropdownTrigger,
 } ) {
 	const ref = useRef( null );
-	console.log( dropdownList, dropDownIcon );
 	const [ isDropdownOpen, setDropDownOpen ] = useState( false );
+	const dropdownClassName = `helpgent-dropdown ${
+		isDropdownOpen ? 'helpgent-dropdown-open ' : ''
+	}${ className && className } helpgent-dropdown-${ placement }`;
 
 	function handleDropdown( e ) {
 		e.preventDefault();
 		setDropDownOpen( ! isDropdownOpen );
 	}
 
+	/* Focus Input field when search inopen */
+	useEffect( () => {
+		const checkIfClickedOutside = ( e ) => {
+			if (
+				isDropdownOpen &&
+				ref.current &&
+				! ref.current.contains( e.target )
+			) {
+				setDropDownOpen( false );
+			}
+		};
+		document.addEventListener( 'mousedown', checkIfClickedOutside );
+		return () => {
+			// Cleanup the event listener
+			document.removeEventListener( 'mousedown', checkIfClickedOutside );
+		};
+	}, [ isDropdownOpen ] );
+
 	return (
-		<div
-			className={ `${
-				isDropdownOpen
-					? 'helpgent-dropdown helpgent-dropdown-open ' + className
-					: 'helpgent-dropdown ' + className
-			}` }
-			ref={ ref }
-		>
+		<div className={ dropdownClassName } ref={ ref }>
 			<Link
 				href="#"
 				className="helpgent-dropdown__toggle helpgent-dropdown__toggle-icon-only"

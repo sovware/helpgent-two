@@ -1,4 +1,4 @@
-import screenData from '../../../../constants';
+import { screenData } from '../../../../constants';
 export default async function handleCreateForm( form, createFormMutation ) {
 	const screenFormData = JSON.stringify( screenData );
 
