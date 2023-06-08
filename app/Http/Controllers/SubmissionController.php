@@ -6,6 +6,7 @@ use Exception;
 use HelpGent\App\DTO\SubmissionDTO;
 use HelpGent\App\Http\Controllers\Controller;
 use HelpGent\App\Repositories\FormRepository;
+use HelpGent\App\Repositories\ResponseRepository;
 use HelpGent\App\Repositories\SubmissionRepository;
 use HelpGent\App\Support\Submission\Submission;
 use HelpGent\WaxFramework\RequestValidator\Validator;
@@ -18,13 +19,16 @@ class SubmissionController extends Controller {
 
     public FormRepository $form_repository;
 
+    public ResponseRepository $response_repository;
+
     public WP_REST_Request $wp_rest_request;
 
     public stdClass $form;
 
-    public function __construct( SubmissionRepository $submission_repository, FormRepository $form_repository ) {
+    public function __construct( SubmissionRepository $submission_repository, FormRepository $form_repository, ResponseRepository $response_repository ) {
         $this->submission_repository = $submission_repository;
         $this->form_repository       = $form_repository;
+        $this->response_repository   = $response_repository;
     }
 
     public function store( Validator $validator, WP_REST_Request $wp_rest_request ) {
@@ -34,6 +38,7 @@ class SubmissionController extends Controller {
                 'screen_id' => 'required|string',
                 'token'     => 'string',
                 'submit'    => 'accepted:1',
+                'delete'    => 'accepted:1'
             ]
         );
 
@@ -150,6 +155,10 @@ class SubmissionController extends Controller {
             );
         }
 
+        if ( $this->wp_rest_request->has_param( 'delete' ) ) {
+            return $this->delete_response( $submission );
+        }
+
         try {
             /**
              * Validate screen to screen logic map
@@ -185,6 +194,11 @@ class SubmissionController extends Controller {
             $this->form_repository->delete_meta( $form_id, $token );
             $this->submission_repository->update_status( $submission_id, 'active' );
         }
+    }
+
+    private function delete_response( stdClass $submission ) {
+        $this->response_repository->delete_screen( $submission->id, intval( $this->wp_rest_request->get_param( 'screen_id' ) ) );
+        return Response::send( [] );
     }
 
     private function validate_logic_map() {
