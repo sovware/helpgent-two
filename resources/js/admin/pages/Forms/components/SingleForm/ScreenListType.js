@@ -1,18 +1,20 @@
 import ScreenItem from './ScreenItem.js';
-import arrowSquareRight from '../../../../../../../assets/svg/icon/arrow-square-right.svg';
 
 export default function ScreenListType( { type, screenList } ) {
 	console.log( screenList );
 	return (
-		<div className="helpgent-screen-type">
-			<span className="helpgent-screen-type__title">{ type }</span>
-			{ screenList &&
-				screenList.map( ( item ) => (
+		screenList.length !== 0 && (
+			<div className="helpgent-screen-type">
+				<span className="helpgent-screen-type__title">{ type }</span>
+				{ screenList.map( ( item ) => (
 					<ScreenItem
-						icon={ arrowSquareRight }
+						icon={ item.icon }
+						isPro={ item.isPro }
+						isComing={ item.isComing }
 						title={ item.title }
 					/>
 				) ) }
-		</div>
+			</div>
+		)
 	);
 }

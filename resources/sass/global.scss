@@ -22,7 +22,7 @@
     --helpgent-color-warning-deep: #ff7300;
     --helpgent-color-warning-light: #f9dfac;
     --helpgent-color-warning: #FE7D13;
-    --helpgent-color-success: #22AD58; //#08bf9c;
+    --helpgent-color-success: #258008; //#08bf9c;
     --helpgent-color-text: #404040;
     --helpgent-color-white: #ffffff;
     --helpgent-color-black: #000000;
@@ -39,6 +39,8 @@
     --helpgent-color-page-bg: '#030308';
     --helpgent-color-description: rgba(255, 255, 255, 0.8);
     --helpgent-color-footer-text: rgba(255, 255, 255, 0.8);
+    --helpgent-color-bg-badge-success: rgba(37,128,8,.2);
+    --helpgent-color-bg-badge-gray: #B1B1B1;
     --helpgent-footer-text-font-size: 'medium';
 }
 
@@ -296,7 +298,7 @@
     }
 }
 
-/* Wpwax Back Button */
+/* helpgent Back Button */
 .helpgent-chatbox-screen{
     .helpgent-btn-back{
         display: flex;
@@ -541,40 +543,6 @@ svg.components-spinner{
     }
 }
 
-// .helpgent-switch-list,
-// .helpgent-chekbox-list,
-// .helpgent-radio-list {
-//     margin-top: 18px;
-//     .helpgent-switch-single,
-//     .helpgent-chekbox-single,
-//     .helpgent-radio-single {
-//         display: flex;
-//         align-items: center;
-//         justify-content: space-between;
-//         &:not(:last-child) {
-//             margin-bottom: 20px;
-//         }
-//         span {
-//             display: inline-flex;
-//             align-items: center;
-//             font-size: 14px;
-//             font-weight: 500;
-//             position: relative;
-//             top: -2px;
-//             line-height: 1;
-//             color: #030308;
-//             svg {
-//                 width: 18px;
-//                 height: 18px;
-//                 margin-right: 10px;
-//                 path {
-//                     fill: rgb(137, 137, 137);
-//                 }
-//             }
-//         }
-//     }
-// }
-
 .helpgent-toggle{
     .components-form-toggle__input{
         &:focus{
@@ -741,7 +709,7 @@ svg.components-spinner{
 
 
 
-/* Wpwax Dropdown Selectable */
+/* helpgent Dropdown Selectable */
 .helpgent-dropdown {
     &.helpgent-dropdown-selectable {
         .helpgent-dropdown__toggle {
@@ -892,7 +860,23 @@ svg.components-spinner{
     }
 }
 
-
+/* Helpgent Badge */
+.helpgent-badge{
+    font-size: .67rem;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    &.helpgent-badge-success{
+        color: var(--helpgent-color-success);
+        background-color: var(--helpgent-color-bg-badge-success);
+    }
+    &.helpgent-badge-gray{
+        color: var(--helpgent-color-white);
+        background-color: var(--helpgent-color-bg-badge-gray);
+    }
+}
 
 /* wpwax Card */
 .helpgent-card {

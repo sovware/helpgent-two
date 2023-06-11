@@ -23,7 +23,7 @@
   --helpgent-color-warning-deep: #ff7300;
   --helpgent-color-warning-light: #f9dfac;
   --helpgent-color-warning: #FE7D13;
-  --helpgent-color-success: #22AD58;
+  --helpgent-color-success: #258008;
   --helpgent-color-text: #404040;
   --helpgent-color-white: #ffffff;
   --helpgent-color-black: #000000;
@@ -40,6 +40,8 @@
   --helpgent-color-page-bg: "#030308";
   --helpgent-color-description: rgba(255, 255, 255, 0.8);
   --helpgent-color-footer-text: rgba(255, 255, 255, 0.8);
+  --helpgent-color-bg-badge-success: rgba(37,128,8,.2);
+  --helpgent-color-bg-badge-gray: #B1B1B1;
   --helpgent-footer-text-font-size: "medium";
 }
 
@@ -280,7 +282,7 @@
   border-radius: 15px;
 }
 
-/* Wpwax Back Button */
+/* helpgent Back Button */
 .helpgent-chatbox-screen .helpgent-btn-back {
   display: flex;
   justify-content: center;
@@ -623,7 +625,7 @@ svg.components-spinner path {
   text-decoration: none;
 }
 
-/* Wpwax Dropdown Selectable */
+/* helpgent Dropdown Selectable */
 .helpgent-dropdown.helpgent-dropdown-selectable .helpgent-dropdown__toggle {
   align-items: center;
   min-height: 44px;
@@ -745,6 +747,24 @@ svg.components-spinner path {
 }
 .helpgent-select .helpgent-select__menu-list.helpgent-select__menu-list--is-multi .helpgent-select__option.helpgent-select__option--is-selected {
   background-color: transparent;
+}
+
+/* Helpgent Badge */
+.helpgent-badge {
+  font-size: 0.67rem;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+.helpgent-badge.helpgent-badge-success {
+  color: var(--helpgent-color-success);
+  background-color: var(--helpgent-color-bg-badge-success);
+}
+.helpgent-badge.helpgent-badge-gray {
+  color: var(--helpgent-color-white);
+  background-color: var(--helpgent-color-bg-badge-gray);
 }
 
 /* wpwax Card */

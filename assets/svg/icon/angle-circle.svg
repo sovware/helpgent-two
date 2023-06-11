@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <g id="angle-circle-right" transform="translate(16) rotate(90)">
+    <path id="Path_1505" data-name="Path 1505" d="M16,8A8,8,0,1,1,8,0,8,8,0,0,1,16,8ZM2,8A6,6,0,1,0,8,2,6,6,0,0,0,2,8Z" fill="#6e6e6e"/>
+    <path id="Path_1506" data-name="Path 1506" d="M13.79,9.986a2.327,2.327,0,0,1-.661,1.633L11.1,13.686a1,1,0,1,1-1.426-1.4L11.7,10.219a.337.337,0,0,0,0-.467L9.669,7.686a1,1,0,1,1,1.426-1.4L13.13,8.352a2.329,2.329,0,0,1,.66,1.633Z" transform="translate(-3.118 -1.986)" fill="#6e6e6e"/>
+  </g>
+</svg>

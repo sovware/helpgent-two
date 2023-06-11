@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from '@wordpress/element';
 import ReactSVG from 'react-inlinesvg';
+import checkedClickedOutside from '../lib/checkClickedOutside';
 import { Link } from 'react-router-dom';
 
 export default function Dropdown( {
@@ -20,22 +21,9 @@ export default function Dropdown( {
 		setDropDownOpen( ! isDropdownOpen );
 	}
 
-	/* Focus Input field when search inopen */
+	/* Close Dropdown click on outside */
 	useEffect( () => {
-		const checkIfClickedOutside = ( e ) => {
-			if (
-				isDropdownOpen &&
-				ref.current &&
-				! ref.current.contains( e.target )
-			) {
-				setDropDownOpen( false );
-			}
-		};
-		document.addEventListener( 'mousedown', checkIfClickedOutside );
-		return () => {
-			// Cleanup the event listener
-			document.removeEventListener( 'mousedown', checkIfClickedOutside );
-		};
+		checkedClickedOutside( isDropdownOpen, setDropDownOpen, ref );
 	}, [ isDropdownOpen ] );
 
 	return (

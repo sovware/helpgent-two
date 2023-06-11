@@ -133,6 +133,13 @@ const ScreenBarStyle = Styled.div`
         .helpgent-screen-welcome{
             height: 60vh;
         }
+        .helpgent-screen__item{
+            padding: 6px;
+        }
+        .helpgent-screen__icon{
+            width: 36px;
+            height: 36px;
+        }
     }
 `;
 
@@ -144,7 +151,7 @@ const ScreenItemStyle = Styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 6px;
+    padding: 5px;
     border-radius: 10px;
     cursor: pointer;
     transition: background-color .3s ease-in-out;
@@ -160,8 +167,8 @@ const ScreenItemStyle = Styled.div`
         align-items: center;
     }
     .helpgent-screen__icon{
-        width: 36px;
-        height: 36px;
+        width: 30px;
+        height: 30px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -170,9 +177,19 @@ const ScreenItemStyle = Styled.div`
         background-color: var(--helpgent-color-white);
     }
     .helpgent-screen__title{
+        position: relative;
+        display: flex;
+        align-items: center;
+
         font-size: .87rem;
         margin: 0;
         color: var(--helpgent-color-text);
+        .helpgent-badge{
+            display: inline-block;
+            margin-left: 6px;
+            line-height: 1.8;
+            padding: 0 4px;
+        }
     }
     .helpgent-dropdown__content{
         width: 200px;
@@ -197,8 +214,8 @@ const ScreenItemStyle = Styled.div`
 const MegaDropdownStyle = Styled.div`
     position: absolute;
     width: 45vw;
-    left: 100px;
-    top: -15px;
+    left: 270px;
+    top: 0;
     border-radius: 14px;
     cursor: auto;
     box-shadow: 0 5px 30px rgba(0,0,0,.10);
@@ -210,6 +227,7 @@ const MegaDropdownStyle = Styled.div`
         margin: 0 0 20px;
     }
     .helpgent-screen-type__title{
+        display: inline-block;
         font-size: .93rem;
         font-weight: 500;
         margin-bottom: 12px;
@@ -244,11 +262,19 @@ const MegaDropdownStyle = Styled.div`
         grid-template-columns: 1fr 1fr 1fr;
     }
     .helpgent-screen-type{
-        display: grid;
         font-size: clamp(.93rem, 4vw, 1rem);
+        &:not(:last-child){
+            margin-bottom: 50px;
+        }
     }
     .helpgent-mega-dropdown__content{
         padding: 20px 30px 40px;
+        min-height: 300px;
+    }
+    .helpgent-screen-type-column{
+        &:empty{
+            display: none;
+        }
     }
 `;
 
