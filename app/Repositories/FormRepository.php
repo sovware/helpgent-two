@@ -36,6 +36,16 @@ class FormRepository {
         ];
     }
 
+    public function get_single( int $id ) {
+        $form = $this->get_by_id( $id );
+
+        if ( ! $form ) {
+            throw new Exception( esc_html__( 'Form not found', 'helpgent' ), 404 );
+        }
+        $form->available_pages = json_decode( $form->available_pages );
+        return $form;
+    }
+
     public function create( FormDTO $form_dto ) {
         return Form::query()->insert_get_id(
             [

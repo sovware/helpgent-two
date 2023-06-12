@@ -83,6 +83,37 @@ class FormController extends Controller {
         );
     }
 
+    public function show( Validator $validator, WP_REST_Request $wp_rest_request ) {
+        $validator->validate(
+            [
+                'id' => 'required|numeric'
+            ]
+        );
+
+        if ( $validator->is_fail() ) {
+            return Response::send(
+                [
+                    'messages' => $validator->errors
+                ], 422
+            );
+        }
+
+        try {
+            return Response::send(
+                [
+                    'form' => $this->form_repository->get_single( intval( $wp_rest_request->get_param( 'id' ) ) )
+                ]
+            );
+        } catch ( Exception $exception ) {
+            return Response::send(
+                [
+                    'message' => $exception->getMessage()
+                ],
+                $exception->getCode()
+            );
+        }
+    }
+
     public function update( Validator $validator, WP_REST_Request $wp_rest_request ) {
         $validator->validate(
             [
