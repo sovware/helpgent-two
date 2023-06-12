@@ -1,14 +1,20 @@
-export default function TableActions() {
+import { Link } from 'react-router-dom';
+import ReactSVG from 'react-inlinesvg';
+import pencil from '../../../../.././../assets/svg/icon/pencil-solid.svg';
+import trash from '../../../../.././../assets/svg/icon/trash-solid.svg';
+
+export default function TableActions({id}) {
 	return (
 		<div className="helpgent-table-action">
-			<a href={ `/edit/id` } className="helpgent-btn helpgent-btn-light">
-				{ /* <ReactSVG src={editIcon} /> */ }
+			
+			<Link to={ `/forms/${id}` } className="helpgent-btn helpgent-btn-light">
+				<ReactSVG src={pencil} />
 				Edit
-			</a>
-			<a href="#" className="helpgent-btn helpgent-btn-danger">
-				{ /* <ReactSVG src={trashIcon} /> */ }
+			</Link>
+			<Link className="helpgent-btn helpgent-btn-danger">
+				<ReactSVG src={trash} />
 				Delete
-			</a>
+			</Link>
 		</div>
 	);
 }

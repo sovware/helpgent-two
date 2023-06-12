@@ -1,5 +1,7 @@
 import { useState, useRef, useEffect } from '@wordpress/element';
 import { Link } from 'react-router-dom';
+import useStore from '../../../../../hooks/useStore';
+import { useQuery, useQueryClient } from '@tanstack/react-query';
 import ScreenItem from './ScreenItem.js';
 import ReactSVG from 'react-inlinesvg';
 import checkedClickedOutside from '../../../../../lib/checkClickedOutside.js';
@@ -11,11 +13,17 @@ import ScreenListDropdown from './ScreenListDropdown.js';
 
 export default function ScreenBar() {
 	const ref = useRef( null );
+	const queryClient = useQueryClient();
 	const [ isOpenMegaDropdown, setMegaDropdown ] = useState( false );
 	function handleToggleMegaDropdown( e ) {
 		e.preventDefault();
 		setMegaDropdown( ! isOpenMegaDropdown );
 	}
+
+	const { getStoreData } = useStore();
+
+
+	console.log(queryClient.getQueryData(['helpgent-single-form']));
 
 	/* Close Dropdown click on outside */
 	useEffect( () => {

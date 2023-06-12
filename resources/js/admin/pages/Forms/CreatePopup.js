@@ -23,7 +23,6 @@ function CreatePopup( props ) {
 				/>
 			);
 		} else if ( formCreationStage === 'scratch' ) {
-			console.log( formCreationStage );
 			return <CreatePopupForm />;
 		}
 	}

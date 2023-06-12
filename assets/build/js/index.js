@@ -4506,7 +4506,7 @@ function App() {
     path: "/forms",
     element: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(Forms, null)
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
-    path: "/forms/single/:id",
+    path: "/forms/:id",
     element: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(SingleForm, null)
   }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_6__.Route, {
     path: "/forms/map",

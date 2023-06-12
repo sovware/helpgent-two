@@ -63,7 +63,7 @@ export default function FormTable( props ) {
 					</td>
 					<td>
 						<Suspense fallback={ <></> }>
-							<TableActions />
+							<TableActions id={ form.id } />
 						</Suspense>
 					</td>
 				</tr>

@@ -67,7 +67,9 @@ function FormTable(props) {
       className: "helpgent-toggle helpgent-toggle-success"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.FormToggle, null))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", null, (0,_lib_formatter_js__WEBPACK_IMPORTED_MODULE_4__.formatDate)('en-US', form.created_at, dateFormatOptions)), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Suspense, {
       fallback: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null)
-    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(TableActions, null))))) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(TableActions, {
+      id: form.id
+    }))))) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
       colSpan: 7
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_style_js__WEBPACK_IMPORTED_MODULE_5__.WelcomeBoxStyleWrap, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Suspense, {
       fallback: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Spinner, null)

@@ -54,7 +54,7 @@ export default function App() {
 							></Route>
 							<Route path="/forms" element={ <Forms /> }></Route>
 							<Route
-								path="/forms/single/:id"
+								path="/forms/:id"
 								element={ <SingleForm /> }
 							></Route>
 							<Route

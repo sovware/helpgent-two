@@ -25,11 +25,15 @@ import picture from '../../assets/svg/icon/picture.svg';
 import arrowSquareRight from '../../assets/svg/icon/arrow-square-right.svg';
 import arrowSquareLeft from '../../assets/svg/icon/arrow-square-left.svg';
 
-const screenData = {
-	screens: [
+const allForms = {
+	questions: [
 		{
 			id: uuidv4(),
-			title: 'Welcome Screen',
+			title: 'Welcome',
+			screen_type: 'welcome',
+			icon: arrowSquareRight,
+			isPro: false,
+			isComing: false,
 			position: { x: -150, y: 0 },
 			fields: [
 				/* Text Field */
@@ -74,12 +78,17 @@ const screenData = {
 					fieldLogic: [],
 				},
 			],
+			groupName: 'initial',
 			medias: [],
 			layout: 'content-right',
 		},
 		{
 			id: uuidv4(),
-			title: 'End Screen',
+			title: 'End',
+			screen_type: 'end',
+			icon: arrowSquareLeft,
+			isPro: false,
+			isComing: false,
 			position: { x: -150, y: 0 },
 			fields: [
 				/* Text Field */
@@ -124,6 +133,7 @@ const screenData = {
 					fieldLogic: [],
 				},
 			],
+			groupName: 'initial',
 			medias: [],
 			layout: 'content-right',
 		},
@@ -1508,4 +1518,4 @@ const screens = [
 	},
 ];
 
-export { screenData, screens };
+export { allForms, screens };

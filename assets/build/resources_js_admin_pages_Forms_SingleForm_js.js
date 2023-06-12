@@ -1118,16 +1118,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_SingleForm_Header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/SingleForm/Header */ "./resources/js/admin/pages/Forms/components/SingleForm/Header.js");
-/* harmony import */ var _components_SingleForm_MainContent__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/SingleForm/MainContent */ "./resources/js/admin/pages/Forms/components/SingleForm/MainContent.js");
-/* harmony import */ var _components_style_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/style.js */ "./resources/js/admin/pages/Forms/components/style.js");
+/* harmony import */ var _hooks_useStore__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../hooks/useStore */ "./resources/js/hooks/useStore.js");
+/* harmony import */ var _components_SingleForm_Header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/SingleForm/Header */ "./resources/js/admin/pages/Forms/components/SingleForm/Header.js");
+/* harmony import */ var _components_SingleForm_MainContent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/SingleForm/MainContent */ "./resources/js/admin/pages/Forms/components/SingleForm/MainContent.js");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../constants */ "./resources/js/constants.js");
+/* harmony import */ var _components_style_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/style.js */ "./resources/js/admin/pages/Forms/components/style.js");
+
+
+
 
 
 
 
 
 function SingleForm() {
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_style_js__WEBPACK_IMPORTED_MODULE_3__.SingleFormStyle, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_SingleForm_Header__WEBPACK_IMPORTED_MODULE_1__["default"], null), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_SingleForm_MainContent__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+  const {
+    setStoreData,
+    getStoreData
+  } = (0,_hooks_useStore__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  setStoreData(['helpgent-single-form'], _constants__WEBPACK_IMPORTED_MODULE_4__.allForms);
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_style_js__WEBPACK_IMPORTED_MODULE_5__.SingleFormStyle, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_SingleForm_Header__WEBPACK_IMPORTED_MODULE_2__["default"], null), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_SingleForm_MainContent__WEBPACK_IMPORTED_MODULE_3__["default"], null));
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SingleForm);
 
@@ -1225,15 +1235,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
-/* harmony import */ var _ScreenItem_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ScreenItem.js */ "./resources/js/admin/pages/Forms/components/SingleForm/ScreenItem.js");
-/* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-inlinesvg */ "./node_modules/react-inlinesvg/esm/index.js");
-/* harmony import */ var _lib_checkClickedOutside_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../lib/checkClickedOutside.js */ "./resources/js/lib/checkClickedOutside.js");
-/* harmony import */ var _assets_svg_icon_arrow_square_right_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../../assets/svg/icon/arrow-square-right.svg */ "./assets/svg/icon/arrow-square-right.svg");
-/* harmony import */ var _assets_svg_icon_arrow_square_left_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../../assets/svg/icon/arrow-square-left.svg */ "./assets/svg/icon/arrow-square-left.svg");
-/* harmony import */ var _assets_svg_icon_plus_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../../../assets/svg/icon/plus.svg */ "./assets/svg/icon/plus.svg");
-/* harmony import */ var _style_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./style.js */ "./resources/js/admin/pages/Forms/components/SingleForm/style.js");
-/* harmony import */ var _ScreenListDropdown_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./ScreenListDropdown.js */ "./resources/js/admin/pages/Forms/components/SingleForm/ScreenListDropdown.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+/* harmony import */ var _hooks_useStore__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../hooks/useStore */ "./resources/js/hooks/useStore.js");
+/* harmony import */ var _tanstack_react_query__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @tanstack/react-query */ "./node_modules/@tanstack/react-query/build/lib/QueryClientProvider.mjs");
+/* harmony import */ var _ScreenItem_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ScreenItem.js */ "./resources/js/admin/pages/Forms/components/SingleForm/ScreenItem.js");
+/* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-inlinesvg */ "./node_modules/react-inlinesvg/esm/index.js");
+/* harmony import */ var _lib_checkClickedOutside_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../lib/checkClickedOutside.js */ "./resources/js/lib/checkClickedOutside.js");
+/* harmony import */ var _assets_svg_icon_arrow_square_right_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../../assets/svg/icon/arrow-square-right.svg */ "./assets/svg/icon/arrow-square-right.svg");
+/* harmony import */ var _assets_svg_icon_arrow_square_left_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../../../assets/svg/icon/arrow-square-left.svg */ "./assets/svg/icon/arrow-square-left.svg");
+/* harmony import */ var _assets_svg_icon_plus_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../../../assets/svg/icon/plus.svg */ "./assets/svg/icon/plus.svg");
+/* harmony import */ var _style_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./style.js */ "./resources/js/admin/pages/Forms/components/SingleForm/style.js");
+/* harmony import */ var _ScreenListDropdown_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./ScreenListDropdown.js */ "./resources/js/admin/pages/Forms/components/SingleForm/ScreenListDropdown.js");
+
+
 
 
 
@@ -1247,41 +1261,46 @@ __webpack_require__.r(__webpack_exports__);
 
 function ScreenBar() {
   const ref = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const queryClient = (0,_tanstack_react_query__WEBPACK_IMPORTED_MODULE_9__.useQueryClient)();
   const [isOpenMegaDropdown, setMegaDropdown] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
   function handleToggleMegaDropdown(e) {
     e.preventDefault();
     setMegaDropdown(!isOpenMegaDropdown);
   }
+  const {
+    getStoreData
+  } = (0,_hooks_useStore__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  console.log(queryClient.getQueryData(['helpgent-single-form']));
 
   /* Close Dropdown click on outside */
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
-    (0,_lib_checkClickedOutside_js__WEBPACK_IMPORTED_MODULE_2__["default"])(isOpenMegaDropdown, setMegaDropdown, ref);
+    (0,_lib_checkClickedOutside_js__WEBPACK_IMPORTED_MODULE_3__["default"])(isOpenMegaDropdown, setMegaDropdown, ref);
   }, [isOpenMegaDropdown]);
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_style_js__WEBPACK_IMPORTED_MODULE_6__.ScreenBarStyle, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_style_js__WEBPACK_IMPORTED_MODULE_7__.ScreenBarStyle, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-screenBar-header",
     ref: ref
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h5", {
     className: "helpgent-screenBar-header__title"
-  }, "Screens"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Link, {
+  }, "Screens"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Link, {
     className: "helpgent-screenBar-header__add",
     onClick: e => handleToggleMegaDropdown(e)
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    src: _assets_svg_icon_plus_svg__WEBPACK_IMPORTED_MODULE_5__["default"]
-  }), "Add screen"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ScreenListDropdown_js__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_11__["default"], {
+    src: _assets_svg_icon_plus_svg__WEBPACK_IMPORTED_MODULE_6__["default"]
+  }), "Add screen"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ScreenListDropdown_js__WEBPACK_IMPORTED_MODULE_8__["default"], {
     isOpenMegaDropdown: isOpenMegaDropdown,
     setMegaDropdown: setMegaDropdown
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-screenBar-content"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-screen helpgent-screen-welcome"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ScreenItem_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    icon: _assets_svg_icon_arrow_square_right_svg__WEBPACK_IMPORTED_MODULE_3__["default"],
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ScreenItem_js__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    icon: _assets_svg_icon_arrow_square_right_svg__WEBPACK_IMPORTED_MODULE_4__["default"],
     title: "Welcome",
     hasDropdown: true
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-screen helpgent-screen-end"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ScreenItem_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    icon: _assets_svg_icon_arrow_square_right_svg__WEBPACK_IMPORTED_MODULE_3__["default"],
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ScreenItem_js__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    icon: _assets_svg_icon_arrow_square_right_svg__WEBPACK_IMPORTED_MODULE_4__["default"],
     title: "End",
     hasDropdown: true
   }))));
@@ -2073,7 +2092,7 @@ function Dropdown(_ref) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   screenData: () => (/* binding */ screenData),
+/* harmony export */   allForms: () => (/* binding */ allForms),
 /* harmony export */   screens: () => (/* binding */ screens)
 /* harmony export */ });
 /* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! uuid */ "./node_modules/uuid/dist/esm-browser/v4.js");
@@ -2128,10 +2147,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const screenData = {
-  screens: [{
+const allForms = {
+  questions: [{
     id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
-    title: 'Welcome Screen',
+    title: 'Welcome',
+    screen_type: 'welcome',
+    icon: _assets_svg_icon_arrow_square_right_svg__WEBPACK_IMPORTED_MODULE_23__["default"],
+    isPro: false,
+    isComing: false,
     position: {
       x: -150,
       y: 0
@@ -2189,11 +2212,16 @@ const screenData = {
       }],
       fieldLogic: []
     }],
+    groupName: 'initial',
     medias: [],
     layout: 'content-right'
   }, {
     id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
-    title: 'End Screen',
+    title: 'End',
+    screen_type: 'end',
+    icon: _assets_svg_icon_arrow_square_left_svg__WEBPACK_IMPORTED_MODULE_24__["default"],
+    isPro: false,
+    isComing: false,
     position: {
       x: -150,
       y: 0
@@ -2251,6 +2279,7 @@ const screenData = {
       }],
       fieldLogic: []
     }],
+    groupName: 'initial',
     medias: [],
     layout: 'content-right'
   }]
@@ -2261,7 +2290,7 @@ const screenData = {
 const screens = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
   title: 'Long text',
-  screen_type: "long-text",
+  screen_type: 'long-text',
   icon: _assets_svg_icon_chart_bar_svg__WEBPACK_IMPORTED_MODULE_0__["default"],
   isPro: false,
   isComing: false,
@@ -2322,13 +2351,13 @@ const screens = [{
     }],
     fieldLogic: []
   }],
-  groupName: "basic",
+  groupName: 'basic',
   medias: [],
   layout: 'content-right'
 }, {
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
   title: 'Short text',
-  screen_type: "short-text",
+  screen_type: 'short-text',
   icon: _assets_svg_icon_bar_svg__WEBPACK_IMPORTED_MODULE_1__["default"],
   isPro: false,
   isComing: false,
@@ -2389,13 +2418,13 @@ const screens = [{
     }],
     fieldLogic: []
   }],
-  groupName: "basic",
+  groupName: 'basic',
   medias: [],
   layout: 'content-right'
 }, {
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
   title: 'Number',
-  screen_type: "number",
+  screen_type: 'number',
   icon: _assets_svg_icon_hash_svg__WEBPACK_IMPORTED_MODULE_2__["default"],
   isPro: false,
   isComing: false,
@@ -2456,13 +2485,13 @@ const screens = [{
     }],
     fieldLogic: []
   }],
-  groupName: "basic",
+  groupName: 'basic',
   medias: [],
   layout: 'content-right'
 }, {
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
   title: 'Button',
-  screen_type: "button",
+  screen_type: 'button',
   icon: _assets_svg_icon_button_svg__WEBPACK_IMPORTED_MODULE_3__["default"],
   isPro: false,
   isComing: false,
@@ -2523,13 +2552,13 @@ const screens = [{
     }],
     fieldLogic: []
   }],
-  groupName: "basic",
+  groupName: 'basic',
   medias: [],
   layout: 'content-right'
 }, {
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
   title: 'File Upload',
-  screen_type: "upload",
+  screen_type: 'upload',
   icon: _assets_svg_icon_upload_svg__WEBPACK_IMPORTED_MODULE_4__["default"],
   isPro: false,
   isComing: false,
@@ -2590,13 +2619,13 @@ const screens = [{
     }],
     fieldLogic: []
   }],
-  groupName: "basic",
+  groupName: 'basic',
   medias: [],
   layout: 'content-right'
 }, {
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
   title: 'Range slider',
-  screen_type: "slider",
+  screen_type: 'slider',
   icon: _assets_svg_icon_sliders_svg__WEBPACK_IMPORTED_MODULE_5__["default"],
   isPro: false,
   isComing: false,
@@ -2657,13 +2686,13 @@ const screens = [{
     }],
     fieldLogic: []
   }],
-  groupName: "basic",
+  groupName: 'basic',
   medias: [],
   layout: 'content-right'
 }, {
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
   title: 'Date',
-  screen_type: "date",
+  screen_type: 'date',
   icon: _assets_svg_icon_calendar_check_svg__WEBPACK_IMPORTED_MODULE_6__["default"],
   isPro: false,
   isComing: false,
@@ -2724,13 +2753,13 @@ const screens = [{
     }],
     fieldLogic: []
   }],
-  groupName: "basic",
+  groupName: 'basic',
   medias: [],
   layout: 'content-right'
 }, {
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
   title: 'Rating (Stars)',
-  screen_type: "rating",
+  screen_type: 'rating',
   icon: _assets_svg_icon_star_svg__WEBPACK_IMPORTED_MODULE_7__["default"],
   isPro: true,
   isComing: false,
@@ -2791,13 +2820,13 @@ const screens = [{
     }],
     fieldLogic: []
   }],
-  groupName: "rating",
+  groupName: 'rating',
   medias: [],
   layout: 'content-right'
 }, {
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
   title: 'Likert Scale (0-10)',
-  screen_type: "likert",
+  screen_type: 'likert',
   icon: _assets_svg_icon_meter_svg__WEBPACK_IMPORTED_MODULE_8__["default"],
   isPro: true,
   isComing: false,
@@ -2858,13 +2887,13 @@ const screens = [{
     }],
     fieldLogic: []
   }],
-  groupName: "rating",
+  groupName: 'rating',
   medias: [],
   layout: 'content-right'
 }, {
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
   title: 'Address',
-  screen_type: "address",
+  screen_type: 'address',
   icon: _assets_svg_icon_marker_svg__WEBPACK_IMPORTED_MODULE_9__["default"],
   isPro: false,
   isComing: false,
@@ -2925,13 +2954,13 @@ const screens = [{
     }],
     fieldLogic: []
   }],
-  groupName: "contact",
+  groupName: 'contact',
   medias: [],
   layout: 'content-right'
 }, {
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
   title: 'Contact info',
-  screen_type: "contact",
+  screen_type: 'contact',
   icon: _assets_svg_icon_address_book_svg__WEBPACK_IMPORTED_MODULE_10__["default"],
   isPro: false,
   isComing: false,
@@ -2992,13 +3021,13 @@ const screens = [{
     }],
     fieldLogic: []
   }],
-  groupName: "contact",
+  groupName: 'contact',
   medias: [],
   layout: 'content-right'
 }, {
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
   title: 'Email',
-  screen_type: "email",
+  screen_type: 'email',
   icon: _assets_svg_icon_envelope_svg__WEBPACK_IMPORTED_MODULE_11__["default"],
   isPro: false,
   isComing: false,
@@ -3059,13 +3088,13 @@ const screens = [{
     }],
     fieldLogic: []
   }],
-  groupName: "contact",
+  groupName: 'contact',
   medias: [],
   layout: 'content-right'
 }, {
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
   title: 'Phone number',
-  screen_type: "phone",
+  screen_type: 'phone',
   icon: _assets_svg_icon_phone_flip_svg__WEBPACK_IMPORTED_MODULE_12__["default"],
   isPro: false,
   isComing: false,
@@ -3126,13 +3155,13 @@ const screens = [{
     }],
     fieldLogic: []
   }],
-  groupName: "contact",
+  groupName: 'contact',
   medias: [],
   layout: 'content-right'
 }, {
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
   title: 'Website',
-  screen_type: "website",
+  screen_type: 'website',
   icon: _assets_svg_icon_link_alt_svg__WEBPACK_IMPORTED_MODULE_13__["default"],
   isPro: false,
   isComing: false,
@@ -3193,13 +3222,13 @@ const screens = [{
     }],
     fieldLogic: []
   }],
-  groupName: "contact",
+  groupName: 'contact',
   medias: [],
   layout: 'content-right'
 }, {
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
   title: 'Open Ended',
-  screen_type: "open-ended",
+  screen_type: 'open-ended',
   icon: _assets_svg_icon_open_ended_svg__WEBPACK_IMPORTED_MODULE_14__["default"],
   isPro: false,
   position: {
@@ -3259,13 +3288,13 @@ const screens = [{
     }],
     fieldLogic: []
   }],
-  groupName: "answer",
+  groupName: 'answer',
   medias: [],
   layout: 'content-right'
 }, {
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
   title: 'Results',
-  screen_type: "result",
+  screen_type: 'result',
   icon: _assets_svg_icon_chart_simple_horizontal_svg__WEBPACK_IMPORTED_MODULE_15__["default"],
   isPro: true,
   position: {
@@ -3325,13 +3354,13 @@ const screens = [{
     }],
     fieldLogic: []
   }],
-  groupName: "answer",
+  groupName: 'answer',
   medias: [],
   layout: 'content-right'
 }, {
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
   title: 'Live call',
-  screen_type: "live-call",
+  screen_type: 'live-call',
   icon: _assets_svg_icon_video_svg__WEBPACK_IMPORTED_MODULE_16__["default"],
   isPro: false,
   isComing: true,
@@ -3392,13 +3421,13 @@ const screens = [{
     }],
     fieldLogic: []
   }],
-  groupName: "answer",
+  groupName: 'answer',
   medias: [],
   layout: 'content-right'
 }, {
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
   title: 'Live chat',
-  screen_type: "live-chat",
+  screen_type: 'live-chat',
   icon: _assets_svg_icon_comment_svg__WEBPACK_IMPORTED_MODULE_17__["default"],
   isPro: false,
   isComing: true,
@@ -3459,13 +3488,13 @@ const screens = [{
     }],
     fieldLogic: []
   }],
-  groupName: "answer",
+  groupName: 'answer',
   medias: [],
   layout: 'content-right'
 }, {
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
   title: 'Single-select',
-  screen_type: "single-select",
+  screen_type: 'single-select',
   icon: _assets_svg_icon_scrubber_svg__WEBPACK_IMPORTED_MODULE_18__["default"],
   isPro: false,
   isComing: false,
@@ -3526,13 +3555,13 @@ const screens = [{
     }],
     fieldLogic: []
   }],
-  groupName: "choices",
+  groupName: 'choices',
   medias: [],
   layout: 'content-right'
 }, {
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
   title: 'Multi-select',
-  screen_type: "multi-select",
+  screen_type: 'multi-select',
   icon: _assets_svg_icon_checkbox_svg__WEBPACK_IMPORTED_MODULE_19__["default"],
   isPro: true,
   isComing: false,
@@ -3593,13 +3622,13 @@ const screens = [{
     }],
     fieldLogic: []
   }],
-  groupName: "choices",
+  groupName: 'choices',
   medias: [],
   layout: 'content-right'
 }, {
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
   title: 'Dropdown',
-  screen_type: "dropdown",
+  screen_type: 'dropdown',
   icon: _assets_svg_icon_angle_circle_svg__WEBPACK_IMPORTED_MODULE_20__["default"],
   isPro: false,
   isComing: false,
@@ -3660,13 +3689,13 @@ const screens = [{
     }],
     fieldLogic: []
   }],
-  groupName: "choices",
+  groupName: 'choices',
   medias: [],
   layout: 'content-right'
 }, {
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
   title: 'Yes/No',
-  screen_type: "yes-no",
+  screen_type: 'yes-no',
   icon: _assets_svg_icon_toggle_svg__WEBPACK_IMPORTED_MODULE_21__["default"],
   isPro: false,
   isComing: false,
@@ -3727,13 +3756,13 @@ const screens = [{
     }],
     fieldLogic: []
   }],
-  groupName: "choices",
+  groupName: 'choices',
   medias: [],
   layout: 'content-right'
 }, {
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
   title: 'Picture select',
-  screen_type: "picture-select",
+  screen_type: 'picture-select',
   icon: _assets_svg_icon_picture_svg__WEBPACK_IMPORTED_MODULE_22__["default"],
   isPro: true,
   isComing: false,
@@ -3794,13 +3823,13 @@ const screens = [{
     }],
     fieldLogic: []
   }],
-  groupName: "choices",
+  groupName: 'choices',
   medias: [],
   layout: 'content-right'
 }, {
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
   title: 'Welcome',
-  screen_type: "welcome",
+  screen_type: 'welcome',
   icon: _assets_svg_icon_arrow_square_right_svg__WEBPACK_IMPORTED_MODULE_23__["default"],
   isPro: false,
   isComing: false,
@@ -3861,13 +3890,13 @@ const screens = [{
     }],
     fieldLogic: []
   }],
-  groupName: "initial",
+  groupName: 'initial',
   medias: [],
   layout: 'content-right'
 }, {
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
   title: 'End',
-  screen_type: "end",
+  screen_type: 'end',
   icon: _assets_svg_icon_arrow_square_left_svg__WEBPACK_IMPORTED_MODULE_24__["default"],
   isPro: false,
   isComing: false,
@@ -3928,11 +3957,43 @@ const screens = [{
     }],
     fieldLogic: []
   }],
-  groupName: "initial",
+  groupName: 'initial',
   medias: [],
   layout: 'content-right'
 }];
 
+
+/***/ }),
+
+/***/ "./resources/js/hooks/useStore.js":
+/*!****************************************!*\
+  !*** ./resources/js/hooks/useStore.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ useStore)
+/* harmony export */ });
+/* harmony import */ var _tanstack_react_query__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @tanstack/react-query */ "./node_modules/@tanstack/react-query/build/lib/QueryClientProvider.mjs");
+
+function useStore() {
+  const queryClient = (0,_tanstack_react_query__WEBPACK_IMPORTED_MODULE_0__.useQueryClient)();
+  const setStoreData = (queryKey, data) => {
+    queryClient.setQueryData(queryKey, data);
+  };
+  const getStoreData = queryKey => {
+    return queryClient.getQueryData(queryKey);
+  };
+  const removeStoreData = queryKey => {
+    queryClient.removeQueries(queryKey);
+  };
+  return {
+    setStoreData,
+    getStoreData,
+    removeStoreData
+  };
+}
 
 /***/ }),
 
