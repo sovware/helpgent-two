@@ -7,6 +7,7 @@ use HelpGent\App\DTO\ConversationDTO;
 use HelpGent\App\Models\Conversation;
 use HelpGent\App\Utils\DateTime;
 use HelpGent\WaxFramework\Database\Query\Builder;
+use stdClass;
 use wpdb;
 
 class ConversationRepository {
@@ -19,29 +20,21 @@ class ConversationRepository {
     public function get( int $submission_id, int $per_page, int $page, string $search = '' ) {
         $removed_message = esc_html__( "This message was removed", "helpgent" );
 
-        $conversations_query =  Conversation::query()->select(
-            "id, 
-            submission_id,
+        $select_columns = "id, submission_id, is_attachment, is_read, is_guest, created_by, agent_trigger, parent_id, updated_at, status, created_at,
             CASE 
                 WHEN status = 'trash' THEN '{$removed_message}' 
                 ELSE message 
-            END AS message, 
-            is_attachment, 
-            is_read, 
-            is_guest, 
-            created_by, 
-            agent_trigger, 
-            updated_at, 
-            status, 
-            created_at"
-        )->with(
+            END AS message";
+
+        $conversations_query =  Conversation::query()->select( $select_columns )->with(
             [
-                'user'       => function ( Builder $query ) {
-                    $query->select( 'users.ID', 'users.display_name', 'users.user_email' );
+                'user'              => [$this, 'user_relation'],
+                'user_guest'        => [$this, 'user_guest_relation'],
+                'parent'            => function( Builder $query )use( $select_columns ) {
+                    $query->select( $select_columns );
                 },
-                'user_guest' => function ( Builder $query ) {
-                    $query->select( 'helpgent_guest_users.id', 'helpgent_guest_users.name', 'helpgent_guest_users.email' );
-                },
+                'parent.user'       => [$this, 'user_relation'],
+                'parent.user_guest' => [$this, 'user_guest_relation'],
             ]
         )->where( 'submission_id', $submission_id );
 
@@ -57,27 +50,40 @@ class ConversationRepository {
             $count_query->where_raw( "helpgent_conversations.message like {$search}" );
         }
 
-        $conversations = $conversations_query->pagination( $per_page, $page, 100, 1 );
+        $conversations = $conversations_query->pagination( $per_page, $page );
 
-        $conversations = array_map(
-            function( $conversation ) {
-                if ( isset( $conversation->user->user_email ) ) {
-                    $avatar_url                     = get_avatar_url( $conversation->user->user_email );
-                    $conversation->user->avatar_url = $avatar_url;
-                    unset( $conversation->user->user_email );
-                } elseif ( isset( $conversation->user_guest->email ) ) {
-                    $avatar_url                           = get_avatar_url( $conversation->user_guest->email );
-                    $conversation->user_guest->avatar_url = $avatar_url;
-                    unset( $conversation->user_guest->user_email );
-                }
-                return $conversation;
-            }, $conversations
-        );
+        $conversations = array_map( [$this, 'prepare_conversation'] , $conversations );
 
         return [
             'conversations' => $conversations,
             'total'         => $count_query->count()
         ];
+    }
+
+    public function user_relation( Builder $query ) {
+        $query->select( 'users.ID', 'users.display_name', 'users.user_email' );
+    }
+
+    public function user_guest_relation( Builder $query ) {
+        $query->select( 'helpgent_guest_users.id', 'helpgent_guest_users.name', 'helpgent_guest_users.email' );
+    }
+
+    private function prepare_conversation( stdClass &$conversation ) {
+        if ( isset( $conversation->user->user_email ) ) {
+            $avatar_url                     = get_avatar_url( $conversation->user->user_email );
+            $conversation->user->avatar_url = $avatar_url;
+            unset( $conversation->user->user_email );
+        } elseif ( isset( $conversation->user_guest->email ) ) {
+            $avatar_url                           = get_avatar_url( $conversation->user_guest->email );
+            $conversation->user_guest->avatar_url = $avatar_url;
+            unset( $conversation->user_guest->user_email );
+        }
+
+        if ( ! empty( $conversation->parent ) ) {
+            $this->prepare_conversation( $conversation->parent );
+        }
+
+        return $conversation;
     }
 
     public function create( ConversationDTO $conversation_dto ) {
