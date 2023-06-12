@@ -46,11 +46,12 @@ class FormController extends Controller {
     public function store( Validator $validator, WP_REST_Request $wp_rest_request ) {
         $validator->validate(
             [
-                'title'           => 'required|string|max:255|min:5',
-                'status'          => 'required|string|accepted:publish,draft',
-                'content'         => 'required|json',
-                'is_chat_bubble'  => 'required|accepted:0,1',
-                'available_pages' => 'required|array'
+                'title'            => 'required|string|max:255|min:5',
+                'status'           => 'required|string|accepted:publish,draft',
+                'content'          => 'required|json',
+                'is_chat_bubble'   => 'required|accepted:0,1',
+                'is_guest_allowed' => 'required|accepted:0,1',
+                'available_pages'  => 'required|array'
             ]
         );
 
@@ -68,6 +69,7 @@ class FormController extends Controller {
             $wp_rest_request->get_param( 'content' ),
             intval( $wp_rest_request->get_param( 'is_chat_bubble' ) ),
             $wp_rest_request->get_param( 'available_pages' ),
+            intval( $wp_rest_request->get_param( 'is_guest_allowed' ) ),
             get_current_user_id(),
         );
 
@@ -81,16 +83,48 @@ class FormController extends Controller {
         );
     }
 
+    public function show( Validator $validator, WP_REST_Request $wp_rest_request ) {
+        $validator->validate(
+            [
+                'id' => 'required|numeric'
+            ]
+        );
+
+        if ( $validator->is_fail() ) {
+            return Response::send(
+                [
+                    'messages' => $validator->errors
+                ], 422
+            );
+        }
+
+        try {
+            return Response::send(
+                [
+                    'form' => $this->form_repository->get_single( intval( $wp_rest_request->get_param( 'id' ) ) )
+                ]
+            );
+        } catch ( Exception $exception ) {
+            return Response::send(
+                [
+                    'message' => $exception->getMessage()
+                ],
+                $exception->getCode()
+            );
+        }
+    }
+
     public function update( Validator $validator, WP_REST_Request $wp_rest_request ) {
         $validator->validate(
             [
-                'id'              => 'required|numeric',
-                'title'           => 'required|string|max:255|min:5',
-                'status'          => 'required|string|accepted:publish,draft',
-                'content'         => 'required|json',
-                'is_chat_bubble'  => 'required|accepted:0,1',
-                'available_pages' => 'required|array',
-                'created_by'      => 'required|integer'
+                'id'               => 'required|numeric',
+                'title'            => 'required|string|max:255|min:5',
+                'status'           => 'required|string|accepted:publish,draft',
+                'content'          => 'required|json',
+                'is_chat_bubble'   => 'required|accepted:0,1',
+                'is_guest_allowed' => 'required|accepted:0,1',
+                'available_pages'  => 'required|array',
+                'created_by'       => 'required|integer'
             ]
         );
 
@@ -108,6 +142,7 @@ class FormController extends Controller {
             $wp_rest_request->get_param( 'content' ),
             intval( $wp_rest_request->get_param( 'is_chat_bubble' ) ),
             $wp_rest_request->get_param( 'available_pages' ),
+            intval( $wp_rest_request->get_param( 'is_guest_allowed' ) ),
             $wp_rest_request->get_param( 'created_by' )
         );
 

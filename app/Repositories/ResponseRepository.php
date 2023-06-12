@@ -22,4 +22,8 @@ class ResponseRepository {
             ]
         );
     }
+
+    public function delete_screen( int $submission_id, int $screen_id ) {
+        return Response::query()->where( 'submission_id', $submission_id )->where( 'screen_id', $screen_id )->delete();
+    }
 }

@@ -31,6 +31,10 @@ function helpgent_singleton( string $class ) {
     return helpgent_container()->get( $class );
 }
 
+function helpgent_make( string $class ) {
+    return helpgent_container()->make( $class );
+}
+
 function helpgent_url( string $url = '' ) {
     return helpgent()::get_url( $url );
 }

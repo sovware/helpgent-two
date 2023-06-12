@@ -36,15 +36,26 @@ class FormRepository {
         ];
     }
 
+    public function get_single( int $id ) {
+        $form = $this->get_by_id( $id );
+
+        if ( ! $form ) {
+            throw new Exception( esc_html__( 'Form not found', 'helpgent' ), 404 );
+        }
+        $form->available_pages = json_decode( $form->available_pages );
+        return $form;
+    }
+
     public function create( FormDTO $form_dto ) {
         return Form::query()->insert_get_id(
             [
-                'title'           => $form_dto->get_title(),
-                'status'          => $form_dto->get_status(),
-                'content'         => $form_dto->get_content(),
-                'is_chat_bubble'  => $form_dto->get_is_chat_bubble(),
-                'available_pages' => wp_json_encode( $form_dto->get_available_pages() ),
-                'created_by'      => $form_dto->get_created_by()
+                'title'            => $form_dto->get_title(),
+                'status'           => $form_dto->get_status(),
+                'content'          => $form_dto->get_content(),
+                'is_chat_bubble'   => $form_dto->get_is_chat_bubble(),
+                'is_guest_allowed' => $form_dto->get_is_guest_allowed(),
+                'available_pages'  => wp_json_encode( $form_dto->get_available_pages() ),
+                'created_by'       => $form_dto->get_created_by()
             ]
         );
     }
@@ -58,13 +69,14 @@ class FormRepository {
 
         return Form::query()->where( 'id', $form_dto->get_id() )->update(
             [
-                'title'           => $form_dto->get_title(),
-                'status'          => $form_dto->get_status(),
-                'content'         => $form_dto->get_content(),
-                'is_chat_bubble'  => $form_dto->get_is_chat_bubble(),
-                'available_pages' => wp_json_encode( $form_dto->get_available_pages() ),
-                'created_by'      => $form_dto->get_created_by(),
-                'updated_at'      => DateTime::now()
+                'title'            => $form_dto->get_title(),
+                'status'           => $form_dto->get_status(),
+                'content'          => $form_dto->get_content(),
+                'is_chat_bubble'   => $form_dto->get_is_chat_bubble(),
+                'is_guest_allowed' => $form_dto->get_is_guest_allowed(),
+                'available_pages'  => wp_json_encode( $form_dto->get_available_pages() ),
+                'created_by'       => $form_dto->get_created_by(),
+                'updated_at'       => DateTime::now()
             ]
         );
     }
@@ -154,5 +166,9 @@ class FormRepository {
                 'meta_value' => $meta_value,
             ]
         );
+    }
+
+    public function delete_meta( int $form_id, string $meta_key ) {
+        return FormMeta::query()->where( 'form_id', $form_id )->where( 'meta_key', $meta_key )->delete();
     }
 }

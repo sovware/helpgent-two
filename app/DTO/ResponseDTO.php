@@ -15,7 +15,7 @@ class ResponseDTO {
 
     private int $is_attachment;
 
-    public function __construct( int $submission_id, int $form_id, int $screen_id, string $input_id, string $value, int $is_attachment ) {
+    public function __construct( int $submission_id, int $form_id, int $screen_id, string $input_id, string $value, int $is_attachment = 0 ) {
         $this->submission_id = $submission_id;
         $this->form_id       = $form_id;
         $this->screen_id     = $screen_id;
