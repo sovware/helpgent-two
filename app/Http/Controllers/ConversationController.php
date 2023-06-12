@@ -6,6 +6,5 @@ use HelpGent\App\Http\Controllers\Controller;
 
 class ConversationController extends Controller {
     public function index() {
-        //
     }
 }

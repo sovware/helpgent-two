@@ -213,13 +213,13 @@ class SubmissionController extends Controller {
         $screen_key = array_search( $this->wp_rest_request->get_param( 'screen_id' ), array_column( $screens,  'id' ), true );
 
         if ( ! is_int( $screen_key ) ) {
-            throw new Exception( __( "Form Screen Not Found", "helpgent" ), 500 );
+            throw new Exception( __( "Form screen not found", "helpgent" ), 500 );
         }
 
         $screen = $screens[$screen_key];
 
         if ( ! isset( $screen['fields'][0] ) ) {
-            throw new Exception( __( "Sorry, Some thing was wrong!", "helpgent" ), 500 );
+            throw new Exception( __( "Sorry, Something was wrong!", "helpgent" ), 500 );
         }
 
         return $screen['fields'][0];

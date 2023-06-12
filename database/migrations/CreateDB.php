@@ -119,6 +119,7 @@ class CreateDB implements Migration {
             `is_guest` TINYINT NOT NULL DEFAULT 0 COMMENT 'possible values: 1, 0',
             `created_by` BIGINT UNSIGNED NOT NULL,
             `agent_trigger` TINYINT NULL COMMENT 'null = not trigger, 0 = leave, 1 = join',
+            `status` VARCHAR(50) NOT NULL DEFAULT 'publish' COMMENT 'value: publish/trash',
             `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
             `updated_at` TIMESTAMP NULL,
             PRIMARY KEY (`id`)
@@ -154,6 +155,7 @@ class CreateDB implements Migration {
             `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
             `name` VARCHAR(255) NULL,
             `email` VARCHAR(255) NULL,
+            `phone` VARCHAR(255) NULL,
             `token` VARCHAR(255) NOT NULL,
             `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
             `updated_at` TIMESTAMP NULL,
