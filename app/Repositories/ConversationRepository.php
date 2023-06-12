@@ -20,7 +20,7 @@ class ConversationRepository {
     public function get( int $submission_id, int $per_page, int $page, string $search = '' ) {
         $removed_message = esc_html__( "This message was removed", "helpgent" );
 
-        $select_columns = "id, submission_id, is_attachment, is_read, is_guest, created_by, agent_trigger, parent_id, updated_at, status, created_at,
+        $select_columns = "id, submission_id, is_attachment, is_read, is_guest, created_by, agent_trigger, parent_id, parent_type, updated_at, status, created_at,
             CASE 
                 WHEN status = 'trash' THEN '{$removed_message}' 
                 ELSE message 
