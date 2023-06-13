@@ -4525,45 +4525,10 @@ function App() {
 
 /***/ }),
 
-/***/ "./resources/js/hooks/useFetchData.js":
-/*!********************************************!*\
-  !*** ./resources/js/hooks/useFetchData.js ***!
-  \********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ useFetchData)
-/* harmony export */ });
-/* harmony import */ var _tanstack_react_query__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @tanstack/react-query */ "./node_modules/@tanstack/react-query/build/lib/useQuery.mjs");
-/* harmony import */ var _lib_fetchData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../lib/fetchData */ "./resources/js/lib/fetchData.js");
-/* harmony import */ var _lib_getError__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../lib/getError */ "./resources/js/lib/getError.js");
-
-
-
-function useFetchData(queryKey, path, objectKey) {
-  const {
-    data,
-    isLoading,
-    error
-  } = (0,_tanstack_react_query__WEBPACK_IMPORTED_MODULE_2__.useQuery)([queryKey], () => (0,_lib_fetchData__WEBPACK_IMPORTED_MODULE_0__["default"])(path), {
-    refetchOnWindowFocus: false
-  });
-  return {
-    data: !!error || isLoading ? null : data[objectKey],
-    isLoading,
-    errorMessage: !!error ? (0,_lib_getError__WEBPACK_IMPORTED_MODULE_1__["default"])(error ? error.data.status : '') : '',
-    isError: !!error
-  };
-}
-
-/***/ }),
-
-/***/ "./resources/js/lib/fetchData.js":
-/*!***************************************!*\
-  !*** ./resources/js/lib/fetchData.js ***!
-  \***************************************/
+/***/ "./resources/js/helper/fetchData.js":
+/*!******************************************!*\
+  !*** ./resources/js/helper/fetchData.js ***!
+  \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -4582,10 +4547,10 @@ async function fetchData(path) {
 
 /***/ }),
 
-/***/ "./resources/js/lib/getError.js":
-/*!**************************************!*\
-  !*** ./resources/js/lib/getError.js ***!
-  \**************************************/
+/***/ "./resources/js/helper/getError.js":
+/*!*****************************************!*\
+  !*** ./resources/js/helper/getError.js ***!
+  \*****************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -4613,6 +4578,41 @@ function getErrorMessage(code) {
       break;
   }
   return errorMessage;
+}
+
+/***/ }),
+
+/***/ "./resources/js/hooks/useFetchData.js":
+/*!********************************************!*\
+  !*** ./resources/js/hooks/useFetchData.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ useFetchData)
+/* harmony export */ });
+/* harmony import */ var _tanstack_react_query__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @tanstack/react-query */ "./node_modules/@tanstack/react-query/build/lib/useQuery.mjs");
+/* harmony import */ var _helper_fetchData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @helper/fetchData */ "./resources/js/helper/fetchData.js");
+/* harmony import */ var _helper_getError__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @helper/getError */ "./resources/js/helper/getError.js");
+
+
+
+function useFetchData(queryKey, path, objectKey) {
+  const {
+    data,
+    isLoading,
+    error
+  } = (0,_tanstack_react_query__WEBPACK_IMPORTED_MODULE_2__.useQuery)([queryKey], () => (0,_helper_fetchData__WEBPACK_IMPORTED_MODULE_0__["default"])(path), {
+    refetchOnWindowFocus: false
+  });
+  return {
+    data: !!error || isLoading ? null : data[objectKey],
+    isLoading,
+    errorMessage: !!error ? (0,_helper_getError__WEBPACK_IMPORTED_MODULE_1__["default"])(error ? error.data.status : '') : '',
+    isError: !!error
+  };
 }
 
 /***/ }),

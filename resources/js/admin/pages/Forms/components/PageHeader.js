@@ -25,7 +25,7 @@ function PageHeader( props ) {
 }
 
 PageHeader.propTypes = {
-	forms: PropTypes.object,
+	forms: PropTypes.array,
 	setCreatePopupStatus: PropTypes.func,
 	isCreatePopupOpen: PropTypes.bool,
 };

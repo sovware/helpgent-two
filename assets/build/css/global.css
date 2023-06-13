@@ -5,26 +5,23 @@
   --helpgent-color-primary: #6551F2;
   --helpgent-color-secondary: #fc495d;
   --helpgent-color-dark: #000000;
-  --helpgent-color-lighter: #f8f9fb;
-  --helpgent-color-light: #f4f5f7;
   --helpgent-color-bg-white: #ffffff;
-  --helpgent-color-bg-gray: #efefef;
-  --helpgent-color-bg-deep: #6E6E6E;
+  --helpgent-color-bg-light: #EFEFEF;
+  --helpgent-color-bg-gray: #E6E6E6;
+  --helpgent-color-bg-deep: #D5D5D5;
   --helpgent-color-bg-general: #F5F5F5;
   --helpgent-color-bg-page: #f0f0f0;
-  --helpgent-color-bg-light: #d0d0d0;
-  --helpgent-color-border-light: #E6E6E6;
-  --helpgent-color-border-lighter: #EBEBEB;
-  --helpgent-color-gray: #868eae;
-  --helpgent-color-gray-light: #656565;
+  --helpgent-color-gray: #3C3C3C;
+  --helpgent-color-light-gray: #6E6E6E;
+  --helpgent-color-extra-light: #A2A2A2;
   --helpgent-color-info: #2188FF;
-  --helpgent-color-danger: #EB0808;
+  --helpgent-color-danger: #EF0000;
   --helpgent-color-disable: #dddada;
   --helpgent-color-warning-deep: #ff7300;
   --helpgent-color-warning-light: #f9dfac;
-  --helpgent-color-warning: #FE7D13;
-  --helpgent-color-success: #258008;
-  --helpgent-color-text: #404040;
+  --helpgent-color-warning: #F28100;
+  --helpgent-color-success: #28A800;
+  --helpgent-color-text: #4D4D4D;
   --helpgent-color-white: #ffffff;
   --helpgent-color-black: #000000;
   --helpgent-font-family: "Inter",sans-serif;
@@ -985,6 +982,12 @@ svg.components-spinner path {
   font-size: 14px;
   margin-top: 8px;
   color: var(--helpgent-color-danger);
+}
+.helpgent-validate-danger p {
+  font-size: 0.93rem;
+}
+.helpgent-validate-danger a {
+  color: var(--helpgent-color-info);
 }
 
 .helpgent-shortcode-contact.helpgent-notice.helpgent-notice-danger {

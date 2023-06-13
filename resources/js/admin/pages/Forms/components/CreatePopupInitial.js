@@ -35,13 +35,14 @@ export default function CreatePopupInitial( props ) {
 			/>
 			<div className="helpgent-createPopup__body">
 				<div className="helpgent-createPopup__actions">
-					{ actionsData.map( ( item ) => {
+					{ actionsData.map( ( item, index ) => {
 						return (
 							<CreatePopupAction
 								icon={ item.icon }
 								text={ item.text }
 								step={ item.step }
 								handleCreateFormSteps={ handleCreateFormSteps }
+								key={ index }
 							/>
 						);
 					} ) }

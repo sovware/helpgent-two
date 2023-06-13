@@ -7,7 +7,7 @@ const TableActions = lazy( () => import( './TableActions.js' ) );
 const WelcomeBox = lazy( () => import( './WelcomeBox.js' ) );
 import useForms from '../../../../hooks/forms/useForms.js';
 import useFetchData from '../../../../hooks/useFetchData.js';
-import { formatDate } from '../../../../lib/formatter.js';
+import { formatDate } from '@helper/formatter.js';
 import { FormTableStyle, WelcomeBoxStyleWrap } from './style.js';
 
 export default function FormTable( props ) {
@@ -69,16 +69,18 @@ export default function FormTable( props ) {
 				</tr>
 			) )
 		) : (
-			<td colSpan={ 7 }>
-				<WelcomeBoxStyleWrap>
-					<Suspense fallback={ <Spinner /> }>
-						<WelcomeBox
-							isCreatePopupOpen={ isCreatePopupOpen }
-							setCreatePopupStatus={ setCreatePopupStatus }
-						/>
-					</Suspense>
-				</WelcomeBoxStyleWrap>
-			</td>
+			<tr>
+				<td colSpan={ 7 }>
+					<WelcomeBoxStyleWrap>
+						<Suspense fallback={ <Spinner /> }>
+							<WelcomeBox
+								isCreatePopupOpen={ isCreatePopupOpen }
+								setCreatePopupStatus={ setCreatePopupStatus }
+							/>
+						</Suspense>
+					</WelcomeBoxStyleWrap>
+				</td>
+			</tr>
 		);
 	}
 
@@ -101,7 +103,17 @@ export default function FormTable( props ) {
 							<th className="helpgent-head-action">Action</th>
 						</tr>
 					</thead>
-					<tbody>{ forms ? tableContent() : <Spinner /> }</tbody>
+					<tbody>
+						{ forms ? (
+							tableContent()
+						) : (
+							<tr>
+								<td colSpan={ 7 }>
+									<Spinner />
+								</td>
+							</tr>
+						) }
+					</tbody>
 				</table>
 			</div>
 		</FormTableStyle>
@@ -109,7 +121,7 @@ export default function FormTable( props ) {
 }
 
 FormTable.propTypes = {
-	forms: PropTypes.object,
+	forms: PropTypes.array,
 	isFetchError: PropTypes.bool,
 	formErrorMessage: PropTypes.string,
 	isCreatePopupOpen: PropTypes.bool,

@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from '@wordpress/element';
 import ReactSVG from 'react-inlinesvg';
-import checkedClickedOutside from '../lib/checkClickedOutside';
+import checkedClickedOutside from '../helper/checkClickedOutside';
 import { Link } from 'react-router-dom';
 
 export default function Dropdown( {

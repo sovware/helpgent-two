@@ -178,10 +178,6 @@ const SingleFormHeaderStyle = Styled.div`
     
 `;
 
-const SingleFormStyle = Styled.div`
-    
-`;
-
 export {
 	PageHeaderStyle,
 	FormTableStyle,
@@ -190,5 +186,4 @@ export {
 	WelcomeBoxStyleWrap,
 	CreateFormStyleWrap,
 	SingleFormHeaderStyle,
-	SingleFormStyle,
 };

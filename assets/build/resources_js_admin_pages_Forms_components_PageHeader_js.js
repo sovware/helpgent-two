@@ -37,7 +37,7 @@ function PageHeader(props) {
   }, "Create New") : null);
 }
 PageHeader.propTypes = {
-  forms: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().object),
+  forms: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().array),
   setCreatePopupStatus: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().func),
   isCreatePopupOpen: (prop_types__WEBPACK_IMPORTED_MODULE_3___default().bool)
 };

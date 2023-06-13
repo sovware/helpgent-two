@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
-import dataFetcher from '../lib/fetchData';
-import getErrorMessage from '../lib/getError';
+import dataFetcher from '@helper/fetchData';
+import getErrorMessage from '@helper/getError';
 
 export default function useFetchData( queryKey, path, objectKey ) {
 	const { data, isLoading, error } = useQuery(

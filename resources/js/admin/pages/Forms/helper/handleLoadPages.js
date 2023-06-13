@@ -1,4 +1,4 @@
-import dataFetcher from '../../../../lib/fetchData';
+import dataFetcher from '@helper/fetchData';
 
 export default async function handleLoadPages( inputValue ) {
 	const availablePages = await dataFetcher(

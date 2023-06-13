@@ -7,13 +7,9 @@ import copy from '../../../../../../../assets/svg/icon/copy.svg';
 import trash from '../../../../../../../assets/svg/icon/trash.svg';
 import { ScreenItemStyle } from './style.js';
 
-export default function ScreenItem( {
-	icon,
-	title,
-	isPro,
-	isComing,
-	hasDropdown,
-} ) {
+export default function ScreenItem( { question, handler, hasDropdown } ) {
+	const { icon, title, isPro, isComing } = question;
+
 	const moreDropdown = [
 		{
 			name: 'rename',
@@ -35,7 +31,10 @@ export default function ScreenItem( {
 	function handleDropdownTrigger() {}
 
 	return (
-		<ScreenItemStyle className="helpgent-screen__item">
+		<ScreenItemStyle
+			className="helpgent-screen__item"
+			onClick={ () => handler( question ) }
+		>
 			<div className="helpgent-screen__content">
 				<div className="helpgent-screen__icon">
 					<ReactSVG src={ icon } />

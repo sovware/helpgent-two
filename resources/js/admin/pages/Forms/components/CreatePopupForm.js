@@ -1,5 +1,6 @@
 import { useState, useEffect } from '@wordpress/element';
 import { Tooltip, FormToggle } from '@wordpress/components';
+import { useNavigate } from 'react-router-dom';
 import { useMutation, useQueryClient } from '@tanstack/react-query';
 import { useForm } from 'react-hook-form';
 import ReactSVG from 'react-inlinesvg';
@@ -8,13 +9,15 @@ import Option from '../helper/createSelectOptions.js';
 import handleCreateForm from '../helper/handleCreateForm.js';
 import handleChatBubbleToggle from '../helper/handleChatBubbleToggle';
 import handleLoadPages from '../helper/handleLoadPages';
+import handlePageSelection from '../helper/handlePageSelection.js';
 import useCreateMutation from '../../../../hooks/useCreateMutation.js';
-import getValidationMessage from '../../../../lib/getValidationMessage.js';
+import getValidationMessage from '@helper/getValidationMessage.js';
 import CreatePopupHeader from './CreatePopupHeader';
 import questionCircle from '../../../../../../assets/svg/icon/question-circle.svg';
 import { CreateFormStyleWrap } from './style.js';
 
 export default function CreatePopupForm() {
+	const navigate = useNavigate();
 	const queryClient = useQueryClient();
 
 	const [ defaultPages, setDefaultPages ] = useState( [] );
@@ -50,13 +53,20 @@ export default function CreatePopupForm() {
 		fetchDefaultPages();
 	}, [] );
 
+	console.log( selectedPages );
+
 	return (
 		<div className="helpgent-createPopup">
 			<CreatePopupHeader title="Let’s get started" />
 			<CreateFormStyleWrap>
 				<form
 					onSubmit={ handleSubmit( ( formData ) =>
-						handleCreateForm( formData, createFormMutation )
+						handleCreateForm(
+							formData,
+							createFormMutation,
+							setServerErrors,
+							navigate
+						)
 					) }
 				>
 					<div className="helpgent-form-group">
@@ -142,11 +152,11 @@ export default function CreatePopupForm() {
 								components={ {
 									Option,
 								} }
-								value={ selectedPages }
-								onChange={ () =>
+								onChange={ ( selectEvent ) =>
 									handlePageSelection(
+										selectEvent,
 										setSelectedPages,
-										selected,
+										selectedPages,
 										setValue
 									)
 								}
@@ -164,12 +174,15 @@ export default function CreatePopupForm() {
 								? 'helpgent-btn-disabled'
 								: null
 						}` }
-						disable={
+						disabled={
 							Object.keys( errors ).length !== 0 ? true : false
 						}
 					>
 						Create Form
 					</button>
+					{ serverErrors.internal
+						? getValidationMessage( serverErrors.internal )
+						: null }
 				</form>
 			</CreateFormStyleWrap>
 		</div>

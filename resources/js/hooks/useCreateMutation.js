@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
-import createData from '../lib/createData.js';
+import createData from '@helper/createData.js';
 
 const useCreateMutation = ( path ) => {
 	const queryClient = useQueryClient();

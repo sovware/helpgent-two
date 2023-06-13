@@ -107,7 +107,7 @@ const ScreenBarStyle = Styled.div`
         align-items: center;
         justify-content: space-between;
         padding: 15px 20px;
-        border-bottom: 1px solid var(--helpgent-color-border-light);
+        border-bottom: 1px solid var(--helpgent-color-bg-gray);
     }
     .helpgent-screenBar-header__title{
         font-size: 1rem;
@@ -129,10 +129,10 @@ const ScreenBarStyle = Styled.div`
         }
     }
     .helpgent-screenBar-content{
-        padding: 20px;
-        .helpgent-screen-welcome{
-            height: 60vh;
-        }
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        height: calc( 70vh );
         .helpgent-screen__item{
             padding: 6px;
         }
@@ -140,6 +140,46 @@ const ScreenBarStyle = Styled.div`
             width: 36px;
             height: 36px;
         }
+    }
+
+    .helpgent-screenBar-content__welcome{
+        padding: 20px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid var(--helpgent-color-bg-gray);
+    }
+    .helpgent-screenBar-content__end{
+        padding: 0 20px 20px;
+        border-top: 1px solid var(--helpgent-color-bg-gray);
+    }
+    .helpgent-ending-draggable{
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 16px;
+        cursor: grab;
+        .helpgent-ending-draggable__pipe{
+            width: 50px;
+            height: 4px;
+            border-radius: 20px;
+            background-color: var(--helpgent-color-light-gray);
+        }
+    }
+    .helpgent-screenBar-end-head{
+        display: flex;
+        justify-content: space-between;
+        margin: 10px 0 20px;
+    }
+    .helpgent-screenBar-end-head__title{
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--helpgent-color-dark);
+    }
+    .helpgent-screenBar-end-head__add{
+        font-size: .87rem;
+        text-decoration: none;
+        color: var(--helpgent-color-light-gray);
     }
 `;
 
@@ -231,7 +271,7 @@ const MegaDropdownStyle = Styled.div`
         font-size: .93rem;
         font-weight: 500;
         margin-bottom: 12px;
-        color: var(--helpgent-color-bg-deep);
+        color: var(--helpgent-color-light-gray);
     }
     .helpgent-mega-dropdown__search{
         position: relative;

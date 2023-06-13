@@ -1,17 +1,18 @@
 import ScreenItem from './ScreenItem.js';
 
 export default function ScreenListType( { type, screenList } ) {
-	console.log( screenList );
+	function handleAddQuestion( item ) {
+		console.log( item );
+	}
 	return (
 		screenList.length !== 0 && (
 			<div className="helpgent-screen-type">
 				<span className="helpgent-screen-type__title">{ type }</span>
-				{ screenList.map( ( item ) => (
+				{ screenList.map( ( item, index ) => (
 					<ScreenItem
-						icon={ item.icon }
-						isPro={ item.isPro }
-						isComing={ item.isComing }
-						title={ item.title }
+						question={ item }
+						handler={ handleAddQuestion }
+						key={ index }
 					/>
 				) ) }
 			</div>

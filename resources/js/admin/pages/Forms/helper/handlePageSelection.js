@@ -1,8 +1,10 @@
 export default function handlePageSelection(
+	selectEvent,
 	setSelectedPages,
 	selected,
 	setValue
 ) {
-	setSelectedPages( selected );
-	setValue( 'available_pages', selected );
+	console.log( selectEvent );
+	setSelectedPages( selectEvent );
+	setValue( 'available_pages', selectEvent );
 }
