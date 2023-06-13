@@ -35,6 +35,7 @@ class ConversationRepository {
                 },
                 'parent.user'       => [$this, 'user_relation'],
                 'parent.user_guest' => [$this, 'user_guest_relation'],
+                'attachment'
             ]
         )->where( 'submission_id', $submission_id );
 
