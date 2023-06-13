@@ -21,6 +21,11 @@ class Conversation extends Model {
             ->relation_where( 'is_guest', 0 );
     }
 
+    public function attachment():BelongsToOne {
+        return $this->belongs_to_one( Attachment::class, 'id', 'message' )
+            ->relation_where( 'is_attachment', 1 );
+    }
+
     public function user_guest():BelongsToOne {
         return $this->belongs_to_one( Guest::class, 'id', 'created_by' )
         ->relation_where( 'is_guest', 1 );
