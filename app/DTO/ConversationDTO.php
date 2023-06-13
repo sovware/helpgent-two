@@ -15,6 +15,16 @@ class ConversationDTO {
 
     private int $is_guest;
 
+    /**
+     * @var int|null
+     */
+    private $parent_id;
+
+    /**
+     * @var int|null
+     */
+    private $parent_type;
+
     private int $created_by;
 
     /**
@@ -24,12 +34,14 @@ class ConversationDTO {
 
     private $agent_trigger;
 
-    public function __construct( int $submission_id, string $message, int $created_by = 0, int $is_attachment = 0, int $is_guest = 0, int $is_read = 0, string $status = 'publish', $agent_trigger = null ) {
+    public function __construct( int $submission_id, string $message, int $created_by = 0, int $is_attachment = 0, int $is_guest = 0, int $parent_id = 0, $parent_type = null, int $is_read = 0, string $status = 'publish', $agent_trigger = null ) {
         $this->submission_id = $submission_id;
         $this->message       = $message;
         $this->is_attachment = $is_attachment;
         $this->is_read       = $is_read;
         $this->is_guest      = $is_guest;
+        $this->parent_id     = $parent_id;
+        $this->parent_type   = $parent_type;
         $this->created_by    = $created_by;
         $this->status        = $status;
         $this->agent_trigger = $agent_trigger;
@@ -81,6 +93,22 @@ class ConversationDTO {
 
     public function set_is_guest( int $is_guest ) {
         $this->is_guest = $is_guest;
+    }
+
+    public function get_parent_id() {
+        return $this->parent_id;
+    }
+
+    public function set_parent_id( int $parent_id ) {
+        $this->parent_id = $parent_id;
+    }
+
+    public function get_parent_type() {
+        return $this->parent_type;
+    }
+
+    public function set_parent_type( $parent_type ) {
+        $this->parent_type = $parent_type;
     }
 
     public function get_created_by() {

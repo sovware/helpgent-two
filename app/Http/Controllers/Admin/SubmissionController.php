@@ -44,6 +44,7 @@ class SubmissionController extends Controller {
                 ], 422
             );
         }
+
         return Response::send(
             $this->submission_repository->get( 
                 $wp_rest_request->get_param( 'form_id' ), 

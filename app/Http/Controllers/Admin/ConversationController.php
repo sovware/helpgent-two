@@ -50,7 +50,9 @@ class ConversationController extends Controller {
             [
                 'submission_id' => 'required|numeric',
                 'message'       => 'required|string',
-                'is_attachment' => 'required|string|accepted:0,1'
+                'is_attachment' => 'required|integer|accepted:0,1',
+                'parent_id'     => 'integer|min:1',
+                'parent_type'   => 'string|accepted:reply,forward'
             ]
         );
 
@@ -62,6 +64,9 @@ class ConversationController extends Controller {
             );
         }
 
+        /**
+         * Attachment request validation
+         */
         $is_attachment = intval( $wp_rest_request->get_param( 'is_attachment' ) );
         $message       = $wp_rest_request->get_param( 'message' );
 
@@ -77,11 +82,32 @@ class ConversationController extends Controller {
             );
         }
 
+        /**
+         * Parent request validation
+         */
+
+        $parent_type = $wp_rest_request->get_param( 'parent_type' );
+        
+        if ( $wp_rest_request->has_param( 'parent_id' ) && empty( $parent_type ) ) {
+            return Response::send(
+                [
+                    'messages' => [
+                        'parent_type' => [
+                            "The parent_type field is required."
+                        ]
+                    ]
+                ], 422
+            );
+        }
+
         $conversation_dto = new ConversationDTO(
             intval( $wp_rest_request->get_param( 'submission_id' ) ),
             $message,
             get_current_user_id(),
-            $is_attachment
+            $is_attachment,
+            0,
+            intval( $wp_rest_request->get_param( 'parent_id' ) ),
+            $parent_type
         );
 
         try {

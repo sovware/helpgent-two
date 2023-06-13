@@ -100,6 +100,8 @@ class ConversationRepository {
                 'is_attachment' => $conversation_dto->get_is_attachment(),
                 'is_read'       => $conversation_dto->get_is_read(),
                 'is_guest'      => $conversation_dto->get_is_guest(),
+                'parent_id'     => $conversation_dto->get_parent_id(),
+                'parent_type'   => $conversation_dto->get_parent_type(),
                 'created_by'    => $conversation_dto->get_created_by(),
                 'agent_trigger' => $conversation_dto->get_agent_trigger(),
                 'status'        => $conversation_dto->get_status(),
