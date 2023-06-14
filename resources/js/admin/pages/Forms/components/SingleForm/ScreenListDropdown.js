@@ -31,8 +31,6 @@ export default function ScreenListDropdown( { isOpenMegaDropdown } ) {
 		);
 	}
 
-	console.log( screenList );
-
 	return (
 		isOpenMegaDropdown && (
 			<MegaDropdownStyle className="helpgent-mega-dropdown">

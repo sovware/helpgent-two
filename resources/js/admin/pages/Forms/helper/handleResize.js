@@ -5,7 +5,6 @@ export default function handleResize( event, endScreenRef ) {
 	const offsetPadding = 20;
 
 	const handleDrag = ( e ) => {
-		console.log( e.clientY, startY );
 		const generatedHeight = startHeight + startY - e.clientY;
 		if ( generatedHeight >= minHeight && generatedHeight <= maxHeight ) {
 			endScreenRef.current.style.height = `${ generatedHeight }px`;
@@ -13,7 +12,6 @@ export default function handleResize( event, endScreenRef ) {
 	};
 
 	const stopResize = () => {
-		console.log( 'end' );
 		document.documentElement.removeEventListener(
 			'mousemove',
 			handleDrag,

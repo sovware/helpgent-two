@@ -1785,6 +1785,7 @@ Checkbox.propTypes = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   allForms: () => (/* binding */ allForms),
+/* harmony export */   endScreen: () => (/* binding */ endScreen),
 /* harmony export */   screens: () => (/* binding */ screens)
 /* harmony export */ });
 /* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! uuid */ "./node_modules/uuid/dist/esm-browser/v4.js");
@@ -1975,6 +1976,74 @@ const allForms = {
     medias: [],
     layout: 'content-right'
   }]
+};
+const endScreen = {
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+  title: 'End',
+  screen_type: 'end',
+  icon: _assets_svg_icon_arrow_square_left_svg__WEBPACK_IMPORTED_MODULE_24__["default"],
+  isPro: false,
+  isComing: false,
+  position: {
+    x: -150,
+    y: 0
+  },
+  fields: [/* Text Field */
+  {
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+    //string
+    type: 'text',
+    // elementor, gutenburg, shortcode
+    elements: [{
+      greeting_text: ''
+    }, {
+      description: ''
+    }, {
+      is_required: '0'
+    }, {
+      is_show_timer: '0'
+    }, {
+      time_in_mins: ''
+    }, {
+      is_time_to_complete: '0'
+    }, {
+      button_text: 'Submit'
+    }],
+    allowedRules: [],
+    fieldDesign: [{
+      textStyle: [{
+        font_family: ''
+      }, {
+        font_size: ''
+      }, {
+        font_weight: ''
+      }, {
+        text_color: ''
+      }]
+    }, {
+      buttonStyle: [{
+        button_color: ''
+      }, {
+        button_radius: ''
+      }, {
+        text_color: ''
+      }, {
+        font_size: ''
+      }]
+    }, {
+      mediaStyle: [{
+        is_video_overlay: '0'
+      }, {
+        overlay_color: ''
+      }, {
+        overlay_opacity: ''
+      }]
+    }],
+    fieldLogic: []
+  }],
+  groupName: 'initial',
+  medias: [],
+  layout: 'content-right'
 };
 
 //apply filter

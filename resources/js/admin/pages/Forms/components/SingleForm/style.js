@@ -144,12 +144,25 @@ const ScreenBarStyle = Styled.div`
 
     .helpgent-screenBar-content__welcome{
         padding: 20px;
-        margin-bottom: 20px;
         border-bottom: 1px solid var(--helpgent-color-bg-gray);
     }
+    .helpgent-screenBar-content__other{
+        flex: 1 1 0%;
+        padding: 0 20px 20px;
+        margin-top: 20px;
+        overflow-y: auto;
+        .helpgent-screen__item{
+            margin-bottom: 10px;
+        }
+    }
     .helpgent-screenBar-content__end{
+        display: flex;
+        flex-direction: column;
         padding: 0 20px 20px;
         border-top: 1px solid var(--helpgent-color-bg-gray);
+        .helpgent-end-screen-list{
+            overflow-y: auto;
+        }
     }
     .helpgent-ending-draggable{
         position: relative;
@@ -220,10 +233,10 @@ const ScreenItemStyle = Styled.div`
         position: relative;
         display: flex;
         align-items: center;
-
         font-size: .87rem;
+        font-weight: 500;
         margin: 0;
-        color: var(--helpgent-color-text);
+        color: var(--helpgent-color-gray);
         .helpgent-badge{
             display: inline-block;
             margin-left: 6px;

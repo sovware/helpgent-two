@@ -140,6 +140,62 @@ const allForms = {
 	],
 };
 
+const endScreen = {
+	id: uuidv4(),
+	title: 'End',
+	screen_type: 'end',
+	icon: arrowSquareLeft,
+	isPro: false,
+	isComing: false,
+	position: { x: -150, y: 0 },
+	fields: [
+		/* Text Field */
+		{
+			id: uuidv4(), //string
+			type: 'text', // elementor, gutenburg, shortcode
+			elements: [
+				{ greeting_text: '' },
+				{ description: '' },
+				{ is_required: '0' },
+				{ is_show_timer: '0' },
+				{ time_in_mins: '' },
+				{ is_time_to_complete: '0' },
+				{ button_text: 'Submit' },
+			],
+			allowedRules: [],
+			fieldDesign: [
+				{
+					textStyle: [
+						{ font_family: '' },
+						{ font_size: '' },
+						{ font_weight: '' },
+						{ text_color: '' },
+					],
+				},
+				{
+					buttonStyle: [
+						{ button_color: '' },
+						{ button_radius: '' },
+						{ text_color: '' },
+						{ font_size: '' },
+					],
+				},
+				{
+					mediaStyle: [
+						{ is_video_overlay: '0' },
+						{ overlay_color: '' },
+						{ overlay_opacity: '' },
+					],
+				},
+			],
+			fieldLogic: [],
+		},
+	],
+	groupName: 'initial',
+	medias: [],
+	layout: 'content-right',
+};
+
 //apply filter
 
 const screens = [
@@ -1518,4 +1574,4 @@ const screens = [
 	},
 ];
 
-export { allForms, screens };
+export { allForms, endScreen, screens };
