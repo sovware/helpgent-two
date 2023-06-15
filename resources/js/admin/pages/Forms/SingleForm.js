@@ -1,4 +1,4 @@
-import { useEffect, Fragment } from '@wordpress/element';
+import { useState, useEffect, Fragment } from '@wordpress/element';
 import { Spinner } from '@wordpress/components';
 import useStore from '../../../hooks/useStore';
 import useFetchData from '../../../hooks/useFetchData';
@@ -11,14 +11,20 @@ import { SingleFormStyle } from './style.js';
 
 function SingleForm() {
 	const { id } = useParams();
-	const { isLoading, errorMessage, isError } = useFetchData(
+	const { data, isLoading, errorMessage, isError } = useFetchData(
 		'helpgent-single-form',
 		`/helpgent/admin/form/${ id }`,
 		'form'
 	);
+	const [ singleForm, setSingleForm ] = useState( null );
+	useEffect( () => {
+		setSingleForm( data );
+	}, [ isLoading ] );
+
+	console.log( isLoading, data, singleForm );
 	return (
 		<SingleFormStyle>
-			{ isLoading || isError ? (
+			{ ! singleForm || isLoading || isError ? (
 				<div className="helpgent-page-initial">
 					{ isLoading ? (
 						<Spinner />
@@ -31,7 +37,10 @@ function SingleForm() {
 			) : (
 				<Fragment>
 					<Header />
-					<MainContent />
+					<MainContent
+						singleForm={ singleForm }
+						setSingleForm={ setSingleForm }
+					/>
 				</Fragment>
 			) }
 		</SingleFormStyle>

@@ -5,7 +5,11 @@ import { screens } from '../../../../../constants.js';
 import search from '../../../../../../../assets/svg/icon/search.svg';
 import { ScreenItemStyle, MegaDropdownStyle } from './style.js';
 
-export default function ScreenListDropdown( { isOpenMegaDropdown } ) {
+export default function ScreenListDropdown( {
+	singleForm,
+	setSingleForm,
+	isOpenMegaDropdown,
+} ) {
 	const [ screenList, setScreenList ] = useState( screens );
 
 	function handleScreenSearch( e ) {
@@ -27,7 +31,12 @@ export default function ScreenListDropdown( { isOpenMegaDropdown } ) {
 			( item ) => item.groupName === groupName
 		);
 		return (
-			<ScreenListType type={ groupName } screenList={ filteredByGroup } />
+			<ScreenListType
+				singleForm={ singleForm }
+				setSingleForm={ setSingleForm }
+				type={ groupName }
+				screenList={ filteredByGroup }
+			/>
 		);
 	}
 

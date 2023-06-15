@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid';
 import { useState, useRef, useEffect } from '@wordpress/element';
 import { Link } from 'react-router-dom';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
@@ -14,11 +15,291 @@ import plus from '../../../../../../../assets/svg/icon/plus.svg';
 import { ScreenBarStyle, ScreenItemStyle } from './style.js';
 import ScreenListDropdown from './ScreenListDropdown.js';
 import { endScreen } from '../../../../../constants';
+import bar from '@icon/bar.svg';
+import hash from '@icon/hash.svg';
 
-export default function ScreenBar() {
+export default function ScreenBar( props ) {
+	const { singleForm, setSingleForm } = props;
 	const ref = useRef( null );
 	const endScreenRef = useRef( null );
 	const [ isOpenMegaDropdown, setMegaDropdown ] = useState( false );
+	const [ testQuestion, setTestQuestion ] = useState( [
+		{
+			id: uuidv4(),
+			title: 'Long text',
+			screen_type: 'short-text',
+			icon: bar,
+			isPro: false,
+			isComing: false,
+			position: { x: -150, y: 0 },
+			fields: [
+				/* Text Field */
+				{
+					id: uuidv4(), //string
+					type: 'text', // elementor, gutenburg, shortcode
+					elements: [
+						{ greeting_text: '' },
+						{ description: '' },
+						{ is_required: '0' },
+						{ is_show_timer: '0' },
+						{ time_in_mins: '' },
+						{ is_time_to_complete: '0' },
+						{ button_text: 'Submit' },
+					],
+					allowedRules: [],
+					fieldDesign: [
+						{
+							textStyle: [
+								{ font_family: '' },
+								{ font_size: '' },
+								{ font_weight: '' },
+								{ text_color: '' },
+							],
+						},
+						{
+							buttonStyle: [
+								{ button_color: '' },
+								{ button_radius: '' },
+								{ text_color: '' },
+								{ font_size: '' },
+							],
+						},
+						{
+							mediaStyle: [
+								{ is_video_overlay: '0' },
+								{ overlay_color: '' },
+								{ overlay_opacity: '' },
+							],
+						},
+					],
+					fieldLogic: [],
+				},
+			],
+			groupName: 'basic',
+			medias: [],
+			layout: 'content-right',
+		},
+		{
+			id: uuidv4(),
+			title: 'Number',
+			screen_type: 'short-text',
+			icon: bar,
+			isPro: false,
+			isComing: false,
+			position: { x: -150, y: 0 },
+			fields: [
+				/* Text Field */
+				{
+					id: uuidv4(), //string
+					type: 'text', // elementor, gutenburg, shortcode
+					elements: [
+						{ greeting_text: '' },
+						{ description: '' },
+						{ is_required: '0' },
+						{ is_show_timer: '0' },
+						{ time_in_mins: '' },
+						{ is_time_to_complete: '0' },
+						{ button_text: 'Submit' },
+					],
+					allowedRules: [],
+					fieldDesign: [
+						{
+							textStyle: [
+								{ font_family: '' },
+								{ font_size: '' },
+								{ font_weight: '' },
+								{ text_color: '' },
+							],
+						},
+						{
+							buttonStyle: [
+								{ button_color: '' },
+								{ button_radius: '' },
+								{ text_color: '' },
+								{ font_size: '' },
+							],
+						},
+						{
+							mediaStyle: [
+								{ is_video_overlay: '0' },
+								{ overlay_color: '' },
+								{ overlay_opacity: '' },
+							],
+						},
+					],
+					fieldLogic: [],
+				},
+			],
+			groupName: 'basic',
+			medias: [],
+			layout: 'content-right',
+		},
+		{
+			id: uuidv4(),
+			title: 'Short text',
+			screen_type: 'short-text',
+			icon: bar,
+			isPro: false,
+			isComing: false,
+			position: { x: -150, y: 0 },
+			fields: [
+				/* Text Field */
+				{
+					id: uuidv4(), //string
+					type: 'text', // elementor, gutenburg, shortcode
+					elements: [
+						{ greeting_text: '' },
+						{ description: '' },
+						{ is_required: '0' },
+						{ is_show_timer: '0' },
+						{ time_in_mins: '' },
+						{ is_time_to_complete: '0' },
+						{ button_text: 'Submit' },
+					],
+					allowedRules: [],
+					fieldDesign: [
+						{
+							textStyle: [
+								{ font_family: '' },
+								{ font_size: '' },
+								{ font_weight: '' },
+								{ text_color: '' },
+							],
+						},
+						{
+							buttonStyle: [
+								{ button_color: '' },
+								{ button_radius: '' },
+								{ text_color: '' },
+								{ font_size: '' },
+							],
+						},
+						{
+							mediaStyle: [
+								{ is_video_overlay: '0' },
+								{ overlay_color: '' },
+								{ overlay_opacity: '' },
+							],
+						},
+					],
+					fieldLogic: [],
+				},
+			],
+			groupName: 'basic',
+			medias: [],
+			layout: 'content-right',
+		},
+		{
+			id: uuidv4(),
+			title: 'Short text',
+			screen_type: 'File Upload',
+			icon: bar,
+			isPro: false,
+			isComing: false,
+			position: { x: -150, y: 0 },
+			fields: [
+				/* Text Field */
+				{
+					id: uuidv4(), //string
+					type: 'text', // elementor, gutenburg, shortcode
+					elements: [
+						{ greeting_text: '' },
+						{ description: '' },
+						{ is_required: '0' },
+						{ is_show_timer: '0' },
+						{ time_in_mins: '' },
+						{ is_time_to_complete: '0' },
+						{ button_text: 'Submit' },
+					],
+					allowedRules: [],
+					fieldDesign: [
+						{
+							textStyle: [
+								{ font_family: '' },
+								{ font_size: '' },
+								{ font_weight: '' },
+								{ text_color: '' },
+							],
+						},
+						{
+							buttonStyle: [
+								{ button_color: '' },
+								{ button_radius: '' },
+								{ text_color: '' },
+								{ font_size: '' },
+							],
+						},
+						{
+							mediaStyle: [
+								{ is_video_overlay: '0' },
+								{ overlay_color: '' },
+								{ overlay_opacity: '' },
+							],
+						},
+					],
+					fieldLogic: [],
+				},
+			],
+			groupName: 'basic',
+			medias: [],
+			layout: 'content-right',
+		},
+		{
+			id: uuidv4(),
+			title: 'Button',
+			screen_type: 'short-text',
+			icon: hash,
+			isPro: false,
+			isComing: false,
+			position: { x: -150, y: 0 },
+			fields: [
+				/* Text Field */
+				{
+					id: uuidv4(), //string
+					type: 'text', // elementor, gutenburg, shortcode
+					elements: [
+						{ greeting_text: '' },
+						{ description: '' },
+						{ is_required: '0' },
+						{ is_show_timer: '0' },
+						{ time_in_mins: '' },
+						{ is_time_to_complete: '0' },
+						{ button_text: 'Submit' },
+					],
+					allowedRules: [],
+					fieldDesign: [
+						{
+							textStyle: [
+								{ font_family: '' },
+								{ font_size: '' },
+								{ font_weight: '' },
+								{ text_color: '' },
+							],
+						},
+						{
+							buttonStyle: [
+								{ button_color: '' },
+								{ button_radius: '' },
+								{ text_color: '' },
+								{ font_size: '' },
+							],
+						},
+						{
+							mediaStyle: [
+								{ is_video_overlay: '0' },
+								{ overlay_color: '' },
+								{ overlay_opacity: '' },
+							],
+						},
+					],
+					fieldLogic: [],
+				},
+			],
+			groupName: 'basic',
+			medias: [],
+			layout: 'content-right',
+		},
+	] );
 	function handleToggleMegaDropdown( e ) {
 		e.preventDefault();
 		setMegaDropdown( ! isOpenMegaDropdown );
@@ -27,10 +308,11 @@ export default function ScreenBar() {
 
 	const { getStoreData, setStoreData } = useStore();
 	//console.log(getStoreData( [ 'helpgent-single-form' ] ));
-	const { form } = getStoreData( [ 'helpgent-single-form' ] );
-	const { content } = form;
-	const { questions } = JSON.parse( content );
 
+	//const { form } = singleForm;
+	const { content } = singleForm;
+	const { questions } = JSON.parse( content );
+	console.log( content, questions );
 	//console.log(form);
 
 	/* Close Dropdown click on outside */
@@ -47,6 +329,50 @@ export default function ScreenBar() {
 
 	const onDragEnd = ( results ) => {
 		//console.log(results);
+		const { destination, source, draggableId, type } = results;
+		if ( ! destination ) {
+			return;
+		}
+		if (
+			destination.droppableId === source.droppableId &&
+			destination.index === source.index
+		) {
+			return;
+		}
+		//console.log(questions);
+		const welcomeQuestion = questions.filter(
+			( item ) => item.screen_type === 'welcome'
+		);
+		const endQuestions = questions.filter(
+			( item ) => item.screen_type === 'end'
+		);
+		const otherQuestions = Array.from(
+			questions.filter(
+				( item ) =>
+					item.screen_type !== 'welcome' && item.screen_type !== 'end'
+			)
+		);
+		//const newTestQuestion = Array.from(testQuestion);
+		//console.log(otherQuestions);
+		const [ removedQuestion ] = otherQuestions.splice( source.index, 1 );
+		//const [removedTestQuestion] = newTestQuestion.splice(source.index,1);
+		otherQuestions.splice( destination.index, 0, removedQuestion );
+		//newQuestionOrder.unshift(welcomeQuestion);
+		const updatedOrderedQuestion = [
+			...welcomeQuestion,
+			...otherQuestions,
+			...endQuestions,
+		];
+
+		//console.log(updatedOrderedQuestion, otherQuestions);
+		//setTestQuestion(newTestQuestion)
+		const updatedForm = {
+			...singleForm,
+			content: JSON.stringify( { questions: updatedOrderedQuestion } ),
+		};
+		setSingleForm( updatedForm );
+
+		//setStoreData( [ 'helpgent-single-form' ], { form: updatedForm } );
 	};
 
 	function handleAddEndScreen( e ) {
@@ -72,6 +398,8 @@ export default function ScreenBar() {
 					Add screen
 				</Link>
 				<ScreenListDropdown
+					singleForm={ singleForm }
+					setSingleForm={ setSingleForm }
 					isOpenMegaDropdown={ isOpenMegaDropdown }
 					setMegaDropdown={ setMegaDropdown }
 				/>
@@ -80,15 +408,14 @@ export default function ScreenBar() {
 				{ getWelcomeType( questions ) }
 				<DragDropContext onDragEnd={ onDragEnd }>
 					<Droppable
-						droppableId="all-columns"
-						direction="horizontal"
-						type="column"
+						droppableId="helpgent-other-droppable-screen"
+						//direction="vertical"
 					>
 						{ ( provided ) => (
 							<div
 								className="helpgent-screen helpgent-screenBar-content__other"
-								{ ...provided.droppableProps }
 								ref={ provided.innerRef }
+								{ ...provided.droppableProps }
 							>
 								{ getOtherType( questions ) }
 								{ provided.placeholder }

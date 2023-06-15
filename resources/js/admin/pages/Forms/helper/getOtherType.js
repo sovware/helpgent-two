@@ -13,14 +13,13 @@ export default function getOtherType( questions ) {
 	function handleActivateQuestion() {}
 
 	return otherType.map( ( item, index ) => (
-		<Draggable draggableId={ item.id } index={ index }>
+		<Draggable draggableId={ item.id } index={ index } key={ item.id }>
 			{ ( provided ) => (
 				<div
 					className="helpgent-sortable-item"
+					ref={ provided.innerRef }
 					{ ...provided.draggableProps }
 					{ ...provided.dragHandleProps }
-					ref={ provided.innerRef }
-					key={ index }
 				>
 					<ScreenItem
 						question={ item }

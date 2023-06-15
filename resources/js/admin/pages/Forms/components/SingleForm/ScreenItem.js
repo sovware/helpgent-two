@@ -22,8 +22,6 @@ export default function ScreenItem( {
 
 	const { id, icon, title, isPro, isComing } = question;
 
-	console.log( questions, id );
-
 	const moreDropdown = [
 		{
 			name: 'rename',
@@ -57,6 +55,8 @@ export default function ScreenItem( {
 		}
 	}
 
+	//console.log(index, title);
+
 	return (
 		<ScreenItemStyle
 			className={
@@ -71,11 +71,11 @@ export default function ScreenItem( {
 					<ReactSVG src={ icon } />
 				</div>
 				<h4 className="helpgent-screen__title">
-					{ index && (
+					{ /* { index && (
 						<span className="helpgent-screen__counter">
 							{ index }.
 						</span>
-					) }
+					) } */ }
 					{ title }
 					{ isPro && <Badge type="success" text="PRO" /> }
 					{ isComing && <Badge type="gray" text="Coming Soon" /> }

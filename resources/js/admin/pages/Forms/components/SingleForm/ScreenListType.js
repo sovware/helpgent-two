@@ -1,26 +1,33 @@
+import { v4 as uuidv4 } from 'uuid';
 import useStore from '../../../../../hooks/useStore';
 import ScreenItem from './ScreenItem.js';
 
-export default function ScreenListType( { type, screenList } ) {
+export default function ScreenListType( {
+	singleForm,
+	setSingleForm,
+	type,
+	screenList,
+} ) {
 	const { getStoreData, setStoreData } = useStore();
-	const { form } = getStoreData( [ 'helpgent-single-form' ] );
-	const { content } = form;
+	//const { form } = singleForm;
+	const { content } = singleForm;
 	const { questions } = JSON.parse( content );
 	const hasWelcomeQuestion = questions.filter(
 		( item ) => item.screen_type === 'welcome'
 	);
 	function handleAddQuestion( item ) {
+		item.id = uuidv4();
 		if ( item.type === 'welcome' && hasWelcomeQuestion !== 0 ) {
 			return;
 		}
 		questions.push( item );
 
 		const updatedForm = {
-			...form,
+			...singleForm,
 			content: JSON.stringify( { questions: questions } ),
 		};
-
-		setStoreData( [ 'helpgent-single-form' ], { form: updatedForm } );
+		setSingleForm( updatedForm );
+		//setStoreData( [ 'helpgent-single-form' ], { form: updatedForm } );
 	}
 	return (
 		screenList.length !== 0 && (

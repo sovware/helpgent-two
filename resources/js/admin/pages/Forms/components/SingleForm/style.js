@@ -141,7 +141,9 @@ const ScreenBarStyle = Styled.div`
             height: 36px;
         }
     }
-
+    .helpgent-sortable-item{
+        margin-bottom: 10px;
+    }
     .helpgent-screenBar-content__welcome{
         padding: 20px;
         border-bottom: 1px solid var(--helpgent-color-bg-gray);
@@ -151,9 +153,6 @@ const ScreenBarStyle = Styled.div`
         padding: 0 20px 20px;
         margin-top: 20px;
         overflow-y: auto;
-        .helpgent-screen__item{
-            margin-bottom: 10px;
-        }
     }
     .helpgent-screenBar-content__end{
         display: flex;
