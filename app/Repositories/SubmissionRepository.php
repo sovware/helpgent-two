@@ -6,10 +6,10 @@ use wpdb;
 use Exception;
 use HelpGent\App\DTO\SubmissionDTO;
 use HelpGent\App\Models\Guest;
+use HelpGent\App\Models\User;
 use HelpGent\App\Models\Submission;
 use HelpGent\App\Models\SubmissionTag;
-use HelpGent\App\Models\User;
-use HelpGent\App\Utils\DateTime;
+use HelpGent\App\Models\SubmissionMeta;
 use HelpGent\WaxFramework\Database\Query\Builder;
 
 class SubmissionRepository {
@@ -106,8 +106,7 @@ class SubmissionRepository {
                 'city'         => $submission_dto->get_city(),
                 'country'      => $submission_dto->get_country(),
                 'created_by'   => $submission_dto->get_created_by(),
-                'is_guest'     => $submission_dto->get_is_guest(),
-                'updated_at'   => DateTime::now()
+                'is_guest'     => $submission_dto->get_is_guest()
             ]
         );
     }
@@ -129,7 +128,16 @@ class SubmissionRepository {
                 'country'      => $submission_dto->get_country(),
                 'created_by'   => $submission_dto->get_created_by(),
                 'is_guest'     => $submission_dto->get_is_guest(),
-                'updated_at'   => DateTime::now()
+                'updated_at'   => helpgent_now()
+            ]
+        );
+    }
+
+    public function update_create_by( int $id, int $created_by, int $is_guest = 0 ) {
+        return Submission::query()->where( 'id', $id )->update(
+            [
+                'created_by' => $created_by,
+                'is_guest'   => $is_guest
             ]
         );
     }
@@ -186,5 +194,58 @@ class SubmissionRepository {
                 'is_read' => $is_read
             ]
         );
+    }
+
+    public function get_meta( int $submission_id, string $meta_key ) {
+        return SubmissionMeta::query()->where( 'submission_id', $submission_id )->where( 'meta_key', $meta_key )->first();
+    }
+
+    public function get_meta_value( int $submission_id, string $meta_key ) {
+        $meta = $this->get_meta( $submission_id, $meta_key );
+        if ( ! $meta ) {
+            return false;
+        }
+        return $meta->meta_value;
+    }
+
+    public function add_meta( int $submission_id, string $meta_key, string $meta_value ) {
+        $meta = $this->get_meta( $submission_id, $meta_key );
+
+        if ( $meta ) {
+            return false;
+        }
+
+        return SubmissionMeta::query()->insert(
+            [
+                'submission_id' => $submission_id,
+                'meta_key'      => $meta_key,
+                'meta_value'    => $meta_value,
+            ]
+        );
+    }
+
+    public function update_meta( int $submission_id, string $meta_key, string $meta_value ) {
+
+        $update = SubmissionMeta::query()->where( 'form_id', $submission_id )->where( 'meta_key', $meta_key )->update(
+            [
+                'meta_value' => $meta_value,
+            ]
+        );
+
+        if ( $update ) {
+            return $update;
+        }
+
+        return SubmissionMeta::query()->insert(
+            [
+                'submission_id' => $submission_id,
+                'meta_key'      => $meta_key,
+                'meta_value'    => $meta_value,
+            ]
+        );
+    }
+
+    public function delete_meta( int $submission_id, string $meta_key ) {
+        return SubmissionMeta::query()->where( 'submission_id', $submission_id )->where( 'meta_key', $meta_key )->delete();
     }
 }

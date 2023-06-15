@@ -6,6 +6,7 @@ use HelpGent\App\Repositories\AttachmentRepository;
 use HelpGent\App\Repositories\SettingsRepository;
 use HelpGent\WaxFramework\App;
 use HelpGent\DI\Container;
+use HelpGent\App\Utils\DateTime;
 
 function helpgent():App {
     return App::$instance;
@@ -298,4 +299,15 @@ function helpgent_user_ip_address() {
     }
 
     return null;
+}
+
+function helpgent_generate_token() {
+    $time   = microtime( true );
+    $random = bin2hex( random_bytes( 5 ) );
+    $token  = $random . $time;
+    return $token;
+}
+
+function helpgent_now() {
+    return DateTime::now();
 }

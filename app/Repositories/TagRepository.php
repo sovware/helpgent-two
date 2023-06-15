@@ -5,7 +5,6 @@ namespace HelpGent\App\Repositories;
 use Exception;
 use HelpGent\App\DTO\TagDTO;
 use HelpGent\App\Models\Tag;
-use HelpGent\App\Utils\DateTime;
 use HelpGent\WaxFramework\Database\Query\Builder;
 
 class TagRepository {
@@ -50,7 +49,7 @@ class TagRepository {
         return Tag::query()->where( 'id', $tag_dto->get_id() )->update(
             [
                 'title'      => $tag_dto->get_title(),
-                'updated_at' => DateTime::now()
+                'updated_at' => helpgent_now()
             ]
         );
     }

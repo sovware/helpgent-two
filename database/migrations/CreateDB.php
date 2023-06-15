@@ -73,6 +73,20 @@ class CreateDB implements Migration {
         ) {$charset_collate};
 
         -- -----------------------------------------------------
+        -- Table submission_meta
+        -- -----------------------------------------------------
+
+        CREATE TABLE {$db_prefix}submission_meta (
+            `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+            `submission_id` BIGINT UNSIGNED NOT NULL,
+            `meta_key` VARCHAR(255) NULL,
+            `meta_value` LONGTEXT NULL,
+            `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            `updated_at` TIMESTAMP NULL,
+            PRIMARY KEY (`id`)
+        ) {$charset_collate};
+        
+        -- -----------------------------------------------------
         -- Table attachments
         -- -----------------------------------------------------
         CREATE TABLE {$db_prefix}attachments (
@@ -155,10 +169,13 @@ class CreateDB implements Migration {
 
         CREATE TABLE {$db_prefix}guest_users (
             `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
-            `name` VARCHAR(255) NULL,
+            `first_name` VARCHAR(255) NULL,
+            `last_name` VARCHAR(255) NULL,
             `email` VARCHAR(255) NULL,
-            `phone` VARCHAR(255) NULL,
+            `number` VARCHAR(255) NULL,
+            `company` VARCHAR(255) NULL,
             `token` VARCHAR(255) NOT NULL,
+            `token_expires_at` TIMESTAMP NULL,
             `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
             `updated_at` TIMESTAMP NULL,
             PRIMARY KEY (`id`)

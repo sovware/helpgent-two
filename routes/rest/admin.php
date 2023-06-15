@@ -33,5 +33,5 @@ Route::group(
                 Route::get( '/', [ContactController::class, 'index'] );
             }
         );
-    }, ['admin']
+    }, []
 );

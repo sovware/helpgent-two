@@ -25,6 +25,12 @@ class SubmissionController extends Controller {
 
     public stdClass $form;
 
+    private string $token;
+
+    private int $response_id;
+
+    private int $submission_id;
+
     public function __construct( SubmissionRepository $submission_repository, FormRepository $form_repository, ResponseRepository $response_repository ) {
         $this->submission_repository = $submission_repository;
         $this->form_repository       = $form_repository;
@@ -62,7 +68,7 @@ class SubmissionController extends Controller {
                 ], 404
             );
         }
-
+        
         /**
          * Guest permission check
          */
@@ -85,12 +91,6 @@ class SubmissionController extends Controller {
 
     private function process_first_request() {
         try {
-            $form_id        = intval( $this->wp_rest_request->get_param( 'form_id' ) );
-            $submission_dto = new SubmissionDTO(
-                $form_id,
-                get_current_user_id()
-            );
-
             /**
              * Validate screen to screen logic map
              */
@@ -106,6 +106,13 @@ class SubmissionController extends Controller {
             /**
              * Creating a new submission.
              */
+            $form_id = intval( $this->wp_rest_request->get_param( 'form_id' ) );
+
+            $submission_dto = new SubmissionDTO(
+                $form_id,
+                get_current_user_id()
+            );
+
             $submission_id = $this->submission_repository->create( $submission_dto );
 
             /**
@@ -116,11 +123,14 @@ class SubmissionController extends Controller {
             /**
              * Generating and storing token to identify the subsequent response on this submission.
              */
-            $token = 'submission_token-' . base64_encode( wp_generate_uuid4() . '-' . time() );
+            $token = 'submission_token-' . helpgent_generate_token();
 
             $this->form_repository->add_meta( $this->form->id, $token, $submission_id );
 
-            $this->submit_form( $form_id, $submission_id, $token );
+            $this->token         = $token;
+            $this->submission_id = $submission_id;
+
+            $this->submit_form( $form_id, $submission_id, $this->token );
 
             return Response::send( compact( 'token', 'response_id' ), 201 );
         } catch ( Exception $exception ) {
@@ -133,9 +143,7 @@ class SubmissionController extends Controller {
     }
 
     private function process_token_request() {
-        $token         = $this->wp_rest_request->get_param( 'token' );
-        $submission_id = $this->form_repository->get_meta_value( $this->form->id, $token );
-        $submission    = $this->submission_repository->get_by_id( $submission_id );
+        $submission = $this->get_submission_by_token();
 
         if ( ! $submission ) {
             return Response::send(
@@ -175,9 +183,9 @@ class SubmissionController extends Controller {
             /**
              * Storing submission response.
              */
-            $response_id = $field_handler->save_response( $this->wp_rest_request, $field, $submission_id );
+            $response_id = $field_handler->save_response( $this->wp_rest_request, $field, $submission->id );
 
-            $this->submit_form( $form_id, $submission_id, $token );
+            $this->submit_form( $form_id, $submission->id, $this->wp_rest_request->get_param( 'token' ) );
 
             return Response::send( compact( 'response_id' ), 201 );
         } catch ( Exception $exception ) {
@@ -190,10 +198,25 @@ class SubmissionController extends Controller {
     }
 
     private function submit_form( $form_id, $submission_id, $token ) {
-        if ( $this->wp_rest_request->has_param( 'submit' ) ) {
-            $this->form_repository->delete_meta( $form_id, $token );
-            $this->submission_repository->update_status( $submission_id, 'active' );
+        if ( ! $this->wp_rest_request->has_param( 'submit' ) ) {
+            return;
         }
+
+        if ( ! is_user_logged_in() && ! $this->submission_repository->get_meta_value( $submission_id ,'contact_info_submit' ) ) {
+            throw new Exception( esc_html__( "Guest user required contact information", 'helpgent' ), 500 );
+        }
+
+        $this->form_repository->delete_meta( $form_id, $token );
+        $this->submission_repository->delete_meta( $submission_id, 'contact_info_submit' );
+        $this->submission_repository->update_status( $submission_id, 'active' );
+
+        do_action( 'helpgent_after_submit_form', $submission_id );
+    }
+
+    private function get_submission_by_token() {
+        $token         = $this->wp_rest_request->get_param( 'token' );
+        $submission_id = $this->form_repository->get_meta_value( $this->form->id, $token );
+        return $this->submission_repository->get_by_id( $submission_id );
     }
 
     private function delete_response( stdClass $submission ) {
@@ -269,7 +292,13 @@ class SubmissionController extends Controller {
             [
                 'id'     => "3",
                 'title'  => "Final Screen",
-                'fields' => []
+                'fields' => [
+                    [
+                        'id'    => 'contact-info',
+                        'type'  => 'contact-info',
+                        'label' => 'Contact'
+                    ]
+                ]
             ]
         ];
     }

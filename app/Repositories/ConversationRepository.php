@@ -5,7 +5,6 @@ namespace HelpGent\App\Repositories;
 use Exception;
 use HelpGent\App\DTO\ConversationDTO;
 use HelpGent\App\Models\Conversation;
-use HelpGent\App\Utils\DateTime;
 use HelpGent\WaxFramework\Database\Query\Builder;
 use stdClass;
 use wpdb;
@@ -106,7 +105,7 @@ class ConversationRepository {
                 'created_by'    => $conversation_dto->get_created_by(),
                 'agent_trigger' => $conversation_dto->get_agent_trigger(),
                 'status'        => $conversation_dto->get_status(),
-                'created_at'    => DateTime::now()
+                'created_at'    => helpgent_now()
             ]
         );
     }
@@ -126,7 +125,7 @@ class ConversationRepository {
         return Conversation::query()->where( 'id', $conversation_dto->get_id() )->where( 'submission_id', $conversation_dto->get_submission_id() )->update(
             [
                 'message'    => $conversation_dto->get_message(),
-                'updated_at' => DateTime::now()
+                'updated_at' => helpgent_now()
             ]
         );
     }
