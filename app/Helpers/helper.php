@@ -355,7 +355,7 @@ function helpgent_get_current_user() {
             $guest->first_name,
             $guest->last_name,
             "",
-            [['helpgent_guest']],
+            ['helpgent_guest'],
             $guest->created_at
         );
     } else {
