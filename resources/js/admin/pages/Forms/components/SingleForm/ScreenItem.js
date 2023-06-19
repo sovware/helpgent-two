@@ -14,6 +14,7 @@ export default function ScreenItem( {
 	hasDropdown,
 	index,
 	isDisabled,
+	isActive,
 } ) {
 	const { getStoreData, setStoreData } = useStore();
 	const { form } = getStoreData( [ 'helpgent-single-form' ] );
@@ -62,6 +63,8 @@ export default function ScreenItem( {
 			className={
 				isDisabled
 					? 'helpgent-screen__item helpgent-screen__disabled'
+					: isActive
+					? 'helpgent-screen__item helpgent-active'
 					: 'helpgent-screen__item'
 			}
 			onClick={ () => handler( question ) }

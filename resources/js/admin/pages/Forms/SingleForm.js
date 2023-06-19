@@ -21,7 +21,7 @@ function SingleForm() {
 		setSingleForm( data );
 	}, [ isLoading ] );
 
-	console.log( isLoading, data, singleForm );
+	//console.log( isLoading, data, singleForm );
 	return (
 		<SingleFormStyle>
 			{ ! singleForm || isLoading || isError ? (

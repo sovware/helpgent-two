@@ -75,6 +75,10 @@
   margin-top: 50px;
 }
 
+.helpgent-mt-40 {
+  margin-top: 40px;
+}
+
 .helpgent-p-5 {
   padding: 5px;
   box-sizing: border-box;
@@ -108,6 +112,9 @@
 }
 
 .helpgent-root {
+  font-family: var(--helpgent-font-family);
+}
+.helpgent-root .ql-container {
   font-family: var(--helpgent-font-family);
 }
 
@@ -172,21 +179,21 @@
   fill: var(--helpgent-color-dark);
 }
 .helpgent-btn.helpgent-btn-primary {
-  background-color: var(--primary-button-bg);
-  border-radius: var(--btn-radius);
-  color: var(--primary-button-color);
-  border: 1px solid var(--primary-button-bg);
+  background-color: var(--helpgent-primary-button-bg);
+  border-radius: var(--helpgent-btn-radius);
+  color: var(--helpgent-primary-button-color);
+  border: 1px solid var(--helpgent-primary-button-bg);
 }
 .helpgent-btn.helpgent-btn-primary:not(:hover):not(:active):not(.has-background) {
-  color: var(--primary-button-color);
-  background-color: var(--primary-button-bg);
+  color: var(--helpgent-primary-button-color);
+  background-color: var(--helpgent-primary-button-bg);
 }
 .helpgent-btn.helpgent-btn-primary:hover {
-  color: var(--primary-button-bg);
+  color: var(--helpgent-primary-button-bg);
   background-color: var(--helpgent-color-white);
 }
 .helpgent-btn.helpgent-btn-primary:hover svg path {
-  fill: var(--primary-button-bg);
+  fill: var(--helpgent-primary-button-bg);
 }
 .helpgent-btn.helpgent-btn-light {
   color: var(--helpgent-color-text);
