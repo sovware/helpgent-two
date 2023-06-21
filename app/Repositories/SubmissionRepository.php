@@ -107,11 +107,11 @@ class SubmissionRepository {
         ] ;
     }
 
-    protected function user_relationship( Builder $query ) {
+    public function user_relationship( Builder $query ) {
         $query->select( 'users.ID', 'users.display_name' );
     }
 
-    protected function guest_user_relationship( Builder $query ) {
+    public function guest_user_relationship( Builder $query ) {
         $query->select( 'helpgent_guest_users.id', 'helpgent_guest_users.first_name', 'helpgent_guest_users.last_name' );
     }
 
