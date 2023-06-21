@@ -4,6 +4,7 @@ namespace HelpGent\App\Http\Controllers;
 
 use Exception;
 use HelpGent\App\DTO\SubmissionDTO;
+use HelpGent\App\DTO\SubmissionReadDTO;
 use HelpGent\App\Http\Controllers\Controller;
 use HelpGent\App\Repositories\FormRepository;
 use HelpGent\App\Repositories\ResponseRepository;
@@ -35,6 +36,79 @@ class SubmissionController extends Controller {
         $this->submission_repository = $submission_repository;
         $this->form_repository       = $form_repository;
         $this->response_repository   = $response_repository;
+    }
+
+    public function index( Validator $validator, WP_REST_Request $wp_rest_request ) {
+        $user     = helpgent_get_current_user();
+        $is_guest = false;
+        $is_user  = false;
+
+        if ( in_array( 'administrator', $user->roles ) ) {
+            $validator->validate( $this->admin_read_rules() );
+        } else {
+            $is_user  = true;
+            $is_guest = in_array( 'helpgent_guest', $user->roles );
+            $validator->validate( $this->user_read_rule() );
+        }
+
+        if ( $validator->is_fail() ) {
+            return Response::send(
+                [
+                    'messages' => $validator->errors
+                ], 422
+            );
+        }
+
+        if ( $is_user ) {
+            $submission_read_dto = new SubmissionReadDTO(
+                intval( $wp_rest_request->get_param( 'per_page' ) ),
+                intval( $wp_rest_request->get_param( 'page' ) ),
+                $wp_rest_request->get_param( 'order_by' ),
+                'active',
+                [],
+                (string) $wp_rest_request->get_param( 'search' )
+            );
+            $submission_read_dto->set_created_by( $user->id );
+            $submission_read_dto->set_is_guest( $is_guest );
+        } else {
+            $submission_read_dto = new SubmissionReadDTO(
+                intval( $wp_rest_request->get_param( 'per_page' ) ),
+                intval( $wp_rest_request->get_param( 'page' ) ),
+                $wp_rest_request->get_param( 'order_by' ),
+                $wp_rest_request->get_param( 'status' ),
+                $wp_rest_request->has_param( 'tag_ids' ) ? $wp_rest_request->get_param( 'tag_ids' ) : [],
+                (string) $wp_rest_request->get_param( 'search' )
+            );
+
+            if ( $wp_rest_request->has_param( 'form_id' ) ) {
+                $submission_read_dto->set_form_id( intval( $wp_rest_request->get_param( 'form_id' ) ) );
+            }
+        }
+
+        return Response::send(
+            $this->submission_repository->get( $submission_read_dto )
+        );
+    }
+
+    protected function admin_read_rules() {
+        return [
+            'form_id'  => 'numeric',
+            'per_page' => 'numeric',
+            'page'     => 'numeric',
+            'order_by' => 'required|string|accepted:read,unread,latest,oldest',
+            'status'   => 'required|string|accepted:active,archive,trash',
+            'tag_ids'  => 'array',
+            'search'   => 'string'
+        ];
+    }
+
+    protected function user_read_rule() {
+        return [
+            'per_page' => 'numeric',
+            'page'     => 'numeric',
+            'order_by' => 'required|string|accepted:read,unread,latest,oldest',
+            'search'   => 'string'
+        ];
     }
 
     public function store( Validator $validator, WP_REST_Request $wp_rest_request ) {
@@ -303,3 +377,4 @@ class SubmissionController extends Controller {
         ];
     }
 }
+

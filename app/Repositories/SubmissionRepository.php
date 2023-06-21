@@ -5,6 +5,7 @@ namespace HelpGent\App\Repositories;
 use wpdb;
 use Exception;
 use HelpGent\App\DTO\SubmissionDTO;
+use HelpGent\App\DTO\SubmissionReadDTO;
 use HelpGent\App\Models\Guest;
 use HelpGent\App\Models\User;
 use HelpGent\App\Models\Submission;
@@ -13,32 +14,46 @@ use HelpGent\App\Models\SubmissionMeta;
 use HelpGent\WaxFramework\Database\Query\Builder;
 
 class SubmissionRepository {
-    public function get( int $form_id, int $per_page, int $page, string $order_by, string $status, $tag_ids, string $search = '' ) {
+    public function get( SubmissionReadDTO $submission_read_dto ) {
         $query = Submission::query()->with(
             [
                 'tags',
-                'user'                    => function ( Builder $query ) {
-                    $query->select( 'users.ID', 'users.display_name' );
-                },
-                'user_guest'              => function ( Builder $query ) {
-                    $query->select( 'helpgent_guest_users.id', 'helpgent_guest_users.name' );
-                },
+                'user'                    => [$this, 'user_relationship'],
+                'user_guest'              => [$this, 'guest_user_relationship'],
                 'conversation'            => function ( Builder $query ) {
                     $query->order_by_desc( 'helpgent_conversations.id' );
                 },
-                'conversation.user'       => function ( Builder $query ) {
-                    $query->select( 'users.ID', 'users.display_name' );
-                },
-                'conversation.user_guest' => function ( Builder $query ) {
-                    $query->select( 'helpgent_guest_users.id', 'helpgent_guest_users.name' );
-                }
+                'conversation.user'       => [$this, 'user_relationship'],
+                'conversation.user_guest' => [$this, 'guest_user_relationship']
             ] 
-        )->where( 'form_id', $form_id )->where( 'status', $status );
-        
-        $count_query = Submission::query()->where( 'form_id', $form_id )->where( 'status', $status );
+        )->where( 'status', $submission_read_dto->get_status() );
+
+        $count_query = Submission::query()->where( 'status', $submission_read_dto->get_status() );
+
+        /**
+         * If try to get specific form submissions
+         */
+        if ( 0 !== $submission_read_dto->get_form_id() ) {
+            $query->where( 'form_id', $submission_read_dto->get_form_id() );
+            $count_query->where( 'form_id', $submission_read_dto->get_form_id() );
+        }
+
+        /**
+         * If try to get specific user submissions
+         */
+        if ( 0 !== $submission_read_dto->get_created_by() ) {
+            /**
+             * Is user type guest or registered user
+             */
+            $is_guest = $submission_read_dto->get_is_guest() ? 1 : 0;
+            $query->where( 'created_by', $submission_read_dto->get_created_by() )->where( 'is_guest', $is_guest );
+            $count_query->where( 'created_by', $submission_read_dto->get_created_by() )->where( 'is_guest', $is_guest );
+        }
+
+        $tag_ids = $submission_read_dto->get_tag_ids();
 
         // If find submissions of certain tags
-        if ( ! empty( $tag_ids ) && is_array( $tag_ids ) ) {
+        if ( ! empty( $tag_ids ) ) {
             $tag_ids    = map_deep( $tag_ids, 'intval' );
             $tag_exists = SubmissionTag::query()->select( 1 )
                             ->where_column( 'helpgent_submission_tag.submission_id', 'helpgent_submissions.id' )
@@ -48,12 +63,12 @@ class SubmissionRepository {
             $count_query->where_exists( $tag_exists );
         }
 
-        if ( ! empty( $search ) ) {
+        if ( ! empty( $submission_read_dto->get_search() ) ) {
             global $wpdb;
             /**
              * @var wpdb $wpdb;
              */
-            $search = $wpdb->prepare( "%s", "%{$search}%" );
+            $search = $wpdb->prepare( "%s", "%{$submission_read_dto->get_search()}%" );
     
             $user_exists = User::query()->select( 1 )
                 ->where( 'helpgent_submissions.is_guest', 0 )
@@ -64,14 +79,14 @@ class SubmissionRepository {
             $guest_exists = Guest::query()->select( 1 )
                 ->where( 'helpgent_submissions.is_guest', 1 )
                 ->where_column( 'helpgent_submissions.created_by', 'helpgent_guest_users.id' )
-                ->where_raw( "(helpgent_guest_users.name like {$search} or helpgent_guest_users.email like $search)" )
+                ->where_raw( "(helpgent_guest_users.first_name like {$search} or helpgent_guest_users.last_name like {$search} or helpgent_guest_users.email like $search)" )
                 ->limit( 1 );
     
             $query->where_exists( $user_exists );
             $query->where_exists( $guest_exists, 'or' );
         }
 
-        switch ( $order_by ) {
+        switch ( $submission_read_dto->get_order_by() ) {
             case 'latest':
                 $query->order_by_desc( 'updated_at' );
                 break;
@@ -87,9 +102,17 @@ class SubmissionRepository {
         }
 
         return [
-            'submissions' => $query->pagination( $per_page, $page ),
+            'submissions' => $query->pagination( $submission_read_dto->get_per_page(), $submission_read_dto->get_page() ),
             'total'       => $count_query->count()
         ] ;
+    }
+
+    protected function user_relationship( Builder $query ) {
+        $query->select( 'users.ID', 'users.display_name' );
+    }
+
+    protected function guest_user_relationship( Builder $query ) {
+        $query->select( 'helpgent_guest_users.id', 'helpgent_guest_users.first_name', 'helpgent_guest_users.last_name' );
     }
 
     public function total( int $form_id ) {

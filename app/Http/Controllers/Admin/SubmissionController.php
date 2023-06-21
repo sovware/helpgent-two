@@ -23,40 +23,6 @@ class SubmissionController extends Controller {
         $this->form_repository           = $form_repository;
         $this->submission_tag_repository = $submission_tag_repository;
     }
-    
-    public function index( Validator $validator, WP_REST_Request $wp_rest_request ) {
-        $validator->validate(
-            [
-                'form_id'  => 'required|numeric',
-                'per_page' => 'numeric',
-                'page'     => 'numeric',
-                'order_by' => 'required|string|accepted:read,unread,latest,oldest',
-                'status'   => 'required|string|accepted:active,archive,trash',
-                'tag_ids'  => 'array',
-                'search'   => 'string'
-            ]
-        );
-
-        if ( $validator->is_fail() ) {
-            return Response::send(
-                [
-                    'messages' => $validator->errors
-                ], 422
-            );
-        }
-
-        return Response::send(
-            $this->submission_repository->get( 
-                $wp_rest_request->get_param( 'form_id' ), 
-                intval( $wp_rest_request->get_param( 'per_page' ) ),
-                intval( $wp_rest_request->get_param( 'page' ) ),
-                $wp_rest_request->get_param( 'order_by' ),
-                $wp_rest_request->get_param( 'status' ),
-                $wp_rest_request->get_param( 'tag_ids' ),
-                (string) $wp_rest_request->get_param( 'search' )
-            )
-        );
-    }
 
     public function delete( Validator $validator, WP_REST_Request $wp_rest_request ) {
         $validator->validate(

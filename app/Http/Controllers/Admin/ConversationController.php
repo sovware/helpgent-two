@@ -111,7 +111,13 @@ class ConversationController extends Controller {
         );
 
         try {
-            $this->conversation_repository->create( $conversation_dto );
+            do_action( 'helpgent_before_store_conversation', $conversation_dto, $wp_rest_request );
+            
+            $conversation_id = $this->conversation_repository->create( $conversation_dto );
+
+            $conversation_dto->set_id( $conversation_id );
+
+            do_action( 'helpgent_after_store_conversation', $conversation_dto, $wp_rest_request );
             return Response::send( [], 201 );
         } catch ( Exception $exception ) {
             return Response::send(
@@ -148,9 +154,12 @@ class ConversationController extends Controller {
         );
 
         $conversation_dto->set_id( intval( $wp_rest_request->get_param( 'id' ) ) );
-
         try {
+            do_action( 'helpgent_before_update_conversation', $conversation_dto, $wp_rest_request );
+
             $this->conversation_repository->update( $conversation_dto );
+
+            do_action( 'helpgent_before_update_conversation', $conversation_dto, $wp_rest_request );
             return Response::send( [] );
         } catch ( Exception $exception ) {
             return Response::send(
@@ -189,5 +198,31 @@ class ConversationController extends Controller {
                 $exception->getCode()
             );
         }
+    }
+
+    public function attachment( Validator $validator, WP_REST_Request $wp_rest_request ) {
+        $validator->validate(
+            [
+                'type'          => 'required|string',
+                'submission_id' => 'required|numeric'
+            ]
+        );
+    
+        if ( $validator->is_fail() ) {
+            return Response::send(
+                [
+                    'messages' => $validator->errors
+                ], 422
+            );
+        }
+
+        return Response::send(
+            $this->conversation_repository->attachment( 
+                intval( $wp_rest_request->get_param( 'submission_id' ) ), 
+                $wp_rest_request->get_param( 'type' ),
+                intval( $wp_rest_request->get_param( 'per_page' ) ), 
+                intval( $wp_rest_request->get_param( 'page' ) )
+            )
+        );
     }
 }

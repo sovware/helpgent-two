@@ -2,12 +2,13 @@
 
 namespace HelpGent\App\Repositories;
 
+use wpdb;
+use stdClass;
 use Exception;
 use HelpGent\App\DTO\ConversationDTO;
+use HelpGent\App\Models\Attachment;
 use HelpGent\App\Models\Conversation;
 use HelpGent\WaxFramework\Database\Query\Builder;
-use stdClass;
-use wpdb;
 
 class ConversationRepository {
     public SubmissionRepository $submission_repository;
@@ -17,15 +18,9 @@ class ConversationRepository {
     }
 
     public function get( int $submission_id, int $per_page, int $page, string $search = '' ) {
-        $removed_message = esc_html__( "This message was removed", "helpgent" );
+        $select_columns = $this->selected_columns();
 
-        $select_columns = "id, submission_id, is_attachment, is_read, is_guest, created_by, agent_trigger, parent_id, parent_type, updated_at, status, created_at,
-            CASE 
-                WHEN status = 'trash' THEN '{$removed_message}' 
-                ELSE message 
-            END AS message";
-
-        $conversations_query =  Conversation::query()->select( $select_columns )->with(
+        $conversations_query = Conversation::query()->select( $select_columns )->with(
             [
                 'user'              => [$this, 'user_relation'],
                 'user_guest'        => [$this, 'user_guest_relation'],
@@ -58,6 +53,44 @@ class ConversationRepository {
             'conversations' => $conversations,
             'total'         => $count_query->count()
         ];
+    }
+
+    public function attachment( int $submission_id, string $type, int $per_page, int $page, string $search = '' ) {
+        $attachment_exists = Attachment::query( 'attachment' )->select( 1 )->where_column( 'attachment.id', 'conversation.message' )->limit( 1 );
+
+        if ( 'all' !== $type ) {
+            $attachment_exists->where( 'mime_type', $type );
+        }
+
+        $conversations_query = Conversation::query( 'conversation' )->with(
+            [
+                'user'              => [$this, 'user_relation'],
+                'user_guest'        => [$this, 'user_guest_relation'],
+                'parent',
+                'parent.user'       => [$this, 'user_relation'],
+                'parent.user_guest' => [$this, 'user_guest_relation'],
+                'attachment'
+            ]
+        )->where( 'submission_id', $submission_id )->where( 'status', 'publish' )->where( 'is_attachment', 1 )->where_exists( $attachment_exists );  
+
+        $count_query   = Conversation::query()->where( 'submission_id', $submission_id );
+        $conversations = $conversations_query->pagination( $per_page, $page );
+        $conversations = array_map( [$this, 'prepare_conversation'] , $conversations );
+
+        return [
+            'conversations' => $conversations,
+            'total'         => $count_query->count()
+        ];
+    }
+
+    protected function selected_columns() {
+        $removed_message = esc_html__( "This message was removed", "helpgent" );
+
+        return "id, submission_id, is_attachment, is_read, is_guest, created_by, agent_trigger, parent_id, parent_type, updated_at, status, created_at,
+            CASE 
+                WHEN status = 'trash' THEN '{$removed_message}' 
+                ELSE message 
+            END AS message";
     }
 
     public function user_relation( Builder $query ) {
@@ -93,7 +126,7 @@ class ConversationRepository {
             throw new Exception( esc_html__( 'Form submission not found', 'helpgent' ), 404 );
         }
 
-        return Conversation::query()->insert(
+        return Conversation::query()->insert_get_id(
             [
                 'submission_id' => $conversation_dto->get_submission_id(),
                 'message'       => $conversation_dto->get_message(),
@@ -111,7 +144,6 @@ class ConversationRepository {
     }
 
     public function update( ConversationDTO $conversation_dto ) {
-
         $conversation = Conversation::query()->where( 'id', $conversation_dto->get_id() )->where( 'submission_id', $conversation_dto->get_submission_id() )->first();
 
         if ( ! $conversation ) {
@@ -131,7 +163,6 @@ class ConversationRepository {
     }
 
     public function delete( int $id, int $submission_id ) {
-        
         $conversation = Conversation::query()->where( 'id', $id )->where( 'submission_id', $submission_id )->first();
 
         if ( ! $conversation ) {

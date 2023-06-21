@@ -16,7 +16,6 @@ Route::group(
         Route::resource( 'tag', TagController::class, ['items' => ['show']] );
         Route::group(
             'submission', function () {
-                Route::get( '/', [SubmissionController::class, 'index'] );
                 Route::delete( '{id}', [SubmissionController::class, 'delete'] );
                 Route::post( '{id}/important', [SubmissionController::class, 'important'] );
                 Route::post( 'setup/tag', [SubmissionController::class, 'setup_tag'] );
@@ -24,6 +23,7 @@ Route::group(
                 Route::post( '{id}/read', [SubmissionController::class, 'update_read'] );
             } 
         );
+        Route::get( 'conversation/attachment', [ConversationController::class, 'attachment'] );
         Route::resource( 'conversation', ConversationController::class );
         Route::get( 'settings', [SettingsController::class, 'index'] );
         Route::post( 'settings', [SettingsController::class, 'update'] );
@@ -33,5 +33,5 @@ Route::group(
                 Route::get( '/', [ContactController::class, 'index'] );
             }
         );
-    }, []
+    }, ['admin']
 );
