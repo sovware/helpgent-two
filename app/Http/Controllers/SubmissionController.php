@@ -39,16 +39,12 @@ class SubmissionController extends Controller {
     }
 
     public function index( Validator $validator, WP_REST_Request $wp_rest_request ) {
-        $user     = helpgent_get_current_user();
-        $is_guest = false;
-        $is_user  = false;
+        $user = helpgent_get_current_user();
 
-        if ( in_array( 'administrator', $user->roles ) ) {
-            $validator->validate( $this->admin_read_rules() );
-        } else {
-            $is_user  = true;
-            $is_guest = in_array( 'helpgent_guest', $user->roles );
+        if ( $user->is_user ) {
             $validator->validate( $this->user_read_rule() );
+        } else {
+            $validator->validate( $this->admin_read_rules() );
         }
 
         if ( $validator->is_fail() ) {
@@ -59,7 +55,7 @@ class SubmissionController extends Controller {
             );
         }
 
-        if ( $is_user ) {
+        if ( $user->is_user ) {
             $submission_read_dto = new SubmissionReadDTO(
                 intval( $wp_rest_request->get_param( 'per_page' ) ),
                 intval( $wp_rest_request->get_param( 'page' ) ),
@@ -69,7 +65,7 @@ class SubmissionController extends Controller {
                 (string) $wp_rest_request->get_param( 'search' )
             );
             $submission_read_dto->set_created_by( $user->id );
-            $submission_read_dto->set_is_guest( $is_guest );
+            $submission_read_dto->set_is_guest( $user->is_guest );
         } else {
             $submission_read_dto = new SubmissionReadDTO(
                 intval( $wp_rest_request->get_param( 'per_page' ) ),

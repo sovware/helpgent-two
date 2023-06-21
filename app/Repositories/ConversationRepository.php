@@ -73,7 +73,7 @@ class ConversationRepository {
             ]
         )->where( 'submission_id', $submission_id )->where( 'status', 'publish' )->where( 'is_attachment', 1 )->where_exists( $attachment_exists );  
 
-        $count_query   = Conversation::query()->where( 'submission_id', $submission_id );
+        $count_query   = Conversation::query( 'conversation' )->where( 'submission_id', $submission_id )->where( 'status', 'publish' )->where( 'is_attachment', 1 )->where_exists( $attachment_exists );
         $conversations = $conversations_query->pagination( $per_page, $page );
         $conversations = array_map( [$this, 'prepare_conversation'] , $conversations );
 
@@ -151,7 +151,7 @@ class ConversationRepository {
         }
 
         if ( 1 == $conversation->is_attachment ) {
-            throw new Exception( esc_html__( "Sorry, you can't update the attachment.", "helpgent" ), 404 );
+            throw new Exception( esc_html__( "Sorry, you can't update the attachment.", "helpgent" ), 500 );
         }
 
         return Conversation::query()->where( 'id', $conversation_dto->get_id() )->where( 'submission_id', $conversation_dto->get_submission_id() )->update(

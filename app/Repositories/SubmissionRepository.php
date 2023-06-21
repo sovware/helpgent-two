@@ -271,4 +271,9 @@ class SubmissionRepository {
     public function delete_meta( int $submission_id, string $meta_key ) {
         return SubmissionMeta::query()->where( 'submission_id', $submission_id )->where( 'meta_key', $meta_key )->delete();
     }
+
+    public function verify_user( int $id, int $created_by, int $is_guest = 0, string $status = 'active' ): bool {
+        $submission = Submission::query()->where( 'id', $id )->where( 'created_by', $created_by )->where( 'is_guest', $is_guest )->where( 'status', $status )->first();
+        return $submission ? true : false;
+    }
 }

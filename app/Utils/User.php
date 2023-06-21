@@ -17,7 +17,11 @@ class User {
 
     public string $created_at;
 
-    public function __construct( int $id, string $email, string $first_name, string $last_name = '', string $user_name = '', array $roles = [], string $created_at = '' ) {
+    public bool $is_user;
+
+    public bool $is_guest;
+
+    public function __construct( int $id, string $email, string $first_name, string $last_name = '', string $user_name = '', array $roles = [], string $created_at = '', bool $is_user = false, bool $is_guest = false ) {
         $this->id         = $id;
         $this->email      = $email;
         $this->first_name = $first_name;
@@ -25,6 +29,8 @@ class User {
         $this->user_name  = $user_name;
         $this->roles      = $roles;
         $this->created_at = $created_at;
+        $this->is_user    = $is_user;
+        $this->is_guest   = $is_guest;
     }
 
     public function get_id(): int {
@@ -81,5 +87,21 @@ class User {
 
     public function set_created_at( string $created_at ): void {
         $this->created_at = $created_at;
+    }
+
+    public function get_is_user() {
+        return $this->is_user;
+    }
+
+    public function set_is_user( bool $is_user ): void {
+        $this->is_user = $is_user;
+    }
+
+    public function get_is_guest() {
+        return $this->is_guest;
+    }
+
+    public function set_is_guest( bool $is_guest ): void {
+        $this->is_guest = $is_guest;
     }
 }

@@ -13,6 +13,7 @@ Route::post( 'submission', [ SubmissionController::class, 'store' ] );
 Route::group(
     '/', function() {
         Route::get( 'submission', [SubmissionController::class, 'index'] );
+        Route::get( 'conversation/attachment', [ConversationController::class, 'attachment'] );
         Route::resource( 'conversation', ConversationController::class );
     }, ['auth_or_guest']
 );

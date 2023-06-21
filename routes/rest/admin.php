@@ -6,7 +6,6 @@ use HelpGent\App\Http\Controllers\Admin\PageController;
 use HelpGent\App\Http\Controllers\Admin\SettingsController;
 use HelpGent\App\Http\Controllers\Admin\SubmissionController;
 use HelpGent\App\Http\Controllers\Admin\TagController;
-use HelpGent\App\Http\Controllers\Admin\ConversationController;
 use HelpGent\WaxFramework\Routing\Route;
 
 Route::group(
@@ -23,8 +22,6 @@ Route::group(
                 Route::post( '{id}/read', [SubmissionController::class, 'update_read'] );
             } 
         );
-        Route::get( 'conversation/attachment', [ConversationController::class, 'attachment'] );
-        Route::resource( 'conversation', ConversationController::class );
         Route::get( 'settings', [SettingsController::class, 'index'] );
         Route::post( 'settings', [SettingsController::class, 'update'] );
         Route::get( 'page', [PageController::class, 'index'] );

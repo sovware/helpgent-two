@@ -315,7 +315,7 @@ function helpgent_now() {
 }
 
 function helpgent_get_valid_guest() {
-    if ( empty( $_GET['token'] ) ) { //phpcs:ignore WordPress.Security.NonceVerification.Recommended
+    if ( empty( $_REQUEST['token'] ) ) { //phpcs:ignore WordPress.Security.NonceVerification.Recommended
         return null;
     }
 
@@ -325,7 +325,7 @@ function helpgent_get_valid_guest() {
         return $helpgent_guest_user;
     }
 
-    $token = sanitize_text_field( wp_unslash( $_GET['token'] ) ); //phpcs:ignore WordPress.Security.NonceVerification.Recommended
+    $token = sanitize_text_field( wp_unslash( $_REQUEST['token'] ) ); //phpcs:ignore WordPress.Security.NonceVerification.Recommended
 
     $helpgent_guest_user = Guest::query()->where( 'token', $token )->where( 'token_expires_at', '>', date( 'Y-m-d H:i:s', time() ) )->first();
 
@@ -356,7 +356,9 @@ function helpgent_get_current_user() {
             $guest->last_name,
             "",
             ['helpgent_guest'],
-            $guest->created_at
+            $guest->created_at,
+            true,
+            true
         );
     } else {
         $registered_user = wp_get_current_user();
@@ -372,7 +374,8 @@ function helpgent_get_current_user() {
             "",
             $registered_user->user_nicename,
             $registered_user->roles,
-            $registered_user->user_registered
+            $registered_user->user_registered,
+            ! in_array( 'administrator', $registered_user->roles )
         );
     }
 
