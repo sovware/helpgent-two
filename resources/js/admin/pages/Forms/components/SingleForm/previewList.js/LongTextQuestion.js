@@ -45,14 +45,14 @@ export default function LongTextQuestion( props ) {
 			</div>
 			<div className="helpgent-question-element__action">
 				<div className="helpgent-form helpgent-form-group">
-					<input
-						type="text"
+					<textarea
+						name="helpgent-form-long-text"
 						className="helpgent-form__element"
 						placeholder="Type your answer here…"
-					/>
+					></textarea>
 				</div>
-				<button className="helpgent-btn helpgent-btn-primary helpgent-btn-md">
-					Start
+				<button className="helpgent-btn-next helpgent-btn helpgent-btn-primary helpgent-btn-md">
+					Submit
 				</button>
 			</div>
 		</div>

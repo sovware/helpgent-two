@@ -1,39 +1,45 @@
 import ReactQuill from 'react-quill';
 import ReactSVG from 'react-inlinesvg';
-import clock from '@icon/clock.svg';
+import envelope from '@icon/envelope.svg';
 import 'react-quill/dist/quill.snow.css';
-export default function ShortTextQuestion( props ) {
-	const { layoutMode, singleForm, setSingleForm } = props;
+export default function UrlQuestion( props ) {
+	const {
+		layoutMode,
+		singleForm,
+		setSingleForm,
+		selectedQuestion: fileQuestion,
+	} = props;
 	const { content } = singleForm;
 	const { questions } = JSON.parse( content );
-	const welcomeQuestion = questions.filter(
-		( item ) => item.screen_type === 'welcome'
-	);
-	const fieldElements = welcomeQuestion[ 0 ].fields[ 0 ].elements;
+
+	const { elements } = fileQuestion[ 0 ].fields[ 0 ];
 
 	const quillModules = {
 		toolbar: false,
 	};
 
-	let greetText = 'Type your greeting text here!*';
-	let description = '';
+	const elementsObject = elements.reduce( ( acc, element ) => {
+		acc[ element.key ] = element;
+		return acc;
+	}, {} );
 
-	for ( const element of fieldElements ) {
-		if ( 'greeting_text' in element ) {
-			greetText = element.greeting_text;
-			break;
-		} else if ( 'description' in element ) {
-			description = element.description;
-			break;
-		}
-	}
+	const {
+		label,
+		description,
+		placeholder,
+		required,
+		'action-btn': actionBtn,
+	} = elementsObject;
+
+	console.log( elementsObject );
+
 	return (
 		<div className="helpgent-question-element">
 			<div className="helpgent-question-element__text">
 				<div className="helpgent-question-element__label">
 					<ReactQuill
 						modules={ quillModules }
-						placeholder="Type your question here!*"
+						placeholder="Website"
 					/>
 				</div>
 				<div className="helpgent-question-element__description">
@@ -46,14 +52,17 @@ export default function ShortTextQuestion( props ) {
 			<div className="helpgent-question-element__action">
 				<div className="helpgent-form helpgent-form-group">
 					<input
-						type="text"
+						type="url"
 						className="helpgent-form__element"
-						placeholder="Type your answer here…"
+						placeholder="Https://"
 					/>
 				</div>
-				<button className="helpgent-btn-next helpgent-btn helpgent-btn-primary helpgent-btn-md">
-					Submit
-				</button>
+
+				{ actionBtn.isActive && (
+					<button className="helpgent-btn-next helpgent-btn helpgent-btn-primary helpgent-btn-md">
+						{ actionBtn.button_text }
+					</button>
+				) }
 			</div>
 		</div>
 	);

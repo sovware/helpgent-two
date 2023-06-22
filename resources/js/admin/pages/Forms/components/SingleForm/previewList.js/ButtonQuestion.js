@@ -29,30 +29,9 @@ export default function ButtonQuestion( props ) {
 	}
 	return (
 		<div className="helpgent-question-element">
-			<div className="helpgent-question-element__text">
-				<div className="helpgent-question-element__label">
-					<ReactQuill
-						modules={ quillModules }
-						placeholder="Type your greeting text here!*"
-					/>
-				</div>
-				<div className="helpgent-question-element__description">
-					<ReactQuill
-						modules={ quillModules }
-						placeholder="Type description here!*"
-					/>
-				</div>
-			</div>
 			<div className="helpgent-question-element__action">
-				<div className="helpgent-form-group">
-					<input
-						type="text"
-						className="helpgent-form-element"
-						placeholder="Type your answer here"
-					/>
-				</div>
-				<button className="helpgent-btn helpgent-btn-primary helpgent-btn-md">
-					Start
+				<button className="helpgent-btn-submit helpgent-btn helpgent-btn-primary helpgent-btn-md">
+					Submit
 				</button>
 			</div>
 		</div>

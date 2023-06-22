@@ -25,180 +25,9 @@ import picture from '../../assets/svg/icon/picture.svg';
 import arrowSquareRight from '../../assets/svg/icon/arrow-square-right.svg';
 import arrowSquareLeft from '../../assets/svg/icon/arrow-square-left.svg';
 
-const allForms = {
-	questions: [
-		{
-			id: uuidv4(),
-			title: 'Welcome',
-			screen_type: 'welcome',
-			icon: arrowSquareRight,
-			isPro: false,
-			isComing: false,
-			position: { x: -150, y: 0 },
-			fields: [
-				/* Text Field */
-				{
-					id: uuidv4(), //string
-					type: 'text', // elementor, gutenburg, shortcode
-					elements: [
-						{ greeting_text: '' },
-						{ description: '' },
-						{ is_required: '0' },
-						{ is_show_timer: '0' },
-						{ time_in_mins: '' },
-						{ is_time_to_complete: '0' },
-						{ button_text: 'Submit' },
-					],
-					allowedRules: [],
-					fieldDesign: [
-						{
-							textStyle: [
-								{ font_family: '' },
-								{ font_size: '' },
-								{ font_weight: '' },
-								{ text_color: '' },
-							],
-						},
-						{
-							buttonStyle: [
-								{ button_color: '' },
-								{ button_radius: '' },
-								{ text_color: '' },
-								{ font_size: '' },
-							],
-						},
-						{
-							mediaStyle: [
-								{ is_video_overlay: '0' },
-								{ overlay_color: '' },
-								{ overlay_opacity: '' },
-							],
-						},
-					],
-					fieldLogic: [],
-				},
-			],
-			groupName: 'initial',
-			medias: [],
-			layout: 'content-right',
-		},
-		{
-			id: uuidv4(),
-			title: 'End',
-			screen_type: 'end',
-			icon: arrowSquareLeft,
-			isPro: false,
-			isComing: false,
-			position: { x: -150, y: 0 },
-			fields: [
-				/* Text Field */
-				{
-					id: uuidv4(), //string
-					type: 'text', // elementor, gutenburg, shortcode
-					elements: [
-						{ greeting_text: '' },
-						{ description: '' },
-						{ is_required: '0' },
-						{ is_show_timer: '0' },
-						{ time_in_mins: '' },
-						{ is_time_to_complete: '0' },
-						{ button_text: 'Submit' },
-					],
-					allowedRules: [],
-					fieldDesign: [
-						{
-							textStyle: [
-								{ font_family: '' },
-								{ font_size: '' },
-								{ font_weight: '' },
-								{ text_color: '' },
-							],
-						},
-						{
-							buttonStyle: [
-								{ button_color: '' },
-								{ button_radius: '' },
-								{ text_color: '' },
-								{ font_size: '' },
-							],
-						},
-						{
-							mediaStyle: [
-								{ is_video_overlay: '0' },
-								{ overlay_color: '' },
-								{ overlay_opacity: '' },
-							],
-						},
-					],
-					fieldLogic: [],
-				},
-			],
-			groupName: 'initial',
-			medias: [],
-			layout: 'content-right',
-		},
-	],
-};
-
-const endScreen = {
-	id: uuidv4(),
-	title: 'End',
-	screen_type: 'end',
-	icon: arrowSquareLeft,
-	isPro: false,
-	isComing: false,
-	position: { x: -150, y: 0 },
-	fields: [
-		/* Text Field */
-		{
-			id: uuidv4(), //string
-			type: 'text', // elementor, gutenburg, shortcode
-			elements: [
-				{ greeting_text: '' },
-				{ description: '' },
-				{ is_required: '0' },
-				{ is_show_timer: '0' },
-				{ time_in_mins: '' },
-				{ is_time_to_complete: '0' },
-				{ button_text: 'Submit' },
-			],
-			allowedRules: [],
-			fieldDesign: [
-				{
-					textStyle: [
-						{ font_family: '' },
-						{ font_size: '' },
-						{ font_weight: '' },
-						{ text_color: '' },
-					],
-				},
-				{
-					buttonStyle: [
-						{ button_color: '' },
-						{ button_radius: '' },
-						{ text_color: '' },
-						{ font_size: '' },
-					],
-				},
-				{
-					mediaStyle: [
-						{ is_video_overlay: '0' },
-						{ overlay_color: '' },
-						{ overlay_opacity: '' },
-					],
-				},
-			],
-			fieldLogic: [],
-		},
-	],
-	groupName: 'initial',
-	medias: [],
-	layout: 'content-right',
-};
-
 //apply filter
 
-const screens = [
+const questions = [
 	{
 		id: uuidv4(),
 		title: 'Long text',
@@ -213,37 +42,88 @@ const screens = [
 				id: uuidv4(), //string
 				type: 'text', // elementor, gutenburg, shortcode
 				elements: [
-					{ greeting_text: '' },
-					{ description: '' },
-					{ is_required: '0' },
-					{ is_show_timer: '0' },
-					{ time_in_mins: '' },
-					{ is_time_to_complete: '0' },
-					{ button_text: 'Submit' },
+					{
+						key: 'greeting-text',
+						greeting_text: '',
+					},
+					{
+						key: 'description',
+						label: '',
+					},
+					{
+						key: 'required',
+						is_required: '0',
+					},
+					{
+						key: 'show-timer',
+						is_show_timer: '0',
+					},
+					{
+						key: 'time-mins',
+						time_in_mins: '',
+					},
+					{
+						key: 'time-complete',
+						is_time_to_complete: '0',
+					},
+					{
+						key: 'btn-text',
+						button_text: 'Submit',
+					},
 				],
 				allowedRules: [],
 				fieldDesign: [
 					{
-						textStyle: [
-							{ font_family: '' },
-							{ font_size: '' },
-							{ font_weight: '' },
-							{ text_color: '' },
+						labelStyle: [
+							{
+								key: 'font-family',
+								font_family: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
+							{
+								key: 'font-weight',
+								font_weight: '',
+							},
+							{
+								key: 'text-color',
+								text_color: '',
+							},
 						],
 					},
 					{
 						buttonStyle: [
-							{ button_color: '' },
-							{ button_radius: '' },
-							{ text_color: '' },
-							{ font_size: '' },
+							{
+								key: 'btn-color',
+								button_color: '',
+							},
+							{
+								key: 'btn-radius',
+								button_radius: '',
+							},
+							{
+								key: 'btn-text-color',
+								text_color: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
 						],
 					},
 					{
 						mediaStyle: [
 							{ is_video_overlay: '0' },
-							{ overlay_color: '' },
-							{ overlay_opacity: '' },
+							{
+								key: 'overlay-color',
+								overlay_color: '',
+							},
+							{
+								key: 'overlay-opacity',
+								overlay_opacity: '',
+							},
 						],
 					},
 				],
@@ -268,37 +148,88 @@ const screens = [
 				id: uuidv4(), //string
 				type: 'text', // elementor, gutenburg, shortcode
 				elements: [
-					{ greeting_text: '' },
-					{ description: '' },
-					{ is_required: '0' },
-					{ is_show_timer: '0' },
-					{ time_in_mins: '' },
-					{ is_time_to_complete: '0' },
-					{ button_text: 'Submit' },
+					{
+						key: 'greeting-text',
+						greeting_text: '',
+					},
+					{
+						key: 'description',
+						label: '',
+					},
+					{
+						key: 'required',
+						is_required: '0',
+					},
+					{
+						key: 'show-timer',
+						is_show_timer: '0',
+					},
+					{
+						key: 'time-mins',
+						time_in_mins: '',
+					},
+					{
+						key: 'time-complete',
+						is_time_to_complete: '0',
+					},
+					{
+						key: 'btn-text',
+						button_text: 'Submit',
+					},
 				],
 				allowedRules: [],
 				fieldDesign: [
 					{
-						textStyle: [
-							{ font_family: '' },
-							{ font_size: '' },
-							{ font_weight: '' },
-							{ text_color: '' },
+						labelStyle: [
+							{
+								key: 'font-family',
+								font_family: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
+							{
+								key: 'font-weight',
+								font_weight: '',
+							},
+							{
+								key: 'text-color',
+								text_color: '',
+							},
 						],
 					},
 					{
 						buttonStyle: [
-							{ button_color: '' },
-							{ button_radius: '' },
-							{ text_color: '' },
-							{ font_size: '' },
+							{
+								key: 'btn-color',
+								button_color: '',
+							},
+							{
+								key: 'btn-radius',
+								button_radius: '',
+							},
+							{
+								key: 'btn-text-color',
+								text_color: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
 						],
 					},
 					{
 						mediaStyle: [
 							{ is_video_overlay: '0' },
-							{ overlay_color: '' },
-							{ overlay_opacity: '' },
+							{
+								key: 'overlay-color',
+								overlay_color: '',
+							},
+							{
+								key: 'overlay-opacity',
+								overlay_opacity: '',
+							},
 						],
 					},
 				],
@@ -323,37 +254,88 @@ const screens = [
 				id: uuidv4(), //string
 				type: 'text', // elementor, gutenburg, shortcode
 				elements: [
-					{ greeting_text: '' },
-					{ description: '' },
-					{ is_required: '0' },
-					{ is_show_timer: '0' },
-					{ time_in_mins: '' },
-					{ is_time_to_complete: '0' },
-					{ button_text: 'Submit' },
+					{
+						key: 'greeting-text',
+						greeting_text: '',
+					},
+					{
+						key: 'description',
+						label: '',
+					},
+					{
+						key: 'required',
+						is_required: '0',
+					},
+					{
+						key: 'show-timer',
+						is_show_timer: '0',
+					},
+					{
+						key: 'time-mins',
+						time_in_mins: '',
+					},
+					{
+						key: 'time-complete',
+						is_time_to_complete: '0',
+					},
+					{
+						key: 'btn-text',
+						button_text: 'Submit',
+					},
 				],
 				allowedRules: [],
 				fieldDesign: [
 					{
-						textStyle: [
-							{ font_family: '' },
-							{ font_size: '' },
-							{ font_weight: '' },
-							{ text_color: '' },
+						labelStyle: [
+							{
+								key: 'font-family',
+								font_family: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
+							{
+								key: 'font-weight',
+								font_weight: '',
+							},
+							{
+								key: 'text-color',
+								text_color: '',
+							},
 						],
 					},
 					{
 						buttonStyle: [
-							{ button_color: '' },
-							{ button_radius: '' },
-							{ text_color: '' },
-							{ font_size: '' },
+							{
+								key: 'btn-color',
+								button_color: '',
+							},
+							{
+								key: 'btn-radius',
+								button_radius: '',
+							},
+							{
+								key: 'btn-text-color',
+								text_color: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
 						],
 					},
 					{
 						mediaStyle: [
 							{ is_video_overlay: '0' },
-							{ overlay_color: '' },
-							{ overlay_opacity: '' },
+							{
+								key: 'overlay-color',
+								overlay_color: '',
+							},
+							{
+								key: 'overlay-opacity',
+								overlay_opacity: '',
+							},
 						],
 					},
 				],
@@ -378,37 +360,88 @@ const screens = [
 				id: uuidv4(), //string
 				type: 'text', // elementor, gutenburg, shortcode
 				elements: [
-					{ greeting_text: '' },
-					{ description: '' },
-					{ is_required: '0' },
-					{ is_show_timer: '0' },
-					{ time_in_mins: '' },
-					{ is_time_to_complete: '0' },
-					{ button_text: 'Submit' },
+					{
+						key: 'greeting-text',
+						greeting_text: '',
+					},
+					{
+						key: 'description',
+						label: '',
+					},
+					{
+						key: 'required',
+						is_required: '0',
+					},
+					{
+						key: 'show-timer',
+						is_show_timer: '0',
+					},
+					{
+						key: 'time-mins',
+						time_in_mins: '',
+					},
+					{
+						key: 'time-complete',
+						is_time_to_complete: '0',
+					},
+					{
+						key: 'btn-text',
+						button_text: 'Submit',
+					},
 				],
 				allowedRules: [],
 				fieldDesign: [
 					{
-						textStyle: [
-							{ font_family: '' },
-							{ font_size: '' },
-							{ font_weight: '' },
-							{ text_color: '' },
+						labelStyle: [
+							{
+								key: 'font-family',
+								font_family: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
+							{
+								key: 'font-weight',
+								font_weight: '',
+							},
+							{
+								key: 'text-color',
+								text_color: '',
+							},
 						],
 					},
 					{
 						buttonStyle: [
-							{ button_color: '' },
-							{ button_radius: '' },
-							{ text_color: '' },
-							{ font_size: '' },
+							{
+								key: 'btn-color',
+								button_color: '',
+							},
+							{
+								key: 'btn-radius',
+								button_radius: '',
+							},
+							{
+								key: 'btn-text-color',
+								text_color: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
 						],
 					},
 					{
 						mediaStyle: [
 							{ is_video_overlay: '0' },
-							{ overlay_color: '' },
-							{ overlay_opacity: '' },
+							{
+								key: 'overlay-color',
+								overlay_color: '',
+							},
+							{
+								key: 'overlay-opacity',
+								overlay_opacity: '',
+							},
 						],
 					},
 				],
@@ -433,37 +466,93 @@ const screens = [
 				id: uuidv4(), //string
 				type: 'text', // elementor, gutenburg, shortcode
 				elements: [
-					{ greeting_text: '' },
-					{ description: '' },
-					{ is_required: '0' },
-					{ is_show_timer: '0' },
-					{ time_in_mins: '' },
-					{ is_time_to_complete: '0' },
-					{ button_text: 'Submit' },
+					{
+						key: 'label',
+						text: 'Type your question here!*',
+					},
+					{
+						key: 'description',
+						text: 'Type a description',
+					},
+					{
+						key: 'required',
+						is_required: '0',
+					},
+					{
+						key: 'upload-btn-text',
+						upload_btn_text: 'Drop file here or click to upload',
+					},
+					{
+						key: 'upload-note',
+						upload_note: 'Max file size 10MB',
+					},
+					{
+						key: 'file-size',
+						maxSize: '3',
+					},
+					{
+						key: 'file-count',
+						maxFile: 'Submit',
+					},
+					{
+						key: 'action-btn',
+						isActive: false,
+						button_text: 'Submit',
+					},
 				],
 				allowedRules: [],
 				fieldDesign: [
 					{
-						textStyle: [
-							{ font_family: '' },
-							{ font_size: '' },
-							{ font_weight: '' },
-							{ text_color: '' },
+						labelStyle: [
+							{
+								key: 'font-family',
+								font_family: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
+							{
+								key: 'font-weight',
+								font_weight: '',
+							},
+							{
+								key: 'text-color',
+								text_color: '',
+							},
 						],
 					},
 					{
 						buttonStyle: [
-							{ button_color: '' },
-							{ button_radius: '' },
-							{ text_color: '' },
-							{ font_size: '' },
+							{
+								key: 'btn-color',
+								button_color: '',
+							},
+							{
+								key: 'btn-radius',
+								button_radius: '',
+							},
+							{
+								key: 'btn-text-color',
+								text_color: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
 						],
 					},
 					{
 						mediaStyle: [
 							{ is_video_overlay: '0' },
-							{ overlay_color: '' },
-							{ overlay_opacity: '' },
+							{
+								key: 'overlay-color',
+								overlay_color: '',
+							},
+							{
+								key: 'overlay-opacity',
+								overlay_opacity: '',
+							},
 						],
 					},
 				],
@@ -488,37 +577,89 @@ const screens = [
 				id: uuidv4(), //string
 				type: 'text', // elementor, gutenburg, shortcode
 				elements: [
-					{ greeting_text: '' },
-					{ description: '' },
-					{ is_required: '0' },
-					{ is_show_timer: '0' },
-					{ time_in_mins: '' },
-					{ is_time_to_complete: '0' },
-					{ button_text: 'Submit' },
+					{
+						key: 'label',
+						text: 'Type your question here!*',
+					},
+					{
+						key: 'description',
+						text: 'Type a description',
+					},
+					{
+						key: 'required',
+						is_required: '0',
+					},
+					{
+						key: 'min',
+						minValue: '0',
+					},
+					{
+						key: 'max',
+						maxValue: '0',
+					},
+					{
+						key: 'start',
+						startValue: '0',
+					},
+					{
+						key: 'action-btn',
+						isActive: false,
+						button_text: 'Submit',
+					},
 				],
 				allowedRules: [],
 				fieldDesign: [
 					{
-						textStyle: [
-							{ font_family: '' },
-							{ font_size: '' },
-							{ font_weight: '' },
-							{ text_color: '' },
+						labelStyle: [
+							{
+								key: 'font-family',
+								font_family: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
+							{
+								key: 'font-weight',
+								font_weight: '',
+							},
+							{
+								key: 'text-color',
+								text_color: '',
+							},
 						],
 					},
 					{
 						buttonStyle: [
-							{ button_color: '' },
-							{ button_radius: '' },
-							{ text_color: '' },
-							{ font_size: '' },
+							{
+								key: 'btn-color',
+								button_color: '',
+							},
+							{
+								key: 'btn-radius',
+								button_radius: '',
+							},
+							{
+								key: 'btn-text-color',
+								text_color: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
 						],
 					},
 					{
 						mediaStyle: [
 							{ is_video_overlay: '0' },
-							{ overlay_color: '' },
-							{ overlay_opacity: '' },
+							{
+								key: 'overlay-color',
+								overlay_color: '',
+							},
+							{
+								key: 'overlay-opacity',
+								overlay_opacity: '',
+							},
 						],
 					},
 				],
@@ -543,37 +684,85 @@ const screens = [
 				id: uuidv4(), //string
 				type: 'text', // elementor, gutenburg, shortcode
 				elements: [
-					{ greeting_text: '' },
-					{ description: '' },
-					{ is_required: '0' },
-					{ is_show_timer: '0' },
-					{ time_in_mins: '' },
-					{ is_time_to_complete: '0' },
-					{ button_text: 'Submit' },
+					{
+						key: 'label',
+						text: 'Type your question here!*',
+					},
+					{
+						key: 'description',
+						text: 'Type a description',
+					},
+					{
+						key: 'required',
+						is_required: '0',
+					},
+					{
+						key: 'format',
+						dataFormat: 'MM-DD-YYYY',
+					},
+					{
+						key: 'separator',
+						sign: '-',
+					},
+					{
+						key: 'action-btn',
+						isActive: false,
+						button_text: 'Submit',
+					},
 				],
 				allowedRules: [],
 				fieldDesign: [
 					{
-						textStyle: [
-							{ font_family: '' },
-							{ font_size: '' },
-							{ font_weight: '' },
-							{ text_color: '' },
+						labelStyle: [
+							{
+								key: 'font-family',
+								font_family: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
+							{
+								key: 'font-weight',
+								font_weight: '',
+							},
+							{
+								key: 'text-color',
+								text_color: '',
+							},
 						],
 					},
 					{
 						buttonStyle: [
-							{ button_color: '' },
-							{ button_radius: '' },
-							{ text_color: '' },
-							{ font_size: '' },
+							{
+								key: 'btn-color',
+								button_color: '',
+							},
+							{
+								key: 'btn-radius',
+								button_radius: '',
+							},
+							{
+								key: 'btn-text-color',
+								text_color: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
 						],
 					},
 					{
 						mediaStyle: [
 							{ is_video_overlay: '0' },
-							{ overlay_color: '' },
-							{ overlay_opacity: '' },
+							{
+								key: 'overlay-color',
+								overlay_color: '',
+							},
+							{
+								key: 'overlay-opacity',
+								overlay_opacity: '',
+							},
 						],
 					},
 				],
@@ -598,37 +787,88 @@ const screens = [
 				id: uuidv4(), //string
 				type: 'text', // elementor, gutenburg, shortcode
 				elements: [
-					{ greeting_text: '' },
-					{ description: '' },
-					{ is_required: '0' },
-					{ is_show_timer: '0' },
-					{ time_in_mins: '' },
-					{ is_time_to_complete: '0' },
-					{ button_text: 'Submit' },
+					{
+						key: 'greeting-text',
+						greeting_text: '',
+					},
+					{
+						key: 'description',
+						label: '',
+					},
+					{
+						key: 'required',
+						is_required: '0',
+					},
+					{
+						key: 'show-timer',
+						is_show_timer: '0',
+					},
+					{
+						key: 'time-mins',
+						time_in_mins: '',
+					},
+					{
+						key: 'time-complete',
+						is_time_to_complete: '0',
+					},
+					{
+						key: 'btn-text',
+						button_text: 'Submit',
+					},
 				],
 				allowedRules: [],
 				fieldDesign: [
 					{
-						textStyle: [
-							{ font_family: '' },
-							{ font_size: '' },
-							{ font_weight: '' },
-							{ text_color: '' },
+						labelStyle: [
+							{
+								key: 'font-family',
+								font_family: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
+							{
+								key: 'font-weight',
+								font_weight: '',
+							},
+							{
+								key: 'text-color',
+								text_color: '',
+							},
 						],
 					},
 					{
 						buttonStyle: [
-							{ button_color: '' },
-							{ button_radius: '' },
-							{ text_color: '' },
-							{ font_size: '' },
+							{
+								key: 'btn-color',
+								button_color: '',
+							},
+							{
+								key: 'btn-radius',
+								button_radius: '',
+							},
+							{
+								key: 'btn-text-color',
+								text_color: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
 						],
 					},
 					{
 						mediaStyle: [
 							{ is_video_overlay: '0' },
-							{ overlay_color: '' },
-							{ overlay_opacity: '' },
+							{
+								key: 'overlay-color',
+								overlay_color: '',
+							},
+							{
+								key: 'overlay-opacity',
+								overlay_opacity: '',
+							},
 						],
 					},
 				],
@@ -653,37 +893,88 @@ const screens = [
 				id: uuidv4(), //string
 				type: 'text', // elementor, gutenburg, shortcode
 				elements: [
-					{ greeting_text: '' },
-					{ description: '' },
-					{ is_required: '0' },
-					{ is_show_timer: '0' },
-					{ time_in_mins: '' },
-					{ is_time_to_complete: '0' },
-					{ button_text: 'Submit' },
+					{
+						key: 'greeting-text',
+						greeting_text: '',
+					},
+					{
+						key: 'description',
+						label: '',
+					},
+					{
+						key: 'required',
+						is_required: '0',
+					},
+					{
+						key: 'show-timer',
+						is_show_timer: '0',
+					},
+					{
+						key: 'time-mins',
+						time_in_mins: '',
+					},
+					{
+						key: 'time-complete',
+						is_time_to_complete: '0',
+					},
+					{
+						key: 'btn-text',
+						button_text: 'Submit',
+					},
 				],
 				allowedRules: [],
 				fieldDesign: [
 					{
-						textStyle: [
-							{ font_family: '' },
-							{ font_size: '' },
-							{ font_weight: '' },
-							{ text_color: '' },
+						labelStyle: [
+							{
+								key: 'font-family',
+								font_family: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
+							{
+								key: 'font-weight',
+								font_weight: '',
+							},
+							{
+								key: 'text-color',
+								text_color: '',
+							},
 						],
 					},
 					{
 						buttonStyle: [
-							{ button_color: '' },
-							{ button_radius: '' },
-							{ text_color: '' },
-							{ font_size: '' },
+							{
+								key: 'btn-color',
+								button_color: '',
+							},
+							{
+								key: 'btn-radius',
+								button_radius: '',
+							},
+							{
+								key: 'btn-text-color',
+								text_color: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
 						],
 					},
 					{
 						mediaStyle: [
 							{ is_video_overlay: '0' },
-							{ overlay_color: '' },
-							{ overlay_opacity: '' },
+							{
+								key: 'overlay-color',
+								overlay_color: '',
+							},
+							{
+								key: 'overlay-opacity',
+								overlay_opacity: '',
+							},
 						],
 					},
 				],
@@ -708,37 +999,88 @@ const screens = [
 				id: uuidv4(), //string
 				type: 'text', // elementor, gutenburg, shortcode
 				elements: [
-					{ greeting_text: '' },
-					{ description: '' },
-					{ is_required: '0' },
-					{ is_show_timer: '0' },
-					{ time_in_mins: '' },
-					{ is_time_to_complete: '0' },
-					{ button_text: 'Submit' },
+					{
+						key: 'greeting-text',
+						greeting_text: '',
+					},
+					{
+						key: 'description',
+						label: '',
+					},
+					{
+						key: 'required',
+						is_required: '0',
+					},
+					{
+						key: 'show-timer',
+						is_show_timer: '0',
+					},
+					{
+						key: 'time-mins',
+						time_in_mins: '',
+					},
+					{
+						key: 'time-complete',
+						is_time_to_complete: '0',
+					},
+					{
+						key: 'btn-text',
+						button_text: 'Submit',
+					},
 				],
 				allowedRules: [],
 				fieldDesign: [
 					{
-						textStyle: [
-							{ font_family: '' },
-							{ font_size: '' },
-							{ font_weight: '' },
-							{ text_color: '' },
+						labelStyle: [
+							{
+								key: 'font-family',
+								font_family: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
+							{
+								key: 'font-weight',
+								font_weight: '',
+							},
+							{
+								key: 'text-color',
+								text_color: '',
+							},
 						],
 					},
 					{
 						buttonStyle: [
-							{ button_color: '' },
-							{ button_radius: '' },
-							{ text_color: '' },
-							{ font_size: '' },
+							{
+								key: 'btn-color',
+								button_color: '',
+							},
+							{
+								key: 'btn-radius',
+								button_radius: '',
+							},
+							{
+								key: 'btn-text-color',
+								text_color: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
 						],
 					},
 					{
 						mediaStyle: [
 							{ is_video_overlay: '0' },
-							{ overlay_color: '' },
-							{ overlay_opacity: '' },
+							{
+								key: 'overlay-color',
+								overlay_color: '',
+							},
+							{
+								key: 'overlay-opacity',
+								overlay_opacity: '',
+							},
 						],
 					},
 				],
@@ -763,37 +1105,88 @@ const screens = [
 				id: uuidv4(), //string
 				type: 'text', // elementor, gutenburg, shortcode
 				elements: [
-					{ greeting_text: '' },
-					{ description: '' },
-					{ is_required: '0' },
-					{ is_show_timer: '0' },
-					{ time_in_mins: '' },
-					{ is_time_to_complete: '0' },
-					{ button_text: 'Submit' },
+					{
+						key: 'greeting-text',
+						greeting_text: '',
+					},
+					{
+						key: 'description',
+						label: '',
+					},
+					{
+						key: 'required',
+						is_required: '0',
+					},
+					{
+						key: 'show-timer',
+						is_show_timer: '0',
+					},
+					{
+						key: 'time-mins',
+						time_in_mins: '',
+					},
+					{
+						key: 'time-complete',
+						is_time_to_complete: '0',
+					},
+					{
+						key: 'btn-text',
+						button_text: 'Submit',
+					},
 				],
 				allowedRules: [],
 				fieldDesign: [
 					{
-						textStyle: [
-							{ font_family: '' },
-							{ font_size: '' },
-							{ font_weight: '' },
-							{ text_color: '' },
+						labelStyle: [
+							{
+								key: 'font-family',
+								font_family: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
+							{
+								key: 'font-weight',
+								font_weight: '',
+							},
+							{
+								key: 'text-color',
+								text_color: '',
+							},
 						],
 					},
 					{
 						buttonStyle: [
-							{ button_color: '' },
-							{ button_radius: '' },
-							{ text_color: '' },
-							{ font_size: '' },
+							{
+								key: 'btn-color',
+								button_color: '',
+							},
+							{
+								key: 'btn-radius',
+								button_radius: '',
+							},
+							{
+								key: 'btn-text-color',
+								text_color: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
 						],
 					},
 					{
 						mediaStyle: [
 							{ is_video_overlay: '0' },
-							{ overlay_color: '' },
-							{ overlay_opacity: '' },
+							{
+								key: 'overlay-color',
+								overlay_color: '',
+							},
+							{
+								key: 'overlay-opacity',
+								overlay_opacity: '',
+							},
 						],
 					},
 				],
@@ -818,37 +1211,81 @@ const screens = [
 				id: uuidv4(), //string
 				type: 'text', // elementor, gutenburg, shortcode
 				elements: [
-					{ greeting_text: '' },
-					{ description: '' },
-					{ is_required: '0' },
-					{ is_show_timer: '0' },
-					{ time_in_mins: '' },
-					{ is_time_to_complete: '0' },
-					{ button_text: 'Submit' },
+					{
+						key: 'label',
+						text: '',
+					},
+					{
+						key: 'description',
+						text: '',
+					},
+					{
+						key: 'placeholder',
+						text: '',
+					},
+					{
+						key: 'required',
+						is_required: '0',
+					},
+					{
+						key: 'action-btn',
+						isActive: false,
+						button_text: 'Submit',
+					},
 				],
 				allowedRules: [],
 				fieldDesign: [
 					{
-						textStyle: [
-							{ font_family: '' },
-							{ font_size: '' },
-							{ font_weight: '' },
-							{ text_color: '' },
+						labelStyle: [
+							{
+								key: 'font-family',
+								font_family: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
+							{
+								key: 'font-weight',
+								font_weight: '',
+							},
+							{
+								key: 'text-color',
+								text_color: '',
+							},
 						],
 					},
 					{
 						buttonStyle: [
-							{ button_color: '' },
-							{ button_radius: '' },
-							{ text_color: '' },
-							{ font_size: '' },
+							{
+								key: 'btn-color',
+								button_color: '',
+							},
+							{
+								key: 'btn-radius',
+								button_radius: '',
+							},
+							{
+								key: 'btn-text-color',
+								text_color: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
 						],
 					},
 					{
 						mediaStyle: [
 							{ is_video_overlay: '0' },
-							{ overlay_color: '' },
-							{ overlay_opacity: '' },
+							{
+								key: 'overlay-color',
+								overlay_color: '',
+							},
+							{
+								key: 'overlay-opacity',
+								overlay_opacity: '',
+							},
 						],
 					},
 				],
@@ -873,37 +1310,81 @@ const screens = [
 				id: uuidv4(), //string
 				type: 'text', // elementor, gutenburg, shortcode
 				elements: [
-					{ greeting_text: '' },
-					{ description: '' },
-					{ is_required: '0' },
-					{ is_show_timer: '0' },
-					{ time_in_mins: '' },
-					{ is_time_to_complete: '0' },
-					{ button_text: 'Submit' },
+					{
+						key: 'label',
+						text: '',
+					},
+					{
+						key: 'description',
+						text: '',
+					},
+					{
+						key: 'placeholder',
+						text: '',
+					},
+					{
+						key: 'required',
+						is_required: '0',
+					},
+					{
+						key: 'action-btn',
+						isActive: false,
+						button_text: 'Submit',
+					},
 				],
 				allowedRules: [],
 				fieldDesign: [
 					{
-						textStyle: [
-							{ font_family: '' },
-							{ font_size: '' },
-							{ font_weight: '' },
-							{ text_color: '' },
+						labelStyle: [
+							{
+								key: 'font-family',
+								font_family: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
+							{
+								key: 'font-weight',
+								font_weight: '',
+							},
+							{
+								key: 'text-color',
+								text_color: '',
+							},
 						],
 					},
 					{
 						buttonStyle: [
-							{ button_color: '' },
-							{ button_radius: '' },
-							{ text_color: '' },
-							{ font_size: '' },
+							{
+								key: 'btn-color',
+								button_color: '',
+							},
+							{
+								key: 'btn-radius',
+								button_radius: '',
+							},
+							{
+								key: 'btn-text-color',
+								text_color: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
 						],
 					},
 					{
 						mediaStyle: [
 							{ is_video_overlay: '0' },
-							{ overlay_color: '' },
-							{ overlay_opacity: '' },
+							{
+								key: 'overlay-color',
+								overlay_color: '',
+							},
+							{
+								key: 'overlay-opacity',
+								overlay_opacity: '',
+							},
 						],
 					},
 				],
@@ -917,7 +1398,7 @@ const screens = [
 	{
 		id: uuidv4(),
 		title: 'Website',
-		screen_type: 'website',
+		screen_type: 'url',
 		icon: url,
 		isPro: false,
 		isComing: false,
@@ -928,37 +1409,81 @@ const screens = [
 				id: uuidv4(), //string
 				type: 'text', // elementor, gutenburg, shortcode
 				elements: [
-					{ greeting_text: '' },
-					{ description: '' },
-					{ is_required: '0' },
-					{ is_show_timer: '0' },
-					{ time_in_mins: '' },
-					{ is_time_to_complete: '0' },
-					{ button_text: 'Submit' },
+					{
+						key: 'label',
+						text: '',
+					},
+					{
+						key: 'description',
+						text: '',
+					},
+					{
+						key: 'placeholder',
+						text: '',
+					},
+					{
+						key: 'required',
+						is_required: '0',
+					},
+					{
+						key: 'action-btn',
+						isActive: false,
+						button_text: 'Submit',
+					},
 				],
 				allowedRules: [],
 				fieldDesign: [
 					{
-						textStyle: [
-							{ font_family: '' },
-							{ font_size: '' },
-							{ font_weight: '' },
-							{ text_color: '' },
+						labelStyle: [
+							{
+								key: 'font-family',
+								font_family: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
+							{
+								key: 'font-weight',
+								font_weight: '',
+							},
+							{
+								key: 'text-color',
+								text_color: '',
+							},
 						],
 					},
 					{
 						buttonStyle: [
-							{ button_color: '' },
-							{ button_radius: '' },
-							{ text_color: '' },
-							{ font_size: '' },
+							{
+								key: 'btn-color',
+								button_color: '',
+							},
+							{
+								key: 'btn-radius',
+								button_radius: '',
+							},
+							{
+								key: 'btn-text-color',
+								text_color: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
 						],
 					},
 					{
 						mediaStyle: [
 							{ is_video_overlay: '0' },
-							{ overlay_color: '' },
-							{ overlay_opacity: '' },
+							{
+								key: 'overlay-color',
+								overlay_color: '',
+							},
+							{
+								key: 'overlay-opacity',
+								overlay_opacity: '',
+							},
 						],
 					},
 				],
@@ -982,37 +1507,88 @@ const screens = [
 				id: uuidv4(), //string
 				type: 'text', // elementor, gutenburg, shortcode
 				elements: [
-					{ greeting_text: '' },
-					{ description: '' },
-					{ is_required: '0' },
-					{ is_show_timer: '0' },
-					{ time_in_mins: '' },
-					{ is_time_to_complete: '0' },
-					{ button_text: 'Submit' },
+					{
+						key: 'greeting-text',
+						greeting_text: '',
+					},
+					{
+						key: 'description',
+						label: '',
+					},
+					{
+						key: 'required',
+						is_required: '0',
+					},
+					{
+						key: 'show-timer',
+						is_show_timer: '0',
+					},
+					{
+						key: 'time-mins',
+						time_in_mins: '',
+					},
+					{
+						key: 'time-complete',
+						is_time_to_complete: '0',
+					},
+					{
+						key: 'btn-text',
+						button_text: 'Submit',
+					},
 				],
 				allowedRules: [],
 				fieldDesign: [
 					{
-						textStyle: [
-							{ font_family: '' },
-							{ font_size: '' },
-							{ font_weight: '' },
-							{ text_color: '' },
+						labelStyle: [
+							{
+								key: 'font-family',
+								font_family: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
+							{
+								key: 'font-weight',
+								font_weight: '',
+							},
+							{
+								key: 'text-color',
+								text_color: '',
+							},
 						],
 					},
 					{
 						buttonStyle: [
-							{ button_color: '' },
-							{ button_radius: '' },
-							{ text_color: '' },
-							{ font_size: '' },
+							{
+								key: 'btn-color',
+								button_color: '',
+							},
+							{
+								key: 'btn-radius',
+								button_radius: '',
+							},
+							{
+								key: 'btn-text-color',
+								text_color: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
 						],
 					},
 					{
 						mediaStyle: [
 							{ is_video_overlay: '0' },
-							{ overlay_color: '' },
-							{ overlay_opacity: '' },
+							{
+								key: 'overlay-color',
+								overlay_color: '',
+							},
+							{
+								key: 'overlay-opacity',
+								overlay_opacity: '',
+							},
 						],
 					},
 				],
@@ -1036,37 +1612,88 @@ const screens = [
 				id: uuidv4(), //string
 				type: 'text', // elementor, gutenburg, shortcode
 				elements: [
-					{ greeting_text: '' },
-					{ description: '' },
-					{ is_required: '0' },
-					{ is_show_timer: '0' },
-					{ time_in_mins: '' },
-					{ is_time_to_complete: '0' },
-					{ button_text: 'Submit' },
+					{
+						key: 'greeting-text',
+						greeting_text: '',
+					},
+					{
+						key: 'description',
+						label: '',
+					},
+					{
+						key: 'required',
+						is_required: '0',
+					},
+					{
+						key: 'show-timer',
+						is_show_timer: '0',
+					},
+					{
+						key: 'time-mins',
+						time_in_mins: '',
+					},
+					{
+						key: 'time-complete',
+						is_time_to_complete: '0',
+					},
+					{
+						key: 'btn-text',
+						button_text: 'Submit',
+					},
 				],
 				allowedRules: [],
 				fieldDesign: [
 					{
-						textStyle: [
-							{ font_family: '' },
-							{ font_size: '' },
-							{ font_weight: '' },
-							{ text_color: '' },
+						labelStyle: [
+							{
+								key: 'font-family',
+								font_family: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
+							{
+								key: 'font-weight',
+								font_weight: '',
+							},
+							{
+								key: 'text-color',
+								text_color: '',
+							},
 						],
 					},
 					{
 						buttonStyle: [
-							{ button_color: '' },
-							{ button_radius: '' },
-							{ text_color: '' },
-							{ font_size: '' },
+							{
+								key: 'btn-color',
+								button_color: '',
+							},
+							{
+								key: 'btn-radius',
+								button_radius: '',
+							},
+							{
+								key: 'btn-text-color',
+								text_color: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
 						],
 					},
 					{
 						mediaStyle: [
 							{ is_video_overlay: '0' },
-							{ overlay_color: '' },
-							{ overlay_opacity: '' },
+							{
+								key: 'overlay-color',
+								overlay_color: '',
+							},
+							{
+								key: 'overlay-opacity',
+								overlay_opacity: '',
+							},
 						],
 					},
 				],
@@ -1091,37 +1718,88 @@ const screens = [
 				id: uuidv4(), //string
 				type: 'text', // elementor, gutenburg, shortcode
 				elements: [
-					{ greeting_text: '' },
-					{ description: '' },
-					{ is_required: '0' },
-					{ is_show_timer: '0' },
-					{ time_in_mins: '' },
-					{ is_time_to_complete: '0' },
-					{ button_text: 'Submit' },
+					{
+						key: 'greeting-text',
+						greeting_text: '',
+					},
+					{
+						key: 'description',
+						label: '',
+					},
+					{
+						key: 'required',
+						is_required: '0',
+					},
+					{
+						key: 'show-timer',
+						is_show_timer: '0',
+					},
+					{
+						key: 'time-mins',
+						time_in_mins: '',
+					},
+					{
+						key: 'time-complete',
+						is_time_to_complete: '0',
+					},
+					{
+						key: 'btn-text',
+						button_text: 'Submit',
+					},
 				],
 				allowedRules: [],
 				fieldDesign: [
 					{
-						textStyle: [
-							{ font_family: '' },
-							{ font_size: '' },
-							{ font_weight: '' },
-							{ text_color: '' },
+						labelStyle: [
+							{
+								key: 'font-family',
+								font_family: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
+							{
+								key: 'font-weight',
+								font_weight: '',
+							},
+							{
+								key: 'text-color',
+								text_color: '',
+							},
 						],
 					},
 					{
 						buttonStyle: [
-							{ button_color: '' },
-							{ button_radius: '' },
-							{ text_color: '' },
-							{ font_size: '' },
+							{
+								key: 'btn-color',
+								button_color: '',
+							},
+							{
+								key: 'btn-radius',
+								button_radius: '',
+							},
+							{
+								key: 'btn-text-color',
+								text_color: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
 						],
 					},
 					{
 						mediaStyle: [
 							{ is_video_overlay: '0' },
-							{ overlay_color: '' },
-							{ overlay_opacity: '' },
+							{
+								key: 'overlay-color',
+								overlay_color: '',
+							},
+							{
+								key: 'overlay-opacity',
+								overlay_opacity: '',
+							},
 						],
 					},
 				],
@@ -1146,37 +1824,88 @@ const screens = [
 				id: uuidv4(), //string
 				type: 'text', // elementor, gutenburg, shortcode
 				elements: [
-					{ greeting_text: '' },
-					{ description: '' },
-					{ is_required: '0' },
-					{ is_show_timer: '0' },
-					{ time_in_mins: '' },
-					{ is_time_to_complete: '0' },
-					{ button_text: 'Submit' },
+					{
+						key: 'greeting-text',
+						greeting_text: '',
+					},
+					{
+						key: 'description',
+						label: '',
+					},
+					{
+						key: 'required',
+						is_required: '0',
+					},
+					{
+						key: 'show-timer',
+						is_show_timer: '0',
+					},
+					{
+						key: 'time-mins',
+						time_in_mins: '',
+					},
+					{
+						key: 'time-complete',
+						is_time_to_complete: '0',
+					},
+					{
+						key: 'btn-text',
+						button_text: 'Submit',
+					},
 				],
 				allowedRules: [],
 				fieldDesign: [
 					{
-						textStyle: [
-							{ font_family: '' },
-							{ font_size: '' },
-							{ font_weight: '' },
-							{ text_color: '' },
+						labelStyle: [
+							{
+								key: 'font-family',
+								font_family: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
+							{
+								key: 'font-weight',
+								font_weight: '',
+							},
+							{
+								key: 'text-color',
+								text_color: '',
+							},
 						],
 					},
 					{
 						buttonStyle: [
-							{ button_color: '' },
-							{ button_radius: '' },
-							{ text_color: '' },
-							{ font_size: '' },
+							{
+								key: 'btn-color',
+								button_color: '',
+							},
+							{
+								key: 'btn-radius',
+								button_radius: '',
+							},
+							{
+								key: 'btn-text-color',
+								text_color: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
 						],
 					},
 					{
 						mediaStyle: [
 							{ is_video_overlay: '0' },
-							{ overlay_color: '' },
-							{ overlay_opacity: '' },
+							{
+								key: 'overlay-color',
+								overlay_color: '',
+							},
+							{
+								key: 'overlay-opacity',
+								overlay_opacity: '',
+							},
 						],
 					},
 				],
@@ -1201,37 +1930,88 @@ const screens = [
 				id: uuidv4(), //string
 				type: 'text', // elementor, gutenburg, shortcode
 				elements: [
-					{ greeting_text: '' },
-					{ description: '' },
-					{ is_required: '0' },
-					{ is_show_timer: '0' },
-					{ time_in_mins: '' },
-					{ is_time_to_complete: '0' },
-					{ button_text: 'Submit' },
+					{
+						key: 'greeting-text',
+						greeting_text: '',
+					},
+					{
+						key: 'description',
+						label: '',
+					},
+					{
+						key: 'required',
+						is_required: '0',
+					},
+					{
+						key: 'show-timer',
+						is_show_timer: '0',
+					},
+					{
+						key: 'time-mins',
+						time_in_mins: '',
+					},
+					{
+						key: 'time-complete',
+						is_time_to_complete: '0',
+					},
+					{
+						key: 'btn-text',
+						button_text: 'Submit',
+					},
 				],
 				allowedRules: [],
 				fieldDesign: [
 					{
-						textStyle: [
-							{ font_family: '' },
-							{ font_size: '' },
-							{ font_weight: '' },
-							{ text_color: '' },
+						labelStyle: [
+							{
+								key: 'font-family',
+								font_family: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
+							{
+								key: 'font-weight',
+								font_weight: '',
+							},
+							{
+								key: 'text-color',
+								text_color: '',
+							},
 						],
 					},
 					{
 						buttonStyle: [
-							{ button_color: '' },
-							{ button_radius: '' },
-							{ text_color: '' },
-							{ font_size: '' },
+							{
+								key: 'btn-color',
+								button_color: '',
+							},
+							{
+								key: 'btn-radius',
+								button_radius: '',
+							},
+							{
+								key: 'btn-text-color',
+								text_color: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
 						],
 					},
 					{
 						mediaStyle: [
 							{ is_video_overlay: '0' },
-							{ overlay_color: '' },
-							{ overlay_opacity: '' },
+							{
+								key: 'overlay-color',
+								overlay_color: '',
+							},
+							{
+								key: 'overlay-opacity',
+								overlay_opacity: '',
+							},
 						],
 					},
 				],
@@ -1256,37 +2036,88 @@ const screens = [
 				id: uuidv4(), //string
 				type: 'text', // elementor, gutenburg, shortcode
 				elements: [
-					{ greeting_text: '' },
-					{ description: '' },
-					{ is_required: '0' },
-					{ is_show_timer: '0' },
-					{ time_in_mins: '' },
-					{ is_time_to_complete: '0' },
-					{ button_text: 'Submit' },
+					{
+						key: 'greeting-text',
+						greeting_text: '',
+					},
+					{
+						key: 'description',
+						label: '',
+					},
+					{
+						key: 'required',
+						is_required: '0',
+					},
+					{
+						key: 'show-timer',
+						is_show_timer: '0',
+					},
+					{
+						key: 'time-mins',
+						time_in_mins: '',
+					},
+					{
+						key: 'time-complete',
+						is_time_to_complete: '0',
+					},
+					{
+						key: 'btn-text',
+						button_text: 'Submit',
+					},
 				],
 				allowedRules: [],
 				fieldDesign: [
 					{
-						textStyle: [
-							{ font_family: '' },
-							{ font_size: '' },
-							{ font_weight: '' },
-							{ text_color: '' },
+						labelStyle: [
+							{
+								key: 'font-family',
+								font_family: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
+							{
+								key: 'font-weight',
+								font_weight: '',
+							},
+							{
+								key: 'text-color',
+								text_color: '',
+							},
 						],
 					},
 					{
 						buttonStyle: [
-							{ button_color: '' },
-							{ button_radius: '' },
-							{ text_color: '' },
-							{ font_size: '' },
+							{
+								key: 'btn-color',
+								button_color: '',
+							},
+							{
+								key: 'btn-radius',
+								button_radius: '',
+							},
+							{
+								key: 'btn-text-color',
+								text_color: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
 						],
 					},
 					{
 						mediaStyle: [
 							{ is_video_overlay: '0' },
-							{ overlay_color: '' },
-							{ overlay_opacity: '' },
+							{
+								key: 'overlay-color',
+								overlay_color: '',
+							},
+							{
+								key: 'overlay-opacity',
+								overlay_opacity: '',
+							},
 						],
 					},
 				],
@@ -1311,37 +2142,88 @@ const screens = [
 				id: uuidv4(), //string
 				type: 'text', // elementor, gutenburg, shortcode
 				elements: [
-					{ greeting_text: '' },
-					{ description: '' },
-					{ is_required: '0' },
-					{ is_show_timer: '0' },
-					{ time_in_mins: '' },
-					{ is_time_to_complete: '0' },
-					{ button_text: 'Submit' },
+					{
+						key: 'greeting-text',
+						greeting_text: '',
+					},
+					{
+						key: 'description',
+						label: '',
+					},
+					{
+						key: 'required',
+						is_required: '0',
+					},
+					{
+						key: 'show-timer',
+						is_show_timer: '0',
+					},
+					{
+						key: 'time-mins',
+						time_in_mins: '',
+					},
+					{
+						key: 'time-complete',
+						is_time_to_complete: '0',
+					},
+					{
+						key: 'btn-text',
+						button_text: 'Submit',
+					},
 				],
 				allowedRules: [],
 				fieldDesign: [
 					{
-						textStyle: [
-							{ font_family: '' },
-							{ font_size: '' },
-							{ font_weight: '' },
-							{ text_color: '' },
+						labelStyle: [
+							{
+								key: 'font-family',
+								font_family: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
+							{
+								key: 'font-weight',
+								font_weight: '',
+							},
+							{
+								key: 'text-color',
+								text_color: '',
+							},
 						],
 					},
 					{
 						buttonStyle: [
-							{ button_color: '' },
-							{ button_radius: '' },
-							{ text_color: '' },
-							{ font_size: '' },
+							{
+								key: 'btn-color',
+								button_color: '',
+							},
+							{
+								key: 'btn-radius',
+								button_radius: '',
+							},
+							{
+								key: 'btn-text-color',
+								text_color: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
 						],
 					},
 					{
 						mediaStyle: [
 							{ is_video_overlay: '0' },
-							{ overlay_color: '' },
-							{ overlay_opacity: '' },
+							{
+								key: 'overlay-color',
+								overlay_color: '',
+							},
+							{
+								key: 'overlay-opacity',
+								overlay_opacity: '',
+							},
 						],
 					},
 				],
@@ -1366,37 +2248,88 @@ const screens = [
 				id: uuidv4(), //string
 				type: 'text', // elementor, gutenburg, shortcode
 				elements: [
-					{ greeting_text: '' },
-					{ description: '' },
-					{ is_required: '0' },
-					{ is_show_timer: '0' },
-					{ time_in_mins: '' },
-					{ is_time_to_complete: '0' },
-					{ button_text: 'Submit' },
+					{
+						key: 'greeting-text',
+						greeting_text: '',
+					},
+					{
+						key: 'description',
+						label: '',
+					},
+					{
+						key: 'required',
+						is_required: '0',
+					},
+					{
+						key: 'show-timer',
+						is_show_timer: '0',
+					},
+					{
+						key: 'time-mins',
+						time_in_mins: '',
+					},
+					{
+						key: 'time-complete',
+						is_time_to_complete: '0',
+					},
+					{
+						key: 'btn-text',
+						button_text: 'Submit',
+					},
 				],
 				allowedRules: [],
 				fieldDesign: [
 					{
-						textStyle: [
-							{ font_family: '' },
-							{ font_size: '' },
-							{ font_weight: '' },
-							{ text_color: '' },
+						labelStyle: [
+							{
+								key: 'font-family',
+								font_family: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
+							{
+								key: 'font-weight',
+								font_weight: '',
+							},
+							{
+								key: 'text-color',
+								text_color: '',
+							},
 						],
 					},
 					{
 						buttonStyle: [
-							{ button_color: '' },
-							{ button_radius: '' },
-							{ text_color: '' },
-							{ font_size: '' },
+							{
+								key: 'btn-color',
+								button_color: '',
+							},
+							{
+								key: 'btn-radius',
+								button_radius: '',
+							},
+							{
+								key: 'btn-text-color',
+								text_color: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
 						],
 					},
 					{
 						mediaStyle: [
 							{ is_video_overlay: '0' },
-							{ overlay_color: '' },
-							{ overlay_opacity: '' },
+							{
+								key: 'overlay-color',
+								overlay_color: '',
+							},
+							{
+								key: 'overlay-opacity',
+								overlay_opacity: '',
+							},
 						],
 					},
 				],
@@ -1421,37 +2354,88 @@ const screens = [
 				id: uuidv4(), //string
 				type: 'text', // elementor, gutenburg, shortcode
 				elements: [
-					{ greeting_text: '' },
-					{ description: '' },
-					{ is_required: '0' },
-					{ is_show_timer: '0' },
-					{ time_in_mins: '' },
-					{ is_time_to_complete: '0' },
-					{ button_text: 'Submit' },
+					{
+						key: 'greeting-text',
+						greeting_text: '',
+					},
+					{
+						key: 'description',
+						label: '',
+					},
+					{
+						key: 'required',
+						is_required: '0',
+					},
+					{
+						key: 'show-timer',
+						is_show_timer: '0',
+					},
+					{
+						key: 'time-mins',
+						time_in_mins: '',
+					},
+					{
+						key: 'time-complete',
+						is_time_to_complete: '0',
+					},
+					{
+						key: 'btn-text',
+						button_text: 'Submit',
+					},
 				],
 				allowedRules: [],
 				fieldDesign: [
 					{
-						textStyle: [
-							{ font_family: '' },
-							{ font_size: '' },
-							{ font_weight: '' },
-							{ text_color: '' },
+						labelStyle: [
+							{
+								key: 'font-family',
+								font_family: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
+							{
+								key: 'font-weight',
+								font_weight: '',
+							},
+							{
+								key: 'text-color',
+								text_color: '',
+							},
 						],
 					},
 					{
 						buttonStyle: [
-							{ button_color: '' },
-							{ button_radius: '' },
-							{ text_color: '' },
-							{ font_size: '' },
+							{
+								key: 'btn-color',
+								button_color: '',
+							},
+							{
+								key: 'btn-radius',
+								button_radius: '',
+							},
+							{
+								key: 'btn-text-color',
+								text_color: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
 						],
 					},
 					{
 						mediaStyle: [
 							{ is_video_overlay: '0' },
-							{ overlay_color: '' },
-							{ overlay_opacity: '' },
+							{
+								key: 'overlay-color',
+								overlay_color: '',
+							},
+							{
+								key: 'overlay-opacity',
+								overlay_opacity: '',
+							},
 						],
 					},
 				],
@@ -1476,37 +2460,88 @@ const screens = [
 				id: uuidv4(), //string
 				type: 'text', // elementor, gutenburg, shortcode
 				elements: [
-					{ greeting_text: '' },
-					{ description: '' },
-					{ is_required: '0' },
-					{ is_show_timer: '0' },
-					{ time_in_mins: '' },
-					{ is_time_to_complete: '0' },
-					{ button_text: 'Submit' },
+					{
+						key: 'greeting-text',
+						greeting_text: '',
+					},
+					{
+						key: 'description',
+						label: '',
+					},
+					{
+						key: 'required',
+						is_required: '0',
+					},
+					{
+						key: 'show-timer',
+						is_show_timer: '0',
+					},
+					{
+						key: 'time-mins',
+						time_in_mins: '',
+					},
+					{
+						key: 'time-complete',
+						is_time_to_complete: '0',
+					},
+					{
+						key: 'btn-text',
+						button_text: 'Submit',
+					},
 				],
 				allowedRules: [],
 				fieldDesign: [
 					{
-						textStyle: [
-							{ font_family: '' },
-							{ font_size: '' },
-							{ font_weight: '' },
-							{ text_color: '' },
+						labelStyle: [
+							{
+								key: 'font-family',
+								font_family: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
+							{
+								key: 'font-weight',
+								font_weight: '',
+							},
+							{
+								key: 'text-color',
+								text_color: '',
+							},
 						],
 					},
 					{
 						buttonStyle: [
-							{ button_color: '' },
-							{ button_radius: '' },
-							{ text_color: '' },
-							{ font_size: '' },
+							{
+								key: 'btn-color',
+								button_color: '',
+							},
+							{
+								key: 'btn-radius',
+								button_radius: '',
+							},
+							{
+								key: 'btn-text-color',
+								text_color: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
 						],
 					},
 					{
 						mediaStyle: [
 							{ is_video_overlay: '0' },
-							{ overlay_color: '' },
-							{ overlay_opacity: '' },
+							{
+								key: 'overlay-color',
+								overlay_color: '',
+							},
+							{
+								key: 'overlay-opacity',
+								overlay_opacity: '',
+							},
 						],
 					},
 				],
@@ -1531,41 +2566,78 @@ const screens = [
 				id: uuidv4(), //string
 				type: 'text', // elementor, gutenburg, shortcode
 				elements: [
-					{ greeting_text: '' },
-					{ description: '' },
-					{ is_required: '0' },
-					{ is_show_timer: '0' },
-					{ time_in_mins: '' },
-					{ is_time_to_complete: '0' },
-					{ button_text: 'Submit' },
+					{
+						key: 'label',
+						label: '',
+					},
+					{
+						key: 'description',
+						description: '',
+					},
 				],
+				socials: [ 'facebook', 'twitter', 'youtube', 'instagram' ],
 				allowedRules: [],
 				fieldDesign: [
 					{
-						textStyle: [
-							{ font_family: '' },
-							{ font_size: '' },
-							{ font_weight: '' },
-							{ text_color: '' },
+						labelStyle: [
+							{
+								key: 'font-family',
+								font_family: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
+							{
+								key: 'font-weight',
+								font_weight: '',
+							},
+							{
+								key: 'text-color',
+								text_color: '',
+							},
 						],
 					},
 					{
 						buttonStyle: [
-							{ button_color: '' },
-							{ button_radius: '' },
-							{ text_color: '' },
-							{ font_size: '' },
+							{
+								key: 'btn-color',
+								button_color: '',
+							},
+							{
+								key: 'btn-radius',
+								button_radius: '',
+							},
+							{
+								key: 'btn-text-color',
+								text_color: '',
+							},
+							{
+								key: 'font-size',
+								font_size: '',
+							},
 						],
 					},
 					{
 						mediaStyle: [
 							{ is_video_overlay: '0' },
-							{ overlay_color: '' },
-							{ overlay_opacity: '' },
+							{
+								key: 'overlay-color',
+								overlay_color: '',
+							},
+							{
+								key: 'overlay-opacity',
+								overlay_opacity: '',
+							},
 						],
 					},
 				],
 				fieldLogic: [],
+				externalButton: {
+					isActive: true,
+					buttonText: 'Try for Free',
+					buttonUrl: 'https://wpwax.com',
+				},
 			},
 		],
 		groupName: 'initial',
@@ -1574,4 +2646,13 @@ const screens = [
 	},
 ];
 
-export { allForms, endScreen, screens };
+const initialQuestions = questions.filter(
+	( item ) => item.screen_type === 'welcome' || item.screen_type === 'end'
+);
+
+const filteredEndScreen = questions.filter(
+	( item ) => item.screen_type === 'end'
+);
+const endQuestion = filteredEndScreen[ 0 ];
+
+export { endQuestion, questions, initialQuestions };

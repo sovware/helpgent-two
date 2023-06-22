@@ -6,7 +6,12 @@ import handDown from '@icon/hand-down.svg';
 import { PreviewStyle } from './style';
 export default function Preview( props ) {
 	const { singleForm, setSingleForm, activeScreenId } = props;
-	console.log( activeScreenId );
+	const { content } = singleForm;
+	const { questions } = JSON.parse( content );
+	const selectedQuestion = questions.filter(
+		( item ) => item.id === activeScreenId
+	);
+	console.log( selectedQuestion[ 0 ].screen_type );
 	return (
 		<PreviewStyle>
 			<div className="helpgent-preview-top">
@@ -16,15 +21,18 @@ export default function Preview( props ) {
 				</span>
 			</div>
 			<div className="helpgent-preview-container">
-				<MediaPreview
-					singleForm={ singleForm }
-					setSingleForm={ setSingleForm }
-					activeScreenId={ activeScreenId }
-				/>
+				{ selectedQuestion[ 0 ].screen_type !== 'end' && (
+					<MediaPreview
+						singleForm={ singleForm }
+						setSingleForm={ setSingleForm }
+						activeScreenId={ activeScreenId }
+					/>
+				) }
+
 				<QuestionPreview
 					singleForm={ singleForm }
 					setSingleForm={ setSingleForm }
-					activeScreenId={ activeScreenId }
+					selectedQuestion={ selectedQuestion }
 				/>
 			</div>
 			<PreviewDeviceControl />

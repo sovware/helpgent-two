@@ -454,6 +454,20 @@ svg.components-spinner{
             padding-left: 40px;
         }
     }
+
+    &.helpgent-form-icon-right {
+        .helpgent-input-icon {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            line-height: 1;
+            transform: translateY(-50%);
+        }
+
+        .helpgent-form__element {
+            padding-right: 40px;
+        }
+    }
 }
 
 .helpgent-checkbox {
@@ -543,6 +557,69 @@ svg.components-spinner{
                 left: 1px;
                 background-color: var(--helpgent-color-white);
             }
+        }
+    }
+}
+
+
+/* helpgent range-slider */
+.helpgent-rangeControl{
+    position: relative;
+    .helpgent-rangeControl__wayline{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 5px;
+        span{
+            font-size: 0.93rem;
+            font-weight: 500;
+            color: var(--helpgent-color-gray);
+        }
+    }
+    >span{
+        border-radius: 10px;
+    }
+    .components-range-control__thumb-wrapper{
+        width: 20px;
+        height: 20px;
+        margin-top: 5px;
+        background-color: var(--helpgent-color-primary);
+        span{
+            width: 14px;
+            height: 14px;
+            background-color: var(--helpgent-color-white);
+            &:after,
+            &:before{
+                content: none;
+            }
+        }
+    }
+    .components-range-control__tooltip{
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        font-weight: 600px;
+        min-height: 34px;
+        bottom: auto;
+        top: -120%;
+        transform: translateX(-38%);
+        border-radius: 6px;
+        padding: 4px 10px;
+        color: var(--helpgent-color-dark);
+        background-color: var(--helpgent-color-bg-gray);
+        &::after{
+            position: absolute;
+            left: 50%;
+            bottom: -5px;
+            transform: translateX(-50%);
+            width: 0; 
+            height: 0; 
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            content: "";
+            border-top: 5px solid var(--helpgent-color-bg-gray);
         }
     }
 }
@@ -1913,6 +1990,82 @@ svg.components-spinner{
             background-color: var(--helpgent-color-primary);
             svg path{
                 fill: var(--helpgent-color-white);
+            }
+        }
+    }
+}
+
+/* helpgent datepicker */
+.helpgent-datepicker{
+    position: relative;
+    &.helpgent-active{
+        .components-datetime__date{
+            display: block;
+        }
+    }
+    .helpgent-form-group{
+        margin-bottom: 8px;
+    }
+    .components-datetime__date{
+        position: absolute;
+        left: 0;
+        display: none;
+        width: 320px;
+        padding: 25px 24px;
+        border-radius: 10px;
+        box-shadow: 0 5px 30px rgba(0,0,0,.10);
+        background-color: var(--helpgent-color-white);
+    }
+    .components-h-stack{
+        .components-button{
+            display: flex;
+            align-items: center;
+            width: 30px;
+            min-width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background-color: var(--helpgent-color-bg-light);
+            &:hover,
+            &:focus{
+                box-shadow: 0 0;
+                outline: none;
+                background-color: var(--helpgent-color-primary);
+                svg{
+                    fill: var(--helpgent-color-white);
+                }
+            }
+        }
+        .components-heading {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--helpgent-color-gray);
+        }
+        svg{
+            width: 12px;
+            height: 12px;
+            fill: var(--helpgent-color-gray);      
+        }
+        & + div{
+            div{
+                font-size: .8rem;
+                font-weight: 500;
+                margin-bottom: 12px;
+                color: var(--helpgent-color-gray);
+            }
+        }
+    }
+    .components-datetime__date{
+        .components-datetime__date__day.components-button {
+            font-size: .87rem;
+            border-radius: 6px;
+            height: calc(32px);
+            width: calc(32px);
+            color: var(--helpgent-color-gray);
+            background-color: var(--helpgent-color-bg-gray);
+            &:hover,
+            &:focus{
+                color: var(--helpgent-color-white);
+                background-color: var(--helpgent-color-primary);
             }
         }
     }

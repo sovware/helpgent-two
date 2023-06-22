@@ -1,16 +1,16 @@
-import { allForms } from '../../../../constants';
+import { initialQuestions } from '../../../../constants';
 export default async function handleCreateForm(
 	form,
 	createFormMutation,
 	setServerErrors,
 	navigate
 ) {
-	const screenFormData = JSON.stringify( allForms );
+	const screenFormContent = JSON.stringify( { initialQuestions } );
 
 	const formData = {
 		status: 'draft',
 		is_guest_allowed: '0',
-		content: screenFormData,
+		content: screenFormContent,
 	};
 	formData.title = form.title;
 	formData.available_pages = form.available_pages;

@@ -31,28 +31,25 @@ export default function NumberQuestion( props ) {
 		<div className="helpgent-question-element">
 			<div className="helpgent-question-element__text">
 				<div className="helpgent-question-element__label">
-					<ReactQuill
-						modules={ quillModules }
-						placeholder="Type your greeting text here!*"
-					/>
+					<ReactQuill modules={ quillModules } placeholder="Number" />
 				</div>
 				<div className="helpgent-question-element__description">
 					<ReactQuill
 						modules={ quillModules }
-						placeholder="Type description here!*"
+						placeholder="Type a description"
 					/>
 				</div>
 			</div>
 			<div className="helpgent-question-element__action">
-				<div className="helpgent-form-group">
+				<div className="helpgent-form helpgent-form-group">
 					<input
 						type="text"
-						className="helpgent-form-element"
-						placeholder="Type your answer here"
+						className="helpgent-form__element"
+						placeholder="e.g. 26"
 					/>
 				</div>
-				<button className="helpgent-btn helpgent-btn-primary helpgent-btn-md">
-					Start
+				<button className="helpgent-btn-next helpgent-btn helpgent-btn-primary helpgent-btn-md">
+					Submit
 				</button>
 			</div>
 		</div>

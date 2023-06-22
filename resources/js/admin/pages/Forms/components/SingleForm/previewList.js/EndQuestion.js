@@ -1,59 +1,69 @@
-import ReactQuill from 'react-quill';
 import ReactSVG from 'react-inlinesvg';
-import clock from '@icon/clock.svg';
+import ReactQuill from 'react-quill';
+import check from '@icon/check.svg';
+import { socialIcons } from '../constants';
+
 import 'react-quill/dist/quill.snow.css';
 export default function EndQuestion( props ) {
-	const { layoutMode, singleForm, setSingleForm } = props;
+	const { layoutMode, singleForm, setSingleForm, selectedQuestion } = props;
 	const { content } = singleForm;
 	const { questions } = JSON.parse( content );
-	const welcomeQuestion = questions.filter(
-		( item ) => item.screen_type === 'welcome'
-	);
-	const fieldElements = welcomeQuestion[ 0 ].fields[ 0 ].elements;
+
+	console.log( selectedQuestion );
+
+	const {
+		elements,
+		socials: socialLinks,
+		externalButton,
+	} = selectedQuestion[ 0 ].fields[ 0 ];
 
 	const quillModules = {
 		toolbar: false,
 	};
 
-	let greetText = 'Type your greeting text here!*';
-	let description = '';
-
-	for ( const element of fieldElements ) {
-		if ( 'greeting_text' in element ) {
-			greetText = element.greeting_text;
-			break;
-		} else if ( 'description' in element ) {
-			description = element.description;
-			break;
-		}
-	}
-
-	console.log( fieldElements, greetText, description );
 	return (
-		<div className="helpgent-question-element">
+		<div className="helpgent-question-element helpgent-question--end">
+			<div className="helpgent-question-element__icon">
+				<ReactSVG src={ check } />
+			</div>
 			<div className="helpgent-question-element__text">
-				<div className="helpgent-question-element__label">
-					<ReactQuill
-						modules={ quillModules }
-						placeholder="Type your greeting text here!*"
-					/>
-				</div>
-				<div className="helpgent-question-element__description">
-					<ReactQuill
-						modules={ quillModules }
-						placeholder="Type description here!*"
-					/>
-				</div>
+				{ elements.map( ( item, index ) => {
+					return (
+						<div
+							className={
+								item.label || item.label === ''
+									? 'helpgent-question-element__label'
+									: 'helpgent-question-element__description'
+							}
+							key={ index }
+						>
+							<ReactQuill
+								modules={ quillModules }
+								placeholder="Type your thank text here!*"
+							/>
+						</div>
+					);
+				} ) }
 			</div>
-			<div className="helpgent-question-element__action">
-				<button className="helpgent-btn helpgent-btn-primary helpgent-btn-md">
-					Start
-				</button>
-				<div className="helpgent-question-time">
-					<ReactSVG src={ clock } />
-					<span>Take 10 minutes</span>
-				</div>
+			<div className="helpgent-question-element__social">
+				{ socialLinks.map( ( item, index ) => (
+					<div
+						className={ `helpgent-question-element__social-item helpgent-question-element__social-${ item }` }
+						key={ index }
+					>
+						{ ' ' }
+						{ socialIcons[ item ] }{ ' ' }
+					</div>
+				) ) }
 			</div>
+			{ externalButton.isActive ? (
+				<div className="helpgent-question-element__action">
+					<button className="helpgent-btn helpgent-btn-primary helpgent-btn-lg helpgent-btn-external">
+						{ ' ' }
+						{ externalButton.buttonText }{ ' ' }
+					</button>
+				</div>
+			) : null }
 		</div>
 	);
 }
