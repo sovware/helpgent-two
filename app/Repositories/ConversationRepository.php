@@ -56,7 +56,7 @@ class ConversationRepository {
     }
 
     public function attachment( int $submission_id, string $type, int $per_page, int $page, string $search = '' ) {
-        $attachment_exists = Attachment::query( 'attachment' )->select( 1 )->where_column( 'attachment.id', 'conversation.message' )->limit( 1 );
+        $attachment_exists = Attachment::query( 'attachment' )->select( 1 )->where_column( 'attachment.id', 'conversation.attachment_id' )->limit( 1 );
 
         if ( 'all' !== $type ) {
             $attachment_exists->where( 'mime_type', $type );
@@ -71,9 +71,9 @@ class ConversationRepository {
                 'parent.user_guest' => [$this, 'user_guest_relation'],
                 'attachment'
             ]
-        )->where( 'submission_id', $submission_id )->where( 'status', 'publish' )->where( 'is_attachment', 1 )->where_exists( $attachment_exists );  
+        )->where( 'submission_id', $submission_id )->where( 'status', 'publish' )->where( 'attachment_id', '>', 0 )->where_exists( $attachment_exists );  
 
-        $count_query   = Conversation::query( 'conversation' )->where( 'submission_id', $submission_id )->where( 'status', 'publish' )->where( 'is_attachment', 1 )->where_exists( $attachment_exists );
+        $count_query   = Conversation::query( 'conversation' )->where( 'submission_id', $submission_id )->where( 'status', 'publish' )->where( 'attachment_id', '>', 0 )->where_exists( $attachment_exists );
         $conversations = $conversations_query->pagination( $per_page, $page );
         $conversations = array_map( [$this, 'prepare_conversation'] , $conversations );
 
@@ -86,7 +86,7 @@ class ConversationRepository {
     protected function selected_columns() {
         $removed_message = esc_html__( "This message was removed", "helpgent" );
 
-        return "id, submission_id, is_attachment, is_read, is_guest, created_by, agent_trigger, parent_id, parent_type, updated_at, status, created_at,
+        return "id, submission_id, attachment_id, is_read, is_guest, created_by, agent_trigger, parent_id, parent_type, updated_at, status, created_at,
             CASE 
                 WHEN status = 'trash' THEN '{$removed_message}' 
                 ELSE message 
@@ -126,21 +126,30 @@ class ConversationRepository {
             throw new Exception( esc_html__( 'Form submission not found', 'helpgent' ), 404 );
         }
 
-        return Conversation::query()->insert_get_id(
-            [
-                'submission_id' => $conversation_dto->get_submission_id(),
-                'message'       => $conversation_dto->get_message(),
-                'is_attachment' => $conversation_dto->get_is_attachment(),
-                'is_read'       => $conversation_dto->get_is_read(),
-                'is_guest'      => $conversation_dto->get_is_guest(),
-                'parent_id'     => $conversation_dto->get_parent_id(),
-                'parent_type'   => $conversation_dto->get_parent_type(),
-                'created_by'    => $conversation_dto->get_created_by(),
-                'agent_trigger' => $conversation_dto->get_agent_trigger(),
-                'status'        => $conversation_dto->get_status(),
-                'created_at'    => helpgent_now()
-            ]
-        );
+        $data = [
+            'submission_id' => $conversation_dto->get_submission_id(),
+            'is_read'       => $conversation_dto->get_is_read(),
+            'is_guest'      => $conversation_dto->get_is_guest(),
+            'parent_id'     => $conversation_dto->get_parent_id(),
+            'parent_type'   => $conversation_dto->get_parent_type(),
+            'created_by'    => $conversation_dto->get_created_by(),
+            'agent_trigger' => $conversation_dto->get_agent_trigger(),
+            'status'        => $conversation_dto->get_status(),
+            'created_at'    => helpgent_now()
+        ];
+
+        $attachment_id = $conversation_dto->get_attachment_id();
+        $message       = $conversation_dto->get_message();
+
+        if ( 0 < $attachment_id ) {
+            $data['attachment_id'] = $attachment_id;
+        }
+
+        if ( ! empty( $message ) ) {
+            $data['message'] = $message;
+        }
+
+        return Conversation::query()->insert_get_id( $data );
     }
 
     public function update( ConversationDTO $conversation_dto ) {
@@ -150,7 +159,7 @@ class ConversationRepository {
             throw new Exception( esc_html__( "Conversation not found.", "helpgent" ), 404 );
         }
 
-        if ( 1 == $conversation->is_attachment ) {
+        if ( 0 < $conversation->attachment_id ) {
             throw new Exception( esc_html__( "Sorry, you can't update the attachment.", "helpgent" ), 500 );
         }
 

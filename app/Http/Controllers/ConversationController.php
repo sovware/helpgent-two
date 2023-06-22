@@ -11,7 +11,6 @@ use HelpGent\WaxFramework\RequestValidator\Validator;
 use HelpGent\WaxFramework\Routing\Response;
 use WP_REST_Request;
 
-
 class ConversationController extends Controller {
     public SubmissionRepository $submission_repository;
 
@@ -46,7 +45,7 @@ class ConversationController extends Controller {
         if ( $user->is_user && ! $this->submission_repository->verify_user( $submission_id, $user->id, $user->is_guest ) ) {
             return Response::send(
                 [
-                    'message' => esc_html__( "Sorry, you are not allowed access this submission conversations" )
+                    'message' => esc_html__( "Sorry, you are not allowed access this submission conversations", 'helpgent' )
                 ], 500
             );
         }
@@ -65,8 +64,8 @@ class ConversationController extends Controller {
         $validator->validate(
             [
                 'submission_id' => 'required|numeric',
-                'message'       => 'required|string',
-                'is_attachment' => 'required|integer|accepted:0,1',
+                'message'       => 'string',
+                'attachment_id' => 'integer',
                 'parent_id'     => 'integer|min:1',
                 'parent_type'   => 'string|accepted:reply,forward'
             ]
@@ -81,17 +80,17 @@ class ConversationController extends Controller {
         }
 
         /**
-         * Attachment request validation
+         * Requested message and attachment validation
          */
-        $is_attachment = intval( $wp_rest_request->get_param( 'is_attachment' ) );
-        $message       = $wp_rest_request->get_param( 'message' );
-
-        if ( 1 === $is_attachment && ! is_numeric( $message ) ) {
+        $attachment_id = intval( $wp_rest_request->get_param( 'attachment_id' ) );
+        $message       = (string) $wp_rest_request->get_param( 'message' );
+        
+        if ( empty( $message ) && 0 >= $attachment_id ) {
             return Response::send(
                 [
                     'messages' => [
                         'message' => [
-                            "The message must be a number."
+                            "The message field is required"
                         ]
                     ]
                 ], 422
@@ -101,7 +100,6 @@ class ConversationController extends Controller {
         /**
          * Parent request validation
          */
-
         $parent_type = $wp_rest_request->get_param( 'parent_type' );
         
         if ( $wp_rest_request->has_param( 'parent_id' ) && empty( $parent_type ) ) {
@@ -122,7 +120,7 @@ class ConversationController extends Controller {
         if ( $user->is_user && ! $this->submission_repository->verify_user( $submission_id, $user->id, $user->is_guest ) ) {
             return Response::send(
                 [
-                    'message' => esc_html__( "Sorry, you are not allowed access this submission conversations" )
+                    'message' => esc_html__( "Sorry, you are not allowed access this submission conversations", 'helpgent' )
                 ], 500
             );
         }
@@ -131,7 +129,7 @@ class ConversationController extends Controller {
             $submission_id,
             $message,
             $user->id,
-            $is_attachment,
+            $attachment_id,
             $user->is_guest,
             intval( $wp_rest_request->get_param( 'parent_id' ) ),
             $parent_type
@@ -179,7 +177,7 @@ class ConversationController extends Controller {
         if ( $user->is_user && ! $this->submission_repository->verify_user( $submission_id, $user->id, $user->is_guest ) ) {
             return Response::send(
                 [
-                    'message' => esc_html__( "Sorry, you are not allowed access this submission conversations" )
+                    'message' => esc_html__( "Sorry, you are not allowed access this submission conversations", 'helpgent' )
                 ], 500
             );
         }
@@ -196,7 +194,11 @@ class ConversationController extends Controller {
             $this->conversation_repository->update( $conversation_dto );
 
             do_action( 'helpgent_before_update_conversation', $conversation_dto, $wp_rest_request );
-            return Response::send( [] );
+            return Response::send(
+                [
+                    'message' => esc_html__( "Conversation updated successfully!", 'helpgent' )
+                ] 
+            );
         } catch ( Exception $exception ) {
             return Response::send(
                 [
@@ -229,7 +231,7 @@ class ConversationController extends Controller {
         if ( $user->is_user && ! $this->submission_repository->verify_user( $submission_id, $user->id, $user->is_guest ) ) {
             return Response::send(
                 [
-                    'message' => esc_html__( "Sorry, you are not allowed access this submission conversations" )
+                    'message' => esc_html__( "Sorry, you are not allowed access this submission conversations", 'helpgent' )
                 ], 500
             );
         }
@@ -269,7 +271,7 @@ class ConversationController extends Controller {
         if ( $user->is_user && ! $this->submission_repository->verify_user( $submission_id, $user->id, $user->is_guest ) ) {
             return Response::send(
                 [
-                    'message' => esc_html__( "Sorry, you are not allowed access this submission conversations" )
+                    'message' => esc_html__( "Sorry, you are not allowed access this submission conversations", 'helpgent' )
                 ], 500
             );
         }

@@ -127,8 +127,8 @@ class CreateDB implements Migration {
         CREATE TABLE {$db_prefix}conversations (
             `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
             `submission_id` BIGINT UNSIGNED NOT NULL,
-            `message` LONGTEXT NOT NULL,
-            `is_attachment` TINYINT NOT NULL DEFAULT 0 COMMENT 'possible values: 1, 0',
+            `message` LONGTEXT,
+            `attachment_id` BIGINT UNSIGNED,
             `is_read` TINYINT NOT NULL DEFAULT 0 COMMENT 'possible values: 1, 0',
             `is_guest` TINYINT NOT NULL DEFAULT 0 COMMENT 'possible values: 1, 0',
             `created_by` BIGINT UNSIGNED NOT NULL,

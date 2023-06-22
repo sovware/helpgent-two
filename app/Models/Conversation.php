@@ -22,8 +22,7 @@ class Conversation extends Model {
     }
 
     public function attachment():BelongsToOne {
-        return $this->belongs_to_one( Attachment::class, 'id', 'message' )
-            ->relation_where( 'is_attachment', 1 );
+        return $this->belongs_to_one( Attachment::class, 'id', 'attachment_id' );
     }
 
     public function user_guest():BelongsToOne {

@@ -9,7 +9,7 @@ class ConversationDTO {
     
     private string $message;
     
-    private int $is_attachment;
+    private int $attachment_id;
 
     private int $is_read;
 
@@ -34,10 +34,10 @@ class ConversationDTO {
 
     private $agent_trigger;
 
-    public function __construct( int $submission_id, string $message, int $created_by = 0, int $is_attachment = 0, int $is_guest = 0, int $parent_id = 0, $parent_type = null, int $is_read = 0, string $status = 'publish', $agent_trigger = null ) {
+    public function __construct( int $submission_id, string $message = '', int $created_by = 0, int $attachment_id = 0, int $is_guest = 0, int $parent_id = 0, $parent_type = null, int $is_read = 0, string $status = 'publish', $agent_trigger = null ) {
         $this->submission_id = $submission_id;
         $this->message       = $message;
-        $this->is_attachment = $is_attachment;
+        $this->attachment_id = $attachment_id;
         $this->is_read       = $is_read;
         $this->is_guest      = $is_guest;
         $this->parent_id     = $parent_id;
@@ -71,12 +71,12 @@ class ConversationDTO {
         $this->message = $message;
     }
 
-    public function get_is_attachment() {
-        return $this->is_attachment;
+    public function get_attachment_id() {
+        return $this->attachment_id;
     }
 
-    public function set_is_attachment( int $is_attachment ) {
-        $this->is_attachment = $is_attachment;
+    public function set_attachment_id( int $attachment_id ) {
+        $this->attachment_id = $attachment_id;
     }
 
     public function get_is_read() {
