@@ -11,7 +11,6 @@ export default function Preview( props ) {
 	const selectedQuestion = questions.filter(
 		( item ) => item.id === activeScreenId
 	);
-	console.log( selectedQuestion[ 0 ].screen_type );
 	return (
 		<PreviewStyle>
 			<div className="helpgent-preview-top">

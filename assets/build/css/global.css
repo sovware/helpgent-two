@@ -341,6 +341,9 @@ svg.components-spinner path {
   display: flex;
   margin-bottom: 20px;
 }
+.helpgent-form-group.helpgent-form-group-column {
+  flex-direction: column;
+}
 .helpgent-form-group .helpgent-input-addon {
   display: flex;
   align-items: center;
@@ -355,7 +358,7 @@ svg.components-spinner path {
   display: inline-block;
   line-height: 1;
 }
-.helpgent-form-group .helpgent-form__element {
+.helpgent-form-group .helpgent-form-group__element {
   width: 100%;
   font-size: 14px;
   font-weight: 500;
@@ -371,12 +374,12 @@ svg.components-spinner path {
   background-color: var(--helpgent-color-bg-general);
 }
 @media only screen and (max-width: 1199px) {
-  .helpgent-form-group .helpgent-form__element {
+  .helpgent-form-group .helpgent-form-group__element {
     padding: 6px 16px;
     min-height: 38px;
   }
 }
-.helpgent-form-group .helpgent-form__element:focus {
+.helpgent-form-group .helpgent-form-group__element:focus {
   outline: none;
   box-shadow: 0 0;
   color: var(--helpgent-color-dark);
@@ -390,9 +393,9 @@ svg.components-spinner path {
   min-height: 65px;
 }
 .helpgent-form-group .helpgent-form-group__label {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  font-size: 0.93rem;
+  font-weight: 500;
+  color: var(--helpgent-color-dark);
   margin-bottom: 8px;
 }
 .helpgent-form-group .helpgent-form-group__label span,

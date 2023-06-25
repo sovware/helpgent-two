@@ -3,7 +3,7 @@ import ReactSVG from 'react-inlinesvg';
 import ScreenListType from './ScreenListType.js';
 import { questions } from '../../../../../constants.js';
 import search from '../../../../../../../assets/svg/icon/search.svg';
-import { ScreenItemStyle, MegaDropdownStyle } from './style.js';
+import { MegaDropdownStyle } from './style.js';
 
 export default function ScreenListDropdown( {
 	singleForm,

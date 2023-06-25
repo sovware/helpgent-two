@@ -1,20 +1,18 @@
-import ReactSVG from 'react-inlinesvg';
-import WelcomeQuestion from './previewList.js/WelcomeQuestion';
-import LongTextQuestion from './previewList.js/LongTextQuestion';
-import ShortTextQuestion from './previewList.js/ShortTextQuestion';
-import NumberQuestion from './previewList.js/NumberQuestion';
-import ButtonQuestion from './previewList.js/ButtonQuestion';
-import FileQuestion from './previewList.js/FileQuestion';
-import EmailQuestion from './previewList.js/EmailQuestion';
-import UrlQuestion from './previewList.js/UrlQuestion';
-import SliderQuestion from './previewList.js/SliderQuestion';
-import DateQuestion from './previewList.js/DateQuestion';
-import EndQuestion from './previewList.js/EndQuestion';
-
-import facebook from '@icon/facebook.svg';
-import twitter from '@icon/twitter.svg';
-import youtube from '@icon/youtube.svg';
-import instagram from '@icon/instagram.svg';
+import WelcomeQuestion from '@components/questionList/WelcomeQuestion.js';
+import LongTextQuestion from '@components/questionList/LongTextQuestion.js';
+import ShortTextQuestion from '@components/questionList/ShortTextQuestion.js';
+import NumberQuestion from '@components/questionList/NumberQuestion.js';
+import ButtonQuestion from '@components/questionList/ButtonQuestion.js';
+import FileQuestion from '@components/questionList/FileQuestion.js';
+import EmailQuestion from '@components/questionList/EmailQuestion.js';
+import UrlQuestion from '@components/questionList/UrlQuestion.js';
+import SliderQuestion from '@components/questionList/SliderQuestion.js';
+import DateQuestion from '@components/questionList/DateQuestion.js';
+import AddressQuestion from '@components/questionList/AddressQuestion.js';
+import ResultQuestion from '@components/questionList/ResultQuestion.js';
+import ScoreQuestion from '@components/questionList/ScoreQuestion.js';
+import SingleSelectQuestion from '@components/questionList/SingleSelectQuestion';
+import EndQuestion from '@components/questionList/EndQuestion.js';
 
 const PreviewComponents = {
 	welcome: WelcomeQuestion,
@@ -27,14 +25,11 @@ const PreviewComponents = {
 	url: UrlQuestion,
 	slider: SliderQuestion,
 	date: DateQuestion,
+	address: AddressQuestion,
+	result: ResultQuestion,
+	score: ScoreQuestion,
+	'single-select': SingleSelectQuestion,
 	end: EndQuestion,
 };
 
-const socialIcons = {
-	facebook: <ReactSVG src={ facebook } />,
-	twitter: <ReactSVG src={ twitter } />,
-	youtube: <ReactSVG src={ youtube } />,
-	instagram: <ReactSVG src={ instagram } />,
-};
-
-export { PreviewComponents, socialIcons };
+export { PreviewComponents };

@@ -412,6 +412,37 @@ var SvgEnvelope = function SvgEnvelope(props) {
 
 /***/ }),
 
+/***/ "./assets/svg/icon/facebook.svg":
+/*!**************************************!*\
+  !*** ./assets/svg/icon/facebook.svg ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgFacebook),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path;
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var SvgFacebook = function SvgFacebook(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    width: 16,
+    height: 15.903
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M16 8a8 8 0 1 0-9.25 7.9v-5.587H4.718V8H6.75V6.237a2.823 2.823 0 0 1 3.022-3.112 12.312 12.312 0 0 1 1.791.156v1.968h-1.009a1.156 1.156 0 0 0-1.3 1.249V8h2.219l-.355 2.313H9.25V15.9A8 8 0 0 0 16 8Z",
+    fill: "#fff"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNS45MDMiIHZpZXdCb3g9IjAgMCAxNiAxNS45MDMiPg0KICA8cGF0aCBpZD0iZmFjZWJvb2siIGQ9Ik0yNCwxNmE4LDgsMCwxLDAtOS4yNSw3LjlWMTguMzEzSDEyLjcxOFYxNkgxNC43NVYxNC4yMzdhMi44MjMsMi44MjMsMCwwLDEsMy4wMjItMy4xMTIsMTIuMzEyLDEyLjMxMiwwLDAsMSwxLjc5MS4xNTZ2MS45NjhIMTguNTU0YTEuMTU2LDEuMTU2LDAsMCwwLTEuMywxLjI0OVYxNmgyLjIxOWwtLjM1NSwyLjMxM0gxNy4yNVYyMy45QTgsOCwwLDAsMCwyNCwxNloiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC04IC04KSIgZmlsbD0iI2ZmZiIvPg0KPC9zdmc+DQo=");
+
+/***/ }),
+
 /***/ "./assets/svg/icon/hash.svg":
 /*!**********************************!*\
   !*** ./assets/svg/icon/hash.svg ***!
@@ -440,6 +471,37 @@ var SvgHash = function SvgHash(props) {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4NCiAgPHBhdGggaWQ9Imhhc3RhZyIgZD0iTTE1LDZhMSwxLDAsMCwwLDAtMkgxMi41ODFsLjQwOS0yLjg1OUExLDEsMCwxLDAsMTEuMDEuODU5TDEwLjU2MSw0SDYuNTgxTDYuOTksMS4xNDFBMSwxLDAsMCwwLDUuMDEuODU5TDQuNTYxLDRIMS42NjdhMSwxLDAsMSwwLDAsMkg0LjI3NUwzLjcsMTBIMWExLDEsMCwxLDAsMCwySDMuNDE5TDMuMDEsMTQuODU5YTEsMSwwLDEsMCwxLjk4LjI4M0w1LjQzOSwxMmgzLjk4TDkuMDEsMTQuODU5YTEsMSwwLDAsMCwxLjk4LjI4M0wxMS40MzksMTJoMi44OTVhMSwxLDAsMCwwLDAtMkgxMS43MjVMMTIuMyw2Wk05LjcsMTBINS43MjVMNi4zLDZoMy45NzlaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDApIiBmaWxsPSIjNmU2ZTZlIi8+DQo8L3N2Zz4NCg==");
+
+/***/ }),
+
+/***/ "./assets/svg/icon/instagram.svg":
+/*!***************************************!*\
+  !*** ./assets/svg/icon/instagram.svg ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgInstagram),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path;
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var SvgInstagram = function SvgInstagram(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    width: 16,
+    height: 15.996
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M8.002 3.897a4.1 4.1 0 1 0 4.1 4.1 4.095 4.095 0 0 0-4.1-4.1Zm0 6.768a2.666 2.666 0 1 1 2.666-2.666 2.671 2.671 0 0 1-2.666 2.666Zm5.226-6.935a.957.957 0 1 1-.953-.955.954.954 0 0 1 .952.954Zm2.716.971a4.734 4.734 0 0 0-1.292-3.352A4.765 4.765 0 0 0 11.3.057c-1.321-.075-5.279-.075-6.6 0a4.758 4.758 0 0 0-3.352 1.288A4.75 4.75 0 0 0 .056 4.696c-.075 1.321-.075 5.279 0 6.6a4.734 4.734 0 0 0 1.292 3.352A4.771 4.771 0 0 0 4.7 15.94c1.321.075 5.279.075 6.6 0a4.734 4.734 0 0 0 3.352-1.292 4.765 4.765 0 0 0 1.292-3.352c.075-1.321.075-5.275 0-6.596Zm-1.706 8.013a2.7 2.7 0 0 1-1.521 1.521c-1.053.418-3.552.321-4.715.321s-3.666.093-4.715-.321a2.7 2.7 0 0 1-1.521-1.521c-.418-1.053-.321-3.552-.321-4.715s-.093-3.666.321-4.715a2.7 2.7 0 0 1 1.521-1.521c1.053-.418 3.552-.321 4.715-.321s3.666-.093 4.715.321a2.7 2.7 0 0 1 1.521 1.521c.418 1.053.321 3.552.321 4.715s.096 3.665-.321 4.714Z",
+    fill: "#fff"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNS45OTYiIHZpZXdCb3g9IjAgMCAxNiAxNS45OTYiPg0KICA8cGF0aCBpZD0iaW5zdGFncmFtIiBkPSJNNy45MjcsMzUuNzIyYTQuMSw0LjEsMCwxLDAsNC4xLDQuMUE0LjA5NSw0LjA5NSwwLDAsMCw3LjkyNywzNS43MjJabTAsNi43NjhhMi42NjYsMi42NjYsMCwxLDEsMi42NjYtMi42NjZBMi42NzEsMi42NzEsMCwwLDEsNy45MjcsNDIuNDlabTUuMjI2LTYuOTM1QS45NTcuOTU3LDAsMSwxLDEyLjIsMzQuNi45NTQuOTU0LDAsMCwxLDEzLjE1MiwzNS41NTRabTIuNzE2Ljk3MWE0LjczNCw0LjczNCwwLDAsMC0xLjI5Mi0zLjM1Miw0Ljc2NSw0Ljc2NSwwLDAsMC0zLjM1Mi0xLjI5MmMtMS4zMjEtLjA3NS01LjI3OS0uMDc1LTYuNiwwQTQuNzU4LDQuNzU4LDAsMCwwLDEuMjczLDMzLjE3LDQuNzUsNC43NSwwLDAsMC0uMDE5LDM2LjUyMWMtLjA3NSwxLjMyMS0uMDc1LDUuMjc5LDAsNi42YTQuNzM0LDQuNzM0LDAsMCwwLDEuMjkyLDMuMzUyLDQuNzcxLDQuNzcxLDAsMCwwLDMuMzUyLDEuMjkyYzEuMzIxLjA3NSw1LjI3OS4wNzUsNi42LDBhNC43MzQsNC43MzQsMCwwLDAsMy4zNTItMS4yOTIsNC43NjUsNC43NjUsMCwwLDAsMS4yOTItMy4zNTJDMTUuOTQ0LDQxLjgsMTUuOTQ0LDM3Ljg0NiwxNS44NjksMzYuNTI1Wm0tMS43MDYsOC4wMTNhMi43LDIuNywwLDAsMS0xLjUyMSwxLjUyMWMtMS4wNTMuNDE4LTMuNTUyLjMyMS00LjcxNS4zMjFzLTMuNjY2LjA5My00LjcxNS0uMzIxYTIuNywyLjcsMCwwLDEtMS41MjEtMS41MjFjLS40MTgtMS4wNTMtLjMyMS0zLjU1Mi0uMzIxLTQuNzE1cy0uMDkzLTMuNjY2LjMyMS00LjcxNWEyLjcsMi43LDAsMCwxLDEuNTIxLTEuNTIxYzEuMDUzLS40MTgsMy41NTItLjMyMSw0LjcxNS0uMzIxczMuNjY2LS4wOTMsNC43MTUuMzIxYTIuNywyLjcsMCwwLDEsMS41MjEsMS41MjFjLjQxOCwxLjA1My4zMjEsMy41NTIuMzIxLDQuNzE1UzE0LjU4LDQzLjQ4OSwxNC4xNjMsNDQuNTM4WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMC4wNzUgLTMxLjgyNSkiIGZpbGw9IiNmZmYiLz4NCjwvc3ZnPg0K");
 
 /***/ }),
 
@@ -876,6 +938,37 @@ var SvgToggle = function SvgToggle(props) {
 
 /***/ }),
 
+/***/ "./assets/svg/icon/twitter.svg":
+/*!*************************************!*\
+  !*** ./assets/svg/icon/twitter.svg ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgTwitter),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path;
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var SvgTwitter = function SvgTwitter(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    width: 16,
+    height: 12.995
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M14.355 3.239c.01.142.01.284.01.426a9.266 9.266 0 0 1-9.33 9.33A9.267 9.267 0 0 1 0 11.518a6.783 6.783 0 0 0 .792.041 6.567 6.567 0 0 0 4.071-1.4A3.285 3.285 0 0 1 1.8 7.888a4.135 4.135 0 0 0 .619.051 3.468 3.468 0 0 0 .863-.112A3.28 3.28 0 0 1 .65 4.609v-.041a3.3 3.3 0 0 0 1.482.416A3.284 3.284 0 0 1 1.117.598a9.321 9.321 0 0 0 6.761 3.431 3.7 3.7 0 0 1-.081-.751 3.282 3.282 0 0 1 5.675-2.244 6.456 6.456 0 0 0 2.081-.792 3.27 3.27 0 0 1-1.442 1.807A6.574 6.574 0 0 0 16 1.543a7.049 7.049 0 0 1-1.645 1.696Z",
+    fill: "#fff"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxMi45OTUiIHZpZXdCb3g9IjAgMCAxNiAxMi45OTUiPg0KICA8cGF0aCBpZD0idHdpdHRlciIgZD0iTTE0LjM1NSw1MS4zMjFjLjAxLjE0Mi4wMS4yODQuMDEuNDI2YTkuMjY2LDkuMjY2LDAsMCwxLTkuMzMsOS4zM0E5LjI2Nyw5LjI2NywwLDAsMSwwLDU5LjZhNi43ODMsNi43ODMsMCwwLDAsLjc5Mi4wNDEsNi41NjcsNi41NjcsMCwwLDAsNC4wNzEtMS40QTMuMjg1LDMuMjg1LDAsMCwxLDEuOCw1NS45N2E0LjEzNSw0LjEzNSwwLDAsMCwuNjE5LjA1MSwzLjQ2OCwzLjQ2OCwwLDAsMCwuODYzLS4xMTJBMy4yOCwzLjI4LDAsMCwxLC42NSw1Mi42OTF2LS4wNDFhMy4zLDMuMywwLDAsMCwxLjQ4Mi40MTYsMy4yODQsMy4yODQsMCwwLDEtMS4wMTUtNC4zODYsOS4zMjEsOS4zMjEsMCwwLDAsNi43NjEsMy40MzEsMy43LDMuNywwLDAsMS0uMDgxLS43NTEsMy4yODIsMy4yODIsMCwwLDEsNS42NzUtMi4yNDQsNi40NTYsNi40NTYsMCwwLDAsMi4wODEtLjc5MiwzLjI3LDMuMjcsMCwwLDEtMS40NDIsMS44MDdBNi41NzQsNi41NzQsMCwwLDAsMTYsNDkuNjI1LDcuMDQ5LDcuMDQ5LDAsMCwxLDE0LjM1NSw1MS4zMjFaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIC00OC4wODIpIiBmaWxsPSIjZmZmIi8+DQo8L3N2Zz4NCg==");
+
+/***/ }),
+
 /***/ "./assets/svg/icon/upload.svg":
 /*!************************************!*\
   !*** ./assets/svg/icon/upload.svg ***!
@@ -935,6 +1028,37 @@ var SvgVideo = function SvgVideo(props) {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxMiIgdmlld0JveD0iMCAwIDE2IDEyIj4NCiAgPHBhdGggaWQ9InZpZGVvLWNhbWVyYS1hbHQiIGQ9Ik0xNS4yODMsNC44YTEuMjg5LDEuMjg5LDAsMCwwLTEuMzU4LjEyMmwtMS4zLDEuMjU1QTMuNjcsMy42NywwLDAsMCw5LDNIMy42NjdBMy42NzEsMy42NzEsMCwwLDAsMCw2LjY2N3Y0LjY2N0EzLjY3MSwzLjY3MSwwLDAsMCwzLjY2NywxNUg5YTMuNjcsMy42NywwLDAsMCwzLjYyNy0zLjE1N2wxLjMsMS4yMzFhMS4yOTEsMS4yOTEsMCwwLDAsMS40My4wODRBMS4zODQsMS4zODQsMCwwLDAsMTYsMTEuOTQ3VjUuOTU2QTEuMjg5LDEuMjg5LDAsMCwwLDE1LjI4Myw0LjhabS00LjYxNyw2LjUzN0ExLjY2OCwxLjY2OCwwLDAsMSw5LDEzSDMuNjY3QTEuNjY5LDEuNjY5LDAsMCwxLDIsMTEuMzMzVjYuNjY3QTEuNjY5LDEuNjY5LDAsMCwxLDMuNjY3LDVIOWExLjY2OCwxLjY2OCwwLDAsMSwxLjY2NywxLjY2N3Y0LjY2N1oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgLTMpIiBmaWxsPSIjYTJhMmEyIi8+DQo8L3N2Zz4NCg==");
+
+/***/ }),
+
+/***/ "./assets/svg/icon/youtube.svg":
+/*!*************************************!*\
+  !*** ./assets/svg/icon/youtube.svg ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgYoutube),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path;
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var SvgYoutube = function SvgYoutube(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    width: 16,
+    height: 11.25
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M15.667 1.76A2.01 2.01 0 0 0 14.252.336 47.51 47.51 0 0 0 8 0a47.51 47.51 0 0 0-6.251.337A2.01 2.01 0 0 0 .334 1.761a22.636 22.636 0 0 0 0 7.752 1.98 1.98 0 0 0 1.415 1.4A47.513 47.513 0 0 0 8 11.249a47.513 47.513 0 0 0 6.251-.336 1.981 1.981 0 0 0 1.415-1.4 22.636 22.636 0 0 0 0-7.752Zm-9.3 6.255V3.257l4.182 2.379Z",
+    fill: "#fff"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxMS4yNSIgdmlld0JveD0iMCAwIDE2IDExLjI1Ij4NCiAgPHBhdGggaWQ9InlvdXR1YmUiIGQ9Ik0zMC42LDY1Ljc2YTIuMDEsMi4wMSwwLDAsMC0xLjQxNS0xLjQyNEE0Ny41MSw0Ny41MSwwLDAsMCwyMi45MzMsNjRhNDcuNTEsNDcuNTEsMCwwLDAtNi4yNTEuMzM3LDIuMDEsMi4wMSwwLDAsMC0xLjQxNSwxLjQyNCwyMi42MzYsMjIuNjM2LDAsMCwwLDAsNy43NTIsMS45OCwxLjk4LDAsMCwwLDEuNDE1LDEuNCw0Ny41MTMsNDcuNTEzLDAsMCwwLDYuMjUxLjMzNiw0Ny41MTMsNDcuNTEzLDAsMCwwLDYuMjUxLS4zMzYsMS45ODEsMS45ODEsMCwwLDAsMS40MTUtMS40LDIyLjYzNiwyMi42MzYsMCwwLDAsMC03Ljc1MlptLTkuMyw2LjI1NVY2Ny4yNTdsNC4xODIsMi4zNzlaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTQuOTMzIC02NCkiIGZpbGw9IiNmZmYiLz4NCjwvc3ZnPg0K");
 
 /***/ }),
 
@@ -1134,7 +1258,6 @@ function CreatePopupForm() {
     };
     fetchDefaultPages();
   }, []);
-  console.log(selectedPages);
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
     className: "helpgent-createPopup"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_CreatePopupHeader__WEBPACK_IMPORTED_MODULE_11__["default"], {
@@ -1783,34 +1906,48 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   endQuestion: () => (/* binding */ endQuestion),
 /* harmony export */   initialQuestions: () => (/* binding */ initialQuestions),
-/* harmony export */   questions: () => (/* binding */ questions)
+/* harmony export */   questions: () => (/* binding */ questions),
+/* harmony export */   socialIcons: () => (/* binding */ socialIcons)
 /* harmony export */ });
-/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! uuid */ "./node_modules/uuid/dist/esm-browser/v4.js");
-/* harmony import */ var _assets_svg_icon_chart_bar_svg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../assets/svg/icon/chart-bar.svg */ "./assets/svg/icon/chart-bar.svg");
-/* harmony import */ var _assets_svg_icon_bar_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../assets/svg/icon/bar.svg */ "./assets/svg/icon/bar.svg");
-/* harmony import */ var _assets_svg_icon_hash_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../assets/svg/icon/hash.svg */ "./assets/svg/icon/hash.svg");
-/* harmony import */ var _assets_svg_icon_button_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../assets/svg/icon/button.svg */ "./assets/svg/icon/button.svg");
-/* harmony import */ var _assets_svg_icon_upload_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../assets/svg/icon/upload.svg */ "./assets/svg/icon/upload.svg");
-/* harmony import */ var _assets_svg_icon_sliders_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../assets/svg/icon/sliders.svg */ "./assets/svg/icon/sliders.svg");
-/* harmony import */ var _assets_svg_icon_calendar_check_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../assets/svg/icon/calendar-check.svg */ "./assets/svg/icon/calendar-check.svg");
-/* harmony import */ var _assets_svg_icon_star_svg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../assets/svg/icon/star.svg */ "./assets/svg/icon/star.svg");
-/* harmony import */ var _assets_svg_icon_meter_svg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../assets/svg/icon/meter.svg */ "./assets/svg/icon/meter.svg");
-/* harmony import */ var _assets_svg_icon_marker_svg__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../assets/svg/icon/marker.svg */ "./assets/svg/icon/marker.svg");
-/* harmony import */ var _assets_svg_icon_address_book_svg__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../assets/svg/icon/address-book.svg */ "./assets/svg/icon/address-book.svg");
-/* harmony import */ var _assets_svg_icon_envelope_svg__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../assets/svg/icon/envelope.svg */ "./assets/svg/icon/envelope.svg");
-/* harmony import */ var _assets_svg_icon_phone_flip_svg__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../assets/svg/icon/phone-flip.svg */ "./assets/svg/icon/phone-flip.svg");
-/* harmony import */ var _assets_svg_icon_link_alt_svg__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../assets/svg/icon/link-alt.svg */ "./assets/svg/icon/link-alt.svg");
-/* harmony import */ var _assets_svg_icon_open_ended_svg__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../assets/svg/icon/open-ended.svg */ "./assets/svg/icon/open-ended.svg");
-/* harmony import */ var _assets_svg_icon_chart_simple_horizontal_svg__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../assets/svg/icon/chart-simple-horizontal.svg */ "./assets/svg/icon/chart-simple-horizontal.svg");
-/* harmony import */ var _assets_svg_icon_video_svg__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../assets/svg/icon/video.svg */ "./assets/svg/icon/video.svg");
-/* harmony import */ var _assets_svg_icon_comment_svg__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../../assets/svg/icon/comment.svg */ "./assets/svg/icon/comment.svg");
-/* harmony import */ var _assets_svg_icon_scrubber_svg__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../../assets/svg/icon/scrubber.svg */ "./assets/svg/icon/scrubber.svg");
-/* harmony import */ var _assets_svg_icon_checkbox_svg__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../../assets/svg/icon/checkbox.svg */ "./assets/svg/icon/checkbox.svg");
-/* harmony import */ var _assets_svg_icon_angle_circle_svg__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../../assets/svg/icon/angle-circle.svg */ "./assets/svg/icon/angle-circle.svg");
-/* harmony import */ var _assets_svg_icon_toggle_svg__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../../assets/svg/icon/toggle.svg */ "./assets/svg/icon/toggle.svg");
-/* harmony import */ var _assets_svg_icon_picture_svg__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../../assets/svg/icon/picture.svg */ "./assets/svg/icon/picture.svg");
-/* harmony import */ var _assets_svg_icon_arrow_square_right_svg__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../../assets/svg/icon/arrow-square-right.svg */ "./assets/svg/icon/arrow-square-right.svg");
-/* harmony import */ var _assets_svg_icon_arrow_square_left_svg__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../../assets/svg/icon/arrow-square-left.svg */ "./assets/svg/icon/arrow-square-left.svg");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! react-inlinesvg */ "./node_modules/react-inlinesvg/esm/index.js");
+/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! uuid */ "./node_modules/uuid/dist/esm-browser/v4.js");
+/* harmony import */ var _assets_svg_icon_chart_bar_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../assets/svg/icon/chart-bar.svg */ "./assets/svg/icon/chart-bar.svg");
+/* harmony import */ var _assets_svg_icon_bar_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../assets/svg/icon/bar.svg */ "./assets/svg/icon/bar.svg");
+/* harmony import */ var _assets_svg_icon_hash_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../assets/svg/icon/hash.svg */ "./assets/svg/icon/hash.svg");
+/* harmony import */ var _assets_svg_icon_button_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../assets/svg/icon/button.svg */ "./assets/svg/icon/button.svg");
+/* harmony import */ var _assets_svg_icon_upload_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../assets/svg/icon/upload.svg */ "./assets/svg/icon/upload.svg");
+/* harmony import */ var _assets_svg_icon_sliders_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../assets/svg/icon/sliders.svg */ "./assets/svg/icon/sliders.svg");
+/* harmony import */ var _assets_svg_icon_calendar_check_svg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../assets/svg/icon/calendar-check.svg */ "./assets/svg/icon/calendar-check.svg");
+/* harmony import */ var _assets_svg_icon_star_svg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../assets/svg/icon/star.svg */ "./assets/svg/icon/star.svg");
+/* harmony import */ var _assets_svg_icon_meter_svg__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../assets/svg/icon/meter.svg */ "./assets/svg/icon/meter.svg");
+/* harmony import */ var _assets_svg_icon_marker_svg__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../assets/svg/icon/marker.svg */ "./assets/svg/icon/marker.svg");
+/* harmony import */ var _assets_svg_icon_address_book_svg__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../assets/svg/icon/address-book.svg */ "./assets/svg/icon/address-book.svg");
+/* harmony import */ var _assets_svg_icon_envelope_svg__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../assets/svg/icon/envelope.svg */ "./assets/svg/icon/envelope.svg");
+/* harmony import */ var _assets_svg_icon_phone_flip_svg__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../assets/svg/icon/phone-flip.svg */ "./assets/svg/icon/phone-flip.svg");
+/* harmony import */ var _assets_svg_icon_link_alt_svg__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../assets/svg/icon/link-alt.svg */ "./assets/svg/icon/link-alt.svg");
+/* harmony import */ var _assets_svg_icon_open_ended_svg__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../assets/svg/icon/open-ended.svg */ "./assets/svg/icon/open-ended.svg");
+/* harmony import */ var _assets_svg_icon_chart_simple_horizontal_svg__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../assets/svg/icon/chart-simple-horizontal.svg */ "./assets/svg/icon/chart-simple-horizontal.svg");
+/* harmony import */ var _assets_svg_icon_video_svg__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../../assets/svg/icon/video.svg */ "./assets/svg/icon/video.svg");
+/* harmony import */ var _assets_svg_icon_comment_svg__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../../assets/svg/icon/comment.svg */ "./assets/svg/icon/comment.svg");
+/* harmony import */ var _assets_svg_icon_scrubber_svg__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../../assets/svg/icon/scrubber.svg */ "./assets/svg/icon/scrubber.svg");
+/* harmony import */ var _assets_svg_icon_checkbox_svg__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../../assets/svg/icon/checkbox.svg */ "./assets/svg/icon/checkbox.svg");
+/* harmony import */ var _assets_svg_icon_angle_circle_svg__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../../assets/svg/icon/angle-circle.svg */ "./assets/svg/icon/angle-circle.svg");
+/* harmony import */ var _assets_svg_icon_toggle_svg__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../../assets/svg/icon/toggle.svg */ "./assets/svg/icon/toggle.svg");
+/* harmony import */ var _assets_svg_icon_picture_svg__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../../assets/svg/icon/picture.svg */ "./assets/svg/icon/picture.svg");
+/* harmony import */ var _assets_svg_icon_arrow_square_right_svg__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../../assets/svg/icon/arrow-square-right.svg */ "./assets/svg/icon/arrow-square-right.svg");
+/* harmony import */ var _assets_svg_icon_arrow_square_left_svg__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../../assets/svg/icon/arrow-square-left.svg */ "./assets/svg/icon/arrow-square-left.svg");
+/* harmony import */ var _icon_facebook_svg__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @icon/facebook.svg */ "./assets/svg/icon/facebook.svg");
+/* harmony import */ var _icon_twitter_svg__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @icon/twitter.svg */ "./assets/svg/icon/twitter.svg");
+/* harmony import */ var _icon_youtube_svg__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @icon/youtube.svg */ "./assets/svg/icon/youtube.svg");
+/* harmony import */ var _icon_instagram_svg__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @icon/instagram.svg */ "./assets/svg/icon/instagram.svg");
+
+
+
+
+
+
 
 
 
@@ -1841,10 +1978,10 @@ __webpack_require__.r(__webpack_exports__);
 //apply filter
 
 const questions = [{
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
   title: 'Long text',
   screen_type: 'long-text',
-  icon: _assets_svg_icon_chart_bar_svg__WEBPACK_IMPORTED_MODULE_0__["default"],
+  icon: _assets_svg_icon_chart_bar_svg__WEBPACK_IMPORTED_MODULE_1__["default"],
   isPro: false,
   isComing: false,
   position: {
@@ -1853,7 +1990,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -1925,10 +2062,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
   title: 'Short text',
   screen_type: 'short-text',
-  icon: _assets_svg_icon_bar_svg__WEBPACK_IMPORTED_MODULE_1__["default"],
+  icon: _assets_svg_icon_bar_svg__WEBPACK_IMPORTED_MODULE_2__["default"],
   isPro: false,
   isComing: false,
   position: {
@@ -1937,7 +2074,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -2009,10 +2146,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
   title: 'Number',
   screen_type: 'number',
-  icon: _assets_svg_icon_hash_svg__WEBPACK_IMPORTED_MODULE_2__["default"],
+  icon: _assets_svg_icon_hash_svg__WEBPACK_IMPORTED_MODULE_3__["default"],
   isPro: false,
   isComing: false,
   position: {
@@ -2021,7 +2158,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -2093,10 +2230,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
   title: 'Button',
   screen_type: 'button',
-  icon: _assets_svg_icon_button_svg__WEBPACK_IMPORTED_MODULE_3__["default"],
+  icon: _assets_svg_icon_button_svg__WEBPACK_IMPORTED_MODULE_4__["default"],
   isPro: false,
   isComing: false,
   position: {
@@ -2105,7 +2242,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -2177,10 +2314,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
   title: 'File Upload',
   screen_type: 'upload',
-  icon: _assets_svg_icon_upload_svg__WEBPACK_IMPORTED_MODULE_4__["default"],
+  icon: _assets_svg_icon_upload_svg__WEBPACK_IMPORTED_MODULE_5__["default"],
   isPro: false,
   isComing: false,
   position: {
@@ -2189,7 +2326,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -2265,10 +2402,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
   title: 'Range slider',
   screen_type: 'slider',
-  icon: _assets_svg_icon_sliders_svg__WEBPACK_IMPORTED_MODULE_5__["default"],
+  icon: _assets_svg_icon_sliders_svg__WEBPACK_IMPORTED_MODULE_6__["default"],
   isPro: false,
   isComing: false,
   position: {
@@ -2277,7 +2414,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -2350,10 +2487,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
   title: 'Date',
   screen_type: 'date',
-  icon: _assets_svg_icon_calendar_check_svg__WEBPACK_IMPORTED_MODULE_6__["default"],
+  icon: _assets_svg_icon_calendar_check_svg__WEBPACK_IMPORTED_MODULE_7__["default"],
   isPro: false,
   isComing: false,
   position: {
@@ -2362,7 +2499,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -2432,10 +2569,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
   title: 'Rating (Stars)',
   screen_type: 'rating',
-  icon: _assets_svg_icon_star_svg__WEBPACK_IMPORTED_MODULE_7__["default"],
+  icon: _assets_svg_icon_star_svg__WEBPACK_IMPORTED_MODULE_8__["default"],
   isPro: true,
   isComing: false,
   position: {
@@ -2444,7 +2581,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -2516,10 +2653,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
-  title: 'Likert Scale (0-10)',
-  screen_type: 'likert',
-  icon: _assets_svg_icon_meter_svg__WEBPACK_IMPORTED_MODULE_8__["default"],
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+  title: 'Promoter score',
+  screen_type: 'score',
+  icon: _assets_svg_icon_meter_svg__WEBPACK_IMPORTED_MODULE_9__["default"],
   isPro: true,
   isComing: false,
   position: {
@@ -2528,30 +2665,28 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
     elements: [{
-      key: 'greeting-text',
-      greeting_text: ''
+      key: 'label',
+      text: 'Type your question here!*'
     }, {
       key: 'description',
-      label: ''
+      text: 'Type a description'
     }, {
       key: 'required',
       is_required: '0'
     }, {
-      key: 'show-timer',
-      is_show_timer: '0'
+      key: 'format',
+      dataFormat: 'MM-DD-YYYY'
     }, {
-      key: 'time-mins',
-      time_in_mins: ''
+      key: 'separator',
+      sign: '-'
     }, {
-      key: 'time-complete',
-      is_time_to_complete: '0'
-    }, {
-      key: 'btn-text',
+      key: 'action-btn',
+      isActive: false,
       button_text: 'Submit'
     }],
     allowedRules: [],
@@ -2600,10 +2735,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
   title: 'Address',
   screen_type: 'address',
-  icon: _assets_svg_icon_marker_svg__WEBPACK_IMPORTED_MODULE_9__["default"],
+  icon: _assets_svg_icon_marker_svg__WEBPACK_IMPORTED_MODULE_10__["default"],
   isPro: false,
   isComing: false,
   position: {
@@ -2612,30 +2747,25 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
     elements: [{
-      key: 'greeting-text',
-      greeting_text: ''
+      key: 'label',
+      text: ''
     }, {
       key: 'description',
-      label: ''
+      text: ''
+    }, {
+      key: 'placeholder',
+      text: ''
     }, {
       key: 'required',
       is_required: '0'
     }, {
-      key: 'show-timer',
-      is_show_timer: '0'
-    }, {
-      key: 'time-mins',
-      time_in_mins: ''
-    }, {
-      key: 'time-complete',
-      is_time_to_complete: '0'
-    }, {
-      key: 'btn-text',
+      key: 'action-btn',
+      isActive: false,
       button_text: 'Submit'
     }],
     allowedRules: [],
@@ -2684,10 +2814,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
   title: 'Contact info',
   screen_type: 'contact',
-  icon: _assets_svg_icon_address_book_svg__WEBPACK_IMPORTED_MODULE_10__["default"],
+  icon: _assets_svg_icon_address_book_svg__WEBPACK_IMPORTED_MODULE_11__["default"],
   isPro: false,
   isComing: false,
   position: {
@@ -2696,7 +2826,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -2768,10 +2898,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
   title: 'Email',
   screen_type: 'email',
-  icon: _assets_svg_icon_envelope_svg__WEBPACK_IMPORTED_MODULE_11__["default"],
+  icon: _assets_svg_icon_envelope_svg__WEBPACK_IMPORTED_MODULE_12__["default"],
   isPro: false,
   isComing: false,
   position: {
@@ -2780,7 +2910,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -2847,10 +2977,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
   title: 'Phone number',
   screen_type: 'phone',
-  icon: _assets_svg_icon_phone_flip_svg__WEBPACK_IMPORTED_MODULE_12__["default"],
+  icon: _assets_svg_icon_phone_flip_svg__WEBPACK_IMPORTED_MODULE_13__["default"],
   isPro: false,
   isComing: false,
   position: {
@@ -2859,7 +2989,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -2926,10 +3056,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
   title: 'Website',
   screen_type: 'url',
-  icon: _assets_svg_icon_link_alt_svg__WEBPACK_IMPORTED_MODULE_13__["default"],
+  icon: _assets_svg_icon_link_alt_svg__WEBPACK_IMPORTED_MODULE_14__["default"],
   isPro: false,
   isComing: false,
   position: {
@@ -2938,7 +3068,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -3005,10 +3135,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
   title: 'Open Ended',
   screen_type: 'open-ended',
-  icon: _assets_svg_icon_open_ended_svg__WEBPACK_IMPORTED_MODULE_14__["default"],
+  icon: _assets_svg_icon_open_ended_svg__WEBPACK_IMPORTED_MODULE_15__["default"],
   isPro: false,
   position: {
     x: -150,
@@ -3016,7 +3146,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -3088,10 +3218,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
   title: 'Results',
   screen_type: 'result',
-  icon: _assets_svg_icon_chart_simple_horizontal_svg__WEBPACK_IMPORTED_MODULE_15__["default"],
+  icon: _assets_svg_icon_chart_simple_horizontal_svg__WEBPACK_IMPORTED_MODULE_16__["default"],
   isPro: true,
   position: {
     x: -150,
@@ -3099,30 +3229,25 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
     elements: [{
-      key: 'greeting-text',
-      greeting_text: ''
+      key: 'label',
+      text: ''
     }, {
       key: 'description',
-      label: ''
+      text: ''
+    }, {
+      key: 'placeholder',
+      text: ''
     }, {
       key: 'required',
       is_required: '0'
     }, {
-      key: 'show-timer',
-      is_show_timer: '0'
-    }, {
-      key: 'time-mins',
-      time_in_mins: ''
-    }, {
-      key: 'time-complete',
-      is_time_to_complete: '0'
-    }, {
-      key: 'btn-text',
+      key: 'action-btn',
+      isActive: false,
       button_text: 'Submit'
     }],
     allowedRules: [],
@@ -3171,10 +3296,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
   title: 'Live call',
   screen_type: 'live-call',
-  icon: _assets_svg_icon_video_svg__WEBPACK_IMPORTED_MODULE_16__["default"],
+  icon: _assets_svg_icon_video_svg__WEBPACK_IMPORTED_MODULE_17__["default"],
   isPro: false,
   isComing: true,
   position: {
@@ -3183,7 +3308,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -3255,10 +3380,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
   title: 'Live chat',
   screen_type: 'live-chat',
-  icon: _assets_svg_icon_comment_svg__WEBPACK_IMPORTED_MODULE_17__["default"],
+  icon: _assets_svg_icon_comment_svg__WEBPACK_IMPORTED_MODULE_18__["default"],
   isPro: false,
   isComing: true,
   position: {
@@ -3267,7 +3392,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -3339,10 +3464,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
   title: 'Single-select',
   screen_type: 'single-select',
-  icon: _assets_svg_icon_scrubber_svg__WEBPACK_IMPORTED_MODULE_18__["default"],
+  icon: _assets_svg_icon_scrubber_svg__WEBPACK_IMPORTED_MODULE_19__["default"],
   isPro: false,
   isComing: false,
   position: {
@@ -3351,30 +3476,22 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
     elements: [{
-      key: 'greeting-text',
-      greeting_text: ''
+      key: 'label',
+      text: ''
     }, {
       key: 'description',
-      label: ''
+      text: ''
     }, {
       key: 'required',
       is_required: '0'
     }, {
-      key: 'show-timer',
-      is_show_timer: '0'
-    }, {
-      key: 'time-mins',
-      time_in_mins: ''
-    }, {
-      key: 'time-complete',
-      is_time_to_complete: '0'
-    }, {
-      key: 'btn-text',
+      key: 'action-btn',
+      isActive: false,
       button_text: 'Submit'
     }],
     allowedRules: [],
@@ -3423,10 +3540,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
   title: 'Multi-select',
   screen_type: 'multi-select',
-  icon: _assets_svg_icon_checkbox_svg__WEBPACK_IMPORTED_MODULE_19__["default"],
+  icon: _assets_svg_icon_checkbox_svg__WEBPACK_IMPORTED_MODULE_20__["default"],
   isPro: true,
   isComing: false,
   position: {
@@ -3435,7 +3552,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -3507,10 +3624,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
   title: 'Dropdown',
   screen_type: 'dropdown',
-  icon: _assets_svg_icon_angle_circle_svg__WEBPACK_IMPORTED_MODULE_20__["default"],
+  icon: _assets_svg_icon_angle_circle_svg__WEBPACK_IMPORTED_MODULE_21__["default"],
   isPro: false,
   isComing: false,
   position: {
@@ -3519,7 +3636,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -3591,10 +3708,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
   title: 'Yes/No',
   screen_type: 'yes-no',
-  icon: _assets_svg_icon_toggle_svg__WEBPACK_IMPORTED_MODULE_21__["default"],
+  icon: _assets_svg_icon_toggle_svg__WEBPACK_IMPORTED_MODULE_22__["default"],
   isPro: false,
   isComing: false,
   position: {
@@ -3603,7 +3720,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -3675,10 +3792,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
   title: 'Picture select',
   screen_type: 'picture-select',
-  icon: _assets_svg_icon_picture_svg__WEBPACK_IMPORTED_MODULE_22__["default"],
+  icon: _assets_svg_icon_picture_svg__WEBPACK_IMPORTED_MODULE_23__["default"],
   isPro: true,
   isComing: false,
   position: {
@@ -3687,7 +3804,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -3759,10 +3876,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
   title: 'Welcome',
   screen_type: 'welcome',
-  icon: _assets_svg_icon_arrow_square_right_svg__WEBPACK_IMPORTED_MODULE_23__["default"],
+  icon: _assets_svg_icon_arrow_square_right_svg__WEBPACK_IMPORTED_MODULE_24__["default"],
   isPro: false,
   isComing: false,
   position: {
@@ -3771,7 +3888,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -3843,10 +3960,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
   title: 'End',
   screen_type: 'end',
-  icon: _assets_svg_icon_arrow_square_left_svg__WEBPACK_IMPORTED_MODULE_24__["default"],
+  icon: _assets_svg_icon_arrow_square_left_svg__WEBPACK_IMPORTED_MODULE_25__["default"],
   isPro: false,
   isComing: false,
   position: {
@@ -3855,7 +3972,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_25__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -3921,6 +4038,20 @@ const questions = [{
 const initialQuestions = questions.filter(item => item.screen_type === 'welcome' || item.screen_type === 'end');
 const filteredEndScreen = questions.filter(item => item.screen_type === 'end');
 const endQuestion = filteredEndScreen[0];
+const socialIcons = {
+  facebook: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_31__["default"], {
+    src: _icon_facebook_svg__WEBPACK_IMPORTED_MODULE_26__["default"]
+  }),
+  twitter: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_31__["default"], {
+    src: _icon_twitter_svg__WEBPACK_IMPORTED_MODULE_27__["default"]
+  }),
+  youtube: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_31__["default"], {
+    src: _icon_youtube_svg__WEBPACK_IMPORTED_MODULE_28__["default"]
+  }),
+  instagram: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_31__["default"], {
+    src: _icon_instagram_svg__WEBPACK_IMPORTED_MODULE_29__["default"]
+  })
+};
 
 
 /***/ }),

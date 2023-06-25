@@ -1,5 +1,4 @@
 import { v4 as uuidv4 } from 'uuid';
-import useStore from '../../../../../hooks/useStore';
 import ScreenItem from './ScreenItem.js';
 
 export default function ScreenListType( {
@@ -8,8 +7,6 @@ export default function ScreenListType( {
 	type,
 	screenList,
 } ) {
-	const { getStoreData, setStoreData } = useStore();
-	//const { form } = singleForm;
 	const { content } = singleForm;
 	const { questions } = JSON.parse( content );
 	const hasWelcomeQuestion = questions.filter(
@@ -27,7 +24,6 @@ export default function ScreenListType( {
 			content: JSON.stringify( { questions: questions } ),
 		};
 		setSingleForm( updatedForm );
-		//setStoreData( [ 'helpgent-single-form' ], { form: updatedForm } );
 	}
 	return (
 		screenList.length !== 0 && (

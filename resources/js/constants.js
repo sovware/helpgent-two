@@ -1,3 +1,4 @@
+import ReactSVG from 'react-inlinesvg';
 import { v4 as uuidv4 } from 'uuid';
 import chartBar from '../../assets/svg/icon/chart-bar.svg';
 import bar from '../../assets/svg/icon/bar.svg';
@@ -24,6 +25,11 @@ import toggle from '../../assets/svg/icon/toggle.svg';
 import picture from '../../assets/svg/icon/picture.svg';
 import arrowSquareRight from '../../assets/svg/icon/arrow-square-right.svg';
 import arrowSquareLeft from '../../assets/svg/icon/arrow-square-left.svg';
+
+import facebook from '@icon/facebook.svg';
+import twitter from '@icon/twitter.svg';
+import youtube from '@icon/youtube.svg';
+import instagram from '@icon/instagram.svg';
 
 //apply filter
 
@@ -881,8 +887,8 @@ const questions = [
 	},
 	{
 		id: uuidv4(),
-		title: 'Likert Scale (0-10)',
-		screen_type: 'likert',
+		title: 'Promoter score',
+		screen_type: 'score',
 		icon: meter,
 		isPro: true,
 		isComing: false,
@@ -894,31 +900,28 @@ const questions = [
 				type: 'text', // elementor, gutenburg, shortcode
 				elements: [
 					{
-						key: 'greeting-text',
-						greeting_text: '',
+						key: 'label',
+						text: 'Type your question here!*',
 					},
 					{
 						key: 'description',
-						label: '',
+						text: 'Type a description',
 					},
 					{
 						key: 'required',
 						is_required: '0',
 					},
 					{
-						key: 'show-timer',
-						is_show_timer: '0',
+						key: 'format',
+						dataFormat: 'MM-DD-YYYY',
 					},
 					{
-						key: 'time-mins',
-						time_in_mins: '',
+						key: 'separator',
+						sign: '-',
 					},
 					{
-						key: 'time-complete',
-						is_time_to_complete: '0',
-					},
-					{
-						key: 'btn-text',
+						key: 'action-btn',
+						isActive: false,
 						button_text: 'Submit',
 					},
 				],
@@ -1000,31 +1003,24 @@ const questions = [
 				type: 'text', // elementor, gutenburg, shortcode
 				elements: [
 					{
-						key: 'greeting-text',
-						greeting_text: '',
+						key: 'label',
+						text: '',
 					},
 					{
 						key: 'description',
-						label: '',
+						text: '',
+					},
+					{
+						key: 'placeholder',
+						text: '',
 					},
 					{
 						key: 'required',
 						is_required: '0',
 					},
 					{
-						key: 'show-timer',
-						is_show_timer: '0',
-					},
-					{
-						key: 'time-mins',
-						time_in_mins: '',
-					},
-					{
-						key: 'time-complete',
-						is_time_to_complete: '0',
-					},
-					{
-						key: 'btn-text',
+						key: 'action-btn',
+						isActive: false,
 						button_text: 'Submit',
 					},
 				],
@@ -1613,31 +1609,24 @@ const questions = [
 				type: 'text', // elementor, gutenburg, shortcode
 				elements: [
 					{
-						key: 'greeting-text',
-						greeting_text: '',
+						key: 'label',
+						text: '',
 					},
 					{
 						key: 'description',
-						label: '',
+						text: '',
+					},
+					{
+						key: 'placeholder',
+						text: '',
 					},
 					{
 						key: 'required',
 						is_required: '0',
 					},
 					{
-						key: 'show-timer',
-						is_show_timer: '0',
-					},
-					{
-						key: 'time-mins',
-						time_in_mins: '',
-					},
-					{
-						key: 'time-complete',
-						is_time_to_complete: '0',
-					},
-					{
-						key: 'btn-text',
+						key: 'action-btn',
+						isActive: false,
 						button_text: 'Submit',
 					},
 				],
@@ -1931,31 +1920,20 @@ const questions = [
 				type: 'text', // elementor, gutenburg, shortcode
 				elements: [
 					{
-						key: 'greeting-text',
-						greeting_text: '',
+						key: 'label',
+						text: '',
 					},
 					{
 						key: 'description',
-						label: '',
+						text: '',
 					},
 					{
 						key: 'required',
 						is_required: '0',
 					},
 					{
-						key: 'show-timer',
-						is_show_timer: '0',
-					},
-					{
-						key: 'time-mins',
-						time_in_mins: '',
-					},
-					{
-						key: 'time-complete',
-						is_time_to_complete: '0',
-					},
-					{
-						key: 'btn-text',
+						key: 'action-btn',
+						isActive: false,
 						button_text: 'Submit',
 					},
 				],
@@ -2645,14 +2623,19 @@ const questions = [
 		layout: 'content-right',
 	},
 ];
-
 const initialQuestions = questions.filter(
 	( item ) => item.screen_type === 'welcome' || item.screen_type === 'end'
 );
-
 const filteredEndScreen = questions.filter(
 	( item ) => item.screen_type === 'end'
 );
 const endQuestion = filteredEndScreen[ 0 ];
 
-export { endQuestion, questions, initialQuestions };
+const socialIcons = {
+	facebook: <ReactSVG src={ facebook } />,
+	twitter: <ReactSVG src={ twitter } />,
+	youtube: <ReactSVG src={ youtube } />,
+	instagram: <ReactSVG src={ instagram } />,
+};
+
+export { endQuestion, questions, initialQuestions, socialIcons };

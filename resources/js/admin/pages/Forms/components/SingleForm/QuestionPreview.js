@@ -1,12 +1,7 @@
 import { PreviewComponents } from './constants.js';
-import { QuestionPreviewStyle } from './style.js';
+import { QuestionPreviewStyle } from '../../../../../style.js';
 export default function QuestionPreview( props ) {
 	const { singleForm, setSingleForm, selectedQuestion } = props;
-	const { content } = singleForm;
-	const { questions } = JSON.parse( content );
-	// const selectedQuestion = questions.filter(
-	// 	( item ) => item.id === activeScreenId
-	// );
 	const SelectedComponent =
 		PreviewComponents[ selectedQuestion[ 0 ].screen_type ];
 	return (

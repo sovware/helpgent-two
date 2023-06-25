@@ -56,8 +56,6 @@ export default function ScreenItem( {
 		}
 	}
 
-	//console.log(index, title);
-
 	return (
 		<ScreenItemStyle
 			className={

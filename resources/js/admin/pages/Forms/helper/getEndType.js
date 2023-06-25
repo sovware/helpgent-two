@@ -1,7 +1,5 @@
 import { Draggable } from 'react-beautiful-dnd';
 import ScreenItem from '../components/SingleForm/ScreenItem.js';
-import arrowSquareRight from '@icon/arrow-square-right.svg';
-import arrowSquareLeft from '@icon/arrow-square-left.svg';
 
 export default function getEndType(
 	questions,
@@ -12,7 +10,6 @@ export default function getEndType(
 		( question ) => question.screen_type === 'end'
 	);
 	function handleActivateQuestion( question ) {
-		console.log( question.id );
 		setActiveScreenId( question.id );
 	}
 	return otherType.map( ( item, index ) => (

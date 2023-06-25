@@ -363,6 +363,9 @@ svg.components-spinner{
 .helpgent-form-group {
     display: flex;
     margin-bottom: 20px;
+    &.helpgent-form-group-column{
+        flex-direction: column;
+    }
 
     .helpgent-input-addon {
         display: flex;
@@ -380,7 +383,7 @@ svg.components-spinner{
         }
     }
 
-    .helpgent-form__element {
+    .helpgent-form-group__element {
         width: 100%;
         font-size: 14px;
         font-weight: 500;
@@ -417,9 +420,9 @@ svg.components-spinner{
     }
 
     .helpgent-form-group__label {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        font-size: .93rem;
+        font-weight: 500;
+        color: var(--helpgent-color-dark);
         margin-bottom: 8px;
 
         span,
@@ -560,7 +563,6 @@ svg.components-spinner{
         }
     }
 }
-
 
 /* helpgent range-slider */
 .helpgent-rangeControl{

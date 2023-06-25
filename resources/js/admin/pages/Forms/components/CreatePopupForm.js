@@ -53,8 +53,6 @@ export default function CreatePopupForm() {
 		fetchDefaultPages();
 	}, [] );
 
-	console.log( selectedPages );
-
 	return (
 		<div className="helpgent-createPopup">
 			<CreatePopupHeader title="Let’s get started" />

@@ -1,23 +1,17 @@
-import { v4 as uuidv4 } from 'uuid';
 import { useState, useRef, useEffect } from '@wordpress/element';
 import { Link } from 'react-router-dom';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
-import useStore from '../../../../../hooks/useStore';
 import onDragEnd from '@helper/onDragEnd';
 import checkedClickedOutside from '@helper/checkClickedOutside.js';
-import { useQuery } from '@tanstack/react-query';
-import ScreenItem from './ScreenItem.js';
 import ReactSVG from 'react-inlinesvg';
 import getWelcomeType from '../../helper/getWelcomeType';
 import getOtherType from '../../helper/getOtherType';
 import getEndType from '../../helper/getEndType';
 import handleAddEndScreen from '../../helper/handleAddEndScreen';
 import handleResize from '../../helper/handleResize';
-import { ScreenBarStyle, ScreenItemStyle } from './style.js';
+import { ScreenBarStyle } from './style.js';
 import ScreenListDropdown from './ScreenListDropdown.js';
 import plus from '@icon/plus.svg';
-import bar from '@icon/bar.svg';
-import hash from '@icon/hash.svg';
 
 export default function ScreenBar( props ) {
 	const { singleForm, setSingleForm, activeScreenId, setActiveScreenId } =
@@ -29,17 +23,10 @@ export default function ScreenBar( props ) {
 	function handleToggleMegaDropdown( e ) {
 		e.preventDefault();
 		setMegaDropdown( ! isOpenMegaDropdown );
-		//setStoreData(['helpgent-single-form'],{})
 	}
 
-	const { getStoreData, setStoreData } = useStore();
-	//console.log(getStoreData( [ 'helpgent-single-form' ] ));
-
-	//const { form } = singleForm;
 	const { content } = singleForm;
 	const { questions } = JSON.parse( content );
-	//console.log( content, questions );
-	//console.log(form);
 
 	/* Close Dropdown click on outside */
 	useEffect( () => {
