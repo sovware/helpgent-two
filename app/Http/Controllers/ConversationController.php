@@ -6,28 +6,28 @@ use Exception;
 use HelpGent\App\DTO\ConversationDTO;
 use HelpGent\App\Http\Controllers\Controller;
 use HelpGent\App\Repositories\ConversationRepository;
-use HelpGent\App\Repositories\SubmissionRepository;
+use HelpGent\App\Repositories\ResponseRepository;
 use HelpGent\WaxFramework\RequestValidator\Validator;
 use HelpGent\WaxFramework\Routing\Response;
 use WP_REST_Request;
 
 class ConversationController extends Controller {
-    public SubmissionRepository $submission_repository;
+    public ResponseRepository $response_repository;
 
     public ConversationRepository $conversation_repository;
 
-    public function __construct( ConversationRepository $conversation_repository, SubmissionRepository $submission_repository ) {
+    public function __construct( ConversationRepository $conversation_repository, ResponseRepository $response_repository ) {
         $this->conversation_repository = $conversation_repository;
-        $this->submission_repository   = $submission_repository;
+        $this->response_repository     = $response_repository;
     }
 
     public function index( Validator $validator, WP_REST_Request $wp_rest_request ) {
         $validator->validate(
             [
-                'submission_id' => 'required|numeric',
-                'per_page'      => 'numeric',
-                'page'          => 'numeric',
-                'search'        => 'string'
+                'response_id' => 'required|numeric',
+                'per_page'    => 'numeric',
+                'page'        => 'numeric',
+                'search'      => 'string'
             ]
         );
 
@@ -39,20 +39,20 @@ class ConversationController extends Controller {
             );
         }
 
-        $user          = helpgent_get_current_user();
-        $submission_id = intval( $wp_rest_request->get_param( 'submission_id' ) );
+        $user        = helpgent_get_current_user();
+        $response_id = intval( $wp_rest_request->get_param( 'response_id' ) );
 
-        if ( $user->is_user && ! $this->submission_repository->verify_user( $submission_id, $user->id, $user->is_guest ) ) {
+        if ( $user->is_user && ! $this->response_repository->verify_user( $response_id, $user->id, $user->is_guest ) ) {
             return Response::send(
                 [
-                    'message' => esc_html__( "Sorry, you are not allowed access this submission conversations", 'helpgent' )
+                    'message' => esc_html__( "Sorry, you are not allowed access this response conversations", 'helpgent' )
                 ], 500
             );
         }
 
         return Response::send(
             $this->conversation_repository->get( 
-                $submission_id, 
+                $response_id, 
                 intval( $wp_rest_request->get_param( 'per_page' ) ), 
                 intval( $wp_rest_request->get_param( 'page' ) ), 
                 (string) $wp_rest_request->get_param( 'search' ) 
@@ -63,7 +63,7 @@ class ConversationController extends Controller {
     public function store( Validator $validator, WP_REST_Request $wp_rest_request ) {
         $validator->validate(
             [
-                'submission_id' => 'required|numeric',
+                'response_id'   => 'required|numeric',
                 'message'       => 'string',
                 'attachment_id' => 'integer',
                 'parent_id'     => 'integer|min:1',
@@ -114,19 +114,19 @@ class ConversationController extends Controller {
             );
         }
 
-        $user          = helpgent_get_current_user();
-        $submission_id = intval( $wp_rest_request->get_param( 'submission_id' ) );
+        $user        = helpgent_get_current_user();
+        $response_id = intval( $wp_rest_request->get_param( 'response_id' ) );
 
-        if ( $user->is_user && ! $this->submission_repository->verify_user( $submission_id, $user->id, $user->is_guest ) ) {
+        if ( $user->is_user && ! $this->response_repository->verify_user( $response_id, $user->id, $user->is_guest ) ) {
             return Response::send(
                 [
-                    'message' => esc_html__( "Sorry, you are not allowed access this submission conversations", 'helpgent' )
+                    'message' => esc_html__( "Sorry, you are not allowed access this response conversations", 'helpgent' )
                 ], 500
             );
         }
     
         $conversation_dto = new ConversationDTO(
-            $submission_id,
+            $response_id,
             $message,
             $user->id,
             $attachment_id,
@@ -157,9 +157,9 @@ class ConversationController extends Controller {
     public function update( Validator $validator, WP_REST_Request $wp_rest_request ) {
         $validator->validate(
             [
-                'id'            => 'required|numeric',
-                'submission_id' => 'required|numeric',
-                'message'       => 'required|string'
+                'id'          => 'required|numeric',
+                'response_id' => 'required|numeric',
+                'message'     => 'required|string'
             ]
         );
 
@@ -171,20 +171,20 @@ class ConversationController extends Controller {
             );
         }
 
-        $user          = helpgent_get_current_user();
-        $submission_id = intval( $wp_rest_request->get_param( 'submission_id' ) );
+        $user        = helpgent_get_current_user();
+        $response_id = intval( $wp_rest_request->get_param( 'response_id' ) );
 
-        if ( $user->is_user && ! $this->submission_repository->verify_user( $submission_id, $user->id, $user->is_guest ) ) {
+        if ( $user->is_user && ! $this->response_repository->verify_user( $response_id, $user->id, $user->is_guest ) ) {
             return Response::send(
                 [
-                    'message' => esc_html__( "Sorry, you are not allowed access this submission conversations", 'helpgent' )
+                    'message' => esc_html__( "Sorry, you are not allowed access this response conversations", 'helpgent' )
                 ], 500
             );
         }
 
         $message = $wp_rest_request->get_param( 'message' );
 
-        $conversation_dto = new ConversationDTO( $submission_id, $message );
+        $conversation_dto = new ConversationDTO( $response_id, $message );
 
         $conversation_dto->set_id( intval( $wp_rest_request->get_param( 'id' ) ) );
 
@@ -212,8 +212,8 @@ class ConversationController extends Controller {
     public function delete( Validator $validator, WP_REST_Request $wp_rest_request ) {
         $validator->validate(
             [
-                'id'            => 'required|numeric',
-                'submission_id' => 'required|numeric'
+                'id'          => 'required|numeric',
+                'response_id' => 'required|numeric'
             ]
         );
 
@@ -225,19 +225,19 @@ class ConversationController extends Controller {
             );
         }
 
-        $user          = helpgent_get_current_user();
-        $submission_id = intval( $wp_rest_request->get_param( 'submission_id' ) );
+        $user        = helpgent_get_current_user();
+        $response_id = intval( $wp_rest_request->get_param( 'response_id' ) );
 
-        if ( $user->is_user && ! $this->submission_repository->verify_user( $submission_id, $user->id, $user->is_guest ) ) {
+        if ( $user->is_user && ! $this->response_repository->verify_user( $response_id, $user->id, $user->is_guest ) ) {
             return Response::send(
                 [
-                    'message' => esc_html__( "Sorry, you are not allowed access this submission conversations", 'helpgent' )
+                    'message' => esc_html__( "Sorry, you are not allowed access this response conversations", 'helpgent' )
                 ], 500
             );
         }
     
         try {
-            $this->conversation_repository->delete( intval( $wp_rest_request->get_param( 'id' ) ), $submission_id );
+            $this->conversation_repository->delete( intval( $wp_rest_request->get_param( 'id' ) ), $response_id );
             return Response::send( [] );
         } catch ( Exception $exception ) {
             return Response::send(
@@ -252,8 +252,8 @@ class ConversationController extends Controller {
     public function attachment( Validator $validator, WP_REST_Request $wp_rest_request ) {
         $validator->validate(
             [
-                'type'          => 'required|string',
-                'submission_id' => 'required|numeric'
+                'type'        => 'required|string',
+                'response_id' => 'required|numeric'
             ]
         );
     
@@ -265,20 +265,20 @@ class ConversationController extends Controller {
             );
         }
 
-        $user          = helpgent_get_current_user();
-        $submission_id = intval( $wp_rest_request->get_param( 'submission_id' ) );
+        $user        = helpgent_get_current_user();
+        $response_id = intval( $wp_rest_request->get_param( 'response_id' ) );
 
-        if ( $user->is_user && ! $this->submission_repository->verify_user( $submission_id, $user->id, $user->is_guest ) ) {
+        if ( $user->is_user && ! $this->response_repository->verify_user( $response_id, $user->id, $user->is_guest ) ) {
             return Response::send(
                 [
-                    'message' => esc_html__( "Sorry, you are not allowed access this submission conversations", 'helpgent' )
+                    'message' => esc_html__( "Sorry, you are not allowed access this response conversations", 'helpgent' )
                 ], 500
             );
         }
 
         return Response::send(
             $this->conversation_repository->attachment( 
-                $submission_id, 
+                $response_id, 
                 $wp_rest_request->get_param( 'type' ),
                 intval( $wp_rest_request->get_param( 'per_page' ) ), 
                 intval( $wp_rest_request->get_param( 'page' ) )

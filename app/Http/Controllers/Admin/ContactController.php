@@ -8,7 +8,6 @@ use HelpGent\WaxFramework\RequestValidator\Validator;
 use HelpGent\WaxFramework\Routing\Response;
 use WP_REST_Request;
 
-
 class ContactController extends Controller {
     public ContactRepository $contact_repository;
 

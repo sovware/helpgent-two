@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: HelpGent 2.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/helpgent-two\n"
-"POT-Creation-Date: 2023-06-22 05:01:00+00:00\n"
+"POT-Creation-Date: 2023-06-25 05:30:29+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -19,8 +19,8 @@ msgstr ""
 
 #: app/Http/Controllers/Admin/FormController.php:157
 #: app/Http/Controllers/Admin/FormController.php:236
-#: app/Http/Controllers/Admin/SubmissionController.php:48
-#: app/Http/Controllers/Admin/SubmissionController.php:90
+#: app/Http/Controllers/Admin/ResponseController.php:48
+#: app/Http/Controllers/Admin/ResponseController.php:90
 #: app/Http/Controllers/Admin/TagController.php:131
 #: app/Http/Controllers/AttachmentController.php:150
 msgid "Something Was Wrong!"
@@ -38,28 +38,28 @@ msgstr ""
 msgid "Form Deleted Successfully!"
 msgstr ""
 
-#: app/Http/Controllers/Admin/SettingsController.php:50
-msgid "Settings saved successfully!"
+#: app/Http/Controllers/Admin/ResponseController.php:55
+msgid "Response Deleted Successfully!"
 msgstr ""
 
-#: app/Http/Controllers/Admin/SubmissionController.php:55
-msgid "Submission Deleted Successfully!"
-msgstr ""
-
-#: app/Http/Controllers/Admin/SubmissionController.php:97
+#: app/Http/Controllers/Admin/ResponseController.php:97
 msgid "Important status updated successfully!"
 msgstr ""
 
-#: app/Http/Controllers/Admin/SubmissionController.php:135
-msgid "Submission tag updated successfully!"
+#: app/Http/Controllers/Admin/ResponseController.php:135
+msgid "Response tag updated successfully!"
 msgstr ""
 
-#: app/Http/Controllers/Admin/SubmissionController.php:174
-msgid "Submission status updated successfully!"
+#: app/Http/Controllers/Admin/ResponseController.php:174
+msgid "Response status updated successfully!"
 msgstr ""
 
-#: app/Http/Controllers/Admin/SubmissionController.php:213
-msgid "Submission read status updated successfully!"
+#: app/Http/Controllers/Admin/ResponseController.php:213
+msgid "Response read status updated successfully!"
+msgstr ""
+
+#: app/Http/Controllers/Admin/SettingsController.php:50
+msgid "Settings saved successfully!"
 msgstr ""
 
 #: app/Http/Controllers/Admin/TagController.php:55
@@ -92,16 +92,16 @@ msgstr ""
 #: app/Http/Controllers/ConversationController.php:48
 #: app/Http/Controllers/ConversationController.php:123
 #: app/Http/Controllers/ConversationController.php:180
-#: app/Http/Controllers/ConversationController.php:232
-#: app/Http/Controllers/ConversationController.php:272
-msgid "Sorry, you are not allowed access this submission conversations"
+#: app/Http/Controllers/ConversationController.php:234
+#: app/Http/Controllers/ConversationController.php:274
+msgid "Sorry, you are not allowed access this response conversations"
 msgstr ""
 
-#: app/Http/Controllers/ConversationController.php:198
+#: app/Http/Controllers/ConversationController.php:199
 msgid "Conversation updated successfully!"
 msgstr ""
 
-#: app/Http/Controllers/SubmissionController.php:137
+#: app/Http/Controllers/ResponseController.php:135
 #: app/Repositories/FormRepository.php:42
 #: app/Repositories/FormRepository.php:66
 #: app/Repositories/FormRepository.php:87
@@ -109,32 +109,32 @@ msgstr ""
 msgid "Form not found"
 msgstr ""
 
-#: app/Http/Controllers/SubmissionController.php:148
+#: app/Http/Controllers/ResponseController.php:146
 msgid "Please login to submit the form"
 msgstr ""
 
-#: app/Http/Controllers/SubmissionController.php:221
-msgid "Submission Not Found"
+#: app/Http/Controllers/ResponseController.php:219
+msgid "Response Not Found"
 msgstr ""
 
-#: app/Http/Controllers/SubmissionController.php:231
-#: app/Http/Controllers/SubmissionController.php:315
+#: app/Http/Controllers/ResponseController.php:229
+#: app/Http/Controllers/ResponseController.php:313
 msgid "Sorry, Something was wrong!"
 msgstr ""
 
-#: app/Http/Controllers/SubmissionController.php:276
+#: app/Http/Controllers/ResponseController.php:274
 msgid "Guest user required contact information"
 msgstr ""
 
-#: app/Http/Controllers/SubmissionController.php:309
+#: app/Http/Controllers/ResponseController.php:307
 msgid "Form screen not found"
 msgstr ""
 
-#: app/Http/Controllers/SubmissionController.php:325
+#: app/Http/Controllers/ResponseController.php:323
 msgid "Field handler not found"
 msgstr ""
 
-#: app/Http/Controllers/SubmissionController.php:331
+#: app/Http/Controllers/ResponseController.php:329
 msgid "Please use a valid field handler"
 msgstr ""
 
@@ -159,7 +159,7 @@ msgid "Forms"
 msgstr ""
 
 #: app/Providers/Admin/MenuServiceProvider.php:45
-msgid "Submissions"
+msgid "Responses"
 msgstr ""
 
 #: app/Providers/Admin/MenuServiceProvider.php:46
@@ -192,12 +192,12 @@ msgid "This message was removed"
 msgstr ""
 
 #: app/Repositories/ConversationRepository.php:126
-#: app/Repositories/SubmissionRepository.php:141
-#: app/Repositories/SubmissionRepository.php:176
-#: app/Repositories/SubmissionRepository.php:198
-#: app/Repositories/SubmissionRepository.php:212
-#: app/Repositories/SubmissionTagRepository.php:22
-msgid "Form submission not found"
+#: app/Repositories/ResponseRepository.php:141
+#: app/Repositories/ResponseRepository.php:176
+#: app/Repositories/ResponseRepository.php:198
+#: app/Repositories/ResponseRepository.php:212
+#: app/Repositories/ResponseTagRepository.php:22
+msgid "Form response not found"
 msgstr ""
 
 #: app/Repositories/ConversationRepository.php:159
@@ -215,6 +215,15 @@ msgstr ""
 
 #: app/Repositories/GuestRepository.php:20
 msgid "This email address is already in the user table."
+msgstr ""
+
+#: app/Repositories/ResponseRepository.php:189
+msgid "Response not found"
+msgstr ""
+
+#: app/Repositories/ResponseTagRepository.php:28
+#: app/Repositories/TagRepository.php:40 app/Repositories/TagRepository.php:61
+msgid "Tag not found"
 msgstr ""
 
 #: app/Repositories/SettingsRepository.php:50
@@ -292,20 +301,11 @@ msgstr ""
 msgid "Maximum Voice Record Length"
 msgstr ""
 
-#: app/Repositories/SubmissionRepository.php:189
-msgid "Submission not found"
-msgstr ""
-
-#: app/Repositories/SubmissionTagRepository.php:28
-#: app/Repositories/TagRepository.php:40 app/Repositories/TagRepository.php:61
-msgid "Tag not found"
-msgstr ""
-
 #: app/Repositories/TagRepository.php:24 app/Repositories/TagRepository.php:46
 msgid "%s tag is already exists"
 msgstr ""
 
-#: app/Support/Submission/Fields/ContactInfo.php:49
+#: app/Support/Question/Fields/ContactInfo.php:49
 msgid "You already have an account, please enter you password to continue"
 msgstr ""
 

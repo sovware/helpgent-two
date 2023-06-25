@@ -5,7 +5,7 @@ namespace HelpGent\App\DTO;
 class ConversationDTO {
     private int $id;
 
-    private int $submission_id;
+    private int $response_id;
     
     private string $message;
     
@@ -34,8 +34,8 @@ class ConversationDTO {
 
     private $agent_trigger;
 
-    public function __construct( int $submission_id, string $message = '', int $created_by = 0, int $attachment_id = 0, int $is_guest = 0, int $parent_id = 0, $parent_type = null, int $is_read = 0, string $status = 'publish', $agent_trigger = null ) {
-        $this->submission_id = $submission_id;
+    public function __construct( int $response_id, string $message = '', int $created_by = 0, int $attachment_id = 0, int $is_guest = 0, int $parent_id = 0, $parent_type = null, int $is_read = 0, string $status = 'publish', $agent_trigger = null ) {
+        $this->response_id   = $response_id;
         $this->message       = $message;
         $this->attachment_id = $attachment_id;
         $this->is_read       = $is_read;
@@ -55,12 +55,12 @@ class ConversationDTO {
         $this->id = $id;
     }
 
-    public function get_submission_id() {
-        return $this->submission_id;
+    public function get_response_id() {
+        return $this->response_id;
     }
 
-    public function set_submission_id( int $submission_id ) {
-        $this->submission_id = $submission_id;
+    public function set_response_id( int $response_id ) {
+        $this->response_id = $response_id;
     }
 
     public function get_message() {

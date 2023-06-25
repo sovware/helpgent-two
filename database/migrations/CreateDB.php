@@ -53,10 +53,10 @@ class CreateDB implements Migration {
         ) {$charset_collate};
         
         -- -----------------------------------------------------
-        -- Table submissions
+        -- Table responses
         -- -----------------------------------------------------
 
-        CREATE TABLE {$db_prefix}submissions (
+        CREATE TABLE {$db_prefix}responses (
             `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
             `form_id` BIGINT UNSIGNED NOT NULL,
             `is_important` TINYINT NOT NULL DEFAULT 0 COMMENT 'value: 0/1',
@@ -73,19 +73,19 @@ class CreateDB implements Migration {
         ) {$charset_collate};
 
         -- -----------------------------------------------------
-        -- Table submission_meta
+        -- Table response_meta
         -- -----------------------------------------------------
 
-        CREATE TABLE {$db_prefix}submission_meta (
+        CREATE TABLE {$db_prefix}response_meta (
             `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
-            `submission_id` BIGINT UNSIGNED NOT NULL,
+            `response_id` BIGINT UNSIGNED NOT NULL,
             `meta_key` VARCHAR(255) NULL,
             `meta_value` LONGTEXT NULL,
             `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
             `updated_at` TIMESTAMP NULL,
             PRIMARY KEY (`id`)
         ) {$charset_collate};
-        
+
         -- -----------------------------------------------------
         -- Table attachments
         -- -----------------------------------------------------
@@ -104,12 +104,12 @@ class CreateDB implements Migration {
         ) {$charset_collate};
 
         -- -----------------------------------------------------
-        -- Table responses
+        -- Table question_answers
         -- -----------------------------------------------------
 
-        CREATE TABLE {$db_prefix}responses (
+        CREATE TABLE {$db_prefix}question_answers (
             `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
-            `submission_id` BIGINT UNSIGNED NOT NULL,
+            `response_id` BIGINT UNSIGNED NOT NULL,
             `form_id` BIGINT UNSIGNED NOT NULL,
             `screen_id` BIGINT UNSIGNED NULL,
             `input_id` VARCHAR(100) NOT NULL,
@@ -126,7 +126,7 @@ class CreateDB implements Migration {
 
         CREATE TABLE {$db_prefix}conversations (
             `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
-            `submission_id` BIGINT UNSIGNED NOT NULL,
+            `response_id` BIGINT UNSIGNED NOT NULL,
             `message` LONGTEXT,
             `attachment_id` BIGINT UNSIGNED,
             `is_read` TINYINT NOT NULL DEFAULT 0 COMMENT 'possible values: 1, 0',
@@ -136,6 +136,20 @@ class CreateDB implements Migration {
             `parent_type` VARCHAR(50) COMMENT 'value: reply/forward',
             `agent_trigger` TINYINT NULL COMMENT 'null = not trigger, 0 = leave, 1 = join',
             `status` VARCHAR(50) NOT NULL DEFAULT 'publish' COMMENT 'value: publish/trash',
+            `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+            `updated_at` TIMESTAMP NULL,
+            PRIMARY KEY (`id`)
+        ) {$charset_collate};
+
+        -- -----------------------------------------------------
+        -- Table conversation forwards
+        -- -----------------------------------------------------
+
+        CREATE TABLE {$db_prefix}conversation_forwards (
+            `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+            `conversation_id` BIGINT UNSIGNED NOT NULL,
+            `message` LONGTEXT,
+            `attachment_id` BIGINT UNSIGNED,
             `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
             `updated_at` TIMESTAMP NULL,
             PRIMARY KEY (`id`)
@@ -155,12 +169,12 @@ class CreateDB implements Migration {
         ) {$charset_collate};
 
         -- -----------------------------------------------------
-        -- Table submission_tag
+        -- Table response_tag
         -- -----------------------------------------------------
-        CREATE TABLE {$db_prefix}submission_tag (
+        CREATE TABLE {$db_prefix}response_tag (
             `tag_id` BIGINT UNSIGNED NOT NULL,
             `created_by` BIGINT UNSIGNED NOT NULL,
-            `submission_id` BIGINT UNSIGNED NOT NULL
+            `response_id` BIGINT UNSIGNED NOT NULL
         ) {$charset_collate};
 
         -- -----------------------------------------------------

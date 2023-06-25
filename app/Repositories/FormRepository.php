@@ -12,7 +12,7 @@ class FormRepository {
     public function get( int $per_page, int $page ) {
         $forms = Form::query()
         ->with_count(
-            'submissions as total_submissions', function( Builder $query ) {
+            'responses as total_responses', function( Builder $query ) {
                 $query->where( 'status', 'active' );
             } 
         )

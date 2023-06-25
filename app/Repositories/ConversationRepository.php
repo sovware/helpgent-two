@@ -11,13 +11,13 @@ use HelpGent\App\Models\Conversation;
 use HelpGent\WaxFramework\Database\Query\Builder;
 
 class ConversationRepository {
-    public SubmissionRepository $submission_repository;
+    public ResponseRepository $response_repository;
 
-    public function __construct( SubmissionRepository $submission_repository ) {
-        $this->submission_repository = $submission_repository;
+    public function __construct( ResponseRepository $response_repository ) {
+        $this->response_repository = $response_repository;
     }
 
-    public function get( int $submission_id, int $per_page, int $page, string $search = '' ) {
+    public function get( int $response_id, int $per_page, int $page, string $search = '' ) {
         $select_columns = $this->selected_columns();
 
         $conversations_query = Conversation::query()->select( $select_columns )->with(
@@ -31,9 +31,9 @@ class ConversationRepository {
                 'parent.user_guest' => [$this, 'user_guest_relation'],
                 'attachment'
             ]
-        )->where( 'submission_id', $submission_id );
+        )->where( 'response_id', $response_id );
 
-        $count_query = Conversation::query()->where( 'submission_id', $submission_id );
+        $count_query = Conversation::query()->where( 'response_id', $response_id );
 
         if ( ! empty( $search ) ) {
             global $wpdb;
@@ -55,7 +55,7 @@ class ConversationRepository {
         ];
     }
 
-    public function attachment( int $submission_id, string $type, int $per_page, int $page, string $search = '' ) {
+    public function attachment( int $response_id, string $type, int $per_page, int $page, string $search = '' ) {
         $attachment_exists = Attachment::query( 'attachment' )->select( 1 )->where_column( 'attachment.id', 'conversation.attachment_id' )->limit( 1 );
 
         if ( 'all' !== $type ) {
@@ -71,9 +71,9 @@ class ConversationRepository {
                 'parent.user_guest' => [$this, 'user_guest_relation'],
                 'attachment'
             ]
-        )->where( 'submission_id', $submission_id )->where( 'status', 'publish' )->where( 'attachment_id', '>', 0 )->where_exists( $attachment_exists );  
+        )->where( 'response_id', $response_id )->where( 'status', 'publish' )->where( 'attachment_id', '>', 0 )->where_exists( $attachment_exists );  
 
-        $count_query   = Conversation::query( 'conversation' )->where( 'submission_id', $submission_id )->where( 'status', 'publish' )->where( 'attachment_id', '>', 0 )->where_exists( $attachment_exists );
+        $count_query   = Conversation::query( 'conversation' )->where( 'response_id', $response_id )->where( 'status', 'publish' )->where( 'attachment_id', '>', 0 )->where_exists( $attachment_exists );
         $conversations = $conversations_query->pagination( $per_page, $page );
         $conversations = array_map( [$this, 'prepare_conversation'] , $conversations );
 
@@ -86,7 +86,7 @@ class ConversationRepository {
     protected function selected_columns() {
         $removed_message = esc_html__( "This message was removed", "helpgent" );
 
-        return "id, submission_id, attachment_id, is_read, is_guest, created_by, agent_trigger, parent_id, parent_type, updated_at, status, created_at,
+        return "id, response_id, attachment_id, is_read, is_guest, created_by, agent_trigger, parent_id, parent_type, updated_at, status, created_at,
             CASE 
                 WHEN status = 'trash' THEN '{$removed_message}' 
                 ELSE message 
@@ -120,14 +120,14 @@ class ConversationRepository {
     }
 
     public function create( ConversationDTO $conversation_dto ) {
-        $form_submission = $this->submission_repository->get_by_id( $conversation_dto->get_submission_id() );
+        $form_response = $this->response_repository->get_by_id( $conversation_dto->get_response_id() );
 
-        if ( ! $form_submission ) {
-            throw new Exception( esc_html__( 'Form submission not found', 'helpgent' ), 404 );
+        if ( ! $form_response ) {
+            throw new Exception( esc_html__( 'Form response not found', 'helpgent' ), 404 );
         }
 
         $data = [
-            'submission_id' => $conversation_dto->get_submission_id(),
+            'response_id'   => $conversation_dto->get_response_id(),
             'is_read'       => $conversation_dto->get_is_read(),
             'is_guest'      => $conversation_dto->get_is_guest(),
             'parent_id'     => $conversation_dto->get_parent_id(),
@@ -153,7 +153,7 @@ class ConversationRepository {
     }
 
     public function update( ConversationDTO $conversation_dto ) {
-        $conversation = Conversation::query()->where( 'id', $conversation_dto->get_id() )->where( 'submission_id', $conversation_dto->get_submission_id() )->first();
+        $conversation = Conversation::query()->where( 'id', $conversation_dto->get_id() )->where( 'response_id', $conversation_dto->get_response_id() )->first();
 
         if ( ! $conversation ) {
             throw new Exception( esc_html__( "Conversation not found.", "helpgent" ), 404 );
@@ -163,7 +163,7 @@ class ConversationRepository {
             throw new Exception( esc_html__( "Sorry, you can't update the attachment.", "helpgent" ), 500 );
         }
 
-        return Conversation::query()->where( 'id', $conversation_dto->get_id() )->where( 'submission_id', $conversation_dto->get_submission_id() )->update(
+        return Conversation::query()->where( 'id', $conversation_dto->get_id() )->where( 'response_id', $conversation_dto->get_response_id() )->update(
             [
                 'message'    => $conversation_dto->get_message(),
                 'updated_at' => helpgent_now()
@@ -171,14 +171,14 @@ class ConversationRepository {
         );
     }
 
-    public function delete( int $id, int $submission_id ) {
-        $conversation = Conversation::query()->where( 'id', $id )->where( 'submission_id', $submission_id )->first();
+    public function delete( int $id, int $response_id ) {
+        $conversation = Conversation::query()->where( 'id', $id )->where( 'response_id', $response_id )->first();
 
         if ( ! $conversation ) {
             throw new Exception( esc_html__( "Conversation not found.", "helpgent" ), 404 );
         }
 
-        return Conversation::query()->where( 'id', $id )->where( 'submission_id', $submission_id )->update(
+        return Conversation::query()->where( 'id', $id )->where( 'response_id', $response_id )->update(
             [
                 'status' => 'trash'
             ]
