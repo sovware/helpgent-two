@@ -1696,7 +1696,7 @@ __webpack_require__.r(__webpack_exports__);
 
 async function handleCreateForm(form, createFormMutation, setServerErrors, navigate) {
   const screenFormContent = JSON.stringify({
-    initialQuestions: _constants__WEBPACK_IMPORTED_MODULE_0__.initialQuestions
+    questions: _constants__WEBPACK_IMPORTED_MODULE_0__.initialQuestions
   });
   const formData = {
     status: 'draft',
@@ -1762,7 +1762,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (/* binding */ handlePageSelection)
 /* harmony export */ });
 function handlePageSelection(selectEvent, setSelectedPages, selected, setValue) {
-  console.log(selectEvent);
   setSelectedPages(selectEvent);
   setValue('available_pages', selectEvent);
 }
@@ -3487,6 +3486,29 @@ const questions = [{
       key: 'description',
       text: ''
     }, {
+      key: 'option',
+      options: [{
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+        //string
+        label: "Choose option 1",
+        isSelected: true
+      }, {
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+        //string
+        label: "Choose option 2",
+        isSelected: false
+      }, {
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+        //string
+        label: "Choose option 3",
+        isSelected: false
+      }, {
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+        //string
+        label: "Choose option 4",
+        isSelected: false
+      }]
+    }, {
       key: 'required',
       is_required: '0'
     }, {
@@ -3557,25 +3579,36 @@ const questions = [{
     type: 'text',
     // elementor, gutenburg, shortcode
     elements: [{
-      key: 'greeting-text',
-      greeting_text: ''
+      key: 'label',
+      text: ''
     }, {
       key: 'description',
-      label: ''
+      text: ''
+    }, {
+      key: 'option',
+      options: [{
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+        //string
+        label: "Choose option 1"
+      }, {
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+        //string
+        label: "Choose option 2"
+      }, {
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+        //string
+        label: "Choose option 3"
+      }, {
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+        //string
+        label: "Choose option 4"
+      }]
     }, {
       key: 'required',
       is_required: '0'
     }, {
-      key: 'show-timer',
-      is_show_timer: '0'
-    }, {
-      key: 'time-mins',
-      time_in_mins: ''
-    }, {
-      key: 'time-complete',
-      is_time_to_complete: '0'
-    }, {
-      key: 'btn-text',
+      key: 'action-btn',
+      isActive: false,
       button_text: 'Submit'
     }],
     allowedRules: [],
@@ -3641,25 +3674,40 @@ const questions = [{
     type: 'text',
     // elementor, gutenburg, shortcode
     elements: [{
-      key: 'greeting-text',
-      greeting_text: ''
+      key: 'label',
+      text: ''
     }, {
       key: 'description',
-      label: ''
+      text: ''
+    }, {
+      key: 'option',
+      options: [{
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+        //string
+        label: "Choose option 1",
+        value: "option-1"
+      }, {
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+        //string
+        label: "Choose option 2",
+        value: "option-1"
+      }, {
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+        //string
+        label: "Choose option 3",
+        value: "option-1"
+      }, {
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+        //string
+        label: "Choose option 4",
+        value: "option-1"
+      }]
     }, {
       key: 'required',
       is_required: '0'
     }, {
-      key: 'show-timer',
-      is_show_timer: '0'
-    }, {
-      key: 'time-mins',
-      time_in_mins: ''
-    }, {
-      key: 'time-complete',
-      is_time_to_complete: '0'
-    }, {
-      key: 'btn-text',
+      key: 'action-btn',
+      isActive: false,
       button_text: 'Submit'
     }],
     allowedRules: [],

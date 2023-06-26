@@ -146,6 +146,7 @@ const QuestionPreviewStyle = Styled.div`
         text-align: left;
         /* max-height: 430px;
         overflow-y: auto; */
+        margin-top: 8px;
         max-width: 370px;
         .helpgent-btn{
             height: 48px;
@@ -170,6 +171,14 @@ const QuestionPreviewStyle = Styled.div`
         textarea.helpgent-form__element{
             resize: none;
             min-height: 100px;
+        }
+        .helpgent-question-element__option-count{
+            display: block;
+            width: 100%;
+            text-align: right;
+            margin-top: 10px;
+            font-size: .87rem;
+            color: var(--helpgent-color-light-gray);
         }
     }
     .helpgent-form-icon-left{
@@ -208,7 +217,8 @@ const QuestionPreviewStyle = Styled.div`
     }
     .helpgent-select__placeholder{
         font-size: .93rem;
-        color: var(--helpgent-color-text);
+        font-weight: 400;
+        color: var(--helpgent-color-gray);
     }
     .helpgent-select__single-value{
         font-size: .93rem;
@@ -257,10 +267,10 @@ const ScoreQuestionStyle = Styled.div`
     }   
 `;
 const SingleSelectStyle = Styled.div`
-    border-radius: 10px;
-    padding: 12px 15px 14px;
     line-height: 1.25;
-    background-color: var(--helpgent-color-bg-light);
+    &:not(last-child){
+        margin-bottom: 10px;
+    }
     input[type='radio']{
         display: none;
         &:checked {
@@ -279,33 +289,92 @@ const SingleSelectStyle = Styled.div`
     }
     .helpgent-single-select__option{
         position: relative;
-        padding-left: 30px;
+        border-radius: 10px;
+        padding: 14px 15px 14px 45px;
+        width: 100%;
+        display: inline-block;
+        max-width: 290px;
+        background-color: var(--helpgent-color-bg-light);
         color: var(--helpgent-color-gray);
         &:after{
             position: absolute;
-            left: 0;
-            top: 0;
+            left: 15px;
+            top: 13px;
             width: 18px;
             height: 18px;
             border-radius: 50%;
             content: '';
             background-color: #A2A2A2;
-            transition: background-color .25s ease-in;
         }
         &:before{
             position: absolute;
             width: 16px;
             height: 16px;
-            left: 9px;
-            top: 9px;
+            left: 24px;
+            top: 22px;
             border-radius: 50%;
             content: '';
             background-color: #EFEFEF;
             transform: translate(-50%,-50%);
-            transition: width 0.25s ease-in, height 0.25s ease-in;
             z-index: 10;
         }
     }
 `;
+const MultiSelectStyle = Styled.div`
+    &:not(last-child){
+        margin-bottom: 10px;
+    }
+    input[type='checkbox']{
+        display: none;
+        &:checked {
+            & + .helpgent-multi-select__option{
+                svg{
+                    display: block;
+                }
+                &:before{
+                    border-color: var(--helpgent-color-primary);
+                    background-color: var(--helpgent-color-primary);
+                }
+            }
+        }
+    }
+    .helpgent-multi-select__option{
+        position: relative;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        padding: 14px 15px 14px 45px;
+        width: 100%;
+        display: inline-block;
+        max-width: 290px;
+        background-color: var(--helpgent-color-bg-light);
+        &:before{
+            position: absolute;
+            left: 15px;
+            width: 14px;
+            height: 14px;
+            border-radius: 5px;
+            background-color: transparent;
+            content: '';
+            border: 2px solid var(--helpgent-color-extra-light);
+        }
+        svg{
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            left: 20px;
+            top: 19px;
+            display: none;
+            path{
+                fill: var(--helpgent-color-white);
+            }
+        }
+    }
+`;
 
-export { QuestionPreviewStyle, ScoreQuestionStyle, SingleSelectStyle };
+export {
+	QuestionPreviewStyle,
+	ScoreQuestionStyle,
+	SingleSelectStyle,
+	MultiSelectStyle,
+};

@@ -1928,6 +1928,31 @@ const questions = [
 						text: '',
 					},
 					{
+						key: 'option',
+						options: [
+							{
+								id: uuidv4(), //string
+								label: 'Choose option 1',
+								isSelected: true,
+							},
+							{
+								id: uuidv4(), //string
+								label: 'Choose option 2',
+								isSelected: false,
+							},
+							{
+								id: uuidv4(), //string
+								label: 'Choose option 3',
+								isSelected: false,
+							},
+							{
+								id: uuidv4(), //string
+								label: 'Choose option 4',
+								isSelected: false,
+							},
+						],
+					},
+					{
 						key: 'required',
 						is_required: '0',
 					},
@@ -2015,31 +2040,41 @@ const questions = [
 				type: 'text', // elementor, gutenburg, shortcode
 				elements: [
 					{
-						key: 'greeting-text',
-						greeting_text: '',
+						key: 'label',
+						text: '',
 					},
 					{
 						key: 'description',
-						label: '',
+						text: '',
+					},
+					{
+						key: 'option',
+						options: [
+							{
+								id: uuidv4(), //string
+								label: 'Choose option 1',
+							},
+							{
+								id: uuidv4(), //string
+								label: 'Choose option 2',
+							},
+							{
+								id: uuidv4(), //string
+								label: 'Choose option 3',
+							},
+							{
+								id: uuidv4(), //string
+								label: 'Choose option 4',
+							},
+						],
 					},
 					{
 						key: 'required',
 						is_required: '0',
 					},
 					{
-						key: 'show-timer',
-						is_show_timer: '0',
-					},
-					{
-						key: 'time-mins',
-						time_in_mins: '',
-					},
-					{
-						key: 'time-complete',
-						is_time_to_complete: '0',
-					},
-					{
-						key: 'btn-text',
+						key: 'action-btn',
+						isActive: false,
 						button_text: 'Submit',
 					},
 				],
@@ -2121,31 +2156,45 @@ const questions = [
 				type: 'text', // elementor, gutenburg, shortcode
 				elements: [
 					{
-						key: 'greeting-text',
-						greeting_text: '',
+						key: 'label',
+						text: '',
 					},
 					{
 						key: 'description',
-						label: '',
+						text: '',
+					},
+					{
+						key: 'option',
+						options: [
+							{
+								id: uuidv4(), //string
+								label: 'Choose option 1',
+								value: 'option-1',
+							},
+							{
+								id: uuidv4(), //string
+								label: 'Choose option 2',
+								value: 'option-1',
+							},
+							{
+								id: uuidv4(), //string
+								label: 'Choose option 3',
+								value: 'option-1',
+							},
+							{
+								id: uuidv4(), //string
+								label: 'Choose option 4',
+								value: 'option-1',
+							},
+						],
 					},
 					{
 						key: 'required',
 						is_required: '0',
 					},
 					{
-						key: 'show-timer',
-						is_show_timer: '0',
-					},
-					{
-						key: 'time-mins',
-						time_in_mins: '',
-					},
-					{
-						key: 'time-complete',
-						is_time_to_complete: '0',
-					},
-					{
-						key: 'btn-text',
+						key: 'action-btn',
+						isActive: false,
 						button_text: 'Submit',
 					},
 				],

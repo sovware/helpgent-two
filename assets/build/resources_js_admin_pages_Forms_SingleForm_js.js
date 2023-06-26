@@ -3073,6 +3073,7 @@ function ScreenBar(props) {
   const {
     questions
   } = JSON.parse(content);
+  console.log(questions);
 
   /* Close Dropdown click on outside */
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
@@ -3433,7 +3434,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_questionList_ResultQuestion_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @components/questionList/ResultQuestion.js */ "./resources/js/components/questionList/ResultQuestion.js");
 /* harmony import */ var _components_questionList_ScoreQuestion_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @components/questionList/ScoreQuestion.js */ "./resources/js/components/questionList/ScoreQuestion.js");
 /* harmony import */ var _components_questionList_SingleSelectQuestion__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @components/questionList/SingleSelectQuestion */ "./resources/js/components/questionList/SingleSelectQuestion.js");
-/* harmony import */ var _components_questionList_EndQuestion_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @components/questionList/EndQuestion.js */ "./resources/js/components/questionList/EndQuestion.js");
+/* harmony import */ var _components_questionList_MultiSelectQuestions__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @components/questionList/MultiSelectQuestions */ "./resources/js/components/questionList/MultiSelectQuestions.js");
+/* harmony import */ var _components_questionList_DropdownQuestion__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @components/questionList/DropdownQuestion */ "./resources/js/components/questionList/DropdownQuestion.js");
+/* harmony import */ var _components_questionList_EndQuestion_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @components/questionList/EndQuestion.js */ "./resources/js/components/questionList/EndQuestion.js");
+
+
 
 
 
@@ -3464,7 +3469,9 @@ const PreviewComponents = {
   result: _components_questionList_ResultQuestion_js__WEBPACK_IMPORTED_MODULE_11__["default"],
   score: _components_questionList_ScoreQuestion_js__WEBPACK_IMPORTED_MODULE_12__["default"],
   'single-select': _components_questionList_SingleSelectQuestion__WEBPACK_IMPORTED_MODULE_13__["default"],
-  end: _components_questionList_EndQuestion_js__WEBPACK_IMPORTED_MODULE_14__["default"]
+  'multi-select': _components_questionList_MultiSelectQuestions__WEBPACK_IMPORTED_MODULE_14__["default"],
+  dropdown: _components_questionList_DropdownQuestion__WEBPACK_IMPORTED_MODULE_15__["default"],
+  end: _components_questionList_EndQuestion_js__WEBPACK_IMPORTED_MODULE_16__["default"]
 };
 
 
@@ -4428,7 +4435,7 @@ function AddressQuestion(props) {
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
     htmlFor: "helpgent-address-state",
     className: "helpgent-form-group__label"
-  }, "State/Region ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+  }, "State/Region", ' ', (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "helpgent-required-sign"
   }, "*")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
     type: "text",
@@ -4440,7 +4447,7 @@ function AddressQuestion(props) {
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
     htmlFor: "helpgent-address-zip",
     className: "helpgent-form-group__label"
-  }, "Zip/Post code ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+  }, "Zip/Post code", ' ', (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "helpgent-required-sign"
   }, "*")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
     type: "text",
@@ -4452,7 +4459,7 @@ function AddressQuestion(props) {
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
     htmlFor: "helpgent-country-select",
     className: "helpgent-form-group__label"
-  }, "Country ", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+  }, "Country", ' ', (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "helpgent-required-sign"
   }, "*")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_select_async__WEBPACK_IMPORTED_MODULE_1__["default"], {
     cacheOptions: true,
@@ -4632,6 +4639,97 @@ function DateQuestion(props) {
     handleChangeDate: handleChangeDate,
     date: date
   }), actionBtn.isActive && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    className: "helpgent-btn-next helpgent-btn helpgent-btn-primary helpgent-btn-md"
+  }, actionBtn.button_text)));
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/questionList/DropdownQuestion.js":
+/*!******************************************************************!*\
+  !*** ./resources/js/components/questionList/DropdownQuestion.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ DropdownQuestion)
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_quill__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-quill */ "./node_modules/react-quill/lib/index.js");
+/* harmony import */ var react_quill__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_quill__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/react-select.esm.js");
+/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../style */ "./resources/js/style.js");
+/* harmony import */ var react_quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-quill/dist/quill.snow.css */ "./node_modules/react-quill/dist/quill.snow.css");
+/* harmony import */ var _icon_check_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @icon/check.svg */ "./assets/svg/icon/check.svg");
+
+
+
+
+
+
+
+
+function DropdownQuestion(props) {
+  const [date, setDate] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)();
+  const {
+    layoutMode,
+    singleForm,
+    setSingleForm,
+    selectedQuestion: dropdownQuestion
+  } = props;
+  const {
+    content
+  } = singleForm;
+  const {
+    questions
+  } = JSON.parse(content);
+  const {
+    elements
+  } = dropdownQuestion[0].fields[0];
+  const ref = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const quillModules = {
+    toolbar: false
+  };
+  const elementsObject = elements.reduce((acc, element) => {
+    acc[element.key] = element;
+    return acc;
+  }, {});
+  const {
+    label,
+    description,
+    placeholder,
+    required,
+    option: selectOption,
+    'action-btn': actionBtn
+  } = elementsObject;
+  console.log(selectOption.options);
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element__text"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element__label"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)((react_quill__WEBPACK_IMPORTED_MODULE_1___default()), {
+    modules: quillModules,
+    placeholder: `Type a question ${required ? '*' : null}`
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element__description"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)((react_quill__WEBPACK_IMPORTED_MODULE_1___default()), {
+    modules: quillModules,
+    placeholder: "Type a description"
+  }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element__action"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_select__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    inputId: "helpgent-page-select",
+    className: "helpgent-select",
+    classNamePrefix: "helpgent-select",
+    placeholder: "Please select",
+    options: selectOption.options
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "helpgent-question-element__option-count"
+  }, selectOption.options.length, " options in list"), actionBtn.isActive && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
     className: "helpgent-btn-next helpgent-btn helpgent-btn-primary helpgent-btn-md"
   }, actionBtn.button_text)));
 }
@@ -4962,6 +5060,106 @@ function LongTextQuestion(props) {
 
 /***/ }),
 
+/***/ "./resources/js/components/questionList/MultiSelectQuestions.js":
+/*!**********************************************************************!*\
+  !*** ./resources/js/components/questionList/MultiSelectQuestions.js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ MultiSelectQuestion)
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_quill__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-quill */ "./node_modules/react-quill/lib/index.js");
+/* harmony import */ var react_quill__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_quill__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-inlinesvg */ "./node_modules/react-inlinesvg/esm/index.js");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../style */ "./resources/js/style.js");
+/* harmony import */ var react_quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-quill/dist/quill.snow.css */ "./node_modules/react-quill/dist/quill.snow.css");
+/* harmony import */ var _icon_check_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @icon/check.svg */ "./assets/svg/icon/check.svg");
+
+
+
+
+
+
+
+
+function MultiSelectQuestion(props) {
+  const [date, setDate] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)();
+  const {
+    layoutMode,
+    singleForm,
+    setSingleForm,
+    selectedQuestion: singleSelectQuestion
+  } = props;
+  const {
+    content
+  } = singleForm;
+  const {
+    questions
+  } = JSON.parse(content);
+  const {
+    elements
+  } = singleSelectQuestion[0].fields[0];
+  const ref = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const quillModules = {
+    toolbar: false
+  };
+  const elementsObject = elements.reduce((acc, element) => {
+    acc[element.key] = element;
+    return acc;
+  }, {});
+  const {
+    label,
+    description,
+    placeholder,
+    required,
+    option: selectOption,
+    'action-btn': actionBtn
+  } = elementsObject;
+  console.log(selectOption.options);
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element__text"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element__label"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)((react_quill__WEBPACK_IMPORTED_MODULE_1___default()), {
+    modules: quillModules,
+    placeholder: `Type a question ${required ? '*' : null}`
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element__description"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)((react_quill__WEBPACK_IMPORTED_MODULE_1___default()), {
+    modules: quillModules,
+    placeholder: "Type a description"
+  }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element__action"
+  }, selectOption.options.map((item, index) => {
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_style__WEBPACK_IMPORTED_MODULE_3__.MultiSelectStyle, {
+      className: "helpgent-multi-select",
+      key: index
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+      type: "checkbox",
+      name: "helpgent-multi-select",
+      id: `helpgent-select-option-${item.id}`,
+      onChange: () => {}
+    }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
+      htmlFor: `helpgent-select-option-${item.id}`,
+      className: "helpgent-multi-select__option"
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      src: _icon_check_svg__WEBPACK_IMPORTED_MODULE_5__["default"]
+    }), item.label));
+  }), actionBtn.isActive && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    className: "helpgent-btn-next helpgent-btn helpgent-btn-primary helpgent-btn-md"
+  }, actionBtn.button_text)));
+}
+
+/***/ }),
+
 /***/ "./resources/js/components/questionList/NumberQuestion.js":
 /*!****************************************************************!*\
   !*** ./resources/js/components/questionList/NumberQuestion.js ***!
@@ -5171,7 +5369,7 @@ function ScoreQuestion(props) {
   function getScoringItem() {
     const scoreList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     const scoreDoms = scoreList.map((item, key) => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
-      className: activeScore === item ? "helpgent-promoter-score__single helpgent-active" : "helpgent-promoter-score__single",
+      className: activeScore === item ? 'helpgent-promoter-score__single helpgent-active' : 'helpgent-promoter-score__single',
       key: item,
       onClick: () => handleScoreActivate(item)
     }, item));
@@ -5320,7 +5518,7 @@ function SingleSelectQuestion(props) {
     layoutMode,
     singleForm,
     setSingleForm,
-    selectedQuestion: fileQuestion
+    selectedQuestion: singleSelectQuestion
   } = props;
   const {
     content
@@ -5330,7 +5528,7 @@ function SingleSelectQuestion(props) {
   } = JSON.parse(content);
   const {
     elements
-  } = fileQuestion[0].fields[0];
+  } = singleSelectQuestion[0].fields[0];
   const ref = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
   const quillModules = {
     toolbar: false
@@ -5344,8 +5542,10 @@ function SingleSelectQuestion(props) {
     description,
     placeholder,
     required,
+    option: selectOption,
     'action-btn': actionBtn
   } = elementsObject;
+  console.log(selectOption.options);
   const dateFormatOptions = {
     day: '2-digit',
     month: '2-digit',
@@ -5377,15 +5577,21 @@ function SingleSelectQuestion(props) {
     placeholder: "Type a description"
   }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-question-element__action"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_style__WEBPACK_IMPORTED_MODULE_4__.SingleSelectStyle, {
-    className: "helpgent-single-select"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
-    type: "radio",
-    id: "helpgent-select-option-1"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
-    htmlFor: "helpgent-select-option-1",
-    className: "helpgent-single-select__option"
-  }, "Choose option 1")), actionBtn.isActive && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+  }, selectOption.options.map((item, index) => {
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_style__WEBPACK_IMPORTED_MODULE_4__.SingleSelectStyle, {
+      className: "helpgent-single-select",
+      key: index
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+      type: "radio",
+      name: "helpgent-single-select",
+      id: `helpgent-select-option-${index}`,
+      checked: item.isSelected,
+      onChange: () => {}
+    }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
+      htmlFor: `helpgent-select-option-${index}`,
+      className: "helpgent-single-select__option"
+    }, item.label));
+  }), actionBtn.isActive && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
     className: "helpgent-btn-next helpgent-btn helpgent-btn-primary helpgent-btn-md"
   }, actionBtn.button_text)));
 }
@@ -7217,6 +7423,29 @@ const questions = [{
       key: 'description',
       text: ''
     }, {
+      key: 'option',
+      options: [{
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+        //string
+        label: "Choose option 1",
+        isSelected: true
+      }, {
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+        //string
+        label: "Choose option 2",
+        isSelected: false
+      }, {
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+        //string
+        label: "Choose option 3",
+        isSelected: false
+      }, {
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+        //string
+        label: "Choose option 4",
+        isSelected: false
+      }]
+    }, {
       key: 'required',
       is_required: '0'
     }, {
@@ -7287,25 +7516,36 @@ const questions = [{
     type: 'text',
     // elementor, gutenburg, shortcode
     elements: [{
-      key: 'greeting-text',
-      greeting_text: ''
+      key: 'label',
+      text: ''
     }, {
       key: 'description',
-      label: ''
+      text: ''
+    }, {
+      key: 'option',
+      options: [{
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+        //string
+        label: "Choose option 1"
+      }, {
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+        //string
+        label: "Choose option 2"
+      }, {
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+        //string
+        label: "Choose option 3"
+      }, {
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+        //string
+        label: "Choose option 4"
+      }]
     }, {
       key: 'required',
       is_required: '0'
     }, {
-      key: 'show-timer',
-      is_show_timer: '0'
-    }, {
-      key: 'time-mins',
-      time_in_mins: ''
-    }, {
-      key: 'time-complete',
-      is_time_to_complete: '0'
-    }, {
-      key: 'btn-text',
+      key: 'action-btn',
+      isActive: false,
       button_text: 'Submit'
     }],
     allowedRules: [],
@@ -7371,25 +7611,40 @@ const questions = [{
     type: 'text',
     // elementor, gutenburg, shortcode
     elements: [{
-      key: 'greeting-text',
-      greeting_text: ''
+      key: 'label',
+      text: ''
     }, {
       key: 'description',
-      label: ''
+      text: ''
+    }, {
+      key: 'option',
+      options: [{
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+        //string
+        label: "Choose option 1",
+        value: "option-1"
+      }, {
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+        //string
+        label: "Choose option 2",
+        value: "option-1"
+      }, {
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+        //string
+        label: "Choose option 3",
+        value: "option-1"
+      }, {
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+        //string
+        label: "Choose option 4",
+        value: "option-1"
+      }]
     }, {
       key: 'required',
       is_required: '0'
     }, {
-      key: 'show-timer',
-      is_show_timer: '0'
-    }, {
-      key: 'time-mins',
-      time_in_mins: ''
-    }, {
-      key: 'time-complete',
-      is_time_to_complete: '0'
-    }, {
-      key: 'btn-text',
+      key: 'action-btn',
+      isActive: false,
       button_text: 'Submit'
     }],
     allowedRules: [],
@@ -9233,6 +9488,7 @@ function useStore() {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   MultiSelectStyle: () => (/* binding */ MultiSelectStyle),
 /* harmony export */   QuestionPreviewStyle: () => (/* binding */ QuestionPreviewStyle),
 /* harmony export */   ScoreQuestionStyle: () => (/* binding */ ScoreQuestionStyle),
 /* harmony export */   SingleSelectStyle: () => (/* binding */ SingleSelectStyle)
@@ -9385,6 +9641,7 @@ const QuestionPreviewStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["def
         text-align: left;
         /* max-height: 430px;
         overflow-y: auto; */
+        margin-top: 8px;
         max-width: 370px;
         .helpgent-btn{
             height: 48px;
@@ -9409,6 +9666,14 @@ const QuestionPreviewStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["def
         textarea.helpgent-form__element{
             resize: none;
             min-height: 100px;
+        }
+        .helpgent-question-element__option-count{
+            display: block;
+            width: 100%;
+            text-align: right;
+            margin-top: 10px;
+            font-size: .87rem;
+            color: var(--helpgent-color-light-gray);
         }
     }
     .helpgent-form-icon-left{
@@ -9447,7 +9712,8 @@ const QuestionPreviewStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["def
     }
     .helpgent-select__placeholder{
         font-size: .93rem;
-        color: var(--helpgent-color-text);
+        font-weight: 400;
+        color: var(--helpgent-color-gray);
     }
     .helpgent-select__single-value{
         font-size: .93rem;
@@ -9496,10 +9762,10 @@ const ScoreQuestionStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["defau
     }   
 `;
 const SingleSelectStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div`
-    border-radius: 10px;
-    padding: 12px 15px 14px;
     line-height: 1.25;
-    background-color: var(--helpgent-color-bg-light);
+    &:not(last-child){
+        margin-bottom: 10px;
+    }
     input[type='radio']{
         display: none;
         &:checked {
@@ -9518,31 +9784,85 @@ const SingleSelectStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["defaul
     }
     .helpgent-single-select__option{
         position: relative;
-        padding-left: 30px;
+        border-radius: 10px;
+        padding: 14px 15px 14px 45px;
+        width: 100%;
+        display: inline-block;
+        max-width: 290px;
+        background-color: var(--helpgent-color-bg-light);
         color: var(--helpgent-color-gray);
         &:after{
             position: absolute;
-            left: 0;
-            top: 0;
+            left: 15px;
+            top: 13px;
             width: 18px;
             height: 18px;
             border-radius: 50%;
             content: '';
             background-color: #A2A2A2;
-            transition: background-color .25s ease-in;
         }
         &:before{
             position: absolute;
             width: 16px;
             height: 16px;
-            left: 9px;
-            top: 9px;
+            left: 24px;
+            top: 22px;
             border-radius: 50%;
             content: '';
             background-color: #EFEFEF;
             transform: translate(-50%,-50%);
-            transition: width 0.25s ease-in, height 0.25s ease-in;
             z-index: 10;
+        }
+    }
+`;
+const MultiSelectStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div`
+    &:not(last-child){
+        margin-bottom: 10px;
+    }
+    input[type='checkbox']{
+        display: none;
+        &:checked {
+            & + .helpgent-multi-select__option{
+                svg{
+                    display: block;
+                }
+                &:before{
+                    border-color: var(--helpgent-color-primary);
+                    background-color: var(--helpgent-color-primary);
+                }
+            }
+        }
+    }
+    .helpgent-multi-select__option{
+        position: relative;
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        padding: 14px 15px 14px 45px;
+        width: 100%;
+        display: inline-block;
+        max-width: 290px;
+        background-color: var(--helpgent-color-bg-light);
+        &:before{
+            position: absolute;
+            left: 15px;
+            width: 14px;
+            height: 14px;
+            border-radius: 5px;
+            background-color: transparent;
+            content: '';
+            border: 2px solid var(--helpgent-color-extra-light);
+        }
+        svg{
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            left: 20px;
+            top: 19px;
+            display: none;
+            path{
+                fill: var(--helpgent-color-white);
+            }
         }
     }
 `;

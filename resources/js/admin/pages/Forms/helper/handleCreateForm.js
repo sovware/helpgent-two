@@ -5,7 +5,7 @@ export default async function handleCreateForm(
 	setServerErrors,
 	navigate
 ) {
-	const screenFormContent = JSON.stringify( { initialQuestions } );
+	const screenFormContent = JSON.stringify( { questions: initialQuestions } );
 
 	const formData = {
 		status: 'draft',
