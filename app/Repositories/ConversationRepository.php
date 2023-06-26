@@ -109,7 +109,7 @@ class ConversationRepository {
         } elseif ( isset( $conversation->user_guest->email ) ) {
             $avatar_url                           = get_avatar_url( $conversation->user_guest->email );
             $conversation->user_guest->avatar_url = $avatar_url;
-            unset( $conversation->user_guest->user_email );
+            unset( $conversation->user_guest->email );
         }
 
         if ( ! empty( $conversation->parent ) ) {
