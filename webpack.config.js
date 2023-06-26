@@ -24,7 +24,8 @@ module.exports = {
 	entry: {
 		'js/index': './resources/js/admin/index.js',
 		'js/queryStore': './resources/js/queryStore',
-		// 'css/app': './resources/sass/app.scss',
+		'css/global': './resources/sass/global.scss',
+		'css/fonts': './resources/sass/fonts.scss',
 	},
 	output: {
 		path: path.resolve( __dirname, './assets/build/' ),
@@ -62,6 +63,10 @@ module.exports = {
 				__dirname,
 				'resources/js/queryStore'
 			),
+			'@components': path.resolve( __dirname, 'resources/js/components' ),
+			'@hooks': path.resolve( __dirname, 'resources/js/hooks' ),
+			'@helper': path.resolve( __dirname, 'resources/js/helper' ),
+			'@icon': path.resolve( __dirname, 'assets/svg/icon' ),
 		},
 	},
 	devServer: {

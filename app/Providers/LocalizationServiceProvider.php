@@ -32,10 +32,10 @@ class LocalizationServiceProvider implements Provider {
     public function admin_translations() {
         return apply_filters(
             'helpgent_admin_translations', [
-                'default'    => esc_html__( 'Default', 'helpgent' ),
-                'all_forms'  => esc_html__( 'All Forms', 'helpgent' ),
-                'create_new' => esc_html__( 'Create New', 'helpgent' ),
-                'settings'   => esc_html__( 'Settings', 'helpgent' ),
+                'Default'    => esc_html__( 'Default', 'helpgent' ),
+                'All Forms'  => esc_html__( 'All Forms', 'helpgent' ),
+                'Create New' => esc_html__( 'Create New', 'helpgent' ),
+                'Settings'   => esc_html__( 'Settings', 'helpgent' ),
             ]
         );
     }

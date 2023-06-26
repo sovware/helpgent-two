@@ -10,8 +10,8 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "FocusManager": () => (/* binding */ FocusManager),
-/* harmony export */   "focusManager": () => (/* binding */ focusManager)
+/* harmony export */   FocusManager: () => (/* binding */ FocusManager),
+/* harmony export */   focusManager: () => (/* binding */ focusManager)
 /* harmony export */ });
 /* harmony import */ var _subscribable_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./subscribable.mjs */ "./node_modules/@tanstack/query-core/build/lib/subscribable.mjs");
 /* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils.mjs */ "./node_modules/@tanstack/query-core/build/lib/utils.mjs");
@@ -117,11 +117,11 @@ const focusManager = new FocusManager();
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "getNextPageParam": () => (/* binding */ getNextPageParam),
-/* harmony export */   "getPreviousPageParam": () => (/* binding */ getPreviousPageParam),
-/* harmony export */   "hasNextPage": () => (/* binding */ hasNextPage),
-/* harmony export */   "hasPreviousPage": () => (/* binding */ hasPreviousPage),
-/* harmony export */   "infiniteQueryBehavior": () => (/* binding */ infiniteQueryBehavior)
+/* harmony export */   getNextPageParam: () => (/* binding */ getNextPageParam),
+/* harmony export */   getPreviousPageParam: () => (/* binding */ getPreviousPageParam),
+/* harmony export */   hasNextPage: () => (/* binding */ hasNextPage),
+/* harmony export */   hasPreviousPage: () => (/* binding */ hasPreviousPage),
+/* harmony export */   infiniteQueryBehavior: () => (/* binding */ infiniteQueryBehavior)
 /* harmony export */ });
 function infiniteQueryBehavior() {
   return {
@@ -281,7 +281,7 @@ function hasPreviousPage(options, pages) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "defaultLogger": () => (/* binding */ defaultLogger)
+/* harmony export */   defaultLogger: () => (/* binding */ defaultLogger)
 /* harmony export */ });
 const defaultLogger = console;
 
@@ -299,8 +299,8 @@ const defaultLogger = console;
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Mutation": () => (/* binding */ Mutation),
-/* harmony export */   "getDefaultState": () => (/* binding */ getDefaultState)
+/* harmony export */   Mutation: () => (/* binding */ Mutation),
+/* harmony export */   getDefaultState: () => (/* binding */ getDefaultState)
 /* harmony export */ });
 /* harmony import */ var _logger_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./logger.mjs */ "./node_modules/@tanstack/query-core/build/lib/logger.mjs");
 /* harmony import */ var _notifyManager_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./notifyManager.mjs */ "./node_modules/@tanstack/query-core/build/lib/notifyManager.mjs");
@@ -579,7 +579,7 @@ function getDefaultState() {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "MutationCache": () => (/* binding */ MutationCache)
+/* harmony export */   MutationCache: () => (/* binding */ MutationCache)
 /* harmony export */ });
 /* harmony import */ var _notifyManager_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./notifyManager.mjs */ "./node_modules/@tanstack/query-core/build/lib/notifyManager.mjs");
 /* harmony import */ var _mutation_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./mutation.mjs */ "./node_modules/@tanstack/query-core/build/lib/mutation.mjs");
@@ -690,8 +690,8 @@ class MutationCache extends _subscribable_mjs__WEBPACK_IMPORTED_MODULE_0__.Subsc
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "createNotifyManager": () => (/* binding */ createNotifyManager),
-/* harmony export */   "notifyManager": () => (/* binding */ notifyManager)
+/* harmony export */   createNotifyManager: () => (/* binding */ createNotifyManager),
+/* harmony export */   notifyManager: () => (/* binding */ notifyManager)
 /* harmony export */ });
 /* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils.mjs */ "./node_modules/@tanstack/query-core/build/lib/utils.mjs");
 
@@ -805,8 +805,8 @@ const notifyManager = createNotifyManager();
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "OnlineManager": () => (/* binding */ OnlineManager),
-/* harmony export */   "onlineManager": () => (/* binding */ onlineManager)
+/* harmony export */   OnlineManager: () => (/* binding */ OnlineManager),
+/* harmony export */   onlineManager: () => (/* binding */ onlineManager)
 /* harmony export */ });
 /* harmony import */ var _subscribable_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./subscribable.mjs */ "./node_modules/@tanstack/query-core/build/lib/subscribable.mjs");
 /* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils.mjs */ "./node_modules/@tanstack/query-core/build/lib/utils.mjs");
@@ -911,7 +911,7 @@ const onlineManager = new OnlineManager();
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Query": () => (/* binding */ Query)
+/* harmony export */   Query: () => (/* binding */ Query)
 /* harmony export */ });
 /* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils.mjs */ "./node_modules/@tanstack/query-core/build/lib/utils.mjs");
 /* harmony import */ var _logger_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./logger.mjs */ "./node_modules/@tanstack/query-core/build/lib/logger.mjs");
@@ -1404,7 +1404,7 @@ function getDefaultState(options) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "QueryCache": () => (/* binding */ QueryCache)
+/* harmony export */   QueryCache: () => (/* binding */ QueryCache)
 /* harmony export */ });
 /* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils.mjs */ "./node_modules/@tanstack/query-core/build/lib/utils.mjs");
 /* harmony import */ var _query_mjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./query.mjs */ "./node_modules/@tanstack/query-core/build/lib/query.mjs");
@@ -1549,7 +1549,7 @@ class QueryCache extends _subscribable_mjs__WEBPACK_IMPORTED_MODULE_0__.Subscrib
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "QueryClient": () => (/* binding */ QueryClient)
+/* harmony export */   QueryClient: () => (/* binding */ QueryClient)
 /* harmony export */ });
 /* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./utils.mjs */ "./node_modules/@tanstack/query-core/build/lib/utils.mjs");
 /* harmony import */ var _queryCache_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./queryCache.mjs */ "./node_modules/@tanstack/query-core/build/lib/queryCache.mjs");
@@ -1927,7 +1927,7 @@ class QueryClient {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Removable": () => (/* binding */ Removable)
+/* harmony export */   Removable: () => (/* binding */ Removable)
 /* harmony export */ });
 /* harmony import */ var _utils_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils.mjs */ "./node_modules/@tanstack/query-core/build/lib/utils.mjs");
 
@@ -1975,10 +1975,10 @@ class Removable {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "CancelledError": () => (/* binding */ CancelledError),
-/* harmony export */   "canFetch": () => (/* binding */ canFetch),
-/* harmony export */   "createRetryer": () => (/* binding */ createRetryer),
-/* harmony export */   "isCancelledError": () => (/* binding */ isCancelledError)
+/* harmony export */   CancelledError: () => (/* binding */ CancelledError),
+/* harmony export */   canFetch: () => (/* binding */ canFetch),
+/* harmony export */   createRetryer: () => (/* binding */ createRetryer),
+/* harmony export */   isCancelledError: () => (/* binding */ isCancelledError)
 /* harmony export */ });
 /* harmony import */ var _focusManager_mjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./focusManager.mjs */ "./node_modules/@tanstack/query-core/build/lib/focusManager.mjs");
 /* harmony import */ var _onlineManager_mjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./onlineManager.mjs */ "./node_modules/@tanstack/query-core/build/lib/onlineManager.mjs");
@@ -2162,7 +2162,7 @@ function createRetryer(config) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Subscribable": () => (/* binding */ Subscribable)
+/* harmony export */   Subscribable: () => (/* binding */ Subscribable)
 /* harmony export */ });
 class Subscribable {
   constructor() {
@@ -2208,33 +2208,33 @@ class Subscribable {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "difference": () => (/* binding */ difference),
-/* harmony export */   "functionalUpdate": () => (/* binding */ functionalUpdate),
-/* harmony export */   "getAbortController": () => (/* binding */ getAbortController),
-/* harmony export */   "hashQueryKey": () => (/* binding */ hashQueryKey),
-/* harmony export */   "hashQueryKeyByOptions": () => (/* binding */ hashQueryKeyByOptions),
-/* harmony export */   "isError": () => (/* binding */ isError),
-/* harmony export */   "isPlainArray": () => (/* binding */ isPlainArray),
-/* harmony export */   "isPlainObject": () => (/* binding */ isPlainObject),
-/* harmony export */   "isQueryKey": () => (/* binding */ isQueryKey),
-/* harmony export */   "isServer": () => (/* binding */ isServer),
-/* harmony export */   "isValidTimeout": () => (/* binding */ isValidTimeout),
-/* harmony export */   "matchMutation": () => (/* binding */ matchMutation),
-/* harmony export */   "matchQuery": () => (/* binding */ matchQuery),
-/* harmony export */   "noop": () => (/* binding */ noop),
-/* harmony export */   "parseFilterArgs": () => (/* binding */ parseFilterArgs),
-/* harmony export */   "parseMutationArgs": () => (/* binding */ parseMutationArgs),
-/* harmony export */   "parseMutationFilterArgs": () => (/* binding */ parseMutationFilterArgs),
-/* harmony export */   "parseQueryArgs": () => (/* binding */ parseQueryArgs),
-/* harmony export */   "partialDeepEqual": () => (/* binding */ partialDeepEqual),
-/* harmony export */   "partialMatchKey": () => (/* binding */ partialMatchKey),
-/* harmony export */   "replaceAt": () => (/* binding */ replaceAt),
-/* harmony export */   "replaceData": () => (/* binding */ replaceData),
-/* harmony export */   "replaceEqualDeep": () => (/* binding */ replaceEqualDeep),
-/* harmony export */   "scheduleMicrotask": () => (/* binding */ scheduleMicrotask),
-/* harmony export */   "shallowEqualObjects": () => (/* binding */ shallowEqualObjects),
-/* harmony export */   "sleep": () => (/* binding */ sleep),
-/* harmony export */   "timeUntilStale": () => (/* binding */ timeUntilStale)
+/* harmony export */   difference: () => (/* binding */ difference),
+/* harmony export */   functionalUpdate: () => (/* binding */ functionalUpdate),
+/* harmony export */   getAbortController: () => (/* binding */ getAbortController),
+/* harmony export */   hashQueryKey: () => (/* binding */ hashQueryKey),
+/* harmony export */   hashQueryKeyByOptions: () => (/* binding */ hashQueryKeyByOptions),
+/* harmony export */   isError: () => (/* binding */ isError),
+/* harmony export */   isPlainArray: () => (/* binding */ isPlainArray),
+/* harmony export */   isPlainObject: () => (/* binding */ isPlainObject),
+/* harmony export */   isQueryKey: () => (/* binding */ isQueryKey),
+/* harmony export */   isServer: () => (/* binding */ isServer),
+/* harmony export */   isValidTimeout: () => (/* binding */ isValidTimeout),
+/* harmony export */   matchMutation: () => (/* binding */ matchMutation),
+/* harmony export */   matchQuery: () => (/* binding */ matchQuery),
+/* harmony export */   noop: () => (/* binding */ noop),
+/* harmony export */   parseFilterArgs: () => (/* binding */ parseFilterArgs),
+/* harmony export */   parseMutationArgs: () => (/* binding */ parseMutationArgs),
+/* harmony export */   parseMutationFilterArgs: () => (/* binding */ parseMutationFilterArgs),
+/* harmony export */   parseQueryArgs: () => (/* binding */ parseQueryArgs),
+/* harmony export */   partialDeepEqual: () => (/* binding */ partialDeepEqual),
+/* harmony export */   partialMatchKey: () => (/* binding */ partialMatchKey),
+/* harmony export */   replaceAt: () => (/* binding */ replaceAt),
+/* harmony export */   replaceData: () => (/* binding */ replaceData),
+/* harmony export */   replaceEqualDeep: () => (/* binding */ replaceEqualDeep),
+/* harmony export */   scheduleMicrotask: () => (/* binding */ scheduleMicrotask),
+/* harmony export */   shallowEqualObjects: () => (/* binding */ shallowEqualObjects),
+/* harmony export */   sleep: () => (/* binding */ sleep),
+/* harmony export */   timeUntilStale: () => (/* binding */ timeUntilStale)
 /* harmony export */ });
 // TYPES
 // UTILS
