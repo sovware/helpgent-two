@@ -1,12 +1,12 @@
 import ReactQuill from 'react-quill';
+import ReactSVG from 'react-inlinesvg';
 import { useState, useRef } from '@wordpress/element';
-import { formatDate } from '@helper/formatter.js';
-import DatePickerControl from '@components/DatePickerControl.js';
-import { SingleSelectStyle } from '../../style';
+import { CheckboxControl } from '@wordpress/components';
+import { MultiSelectStyle } from '../../style';
 import 'react-quill/dist/quill.snow.css';
-export default function SingleSelectQuestion( props ) {
+import check from '@icon/check.svg';
+export default function MultiSelectQuestion( props ) {
 	const [ date, setDate ] = useState();
-	const [ isActivePicker, setActivePicker ] = useState( false );
 	const {
 		layoutMode,
 		singleForm,
@@ -38,26 +38,6 @@ export default function SingleSelectQuestion( props ) {
 
 	console.log( selectOption.options );
 
-	const dateFormatOptions = {
-		day: '2-digit',
-		month: '2-digit',
-		year: '2-digit',
-	};
-
-	function handleChangeDate( date ) {
-		const formattedData = formatDate(
-			// 'de-DE',
-			// 'de-US',
-			'en-US',
-			// 'en-GB',
-			date,
-			dateFormatOptions
-		);
-
-		const modifiedSeparator = formattedData.replace( /\//g, '-' );
-		setDate( modifiedSeparator );
-	}
-
 	return (
 		<div className="helpgent-question-element">
 			<div className="helpgent-question-element__text">
@@ -77,26 +57,41 @@ export default function SingleSelectQuestion( props ) {
 				</div>
 			</div>
 			<div className="helpgent-question-element__action">
+				{ /* {
+					selectOption.options.map((item,index)=>{
+						return(
+							<SingleSelectStyle className="helpgent-single-select" key={ index }>
+								<input type="radio" name="helpgent-single-select" id={`helpgent-select-option-${index}`} checked={item.isSelected} onChange={()=>{}}/>
+								<label
+									htmlFor={`helpgent-select-option-${index}`}
+									className="helpgent-single-select__option"
+								>
+									{ item.label }
+								</label>
+							</SingleSelectStyle>
+						)
+					})
+				} */ }
 				{ selectOption.options.map( ( item, index ) => {
 					return (
-						<SingleSelectStyle
-							className="helpgent-single-select"
+						<MultiSelectStyle
+							className="helpgent-multi-select"
 							key={ index }
 						>
 							<input
-								type="radio"
-								name="helpgent-single-select"
-								id={ `helpgent-select-option-${ index }` }
-								checked={ item.isSelected }
+								type="checkbox"
+								name="helpgent-multi-select"
+								id={ `helpgent-select-option-${ item.id }` }
 								onChange={ () => {} }
 							/>
 							<label
-								htmlFor={ `helpgent-select-option-${ index }` }
-								className="helpgent-single-select__option"
+								htmlFor={ `helpgent-select-option-${ item.id }` }
+								className="helpgent-multi-select__option"
 							>
+								<ReactSVG src={ check } />
 								{ item.label }
 							</label>
-						</SingleSelectStyle>
+						</MultiSelectStyle>
 					);
 				} ) }
 

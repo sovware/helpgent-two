@@ -28,6 +28,8 @@ export default function ScreenBar( props ) {
 	const { content } = singleForm;
 	const { questions } = JSON.parse( content );
 
+	console.log( questions );
+
 	/* Close Dropdown click on outside */
 	useEffect( () => {
 		checkedClickedOutside( isOpenMegaDropdown, setMegaDropdown, ref );
