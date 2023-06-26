@@ -2,6 +2,8 @@
 
 defined( 'ABSPATH' ) || exit;
 
+use HelpGent\App\Http\Middleware\Auth;
+use HelpGent\App\Http\Middleware\AuthOrGuest;
 use HelpGent\App\Http\Middleware\EnsureIsUserAdmin;
 use HelpGent\App\Providers\Admin\MenuServiceProvider;
 use HelpGent\App\Providers\MediaProtectionProvider;
@@ -40,7 +42,9 @@ return [
     ],
 
     'middleware'              => [
-        'admin' => EnsureIsUserAdmin::class
+        'admin'         => EnsureIsUserAdmin::class,
+        'auth'          => Auth::class,
+        'auth_or_guest' => AuthOrGuest::class
     ],
 
     'migration_db_option_key' => 'helpgent_migrations',

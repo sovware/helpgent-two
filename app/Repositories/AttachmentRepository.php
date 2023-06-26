@@ -3,7 +3,6 @@
 namespace HelpGent\App\Repositories;
 
 use Exception;
-use HelpGent\App\Utils\DateTime;
 use HelpGent\App\Models\Attachment;
 use HelpGent\App\Contracts\MediaDriver;
 use HelpGent\App\DTO\AttachmentDTO;
@@ -44,7 +43,7 @@ class AttachmentRepository {
                 'file_id'    => $attachment_dto->get_file_id(),
                 'created_by' => $attachment_dto->get_created_by(),
                 'is_guest'   => $attachment_dto->get_is_guest(),
-                'updated_at' => DateTime::now()
+                'updated_at' => helpgent_now()
             ]
         );
     }

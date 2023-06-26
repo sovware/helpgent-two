@@ -3,33 +3,48 @@
 namespace HelpGent\App\DTO;
 
 class ResponseDTO {
-    private int $submission_id;
+    private int $id;
 
     private int $form_id;
 
-    private int $screen_id;
+    private string $status;
 
-    private string $input_id;
+    private int $is_important;
 
-    private string $value;
+    /**
+     * @var string|null $ip
+     */
+    private $ip = null;
 
-    private int $is_attachment;
+    /**
+     * @var string|null $city
+     */
+    private $city = null;
 
-    public function __construct( int $submission_id, int $form_id, int $screen_id, string $input_id, string $value, int $is_attachment = 0 ) {
-        $this->submission_id = $submission_id;
-        $this->form_id       = $form_id;
-        $this->screen_id     = $screen_id;
-        $this->input_id      = $input_id;
-        $this->value         = $value;
-        $this->is_attachment = $is_attachment;
+    /**
+     * @var string|null $country
+     */
+    private $country = null;
+
+    private int $created_by;
+
+    private int $is_guest = 0;
+
+    public function __construct( int $form_id, int $created_by, int $is_guest = 0, int $is_important = 0, string $status = 'uncompleted' ) {
+        $this->form_id      = $form_id;
+        $this->status       = $status;
+        $this->is_important = $is_important;
+        $this->created_by   = $created_by;
+        $this->is_guest     = $is_guest;
+        $this->ip           = helpgent_user_ip_address();
     }
 
-    public function get_submission_id() {
-        return $this->submission_id;
+    public function get_id() {
+        return $this->id;
     }
 
-    public function set_submission_id( int $submission_id ) {
-        $this->submission_id = $submission_id;
+    public function set_id( int $id ) {
+        $this->id = $id;
     }
 
     public function get_form_id() {
@@ -40,35 +55,59 @@ class ResponseDTO {
         $this->form_id = $form_id;
     }
 
-    public function get_screen_id() {
-        return $this->screen_id;
+    public function get_status() {
+        return $this->status;
     }
 
-    public function set_screen_id( int $screen_id ) {
-        $this->screen_id = $screen_id;
+    public function set_status( string $status ) {
+        $this->status = $status;
     }
 
-    public function get_input_id() {
-        return $this->input_id;
+    public function get_is_important() {
+        return $this->is_important;
     }
 
-    public function set_input_id( int $input_id ) {
-        $this->input_id = $input_id;
+    public function set_is_important( int $is_important ) {
+        $this->is_important = $is_important;
     }
 
-    public function get_value() {
-        return $this->value;
+    public function get_ip() {
+        return $this->ip;
     }
 
-    public function set_value( int $value ) {
-        $this->value = $value;
+    public function set_ip( string $ip ) {
+        $this->ip = $ip;
     }
 
-    public function get_is_attachment() {
-        return $this->is_attachment;
+    public function get_city() {
+        return $this->city;
     }
 
-    public function set_is_attachment( int $is_attachment ) {
-        $this->is_attachment = $is_attachment;
+    public function set_city( string $city ) {
+        $this->city = $city;
+    }
+
+    public function get_country() {
+        return $this->country;
+    }
+    
+    public function set_country( string $country ) {
+        $this->country = $country;
+    }
+
+    public function get_created_by() {
+        return $this->created_by;
+    }
+
+    public function set_created_by( int $created_by ) {
+        $this->created_by = $created_by;
+    }
+
+    public function get_is_guest() {
+        return $this->is_guest;
+    }
+
+    public function set_is_guest( int $is_guest ) {
+        $this->is_guest = $is_guest;
     }
 }

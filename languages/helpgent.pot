@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: HelpGent 2.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/helpgent-two\n"
-"POT-Creation-Date: 2023-05-29 14:36:27+00:00\n"
+"POT-Creation-Date: 2023-06-25 05:30:29+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,53 +13,53 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 1.0.3\n"
 
-#: app/Http/Controllers/Admin/FormController.php:73
+#: app/Http/Controllers/Admin/FormController.php:81
 msgid "Form Created Successfully!"
 msgstr ""
 
-#: app/Http/Controllers/Admin/FormController.php:112
-#: app/Http/Controllers/Admin/FormController.php:191
-#: app/Http/Controllers/Admin/SubmissionController.php:79
-#: app/Http/Controllers/Admin/SubmissionController.php:121
+#: app/Http/Controllers/Admin/FormController.php:157
+#: app/Http/Controllers/Admin/FormController.php:236
+#: app/Http/Controllers/Admin/ResponseController.php:48
+#: app/Http/Controllers/Admin/ResponseController.php:90
 #: app/Http/Controllers/Admin/TagController.php:131
 #: app/Http/Controllers/AttachmentController.php:150
 msgid "Something Was Wrong!"
 msgstr ""
 
-#: app/Http/Controllers/Admin/FormController.php:119
+#: app/Http/Controllers/Admin/FormController.php:164
 msgid "Form Updated Successfully!"
 msgstr ""
 
-#: app/Http/Controllers/Admin/FormController.php:156
+#: app/Http/Controllers/Admin/FormController.php:201
 msgid "Form status updated successfully!"
 msgstr ""
 
-#: app/Http/Controllers/Admin/FormController.php:198
+#: app/Http/Controllers/Admin/FormController.php:243
 msgid "Form Deleted Successfully!"
+msgstr ""
+
+#: app/Http/Controllers/Admin/ResponseController.php:55
+msgid "Response Deleted Successfully!"
+msgstr ""
+
+#: app/Http/Controllers/Admin/ResponseController.php:97
+msgid "Important status updated successfully!"
+msgstr ""
+
+#: app/Http/Controllers/Admin/ResponseController.php:135
+msgid "Response tag updated successfully!"
+msgstr ""
+
+#: app/Http/Controllers/Admin/ResponseController.php:174
+msgid "Response status updated successfully!"
+msgstr ""
+
+#: app/Http/Controllers/Admin/ResponseController.php:213
+msgid "Response read status updated successfully!"
 msgstr ""
 
 #: app/Http/Controllers/Admin/SettingsController.php:50
 msgid "Settings saved successfully!"
-msgstr ""
-
-#: app/Http/Controllers/Admin/SubmissionController.php:86
-msgid "Submission Deleted Successfully!"
-msgstr ""
-
-#: app/Http/Controllers/Admin/SubmissionController.php:128
-msgid "Important status updated successfully!"
-msgstr ""
-
-#: app/Http/Controllers/Admin/SubmissionController.php:166
-msgid "Submission tag updated successfully!"
-msgstr ""
-
-#: app/Http/Controllers/Admin/SubmissionController.php:205
-msgid "Submission status updated successfully!"
-msgstr ""
-
-#: app/Http/Controllers/Admin/SubmissionController.php:244
-msgid "Submission read status updated successfully!"
 msgstr ""
 
 #: app/Http/Controllers/Admin/TagController.php:55
@@ -76,8 +76,8 @@ msgstr ""
 
 #: app/Http/Controllers/AttachmentController.php:52
 #: app/Http/Controllers/AttachmentController.php:132
-#: app/Repositories/AttachmentRepository.php:35
-#: app/Repositories/AttachmentRepository.php:56
+#: app/Repositories/AttachmentRepository.php:34
+#: app/Repositories/AttachmentRepository.php:55
 msgid "Attachment not found"
 msgstr ""
 
@@ -89,8 +89,53 @@ msgstr ""
 msgid "The Attachment Deleted Successfully!"
 msgstr ""
 
-#: app/Http/Controllers/SubmissionController.php:48
-msgid "Submission Created Successfully!"
+#: app/Http/Controllers/ConversationController.php:48
+#: app/Http/Controllers/ConversationController.php:123
+#: app/Http/Controllers/ConversationController.php:180
+#: app/Http/Controllers/ConversationController.php:234
+#: app/Http/Controllers/ConversationController.php:274
+msgid "Sorry, you are not allowed access this response conversations"
+msgstr ""
+
+#: app/Http/Controllers/ConversationController.php:199
+msgid "Conversation updated successfully!"
+msgstr ""
+
+#: app/Http/Controllers/ResponseController.php:135
+#: app/Repositories/FormRepository.php:42
+#: app/Repositories/FormRepository.php:66
+#: app/Repositories/FormRepository.php:87
+#: app/Repositories/FormRepository.php:101
+msgid "Form not found"
+msgstr ""
+
+#: app/Http/Controllers/ResponseController.php:146
+msgid "Please login to submit the form"
+msgstr ""
+
+#: app/Http/Controllers/ResponseController.php:219
+msgid "Response Not Found"
+msgstr ""
+
+#: app/Http/Controllers/ResponseController.php:229
+#: app/Http/Controllers/ResponseController.php:313
+msgid "Sorry, Something was wrong!"
+msgstr ""
+
+#: app/Http/Controllers/ResponseController.php:274
+msgid "Guest user required contact information"
+msgstr ""
+
+#: app/Http/Controllers/ResponseController.php:307
+msgid "Form screen not found"
+msgstr ""
+
+#: app/Http/Controllers/ResponseController.php:323
+msgid "Field handler not found"
+msgstr ""
+
+#: app/Http/Controllers/ResponseController.php:329
+msgid "Please use a valid field handler"
 msgstr ""
 
 #: app/MediaDriver/Local.php:30
@@ -114,7 +159,7 @@ msgid "Forms"
 msgstr ""
 
 #: app/Providers/Admin/MenuServiceProvider.php:45
-msgid "Submissions"
+msgid "Responses"
 msgstr ""
 
 #: app/Providers/Admin/MenuServiceProvider.php:46
@@ -138,14 +183,47 @@ msgstr ""
 msgid "Create New"
 msgstr ""
 
-#: app/Repositories/AttachmentRepository.php:84
+#: app/Repositories/AttachmentRepository.php:83
 msgid "Please use a valid media driver"
 msgstr ""
 
-#: app/Repositories/FormRepository.php:46
-#: app/Repositories/FormRepository.php:64
-#: app/Repositories/FormRepository.php:78
-msgid "Form not found"
+#: app/Repositories/ConversationRepository.php:87
+msgid "This message was removed"
+msgstr ""
+
+#: app/Repositories/ConversationRepository.php:126
+#: app/Repositories/ResponseRepository.php:141
+#: app/Repositories/ResponseRepository.php:176
+#: app/Repositories/ResponseRepository.php:198
+#: app/Repositories/ResponseRepository.php:212
+#: app/Repositories/ResponseTagRepository.php:22
+msgid "Form response not found"
+msgstr ""
+
+#: app/Repositories/ConversationRepository.php:159
+#: app/Repositories/ConversationRepository.php:178
+msgid "Conversation not found."
+msgstr ""
+
+#: app/Repositories/ConversationRepository.php:163
+msgid "Sorry, you can't update the attachment."
+msgstr ""
+
+#: app/Repositories/GuestRepository.php:14
+msgid "This email address already exists"
+msgstr ""
+
+#: app/Repositories/GuestRepository.php:20
+msgid "This email address is already in the user table."
+msgstr ""
+
+#: app/Repositories/ResponseRepository.php:189
+msgid "Response not found"
+msgstr ""
+
+#: app/Repositories/ResponseTagRepository.php:28
+#: app/Repositories/TagRepository.php:40 app/Repositories/TagRepository.php:61
+msgid "Tag not found"
 msgstr ""
 
 #: app/Repositories/SettingsRepository.php:50
@@ -223,25 +301,12 @@ msgstr ""
 msgid "Maximum Voice Record Length"
 msgstr ""
 
-#: app/Repositories/SubmissionRepository.php:93
-#: app/Repositories/SubmissionRepository.php:119
-#: app/Repositories/SubmissionRepository.php:141
-#: app/Repositories/SubmissionRepository.php:155
-#: app/Repositories/SubmissionTagRepository.php:22
-msgid "Form submission not found"
-msgstr ""
-
-#: app/Repositories/SubmissionRepository.php:132
-msgid "Submission not found"
-msgstr ""
-
-#: app/Repositories/SubmissionTagRepository.php:28
-#: app/Repositories/TagRepository.php:41 app/Repositories/TagRepository.php:62
-msgid "Tag not found"
-msgstr ""
-
-#: app/Repositories/TagRepository.php:25 app/Repositories/TagRepository.php:47
+#: app/Repositories/TagRepository.php:24 app/Repositories/TagRepository.php:46
 msgid "%s tag is already exists"
+msgstr ""
+
+#: app/Support/Question/Fields/ContactInfo.php:49
+msgid "You already have an account, please enter you password to continue"
 msgstr ""
 
 #: resources/views/admin/notice/nginx-setup-notice.php:4
@@ -280,6 +345,10 @@ msgstr ""
 
 #: resources/views/admin/notice/nginx-setup-notice.php:25
 msgid "Dismiss"
+msgstr ""
+
+#: resources/views/preview-template.php:20
+msgid "Helpgent form not found"
 msgstr ""
 
 #. Description of the plugin/theme

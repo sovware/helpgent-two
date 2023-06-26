@@ -6,6 +6,9 @@ use HelpGent\App\Repositories\AttachmentRepository;
 use HelpGent\App\Repositories\SettingsRepository;
 use HelpGent\WaxFramework\App;
 use HelpGent\DI\Container;
+use HelpGent\App\Utils\DateTime;
+use HelpGent\App\Models\Guest;
+use HelpGent\App\Utils\User;
 
 function helpgent():App {
     return App::$instance;
@@ -298,4 +301,85 @@ function helpgent_user_ip_address() {
     }
 
     return null;
+}
+
+function helpgent_generate_token() {
+    $time   = microtime( true );
+    $random = bin2hex( random_bytes( 5 ) );
+    $token  = $random . $time;
+    return $token;
+}
+
+function helpgent_now() {
+    return DateTime::now();
+}
+
+function helpgent_get_valid_guest() {
+    if ( empty( $_REQUEST['token'] ) ) { //phpcs:ignore WordPress.Security.NonceVerification.Recommended
+        return null;
+    }
+
+    global $helpgent_guest_user;
+
+    if ( $helpgent_guest_user ) {
+        return $helpgent_guest_user;
+    }
+
+    $token = sanitize_text_field( wp_unslash( $_REQUEST['token'] ) ); //phpcs:ignore WordPress.Security.NonceVerification.Recommended
+
+    $helpgent_guest_user = Guest::query()->where( 'token', $token )->where( 'token_expires_at', '>', date( 'Y-m-d H:i:s', time() ) )->first();
+
+    return $helpgent_guest_user;
+}
+
+/**
+ * Get current user data.
+ *
+ * @return User|bool
+ */
+function helpgent_get_current_user() {
+    global $helpgent_user;
+
+    if ( ! is_null( $helpgent_user ) ) {
+        return $helpgent_user;
+    }
+
+    $guest = helpgent_get_valid_guest();
+
+    $user = false;
+
+    if ( $guest ) {
+        $user = new User(
+            $guest->id,
+            $guest->email,
+            $guest->first_name,
+            $guest->last_name,
+            "",
+            ['helpgent_guest'],
+            $guest->created_at,
+            true,
+            true
+        );
+    } else {
+        $registered_user = wp_get_current_user();
+
+        if ( ! $registered_user ) {
+            return $user;
+        }
+
+        $user = new User(
+            $registered_user->ID,
+            $registered_user->user_email,
+            $registered_user->display_name,
+            "",
+            $registered_user->user_nicename,
+            $registered_user->roles,
+            $registered_user->user_registered,
+            ! in_array( 'administrator', $registered_user->roles )
+        );
+    }
+
+    $helpgent_user = $user;
+
+    return $user;
 }

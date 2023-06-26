@@ -294,12 +294,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sovware/database.git",
-                "reference": "7c4cc021a6f66466bf130e2eb155c27b12482585"
+                "reference": "a61a77fbd08d358b95b7e3c64f63d5ceb128bf03"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sovware/database/zipball/7c4cc021a6f66466bf130e2eb155c27b12482585",
-                "reference": "7c4cc021a6f66466bf130e2eb155c27b12482585",
+                "url": "https://api.github.com/repos/sovware/database/zipball/a61a77fbd08d358b95b7e3c64f63d5ceb128bf03",
+                "reference": "a61a77fbd08d358b95b7e3c64f63d5ceb128bf03",
                 "shasum": ""
             },
             "require-dev": {
@@ -329,7 +329,7 @@
                 "issues": "https://github.com/sovware/database/issues",
                 "source": "https://github.com/sovware/database/tree/1.0.0"
             },
-            "time": "2023-05-30T09:18:43+00:00"
+            "time": "2023-06-14T09:07:42+00:00"
         },
         {
             "name": "waxframework/framework",
@@ -385,12 +385,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sovware/request-validator.git",
-                "reference": "b53c2b5ed343648a6ea0cc74af710ae2ff710823"
+                "reference": "216622227175da7026990db61df9a1d8735ed231"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sovware/request-validator/zipball/b53c2b5ed343648a6ea0cc74af710ae2ff710823",
-                "reference": "b53c2b5ed343648a6ea0cc74af710ae2ff710823",
+                "url": "https://api.github.com/repos/sovware/request-validator/zipball/216622227175da7026990db61df9a1d8735ed231",
+                "reference": "216622227175da7026990db61df9a1d8735ed231",
                 "shasum": ""
             },
             "require-dev": {
@@ -418,7 +418,7 @@
                 "issues": "https://github.com/sovware/request-validator/issues",
                 "source": "https://github.com/sovware/request-validator/tree/master"
             },
-            "time": "2023-05-08T04:09:14+00:00"
+            "time": "2023-06-12T06:28:43+00:00"
         },
         {
             "name": "waxframework/routing",

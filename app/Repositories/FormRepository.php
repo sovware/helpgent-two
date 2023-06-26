@@ -6,14 +6,13 @@ use Exception;
 use HelpGent\App\DTO\FormDTO;
 use HelpGent\App\Models\Form;
 use HelpGent\App\Models\FormMeta;
-use HelpGent\App\Utils\DateTime;
 use HelpGent\WaxFramework\Database\Query\Builder;
 
 class FormRepository {
     public function get( int $per_page, int $page ) {
         $forms = Form::query()
         ->with_count(
-            'submissions as total_submissions', function( Builder $query ) {
+            'responses as total_responses', function( Builder $query ) {
                 $query->where( 'status', 'active' );
             } 
         )
@@ -76,7 +75,7 @@ class FormRepository {
                 'is_guest_allowed' => $form_dto->get_is_guest_allowed(),
                 'available_pages'  => wp_json_encode( $form_dto->get_available_pages() ),
                 'created_by'       => $form_dto->get_created_by(),
-                'updated_at'       => DateTime::now()
+                'updated_at'       => helpgent_now()
             ]
         );
     }

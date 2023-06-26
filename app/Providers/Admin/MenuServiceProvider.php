@@ -42,7 +42,7 @@ class MenuServiceProvider implements Provider
         add_submenu_page( 'helpgent-menu', esc_html__( 'Overview', 'helpgent' ), esc_html__( 'Overview', 'helpgent' ), 'manage_options', 'helpgent', [$this, 'content'] );
         add_submenu_page( 'helpgent-menu', esc_html__( 'Analytics', 'helpgent' ), esc_html__( 'Analytics', 'helpgent' ), 'manage_options', $page_url . '#/analytics' );
         add_submenu_page( 'helpgent-menu', esc_html__( 'Forms', 'helpgent' ), esc_html__( 'Forms', 'helpgent' ), 'manage_options', $page_url . '#/forms' );
-        add_submenu_page( 'helpgent-menu', esc_html__( 'Submissions', 'helpgent' ), esc_html__( 'Submissions', 'helpgent' ), 'manage_options', $page_url . '#/submissions' );
+        add_submenu_page( 'helpgent-menu', esc_html__( 'Responses', 'helpgent' ), esc_html__( 'Responses', 'helpgent' ), 'manage_options', $page_url . '#/responses' );
         add_submenu_page( 'helpgent-menu', esc_html__( 'Settings', 'helpgent' ), esc_html__( 'Settings', 'helpgent' ), 'manage_options', $page_url . '#/settings' );
         add_submenu_page( 'helpgent-menu', esc_html__( 'Go Pro', 'helpgent' ), esc_html__( 'Go Pro', 'helpgent' ), 'manage_options', $this->pro_url );
         remove_submenu_page( 'helpgent-menu', 'helpgent-menu' );

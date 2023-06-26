@@ -28,8 +28,7 @@ class TagController extends Controller {
     public function store( Validator $validator, WP_REST_Request $wp_rest_request ) {
         $validator->validate(
             [
-                'title'      => 'required|string|max:255',
-                'created_by' => 'required|integer'
+                'title' => 'required|string|max:255'
             ]
         );
 

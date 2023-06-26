@@ -12,9 +12,17 @@ class Conversation extends Model {
         return 'helpgent_conversations';
     }
 
+    public function parent():BelongsToOne {
+        return $this->belongs_to_one( Conversation::class, 'id', 'parent_id' );
+    }
+
     public function user():BelongsToOne {
         return $this->belongs_to_one( User::class, 'ID', 'created_by' )
             ->relation_where( 'is_guest', 0 );
+    }
+
+    public function attachment():BelongsToOne {
+        return $this->belongs_to_one( Attachment::class, 'id', 'attachment_id' );
     }
 
     public function user_guest():BelongsToOne {
