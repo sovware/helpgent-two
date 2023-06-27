@@ -780,6 +780,44 @@ var SvgAd = function SvgAd(props) {
 
 /***/ }),
 
+/***/ "./assets/svg/icon/flags/ae.svg":
+/*!**************************************!*\
+  !*** ./assets/svg/icon/flags/ae.svg ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgAe),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path, _path2, _path3, _path4;
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var SvgAe = function SvgAe(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 513 342"
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#FFF",
+    d: "M0 0h513v342H0z"
+  })), _path2 || (_path2 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#009e49",
+    d: "M0 0h513v114H0z"
+  })), _path3 || (_path3 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M0 228h513v114H0z"
+  })), _path4 || (_path4 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#ce1126",
+    d: "M0 0h171v342H0z"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTMgMzQyIj48cGF0aCBmaWxsPSIjRkZGIiBkPSJNMCAwaDUxM3YzNDJIMHoiLz48cGF0aCBmaWxsPSIjMDA5ZTQ5IiBkPSJNMCAwaDUxM3YxMTRIMHoiLz48cGF0aCBkPSJNMCAyMjhoNTEzdjExNEgweiIvPjxwYXRoIGZpbGw9IiNjZTExMjYiIGQ9Ik0wIDBoMTcxdjM0MkgweiIvPjwvc3ZnPg==");
+
+/***/ }),
+
 /***/ "./assets/svg/icon/flags/af.svg":
 /*!**************************************!*\
   !*** ./assets/svg/icon/flags/af.svg ***!
@@ -1772,6 +1810,672 @@ var SvgDz = function SvgDz(props) {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTMgMzQyIj48cGF0aCBmaWxsPSIjNDE2NjJFIiBkPSJNMCAwaDUxM3YzNDJIMHoiLz48cGF0aCBmaWxsPSIjRkZGIiBkPSJNMjU2LjUgMEg1MTN2MzQySDI1Ni41eiIvPjxnIGZpbGw9IiNEODAwMjciPjxwYXRoIGQ9Im0zNDEuNSAxMDUuMy0yOS40IDQwLjQtNDcuNS0xNS40IDI5LjQgNDAuNC0yOS40IDQwLjQgNDcuNS0xNS40IDI5LjQgNDAuNHYtNTBsNDcuNS0xNS41LTQ3LjUtMTUuNHoiLz48cGF0aCBkPSJNMzA5LjkgMjc2LjdjLTU4LjUgMC0xMDYtNDcuNS0xMDYtMTA2czQ3LjUtMTA2IDEwNi0xMDZjMTguMyAwIDM1LjQgNC42IDUwLjQgMTIuNy0yMy41LTIzLTU1LjctMzcuMi05MS4yLTM3LjItNzIgMC0xMzAuNCA1OC40LTEzMC40IDEzMC40UzE5Ny4xIDMwMSAyNjkuMSAzMDFjMzUuNSAwIDY3LjctMTQuMiA5MS4yLTM3LjItMTQuOSA4LjItMzIuMSAxMi45LTUwLjQgMTIuOXoiLz48L2c+PC9zdmc+");
+
+/***/ }),
+
+/***/ "./assets/svg/icon/flags/gb.svg":
+/*!**************************************!*\
+  !*** ./assets/svg/icon/flags/gb.svg ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgGb),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _g, _path, _g2;
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var SvgGb = function SvgGb(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 513 342"
+  }, props), _g || (_g = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("g", {
+    fill: "#FFF"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M0 0h513v341.3H0V0z"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M311.7 230 513 341.3v-31.5L369.3 230h-57.6zM200.3 111.3 0 0v31.5l143.7 79.8h56.6z"
+  }))), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M393.8 230 513 295.7V230H393.8zm-82.1 0L513 341.3v-31.5L369.3 230h-57.6zm146.9 111.3-147-81.7v81.7h147zM90.3 230 0 280.2V230h90.3zm110 14.2v97.2H25.5l174.8-97.2zm-82.1-132.9L0 45.6v65.7h118.2zm82.1 0L0 0v31.5l143.7 79.8h56.6zM53.4 0l147 81.7V0h-147zm368.3 111.3L513 61.1v50.2h-91.3zm-110-14.2V0h174.9L311.7 97.1z",
+    fill: "#0052B4"
+  })), _g2 || (_g2 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("g", {
+    fill: "#D80027"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M288 0h-64v138.7H0v64h224v138.7h64V202.7h224v-64H288V0z"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M311.7 230 513 341.3v-31.5L369.3 230h-57.6zm-168 0L0 309.9v31.5L200.3 230h-56.6zm56.6-118.7L0 0v31.5l143.7 79.8h56.6zm168 0L513 31.5V0L311.7 111.3h56.6z"
+  }))));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTMgMzQyIj48ZyBmaWxsPSIjRkZGIj48cGF0aCBkPSJNMCAwaDUxM3YzNDEuM0gwVjB6Ii8+PHBhdGggZD0iTTMxMS43IDIzMCA1MTMgMzQxLjN2LTMxLjVMMzY5LjMgMjMwaC01Ny42ek0yMDAuMyAxMTEuMyAwIDB2MzEuNWwxNDMuNyA3OS44aDU2LjZ6Ii8+PC9nPjxnIGZpbGw9IiMwMDUyQjQiPjxwYXRoIGQ9Ik0zOTMuOCAyMzAgNTEzIDI5NS43VjIzMEgzOTMuOHptLTgyLjEgMEw1MTMgMzQxLjN2LTMxLjVMMzY5LjMgMjMwaC01Ny42em0xNDYuOSAxMTEuMy0xNDctODEuN3Y4MS43aDE0N3pNOTAuMyAyMzAgMCAyODAuMlYyMzBoOTAuM3ptMTEwIDE0LjJ2OTcuMkgyNS41bDE3NC44LTk3LjJ6TTExOC4yIDExMS4zIDAgNDUuNnY2NS43aDExOC4yem04Mi4xIDBMMCAwdjMxLjVsMTQzLjcgNzkuOGg1Ni42ek01My40IDBsMTQ3IDgxLjdWMGgtMTQ3ek00MjEuNyAxMTEuMyA1MTMgNjEuMXY1MC4yaC05MS4zem0tMTEwLTE0LjJWMGgxNzQuOUwzMTEuNyA5Ny4xeiIvPjwvZz48ZyBmaWxsPSIjRDgwMDI3Ij48cGF0aCBkPSJNMjg4IDBoLTY0djEzOC43SDB2NjRoMjI0djEzOC43aDY0VjIwMi43aDIyNHYtNjRIMjg4VjB6Ii8+PHBhdGggZD0iTTMxMS43IDIzMCA1MTMgMzQxLjN2LTMxLjVMMzY5LjMgMjMwaC01Ny42ek0xNDMuNyAyMzAgMCAzMDkuOXYzMS41TDIwMC4zIDIzMGgtNTYuNnpNMjAwLjMgMTExLjMgMCAwdjMxLjVsMTQzLjcgNzkuOGg1Ni42ek0zNjguMyAxMTEuMyA1MTMgMzEuNVYwTDMxMS43IDExMS4zaDU2LjZ6Ii8+PC9nPjwvc3ZnPg==");
+
+/***/ }),
+
+/***/ "./assets/svg/icon/flags/ua.svg":
+/*!**************************************!*\
+  !*** ./assets/svg/icon/flags/ua.svg ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgUa),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path, _path2;
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var SvgUa = function SvgUa(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 85.333 512 341.333"
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#FFDA44",
+    d: "M0 85.337h512v341.326H0z"
+  })), _path2 || (_path2 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#338AF3",
+    d: "M0 85.337h512V256H0z"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgODUuMzMzIDUxMiAzNDEuMzMzIj48cGF0aCBmaWxsPSIjRkZEQTQ0IiBkPSJNMCA4NS4zMzdoNTEydjM0MS4zMjZIMHoiLz48cGF0aCBmaWxsPSIjMzM4QUYzIiBkPSJNMCA4NS4zMzdoNTEyVjI1NkgweiIvPjwvc3ZnPg==");
+
+/***/ }),
+
+/***/ "./assets/svg/icon/flags/ug.svg":
+/*!**************************************!*\
+  !*** ./assets/svg/icon/flags/ug.svg ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgUg),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path, _path2, _path3, _path4, _path5, _circle, _path6;
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var SvgUg = function SvgUg(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 512 341.3"
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#232323",
+    d: "M0 0h512v341.3H0z"
+  })), _path2 || (_path2 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#FFDA44",
+    d: "M0 56.9h512v56.9H0z"
+  })), _path3 || (_path3 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#D32300",
+    d: "M0 113.8h512v56.9H0z"
+  })), _path4 || (_path4 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#FFDA44",
+    d: "M0 227.6h512v56.9H0z"
+  })), _path5 || (_path5 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#D32300",
+    d: "M0 284.4h512v56.9H0z"
+  })), _circle || (_circle = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("circle", {
+    fill: "#FFF",
+    cx: 256,
+    cy: 170.7,
+    r: 80.7
+  })), _path6 || (_path6 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M234.5 127.5c.9-1.4-19.6-2-19.6-2 1.7-2.5 18.4-10.5 18.4-10.5s-.9-6 2.7-9.8l-4.5-9.8s7-3.4 18.4-3.4 19.9 7 21 13.1l-6.4 3.4c-.1 4.7 1.7 11.6-4.3 17.3-5.9 5.7-8.3 6.9-8.5 18.8 0 3.9 2.3 8.2 8.8 11.7 17.4 9.3 38.6 28.2 44.6 33.9 6.1 5.7 5.1 19.2 2.6 25.2s-12.1 14.3-14.3 13.6c-2.2-.6 1.2-9.2-3.5-11.6 0 0-8.9-7.6-16.8.6s-.2 25.2 3.9 28c4.1 2.8 1.7 5-1.9 5H247c-3.8 0-5.4-2.3-1.9-5 7.6-3.8 12.4-15.3 7.4-20.3-4.9-4.9-18.3 1.5-21.5 6.3-2.8 2.8-8.8 3.6-12.9-1.4s-4.1-10.4-1.1-12.5c7-4.8 0 0 .1-.1 0 0 11.9-8.6 29.9-9 3.9 0 4.8-2.2 2.2-4.8 0 0-30.9-27.4-28.1-44.2 3-18.3 20-26.3 13.4-32.5-1.3-1.8 0 0 0 0z"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgMzQxLjMiPjxwYXRoIGZpbGw9IiMyMzIzMjMiIGQ9Ik0wIDBoNTEydjM0MS4zSDB6Ii8+PHBhdGggZmlsbD0iI0ZGREE0NCIgZD0iTTAgNTYuOWg1MTJ2NTYuOUgweiIvPjxwYXRoIGZpbGw9IiNEMzIzMDAiIGQ9Ik0wIDExMy44aDUxMnY1Ni45SDB6Ii8+PHBhdGggZmlsbD0iI0ZGREE0NCIgZD0iTTAgMjI3LjZoNTEydjU2LjlIMHoiLz48cGF0aCBmaWxsPSIjRDMyMzAwIiBkPSJNMCAyODQuNGg1MTJ2NTYuOUgweiIvPjxjaXJjbGUgZmlsbD0iI0ZGRiIgY3g9IjI1NiIgY3k9IjE3MC43IiByPSI4MC43Ii8+PHBhdGggZD0iTTIzNC41IDEyNy41Yy45LTEuNC0xOS42LTItMTkuNi0yIDEuNy0yLjUgMTguNC0xMC41IDE4LjQtMTAuNXMtLjktNiAyLjctOS44bC00LjUtOS44czctMy40IDE4LjQtMy40IDE5LjkgNyAyMSAxMy4xbC02LjQgMy40Yy0uMSA0LjcgMS43IDExLjYtNC4zIDE3LjMtNS45IDUuNy04LjMgNi45LTguNSAxOC44IDAgMy45IDIuMyA4LjIgOC44IDExLjcgMTcuNCA5LjMgMzguNiAyOC4yIDQ0LjYgMzMuOSA2LjEgNS43IDUuMSAxOS4yIDIuNiAyNS4ycy0xMi4xIDE0LjMtMTQuMyAxMy42Yy0yLjItLjYgMS4yLTkuMi0zLjUtMTEuNiAwIDAtOC45LTcuNi0xNi44LjZzLS4yIDI1LjIgMy45IDI4YzQuMSAyLjggMS43IDUtMS45IDVIMjQ3Yy0zLjggMC01LjQtMi4zLTEuOS01IDcuNi0zLjggMTIuNC0xNS4zIDcuNC0yMC4zLTQuOS00LjktMTguMyAxLjUtMjEuNSA2LjMtMi44IDIuOC04LjggMy42LTEyLjktMS40cy00LjEtMTAuNC0xLjEtMTIuNWM3LTQuOCAwIDAgLjEtLjEgMCAwIDExLjktOC42IDI5LjktOSAzLjkgMCA0LjgtMi4yIDIuMi00LjggMCAwLTMwLjktMjcuNC0yOC4xLTQ0LjIgMy0xOC4zIDIwLTI2LjMgMTMuNC0zMi41LTEuMy0xLjggMCAwIDAgMHoiLz48L3N2Zz4=");
+
+/***/ }),
+
+/***/ "./assets/svg/icon/flags/us.svg":
+/*!**************************************!*\
+  !*** ./assets/svg/icon/flags/us.svg ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgUs),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path, _path2, _path3, _path4;
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var SvgUs = function SvgUs(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 513 342"
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#FFF",
+    d: "M0 0h513v342H0z"
+  })), _path2 || (_path2 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M0 0h513v26.3H0zm0 52.6h513v26.3H0zm0 52.6h513v26.3H0zm0 52.6h513v26.3H0zm0 52.7h513v26.3H0zm0 52.6h513v26.3H0zm0 52.6h513V342H0z",
+    fill: "#D80027"
+  })), _path3 || (_path3 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#2E52B2",
+    d: "M0 0h256.5v184.1H0z"
+  })), _path4 || (_path4 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "m47.8 138.9-4-12.8-4.4 12.8H26.2l10.7 7.7-4 12.8 10.9-7.9 10.6 7.9-4.1-12.8 10.9-7.7zm56.3 0-4.1-12.8-4.2 12.8H82.6l10.7 7.7-4 12.8 10.7-7.9 10.8 7.9-4-12.8 10.7-7.7zm56.5 0-4.3-12.8-4 12.8h-13.5l11 7.7-4.2 12.8 10.7-7.9 11 7.9-4.2-12.8 10.7-7.7zm56.2 0-4-12.8-4.2 12.8h-13.3l10.8 7.7-4 12.8 10.7-7.9 10.8 7.9-4.3-12.8 11-7.7zM100 75.3l-4.2 12.8H82.6L93.3 96l-4 12.6 10.7-7.8 10.8 7.8-4-12.6 10.7-7.9h-13.4zm-56.2 0-4.4 12.8H26.2L36.9 96l-4 12.6 10.9-7.8 10.6 7.8L50.3 96l10.9-7.9H47.8zm112.5 0-4 12.8h-13.5l11 7.9-4.2 12.6 10.7-7.8 11 7.8-4.2-12.6 10.7-7.9h-13.2zm56.5 0-4.2 12.8h-13.3l10.8 7.9-4 12.6 10.7-7.8 10.8 7.8-4.3-12.6 11-7.9h-13.5zm-169-50.6-4.4 12.6H26.2l10.7 7.9-4 12.7L43.8 50l10.6 7.9-4.1-12.7 10.9-7.9H47.8zm56.2 0-4.2 12.6H82.6l10.7 7.9-4 12.7L100 50l10.8 7.9-4-12.7 10.7-7.9h-13.4zm56.3 0-4 12.6h-13.5l11 7.9-4.2 12.7 10.7-7.9 11 7.9-4.2-12.7 10.7-7.9h-13.2zm56.5 0-4.2 12.6h-13.3l10.8 7.9-4 12.7 10.7-7.9 10.8 7.9-4.3-12.7 11-7.9h-13.5z",
+    fill: "#FFF"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTMgMzQyIj48cGF0aCBmaWxsPSIjRkZGIiBkPSJNMCAwaDUxM3YzNDJIMHoiLz48ZyBmaWxsPSIjRDgwMDI3Ij48cGF0aCBkPSJNMCAwaDUxM3YyNi4zSDB6TTAgNTIuNmg1MTN2MjYuM0gwek0wIDEwNS4yaDUxM3YyNi4zSDB6TTAgMTU3LjhoNTEzdjI2LjNIMHpNMCAyMTAuNWg1MTN2MjYuM0gwek0wIDI2My4xaDUxM3YyNi4zSDB6TTAgMzE1LjdoNTEzVjM0MkgweiIvPjwvZz48cGF0aCBmaWxsPSIjMkU1MkIyIiBkPSJNMCAwaDI1Ni41djE4NC4xSDB6Ii8+PGcgZmlsbD0iI0ZGRiI+PHBhdGggZD0ibTQ3LjggMTM4LjktNC0xMi44LTQuNCAxMi44SDI2LjJsMTAuNyA3LjctNCAxMi44IDEwLjktNy45IDEwLjYgNy45LTQuMS0xMi44IDEwLjktNy43ek0xMDQuMSAxMzguOWwtNC4xLTEyLjgtNC4yIDEyLjhIODIuNmwxMC43IDcuNy00IDEyLjggMTAuNy03LjkgMTAuOCA3LjktNC0xMi44IDEwLjctNy43ek0xNjAuNiAxMzguOWwtNC4zLTEyLjgtNCAxMi44aC0xMy41bDExIDcuNy00LjIgMTIuOCAxMC43LTcuOSAxMSA3LjktNC4yLTEyLjggMTAuNy03Ljd6TTIxNi44IDEzOC45bC00LTEyLjgtNC4yIDEyLjhoLTEzLjNsMTAuOCA3LjctNCAxMi44IDEwLjctNy45IDEwLjggNy45LTQuMy0xMi44IDExLTcuN3pNMTAwIDc1LjNsLTQuMiAxMi44SDgyLjZMOTMuMyA5NmwtNCAxMi42IDEwLjctNy44IDEwLjggNy44LTQtMTIuNiAxMC43LTcuOWgtMTMuNHpNNDMuOCA3NS4zbC00LjQgMTIuOEgyNi4yTDM2LjkgOTZsLTQgMTIuNiAxMC45LTcuOCAxMC42IDcuOEw1MC4zIDk2bDEwLjktNy45SDQ3Ljh6TTE1Ni4zIDc1LjNsLTQgMTIuOGgtMTMuNWwxMSA3LjktNC4yIDEyLjYgMTAuNy03LjggMTEgNy44LTQuMi0xMi42IDEwLjctNy45aC0xMy4yek0yMTIuOCA3NS4zbC00LjIgMTIuOGgtMTMuM2wxMC44IDcuOS00IDEyLjYgMTAuNy03LjggMTAuOCA3LjgtNC4zLTEyLjYgMTEtNy45aC0xMy41ek00My44IDI0LjdsLTQuNCAxMi42SDI2LjJsMTAuNyA3LjktNCAxMi43TDQzLjggNTBsMTAuNiA3LjktNC4xLTEyLjcgMTAuOS03LjlINDcuOHpNMTAwIDI0LjdsLTQuMiAxMi42SDgyLjZsMTAuNyA3LjktNCAxMi43TDEwMCA1MGwxMC44IDcuOS00LTEyLjcgMTAuNy03LjloLTEzLjR6TTE1Ni4zIDI0LjdsLTQgMTIuNmgtMTMuNWwxMSA3LjktNC4yIDEyLjcgMTAuNy03LjkgMTEgNy45LTQuMi0xMi43IDEwLjctNy45aC0xMy4yek0yMTIuOCAyNC43bC00LjIgMTIuNmgtMTMuM2wxMC44IDcuOS00IDEyLjcgMTAuNy03LjkgMTAuOCA3LjktNC4zLTEyLjcgMTEtNy45aC0xMy41eiIvPjwvZz48L3N2Zz4=");
+
+/***/ }),
+
+/***/ "./assets/svg/icon/flags/uy.svg":
+/*!**************************************!*\
+  !*** ./assets/svg/icon/flags/uy.svg ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgUy),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path, _path2, _path3, _path4;
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var SvgUy = function SvgUy(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 513 342"
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#FFF",
+    d: "M0 0h513v342H0z"
+  })), _path2 || (_path2 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M0 38h513v38H0zm0 76h513v38H0zm0 76h513v38H0zm0 76h513v38H0z",
+    fill: "#0038a8"
+  })), _path3 || (_path3 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#FFF",
+    d: "M0 0h256.5v190H0z"
+  })), _path4 || (_path4 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#FED443",
+    d: "m128.3 138.7-15.1 22.6-3.8-26.9L86 148.2l8.2-25.9-27.2 2.2 18.6-19.8L60.3 95l25.4-9.7L67 65.5l27.1 2.3-8.2-25.9 23.4 13.8 3.9-26.9 15.1 22.6 15.1-22.6 3.8 26.9 23.4-13.8-8.2 25.9 27.1-2.2-18.6 19.8 25.4 9.7-25.4 9.7 18.6 19.8-27.1-2.2 8.2 25.9-23.4-13.8-3.9 26.9-15-22.7zm0-.5c23.9.9 44-17.6 44.9-41.5.9-23.9-17.6-44-41.5-44.9h-3.4c-23.9.8-42.6 20.8-41.8 44.6.6 22.8 19 41.1 41.8 41.8zm0-10.6c-18.8 0-34-15.2-34-34s15.2-34 34-34 34 15.2 34 34-15.3 34-34 34z"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTMgMzQyIj48cGF0aCBmaWxsPSIjRkZGIiBkPSJNMCAwaDUxM3YzNDJIMHoiLz48ZyBmaWxsPSIjMDAzOGE4Ij48cGF0aCBkPSJNMCAzOGg1MTN2MzhIMHpNMCAxMTRoNTEzdjM4SDB6TTAgMTkwaDUxM3YzOEgwek0wIDI2Nmg1MTN2MzhIMHoiLz48L2c+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTAgMGgyNTYuNXYxOTBIMHoiLz48cGF0aCBmaWxsPSIjRkVENDQzIiBkPSJtMTI4LjMgMTM4LjctMTUuMSAyMi42LTMuOC0yNi45TDg2IDE0OC4ybDguMi0yNS45LTI3LjIgMi4yIDE4LjYtMTkuOEw2MC4zIDk1bDI1LjQtOS43TDY3IDY1LjVsMjcuMSAyLjMtOC4yLTI1LjkgMjMuNCAxMy44IDMuOS0yNi45IDE1LjEgMjIuNiAxNS4xLTIyLjYgMy44IDI2LjkgMjMuNC0xMy44LTguMiAyNS45IDI3LjEtMi4yLTE4LjYgMTkuOCAyNS40IDkuNy0yNS40IDkuNyAxOC42IDE5LjgtMjcuMS0yLjIgOC4yIDI1LjktMjMuNC0xMy44LTMuOSAyNi45LTE1LTIyLjd6bTAtLjVjMjMuOS45IDQ0LTE3LjYgNDQuOS00MS41LjktMjMuOS0xNy42LTQ0LTQxLjUtNDQuOWgtMy40Yy0yMy45LjgtNDIuNiAyMC44LTQxLjggNDQuNi42IDIyLjggMTkgNDEuMSA0MS44IDQxLjh6bTAtMTAuNmMtMTguOCAwLTM0LTE1LjItMzQtMzRzMTUuMi0zNCAzNC0zNCAzNCAxNS4yIDM0IDM0LTE1LjMgMzQtMzQgMzR6Ii8+PC9zdmc+");
+
+/***/ }),
+
+/***/ "./assets/svg/icon/flags/uz.svg":
+/*!**************************************!*\
+  !*** ./assets/svg/icon/flags/uz.svg ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgUz),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path, _path2, _path3, _path4, _path5, _path6;
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var SvgUz = function SvgUz(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 85.333 512 341.333"
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#D80027",
+    d: "M0 85.337h512v341.326H0z"
+  })), _path2 || (_path2 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#6DA544",
+    d: "M0 322.783h512v103.88H0z"
+  })), _path3 || (_path3 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#338AF3",
+    d: "M0 85.337h512v104.515H0z"
+  })), _path4 || (_path4 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#FFF",
+    d: "M0 210.877h512v89.656H0z"
+  })), _path5 || (_path5 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#338AF3",
+    d: "M0 85.337h512v104.515H0z"
+  })), _path6 || (_path6 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M188.688 137.589c0-15.984 11.234-29.339 26.236-32.614a33.531 33.531 0 0 0-7.155-.777c-18.442 0-33.391 14.949-33.391 33.391s14.949 33.391 33.391 33.391c2.458 0 4.85-.273 7.155-.777-15.002-3.275-26.236-16.63-26.236-32.614zm45.97 15.177 2.261 6.957h7.315l-5.918 4.301 2.261 6.956-5.919-4.3-5.918 4.3 2.261-6.956-5.918-4.301h7.315zm23.348 0 2.26 6.957h7.315l-5.918 4.301 2.261 6.956-5.918-4.3-5.918 4.3 2.26-6.956-5.917-4.301h7.314zm23.347 0 2.26 6.957h7.315l-5.917 4.301 2.26 6.956-5.918-4.3-5.918 4.3 2.26-6.956-5.918-4.301h7.315zm23.347 0 2.262 6.957h7.315l-5.919 4.301 2.261 6.956-5.919-4.3-5.918 4.3 2.262-6.956-5.919-4.301h7.314zm23.348 0 2.26 6.957h7.315l-5.918 4.301 2.261 6.956-5.918-4.3-5.918 4.3 2.26-6.956-5.917-4.301h7.314zm-70.042-24.284 2.26 6.956h7.315l-5.918 4.3 2.261 6.957-5.918-4.299-5.918 4.299 2.26-6.957-5.917-4.3h7.314zm23.347 0 2.26 6.956h7.315l-5.917 4.3 2.26 6.957-5.918-4.299-5.918 4.299 2.26-6.957-5.918-4.3h7.315zm23.347 0 2.262 6.956h7.315l-5.919 4.3 2.261 6.957-5.919-4.299-5.918 4.299 2.262-6.957-5.919-4.3h7.314zm23.348 0 2.26 6.956h7.315l-5.918 4.3 2.261 6.957-5.918-4.299-5.918 4.299 2.26-6.957-5.917-4.3h7.314zm-46.695-24.284 2.26 6.956h7.315l-5.917 4.3 2.26 6.957-5.918-4.3-5.918 4.3 2.26-6.957-5.918-4.3h7.315zm23.347 0 2.262 6.956h7.315l-5.919 4.3 2.261 6.957-5.919-4.3-5.918 4.3 2.262-6.957-5.919-4.3h7.314zm23.348 0 2.26 6.956h7.315l-5.918 4.3 2.261 6.957-5.918-4.3-5.918 4.3 2.26-6.957-5.917-4.3h7.314z",
+    fill: "#FFF"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgODUuMzMzIDUxMiAzNDEuMzMzIj48cGF0aCBmaWxsPSIjRDgwMDI3IiBkPSJNMCA4NS4zMzdoNTEydjM0MS4zMjZIMHoiLz48cGF0aCBmaWxsPSIjNkRBNTQ0IiBkPSJNMCAzMjIuNzgzaDUxMnYxMDMuODhIMHoiLz48cGF0aCBmaWxsPSIjMzM4QUYzIiBkPSJNMCA4NS4zMzdoNTEydjEwNC41MTVIMHoiLz48cGF0aCBmaWxsPSIjRkZGIiBkPSJNMCAyMTAuODc3aDUxMnY4OS42NTZIMHoiLz48cGF0aCBmaWxsPSIjMzM4QUYzIiBkPSJNMCA4NS4zMzdoNTEydjEwNC41MTVIMHoiLz48ZyBmaWxsPSIjRkZGIj48cGF0aCBkPSJNMTg4LjY4OCAxMzcuNTg5YzAtMTUuOTg0IDExLjIzNC0yOS4zMzkgMjYuMjM2LTMyLjYxNGEzMy41MzEgMzMuNTMxIDAgMCAwLTcuMTU1LS43NzdjLTE4LjQ0MiAwLTMzLjM5MSAxNC45NDktMzMuMzkxIDMzLjM5MXMxNC45NDkgMzMuMzkxIDMzLjM5MSAzMy4zOTFjMi40NTggMCA0Ljg1LS4yNzMgNy4xNTUtLjc3Ny0xNS4wMDItMy4yNzUtMjYuMjM2LTE2LjYzLTI2LjIzNi0zMi42MTR6TTIzNC42NTggMTUyLjc2NmwyLjI2MSA2Ljk1N2g3LjMxNWwtNS45MTggNC4zMDEgMi4yNjEgNi45NTYtNS45MTktNC4zLTUuOTE4IDQuMyAyLjI2MS02Ljk1Ni01LjkxOC00LjMwMWg3LjMxNXpNMjU4LjAwNiAxNTIuNzY2bDIuMjYgNi45NTdoNy4zMTVsLTUuOTE4IDQuMzAxIDIuMjYxIDYuOTU2LTUuOTE4LTQuMy01LjkxOCA0LjMgMi4yNi02Ljk1Ni01LjkxNy00LjMwMWg3LjMxNHpNMjgxLjM1MyAxNTIuNzY2bDIuMjYgNi45NTdoNy4zMTVsLTUuOTE3IDQuMzAxIDIuMjYgNi45NTYtNS45MTgtNC4zLTUuOTE4IDQuMyAyLjI2LTYuOTU2LTUuOTE4LTQuMzAxaDcuMzE1ek0zMDQuNyAxNTIuNzY2bDIuMjYyIDYuOTU3aDcuMzE1bC01LjkxOSA0LjMwMSAyLjI2MSA2Ljk1Ni01LjkxOS00LjMtNS45MTggNC4zIDIuMjYyLTYuOTU2LTUuOTE5LTQuMzAxaDcuMzE0ek0zMjguMDQ4IDE1Mi43NjZsMi4yNiA2Ljk1N2g3LjMxNWwtNS45MTggNC4zMDEgMi4yNjEgNi45NTYtNS45MTgtNC4zLTUuOTE4IDQuMyAyLjI2LTYuOTU2LTUuOTE3LTQuMzAxaDcuMzE0ek0yNTguMDA2IDEyOC40ODJsMi4yNiA2Ljk1Nmg3LjMxNWwtNS45MTggNC4zIDIuMjYxIDYuOTU3LTUuOTE4LTQuMjk5LTUuOTE4IDQuMjk5IDIuMjYtNi45NTctNS45MTctNC4zaDcuMzE0ek0yODEuMzUzIDEyOC40ODJsMi4yNiA2Ljk1Nmg3LjMxNWwtNS45MTcgNC4zIDIuMjYgNi45NTctNS45MTgtNC4yOTktNS45MTggNC4yOTkgMi4yNi02Ljk1Ny01LjkxOC00LjNoNy4zMTV6TTMwNC43IDEyOC40ODJsMi4yNjIgNi45NTZoNy4zMTVsLTUuOTE5IDQuMyAyLjI2MSA2Ljk1Ny01LjkxOS00LjI5OS01LjkxOCA0LjI5OSAyLjI2Mi02Ljk1Ny01LjkxOS00LjNoNy4zMTR6TTMyOC4wNDggMTI4LjQ4MmwyLjI2IDYuOTU2aDcuMzE1bC01LjkxOCA0LjMgMi4yNjEgNi45NTctNS45MTgtNC4yOTktNS45MTggNC4yOTkgMi4yNi02Ljk1Ny01LjkxNy00LjNoNy4zMTR6TTI4MS4zNTMgMTA0LjE5OGwyLjI2IDYuOTU2aDcuMzE1bC01LjkxNyA0LjMgMi4yNiA2Ljk1Ny01LjkxOC00LjMtNS45MTggNC4zIDIuMjYtNi45NTctNS45MTgtNC4zaDcuMzE1ek0zMDQuNyAxMDQuMTk4bDIuMjYyIDYuOTU2aDcuMzE1bC01LjkxOSA0LjMgMi4yNjEgNi45NTctNS45MTktNC4zLTUuOTE4IDQuMyAyLjI2Mi02Ljk1Ny01LjkxOS00LjNoNy4zMTR6TTMyOC4wNDggMTA0LjE5OGwyLjI2IDYuOTU2aDcuMzE1bC01LjkxOCA0LjMgMi4yNjEgNi45NTctNS45MTgtNC4zLTUuOTE4IDQuMyAyLjI2LTYuOTU3LTUuOTE3LTQuM2g3LjMxNHoiLz48L2c+PC9zdmc+");
+
+/***/ }),
+
+/***/ "./assets/svg/icon/flags/ve.svg":
+/*!**************************************!*\
+  !*** ./assets/svg/icon/flags/ve.svg ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgVe),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path, _path2, _path3, _path4;
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var SvgVe = function SvgVe(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 22.5 15"
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#FFCE00",
+    d: "M0 0h22.5v5H0z"
+  })), _path2 || (_path2 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#203899",
+    d: "M0 5h22.5v5H0z"
+  })), _path3 || (_path3 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#D82B2B",
+    d: "M0 10h22.5v5H0z"
+  })), _path4 || (_path4 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#FFF",
+    d: "m12.13 5.38.14.46.45.14-.39.27.01.48-.38-.29-.45.15.15-.44-.28-.38h.47zm-1.77 0 .27.39h.47l-.28.38.15.45-.45-.16-.38.28.01-.47-.39-.28.45-.13zm3.44.56-.01.48.39.27-.46.14-.14.45-.27-.38h-.48l.29-.38-.15-.45.45.16zm-5.11.02.4.27.44-.18-.13.46.3.36-.47.02-.26.4-.16-.44-.46-.12.37-.3zm6.55 1.17-.2.44.25.4-.47-.05-.31.36-.1-.46-.43-.18.41-.24.03-.47.35.31zm.19 1.12.21.43.47.07-.34.33.08.46-.42-.22-.42.22.08-.46-.34-.33.47-.07zM7 8.2l.21.43.47.06-.34.33.08.47L7 9.27l-.42.22.08-.47-.34-.33.47-.06zm.31-1.15.45.14.38-.29v.48l.39.26-.45.15-.13.46-.28-.38-.47.01.27-.38z"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyMi41IDE1Ij48cGF0aCBmaWxsPSIjRkZDRTAwIiBkPSJNMCAwaDIyLjV2NUgweiIvPjxwYXRoIGZpbGw9IiMyMDM4OTkiIGQ9Ik0wIDVoMjIuNXY1SDB6Ii8+PHBhdGggZmlsbD0iI0Q4MkIyQiIgZD0iTTAgMTBoMjIuNXY1SDB6Ii8+PHBhdGggZmlsbD0iI0ZGRiIgZD0ibTEyLjEzIDUuMzguMTQuNDYuNDUuMTQtLjM5LjI3LjAxLjQ4LS4zOC0uMjktLjQ1LjE1LjE1LS40NC0uMjgtLjM4aC40N3pNMTAuMzYgNS4zOGwuMjcuMzloLjQ3bC0uMjguMzguMTUuNDUtLjQ1LS4xNi0uMzguMjguMDEtLjQ3LS4zOS0uMjguNDUtLjEzek0xMy44IDUuOTRsLS4wMS40OC4zOS4yNy0uNDYuMTQtLjE0LjQ1LS4yNy0uMzhoLS40OGwuMjktLjM4LS4xNS0uNDUuNDUuMTZ6TTguNjkgNS45NmwuNC4yNy40NC0uMTgtLjEzLjQ2LjMuMzYtLjQ3LjAyLS4yNi40LS4xNi0uNDQtLjQ2LS4xMi4zNy0uM3pNMTUuMjQgNy4xM2wtLjIuNDQuMjUuNC0uNDctLjA1LS4zMS4zNi0uMS0uNDYtLjQzLS4xOC40MS0uMjQuMDMtLjQ3LjM1LjMxek0xNS40MyA4LjI1bC4yMS40My40Ny4wNy0uMzQuMzMuMDguNDYtLjQyLS4yMi0uNDIuMjIuMDgtLjQ2LS4zNC0uMzMuNDctLjA3ek03IDguMmwuMjEuNDMuNDcuMDYtLjM0LjMzLjA4LjQ3TDcgOS4yN2wtLjQyLjIyLjA4LS40Ny0uMzQtLjMzLjQ3LS4wNnpNNy4zMSA3LjA1bC40NS4xNC4zOC0uMjl2LjQ4bC4zOS4yNi0uNDUuMTUtLjEzLjQ2LS4yOC0uMzgtLjQ3LjAxLjI3LS4zOHoiLz48L3N2Zz4=");
+
+/***/ }),
+
+/***/ "./assets/svg/icon/flags/vg.svg":
+/*!**************************************!*\
+  !*** ./assets/svg/icon/flags/vg.svg ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgVg),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path, _path2, _g, _path3, _path4, _path5, _path6, _path7, _path8, _path9, _circle, _path10;
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var SvgVg = function SvgVg(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 85.333 512 341.333"
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#0052B4",
+    d: "M0 85.334h512v341.337H0z"
+  })), _path2 || (_path2 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#FFF",
+    d: "M256 85.334V202.66h-46.069L256 233.38v22.617h-22.628L160 207.078v48.919H96v-48.919l-73.372 48.919H0V233.38l46.069-30.72H0v-64h46.069L0 107.951V85.334h22.628L96 134.241V85.334h64v48.907l73.372-48.907z"
+  })), _g || (_g = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("g", {
+    fill: "#D80027"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M144 85.33h-32v69.333H0v32h112v69.334h32v-69.334h112v-32H144z"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M0 85.329v15.083l57.377 38.251H80zm256 0v15.083l-57.377 38.251H176z"
+  }))), _path3 || (_path3 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#2E52B2",
+    d: "M256 107.951v30.712h-46.069z"
+  })), _path4 || (_path4 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M0 85.329v15.083l57.377 38.251H80zm256 0v15.083l-57.377 38.251H176z",
+    fill: "#D80027"
+  })), _path5 || (_path5 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#2E52B2",
+    d: "M256 107.951v30.712h-46.069z"
+  })), _path6 || (_path6 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M0 255.997v-15.082l57.377-38.252H80zm256 0v-15.082l-57.377-38.252H176z",
+    fill: "#D80027"
+  })), _path7 || (_path7 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#FFDA44",
+    d: "m384 259.706-46.129 46.129c8.645 16.675 26.051 28.074 46.129 28.074s37.484-11.4 46.129-28.074L384 259.706z"
+  })), _path8 || (_path8 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#6DA544",
+    d: "M332.058 178.084v81.624c.001 39.759 51.942 51.941 51.942 51.941s51.941-12.182 51.942-51.942v-81.623H332.058z"
+  })), _path9 || (_path9 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#FFF",
+    d: "M372.87 215.181h22.261v59.359H372.87z"
+  })), _circle || (_circle = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("circle", {
+    fill: "#A2001D",
+    cx: 384,
+    cy: 215.181,
+    r: 11.13
+  })), _path10 || (_path10 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M346.902 192.92h14.84v14.84h-14.84zm0 33.392h14.84v14.84h-14.84zm0 33.391h14.84v14.84h-14.84zm59.359-66.783h14.84v14.84h-14.84zm0 33.392h14.84v14.84h-14.84zm0 33.391h14.84v14.84h-14.84z",
+    fill: "#FFDA44"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgODUuMzMzIDUxMiAzNDEuMzMzIj48cGF0aCBmaWxsPSIjMDA1MkI0IiBkPSJNMCA4NS4zMzRoNTEydjM0MS4zMzdIMHoiLz48cGF0aCBmaWxsPSIjRkZGIiBkPSJNMjU2IDg1LjMzNFYyMDIuNjZoLTQ2LjA2OUwyNTYgMjMzLjM4djIyLjYxN2gtMjIuNjI4TDE2MCAyMDcuMDc4djQ4LjkxOUg5NnYtNDguOTE5bC03My4zNzIgNDguOTE5SDBWMjMzLjM4bDQ2LjA2OS0zMC43Mkgwdi02NGg0Ni4wNjlMMCAxMDcuOTUxVjg1LjMzNGgyMi42MjhMOTYgMTM0LjI0MVY4NS4zMzRoNjR2NDguOTA3bDczLjM3Mi00OC45MDd6Ii8+PGcgZmlsbD0iI0Q4MDAyNyI+PHBhdGggZD0iTTE0NCA4NS4zM2gtMzJ2NjkuMzMzSDB2MzJoMTEydjY5LjMzNGgzMnYtNjkuMzM0aDExMnYtMzJIMTQ0eiIvPjxwYXRoIGQ9Ik0wIDg1LjMyOXYxNS4wODNsNTcuMzc3IDM4LjI1MUg4MHpNMjU2IDg1LjMyOXYxNS4wODNsLTU3LjM3NyAzOC4yNTFIMTc2eiIvPjwvZz48cGF0aCBmaWxsPSIjMkU1MkIyIiBkPSJNMjU2IDEwNy45NTF2MzAuNzEyaC00Ni4wNjl6Ii8+PGcgZmlsbD0iI0Q4MDAyNyI+PHBhdGggZD0iTTAgODUuMzI5djE1LjA4M2w1Ny4zNzcgMzguMjUxSDgwek0yNTYgODUuMzI5djE1LjA4M2wtNTcuMzc3IDM4LjI1MUgxNzZ6Ii8+PC9nPjxwYXRoIGZpbGw9IiMyRTUyQjIiIGQ9Ik0yNTYgMTA3Ljk1MXYzMC43MTJoLTQ2LjA2OXoiLz48ZyBmaWxsPSIjRDgwMDI3Ij48cGF0aCBkPSJNMCAyNTUuOTk3di0xNS4wODJsNTcuMzc3LTM4LjI1Mkg4MHpNMjU2IDI1NS45OTd2LTE1LjA4MmwtNTcuMzc3LTM4LjI1MkgxNzZ6Ii8+PC9nPjxwYXRoIGZpbGw9IiNGRkRBNDQiIGQ9Im0zODQgMjU5LjcwNi00Ni4xMjkgNDYuMTI5YzguNjQ1IDE2LjY3NSAyNi4wNTEgMjguMDc0IDQ2LjEyOSAyOC4wNzRzMzcuNDg0LTExLjQgNDYuMTI5LTI4LjA3NEwzODQgMjU5LjcwNnoiLz48cGF0aCBmaWxsPSIjNkRBNTQ0IiBkPSJNMzMyLjA1OCAxNzguMDg0VjI1OS43MDhjLjAwMSAzOS43NTkgNTEuOTQyIDUxLjk0MSA1MS45NDIgNTEuOTQxczUxLjk0MS0xMi4xODIgNTEuOTQyLTUxLjk0MnYtODEuNjIzSDMzMi4wNTh6Ii8+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTM3Mi44NyAyMTUuMTgxaDIyLjI2MXY1OS4zNTlIMzcyLjg3eiIvPjxjaXJjbGUgZmlsbD0iI0EyMDAxRCIgY3g9IjM4NCIgY3k9IjIxNS4xODEiIHI9IjExLjEzIi8+PGcgZmlsbD0iI0ZGREE0NCI+PHBhdGggZD0iTTM0Ni45MDIgMTkyLjkyaDE0Ljg0djE0Ljg0aC0xNC44NHpNMzQ2LjkwMiAyMjYuMzEyaDE0Ljg0djE0Ljg0aC0xNC44NHpNMzQ2LjkwMiAyNTkuNzAzaDE0Ljg0djE0Ljg0aC0xNC44NHpNNDA2LjI2MSAxOTIuOTJoMTQuODR2MTQuODRoLTE0Ljg0ek00MDYuMjYxIDIyNi4zMTJoMTQuODR2MTQuODRoLTE0Ljg0ek00MDYuMjYxIDI1OS43MDNoMTQuODR2MTQuODRoLTE0Ljg0eiIvPjwvZz48L3N2Zz4=");
+
+/***/ }),
+
+/***/ "./assets/svg/icon/flags/vi.svg":
+/*!**************************************!*\
+  !*** ./assets/svg/icon/flags/vi.svg ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgVi),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path, _path2, _path3, _path4, _path5, _g, _path6, _path7, _path8, _path9;
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var SvgVi = function SvgVi(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 512 341.3"
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#FFF",
+    d: "M0 0h512v341.3H0z"
+  })), _path2 || (_path2 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#1583C4",
+    d: "m397.7 166.3-51 97.7c-1.1 2-.3 4.5 1.8 5.6 2 1.1 4.5.3 5.6-1.8l51-97.7c1-2.1.1-4.6-2-5.5-2-.9-4.3-.2-5.4 1.7z"
+  })), _path3 || (_path3 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#1583C4",
+    d: "m404.9 188-57.8 75.4c-1.3 1.9-.8 4.5 1.1 5.8 1.7 1.2 4.1.9 5.5-.7l57.8-75.4c1.4-1.8 1.1-4.4-.8-5.8-1.8-1.5-4.4-1.1-5.8.7z"
+  })), _path4 || (_path4 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#1583C4",
+    d: "m379 181.3-32.5 83.1c-.8 2.1.2 4.6 2.4 5.4 2.1.8 4.6-.2 5.4-2.4l32.5-83.1c.7-2.2-.4-4.5-2.6-5.3-2.1-.6-4.3.4-5.2 2.3z"
+  })), _path5 || (_path5 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#409347",
+    d: "M122.1 171.9c.4 1.7 1.2 4.7 2.2 8.5 1.7 6.4 3.6 12.8 5.6 18.7 2.3 6.9 14.7 31.4 20.2 39.1 6.9 9.7 14.1 19.3 21.5 28.6 1.6 1.9 4.5 2.1 6.4.5 1.8-1.6 2.1-4.3.7-6.2-7.3-9.2-14.4-18.6-21.2-28.2-4.2-5.8-17.2-31.1-19-36.7-2.9-8.7-5.4-17.6-7.6-26.5-.5-2.4-2.9-4-5.3-3.5s-4 2.9-3.5 5.3c-.1.2 0 .3 0 .4z"
+  })), _g || (_g = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("g", {
+    fill: "#FFD836",
+    stroke: "#231F20",
+    strokeMiterlimit: 10
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M297.1 114.9S279.5 42.8 261 42.8c-6.9 0-11.9-.6-15.4 6.4-.9 1.7-20.7-1.6-19.1 20.8.5 6.9 1.1-9.8 14.9-3.4 6.3 3-16.4 48.2-16.4 48.2h72.1z"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "m466.1 48.4-90.9 22c-75.3 18.3-42.1 44.4-42.1 44.4l-72.1 12-72.1-12s33.2-26.1-42.1-44.4l-90.9-22C43.1 45.3 38.1 51.8 45.3 63c0 0 106.6 104 126.8 112 20.2 8.1 40.8 0 40.8 0s-14.9 8.7-24 24c-9.2 15.3-4.6 34.7-38.9 40.2-5.5 6.6-5 14 2.9 19.9 7.9 5.8 72.1-48.1 72.1-48.1s-24 24.4-24 36.1c0 5.1 44.1 53.8 60.1 53.8s60.1-48.7 60.1-53.8c0-11.7-24-36.1-24-36.1s64.2 53.9 72.1 48.1 11.4-19.3 2.8-19.9c-28-1.8-29.7-24.9-38.9-40.2-9.2-15.3-24-24-24-24s20.6 8.1 40.8 0S476.7 63 476.7 63c7.2-11.2 2.3-17.7-10.6-14.6z"
+  }))), _path6 || (_path6 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#FFF",
+    stroke: "#231F20",
+    strokeMiterlimit: 10,
+    d: "M201.3 111.8v80.3c0 45.7 59.7 59.7 59.7 59.7s59.7-14 59.7-59.7v-80.3H201.3z"
+  })), _path7 || (_path7 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M225.2 137.7V235c8.2 6 17 10.2 23.9 12.9V137.7h-23.9zm71.6 0V235c-8.2 6-17 10.2-23.9 12.9V137.7h23.9z",
+    fill: "#D80027"
+  })), _path8 || (_path8 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#0052B4",
+    d: "M201.3 111.8h119.4v37.9H201.3z"
+  })), _path9 || (_path9 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#1583C4",
+    d: "m60.1 210.5-21.9-58.1H15.7l31.8 80.8h25.2l31.5-80.8H81.7zm391.4-58.6h18.9v81.7h-18.9z"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgMzQxLjMiPjxwYXRoIGZpbGw9IiNGRkYiIGQ9Ik0wIDBoNTEydjM0MS4zSDB6Ii8+PHBhdGggZmlsbD0iIzE1ODNDNCIgZD0ibTM5Ny43IDE2Ni4zLTUxIDk3LjdjLTEuMSAyLS4zIDQuNSAxLjggNS42IDIgMS4xIDQuNS4zIDUuNi0xLjhsNTEtOTcuN2MxLTIuMS4xLTQuNi0yLTUuNS0yLS45LTQuMy0uMi01LjQgMS43eiIvPjxwYXRoIGZpbGw9IiMxNTgzQzQiIGQ9Im00MDQuOSAxODgtNTcuOCA3NS40Yy0xLjMgMS45LS44IDQuNSAxLjEgNS44IDEuNyAxLjIgNC4xLjkgNS41LS43bDU3LjgtNzUuNGMxLjQtMS44IDEuMS00LjQtLjgtNS44LTEuOC0xLjUtNC40LTEuMS01LjguN3oiLz48cGF0aCBmaWxsPSIjMTU4M0M0IiBkPSJtMzc5IDE4MS4zLTMyLjUgODMuMWMtLjggMi4xLjIgNC42IDIuNCA1LjQgMi4xLjggNC42LS4yIDUuNC0yLjRsMzIuNS04My4xYy43LTIuMi0uNC00LjUtMi42LTUuMy0yLjEtLjYtNC4zLjQtNS4yIDIuM3oiLz48cGF0aCBmaWxsPSIjNDA5MzQ3IiBkPSJNMTIyLjEgMTcxLjljLjQgMS43IDEuMiA0LjcgMi4yIDguNSAxLjcgNi40IDMuNiAxMi44IDUuNiAxOC43IDIuMyA2LjkgMTQuNyAzMS40IDIwLjIgMzkuMSA2LjkgOS43IDE0LjEgMTkuMyAyMS41IDI4LjYgMS42IDEuOSA0LjUgMi4xIDYuNC41IDEuOC0xLjYgMi4xLTQuMy43LTYuMi03LjMtOS4yLTE0LjQtMTguNi0yMS4yLTI4LjItNC4yLTUuOC0xNy4yLTMxLjEtMTktMzYuNy0yLjktOC43LTUuNC0xNy42LTcuNi0yNi41LS41LTIuNC0yLjktNC01LjMtMy41cy00IDIuOS0zLjUgNS4zYy0uMS4yIDAgLjMgMCAuNHoiLz48ZyBmaWxsPSIjRkZEODM2IiBzdHJva2U9IiMyMzFGMjAiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCI+PHBhdGggZD0iTTI5Ny4xIDExNC45UzI3OS41IDQyLjggMjYxIDQyLjhjLTYuOSAwLTExLjktLjYtMTUuNCA2LjQtLjkgMS43LTIwLjctMS42LTE5LjEgMjAuOC41IDYuOSAxLjEtOS44IDE0LjktMy40IDYuMyAzLTE2LjQgNDguMi0xNi40IDQ4LjJoNzIuMXoiLz48cGF0aCBkPSJtNDY2LjEgNDguNC05MC45IDIyYy03NS4zIDE4LjMtNDIuMSA0NC40LTQyLjEgNDQuNGwtNzIuMSAxMi03Mi4xLTEyczMzLjItMjYuMS00Mi4xLTQ0LjRsLTkwLjktMjJDNDMuMSA0NS4zIDM4LjEgNTEuOCA0NS4zIDYzYzAgMCAxMDYuNiAxMDQgMTI2LjggMTEyIDIwLjIgOC4xIDQwLjggMCA0MC44IDBzLTE0LjkgOC43LTI0IDI0Yy05LjIgMTUuMy00LjYgMzQuNy0zOC45IDQwLjItNS41IDYuNi01IDE0IDIuOSAxOS45IDcuOSA1LjggNzIuMS00OC4xIDcyLjEtNDguMXMtMjQgMjQuNC0yNCAzNi4xYzAgNS4xIDQ0LjEgNTMuOCA2MC4xIDUzLjhzNjAuMS00OC43IDYwLjEtNTMuOGMwLTExLjctMjQtMzYuMS0yNC0zNi4xczY0LjIgNTMuOSA3Mi4xIDQ4LjEgMTEuNC0xOS4zIDIuOC0xOS45Yy0yOC0xLjgtMjkuNy0yNC45LTM4LjktNDAuMi05LjItMTUuMy0yNC0yNC0yNC0yNHMyMC42IDguMSA0MC44IDBTNDc2LjcgNjMgNDc2LjcgNjNjNy4yLTExLjIgMi4zLTE3LjctMTAuNi0xNC42eiIvPjwvZz48cGF0aCBmaWxsPSIjRkZGIiBzdHJva2U9IiMyMzFGMjAiIHN0cm9rZS1taXRlcmxpbWl0PSIxMCIgZD0iTTIwMS4zIDExMS44djgwLjNjMCA0NS43IDU5LjcgNTkuNyA1OS43IDU5LjdzNTkuNy0xNCA1OS43LTU5Ljd2LTgwLjNIMjAxLjN6Ii8+PGcgZmlsbD0iI0Q4MDAyNyI+PHBhdGggZD0iTTIyNS4yIDEzNy43VjIzNWM4LjIgNiAxNyAxMC4yIDIzLjkgMTIuOVYxMzcuN2gtMjMuOXpNMjk2LjggMTM3LjdWMjM1Yy04LjIgNi0xNyAxMC4yLTIzLjkgMTIuOVYxMzcuN2gyMy45eiIvPjwvZz48cGF0aCBmaWxsPSIjMDA1MkI0IiBkPSJNMjAxLjMgMTExLjhoMTE5LjR2MzcuOUgyMDEuM3oiLz48cGF0aCBmaWxsPSIjMTU4M0M0IiBkPSJtNjAuMSAyMTAuNS0yMS45LTU4LjFIMTUuN2wzMS44IDgwLjhoMjUuMmwzMS41LTgwLjhIODEuN3pNNDUxLjUgMTUxLjloMTguOXY4MS43aC0xOC45eiIvPjwvc3ZnPg==");
+
+/***/ }),
+
+/***/ "./assets/svg/icon/flags/vn.svg":
+/*!**************************************!*\
+  !*** ./assets/svg/icon/flags/vn.svg ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgVn),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path, _path2;
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var SvgVn = function SvgVn(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 85.333 512 341.333"
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#D80027",
+    d: "M196.641 85.337H0v341.326h512V85.337z"
+  })), _path2 || (_path2 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#FFDA44",
+    d: "m256 157.279 22.663 69.747H352l-59.332 43.106 22.664 69.749L256 296.774l-59.332 43.107 22.664-69.749L160 227.026h73.337z"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgODUuMzMzIDUxMiAzNDEuMzMzIj48cGF0aCBmaWxsPSIjRDgwMDI3IiBkPSJNMTk2LjY0MSA4NS4zMzdIMHYzNDEuMzI2aDUxMlY4NS4zMzd6Ii8+PHBhdGggZmlsbD0iI0ZGREE0NCIgZD0ibTI1NiAxNTcuMjc5IDIyLjY2MyA2OS43NDdIMzUybC01OS4zMzIgNDMuMTA2IDIyLjY2NCA2OS43NDlMMjU2IDI5Ni43NzRsLTU5LjMzMiA0My4xMDcgMjIuNjY0LTY5Ljc0OUwxNjAgMjI3LjAyNmg3My4zMzd6Ii8+PC9zdmc+");
+
+/***/ }),
+
+/***/ "./assets/svg/icon/flags/vu.svg":
+/*!**************************************!*\
+  !*** ./assets/svg/icon/flags/vu.svg ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgVu),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path, _path2, _path3, _path4, _g;
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var SvgVu = function SvgVu(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 85.333 512 341.333"
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M0 85.337h512v341.326H0z"
+  })), _path2 || (_path2 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#6DA544",
+    d: "M512 256v170.663H0L215.185 256z"
+  })), _path3 || (_path3 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#D80027",
+    d: "M512 85.337V256H215.185L0 85.337z"
+  })), _path4 || (_path4 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M221.001 239.304 26.868 85.337H8.956l208.168 165.098H512v-11.131zM8.956 426.663h17.912l194.133-153.967H512v-11.131H217.124zM0 92.44v14.206L188.317 256 0 405.354v14.205L206.229 256z"
+  })), _g || (_g = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("g", {
+    fill: "#FFDA44"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M8.956 85.337H0v7.103L206.229 256 0 419.559v7.104h8.956l208.168-165.098H512v-11.13H217.124z"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M63.718 292.382v-14.295c14.265 0 25.87-11.606 25.87-25.869 0-10.092-8.211-18.303-18.304-18.303-6.875 0-12.469 5.593-12.469 12.469 0 4.397 3.577 7.974 7.974 7.974a4.514 4.514 0 0 0 4.508-4.508h14.295c0 10.368-8.435 18.804-18.802 18.804-12.279-.002-22.269-9.993-22.269-22.271 0-14.758 12.006-26.764 26.764-26.764 17.975 0 32.599 14.623 32.599 32.599 0 22.145-18.018 40.164-40.166 40.164z"
+  }))));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgODUuMzMzIDUxMiAzNDEuMzMzIj48cGF0aCBkPSJNMCA4NS4zMzdoNTEydjM0MS4zMjZIMHoiLz48cGF0aCBmaWxsPSIjNkRBNTQ0IiBkPSJNNTEyIDI1NnYxNzAuNjYzSDBMMjE1LjE4NSAyNTZ6Ii8+PHBhdGggZmlsbD0iI0Q4MDAyNyIgZD0iTTUxMiA4NS4zMzdWMjU2SDIxNS4xODVMMCA4NS4zMzd6Ii8+PHBhdGggZD0iTTIyMS4wMDEgMjM5LjMwNCAyNi44NjggODUuMzM3SDguOTU2bDIwOC4xNjggMTY1LjA5OEg1MTJ2LTExLjEzMXpNOC45NTYgNDI2LjY2M2gxNy45MTJsMTk0LjEzMy0xNTMuOTY3SDUxMnYtMTEuMTMxSDIxNy4xMjR6TTAgOTIuNDR2MTQuMjA2TDE4OC4zMTcgMjU2IDAgNDA1LjM1NHYxNC4yMDVMMjA2LjIyOSAyNTZ6Ii8+PGcgZmlsbD0iI0ZGREE0NCI+PHBhdGggZD0iTTguOTU2IDg1LjMzN0gwdjcuMTAzTDIwNi4yMjkgMjU2IDAgNDE5LjU1OXY3LjEwNGg4Ljk1NmwyMDguMTY4LTE2NS4wOThINTEydi0xMS4xM0gyMTcuMTI0eiIvPjxwYXRoIGQ9Ik02My43MTggMjkyLjM4MnYtMTQuMjk1YzE0LjI2NSAwIDI1Ljg3LTExLjYwNiAyNS44Ny0yNS44NjkgMC0xMC4wOTItOC4yMTEtMTguMzAzLTE4LjMwNC0xOC4zMDMtNi44NzUgMC0xMi40NjkgNS41OTMtMTIuNDY5IDEyLjQ2OSAwIDQuMzk3IDMuNTc3IDcuOTc0IDcuOTc0IDcuOTc0YTQuNTE0IDQuNTE0IDAgMCAwIDQuNTA4LTQuNTA4aDE0LjI5NWMwIDEwLjM2OC04LjQzNSAxOC44MDQtMTguODAyIDE4LjgwNC0xMi4yNzktLjAwMi0yMi4yNjktOS45OTMtMjIuMjY5LTIyLjI3MSAwLTE0Ljc1OCAxMi4wMDYtMjYuNzY0IDI2Ljc2NC0yNi43NjQgMTcuOTc1IDAgMzIuNTk5IDE0LjYyMyAzMi41OTkgMzIuNTk5IDAgMjIuMTQ1LTE4LjAxOCA0MC4xNjQtNDAuMTY2IDQwLjE2NHoiLz48L2c+PC9zdmc+");
+
+/***/ }),
+
+/***/ "./assets/svg/icon/flags/wf.svg":
+/*!**************************************!*\
+  !*** ./assets/svg/icon/flags/wf.svg ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgWf),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path, _path2, _path3, _path4, _path5;
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var SvgWf = function SvgWf(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 0 150 100"
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#ED2939",
+    d: "M0 0h150v100H0z"
+  })), _path2 || (_path2 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#002395",
+    d: "M0 0h20v44.33H0z"
+  })), _path3 || (_path3 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#FFF",
+    d: "M20 0h20v44.33H20z"
+  })), _path4 || (_path4 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "none",
+    stroke: "#FFF",
+    strokeWidth: 3,
+    d: "M0 44.33h62.75V0"
+  })), _path5 || (_path5 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#FFF",
+    d: "M108.08 43.29 87.96 23.17h40.25l-20.13 20.12zm-6.7 6.71L81.25 29.88v40.25L101.38 50zm6.7 6.71L87.96 76.83h40.25l-20.13-20.12zm6.71-6.71 20.13-20.13v40.25L114.79 50z"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNTAgMTAwIj48cGF0aCBmaWxsPSIjRUQyOTM5IiBkPSJNMCAwaDE1MHYxMDBIMHoiLz48cGF0aCBmaWxsPSIjMDAyMzk1IiBkPSJNMCAwaDIwdjQ0LjMzSDB6Ii8+PHBhdGggZmlsbD0iI0ZGRiIgZD0iTTIwIDBoMjB2NDQuMzNIMjB6Ii8+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGIiBzdHJva2Utd2lkdGg9IjMiIGQ9Ik0wIDQ0LjMzaDYyLjc1VjAiLz48cGF0aCBmaWxsPSIjRkZGIiBkPSJNMTA4LjA4IDQzLjI5IDg3Ljk2IDIzLjE3aDQwLjI1bC0yMC4xMyAyMC4xMnptLTYuNyA2LjcxTDgxLjI1IDI5Ljg4djQwLjI1TDEwMS4zOCA1MHptNi43IDYuNzFMODcuOTYgNzYuODNoNDAuMjVsLTIwLjEzLTIwLjEyem02LjcxLTYuNzEgMjAuMTMtMjAuMTN2NDAuMjVMMTE0Ljc5IDUweiIvPjwvc3ZnPg==");
+
+/***/ }),
+
+/***/ "./assets/svg/icon/flags/ye.svg":
+/*!**************************************!*\
+  !*** ./assets/svg/icon/flags/ye.svg ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgYe),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path, _path2, _path3;
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var SvgYe = function SvgYe(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 85.333 512 341.333"
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#FFF",
+    d: "M0 85.337h512v341.326H0z"
+  })), _path2 || (_path2 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#D80027",
+    d: "M0 85.337h512v113.775H0z"
+  })), _path3 || (_path3 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M0 312.888h512v113.775H0z"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgODUuMzMzIDUxMiAzNDEuMzMzIj48cGF0aCBmaWxsPSIjRkZGIiBkPSJNMCA4NS4zMzdoNTEydjM0MS4zMjZIMHoiLz48cGF0aCBmaWxsPSIjRDgwMDI3IiBkPSJNMCA4NS4zMzdoNTEydjExMy43NzVIMHoiLz48cGF0aCBkPSJNMCAzMTIuODg4aDUxMnYxMTMuNzc1SDB6Ii8+PC9zdmc+");
+
+/***/ }),
+
+/***/ "./assets/svg/icon/flags/zm.svg":
+/*!**************************************!*\
+  !*** ./assets/svg/icon/flags/zm.svg ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgZm),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path, _path2, _path3, _path4, _path5;
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var SvgZm = function SvgZm(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 85.333 512 341.333"
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#496E2D",
+    d: "M0 85.331h512v341.337H0z"
+  })), _path2 || (_path2 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#FF9811",
+    d: "M490.668 195.476h-48c0-8.836-7.164-16-16-16s-16 7.164-16 16h-48c0 8.836 7.697 16 16.533 16h-.533c0 8.836 7.162 16 16 16 0 8.836 7.162 16 16 16h32c8.836 0 16-7.164 16-16 8.836 0 16-7.164 16-16h-.533c8.837 0 16.533-7.164 16.533-16z"
+  })), _path3 || (_path3 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#D80027",
+    d: "M341.337 255.994h56.888v170.663h-56.888z"
+  })), _path4 || (_path4 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#FF9811",
+    d: "M455.112 255.994H512v170.663h-56.888z"
+  })), _path5 || (_path5 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M398.225 255.994h56.888v170.663h-56.888z"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgODUuMzMzIDUxMiAzNDEuMzMzIj48cGF0aCBmaWxsPSIjNDk2RTJEIiBkPSJNMCA4NS4zMzFoNTEydjM0MS4zMzdIMHoiLz48cGF0aCBmaWxsPSIjRkY5ODExIiBkPSJNNDkwLjY2OCAxOTUuNDc2aC00OGMwLTguODM2LTcuMTY0LTE2LTE2LTE2cy0xNiA3LjE2NC0xNiAxNmgtNDhjMCA4LjgzNiA3LjY5NyAxNiAxNi41MzMgMTZoLS41MzNjMCA4LjgzNiA3LjE2MiAxNiAxNiAxNiAwIDguODM2IDcuMTYyIDE2IDE2IDE2aDMyYzguODM2IDAgMTYtNy4xNjQgMTYtMTYgOC44MzYgMCAxNi03LjE2NCAxNi0xNmgtLjUzM2M4LjgzNyAwIDE2LjUzMy03LjE2NCAxNi41MzMtMTZ6Ii8+PHBhdGggZmlsbD0iI0Q4MDAyNyIgZD0iTTM0MS4zMzcgMjU1Ljk5NGg1Ni44ODh2MTcwLjY2M2gtNTYuODg4eiIvPjxwYXRoIGZpbGw9IiNGRjk4MTEiIGQ9Ik00NTUuMTEyIDI1NS45OTRINTEydjE3MC42NjNoLTU2Ljg4OHoiLz48cGF0aCBkPSJNMzk4LjIyNSAyNTUuOTk0aDU2Ljg4OHYxNzAuNjYzaC01Ni44ODh6Ii8+PC9zdmc+");
+
+/***/ }),
+
+/***/ "./assets/svg/icon/flags/zw.svg":
+/*!**************************************!*\
+  !*** ./assets/svg/icon/flags/zw.svg ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgZw),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path, _path2, _path3, _path4, _path5, _path6, _path7, _path8, _path9;
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var SvgZw = function SvgZw(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    viewBox: "0 85.333 512 341.333"
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M0 85.333h512V426.67H0z"
+  })), _path2 || (_path2 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M0 134.196h512v48.868H0zm0 195.472h512v48.868H0z",
+    fill: "#FFDA44"
+  })), _path3 || (_path3 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#057f44",
+    d: "M0 85.333h512v48.868H0z"
+  })), _path4 || (_path4 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M0 183.069h512v48.868H0zm0 97.737h512v48.868H0z",
+    fill: "#D80027"
+  })), _path5 || (_path5 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#057f44",
+    d: "M0 378.542h512v48.128H0z"
+  })), _path6 || (_path6 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#FFF",
+    d: "M276.992 255.996 106.329 426.659H0V85.333h106.329z"
+  })), _path7 || (_path7 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M256 255.996 85.334 426.662h20.987l170.667-170.666L106.321 85.33H85.334z"
+  })), _path8 || (_path8 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#D80027",
+    d: "m102.465 202.57 13.259 40.812h42.917l-34.718 25.226 13.26 40.814-34.718-25.224-34.72 25.224 13.262-40.814-34.718-25.226h42.915z"
+  })), _path9 || (_path9 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    fill: "#FFDA44",
+    d: "m138.94 259.335-34.559-12.243s-2.553-23.955-2.708-24.766c-1.173-6.18-6.603-10.851-13.123-10.851-7.376 0-13.357 5.98-13.357 13.357 0 1.223.178 2.402.486 3.528l-9.689 9.755h17.229c0 17.882-13.344 17.882-13.344 35.691l7.402 17.809h44.522l7.422-17.809h-.004a17.782 17.782 0 0 0 1.381-5.231c6.397-2.589 8.342-9.24 8.342-9.24z"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgODUuMzMzIDUxMiAzNDEuMzMzIj48cGF0aCBkPSJNMCA4NS4zMzNoNTEyVjQyNi42N0gweiIvPjxnIGZpbGw9IiNGRkRBNDQiPjxwYXRoIGQ9Ik0wIDEzNC4xOTZoNTEydjQ4Ljg2OEgwek0wIDMyOS42NjhoNTEydjQ4Ljg2OEgweiIvPjwvZz48cGF0aCBmaWxsPSIjMDU3ZjQ0IiBkPSJNMCA4NS4zMzNoNTEydjQ4Ljg2OEgweiIvPjxnIGZpbGw9IiNEODAwMjciPjxwYXRoIGQ9Ik0wIDE4My4wNjloNTEydjQ4Ljg2OEgwek0wIDI4MC44MDZoNTEydjQ4Ljg2OEgweiIvPjwvZz48cGF0aCBmaWxsPSIjMDU3ZjQ0IiBkPSJNMCAzNzguNTQyaDUxMnY0OC4xMjhIMHoiLz48cGF0aCBmaWxsPSIjRkZGIiBkPSJNMjc2Ljk5MiAyNTUuOTk2IDEwNi4zMjkgNDI2LjY1OUgwVjg1LjMzM2gxMDYuMzI5eiIvPjxwYXRoIGQ9Ik0yNTYgMjU1Ljk5NiA4NS4zMzQgNDI2LjY2MmgyMC45ODdsMTcwLjY2Ny0xNzAuNjY2TDEwNi4zMjEgODUuMzNIODUuMzM0eiIvPjxwYXRoIGZpbGw9IiNEODAwMjciIGQ9Im0xMDIuNDY1IDIwMi41NyAxMy4yNTkgNDAuODEyaDQyLjkxN2wtMzQuNzE4IDI1LjIyNiAxMy4yNiA0MC44MTQtMzQuNzE4LTI1LjIyNC0zNC43MiAyNS4yMjQgMTMuMjYyLTQwLjgxNC0zNC43MTgtMjUuMjI2aDQyLjkxNXoiLz48cGF0aCBmaWxsPSIjRkZEQTQ0IiBkPSJtMTM4Ljk0IDI1OS4zMzUtMzQuNTU5LTEyLjI0M3MtMi41NTMtMjMuOTU1LTIuNzA4LTI0Ljc2NmMtMS4xNzMtNi4xOC02LjYwMy0xMC44NTEtMTMuMTIzLTEwLjg1MS03LjM3NiAwLTEzLjM1NyA1Ljk4LTEzLjM1NyAxMy4zNTcgMCAxLjIyMy4xNzggMi40MDIuNDg2IDMuNTI4bC05LjY4OSA5Ljc1NWgxNy4yMjljMCAxNy44ODItMTMuMzQ0IDE3Ljg4Mi0xMy4zNDQgMzUuNjkxbDcuNDAyIDE3LjgwOWg0NC41MjJsNy40MjItMTcuODA5aC0uMDA0YTE3Ljc4MiAxNy43ODIgMCAwIDAgMS4zODEtNS4yMzFjNi4zOTctMi41ODkgOC4zNDItOS4yNCA4LjM0Mi05LjI0eiIvPjwvc3ZnPg==");
 
 /***/ }),
 
@@ -3150,14 +3854,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _hooks_useStore__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../hooks/useStore */ "./resources/js/hooks/useStore.js");
-/* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-inlinesvg */ "./node_modules/react-inlinesvg/esm/index.js");
+/* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-inlinesvg */ "./node_modules/react-inlinesvg/esm/index.js");
 /* harmony import */ var _components_Dropdown_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../components/Dropdown.js */ "./resources/js/components/Dropdown.js");
 /* harmony import */ var _components_Badge_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../components/Badge.js */ "./resources/js/components/Badge.js");
-/* harmony import */ var _assets_svg_icon_ellipsis_h_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../../../../assets/svg/icon/ellipsis-h.svg */ "./assets/svg/icon/ellipsis-h.svg");
-/* harmony import */ var _assets_svg_icon_pen_nib_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../../../assets/svg/icon/pen-nib.svg */ "./assets/svg/icon/pen-nib.svg");
-/* harmony import */ var _assets_svg_icon_copy_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../../../assets/svg/icon/copy.svg */ "./assets/svg/icon/copy.svg");
-/* harmony import */ var _assets_svg_icon_trash_svg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../../../../assets/svg/icon/trash.svg */ "./assets/svg/icon/trash.svg");
-/* harmony import */ var _style_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./style.js */ "./resources/js/admin/pages/Forms/components/SingleForm/style.js");
+/* harmony import */ var _constants_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./constants.js */ "./resources/js/admin/pages/Forms/components/SingleForm/constants.js");
+/* harmony import */ var _assets_svg_icon_ellipsis_h_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../../../../assets/svg/icon/ellipsis-h.svg */ "./assets/svg/icon/ellipsis-h.svg");
+/* harmony import */ var _assets_svg_icon_pen_nib_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../../../../../assets/svg/icon/pen-nib.svg */ "./assets/svg/icon/pen-nib.svg");
+/* harmony import */ var _assets_svg_icon_copy_svg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../../../../../assets/svg/icon/copy.svg */ "./assets/svg/icon/copy.svg");
+/* harmony import */ var _assets_svg_icon_trash_svg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../../../../assets/svg/icon/trash.svg */ "./assets/svg/icon/trash.svg");
+/* harmony import */ var _style_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./style.js */ "./resources/js/admin/pages/Forms/components/SingleForm/style.js");
+
 
 
 
@@ -3199,15 +3905,15 @@ function ScreenItem(_ref) {
   } = question;
   const moreDropdown = [{
     name: 'rename',
-    icon: _assets_svg_icon_pen_nib_svg__WEBPACK_IMPORTED_MODULE_5__["default"],
+    icon: _assets_svg_icon_pen_nib_svg__WEBPACK_IMPORTED_MODULE_6__["default"],
     text: 'Rename'
   }, {
     name: 'duplicate',
-    icon: _assets_svg_icon_copy_svg__WEBPACK_IMPORTED_MODULE_6__["default"],
+    icon: _assets_svg_icon_copy_svg__WEBPACK_IMPORTED_MODULE_7__["default"],
     text: 'Duplicate'
   }, {
     name: 'delete',
-    icon: _assets_svg_icon_trash_svg__WEBPACK_IMPORTED_MODULE_7__["default"],
+    icon: _assets_svg_icon_trash_svg__WEBPACK_IMPORTED_MODULE_8__["default"],
     text: 'Delete'
   }];
   function handleDropdownTrigger(event, name) {
@@ -3224,15 +3930,15 @@ function ScreenItem(_ref) {
       });
     }
   }
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_style_js__WEBPACK_IMPORTED_MODULE_8__.ScreenItemStyle, {
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_style_js__WEBPACK_IMPORTED_MODULE_9__.ScreenItemStyle, {
     className: isDisabled ? 'helpgent-screen__item helpgent-screen__disabled' : isActive ? 'helpgent-screen__item helpgent-active' : 'helpgent-screen__item',
     onClick: () => handler(question)
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-screen__content"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-screen__icon"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_9__["default"], {
-    src: icon
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    src: _constants_js__WEBPACK_IMPORTED_MODULE_4__.iconList[icon]
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", {
     className: "helpgent-screen__title"
   }, title, isPro && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_Badge_js__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -3242,7 +3948,7 @@ function ScreenItem(_ref) {
     type: "gray",
     text: "Coming Soon"
   }))), hasDropdown && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_Dropdown_js__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    dropDownIcon: _assets_svg_icon_ellipsis_h_svg__WEBPACK_IMPORTED_MODULE_4__["default"],
+    dropDownIcon: _assets_svg_icon_ellipsis_h_svg__WEBPACK_IMPORTED_MODULE_5__["default"],
     dropdownList: moreDropdown,
     placement: 'right',
     handleDropdownTrigger: handleDropdownTrigger
@@ -3418,7 +4124,8 @@ function ScreenSettings() {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   PreviewComponents: () => (/* binding */ PreviewComponents)
+/* harmony export */   PreviewComponents: () => (/* binding */ PreviewComponents),
+/* harmony export */   iconList: () => (/* binding */ iconList)
 /* harmony export */ });
 /* harmony import */ var _components_questionList_WelcomeQuestion_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @components/questionList/WelcomeQuestion.js */ "./resources/js/components/questionList/WelcomeQuestion.js");
 /* harmony import */ var _components_questionList_LongTextQuestion_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @components/questionList/LongTextQuestion.js */ "./resources/js/components/questionList/LongTextQuestion.js");
@@ -3436,7 +4143,62 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_questionList_SingleSelectQuestion__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @components/questionList/SingleSelectQuestion */ "./resources/js/components/questionList/SingleSelectQuestion.js");
 /* harmony import */ var _components_questionList_MultiSelectQuestions__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @components/questionList/MultiSelectQuestions */ "./resources/js/components/questionList/MultiSelectQuestions.js");
 /* harmony import */ var _components_questionList_DropdownQuestion__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @components/questionList/DropdownQuestion */ "./resources/js/components/questionList/DropdownQuestion.js");
-/* harmony import */ var _components_questionList_EndQuestion_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @components/questionList/EndQuestion.js */ "./resources/js/components/questionList/EndQuestion.js");
+/* harmony import */ var _components_questionList_PhoneNumberQuestion__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @components/questionList/PhoneNumberQuestion */ "./resources/js/components/questionList/PhoneNumberQuestion.js");
+/* harmony import */ var _components_questionList_EndQuestion_js__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @components/questionList/EndQuestion.js */ "./resources/js/components/questionList/EndQuestion.js");
+/* harmony import */ var _icon_chart_bar_svg__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @icon/chart-bar.svg */ "./assets/svg/icon/chart-bar.svg");
+/* harmony import */ var _icon_bar_svg__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! @icon/bar.svg */ "./assets/svg/icon/bar.svg");
+/* harmony import */ var _icon_hash_svg__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @icon/hash.svg */ "./assets/svg/icon/hash.svg");
+/* harmony import */ var _icon_button_svg__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @icon/button.svg */ "./assets/svg/icon/button.svg");
+/* harmony import */ var _icon_upload_svg__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @icon/upload.svg */ "./assets/svg/icon/upload.svg");
+/* harmony import */ var _icon_sliders_svg__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @icon/sliders.svg */ "./assets/svg/icon/sliders.svg");
+/* harmony import */ var _icon_calendar_check_svg__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @icon/calendar-check.svg */ "./assets/svg/icon/calendar-check.svg");
+/* harmony import */ var _icon_star_svg__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @icon/star.svg */ "./assets/svg/icon/star.svg");
+/* harmony import */ var _icon_meter_svg__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @icon/meter.svg */ "./assets/svg/icon/meter.svg");
+/* harmony import */ var _icon_marker_svg__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @icon/marker.svg */ "./assets/svg/icon/marker.svg");
+/* harmony import */ var _icon_address_book_svg__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @icon/address-book.svg */ "./assets/svg/icon/address-book.svg");
+/* harmony import */ var _icon_envelope_svg__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @icon/envelope.svg */ "./assets/svg/icon/envelope.svg");
+/* harmony import */ var _icon_phone_flip_svg__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @icon/phone-flip.svg */ "./assets/svg/icon/phone-flip.svg");
+/* harmony import */ var _icon_link_alt_svg__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @icon/link-alt.svg */ "./assets/svg/icon/link-alt.svg");
+/* harmony import */ var _icon_open_ended_svg__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @icon/open-ended.svg */ "./assets/svg/icon/open-ended.svg");
+/* harmony import */ var _icon_chart_simple_horizontal_svg__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @icon/chart-simple-horizontal.svg */ "./assets/svg/icon/chart-simple-horizontal.svg");
+/* harmony import */ var _icon_video_svg__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @icon/video.svg */ "./assets/svg/icon/video.svg");
+/* harmony import */ var _icon_comment_svg__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @icon/comment.svg */ "./assets/svg/icon/comment.svg");
+/* harmony import */ var _icon_scrubber_svg__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! @icon/scrubber.svg */ "./assets/svg/icon/scrubber.svg");
+/* harmony import */ var _icon_checkbox_svg__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! @icon/checkbox.svg */ "./assets/svg/icon/checkbox.svg");
+/* harmony import */ var _icon_angle_circle_svg__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! @icon/angle-circle.svg */ "./assets/svg/icon/angle-circle.svg");
+/* harmony import */ var _icon_toggle_svg__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! @icon/toggle.svg */ "./assets/svg/icon/toggle.svg");
+/* harmony import */ var _icon_picture_svg__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! @icon/picture.svg */ "./assets/svg/icon/picture.svg");
+/* harmony import */ var _icon_arrow_square_right_svg__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! @icon/arrow-square-right.svg */ "./assets/svg/icon/arrow-square-right.svg");
+/* harmony import */ var _icon_arrow_square_left_svg__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! @icon/arrow-square-left.svg */ "./assets/svg/icon/arrow-square-left.svg");
+/* Import Screens  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Import Svg icons */
+
+
+
+
+
+
+
+
 
 
 
@@ -3471,7 +4233,35 @@ const PreviewComponents = {
   'single-select': _components_questionList_SingleSelectQuestion__WEBPACK_IMPORTED_MODULE_13__["default"],
   'multi-select': _components_questionList_MultiSelectQuestions__WEBPACK_IMPORTED_MODULE_14__["default"],
   dropdown: _components_questionList_DropdownQuestion__WEBPACK_IMPORTED_MODULE_15__["default"],
-  end: _components_questionList_EndQuestion_js__WEBPACK_IMPORTED_MODULE_16__["default"]
+  phone: _components_questionList_PhoneNumberQuestion__WEBPACK_IMPORTED_MODULE_16__["default"],
+  end: _components_questionList_EndQuestion_js__WEBPACK_IMPORTED_MODULE_17__["default"]
+};
+const iconList = {
+  chartBar: _icon_chart_bar_svg__WEBPACK_IMPORTED_MODULE_18__["default"],
+  bar: _icon_bar_svg__WEBPACK_IMPORTED_MODULE_19__["default"],
+  hash: _icon_hash_svg__WEBPACK_IMPORTED_MODULE_20__["default"],
+  button: _icon_button_svg__WEBPACK_IMPORTED_MODULE_21__["default"],
+  upload: _icon_upload_svg__WEBPACK_IMPORTED_MODULE_22__["default"],
+  slider: _icon_sliders_svg__WEBPACK_IMPORTED_MODULE_23__["default"],
+  date: _icon_calendar_check_svg__WEBPACK_IMPORTED_MODULE_24__["default"],
+  star: _icon_star_svg__WEBPACK_IMPORTED_MODULE_25__["default"],
+  meter: _icon_meter_svg__WEBPACK_IMPORTED_MODULE_26__["default"],
+  marker: _icon_marker_svg__WEBPACK_IMPORTED_MODULE_27__["default"],
+  address: _icon_address_book_svg__WEBPACK_IMPORTED_MODULE_28__["default"],
+  envelope: _icon_envelope_svg__WEBPACK_IMPORTED_MODULE_29__["default"],
+  phone: _icon_phone_flip_svg__WEBPACK_IMPORTED_MODULE_30__["default"],
+  url: _icon_link_alt_svg__WEBPACK_IMPORTED_MODULE_31__["default"],
+  openEnded: _icon_open_ended_svg__WEBPACK_IMPORTED_MODULE_32__["default"],
+  horizontalBar: _icon_chart_simple_horizontal_svg__WEBPACK_IMPORTED_MODULE_33__["default"],
+  video: _icon_video_svg__WEBPACK_IMPORTED_MODULE_34__["default"],
+  comment: _icon_comment_svg__WEBPACK_IMPORTED_MODULE_35__["default"],
+  scrubber: _icon_scrubber_svg__WEBPACK_IMPORTED_MODULE_36__["default"],
+  checkbox: _icon_checkbox_svg__WEBPACK_IMPORTED_MODULE_37__["default"],
+  angleCircle: _icon_angle_circle_svg__WEBPACK_IMPORTED_MODULE_38__["default"],
+  toggle: _icon_toggle_svg__WEBPACK_IMPORTED_MODULE_39__["default"],
+  picture: _icon_picture_svg__WEBPACK_IMPORTED_MODULE_40__["default"],
+  arrowSquareRight: _icon_arrow_square_right_svg__WEBPACK_IMPORTED_MODULE_41__["default"],
+  arrowSquareLeft: _icon_arrow_square_left_svg__WEBPACK_IMPORTED_MODULE_42__["default"]
 };
 
 
@@ -5238,6 +6028,135 @@ function NumberQuestion(props) {
 
 /***/ }),
 
+/***/ "./resources/js/components/questionList/PhoneNumberQuestion.js":
+/*!*********************************************************************!*\
+  !*** ./resources/js/components/questionList/PhoneNumberQuestion.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ PhoneNumberQuestion)
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_quill__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-quill */ "./node_modules/react-quill/lib/index.js");
+/* harmony import */ var react_quill__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_quill__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-inlinesvg */ "./node_modules/react-inlinesvg/esm/index.js");
+/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/index-6ea50319.esm.js");
+/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/react-select.esm.js");
+/* harmony import */ var react_quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-quill/dist/quill.snow.css */ "./node_modules/react-quill/dist/quill.snow.css");
+/* harmony import */ var _data_countries_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../data/countries.js */ "./resources/js/data/countries.js");
+/* harmony import */ var _style_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../style.js */ "./resources/js/style.js");
+
+
+
+
+
+
+
+
+function PhoneNumberQuestion(props) {
+  const {
+    layoutMode,
+    singleForm,
+    setSingleForm,
+    selectedQuestion: fileQuestion
+  } = props;
+  const [phoneInput, setPhoneInput] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)({
+    dialCode: _data_countries_js__WEBPACK_IMPORTED_MODULE_3__["default"][0].dial_code,
+    number: ""
+  });
+  const {
+    content
+  } = singleForm;
+  const {
+    questions
+  } = JSON.parse(content);
+  const {
+    elements
+  } = fileQuestion[0].fields[0];
+  const quillModules = {
+    toolbar: false
+  };
+  const Option = optionProps => {
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_select__WEBPACK_IMPORTED_MODULE_5__.c.Option, optionProps, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, optionProps.data.name));
+  };
+  const countryOptions = _data_countries_js__WEBPACK_IMPORTED_MODULE_3__["default"].map(country => {
+    return {
+      label: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        src: country.flag
+      }),
+      value: country.dial_code,
+      name: country.name
+    };
+  });
+  const elementsObject = elements.reduce((acc, element) => {
+    acc[element.key] = element;
+    return acc;
+  }, {});
+  const {
+    label,
+    description,
+    placeholder,
+    required,
+    'action-btn': actionBtn
+  } = elementsObject;
+  function handleSelectCountry(selectedCountry) {
+    setPhoneInput({
+      ...phoneInput,
+      dialCode: selectedCountry.value
+    });
+  }
+  function handleChangeNumber(event) {
+    const onlyNumber = event.target.value.replace(/^\(\+\d+\)\s*/, "");
+    setPhoneInput({
+      ...phoneInput,
+      number: onlyNumber
+    });
+  }
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element__text"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element__label"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)((react_quill__WEBPACK_IMPORTED_MODULE_1___default()), {
+    modules: quillModules,
+    placeholder: "Phone number"
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element__description"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)((react_quill__WEBPACK_IMPORTED_MODULE_1___default()), {
+    modules: quillModules,
+    placeholder: "Type a description"
+  }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element__action"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_style_js__WEBPACK_IMPORTED_MODULE_4__.CountryDialerControl, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-form-group"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_select__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    options: countryOptions,
+    defaultValue: countryOptions[0],
+    components: {
+      Option
+    },
+    inputId: "helpgent-country-select",
+    className: "helpgent-select",
+    classNamePrefix: "helpgent-select",
+    isSearchable: false,
+    onChange: handleSelectCountry
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "text",
+    className: "helpgent-form-group__element",
+    placeholder: "(555) 555-5555",
+    value: `(${phoneInput.dialCode}) ${phoneInput.number}`,
+    onChange: handleChangeNumber
+  }))), actionBtn.isActive && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    className: "helpgent-btn-next helpgent-btn helpgent-btn-primary helpgent-btn-md"
+  }, actionBtn.button_text)));
+}
+
+/***/ }),
+
 /***/ "./resources/js/components/questionList/ResultQuestion.js":
 /*!****************************************************************!*\
   !*** ./resources/js/components/questionList/ResultQuestion.js ***!
@@ -5847,62 +6766,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! react-inlinesvg */ "./node_modules/react-inlinesvg/esm/index.js");
-/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! uuid */ "./node_modules/uuid/dist/esm-browser/v4.js");
-/* harmony import */ var _assets_svg_icon_chart_bar_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../assets/svg/icon/chart-bar.svg */ "./assets/svg/icon/chart-bar.svg");
-/* harmony import */ var _assets_svg_icon_bar_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../assets/svg/icon/bar.svg */ "./assets/svg/icon/bar.svg");
-/* harmony import */ var _assets_svg_icon_hash_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../assets/svg/icon/hash.svg */ "./assets/svg/icon/hash.svg");
-/* harmony import */ var _assets_svg_icon_button_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../assets/svg/icon/button.svg */ "./assets/svg/icon/button.svg");
-/* harmony import */ var _assets_svg_icon_upload_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../assets/svg/icon/upload.svg */ "./assets/svg/icon/upload.svg");
-/* harmony import */ var _assets_svg_icon_sliders_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../assets/svg/icon/sliders.svg */ "./assets/svg/icon/sliders.svg");
-/* harmony import */ var _assets_svg_icon_calendar_check_svg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../assets/svg/icon/calendar-check.svg */ "./assets/svg/icon/calendar-check.svg");
-/* harmony import */ var _assets_svg_icon_star_svg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../assets/svg/icon/star.svg */ "./assets/svg/icon/star.svg");
-/* harmony import */ var _assets_svg_icon_meter_svg__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../assets/svg/icon/meter.svg */ "./assets/svg/icon/meter.svg");
-/* harmony import */ var _assets_svg_icon_marker_svg__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../assets/svg/icon/marker.svg */ "./assets/svg/icon/marker.svg");
-/* harmony import */ var _assets_svg_icon_address_book_svg__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../assets/svg/icon/address-book.svg */ "./assets/svg/icon/address-book.svg");
-/* harmony import */ var _assets_svg_icon_envelope_svg__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../assets/svg/icon/envelope.svg */ "./assets/svg/icon/envelope.svg");
-/* harmony import */ var _assets_svg_icon_phone_flip_svg__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../assets/svg/icon/phone-flip.svg */ "./assets/svg/icon/phone-flip.svg");
-/* harmony import */ var _assets_svg_icon_link_alt_svg__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../assets/svg/icon/link-alt.svg */ "./assets/svg/icon/link-alt.svg");
-/* harmony import */ var _assets_svg_icon_open_ended_svg__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../../assets/svg/icon/open-ended.svg */ "./assets/svg/icon/open-ended.svg");
-/* harmony import */ var _assets_svg_icon_chart_simple_horizontal_svg__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../assets/svg/icon/chart-simple-horizontal.svg */ "./assets/svg/icon/chart-simple-horizontal.svg");
-/* harmony import */ var _assets_svg_icon_video_svg__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../../assets/svg/icon/video.svg */ "./assets/svg/icon/video.svg");
-/* harmony import */ var _assets_svg_icon_comment_svg__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ../../assets/svg/icon/comment.svg */ "./assets/svg/icon/comment.svg");
-/* harmony import */ var _assets_svg_icon_scrubber_svg__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ../../assets/svg/icon/scrubber.svg */ "./assets/svg/icon/scrubber.svg");
-/* harmony import */ var _assets_svg_icon_checkbox_svg__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ../../assets/svg/icon/checkbox.svg */ "./assets/svg/icon/checkbox.svg");
-/* harmony import */ var _assets_svg_icon_angle_circle_svg__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ../../assets/svg/icon/angle-circle.svg */ "./assets/svg/icon/angle-circle.svg");
-/* harmony import */ var _assets_svg_icon_toggle_svg__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ../../assets/svg/icon/toggle.svg */ "./assets/svg/icon/toggle.svg");
-/* harmony import */ var _assets_svg_icon_picture_svg__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ../../assets/svg/icon/picture.svg */ "./assets/svg/icon/picture.svg");
-/* harmony import */ var _assets_svg_icon_arrow_square_right_svg__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ../../assets/svg/icon/arrow-square-right.svg */ "./assets/svg/icon/arrow-square-right.svg");
-/* harmony import */ var _assets_svg_icon_arrow_square_left_svg__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ../../assets/svg/icon/arrow-square-left.svg */ "./assets/svg/icon/arrow-square-left.svg");
-/* harmony import */ var _icon_facebook_svg__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @icon/facebook.svg */ "./assets/svg/icon/facebook.svg");
-/* harmony import */ var _icon_twitter_svg__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @icon/twitter.svg */ "./assets/svg/icon/twitter.svg");
-/* harmony import */ var _icon_youtube_svg__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @icon/youtube.svg */ "./assets/svg/icon/youtube.svg");
-/* harmony import */ var _icon_instagram_svg__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @icon/instagram.svg */ "./assets/svg/icon/instagram.svg");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-inlinesvg */ "./node_modules/react-inlinesvg/esm/index.js");
+/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! uuid */ "./node_modules/uuid/dist/esm-browser/v4.js");
+/* harmony import */ var _icon_facebook_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @icon/facebook.svg */ "./assets/svg/icon/facebook.svg");
+/* harmony import */ var _icon_twitter_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @icon/twitter.svg */ "./assets/svg/icon/twitter.svg");
+/* harmony import */ var _icon_youtube_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @icon/youtube.svg */ "./assets/svg/icon/youtube.svg");
+/* harmony import */ var _icon_instagram_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @icon/instagram.svg */ "./assets/svg/icon/instagram.svg");
 
 
 
@@ -5914,10 +6783,10 @@ __webpack_require__.r(__webpack_exports__);
 //apply filter
 
 const questions = [{
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Long text',
   screen_type: 'long-text',
-  icon: _assets_svg_icon_chart_bar_svg__WEBPACK_IMPORTED_MODULE_1__["default"],
+  icon: "chartBar",
   isPro: false,
   isComing: false,
   position: {
@@ -5926,7 +6795,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -5998,10 +6867,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Short text',
   screen_type: 'short-text',
-  icon: _assets_svg_icon_bar_svg__WEBPACK_IMPORTED_MODULE_2__["default"],
+  icon: "bar",
   isPro: false,
   isComing: false,
   position: {
@@ -6010,7 +6879,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -6082,10 +6951,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Number',
   screen_type: 'number',
-  icon: _assets_svg_icon_hash_svg__WEBPACK_IMPORTED_MODULE_3__["default"],
+  icon: "hash",
   isPro: false,
   isComing: false,
   position: {
@@ -6094,7 +6963,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -6166,10 +7035,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Button',
   screen_type: 'button',
-  icon: _assets_svg_icon_button_svg__WEBPACK_IMPORTED_MODULE_4__["default"],
+  icon: "button",
   isPro: false,
   isComing: false,
   position: {
@@ -6178,7 +7047,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -6250,10 +7119,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'File Upload',
   screen_type: 'upload',
-  icon: _assets_svg_icon_upload_svg__WEBPACK_IMPORTED_MODULE_5__["default"],
+  icon: "upload",
   isPro: false,
   isComing: false,
   position: {
@@ -6262,7 +7131,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -6338,10 +7207,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Range slider',
   screen_type: 'slider',
-  icon: _assets_svg_icon_sliders_svg__WEBPACK_IMPORTED_MODULE_6__["default"],
+  icon: "slider",
   isPro: false,
   isComing: false,
   position: {
@@ -6350,7 +7219,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -6423,10 +7292,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Date',
   screen_type: 'date',
-  icon: _assets_svg_icon_calendar_check_svg__WEBPACK_IMPORTED_MODULE_7__["default"],
+  icon: "date",
   isPro: false,
   isComing: false,
   position: {
@@ -6435,7 +7304,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -6505,10 +7374,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Rating (Stars)',
   screen_type: 'rating',
-  icon: _assets_svg_icon_star_svg__WEBPACK_IMPORTED_MODULE_8__["default"],
+  icon: "star",
   isPro: true,
   isComing: false,
   position: {
@@ -6517,7 +7386,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -6589,10 +7458,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Promoter score',
   screen_type: 'score',
-  icon: _assets_svg_icon_meter_svg__WEBPACK_IMPORTED_MODULE_9__["default"],
+  icon: "meter",
   isPro: true,
   isComing: false,
   position: {
@@ -6601,7 +7470,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -6671,10 +7540,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Address',
   screen_type: 'address',
-  icon: _assets_svg_icon_marker_svg__WEBPACK_IMPORTED_MODULE_10__["default"],
+  icon: "marker",
   isPro: false,
   isComing: false,
   position: {
@@ -6683,7 +7552,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -6750,10 +7619,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Contact info',
   screen_type: 'contact',
-  icon: _assets_svg_icon_address_book_svg__WEBPACK_IMPORTED_MODULE_11__["default"],
+  icon: "address",
   isPro: false,
   isComing: false,
   position: {
@@ -6762,7 +7631,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -6834,10 +7703,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Email',
   screen_type: 'email',
-  icon: _assets_svg_icon_envelope_svg__WEBPACK_IMPORTED_MODULE_12__["default"],
+  icon: "envelope",
   isPro: false,
   isComing: false,
   position: {
@@ -6846,7 +7715,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -6913,10 +7782,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Phone number',
   screen_type: 'phone',
-  icon: _assets_svg_icon_phone_flip_svg__WEBPACK_IMPORTED_MODULE_13__["default"],
+  icon: "phone",
   isPro: false,
   isComing: false,
   position: {
@@ -6925,7 +7794,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -6934,6 +7803,9 @@ const questions = [{
       text: ''
     }, {
       key: 'description',
+      text: ''
+    }, {
+      key: 'default_country',
       text: ''
     }, {
       key: 'placeholder',
@@ -6992,10 +7864,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Website',
   screen_type: 'url',
-  icon: _assets_svg_icon_link_alt_svg__WEBPACK_IMPORTED_MODULE_14__["default"],
+  icon: "url",
   isPro: false,
   isComing: false,
   position: {
@@ -7004,7 +7876,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -7071,10 +7943,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Open Ended',
   screen_type: 'open-ended',
-  icon: _assets_svg_icon_open_ended_svg__WEBPACK_IMPORTED_MODULE_15__["default"],
+  icon: "openEnded",
   isPro: false,
   position: {
     x: -150,
@@ -7082,7 +7954,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -7154,10 +8026,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Results',
   screen_type: 'result',
-  icon: _assets_svg_icon_chart_simple_horizontal_svg__WEBPACK_IMPORTED_MODULE_16__["default"],
+  icon: "horizontalBar",
   isPro: true,
   position: {
     x: -150,
@@ -7165,7 +8037,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -7232,10 +8104,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Live call',
   screen_type: 'live-call',
-  icon: _assets_svg_icon_video_svg__WEBPACK_IMPORTED_MODULE_17__["default"],
+  icon: "video",
   isPro: false,
   isComing: true,
   position: {
@@ -7244,7 +8116,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -7316,10 +8188,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Live chat',
   screen_type: 'live-chat',
-  icon: _assets_svg_icon_comment_svg__WEBPACK_IMPORTED_MODULE_18__["default"],
+  icon: "comment",
   isPro: false,
   isComing: true,
   position: {
@@ -7328,7 +8200,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -7400,10 +8272,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Single-select',
   screen_type: 'single-select',
-  icon: _assets_svg_icon_scrubber_svg__WEBPACK_IMPORTED_MODULE_19__["default"],
+  icon: "scrubber",
   isPro: false,
   isComing: false,
   position: {
@@ -7412,7 +8284,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -7425,24 +8297,24 @@ const questions = [{
     }, {
       key: 'option',
       options: [{
-        id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
         //string
-        label: "Choose option 1",
+        label: 'Choose option 1',
         isSelected: true
       }, {
-        id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
         //string
-        label: "Choose option 2",
+        label: 'Choose option 2',
         isSelected: false
       }, {
-        id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
         //string
-        label: "Choose option 3",
+        label: 'Choose option 3',
         isSelected: false
       }, {
-        id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
         //string
-        label: "Choose option 4",
+        label: 'Choose option 4',
         isSelected: false
       }]
     }, {
@@ -7499,10 +8371,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Multi-select',
   screen_type: 'multi-select',
-  icon: _assets_svg_icon_checkbox_svg__WEBPACK_IMPORTED_MODULE_20__["default"],
+  icon: "checkbox",
   isPro: true,
   isComing: false,
   position: {
@@ -7511,7 +8383,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -7524,21 +8396,21 @@ const questions = [{
     }, {
       key: 'option',
       options: [{
-        id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
         //string
-        label: "Choose option 1"
+        label: 'Choose option 1'
       }, {
-        id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
         //string
-        label: "Choose option 2"
+        label: 'Choose option 2'
       }, {
-        id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
         //string
-        label: "Choose option 3"
+        label: 'Choose option 3'
       }, {
-        id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
         //string
-        label: "Choose option 4"
+        label: 'Choose option 4'
       }]
     }, {
       key: 'required',
@@ -7594,10 +8466,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Dropdown',
   screen_type: 'dropdown',
-  icon: _assets_svg_icon_angle_circle_svg__WEBPACK_IMPORTED_MODULE_21__["default"],
+  icon: "angleCircle",
   isPro: false,
   isComing: false,
   position: {
@@ -7606,7 +8478,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -7619,25 +8491,25 @@ const questions = [{
     }, {
       key: 'option',
       options: [{
-        id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
         //string
-        label: "Choose option 1",
-        value: "option-1"
+        label: 'Choose option 1',
+        value: 'option-1'
       }, {
-        id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
         //string
-        label: "Choose option 2",
-        value: "option-1"
+        label: 'Choose option 2',
+        value: 'option-1'
       }, {
-        id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
         //string
-        label: "Choose option 3",
-        value: "option-1"
+        label: 'Choose option 3',
+        value: 'option-1'
       }, {
-        id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+        id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
         //string
-        label: "Choose option 4",
-        value: "option-1"
+        label: 'Choose option 4',
+        value: 'option-1'
       }]
     }, {
       key: 'required',
@@ -7693,10 +8565,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Yes/No',
   screen_type: 'yes-no',
-  icon: _assets_svg_icon_toggle_svg__WEBPACK_IMPORTED_MODULE_22__["default"],
+  icon: "toggle",
   isPro: false,
   isComing: false,
   position: {
@@ -7705,7 +8577,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -7777,10 +8649,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Picture select',
   screen_type: 'picture-select',
-  icon: _assets_svg_icon_picture_svg__WEBPACK_IMPORTED_MODULE_23__["default"],
+  icon: "picture",
   isPro: true,
   isComing: false,
   position: {
@@ -7789,7 +8661,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -7861,10 +8733,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Welcome',
   screen_type: 'welcome',
-  icon: _assets_svg_icon_arrow_square_right_svg__WEBPACK_IMPORTED_MODULE_24__["default"],
+  icon: "arrowSquareRight",
   isPro: false,
   isComing: false,
   position: {
@@ -7873,7 +8745,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -7945,10 +8817,10 @@ const questions = [{
   medias: [],
   layout: 'content-right'
 }, {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'End',
   screen_type: 'end',
-  icon: _assets_svg_icon_arrow_square_left_svg__WEBPACK_IMPORTED_MODULE_25__["default"],
+  icon: "arrowSquareLeft",
   isPro: false,
   isComing: false,
   position: {
@@ -7957,7 +8829,7 @@ const questions = [{
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -8024,17 +8896,17 @@ const initialQuestions = questions.filter(item => item.screen_type === 'welcome'
 const filteredEndScreen = questions.filter(item => item.screen_type === 'end');
 const endQuestion = filteredEndScreen[0];
 const socialIcons = {
-  facebook: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_31__["default"], {
-    src: _icon_facebook_svg__WEBPACK_IMPORTED_MODULE_26__["default"]
+  facebook: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    src: _icon_facebook_svg__WEBPACK_IMPORTED_MODULE_1__["default"]
   }),
-  twitter: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_31__["default"], {
-    src: _icon_twitter_svg__WEBPACK_IMPORTED_MODULE_27__["default"]
+  twitter: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    src: _icon_twitter_svg__WEBPACK_IMPORTED_MODULE_2__["default"]
   }),
-  youtube: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_31__["default"], {
-    src: _icon_youtube_svg__WEBPACK_IMPORTED_MODULE_28__["default"]
+  youtube: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    src: _icon_youtube_svg__WEBPACK_IMPORTED_MODULE_3__["default"]
   }),
-  instagram: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_31__["default"], {
-    src: _icon_instagram_svg__WEBPACK_IMPORTED_MODULE_29__["default"]
+  instagram: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    src: _icon_instagram_svg__WEBPACK_IMPORTED_MODULE_4__["default"]
   })
 };
 
@@ -8076,6 +8948,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _icon_flags_bz_svg__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @icon/flags/bz.svg */ "./assets/svg/icon/flags/bz.svg");
 /* harmony import */ var _icon_flags_bj_svg__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @icon/flags/bj.svg */ "./assets/svg/icon/flags/bj.svg");
 /* harmony import */ var _icon_flags_bm_svg__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @icon/flags/bm.svg */ "./assets/svg/icon/flags/bm.svg");
+/* harmony import */ var _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @icon/flags/ug.svg */ "./assets/svg/icon/flags/ug.svg");
+/* harmony import */ var _icon_flags_zw_svg__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @icon/flags/zw.svg */ "./assets/svg/icon/flags/zw.svg");
+/* harmony import */ var _icon_flags_ye_svg__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @icon/flags/ye.svg */ "./assets/svg/icon/flags/ye.svg");
+/* harmony import */ var _icon_flags_zm_svg__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @icon/flags/zm.svg */ "./assets/svg/icon/flags/zm.svg");
+/* harmony import */ var _icon_flags_wf_svg__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @icon/flags/wf.svg */ "./assets/svg/icon/flags/wf.svg");
+/* harmony import */ var _icon_flags_vi_svg__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @icon/flags/vi.svg */ "./assets/svg/icon/flags/vi.svg");
+/* harmony import */ var _icon_flags_vg_svg__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @icon/flags/vg.svg */ "./assets/svg/icon/flags/vg.svg");
+/* harmony import */ var _icon_flags_vn_svg__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @icon/flags/vn.svg */ "./assets/svg/icon/flags/vn.svg");
+/* harmony import */ var _icon_flags_ve_svg__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @icon/flags/ve.svg */ "./assets/svg/icon/flags/ve.svg");
+/* harmony import */ var _icon_flags_vu_svg__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @icon/flags/vu.svg */ "./assets/svg/icon/flags/vu.svg");
+/* harmony import */ var _icon_flags_uz_svg__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @icon/flags/uz.svg */ "./assets/svg/icon/flags/uz.svg");
+/* harmony import */ var _icon_flags_uy_svg__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! @icon/flags/uy.svg */ "./assets/svg/icon/flags/uy.svg");
+/* harmony import */ var _icon_flags_us_svg__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! @icon/flags/us.svg */ "./assets/svg/icon/flags/us.svg");
+/* harmony import */ var _icon_flags_gb_svg__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! @icon/flags/gb.svg */ "./assets/svg/icon/flags/gb.svg");
+/* harmony import */ var _icon_flags_ae_svg__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! @icon/flags/ae.svg */ "./assets/svg/icon/flags/ae.svg");
+/* harmony import */ var _icon_flags_ua_svg__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! @icon/flags/ua.svg */ "./assets/svg/icon/flags/ua.svg");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -8230,1086 +9134,1087 @@ const countries = [{
   name: 'Bhutan',
   dial_code: '+975',
   code: 'BT',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Bolivia, Plurinational State of',
   dial_code: '+591',
   code: 'BO',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Bosnia and Herzegovina',
   dial_code: '+387',
   code: 'BA',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Botswana',
   dial_code: '+267',
   code: 'BW',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Brazil',
   dial_code: '+55',
   code: 'BR',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'British Indian Ocean Territory',
   dial_code: '+246',
   code: 'IO',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Brunei Darussalam',
   dial_code: '+673',
   code: 'BN',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Bulgaria',
   dial_code: '+359',
   code: 'BG',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Burkina Faso',
   dial_code: '+226',
   code: 'BF',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Burundi',
   dial_code: '+257',
   code: 'BI',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Cambodia',
   dial_code: '+855',
   code: 'KH',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Cameroon',
   dial_code: '+237',
   code: 'CM',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Canada',
   dial_code: '+1',
   code: 'CA',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Cape Verde',
   dial_code: '+238',
   code: 'CV',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Cayman Islands',
   dial_code: '+ 345',
   code: 'KY',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Central African Republic',
   dial_code: '+236',
   code: 'CF',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Chad',
   dial_code: '+235',
   code: 'TD',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Chile',
   dial_code: '+56',
   code: 'CL',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'China',
   dial_code: '+86',
   code: 'CN',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Christmas Island',
   dial_code: '+61',
   code: 'CX',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Cocos (Keeling) Islands',
   dial_code: '+61',
   code: 'CC',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Colombia',
   dial_code: '+57',
   code: 'CO',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Comoros',
   dial_code: '+269',
   code: 'KM',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Congo',
   dial_code: '+242',
   code: 'CG',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Congo, The Democratic Republic of the Congo',
   dial_code: '+243',
   code: 'CD',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Cook Islands',
   dial_code: '+682',
   code: 'CK',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Costa Rica',
   dial_code: '+506',
   code: 'CR',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: "Cote d'Ivoire",
   dial_code: '+225',
   code: 'CI',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Croatia',
   dial_code: '+385',
   code: 'HR',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Cuba',
   dial_code: '+53',
   code: 'CU',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Cyprus',
   dial_code: '+357',
   code: 'CY',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Czech Republic',
   dial_code: '+420',
   code: 'CZ',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Denmark',
   dial_code: '+45',
   code: 'DK',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Djibouti',
   dial_code: '+253',
   code: 'DJ',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Dominica',
   dial_code: '+1767',
   code: 'DM',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Dominican Republic',
   dial_code: '+1849',
   code: 'DO',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Ecuador',
   dial_code: '+593',
   code: 'EC',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Egypt',
   dial_code: '+20',
   code: 'EG',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'El Salvador',
   dial_code: '+503',
   code: 'SV',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Equatorial Guinea',
   dial_code: '+240',
   code: 'GQ',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Eritrea',
   dial_code: '+291',
   code: 'ER',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Estonia',
   dial_code: '+372',
   code: 'EE',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Ethiopia',
   dial_code: '+251',
   code: 'ET',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Falkland Islands (Malvinas)',
   dial_code: '+500',
   code: 'FK',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Faroe Islands',
   dial_code: '+298',
   code: 'FO',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Fiji',
   dial_code: '+679',
   code: 'FJ',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Finland',
   dial_code: '+358',
   code: 'FI',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'France',
   dial_code: '+33',
   code: 'FR',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'French Guiana',
   dial_code: '+594',
   code: 'GF',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'French Polynesia',
   dial_code: '+689',
   code: 'PF',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Gabon',
   dial_code: '+241',
   code: 'GA',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Gambia',
   dial_code: '+220',
   code: 'GM',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Georgia',
   dial_code: '+995',
   code: 'GE',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Germany',
   dial_code: '+49',
   code: 'DE',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Ghana',
   dial_code: '+233',
   code: 'GH',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Gibraltar',
   dial_code: '+350',
   code: 'GI',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Greece',
   dial_code: '+30',
   code: 'GR',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Greenland',
   dial_code: '+299',
   code: 'GL',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Grenada',
   dial_code: '+1473',
   code: 'GD',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Guadeloupe',
   dial_code: '+590',
   code: 'GP',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Guam',
   dial_code: '+1671',
   code: 'GU',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Guatemala',
   dial_code: '+502',
   code: 'GT',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Guernsey',
   dial_code: '+44',
   code: 'GG',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Guinea',
   dial_code: '+224',
   code: 'GN',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Guinea-Bissau',
   dial_code: '+245',
   code: 'GW',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Guyana',
   dial_code: '+595',
   code: 'GY',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Haiti',
   dial_code: '+509',
   code: 'HT',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Holy See (Vatican City State)',
   dial_code: '+379',
   code: 'VA',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Honduras',
   dial_code: '+504',
   code: 'HN',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Hong Kong',
   dial_code: '+852',
   code: 'HK',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Hungary',
   dial_code: '+36',
   code: 'HU',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Iceland',
   dial_code: '+354',
   code: 'IS',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'India',
   dial_code: '+91',
   code: 'IN',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Indonesia',
   dial_code: '+62',
   code: 'ID',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Iran, Islamic Republic of Persian Gulf',
   dial_code: '+98',
   code: 'IR',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Iraq',
   dial_code: '+964',
   code: 'IQ',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Ireland',
   dial_code: '+353',
   code: 'IE',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Isle of Man',
   dial_code: '+44',
   code: 'IM',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Israel',
   dial_code: '+972',
   code: 'IL',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Italy',
   dial_code: '+39',
   code: 'IT',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Jamaica',
   dial_code: '+1876',
   code: 'JM',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Japan',
   dial_code: '+81',
   code: 'JP',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Jersey',
   dial_code: '+44',
   code: 'JE',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Jordan',
   dial_code: '+962',
   code: 'JO',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Kazakhstan',
   dial_code: '+77',
   code: 'KZ',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Kenya',
   dial_code: '+254',
   code: 'KE',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Kiribati',
   dial_code: '+686',
   code: 'KI',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: "Korea, Democratic People's Republic of Korea",
   dial_code: '+850',
   code: 'KP',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Korea, Republic of South Korea',
   dial_code: '+82',
   code: 'KR',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Kuwait',
   dial_code: '+965',
   code: 'KW',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Kyrgyzstan',
   dial_code: '+996',
   code: 'KG',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Laos',
   dial_code: '+856',
   code: 'LA',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Latvia',
   dial_code: '+371',
   code: 'LV',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Lebanon',
   dial_code: '+961',
   code: 'LB',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Lesotho',
   dial_code: '+266',
   code: 'LS',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Liberia',
   dial_code: '+231',
   code: 'LR',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Libyan Arab Jamahiriya',
   dial_code: '+218',
   code: 'LY',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Liechtenstein',
   dial_code: '+423',
   code: 'LI',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Lithuania',
   dial_code: '+370',
   code: 'LT',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Luxembourg',
   dial_code: '+352',
   code: 'LU',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Macao',
   dial_code: '+853',
   code: 'MO',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Macedonia',
   dial_code: '+389',
   code: 'MK',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Madagascar',
   dial_code: '+261',
   code: 'MG',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Malawi',
   dial_code: '+265',
   code: 'MW',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Malaysia',
   dial_code: '+60',
   code: 'MY',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Maldives',
   dial_code: '+960',
   code: 'MV',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Mali',
   dial_code: '+223',
   code: 'ML',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Malta',
   dial_code: '+356',
   code: 'MT',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Marshall Islands',
   dial_code: '+692',
   code: 'MH',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Martinique',
   dial_code: '+596',
   code: 'MQ',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Mauritania',
   dial_code: '+222',
   code: 'MR',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Mauritius',
   dial_code: '+230',
   code: 'MU',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Mayotte',
   dial_code: '+262',
   code: 'YT',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Mexico',
   dial_code: '+52',
   code: 'MX',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Micronesia, Federated States of Micronesia',
   dial_code: '+691',
   code: 'FM',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Moldova',
   dial_code: '+373',
   code: 'MD',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Monaco',
   dial_code: '+377',
   code: 'MC',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Mongolia',
   dial_code: '+976',
   code: 'MN',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Montenegro',
   dial_code: '+382',
   code: 'ME',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Montserrat',
   dial_code: '+1664',
   code: 'MS',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Morocco',
   dial_code: '+212',
   code: 'MA',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Mozambique',
   dial_code: '+258',
   code: 'MZ',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Myanmar',
   dial_code: '+95',
   code: 'MM',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Namibia',
   dial_code: '+264',
   code: 'NA',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Nauru',
   dial_code: '+674',
   code: 'NR',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Nepal',
   dial_code: '+977',
   code: 'NP',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Netherlands',
   dial_code: '+31',
   code: 'NL',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Netherlands Antilles',
   dial_code: '+599',
   code: 'AN',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'New Caledonia',
   dial_code: '+687',
   code: 'NC',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'New Zealand',
   dial_code: '+64',
   code: 'NZ',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Nicaragua',
   dial_code: '+505',
   code: 'NI',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Niger',
   dial_code: '+227',
   code: 'NE',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Nigeria',
   dial_code: '+234',
   code: 'NG',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Niue',
   dial_code: '+683',
   code: 'NU',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Norfolk Island',
   dial_code: '+672',
   code: 'NF',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Northern Mariana Islands',
   dial_code: '+1670',
   code: 'MP',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Norway',
   dial_code: '+47',
   code: 'NO',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Oman',
   dial_code: '+968',
   code: 'OM',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Pakistan',
   dial_code: '+92',
   code: 'PK',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Palau',
   dial_code: '+680',
   code: 'PW',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Palestinian Territory, Occupied',
   dial_code: '+970',
   code: 'PS',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Panama',
   dial_code: '+507',
   code: 'PA',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Papua New Guinea',
   dial_code: '+675',
   code: 'PG',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Paraguay',
   dial_code: '+595',
   code: 'PY',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Peru',
   dial_code: '+51',
   code: 'PE',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Philippines',
   dial_code: '+63',
   code: 'PH',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Pitcairn',
   dial_code: '+872',
   code: 'PN',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Poland',
   dial_code: '+48',
   code: 'PL',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Portugal',
   dial_code: '+351',
   code: 'PT',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Puerto Rico',
   dial_code: '+1939',
   code: 'PR',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Qatar',
   dial_code: '+974',
   code: 'QA',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Romania',
   dial_code: '+40',
   code: 'RO',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Russia',
   dial_code: '+7',
   code: 'RU',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Rwanda',
   dial_code: '+250',
   code: 'RW',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Reunion',
   dial_code: '+262',
   code: 'RE',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Saint Barthelemy',
   dial_code: '+590',
   code: 'BL',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Saint Helena, Ascension and Tristan Da Cunha',
   dial_code: '+290',
   code: 'SH',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Saint Kitts and Nevis',
   dial_code: '+1869',
   code: 'KN',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Saint Lucia',
   dial_code: '+1758',
   code: 'LC',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Saint Martin',
   dial_code: '+590',
   code: 'MF',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Saint Pierre and Miquelon',
   dial_code: '+508',
   code: 'PM',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Saint Vincent and the Grenadines',
   dial_code: '+1784',
   code: 'VC',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Samoa',
   dial_code: '+685',
   code: 'WS',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'San Marino',
   dial_code: '+378',
   code: 'SM',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Sao Tome and Principe',
   dial_code: '+239',
   code: 'ST',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Saudi Arabia',
   dial_code: '+966',
   code: 'SA',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Senegal',
   dial_code: '+221',
   code: 'SN',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Serbia',
   dial_code: '+381',
   code: 'RS',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Seychelles',
   dial_code: '+248',
   code: 'SC',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Sierra Leone',
   dial_code: '+232',
   code: 'SL',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Singapore',
   dial_code: '+65',
   code: 'SG',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Slovakia',
   dial_code: '+421',
   code: 'SK',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Slovenia',
   dial_code: '+386',
   code: 'SI',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Solomon Islands',
   dial_code: '+677',
   code: 'SB',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Somalia',
   dial_code: '+252',
   code: 'SO',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'South Africa',
   dial_code: '+27',
   code: 'ZA',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'South Sudan',
   dial_code: '+211',
   code: 'SS',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'South Georgia and the South Sandwich Islands',
   dial_code: '+500',
   code: 'GS',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Spain',
   dial_code: '+34',
   code: 'ES',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Sri Lanka',
   dial_code: '+94',
   code: 'LK',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Sudan',
   dial_code: '+249',
   code: 'SD',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Suriname',
   dial_code: '+597',
   code: 'SR',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Svalbard and Jan Mayen',
   dial_code: '+47',
   code: 'SJ',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Swaziland',
   dial_code: '+268',
   code: 'SZ',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Sweden',
   dial_code: '+46',
   code: 'SE',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Switzerland',
   dial_code: '+41',
   code: 'CH',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Syrian Arab Republic',
   dial_code: '+963',
   code: 'SY',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Taiwan',
   dial_code: '+886',
   code: 'TW',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Tajikistan',
   dial_code: '+992',
   code: 'TJ',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Tanzania, United Republic of Tanzania',
   dial_code: '+255',
   code: 'TZ',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Thailand',
   dial_code: '+66',
   code: 'TH',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Timor-Leste',
   dial_code: '+670',
   code: 'TL',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Togo',
   dial_code: '+228',
   code: 'TG',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Tokelau',
   dial_code: '+690',
   code: 'TK',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Tonga',
   dial_code: '+676',
   code: 'TO',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Trinidad and Tobago',
   dial_code: '+1868',
   code: 'TT',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Tunisia',
   dial_code: '+216',
   code: 'TN',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Turkey',
   dial_code: '+90',
   code: 'TR',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Turkmenistan',
   dial_code: '+993',
   code: 'TM',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Turks and Caicos Islands',
   dial_code: '+1649',
   code: 'TC',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Tuvalu',
   dial_code: '+688',
   code: 'TV',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Uganda',
   dial_code: '+256',
   code: 'UG',
-  flag: ''
+  flag: _icon_flags_ug_svg__WEBPACK_IMPORTED_MODULE_25__["default"]
 }, {
   name: 'Ukraine',
   dial_code: '+380',
   code: 'UA',
-  flag: ''
+  flag: _icon_flags_ua_svg__WEBPACK_IMPORTED_MODULE_40__["default"]
 }, {
   name: 'United Arab Emirates',
   dial_code: '+971',
   code: 'AE',
-  flag: ''
+  flag: _icon_flags_ae_svg__WEBPACK_IMPORTED_MODULE_39__["default"]
 }, {
   name: 'United Kingdom',
   dial_code: '+44',
   code: 'GB',
-  flag: ''
+  flag: _icon_flags_gb_svg__WEBPACK_IMPORTED_MODULE_38__["default"]
 }, {
   name: 'United States',
   dial_code: '+1',
   code: 'US',
-  flag: ''
+  flag: _icon_flags_us_svg__WEBPACK_IMPORTED_MODULE_37__["default"]
 }, {
   name: 'Uruguay',
   dial_code: '+598',
   code: 'UY',
-  flag: ''
+  flag: _icon_flags_uy_svg__WEBPACK_IMPORTED_MODULE_36__["default"]
 }, {
   name: 'Uzbekistan',
   dial_code: '+998',
   code: 'UZ',
-  flag: ''
+  flag: _icon_flags_uz_svg__WEBPACK_IMPORTED_MODULE_35__["default"]
 }, {
   name: 'Vanuatu',
   dial_code: '+678',
   code: 'VU',
-  flag: ''
+  flag: _icon_flags_vu_svg__WEBPACK_IMPORTED_MODULE_34__["default"]
 }, {
   name: 'Venezuela, Bolivarian Republic of Venezuela',
   dial_code: '+58',
   code: 'VE',
-  flag: ''
+  flag: _icon_flags_ve_svg__WEBPACK_IMPORTED_MODULE_33__["default"]
 }, {
   name: 'Vietnam',
   dial_code: '+84',
   code: 'VN',
-  flag: ''
+  flag: _icon_flags_vn_svg__WEBPACK_IMPORTED_MODULE_32__["default"]
 }, {
   name: 'Virgin Islands, British',
   dial_code: '+1284',
   code: 'VG',
-  flag: ''
+  flag: _icon_flags_vg_svg__WEBPACK_IMPORTED_MODULE_31__["default"]
 }, {
   name: 'Virgin Islands, U.S.',
   dial_code: '+1340',
   code: 'VI',
-  flag: ''
+  flag: _icon_flags_vi_svg__WEBPACK_IMPORTED_MODULE_30__["default"]
 }, {
   name: 'Wallis and Futuna',
   dial_code: '+681',
   code: 'WF',
-  flag: ''
+  flag: _icon_flags_wf_svg__WEBPACK_IMPORTED_MODULE_29__["default"]
 }, {
   name: 'Yemen',
   dial_code: '+967',
   code: 'YE',
-  flag: ''
+  flag: _icon_flags_ye_svg__WEBPACK_IMPORTED_MODULE_27__["default"]
 }, {
   name: 'Zambia',
   dial_code: '+260',
   code: 'ZM',
-  flag: ''
+  flag: _icon_flags_zm_svg__WEBPACK_IMPORTED_MODULE_28__["default"]
 }, {
   name: 'Zimbabwe',
   dial_code: '+263',
-  code: 'ZW'
+  code: 'ZW',
+  flag: _icon_flags_zw_svg__WEBPACK_IMPORTED_MODULE_26__["default"]
 }];
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (countries);
 
@@ -9488,6 +10393,7 @@ function useStore() {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   CountryDialerControl: () => (/* binding */ CountryDialerControl),
 /* harmony export */   MultiSelectStyle: () => (/* binding */ MultiSelectStyle),
 /* harmony export */   QuestionPreviewStyle: () => (/* binding */ QuestionPreviewStyle),
 /* harmony export */   ScoreQuestionStyle: () => (/* binding */ ScoreQuestionStyle),
@@ -9720,7 +10626,6 @@ const QuestionPreviewStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["def
         font-weight: 500;
         color: var(--helpgent-color-dark);
     }
-    
 `;
 const ScoreQuestionStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div`
     .helpgent-question-element__action{
@@ -9863,6 +10768,36 @@ const MultiSelectStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default
             path{
                 fill: var(--helpgent-color-white);
             }
+        }
+    }
+`;
+const CountryDialerControl = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div`
+    .helpgent-select{
+        margin-right: 10px;    
+    }
+    .helpgent-select__control{
+        min-height: 44px;
+    }
+    .helpgent-select__menu{
+        min-width: 220px;
+        padding: 8px;
+    }
+    .helpgent-select__option{
+        font-size: .87rem;
+        padding: 4px 5px;
+    }
+    .helpgent-select__single-value{
+        display: flex;
+        align-items: center;
+        width: 20px;
+        height: 20px;
+        margin: 0 12px 0 0;
+    }
+    .helpgent-select__indicator{
+        padding: 0 10px 0 0;
+        svg{
+            width: 18px;
+            height: 18px;
         }
     }
 `;

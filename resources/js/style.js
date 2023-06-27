@@ -225,7 +225,6 @@ const QuestionPreviewStyle = Styled.div`
         font-weight: 500;
         color: var(--helpgent-color-dark);
     }
-    
 `;
 const ScoreQuestionStyle = Styled.div`
     .helpgent-question-element__action{
@@ -372,9 +371,41 @@ const MultiSelectStyle = Styled.div`
     }
 `;
 
+const CountryDialerControl = Styled.div`
+    .helpgent-select{
+        margin-right: 10px;    
+    }
+    .helpgent-select__control{
+        min-height: 44px;
+    }
+    .helpgent-select__menu{
+        min-width: 220px;
+        padding: 8px;
+    }
+    .helpgent-select__option{
+        font-size: .87rem;
+        padding: 4px 5px;
+    }
+    .helpgent-select__single-value{
+        display: flex;
+        align-items: center;
+        width: 20px;
+        height: 20px;
+        margin: 0 12px 0 0;
+    }
+    .helpgent-select__indicator{
+        padding: 0 10px 0 0;
+        svg{
+            width: 18px;
+            height: 18px;
+        }
+    }
+`;
+
 export {
 	QuestionPreviewStyle,
 	ScoreQuestionStyle,
 	SingleSelectStyle,
 	MultiSelectStyle,
+	CountryDialerControl,
 };
