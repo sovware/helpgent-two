@@ -20,6 +20,7 @@ Route::group(
                     'forward', function() {
                         Route::get( 'users', [ForwardController::class, 'users'] );
                         Route::get( 'responses', [ForwardController::class, 'responses'] );
+                        Route::post( '/', [ForwardController::class, 'store'] );
                     }
                 );
                 Route::get( 'attachment', [ConversationController::class, 'attachment'] );

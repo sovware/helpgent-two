@@ -21,6 +21,10 @@ class Conversation extends Model {
             ->relation_where( 'is_guest', 0 );
     }
 
+    public function forward():BelongsToOne {
+        return $this->belongs_to_one( ConversationForward::class, 'id', 'forward_id' );
+    }
+
     public function attachment():BelongsToOne {
         return $this->belongs_to_one( Attachment::class, 'id', 'attachment_id' );
     }

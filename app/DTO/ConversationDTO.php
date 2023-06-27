@@ -23,7 +23,7 @@ class ConversationDTO {
     /**
      * @var int|null
      */
-    private $parent_type;
+    private $forward_id;
 
     private int $created_by;
 
@@ -34,14 +34,14 @@ class ConversationDTO {
 
     private $agent_trigger;
 
-    public function __construct( int $response_id, string $message = '', int $created_by = 0, int $attachment_id = 0, int $is_guest = 0, int $parent_id = 0, $parent_type = null, int $is_read = 0, string $status = 'publish', $agent_trigger = null ) {
+    public function __construct( int $response_id, string $message = '', int $created_by = 0, int $attachment_id = 0, int $is_guest = 0, int $parent_id = 0, $forward_id = 0, int $is_read = 0, string $status = 'publish', $agent_trigger = null ) {
         $this->response_id   = $response_id;
         $this->message       = $message;
         $this->attachment_id = $attachment_id;
         $this->is_read       = $is_read;
         $this->is_guest      = $is_guest;
         $this->parent_id     = $parent_id;
-        $this->parent_type   = $parent_type;
+        $this->forward_id    = $forward_id;
         $this->created_by    = $created_by;
         $this->status        = $status;
         $this->agent_trigger = $agent_trigger;
@@ -103,12 +103,12 @@ class ConversationDTO {
         $this->parent_id = $parent_id;
     }
 
-    public function get_parent_type() {
-        return $this->parent_type;
+    public function get_forward_id() {
+        return $this->forward_id;
     }
 
-    public function set_parent_type( $parent_type ) {
-        $this->parent_type = $parent_type;
+    public function set_forward_id( $forward_id ) {
+        $this->forward_id = $forward_id;
     }
 
     public function get_created_by() {

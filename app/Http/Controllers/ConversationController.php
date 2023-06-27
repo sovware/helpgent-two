@@ -5,6 +5,7 @@ namespace HelpGent\App\Http\Controllers;
 use Exception;
 use HelpGent\App\DTO\ConversationDTO;
 use HelpGent\App\Http\Controllers\Controller;
+use HelpGent\App\Models\Conversation;
 use HelpGent\App\Repositories\ConversationRepository;
 use HelpGent\App\Repositories\ResponseRepository;
 use HelpGent\WaxFramework\RequestValidator\Validator;
@@ -66,8 +67,7 @@ class ConversationController extends Controller {
                 'response_id'   => 'required|numeric',
                 'message'       => 'string',
                 'attachment_id' => 'integer',
-                'parent_id'     => 'integer|min:1',
-                'parent_type'   => 'string|accepted:reply,forward'
+                'parent_id'     => 'integer|min:1'
             ]
         );
 
@@ -97,23 +97,6 @@ class ConversationController extends Controller {
             );
         }
 
-        /**
-         * Parent request validation
-         */
-        $parent_type = $wp_rest_request->get_param( 'parent_type' );
-        
-        if ( $wp_rest_request->has_param( 'parent_id' ) && empty( $parent_type ) ) {
-            return Response::send(
-                [
-                    'messages' => [
-                        'parent_type' => [
-                            "The parent_type field is required."
-                        ]
-                    ]
-                ], 422
-            );
-        }
-
         $user        = helpgent_get_current_user();
         $response_id = intval( $wp_rest_request->get_param( 'response_id' ) );
 
@@ -131,8 +114,7 @@ class ConversationController extends Controller {
             $user->id,
             $attachment_id,
             $user->is_guest,
-            intval( $wp_rest_request->get_param( 'parent_id' ) ),
-            $parent_type
+            intval( $wp_rest_request->get_param( 'parent_id' ) )
         );
 
         try {
@@ -284,5 +266,9 @@ class ConversationController extends Controller {
                 intval( $wp_rest_request->get_param( 'page' ) )
             )
         );
+    }
+
+    public function get_by_id( int $id ) {
+        return Conversation::query()->where( 'id', $id )->first();
     }
 }

@@ -7,14 +7,20 @@ class ConversationForwardDTO {
 
     private int $conversation_id;
     
-    private string $message;
-    
-    private int $is_attachment;
+    /**
+     * @var string|null $message
+     */
+    private $message;
 
-    public function __construct( int $conversation_id, string $message, int $is_attachment ) {
+    /**
+     * @var string|null $attachment_id
+     */
+    private $attachment_id;
+
+    public function __construct( int $conversation_id, $message = null, $attachment_id = null ) {
         $this->conversation_id = $conversation_id;
         $this->message         = $message;
-        $this->is_attachment   = $is_attachment;
+        $this->attachment_id   = $attachment_id;
     }
 
     public function get_id() {
@@ -37,15 +43,15 @@ class ConversationForwardDTO {
         return $this->message;
     }
 
-    public function set_message( string $message ) {
+    public function set_message( $message ) {
         $this->message = $message;
     }
 
-    public function get_is_attachment() {
-        return $this->is_attachment;
+    public function get_attachment_id() {
+        return $this->attachment_id;
     }
 
-    public function set_is_attachment( int $is_attachment ) {
-        $this->is_attachment = $is_attachment;
+    public function set_attachment_id( $attachment_id ) {
+        $this->attachment_id = $attachment_id;
     }
 }

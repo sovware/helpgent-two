@@ -29,7 +29,8 @@ class ConversationRepository {
                 },
                 'parent.user'       => [$this, 'user_relation'],
                 'parent.user_guest' => [$this, 'user_guest_relation'],
-                'attachment'
+                'attachment',
+                'forward.attachment'
             ]
         )->where( 'response_id', $response_id );
 
@@ -86,7 +87,7 @@ class ConversationRepository {
     protected function selected_columns() {
         $removed_message = esc_html__( "This message was removed", "helpgent" );
 
-        return "id, response_id, attachment_id, is_read, is_guest, created_by, agent_trigger, parent_id, parent_type, updated_at, status, created_at,
+        return "id, response_id, attachment_id, is_read, is_guest, created_by, agent_trigger, parent_id, forward_id, updated_at, status, created_at,
             CASE 
                 WHEN status = 'trash' THEN '{$removed_message}' 
                 ELSE message 
@@ -98,7 +99,7 @@ class ConversationRepository {
     }
 
     public function user_guest_relation( Builder $query ) {
-        $query->select( 'helpgent_guest_users.id', 'helpgent_guest_users.name', 'helpgent_guest_users.email' );
+        $query->select( 'helpgent_guest_users.id', 'helpgent_guest_users.first_name', 'helpgent_guest_users.last_name', 'helpgent_guest_users.email' );
     }
 
     private function prepare_conversation( stdClass &$conversation ) {
@@ -131,7 +132,7 @@ class ConversationRepository {
             'is_read'       => $conversation_dto->get_is_read(),
             'is_guest'      => $conversation_dto->get_is_guest(),
             'parent_id'     => $conversation_dto->get_parent_id(),
-            'parent_type'   => $conversation_dto->get_parent_type(),
+            'forward_id'    => $conversation_dto->get_forward_id(),
             'created_by'    => $conversation_dto->get_created_by(),
             'agent_trigger' => $conversation_dto->get_agent_trigger(),
             'status'        => $conversation_dto->get_status(),
@@ -183,5 +184,9 @@ class ConversationRepository {
                 'status' => 'trash'
             ]
         );
+    }
+
+    public function get_by_id( int $id ) {
+        return Conversation::query()->where( 'id', $id )->first();
     }
 }
