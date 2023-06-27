@@ -23,6 +23,7 @@ class ResponseRepository {
                 'conversation'            => function ( Builder $query ) {
                     $query->order_by_desc( 'helpgent_conversations.id' );
                 },
+                'conversation.forward',
                 'conversation.user'       => [$this, 'user_relationship'],
                 'conversation.user_guest' => [$this, 'guest_user_relationship']
             ] 
