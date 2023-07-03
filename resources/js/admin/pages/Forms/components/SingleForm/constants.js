@@ -15,6 +15,7 @@ import SingleSelectQuestion from '@components/questionList/SingleSelectQuestion'
 import MultiSelectQuestion from '@components/questionList/MultiSelectQuestions';
 import DropdownQuestion from '@components/questionList/DropdownQuestion';
 import EndQuestion from '@components/questionList/EndQuestion.js';
+import ContactQuestion from '@components/questionList/ContactQuestion';
 
 const PreviewComponents = {
 	welcome: WelcomeQuestion,
@@ -34,6 +35,7 @@ const PreviewComponents = {
 	'multi-select': MultiSelectQuestion,
 	dropdown: DropdownQuestion,
 	end: EndQuestion,
+	contact: ContactQuestion,
 };
 
 export { PreviewComponents };

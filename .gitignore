@@ -13,3 +13,4 @@ phpcs-report.xml
 /assets/**/*.js.map
 /assets/css/*.js
 __*/
+/assets/build

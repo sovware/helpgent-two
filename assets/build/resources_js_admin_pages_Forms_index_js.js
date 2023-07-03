@@ -3490,22 +3490,22 @@ const questions = [{
       options: [{
         id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
         //string
-        label: "Choose option 1",
+        label: 'Choose option 1',
         isSelected: true
       }, {
         id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
         //string
-        label: "Choose option 2",
+        label: 'Choose option 2',
         isSelected: false
       }, {
         id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
         //string
-        label: "Choose option 3",
+        label: 'Choose option 3',
         isSelected: false
       }, {
         id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
         //string
-        label: "Choose option 4",
+        label: 'Choose option 4',
         isSelected: false
       }]
     }, {
@@ -3589,19 +3589,19 @@ const questions = [{
       options: [{
         id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
         //string
-        label: "Choose option 1"
+        label: 'Choose option 1'
       }, {
         id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
         //string
-        label: "Choose option 2"
+        label: 'Choose option 2'
       }, {
         id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
         //string
-        label: "Choose option 3"
+        label: 'Choose option 3'
       }, {
         id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
         //string
-        label: "Choose option 4"
+        label: 'Choose option 4'
       }]
     }, {
       key: 'required',
@@ -3684,23 +3684,23 @@ const questions = [{
       options: [{
         id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
         //string
-        label: "Choose option 1",
-        value: "option-1"
+        label: 'Choose option 1',
+        value: 'option-1'
       }, {
         id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
         //string
-        label: "Choose option 2",
-        value: "option-1"
+        label: 'Choose option 2',
+        value: 'option-1'
       }, {
         id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
         //string
-        label: "Choose option 3",
-        value: "option-1"
+        label: 'Choose option 3',
+        value: 'option-1'
       }, {
         id: (0,uuid__WEBPACK_IMPORTED_MODULE_30__["default"])(),
         //string
-        label: "Choose option 4",
-        value: "option-1"
+        label: 'Choose option 4',
+        value: 'option-1'
       }]
     }, {
       key: 'required',
