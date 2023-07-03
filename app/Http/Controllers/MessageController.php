@@ -125,7 +125,11 @@ class MessageController extends Controller {
             $message_dto->set_id( $message_id );
 
             do_action( 'helpgent_after_store_message', $message_dto, $wp_rest_request );
-            return Response::send( [], 201 );
+            return Response::send(
+                [
+                    'message_id' => $message_id
+                ], 201 
+            );
         } catch ( Exception $exception ) {
             return Response::send(
                 [
