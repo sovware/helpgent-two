@@ -16,7 +16,7 @@ class ForwardRepository {
             [
                 'conversation_id' => $conversation_forward_dto->get_conversation_id(),
                 'message'         => $conversation_forward_dto->get_message(),
-                'is_attachment'   => $conversation_forward_dto->get_is_attachment()
+                'attachment_id'   => $conversation_forward_dto->get_attachment_id()
             ]
         );
     }
@@ -26,7 +26,7 @@ class ForwardRepository {
             [
                 'conversation_id' => $conversation_forward_dto->get_conversation_id(),
                 'message'         => $conversation_forward_dto->get_message(),
-                'is_attachment'   => $conversation_forward_dto->get_is_attachment(),
+                'attachment_id'   => $conversation_forward_dto->get_attachment_id(),
                 'updated_at'      => helpgent_now()
             ]
         );
