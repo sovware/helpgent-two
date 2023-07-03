@@ -2,7 +2,7 @@
 
 namespace HelpGent\App\DTO;
 
-class ConversationDTO {
+class MessageDTO {
     private int $id;
 
     private int $response_id;

@@ -2,8 +2,8 @@
 
 namespace HelpGent\App\Repositories;
 
-use HelpGent\App\DTO\ConversationForwardDTO;
-use HelpGent\App\Models\ConversationForward;
+use HelpGent\App\DTO\MessageForwardDTO;
+use HelpGent\App\Models\MessageForward;
 use HelpGent\App\Models\Guest;
 use HelpGent\App\Models\Response;
 use HelpGent\App\Models\User;
@@ -11,23 +11,21 @@ use HelpGent\WaxFramework\Database\Query\Builder;
 use stdClass;
 
 class ForwardRepository {
-    public function create( ConversationForwardDTO $conversation_forward_dto ) {
-        return ConversationForward::query()->insert_get_id(
+    public function create( MessageForwardDTO $message_forward_dto ) {
+        return MessageForward::query()->insert_get_id(
             [
-                'conversation_id' => $conversation_forward_dto->get_conversation_id(),
-                'message'         => $conversation_forward_dto->get_message(),
-                'attachment_id'   => $conversation_forward_dto->get_attachment_id()
+                'message'       => $message_forward_dto->get_message(),
+                'attachment_id' => $message_forward_dto->get_attachment_id()
             ]
         );
     }
 
-    public function update( ConversationForwardDTO $conversation_forward_dto ) {
-        return ConversationForward::query()->where( 'id', $conversation_forward_dto->get_id() )->update(
+    public function update( MessageForwardDTO $message_forward_dto ) {
+        return MessageForward::query()->where( 'id', $message_forward_dto->get_id() )->update(
             [
-                'conversation_id' => $conversation_forward_dto->get_conversation_id(),
-                'message'         => $conversation_forward_dto->get_message(),
-                'attachment_id'   => $conversation_forward_dto->get_attachment_id(),
-                'updated_at'      => helpgent_now()
+                'message'       => $message_forward_dto->get_message(),
+                'attachment_id' => $message_forward_dto->get_attachment_id(),
+                'updated_at'    => helpgent_now()
             ]
         );
     }
@@ -70,13 +68,13 @@ class ForwardRepository {
 
         $exists_sql = "( exists ( {$user->to_sql()} ) or exists ( {$guest->to_sql()} ) )";
 
-        $count_query = Response::query( 'responses' )->where( 'status', 'active' )->where_raw( $exists_sql );
-        $responses   = Response::query( 'responses' )->with(
+        $count_query = Response::query( 'responses' )->where( 'id', '!=', $response_id )->where( 'status', 'active' )->where_raw( $exists_sql );
+        $responses   = Response::query( 'responses' )->where( 'id', '!=', $response_id )->with(
             [
-                'user'         => [$this, 'user_relationship'],
-                'user_guest'   => [$this, 'guest_user_relationship'],
-                'conversation' => function ( Builder $query ) {
-                    $query->order_by_desc( 'helpgent_conversations.id' );
+                'user'       => [$this, 'user_relationship'],
+                'user_guest' => [$this, 'guest_user_relationship'],
+                'message'    => function ( Builder $query ) {
+                    $query->order_by_desc( 'helpgent_messages.id' );
                 }
             ] 
         )->where( 'status', 'active' )->where_raw( $exists_sql );
@@ -119,5 +117,13 @@ class ForwardRepository {
 
     public function guest_user_relationship( Builder $query ) {
         $query->select( 'helpgent_guest_users.id', 'helpgent_guest_users.first_name', 'helpgent_guest_users.last_name', 'helpgent_guest_users.email' );
+    }
+
+    public function get_by_message( string $message = '', int $attachment_id = 0 ) {
+        return MessageForward::query()->where( 'message', $message )->where( 'attachment_id', $attachment_id )->first();
+    }
+
+    public function delete( int $id ) {
+        return MessageForward::query()->where( 'id', $id )->delete();
     }
 }

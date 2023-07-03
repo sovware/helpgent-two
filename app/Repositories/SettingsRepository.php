@@ -89,7 +89,7 @@ class SettingsRepository
                 'type'      => 'radio',
                 'value'     => 'first_message_in_conversation',
                 'options'   => [
-                    ['value' => 'first_message_in_conversation', 'label' => esc_html__( 'First message in a conversation', 'helpgent' )],
+                    ['value' => 'first_message_in_conversation', 'label' => esc_html__( 'First message in a message', 'helpgent' )],
                     ['value' => 'every_message_in_conversation', 'label' => esc_html__( 'Every message in a conversion', 'helpgent' )]
                 ],
                 'condition' => [
@@ -101,7 +101,7 @@ class SettingsRepository
                 'type'      => 'radio',
                 'value'     => 'first_message_in_conversation',
                 'options'   => [
-                    ['value' => 'first_message_in_conversation', 'label' => esc_html__( 'First message in a conversation', 'helpgent' )],
+                    ['value' => 'first_message_in_conversation', 'label' => esc_html__( 'First message in a message', 'helpgent' )],
                     ['value' => 'every_message_in_conversation', 'label' => esc_html__( 'Every message in a conversion', 'helpgent' )]
                 ],
                 'condition' => [

@@ -3,23 +3,23 @@
 namespace HelpGent\App\Http\Controllers;
 
 use Exception;
-use HelpGent\App\DTO\ConversationDTO;
+use HelpGent\App\DTO\MessageDTO;
 use HelpGent\App\Http\Controllers\Controller;
-use HelpGent\App\Models\Conversation;
-use HelpGent\App\Repositories\ConversationRepository;
+use HelpGent\App\Models\Message;
+use HelpGent\App\Repositories\MessageRepository;
 use HelpGent\App\Repositories\ResponseRepository;
 use HelpGent\WaxFramework\RequestValidator\Validator;
 use HelpGent\WaxFramework\Routing\Response;
 use WP_REST_Request;
 
-class ConversationController extends Controller {
+class MessageController extends Controller {
     public ResponseRepository $response_repository;
 
-    public ConversationRepository $conversation_repository;
+    public MessageRepository $repository;
 
-    public function __construct( ConversationRepository $conversation_repository, ResponseRepository $response_repository ) {
-        $this->conversation_repository = $conversation_repository;
-        $this->response_repository     = $response_repository;
+    public function __construct( MessageRepository $repository, ResponseRepository $response_repository ) {
+        $this->repository          = $repository;
+        $this->response_repository = $response_repository;
     }
 
     public function index( Validator $validator, WP_REST_Request $wp_rest_request ) {
@@ -52,7 +52,7 @@ class ConversationController extends Controller {
         }
 
         return Response::send(
-            $this->conversation_repository->get( 
+            $this->repository->get( 
                 $response_id, 
                 intval( $wp_rest_request->get_param( 'per_page' ) ), 
                 intval( $wp_rest_request->get_param( 'page' ) ), 
@@ -108,7 +108,7 @@ class ConversationController extends Controller {
             );
         }
     
-        $conversation_dto = new ConversationDTO(
+        $message_dto = new MessageDTO(
             $response_id,
             $message,
             $user->id,
@@ -118,13 +118,13 @@ class ConversationController extends Controller {
         );
 
         try {
-            do_action( 'helpgent_before_store_conversation', $conversation_dto, $wp_rest_request );
+            do_action( 'helpgent_before_store_message', $message_dto, $wp_rest_request );
             
-            $conversation_id = $this->conversation_repository->create( $conversation_dto );
+            $message_id = $this->repository->create( $message_dto );
 
-            $conversation_dto->set_id( $conversation_id );
+            $message_dto->set_id( $message_id );
 
-            do_action( 'helpgent_after_store_conversation', $conversation_dto, $wp_rest_request );
+            do_action( 'helpgent_after_store_message', $message_dto, $wp_rest_request );
             return Response::send( [], 201 );
         } catch ( Exception $exception ) {
             return Response::send(
@@ -166,19 +166,19 @@ class ConversationController extends Controller {
 
         $message = $wp_rest_request->get_param( 'message' );
 
-        $conversation_dto = new ConversationDTO( $response_id, $message );
+        $message_dto = new MessageDTO( $response_id, $message );
 
-        $conversation_dto->set_id( intval( $wp_rest_request->get_param( 'id' ) ) );
+        $message_dto->set_id( intval( $wp_rest_request->get_param( 'id' ) ) );
 
         try {
-            do_action( 'helpgent_before_update_conversation', $conversation_dto, $wp_rest_request );
+            do_action( 'helpgent_before_update_message', $message_dto, $wp_rest_request );
 
-            $this->conversation_repository->update( $conversation_dto );
+            $this->repository->update( $message_dto );
 
-            do_action( 'helpgent_before_update_conversation', $conversation_dto, $wp_rest_request );
+            do_action( 'helpgent_before_update_message', $message_dto, $wp_rest_request );
             return Response::send(
                 [
-                    'message' => esc_html__( "Conversation updated successfully!", 'helpgent' )
+                    'message' => esc_html__( "Message updated successfully!", 'helpgent' )
                 ] 
             );
         } catch ( Exception $exception ) {
@@ -219,7 +219,7 @@ class ConversationController extends Controller {
         }
     
         try {
-            $this->conversation_repository->delete( intval( $wp_rest_request->get_param( 'id' ) ), $response_id );
+            $this->repository->delete( intval( $wp_rest_request->get_param( 'id' ) ), $response_id );
             return Response::send( [] );
         } catch ( Exception $exception ) {
             return Response::send(
@@ -259,7 +259,7 @@ class ConversationController extends Controller {
         }
 
         return Response::send(
-            $this->conversation_repository->attachment( 
+            $this->repository->attachment( 
                 $response_id, 
                 $wp_rest_request->get_param( 'type' ),
                 intval( $wp_rest_request->get_param( 'per_page' ) ), 
@@ -269,6 +269,6 @@ class ConversationController extends Controller {
     }
 
     public function get_by_id( int $id ) {
-        return Conversation::query()->where( 'id', $id )->first();
+        return Message::query()->where( 'id', $id )->first();
     }
 }

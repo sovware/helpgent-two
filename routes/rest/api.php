@@ -1,6 +1,6 @@
 <?php
 
-use HelpGent\App\Http\Controllers\ConversationController;
+use HelpGent\App\Http\Controllers\MessageController;
 use HelpGent\App\Http\Controllers\ForwardController;
 use HelpGent\App\Http\Controllers\ResponseController;
 use HelpGent\WaxFramework\Routing\Route; 
@@ -15,7 +15,7 @@ Route::group(
     '/', function() {
         Route::get( 'response', [ResponseController::class, 'index'] );
         Route::group(
-            'conversation', function() {
+            'message', function() {
                 Route::group(
                     'forward', function() {
                         Route::get( 'users', [ForwardController::class, 'users'] );
@@ -23,8 +23,8 @@ Route::group(
                         Route::post( '/', [ForwardController::class, 'store'] );
                     }
                 );
-                Route::get( 'attachment', [ConversationController::class, 'attachment'] );
-                Route::resource( '/', ConversationController::class );
+                Route::get( 'attachment', [MessageController::class, 'attachment'] );
+                Route::resource( '/', MessageController::class );
             }
         );
     }, ['auth_or_guest']

@@ -7,13 +7,13 @@ use HelpGent\WaxFramework\Database\Resolver;
 use HelpGent\WaxFramework\Database\Eloquent\Model;
 use HelpGent\WaxFramework\Database\Eloquent\Relations\BelongsToOne;
 
-class Conversation extends Model {
+class Message extends Model {
     public static function get_table_name():string {
-        return 'helpgent_conversations';
+        return 'helpgent_messages';
     }
 
     public function parent():BelongsToOne {
-        return $this->belongs_to_one( Conversation::class, 'id', 'parent_id' );
+        return $this->belongs_to_one( Message::class, 'id', 'parent_id' );
     }
 
     public function user():BelongsToOne {
@@ -22,7 +22,7 @@ class Conversation extends Model {
     }
 
     public function forward():BelongsToOne {
-        return $this->belongs_to_one( ConversationForward::class, 'id', 'forward_id' );
+        return $this->belongs_to_one( MessageForward::class, 'id', 'forward_id' );
     }
 
     public function attachment():BelongsToOne {

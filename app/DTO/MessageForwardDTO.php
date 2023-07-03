@@ -2,10 +2,8 @@
 
 namespace HelpGent\App\DTO;
 
-class ConversationForwardDTO {
+class MessageForwardDTO {
     private int $id;
-
-    private int $conversation_id;
     
     /**
      * @var string|null $message
@@ -17,10 +15,9 @@ class ConversationForwardDTO {
      */
     private $attachment_id;
 
-    public function __construct( int $conversation_id, $message = null, $attachment_id = null ) {
-        $this->conversation_id = $conversation_id;
-        $this->message         = $message;
-        $this->attachment_id   = $attachment_id;
+    public function __construct( $message = null, $attachment_id = null ) {
+        $this->message       = $message;
+        $this->attachment_id = $attachment_id;
     }
 
     public function get_id() {
@@ -29,14 +26,6 @@ class ConversationForwardDTO {
 
     public function set_id( int $id ) {
         $this->id = $id;
-    }
-
-    public function get_conversation_id() {
-        return $this->conversation_id;
-    }
-
-    public function set_conversation_id( int $conversation_id ) {
-        $this->conversation_id = $conversation_id;
     }
 
     public function get_message() {
