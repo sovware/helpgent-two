@@ -2,6 +2,7 @@ import useStore from '../../../../../hooks/useStore';
 import ReactSVG from 'react-inlinesvg';
 import Dropdown from '../../../../../components/Dropdown.js';
 import Badge from '../../../../../components/Badge.js';
+import { iconList } from './constants.js';
 import ellipsisH from '../../../../../../../assets/svg/icon/ellipsis-h.svg';
 import pen from '../../../../../../../assets/svg/icon/pen-nib.svg';
 import copy from '../../../../../../../assets/svg/icon/copy.svg';
@@ -69,7 +70,7 @@ export default function ScreenItem( {
 		>
 			<div className="helpgent-screen__content">
 				<div className="helpgent-screen__icon">
-					<ReactSVG src={ icon } />
+					<ReactSVG src={ iconList[ icon ] } />
 				</div>
 				<h4 className="helpgent-screen__title">
 					{ /* { index && (

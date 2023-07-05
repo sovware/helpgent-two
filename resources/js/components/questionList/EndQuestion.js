@@ -5,17 +5,14 @@ import { socialIcons } from '../../constants';
 
 import 'react-quill/dist/quill.snow.css';
 export default function EndQuestion( props ) {
-	const { layoutMode, singleForm, setSingleForm, selectedQuestion } = props;
+	const {
+		layoutMode,
+		singleForm,
+		setSingleForm,
+		selectedQuestionField: endQuestionField,
+	} = props;
 	const { content } = singleForm;
 	const { questions } = JSON.parse( content );
-
-	console.log( selectedQuestion );
-
-	const {
-		elements,
-		socials: socialLinks,
-		externalButton,
-	} = selectedQuestion[ 0 ].fields[ 0 ];
 
 	const quillModules = {
 		toolbar: false,

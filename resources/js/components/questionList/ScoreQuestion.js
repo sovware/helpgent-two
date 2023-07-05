@@ -10,21 +10,14 @@ export default function ScoreQuestion( props ) {
 		layoutMode,
 		singleForm,
 		setSingleForm,
-		selectedQuestion: fileQuestion,
+		selectedQuestionField: scoreQuestionField,
 	} = props;
 	const { content } = singleForm;
 	const { questions } = JSON.parse( content );
 
-	const { elements } = fileQuestion[ 0 ].fields[ 0 ];
-
 	const quillModules = {
 		toolbar: false,
 	};
-
-	const elementsObject = elements.reduce( ( acc, element ) => {
-		acc[ element.key ] = element;
-		return acc;
-	}, {} );
 
 	function handleScoreActivate( item ) {
 		setActiveScore( item );
@@ -36,7 +29,7 @@ export default function ScoreQuestion( props ) {
 		placeholder,
 		required,
 		'action-btn': actionBtn,
-	} = elementsObject;
+	} = scoreQuestionField;
 
 	function getScoringItem() {
 		const scoreList = [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];

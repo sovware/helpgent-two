@@ -39,7 +39,11 @@ export default function MainContent( props ) {
 						setSingleForm={ setSingleForm }
 						activeScreenId={ activeScreenId }
 					/>
-					<ScreenSettings />
+					<ScreenSettings
+						singleForm={ singleForm }
+						setSingleForm={ setSingleForm }
+						activeScreenId={ activeScreenId }
+					/>
 				</Fragment>
 			) }
 		</MainContentStyle>
