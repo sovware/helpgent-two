@@ -16,6 +16,10 @@ import MultiSelectQuestion from '@components/questionList/MultiSelectQuestions';
 import DropdownQuestion from '@components/questionList/DropdownQuestion';
 import EndQuestion from '@components/questionList/EndQuestion.js';
 import ContactQuestion from '@components/questionList/ContactQuestion';
+import YesNoQuestion from '@components/questionList/YesNoQuestion';
+import PictureSelectQuestion from '@components/questionList/PictureSelectQuestion';
+import RatingQuestion from '@components/questionList/RatingQuestion';
+import OpenEndedQuestion from '@components/questionList/OpenEndedQuestion';
 
 const PreviewComponents = {
 	welcome: WelcomeQuestion,
@@ -36,6 +40,10 @@ const PreviewComponents = {
 	dropdown: DropdownQuestion,
 	end: EndQuestion,
 	contact: ContactQuestion,
+	'yes-no': YesNoQuestion,
+	'picture-select': PictureSelectQuestion,
+	rating: RatingQuestion,
+	'open-ended': OpenEndedQuestion,
 };
 
 export { PreviewComponents };

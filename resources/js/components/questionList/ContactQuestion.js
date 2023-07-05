@@ -1,5 +1,5 @@
-import AsyncSelect from 'react-select/async';
-import handleLoadCountries from '@helper/handleLoadCountries';
+import ReactQuill from 'react-quill';
+import 'react-quill/dist/quill.snow.css';
 
 export default function ContactQuestion( props ) {
 	const {
@@ -26,127 +26,93 @@ export default function ContactQuestion( props ) {
 		'action-btn': actionBtn,
 	} = elementsObject;
 
+	const quillModules = {
+		toolbar: false,
+	};
+
 	return (
 		<div className="helpgent-question-element">
 			<div className="helpgent-question-element__text">
 				<div className="helpgent-question-element__label">
-
+					<ReactQuill
+						modules={ quillModules }
+						placeholder={ `Contact Info ${ required ? '*' : null }` }
+					/>
 				</div>
 				<div className="helpgent-question-element__description">
-
+					<ReactQuill
+						modules={ quillModules }
+						placeholder="Type a description"
+					/>
 				</div>
 			</div>
 			<div className="helpgent-question-element__action">
 				<div className="helpgent-form-group helpgent-form-group-column">
 					<label
-						htmlFor="helpgent-address"
+						htmlFor="helpgent-contact-name-1"
 						className="helpgent-form-group__label"
 					>
-						Address{ ' ' }
+						First name{ ' ' }
 						<span className="helpgent-required-sign">*</span>
 					</label>
 					<input
 						type="text"
-						id="helpgent-address"
+						id="helpgent-contact-name-1"
 						className="helpgent-form-group__element"
-						placeholder="Address"
+						placeholder="First name"
 					/>
 				</div>
 
 				<div className="helpgent-form-group helpgent-form-group-column">
 					<label
-						htmlFor="helpgent-address-2"
+						htmlFor="helpgent-contact-name-2"
 						className="helpgent-form-group__label"
 					>
-						Address line 2
+						Last name
 						<span className="helpgent-required-sign">*</span>
 					</label>
 					<input
 						type="text"
-						id="helpgent-address-2"
+						id="helpgent-contact-name-2"
 						className="helpgent-form-group__element"
 						placeholder="Address"
 					/>
 				</div>
 				<div className="helpgent-form-group helpgent-form-group-column">
 					<label
-						htmlFor="helpgent-address-city"
+						htmlFor="helpgent-contact-email"
 						className="helpgent-form-group__label"
 					>
-						City <span className="helpgent-required-sign">*</span>
+						Email
 					</label>
 					<input
-						type="text"
-						id="helpgent-address-city"
+						type="email"
+						id="helpgent-contact-email"
 						className="helpgent-form-group__element"
-						placeholder="Type your city"
+						placeholder="Email"
 					/>
 				</div>
 				<div className="helpgent-form-group helpgent-form-group-column">
 					<label
-						htmlFor="helpgent-address-state"
+						htmlFor="helpgent-contact-company"
 						className="helpgent-form-group__label"
 					>
-						State/Region{ ' ' }
-						<span className="helpgent-required-sign">*</span>
+						Company
 					</label>
 					<input
 						type="text"
-						id="helpgent-address-state"
+						id="helpgent-contact-company"
 						className="helpgent-form-group__element"
-						placeholder="State/Region"
-					/>
-				</div>
-				<div className="helpgent-form-group helpgent-form-group-column">
-					<label
-						htmlFor="helpgent-address-zip"
-						className="helpgent-form-group__label"
-					>
-						Zip/Post code{ ' ' }
-						<span className="helpgent-required-sign">*</span>
-					</label>
-					<input
-						type="text"
-						id="helpgent-address-zip"
-						className="helpgent-form-group__element"
-						placeholder="Zip/Post code"
-					/>
-				</div>
-				<div className="helpgent-form-group helpgent-form-group-column">
-					<label
-						htmlFor="helpgent-country-select"
-						className="helpgent-form-group__label"
-					>
-						Country{ ' ' }
-						<span className="helpgent-required-sign">*</span>
-					</label>
-					<AsyncSelect
-						cacheOptions
-						inputId="helpgent-country-select"
-						className="helpgent-select"
-						classNamePrefix="helpgent-select"
-						closeMenuOnSelect={ false }
-						hideSelectedOptions={ false }
-						// onChange={ ( selectEvent ) =>
-						// 	handlePageSelection(
-						// 		selectEvent,
-						// 		setSelectedPages,
-						// 		selectedPages,
-						// 		setValue
-						// 	)
-						// }
-						menuPosition="fixed"
-						placeholder="Select country"
-						loadOptions={ handleLoadCountries }
-						defaultOptions
+						placeholder="Company"
 					/>
 				</div>
 
-				{ actionBtn.isActive && (
+
+				{/* { actionBtn.isActive && (
 					<button className="helpgent-btn-next helpgent-btn helpgent-btn-primary helpgent-btn-md">
 						{ actionBtn.button_text }
 					</button>
-				) }
+				) } */}
 			</div>
 		</div>
 	);

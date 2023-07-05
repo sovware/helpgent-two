@@ -111,7 +111,7 @@ const QuestionPreviewStyle = Styled.div`
                     color: var(--helpgent-label-color);
                 }
             }
-            
+
             p{
                 font-size: 20px;
                 font-weight: 600;
@@ -203,7 +203,7 @@ const QuestionPreviewStyle = Styled.div`
     .helpgent-form-group{
         margin-bottom: 22px;
     }
-    
+
     .helpgent-form-group__element{
         min-height: 44px;
         border-radius: 10px;
@@ -225,7 +225,201 @@ const QuestionPreviewStyle = Styled.div`
         font-weight: 500;
         color: var(--helpgent-color-dark);
     }
-    
+    .helpgent-form__element-inline--yes-no-toggler{
+        padding: 12px 16px;
+        border-radius: 10px;
+        background: var(--helpgent-color-bg-light);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    //Picture Select Question
+    .helpgent-select-picture-list{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .helpgent-select-picture-single{
+        width: 160px;
+        border: 1px solid var(--helpgent-color-bg-gray);
+        border-radius: 12px;
+        padding: 10px;
+        box-sizing: border-box;
+        position: relative;
+        &__remove{
+            width: 22px;
+            height: 22px;
+            background: var(--helpgent-color-danger);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            right: -9px;
+            top: -11px;
+            border-radius: 50%;
+            visibility: hidden;
+            opacity: 0;
+            transition: 0.3s ease;
+        }
+        &__img{
+            position: relative;
+            img{
+                border-radius: 10px;
+                width: 100%;
+                max-height: 120px;
+                object-fit: cover;
+            }
+        }
+        &__action{
+            position: absolute;
+            right: 8px;
+            top: 8px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            visibility: hidden;
+            opacity: 0;
+            transition: 0.3s ease;
+            button{
+                padding: 0;
+                margin: 0;
+                background: #fff;
+                border-radius: 6px;
+                width: 30px;
+                height: 30px;
+                align-items: center;
+                justify-content: center;
+                border: 0 none;
+                display: flex;
+                cursor: pointer;
+                svg{
+                    width: 13px;
+                }
+            }
+        }
+        &__caption{
+            font-size: 13px;
+            margin-top: 5px;
+            color: var(--helpgent-color-gray);
+        }
+        &--add-new{
+            border-style: dashed;
+            border-width: 2px;
+            min-height: 166px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        &__add-picture{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0;
+            margin: 0;
+            cursor: pointer;
+            background: none;
+            border: 0 none;
+            color: var(--helpgent-color-gray);
+            font-size: 13px;
+            &::after{
+                position: absolute;
+                content: '';
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+            }
+            span{
+                display: block;
+                width: 30px;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                margin-bottom: 5px;
+                background: var(--helpgent-color-extra-light);
+                svg{
+                    width: 10px;
+                    path{
+                        fill: #fff;
+                    }
+                }
+            }
+        }
+        &:hover{
+            .helpgent-select-picture-single__remove,
+            .helpgent-select-picture-single__action
+            {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+
+    //Open-ended question
+    .helpgent-open-ended-question-types{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        .helpgent-open-ended-btn{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: var(--helpgent-color-primary);
+            border-radius: 14px;
+            min-height: 85px;
+            border: 0 none;
+            cursor: pointer;
+            &:focus{
+                outline: 0;
+                border: 0 none;
+            }
+            svg{
+                width: 24px;
+                path{
+                    fill: var(--helpgent-color-white);
+                }
+            }
+            span{
+                font-size: 14px;
+                font-weight: 500;
+                margin-top: 12px;
+                color: var(--helpgent-color-white);
+            }
+        }
+    }
+    .helpgent-open-ended-notice{
+        display: block;
+        margin-top: 10px;
+        font-size: 13px;
+    }
+
+    //Rating Question
+    .helpgent-rating-wrapper{
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        .helpgent-rating-single{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            svg{
+                width: 24px;
+            }
+            .helpgent-rating-value{
+                display: block;
+                margin-top: 8px;
+            }
+        }
+    }
 `;
 const ScoreQuestionStyle = Styled.div`
     .helpgent-question-element__action{
@@ -248,7 +442,7 @@ const ScoreQuestionStyle = Styled.div`
         cursor: pointer;
         transition: .2s ease-in-out;
         border: 1px solid var(--helpgent-color-bg-gray);
-        
+
         &:hover,
         &.helpgent-active{
             color: var(--helpgent-color-white);
@@ -264,7 +458,7 @@ const ScoreQuestionStyle = Styled.div`
             font-size: .93rem;
             color: var(--helpgent-color-gray);
         }
-    }   
+    }
 `;
 const SingleSelectStyle = Styled.div`
     line-height: 1.25;
@@ -371,6 +565,7 @@ const MultiSelectStyle = Styled.div`
         }
     }
 `;
+
 
 export {
 	QuestionPreviewStyle,
