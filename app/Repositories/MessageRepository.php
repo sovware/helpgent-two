@@ -91,7 +91,7 @@ class MessageRepository {
     protected function select_columns() {
         $removed_message = esc_html__( "This message was removed", "helpgent" );
 
-        return "id, response_id, attachment_id, is_read, is_guest, created_by, agent_trigger, parent_id, forward_id, updated_at, status, created_at,
+        return "id, response_id, attachment_id, is_read, is_guest, created_by, replied_by, agent_trigger, parent_id, forward_id, updated_at, status, created_at,
             CASE 
                 WHEN status = 'trash' THEN '{$removed_message}' 
                 ELSE message 
