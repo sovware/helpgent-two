@@ -65,7 +65,7 @@ class MessageController extends Controller {
         $validator->validate(
             [
                 'response_id'   => 'required|numeric',
-                'replied_by'    => 'required|string:max:50',
+                'replied_by'    => 'required|string|max:50',
                 'message'       => 'string',
                 'attachment_id' => 'integer',
                 'parent_id'     => 'integer|min:1'
