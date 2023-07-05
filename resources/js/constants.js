@@ -990,6 +990,47 @@ const questions = [
 						text: '',
 					},
 					{
+						key: 'address-group',
+						fields: [
+							{
+								label: 'Address',
+								text: '',
+								isRequired: true,
+								isVisible: true,
+							},
+							{
+								label: 'Address line 2',
+								text: '',
+								isRequired: true,
+								isVisible: true,
+							},
+							{
+								label: 'City',
+								text: '',
+								isRequired: true,
+								isVisible: true,
+							},
+							{
+								label: 'State/Region',
+								text: '',
+								isRequired: true,
+								isVisible: true,
+							},
+							{
+								label: 'Zip/Post code',
+								text: '',
+								isRequired: true,
+								isVisible: true,
+							},
+							{
+								label: 'Country',
+								text: '',
+								isRequired: true,
+								isVisible: true,
+							},
+						],
+					},
+					{
 						key: 'required',
 						is_required: '0',
 					},

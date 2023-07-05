@@ -7,21 +7,14 @@ export default function UrlQuestion( props ) {
 		layoutMode,
 		singleForm,
 		setSingleForm,
-		selectedQuestion: fileQuestion,
+		selectedQuestionField: urlQuestionField,
 	} = props;
 	const { content } = singleForm;
 	const { questions } = JSON.parse( content );
 
-	const { elements } = fileQuestion[ 0 ].fields[ 0 ];
-
 	const quillModules = {
 		toolbar: false,
 	};
-
-	const elementsObject = elements.reduce( ( acc, element ) => {
-		acc[ element.key ] = element;
-		return acc;
-	}, {} );
 
 	const {
 		label,
@@ -29,7 +22,7 @@ export default function UrlQuestion( props ) {
 		placeholder,
 		required,
 		'action-btn': actionBtn,
-	} = elementsObject;
+	} = urlQuestionField;
 
 	return (
 		<div className="helpgent-question-element">

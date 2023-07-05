@@ -7,21 +7,16 @@ export default function FileQuestion( props ) {
 		layoutMode,
 		singleForm,
 		setSingleForm,
-		selectedQuestion: fileQuestion,
+		selectedQuestionField: fileQuestionField,
 	} = props;
 	const { content } = singleForm;
 	const { questions } = JSON.parse( content );
-
-	const { elements } = fileQuestion[ 0 ].fields[ 0 ];
 
 	const quillModules = {
 		toolbar: false,
 	};
 
-	const elementsObject = elements.reduce( ( acc, element ) => {
-		acc[ element.key ] = element;
-		return acc;
-	}, {} );
+	console.log( fileQuestionField );
 
 	const {
 		label,
@@ -29,9 +24,7 @@ export default function FileQuestion( props ) {
 		'upload-btn-text': uploadBtnText,
 		'upload-note': uploadNote,
 		'action-btn': actionBtn,
-	} = elementsObject;
-
-	console.log( elementsObject );
+	} = fileQuestionField;
 
 	return (
 		<div className="helpgent-question-element">

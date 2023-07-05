@@ -10,7 +10,7 @@ export default function PhoneNumberQuestion( props ) {
 		layoutMode,
 		singleForm,
 		setSingleForm,
-		selectedQuestion: fileQuestion,
+		selectedQuestionField: phoneQuestionField,
 	} = props;
 	const [ phoneInput, setPhoneInput ] = useState( {
 		dialCode: countries[ 0 ].dial_code,
@@ -18,8 +18,6 @@ export default function PhoneNumberQuestion( props ) {
 	} );
 	const { content } = singleForm;
 	const { questions } = JSON.parse( content );
-
-	const { elements } = fileQuestion[ 0 ].fields[ 0 ];
 
 	const quillModules = {
 		toolbar: false,
@@ -41,18 +39,13 @@ export default function PhoneNumberQuestion( props ) {
 		};
 	} );
 
-	const elementsObject = elements.reduce( ( acc, element ) => {
-		acc[ element.key ] = element;
-		return acc;
-	}, {} );
-
 	const {
 		label,
 		description,
 		placeholder,
 		required,
 		'action-btn': actionBtn,
-	} = elementsObject;
+	} = phoneQuestionField;
 
 	function handleSelectCountry( selectedCountry ) {
 		setPhoneInput( {

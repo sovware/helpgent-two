@@ -68,6 +68,37 @@ var SvgAngleCircle = function SvgAngleCircle(props) {
 
 /***/ }),
 
+/***/ "./assets/svg/icon/angle-small-down.svg":
+/*!**********************************************!*\
+  !*** ./assets/svg/icon/angle-small-down.svg ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgAngleSmallDown),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path;
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var SvgAngleSmallDown = function SvgAngleSmallDown(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    width: 10,
+    height: 5.448
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M9.707.293a1 1 0 0 0-1.415 0L5.235 3.35a.333.333 0 0 1-.471 0L1.707.293A1 1 0 1 0 .293 1.707L3.35 4.765a2.333 2.333 0 0 0 3.3 0l3.057-3.057a1 1 0 0 0 0-1.415Z",
+    fill: "#3c3c3c"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSI1LjQ0OCIgdmlld0JveD0iMCAwIDEwIDUuNDQ4Ij4NCiAgPHBhdGggaWQ9ImFuZ2xlLXNtYWxsLWRvd24iIGQ9Ik0xNC4yMDcsNy43MDdhMSwxLDAsMCwwLTEuNDE1LDBMOS43MzUsMTAuNzY0YS4zMzMuMzMzLDAsMCwxLS40NzEsMEw2LjIwNyw3LjcwN0ExLDEsMCwxLDAsNC43OTMsOS4xMjFMNy44NSwxMi4xNzlhMi4zMzMsMi4zMzMsMCwwLDAsMy4zLDBsMy4wNTctMy4wNTdBMSwxLDAsMCwwLDE0LjIwNyw3LjcwN1oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC00LjUgLTcuNDE0KSIgZmlsbD0iIzNjM2MzYyIvPg0KPC9zdmc+DQo=");
+
+/***/ }),
+
 /***/ "./assets/svg/icon/arrow-small-left.svg":
 /*!**********************************************!*\
   !*** ./assets/svg/icon/arrow-small-left.svg ***!
@@ -3500,7 +3531,11 @@ function MainContent(props) {
     singleForm: singleForm,
     setSingleForm: setSingleForm,
     activeScreenId: activeScreenId
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ScreenSettings__WEBPACK_IMPORTED_MODULE_3__["default"], null)));
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ScreenSettings__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    singleForm: singleForm,
+    setSingleForm: setSingleForm,
+    activeScreenId: activeScreenId
+  })));
 }
 
 /***/ }),
@@ -3604,6 +3639,7 @@ function Preview(props) {
     questions
   } = JSON.parse(content);
   const selectedQuestion = questions.filter(item => item.id === activeScreenId);
+  console.log(activeScreenId, selectedQuestion);
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_style__WEBPACK_IMPORTED_MODULE_5__.PreviewStyle, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-preview-top"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_6__["default"], {
@@ -3689,6 +3725,14 @@ function QuestionPreview(props) {
     setSingleForm,
     selectedQuestion
   } = props;
+  const {
+    elements: questionFields
+  } = selectedQuestion[0].fields[0];
+  console.log(selectedQuestion[0].fields[0]);
+  const fieldObject = questionFields.reduce((acc, field) => {
+    acc[field.key] = field;
+    return acc;
+  }, {});
   const SelectedComponent = _constants_js__WEBPACK_IMPORTED_MODULE_1__.PreviewComponents[selectedQuestion[0].screen_type];
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_style_js__WEBPACK_IMPORTED_MODULE_2__.QuestionPreviewStyle, {
     style: {
@@ -3709,7 +3753,7 @@ function QuestionPreview(props) {
     layoutMode: "test",
     singleForm: singleForm,
     setSingleForm: setSingleForm,
-    selectedQuestion: selectedQuestion
+    selectedQuestionField: fieldObject
   }));
 }
 
@@ -3728,19 +3772,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
-/* harmony import */ var react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! react-beautiful-dnd */ "./node_modules/react-beautiful-dnd/dist/react-beautiful-dnd.esm.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+/* harmony import */ var react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! react-beautiful-dnd */ "./node_modules/react-beautiful-dnd/dist/react-beautiful-dnd.esm.js");
 /* harmony import */ var _helper_onDragEnd__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @helper/onDragEnd */ "./resources/js/helper/onDragEnd.js");
 /* harmony import */ var _helper_checkClickedOutside_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @helper/checkClickedOutside.js */ "./resources/js/helper/checkClickedOutside.js");
-/* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react-inlinesvg */ "./node_modules/react-inlinesvg/esm/index.js");
+/* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! react-inlinesvg */ "./node_modules/react-inlinesvg/esm/index.js");
 /* harmony import */ var _helper_getWelcomeType__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../helper/getWelcomeType */ "./resources/js/admin/pages/Forms/helper/getWelcomeType.js");
 /* harmony import */ var _helper_getOtherType__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../helper/getOtherType */ "./resources/js/admin/pages/Forms/helper/getOtherType.js");
 /* harmony import */ var _helper_getEndType__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../helper/getEndType */ "./resources/js/admin/pages/Forms/helper/getEndType.js");
 /* harmony import */ var _helper_handleAddEndScreen__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../helper/handleAddEndScreen */ "./resources/js/admin/pages/Forms/helper/handleAddEndScreen.js");
-/* harmony import */ var _helper_handleResize__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../helper/handleResize */ "./resources/js/admin/pages/Forms/helper/handleResize.js");
-/* harmony import */ var _style_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./style.js */ "./resources/js/admin/pages/Forms/components/SingleForm/style.js");
-/* harmony import */ var _ScreenListDropdown_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./ScreenListDropdown.js */ "./resources/js/admin/pages/Forms/components/SingleForm/ScreenListDropdown.js");
-/* harmony import */ var _icon_plus_svg__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @icon/plus.svg */ "./assets/svg/icon/plus.svg");
+/* harmony import */ var _helper_handleAddQuestion__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../helper/handleAddQuestion */ "./resources/js/admin/pages/Forms/helper/handleAddQuestion.js");
+/* harmony import */ var _helper_handleResize__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../helper/handleResize */ "./resources/js/admin/pages/Forms/helper/handleResize.js");
+/* harmony import */ var _style_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./style.js */ "./resources/js/admin/pages/Forms/components/SingleForm/style.js");
+/* harmony import */ var _ScreenListDropdown_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./ScreenListDropdown.js */ "./resources/js/admin/pages/Forms/components/SingleForm/ScreenListDropdown.js");
+/* harmony import */ var _icon_plus_svg__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @icon/plus.svg */ "./assets/svg/icon/plus.svg");
+
 
 
 
@@ -3777,7 +3823,6 @@ function ScreenBar(props) {
   const {
     questions
   } = JSON.parse(content);
-  console.log(questions);
 
   /* Close Dropdown click on outside */
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
@@ -3787,26 +3832,28 @@ function ScreenBar(props) {
     const generateHeight = endScreenRef.current.getBoundingClientRect().height;
     endScreenRef.current.style.height = generateHeight < 185 ? '185px' : `${generateHeight}'px'`;
   }, []);
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_style_js__WEBPACK_IMPORTED_MODULE_9__.ScreenBarStyle, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_style_js__WEBPACK_IMPORTED_MODULE_10__.ScreenBarStyle, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
     className: "helpgent-screenBar-header",
     ref: ref
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("h5", {
     className: "helpgent-screenBar-header__title"
-  }, "Screens"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.Link, {
+  }, "Screens"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_13__.Link, {
     className: "helpgent-screenBar-header__add",
     onClick: e => handleToggleMegaDropdown(e)
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_13__["default"], {
-    src: _icon_plus_svg__WEBPACK_IMPORTED_MODULE_11__["default"]
-  }), "Add screen"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_ScreenListDropdown_js__WEBPACK_IMPORTED_MODULE_10__["default"], {
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_14__["default"], {
+    src: _icon_plus_svg__WEBPACK_IMPORTED_MODULE_12__["default"]
+  }), "Add screen"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_ScreenListDropdown_js__WEBPACK_IMPORTED_MODULE_11__["default"], {
     singleForm: singleForm,
     setSingleForm: setSingleForm,
     isOpenMegaDropdown: isOpenMegaDropdown,
-    setMegaDropdown: setMegaDropdown
+    handleItemEvent: _helper_handleAddQuestion__WEBPACK_IMPORTED_MODULE_8__["default"],
+    setMegaDropdown: setMegaDropdown,
+    activeScreenId: activeScreenId
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
     className: "helpgent-screenBar-content"
-  }, (0,_helper_getWelcomeType__WEBPACK_IMPORTED_MODULE_4__["default"])(questions, activeScreenId, setActiveScreenId), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_14__.DragDropContext, {
+  }, (0,_helper_getWelcomeType__WEBPACK_IMPORTED_MODULE_4__["default"])(questions, activeScreenId, setActiveScreenId), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_15__.DragDropContext, {
     onDragEnd: results => (0,_helper_onDragEnd__WEBPACK_IMPORTED_MODULE_2__["default"])(results, questions, singleForm, setSingleForm)
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_14__.Droppable, {
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_15__.Droppable, {
     droppableId: "helpgent-other-droppable-screen",
     type: "helpgent-other-screens"
   }, provided => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -3817,7 +3864,7 @@ function ScreenBar(props) {
     ref: endScreenRef
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
     className: "helpgent-ending-draggable",
-    onMouseDown: e => (0,_helper_handleResize__WEBPACK_IMPORTED_MODULE_8__["default"])(e, endScreenRef)
+    onMouseDown: e => (0,_helper_handleResize__WEBPACK_IMPORTED_MODULE_9__["default"])(e, endScreenRef)
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("span", {
     className: "helpgent-ending-draggable__pipe"
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
@@ -3828,9 +3875,9 @@ function ScreenBar(props) {
     href: "#",
     className: "helpgent-screenBar-end-head__add",
     onClick: e => (0,_helper_handleAddEndScreen__WEBPACK_IMPORTED_MODULE_7__["default"])(e, questions, singleForm, setSingleForm)
-  }, "+ Add")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_14__.DragDropContext, {
+  }, "+ Add")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_15__.DragDropContext, {
     onDragEnd: results => (0,_helper_onDragEnd__WEBPACK_IMPORTED_MODULE_2__["default"])(results, questions, singleForm, setSingleForm)
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_14__.Droppable, {
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(react_beautiful_dnd__WEBPACK_IMPORTED_MODULE_15__.Droppable, {
     droppableId: "helpgent-other-droppable-screen",
     type: "helpgent-end-screens"
   }, provided => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
@@ -3985,7 +4032,9 @@ function ScreenListDropdown(_ref) {
   let {
     singleForm,
     setSingleForm,
-    isOpenMegaDropdown
+    isOpenMegaDropdown,
+    handleItemEvent,
+    activeScreenId
   } = _ref;
   const [screenList, setScreenList] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(_constants_js__WEBPACK_IMPORTED_MODULE_2__.questions);
   function handleScreenSearch(e) {
@@ -4003,7 +4052,9 @@ function ScreenListDropdown(_ref) {
       singleForm: singleForm,
       setSingleForm: setSingleForm,
       type: groupName,
-      screenList: filteredByGroup
+      screenList: filteredByGroup,
+      handleItemEvent: handleItemEvent,
+      activeScreenId: activeScreenId
     });
   }
   return isOpenMegaDropdown && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_style_js__WEBPACK_IMPORTED_MODULE_4__.MegaDropdownStyle, {
@@ -4048,7 +4099,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! uuid */ "./node_modules/uuid/dist/esm-browser/v4.js");
 /* harmony import */ var _ScreenItem_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ScreenItem.js */ "./resources/js/admin/pages/Forms/components/SingleForm/ScreenItem.js");
 
 
@@ -4058,7 +4108,9 @@ function ScreenListType(_ref) {
     singleForm,
     setSingleForm,
     type,
-    screenList
+    screenList,
+    handleItemEvent,
+    activeScreenId
   } = _ref;
   const {
     content
@@ -4067,27 +4119,26 @@ function ScreenListType(_ref) {
     questions
   } = JSON.parse(content);
   const hasWelcomeQuestion = questions.filter(item => item.screen_type === 'welcome');
-  function handleAddQuestion(item) {
-    item.id = (0,uuid__WEBPACK_IMPORTED_MODULE_2__["default"])();
-    if (item.type === 'welcome' && hasWelcomeQuestion !== 0) {
-      return;
-    }
-    questions.push(item);
-    const updatedForm = {
-      ...singleForm,
-      content: JSON.stringify({
-        questions: questions
-      })
-    };
-    setSingleForm(updatedForm);
-  }
+  // function handleAddQuestion( item ) {
+  // 	item.id = uuidv4();
+  // 	if ( item.type === 'welcome' && hasWelcomeQuestion !== 0 ) {
+  // 		return;
+  // 	}
+  // 	questions.push( item );
+
+  // 	const updatedForm = {
+  // 		...singleForm,
+  // 		content: JSON.stringify( { questions: questions } ),
+  // 	};
+  // 	setSingleForm( updatedForm );
+  // }
   return screenList.length !== 0 && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-screen-type"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "helpgent-screen-type__title"
   }, type), screenList.map((item, index) => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ScreenItem_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
     question: item,
-    handler: handleAddQuestion,
+    handler: () => handleItemEvent(item, singleForm, setSingleForm, activeScreenId),
     key: index,
     isDisabled: hasWelcomeQuestion.length !== 0
   })));
@@ -4107,11 +4158,123 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _style_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./style.js */ "./resources/js/admin/pages/Forms/components/SingleForm/style.js");
+/* harmony import */ var _SettingQuestion_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SettingQuestion.js */ "./resources/js/admin/pages/Forms/components/SingleForm/SettingQuestion.js");
+/* harmony import */ var _style_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./style.js */ "./resources/js/admin/pages/Forms/components/SingleForm/style.js");
 
 
-function ScreenSettings() {
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_style_js__WEBPACK_IMPORTED_MODULE_1__.ScreenSettingsStyle, null);
+
+
+function ScreenSettings(props) {
+  const {
+    singleForm,
+    setSingleForm,
+    activeScreenId
+  } = props;
+  const {
+    questions
+  } = JSON.parse(singleForm.content);
+  const activeScreen = questions.filter(item => item.id === activeScreenId);
+  const [screenSettingType, setScreenSettingType] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)("question");
+  function getScreenSettingContent(props) {
+    if (screenSettingType === 'question') {
+      return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_SettingQuestion_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        singleForm: singleForm,
+        setSingleForm: setSingleForm,
+        activeScreen: activeScreen[0]
+      });
+    }
+  }
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_style_js__WEBPACK_IMPORTED_MODULE_2__.ScreenSettingsStyle, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-screen-setting-header"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
+    className: "helpgent-screen-setting-list"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", null, "Question"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", null, "Design"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", null, "Logic"))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-screen-setting-content"
+  }, getScreenSettingContent()));
+}
+
+/***/ }),
+
+/***/ "./resources/js/admin/pages/Forms/components/SingleForm/SettingQuestion.js":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/admin/pages/Forms/components/SingleForm/SettingQuestion.js ***!
+  \*********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ SettingQuestion)
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-inlinesvg */ "./node_modules/react-inlinesvg/esm/index.js");
+/* harmony import */ var _ScreenListDropdown__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ScreenListDropdown */ "./resources/js/admin/pages/Forms/components/SingleForm/ScreenListDropdown.js");
+/* harmony import */ var _helper_handleChangeQuestionType__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../helper/handleChangeQuestionType */ "./resources/js/admin/pages/Forms/helper/handleChangeQuestionType.js");
+/* harmony import */ var _helper_checkClickedOutside_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @helper/checkClickedOutside.js */ "./resources/js/helper/checkClickedOutside.js");
+/* harmony import */ var _constants_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./constants.js */ "./resources/js/admin/pages/Forms/components/SingleForm/constants.js");
+/* harmony import */ var _icon_angle_small_down_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @icon/angle-small-down.svg */ "./assets/svg/icon/angle-small-down.svg");
+
+
+
+
+
+
+
+
+function SettingQuestion(props) {
+  const ref = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  const [isDropdownOpen, setDropdownOpen] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const {
+    singleForm,
+    setSingleForm,
+    activeScreen
+  } = props;
+  const {
+    id: activeScreenId,
+    icon,
+    title
+  } = activeScreen;
+  function handleToggleDropdown() {
+    setDropdownOpen(true);
+  }
+
+  /* Close Dropdown click on outside */
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    (0,_helper_checkClickedOutside_js__WEBPACK_IMPORTED_MODULE_3__["default"])(isDropdownOpen, setDropdownOpen, ref);
+  }, [isDropdownOpen]);
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-screen-setting-wrap"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-screen-setting-block"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-screen-setting-element"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h5", {
+    className: "helpgent-screen-setting-element__label"
+  }, "Question Type"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-screen-setting-element__content",
+    ref: ref
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-dropdown",
+    onClick: handleToggleDropdown
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-dropdown__content"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-dropdown__icon"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    src: _constants_js__WEBPACK_IMPORTED_MODULE_4__.iconList[icon]
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", {
+    className: "helpgent-question-dropdown__title"
+  }, title)), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "helpgent-question-dropdown__arrow"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    src: _icon_angle_small_down_svg__WEBPACK_IMPORTED_MODULE_5__["default"]
+  }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_ScreenListDropdown__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    singleForm: singleForm,
+    setSingleForm: setSingleForm,
+    isOpenMegaDropdown: isDropdownOpen,
+    handleItemEvent: _helper_handleChangeQuestionType__WEBPACK_IMPORTED_MODULE_2__["default"],
+    activeScreenId: activeScreenId
+  })))));
 }
 
 /***/ }),
@@ -4322,7 +4485,7 @@ const HeaderStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].di
         }
     }
     .helpgent-single-form-header__title{
-        font-size: 1.07rem;
+        font-size: 0.93rem;
         width: 14px;
         height: 14px;
         strong{
@@ -4351,12 +4514,16 @@ const HeaderStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].di
     }
     .helpgent-single-form-header__tab-link{
         position: relative;
-        font-size: 1.07rem;
+        font-size: .93rem;
         display: inline-block;
         text-decoration: none;
         padding: 30px 15px;
-        color: var(--helpgent-color-text);
         transition: color .3s ease-in;
+        color: var(--helpgent-color-text);
+        &:focus{
+            outline: none;
+            box-shadow: 0 0;
+        }
         &:after{
             position: absolute;
             left: 0;
@@ -4484,6 +4651,8 @@ const MainContentStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default
     display: flex;
     width: 100%;
     height: 100%;
+    box-sizing: border-box;
+    padding: 0 20px 0 0;
 `;
 const ScreenItemStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div`
     display: flex;
@@ -4660,6 +4829,76 @@ const MediaPreviewStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["defaul
 `;
 const ScreenSettingsStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div`
     width: 340px;
+    border-radius: 14px;
+    background-color: var(--helpgent-color-white);
+    .helpgent-screen-setting-header{
+        border-bottom: 1px solid var(--helpgent-color-bg-gray);
+    }
+    .helpgent-screen-setting-element__label{
+        font-size: .93rem;
+        font-weight: 500;
+        margin: 0 0 10px;
+        color: var(--helpgent-color-dark);
+    }
+    .helpgent-screen-setting-element__content{
+        position: relative;
+        .helpgent-mega-dropdown{
+            left: auto;
+            right: 0;
+            top: 50px;
+        }
+        .helpgent-mega-dropdown__content{
+            height: min(80vh, 520px);
+            overflow-y: auto;
+        }
+    }
+    .helpgent-screen-setting-list{
+        display: flex;
+        align-items: center;
+        padding: 10px 10px 0;
+        margin: 0;
+        li{
+            padding: 14px 15px;
+            font-size: .93rem;
+            font-weight: 500;
+            cursor: pointer;
+            color: var(--helpgent-color-gray);
+        }
+    }
+    .helpgent-screen-setting-block{
+        padding: 25px;
+        border-bottom: 1px solid var(--helpgent-color-bg-gray);
+    }
+    .helpgent-question-dropdown{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 18px 5px 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color .3s ease-in-out;
+        background-color: var(--helpgent-color-bg-gray);
+        .helpgent-question-dropdown__content{
+            display: flex;
+            align-items: center;
+        }
+        .helpgent-question-dropdown__icon{
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            margin-right: 10px;
+            background-color: var(--helpgent-color-white);
+        }
+        .helpgent-question-dropdown__title{
+            font-size: .93rem;
+            font-weight: 500;
+            margin: 0;
+            color: var(--helpgent-color-dark);
+        }
+    }
 `;
 const PreviewDeviceControlStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div`
     margin-top: 40px;
@@ -4828,6 +5067,79 @@ function handleAddEndScreen(event, questions, singleForm, setSingleForm) {
 
 /***/ }),
 
+/***/ "./resources/js/admin/pages/Forms/helper/handleAddQuestion.js":
+/*!********************************************************************!*\
+  !*** ./resources/js/admin/pages/Forms/helper/handleAddQuestion.js ***!
+  \********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ handleAddQuestion)
+/* harmony export */ });
+/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! uuid */ "./node_modules/uuid/dist/esm-browser/v4.js");
+
+function handleAddQuestion(item, singleForm, setSingleForm) {
+  const {
+    questions
+  } = JSON.parse(singleForm.content);
+  item.id = (0,uuid__WEBPACK_IMPORTED_MODULE_0__["default"])();
+  if (item.type === 'welcome' && hasWelcomeQuestion !== 0) {
+    return;
+  }
+  questions.push(item);
+  const updatedForm = {
+    ...singleForm,
+    content: JSON.stringify({
+      questions: questions
+    })
+  };
+  setSingleForm(updatedForm);
+}
+
+/***/ }),
+
+/***/ "./resources/js/admin/pages/Forms/helper/handleChangeQuestionType.js":
+/*!***************************************************************************!*\
+  !*** ./resources/js/admin/pages/Forms/helper/handleChangeQuestionType.js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ handleChangeQuestionType)
+/* harmony export */ });
+//import { questions } from "../../../../constants";
+function handleChangeQuestionType(item, singleForm, setSingleForm, activeId) {
+  const {
+    questions
+  } = JSON.parse(singleForm.content);
+
+  //const selectedQuestion = questions.filter(question=> question.screen_type === item.screen_type)[0];
+
+  //console.log(activeId, item, selectedQuestion);
+
+  const updatedQuestions = questions.map(question => {
+    if (question.id === activeId) {
+      return {
+        ...item,
+        id: activeId
+      };
+    }
+    return question;
+  });
+  console.log(activeId, updatedQuestions);
+  const updatedForm = {
+    ...singleForm,
+    content: JSON.stringify({
+      questions: updatedQuestions
+    })
+  };
+  setSingleForm(updatedForm);
+}
+
+/***/ }),
+
 /***/ "./resources/js/admin/pages/Forms/helper/handleResize.js":
 /*!***************************************************************!*\
   !*** ./resources/js/admin/pages/Forms/helper/handleResize.js ***!
@@ -4879,7 +5191,7 @@ const ScreenWrapStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"
     
 `;
 const SingleFormStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div`
-    margin: 20px 20px 0 0;
+    /* margin: 20px 20px 0 0; */
     .helpgent-page-initial{
         position: relative;
         height: 50vh;
@@ -4979,7 +5291,7 @@ const DatePickerControl = props => {
     src: _icon_calendar_svg__WEBPACK_IMPORTED_MODULE_3__["default"]
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
     type: "text",
-    className: "helpgent-form__element",
+    className: "helpgent-form-group__element",
     placeholder: "MM-DD-YYYY",
     value: date,
     onClick: handleOpenDatePicker,
@@ -5143,7 +5455,7 @@ function AddressQuestion(props) {
     layoutMode,
     singleForm,
     setSingleForm,
-    selectedQuestion: fileQuestion
+    selectedQuestionField: addressQuestionField
   } = props;
   const {
     content
@@ -5151,23 +5463,16 @@ function AddressQuestion(props) {
   const {
     questions
   } = JSON.parse(content);
-  const {
-    elements
-  } = fileQuestion[0].fields[0];
   const quillModules = {
     toolbar: false
   };
-  const elementsObject = elements.reduce((acc, element) => {
-    acc[element.key] = element;
-    return acc;
-  }, {});
   const {
     label,
     description,
     placeholder,
     required,
     'action-btn': actionBtn
-  } = elementsObject;
+  } = addressQuestionField;
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-question-element"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -5290,20 +5595,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_quill__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-quill */ "./node_modules/react-quill/lib/index.js");
-/* harmony import */ var react_quill__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_quill__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _icon_clock_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @icon/clock.svg */ "./assets/svg/icon/clock.svg");
-/* harmony import */ var react_quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-quill/dist/quill.snow.css */ "./node_modules/react-quill/dist/quill.snow.css");
-
-
-
+/* harmony import */ var react_quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-quill/dist/quill.snow.css */ "./node_modules/react-quill/dist/quill.snow.css");
 
 
 function ButtonQuestion(props) {
   const {
     layoutMode,
     singleForm,
-    setSingleForm
+    setSingleForm,
+    selectedQuestionField: buttonQuestionField
   } = props;
   const {
     content
@@ -5311,22 +5611,6 @@ function ButtonQuestion(props) {
   const {
     questions
   } = JSON.parse(content);
-  const welcomeQuestion = questions.filter(item => item.screen_type === 'welcome');
-  const fieldElements = welcomeQuestion[0].fields[0].elements;
-  const quillModules = {
-    toolbar: false
-  };
-  let greetText = 'Type your greeting text here!*';
-  let description = '';
-  for (const element of fieldElements) {
-    if ('greeting_text' in element) {
-      greetText = element.greeting_text;
-      break;
-    } else if ('description' in element) {
-      description = element.description;
-      break;
-    }
-  }
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-question-element"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -5368,7 +5652,7 @@ function DateQuestion(props) {
     layoutMode,
     singleForm,
     setSingleForm,
-    selectedQuestion: fileQuestion
+    selectedQuestionField: dateQuestionField
   } = props;
   const {
     content
@@ -5376,24 +5660,17 @@ function DateQuestion(props) {
   const {
     questions
   } = JSON.parse(content);
-  const {
-    elements
-  } = fileQuestion[0].fields[0];
   const ref = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
   const quillModules = {
     toolbar: false
   };
-  const elementsObject = elements.reduce((acc, element) => {
-    acc[element.key] = element;
-    return acc;
-  }, {});
   const {
     label,
     description,
     placeholder,
     required,
     'action-btn': actionBtn
-  } = elementsObject;
+  } = dateQuestionField;
   const dateFormatOptions = {
     day: '2-digit',
     month: '2-digit',
@@ -5467,7 +5744,7 @@ function DropdownQuestion(props) {
     layoutMode,
     singleForm,
     setSingleForm,
-    selectedQuestion: dropdownQuestion
+    selectedQuestionField: dropdownQuestionField
   } = props;
   const {
     content
@@ -5475,17 +5752,10 @@ function DropdownQuestion(props) {
   const {
     questions
   } = JSON.parse(content);
-  const {
-    elements
-  } = dropdownQuestion[0].fields[0];
   const ref = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
   const quillModules = {
     toolbar: false
   };
-  const elementsObject = elements.reduce((acc, element) => {
-    acc[element.key] = element;
-    return acc;
-  }, {});
   const {
     label,
     description,
@@ -5493,7 +5763,7 @@ function DropdownQuestion(props) {
     required,
     option: selectOption,
     'action-btn': actionBtn
-  } = elementsObject;
+  } = dropdownQuestionField;
   console.log(selectOption.options);
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-question-element"
@@ -5553,7 +5823,7 @@ function EmailQuestion(props) {
     layoutMode,
     singleForm,
     setSingleForm,
-    selectedQuestion: fileQuestion
+    selectedQuestionField: emailQuestionField
   } = props;
   const {
     content
@@ -5561,24 +5831,16 @@ function EmailQuestion(props) {
   const {
     questions
   } = JSON.parse(content);
-  const {
-    elements
-  } = fileQuestion[0].fields[0];
   const quillModules = {
     toolbar: false
   };
-  const elementsObject = elements.reduce((acc, element) => {
-    acc[element.key] = element;
-    return acc;
-  }, {});
   const {
     label,
     description,
     placeholder,
     required,
     'action-btn': actionBtn
-  } = elementsObject;
-  console.log(elementsObject);
+  } = emailQuestionField;
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-question-element"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -5641,7 +5903,7 @@ function EndQuestion(props) {
     layoutMode,
     singleForm,
     setSingleForm,
-    selectedQuestion
+    selectedQuestionField: endQuestionField
   } = props;
   const {
     content
@@ -5649,12 +5911,6 @@ function EndQuestion(props) {
   const {
     questions
   } = JSON.parse(content);
-  console.log(selectedQuestion);
-  const {
-    elements,
-    socials: socialLinks,
-    externalButton
-  } = selectedQuestion[0].fields[0];
   const quillModules = {
     toolbar: false
   };
@@ -5715,7 +5971,7 @@ function FileQuestion(props) {
     layoutMode,
     singleForm,
     setSingleForm,
-    selectedQuestion: fileQuestion
+    selectedQuestionField: fileQuestionField
   } = props;
   const {
     content
@@ -5723,24 +5979,17 @@ function FileQuestion(props) {
   const {
     questions
   } = JSON.parse(content);
-  const {
-    elements
-  } = fileQuestion[0].fields[0];
   const quillModules = {
     toolbar: false
   };
-  const elementsObject = elements.reduce((acc, element) => {
-    acc[element.key] = element;
-    return acc;
-  }, {});
+  console.log(fileQuestionField);
   const {
     label,
     description,
     'upload-btn-text': uploadBtnText,
     'upload-note': uploadNote,
     'action-btn': actionBtn
-  } = elementsObject;
-  console.log(elementsObject);
+  } = fileQuestionField;
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-question-element"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -5797,7 +6046,8 @@ function LongTextQuestion(props) {
   const {
     layoutMode,
     singleForm,
-    setSingleForm
+    setSingleForm,
+    selectedQuestionField: longTextQuestionField
   } = props;
   const {
     content
@@ -5805,22 +6055,9 @@ function LongTextQuestion(props) {
   const {
     questions
   } = JSON.parse(content);
-  const welcomeQuestion = questions.filter(item => item.screen_type === 'welcome');
-  const fieldElements = welcomeQuestion[0].fields[0].elements;
   const quillModules = {
     toolbar: false
   };
-  let greetText = 'Type your greeting text here!*';
-  let description = '';
-  for (const element of fieldElements) {
-    if ('greeting_text' in element) {
-      greetText = element.greeting_text;
-      break;
-    } else if ('description' in element) {
-      description = element.description;
-      break;
-    }
-  }
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-question-element"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -5884,7 +6121,7 @@ function MultiSelectQuestion(props) {
     layoutMode,
     singleForm,
     setSingleForm,
-    selectedQuestion: singleSelectQuestion
+    selectedQuestionField: multiSelectQuestionField
   } = props;
   const {
     content
@@ -5892,17 +6129,10 @@ function MultiSelectQuestion(props) {
   const {
     questions
   } = JSON.parse(content);
-  const {
-    elements
-  } = singleSelectQuestion[0].fields[0];
   const ref = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
   const quillModules = {
     toolbar: false
   };
-  const elementsObject = elements.reduce((acc, element) => {
-    acc[element.key] = element;
-    return acc;
-  }, {});
   const {
     label,
     description,
@@ -5910,8 +6140,7 @@ function MultiSelectQuestion(props) {
     required,
     option: selectOption,
     'action-btn': actionBtn
-  } = elementsObject;
-  console.log(selectOption.options);
+  } = multiSelectQuestionField;
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-question-element"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -5975,7 +6204,8 @@ function NumberQuestion(props) {
   const {
     layoutMode,
     singleForm,
-    setSingleForm
+    setSingleForm,
+    selectedQuestionField: numberQuestionField
   } = props;
   const {
     content
@@ -5983,22 +6213,9 @@ function NumberQuestion(props) {
   const {
     questions
   } = JSON.parse(content);
-  const welcomeQuestion = questions.filter(item => item.screen_type === 'welcome');
-  const fieldElements = welcomeQuestion[0].fields[0].elements;
   const quillModules = {
     toolbar: false
   };
-  let greetText = 'Type your greeting text here!*';
-  let description = '';
-  for (const element of fieldElements) {
-    if ('greeting_text' in element) {
-      greetText = element.greeting_text;
-      break;
-    } else if ('description' in element) {
-      description = element.description;
-      break;
-    }
-  }
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-question-element"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -6061,11 +6278,11 @@ function PhoneNumberQuestion(props) {
     layoutMode,
     singleForm,
     setSingleForm,
-    selectedQuestion: fileQuestion
+    selectedQuestionField: phoneQuestionField
   } = props;
   const [phoneInput, setPhoneInput] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)({
     dialCode: _data_countries_js__WEBPACK_IMPORTED_MODULE_3__["default"][0].dial_code,
-    number: ""
+    number: ''
   });
   const {
     content
@@ -6073,9 +6290,6 @@ function PhoneNumberQuestion(props) {
   const {
     questions
   } = JSON.parse(content);
-  const {
-    elements
-  } = fileQuestion[0].fields[0];
   const quillModules = {
     toolbar: false
   };
@@ -6091,17 +6305,13 @@ function PhoneNumberQuestion(props) {
       name: country.name
     };
   });
-  const elementsObject = elements.reduce((acc, element) => {
-    acc[element.key] = element;
-    return acc;
-  }, {});
   const {
     label,
     description,
     placeholder,
     required,
     'action-btn': actionBtn
-  } = elementsObject;
+  } = phoneQuestionField;
   function handleSelectCountry(selectedCountry) {
     setPhoneInput({
       ...phoneInput,
@@ -6109,7 +6319,7 @@ function PhoneNumberQuestion(props) {
     });
   }
   function handleChangeNumber(event) {
-    const onlyNumber = event.target.value.replace(/^\(\+\d+\)\s*/, "");
+    const onlyNumber = event.target.value.replace(/^\(\+\d+\)\s*/, '');
     setPhoneInput({
       ...phoneInput,
       number: onlyNumber
@@ -6183,7 +6393,7 @@ function ResultQuestion(props) {
     layoutMode,
     singleForm,
     setSingleForm,
-    selectedQuestion: fileQuestion
+    selectedQuestionField: resultQuestionField
   } = props;
   const {
     content
@@ -6191,23 +6401,16 @@ function ResultQuestion(props) {
   const {
     questions
   } = JSON.parse(content);
-  const {
-    elements
-  } = fileQuestion[0].fields[0];
   const quillModules = {
     toolbar: false
   };
-  const elementsObject = elements.reduce((acc, element) => {
-    acc[element.key] = element;
-    return acc;
-  }, {});
   const {
     label,
     description,
     placeholder,
     required,
     'action-btn': actionBtn
-  } = elementsObject;
+  } = resultQuestionField;
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-question-element"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -6257,7 +6460,7 @@ function ScoreQuestion(props) {
     layoutMode,
     singleForm,
     setSingleForm,
-    selectedQuestion: fileQuestion
+    selectedQuestionField: scoreQuestionField
   } = props;
   const {
     content
@@ -6265,16 +6468,9 @@ function ScoreQuestion(props) {
   const {
     questions
   } = JSON.parse(content);
-  const {
-    elements
-  } = fileQuestion[0].fields[0];
   const quillModules = {
     toolbar: false
   };
-  const elementsObject = elements.reduce((acc, element) => {
-    acc[element.key] = element;
-    return acc;
-  }, {});
   function handleScoreActivate(item) {
     setActiveScore(item);
   }
@@ -6284,7 +6480,7 @@ function ScoreQuestion(props) {
     placeholder,
     required,
     'action-btn': actionBtn
-  } = elementsObject;
+  } = scoreQuestionField;
   function getScoringItem() {
     const scoreList = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     const scoreDoms = scoreList.map((item, key) => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
@@ -6352,7 +6548,8 @@ function ShortTextQuestion(props) {
   const {
     layoutMode,
     singleForm,
-    setSingleForm
+    setSingleForm,
+    selectedQuestionField: shortTextQuestionField
   } = props;
   const {
     content
@@ -6360,22 +6557,9 @@ function ShortTextQuestion(props) {
   const {
     questions
   } = JSON.parse(content);
-  const welcomeQuestion = questions.filter(item => item.screen_type === 'welcome');
-  const fieldElements = welcomeQuestion[0].fields[0].elements;
   const quillModules = {
     toolbar: false
   };
-  let greetText = 'Type your greeting text here!*';
-  let description = '';
-  for (const element of fieldElements) {
-    if ('greeting_text' in element) {
-      greetText = element.greeting_text;
-      break;
-    } else if ('description' in element) {
-      description = element.description;
-      break;
-    }
-  }
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-question-element"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -6437,7 +6621,7 @@ function SingleSelectQuestion(props) {
     layoutMode,
     singleForm,
     setSingleForm,
-    selectedQuestion: singleSelectQuestion
+    selectedQuestionField: singleSelectQuestionField
   } = props;
   const {
     content
@@ -6445,17 +6629,10 @@ function SingleSelectQuestion(props) {
   const {
     questions
   } = JSON.parse(content);
-  const {
-    elements
-  } = singleSelectQuestion[0].fields[0];
   const ref = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
   const quillModules = {
     toolbar: false
   };
-  const elementsObject = elements.reduce((acc, element) => {
-    acc[element.key] = element;
-    return acc;
-  }, {});
   const {
     label,
     description,
@@ -6463,7 +6640,7 @@ function SingleSelectQuestion(props) {
     required,
     option: selectOption,
     'action-btn': actionBtn
-  } = elementsObject;
+  } = singleSelectQuestionField;
   console.log(selectOption.options);
   const dateFormatOptions = {
     day: '2-digit',
@@ -6545,7 +6722,7 @@ function SliderQuestion(props) {
     layoutMode,
     singleForm,
     setSingleForm,
-    selectedQuestion: fileQuestion
+    selectedQuestionField: sliderQuestionField
   } = props;
   const {
     content
@@ -6553,24 +6730,16 @@ function SliderQuestion(props) {
   const {
     questions
   } = JSON.parse(content);
-  const {
-    elements
-  } = fileQuestion[0].fields[0];
   const quillModules = {
     toolbar: false
   };
-  const elementsObject = elements.reduce((acc, element) => {
-    acc[element.key] = element;
-    return acc;
-  }, {});
   const {
     label,
     description,
     placeholder,
     required,
     'action-btn': actionBtn
-  } = elementsObject;
-  console.log(elementsObject);
+  } = sliderQuestionField;
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-question-element"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -6620,7 +6789,7 @@ function UrlQuestion(props) {
     layoutMode,
     singleForm,
     setSingleForm,
-    selectedQuestion: fileQuestion
+    selectedQuestionField: urlQuestionField
   } = props;
   const {
     content
@@ -6628,23 +6797,16 @@ function UrlQuestion(props) {
   const {
     questions
   } = JSON.parse(content);
-  const {
-    elements
-  } = fileQuestion[0].fields[0];
   const quillModules = {
     toolbar: false
   };
-  const elementsObject = elements.reduce((acc, element) => {
-    acc[element.key] = element;
-    return acc;
-  }, {});
   const {
     label,
     description,
     placeholder,
     required,
     'action-btn': actionBtn
-  } = elementsObject;
+  } = urlQuestionField;
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-question-element"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -6700,7 +6862,8 @@ function WelcomeQuestion(props) {
   const {
     layoutMode,
     singleForm,
-    setSingleForm
+    setSingleForm,
+    selectedQuestionField: welcomeQuestionField
   } = props;
   const {
     content
@@ -6708,22 +6871,9 @@ function WelcomeQuestion(props) {
   const {
     questions
   } = JSON.parse(content);
-  const welcomeQuestion = questions.filter(item => item.screen_type === 'welcome');
-  const fieldElements = welcomeQuestion[0].fields[0].elements;
   const quillModules = {
     toolbar: false
   };
-  let greetText = 'Type your greeting text here!*';
-  let description = '';
-  for (const element of fieldElements) {
-    if ('greeting_text' in element) {
-      greetText = element.greeting_text;
-      break;
-    } else if ('description' in element) {
-      description = element.description;
-      break;
-    }
-  }
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-question-element"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -6786,7 +6936,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Long text',
   screen_type: 'long-text',
-  icon: "chartBar",
+  icon: 'chartBar',
   isPro: false,
   isComing: false,
   position: {
@@ -6870,7 +7020,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Short text',
   screen_type: 'short-text',
-  icon: "bar",
+  icon: 'bar',
   isPro: false,
   isComing: false,
   position: {
@@ -6954,7 +7104,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Number',
   screen_type: 'number',
-  icon: "hash",
+  icon: 'hash',
   isPro: false,
   isComing: false,
   position: {
@@ -7038,7 +7188,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Button',
   screen_type: 'button',
-  icon: "button",
+  icon: 'button',
   isPro: false,
   isComing: false,
   position: {
@@ -7122,7 +7272,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'File Upload',
   screen_type: 'upload',
-  icon: "upload",
+  icon: 'upload',
   isPro: false,
   isComing: false,
   position: {
@@ -7210,7 +7360,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Range slider',
   screen_type: 'slider',
-  icon: "slider",
+  icon: 'slider',
   isPro: false,
   isComing: false,
   position: {
@@ -7295,7 +7445,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Date',
   screen_type: 'date',
-  icon: "date",
+  icon: 'date',
   isPro: false,
   isComing: false,
   position: {
@@ -7377,7 +7527,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Rating (Stars)',
   screen_type: 'rating',
-  icon: "star",
+  icon: 'star',
   isPro: true,
   isComing: false,
   position: {
@@ -7461,7 +7611,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Promoter score',
   screen_type: 'score',
-  icon: "meter",
+  icon: 'meter',
   isPro: true,
   isComing: false,
   position: {
@@ -7543,7 +7693,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Address',
   screen_type: 'address',
-  icon: "marker",
+  icon: 'marker',
   isPro: false,
   isComing: false,
   position: {
@@ -7565,6 +7715,39 @@ const questions = [{
     }, {
       key: 'placeholder',
       text: ''
+    }, {
+      key: 'address-group',
+      fields: [{
+        label: "Address",
+        text: "",
+        isRequired: true,
+        isVisible: true
+      }, {
+        label: "Address line 2",
+        text: "",
+        isRequired: true,
+        isVisible: true
+      }, {
+        label: "City",
+        text: "",
+        isRequired: true,
+        isVisible: true
+      }, {
+        label: "State/Region",
+        text: "",
+        isRequired: true,
+        isVisible: true
+      }, {
+        label: "Zip/Post code",
+        text: "",
+        isRequired: true,
+        isVisible: true
+      }, {
+        label: "Country",
+        text: "",
+        isRequired: true,
+        isVisible: true
+      }]
     }, {
       key: 'required',
       is_required: '0'
@@ -7622,7 +7805,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Contact info',
   screen_type: 'contact',
-  icon: "address",
+  icon: 'address',
   isPro: false,
   isComing: false,
   position: {
@@ -7706,7 +7889,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Email',
   screen_type: 'email',
-  icon: "envelope",
+  icon: 'envelope',
   isPro: false,
   isComing: false,
   position: {
@@ -7785,7 +7968,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Phone number',
   screen_type: 'phone',
-  icon: "phone",
+  icon: 'phone',
   isPro: false,
   isComing: false,
   position: {
@@ -7867,7 +8050,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Website',
   screen_type: 'url',
-  icon: "url",
+  icon: 'url',
   isPro: false,
   isComing: false,
   position: {
@@ -7946,7 +8129,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Open Ended',
   screen_type: 'open-ended',
-  icon: "openEnded",
+  icon: 'openEnded',
   isPro: false,
   position: {
     x: -150,
@@ -8029,7 +8212,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Results',
   screen_type: 'result',
-  icon: "horizontalBar",
+  icon: 'horizontalBar',
   isPro: true,
   position: {
     x: -150,
@@ -8107,7 +8290,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Live call',
   screen_type: 'live-call',
-  icon: "video",
+  icon: 'video',
   isPro: false,
   isComing: true,
   position: {
@@ -8191,7 +8374,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Live chat',
   screen_type: 'live-chat',
-  icon: "comment",
+  icon: 'comment',
   isPro: false,
   isComing: true,
   position: {
@@ -8275,7 +8458,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Single-select',
   screen_type: 'single-select',
-  icon: "scrubber",
+  icon: 'scrubber',
   isPro: false,
   isComing: false,
   position: {
@@ -8374,7 +8557,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Multi-select',
   screen_type: 'multi-select',
-  icon: "checkbox",
+  icon: 'checkbox',
   isPro: true,
   isComing: false,
   position: {
@@ -8469,7 +8652,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Dropdown',
   screen_type: 'dropdown',
-  icon: "angleCircle",
+  icon: 'angleCircle',
   isPro: false,
   isComing: false,
   position: {
@@ -8568,7 +8751,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Yes/No',
   screen_type: 'yes-no',
-  icon: "toggle",
+  icon: 'toggle',
   isPro: false,
   isComing: false,
   position: {
@@ -8652,7 +8835,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Picture select',
   screen_type: 'picture-select',
-  icon: "picture",
+  icon: 'picture',
   isPro: true,
   isComing: false,
   position: {
@@ -8736,7 +8919,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Welcome',
   screen_type: 'welcome',
-  icon: "arrowSquareRight",
+  icon: 'arrowSquareRight',
   isPro: false,
   isComing: false,
   position: {
@@ -8820,7 +9003,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'End',
   screen_type: 'end',
-  icon: "arrowSquareLeft",
+  icon: 'arrowSquareLeft',
   isPro: false,
   isComing: false,
   position: {

@@ -1091,7 +1091,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Long text',
   screen_type: 'long-text',
-  icon: "chartBar",
+  icon: 'chartBar',
   isPro: false,
   isComing: false,
   position: {
@@ -1175,7 +1175,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Short text',
   screen_type: 'short-text',
-  icon: "bar",
+  icon: 'bar',
   isPro: false,
   isComing: false,
   position: {
@@ -1259,7 +1259,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Number',
   screen_type: 'number',
-  icon: "hash",
+  icon: 'hash',
   isPro: false,
   isComing: false,
   position: {
@@ -1343,7 +1343,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Button',
   screen_type: 'button',
-  icon: "button",
+  icon: 'button',
   isPro: false,
   isComing: false,
   position: {
@@ -1427,7 +1427,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'File Upload',
   screen_type: 'upload',
-  icon: "upload",
+  icon: 'upload',
   isPro: false,
   isComing: false,
   position: {
@@ -1515,7 +1515,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Range slider',
   screen_type: 'slider',
-  icon: "slider",
+  icon: 'slider',
   isPro: false,
   isComing: false,
   position: {
@@ -1600,7 +1600,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Date',
   screen_type: 'date',
-  icon: "date",
+  icon: 'date',
   isPro: false,
   isComing: false,
   position: {
@@ -1682,7 +1682,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Rating (Stars)',
   screen_type: 'rating',
-  icon: "star",
+  icon: 'star',
   isPro: true,
   isComing: false,
   position: {
@@ -1766,7 +1766,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Promoter score',
   screen_type: 'score',
-  icon: "meter",
+  icon: 'meter',
   isPro: true,
   isComing: false,
   position: {
@@ -1848,7 +1848,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Address',
   screen_type: 'address',
-  icon: "marker",
+  icon: 'marker',
   isPro: false,
   isComing: false,
   position: {
@@ -1870,6 +1870,39 @@ const questions = [{
     }, {
       key: 'placeholder',
       text: ''
+    }, {
+      key: 'address-group',
+      fields: [{
+        label: "Address",
+        text: "",
+        isRequired: true,
+        isVisible: true
+      }, {
+        label: "Address line 2",
+        text: "",
+        isRequired: true,
+        isVisible: true
+      }, {
+        label: "City",
+        text: "",
+        isRequired: true,
+        isVisible: true
+      }, {
+        label: "State/Region",
+        text: "",
+        isRequired: true,
+        isVisible: true
+      }, {
+        label: "Zip/Post code",
+        text: "",
+        isRequired: true,
+        isVisible: true
+      }, {
+        label: "Country",
+        text: "",
+        isRequired: true,
+        isVisible: true
+      }]
     }, {
       key: 'required',
       is_required: '0'
@@ -1927,7 +1960,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Contact info',
   screen_type: 'contact',
-  icon: "address",
+  icon: 'address',
   isPro: false,
   isComing: false,
   position: {
@@ -2011,7 +2044,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Email',
   screen_type: 'email',
-  icon: "envelope",
+  icon: 'envelope',
   isPro: false,
   isComing: false,
   position: {
@@ -2090,7 +2123,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Phone number',
   screen_type: 'phone',
-  icon: "phone",
+  icon: 'phone',
   isPro: false,
   isComing: false,
   position: {
@@ -2172,7 +2205,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Website',
   screen_type: 'url',
-  icon: "url",
+  icon: 'url',
   isPro: false,
   isComing: false,
   position: {
@@ -2251,7 +2284,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Open Ended',
   screen_type: 'open-ended',
-  icon: "openEnded",
+  icon: 'openEnded',
   isPro: false,
   position: {
     x: -150,
@@ -2334,7 +2367,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Results',
   screen_type: 'result',
-  icon: "horizontalBar",
+  icon: 'horizontalBar',
   isPro: true,
   position: {
     x: -150,
@@ -2412,7 +2445,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Live call',
   screen_type: 'live-call',
-  icon: "video",
+  icon: 'video',
   isPro: false,
   isComing: true,
   position: {
@@ -2496,7 +2529,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Live chat',
   screen_type: 'live-chat',
-  icon: "comment",
+  icon: 'comment',
   isPro: false,
   isComing: true,
   position: {
@@ -2580,7 +2613,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Single-select',
   screen_type: 'single-select',
-  icon: "scrubber",
+  icon: 'scrubber',
   isPro: false,
   isComing: false,
   position: {
@@ -2679,7 +2712,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Multi-select',
   screen_type: 'multi-select',
-  icon: "checkbox",
+  icon: 'checkbox',
   isPro: true,
   isComing: false,
   position: {
@@ -2774,7 +2807,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Dropdown',
   screen_type: 'dropdown',
-  icon: "angleCircle",
+  icon: 'angleCircle',
   isPro: false,
   isComing: false,
   position: {
@@ -2873,7 +2906,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Yes/No',
   screen_type: 'yes-no',
-  icon: "toggle",
+  icon: 'toggle',
   isPro: false,
   isComing: false,
   position: {
@@ -2957,7 +2990,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Picture select',
   screen_type: 'picture-select',
-  icon: "picture",
+  icon: 'picture',
   isPro: true,
   isComing: false,
   position: {
@@ -3041,7 +3074,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'Welcome',
   screen_type: 'welcome',
-  icon: "arrowSquareRight",
+  icon: 'arrowSquareRight',
   isPro: false,
   isComing: false,
   position: {
@@ -3125,7 +3158,7 @@ const questions = [{
   id: (0,uuid__WEBPACK_IMPORTED_MODULE_5__["default"])(),
   title: 'End',
   screen_type: 'end',
-  icon: "arrowSquareLeft",
+  icon: 'arrowSquareLeft',
   isPro: false,
   isComing: false,
   position: {

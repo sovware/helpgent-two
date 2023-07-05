@@ -34,7 +34,7 @@ const HeaderStyle = Styled.div`
         }
     }
     .helpgent-single-form-header__title{
-        font-size: 1.07rem;
+        font-size: 0.93rem;
         width: 14px;
         height: 14px;
         strong{
@@ -63,12 +63,16 @@ const HeaderStyle = Styled.div`
     }
     .helpgent-single-form-header__tab-link{
         position: relative;
-        font-size: 1.07rem;
+        font-size: .93rem;
         display: inline-block;
         text-decoration: none;
         padding: 30px 15px;
-        color: var(--helpgent-color-text);
         transition: color .3s ease-in;
+        color: var(--helpgent-color-text);
+        &:focus{
+            outline: none;
+            box-shadow: 0 0;
+        }
         &:after{
             position: absolute;
             left: 0;
@@ -199,6 +203,8 @@ const MainContentStyle = Styled.div`
     display: flex;
     width: 100%;
     height: 100%;
+    box-sizing: border-box;
+    padding: 0 20px 0 0;
 `;
 
 const ScreenItemStyle = Styled.div`
@@ -380,6 +386,76 @@ const MediaPreviewStyle = Styled.div`
 
 const ScreenSettingsStyle = Styled.div`
     width: 340px;
+    border-radius: 14px;
+    background-color: var(--helpgent-color-white);
+    .helpgent-screen-setting-header{
+        border-bottom: 1px solid var(--helpgent-color-bg-gray);
+    }
+    .helpgent-screen-setting-element__label{
+        font-size: .93rem;
+        font-weight: 500;
+        margin: 0 0 10px;
+        color: var(--helpgent-color-dark);
+    }
+    .helpgent-screen-setting-element__content{
+        position: relative;
+        .helpgent-mega-dropdown{
+            left: auto;
+            right: 0;
+            top: 50px;
+        }
+        .helpgent-mega-dropdown__content{
+            height: min(80vh, 520px);
+            overflow-y: auto;
+        }
+    }
+    .helpgent-screen-setting-list{
+        display: flex;
+        align-items: center;
+        padding: 10px 10px 0;
+        margin: 0;
+        li{
+            padding: 14px 15px;
+            font-size: .93rem;
+            font-weight: 500;
+            cursor: pointer;
+            color: var(--helpgent-color-gray);
+        }
+    }
+    .helpgent-screen-setting-block{
+        padding: 25px;
+        border-bottom: 1px solid var(--helpgent-color-bg-gray);
+    }
+    .helpgent-question-dropdown{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 18px 5px 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color .3s ease-in-out;
+        background-color: var(--helpgent-color-bg-gray);
+        .helpgent-question-dropdown__content{
+            display: flex;
+            align-items: center;
+        }
+        .helpgent-question-dropdown__icon{
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            margin-right: 10px;
+            background-color: var(--helpgent-color-white);
+        }
+        .helpgent-question-dropdown__title{
+            font-size: .93rem;
+            font-weight: 500;
+            margin: 0;
+            color: var(--helpgent-color-dark);
+        }
+    }
 `;
 
 const PreviewDeviceControlStyle = Styled.div`

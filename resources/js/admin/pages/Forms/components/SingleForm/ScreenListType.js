@@ -6,25 +6,27 @@ export default function ScreenListType( {
 	setSingleForm,
 	type,
 	screenList,
+	handleItemEvent,
+	activeScreenId,
 } ) {
 	const { content } = singleForm;
 	const { questions } = JSON.parse( content );
 	const hasWelcomeQuestion = questions.filter(
 		( item ) => item.screen_type === 'welcome'
 	);
-	function handleAddQuestion( item ) {
-		item.id = uuidv4();
-		if ( item.type === 'welcome' && hasWelcomeQuestion !== 0 ) {
-			return;
-		}
-		questions.push( item );
+	// function handleAddQuestion( item ) {
+	// 	item.id = uuidv4();
+	// 	if ( item.type === 'welcome' && hasWelcomeQuestion !== 0 ) {
+	// 		return;
+	// 	}
+	// 	questions.push( item );
 
-		const updatedForm = {
-			...singleForm,
-			content: JSON.stringify( { questions: questions } ),
-		};
-		setSingleForm( updatedForm );
-	}
+	// 	const updatedForm = {
+	// 		...singleForm,
+	// 		content: JSON.stringify( { questions: questions } ),
+	// 	};
+	// 	setSingleForm( updatedForm );
+	// }
 	return (
 		screenList.length !== 0 && (
 			<div className="helpgent-screen-type">
@@ -32,7 +34,14 @@ export default function ScreenListType( {
 				{ screenList.map( ( item, index ) => (
 					<ScreenItem
 						question={ item }
-						handler={ handleAddQuestion }
+						handler={ () =>
+							handleItemEvent(
+								item,
+								singleForm,
+								setSingleForm,
+								activeScreenId
+							)
+						}
 						key={ index }
 						isDisabled={ hasWelcomeQuestion.length !== 0 }
 					/>

@@ -11,21 +11,15 @@ export default function SingleSelectQuestion( props ) {
 		layoutMode,
 		singleForm,
 		setSingleForm,
-		selectedQuestion: singleSelectQuestion,
+		selectedQuestionField: singleSelectQuestionField,
 	} = props;
 	const { content } = singleForm;
 	const { questions } = JSON.parse( content );
 
-	const { elements } = singleSelectQuestion[ 0 ].fields[ 0 ];
 	const ref = useRef( null );
 	const quillModules = {
 		toolbar: false,
 	};
-
-	const elementsObject = elements.reduce( ( acc, element ) => {
-		acc[ element.key ] = element;
-		return acc;
-	}, {} );
 
 	const {
 		label,
@@ -34,7 +28,7 @@ export default function SingleSelectQuestion( props ) {
 		required,
 		option: selectOption,
 		'action-btn': actionBtn,
-	} = elementsObject;
+	} = singleSelectQuestionField;
 
 	console.log( selectOption.options );
 
