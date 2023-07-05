@@ -18,13 +18,14 @@ class ResponseRepository {
         $query = Response::query()->with(
             [
                 'tags',
-                'user'                    => [$this, 'user_relationship'],
-                'user_guest'              => [$this, 'guest_user_relationship'],
-                'conversation'            => function ( Builder $query ) {
-                    $query->order_by_desc( 'helpgent_conversations.id' );
+                'user'               => [$this, 'user_relationship'],
+                'user_guest'         => [$this, 'guest_user_relationship'],
+                'message'            => function ( Builder $query ) {
+                    $query->order_by_desc( 'helpgent_messages.id' );
                 },
-                'conversation.user'       => [$this, 'user_relationship'],
-                'conversation.user_guest' => [$this, 'guest_user_relationship']
+                'message.forward',
+                'message.user'       => [$this, 'user_relationship'],
+                'message.user_guest' => [$this, 'guest_user_relationship']
             ] 
         )->where( 'status', $response_read_dto->get_status() );
 
@@ -108,11 +109,11 @@ class ResponseRepository {
     }
 
     public function user_relationship( Builder $query ) {
-        $query->select( 'users.ID', 'users.display_name' );
+        $query->select( 'users.ID', 'users.display_name', 'users.user_email' );
     }
 
     public function guest_user_relationship( Builder $query ) {
-        $query->select( 'helpgent_guest_users.id', 'helpgent_guest_users.first_name', 'helpgent_guest_users.last_name' );
+        $query->select( 'helpgent_guest_users.id', 'helpgent_guest_users.first_name', 'helpgent_guest_users.last_name', 'helpgent_guest_users.email' );
     }
 
     public function total( int $form_id ) {

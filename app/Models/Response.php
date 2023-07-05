@@ -24,8 +24,8 @@ class Response extends Model {
         ->relation_where( 'is_guest', 1 );
     }
 
-    public function conversation():HasOne {
-        return $this->has_one( Conversation::class, 'response_id', 'id' );
+    public function message():HasOne {
+        return $this->has_one( Message::class, 'response_id', 'id' );
     }
 
     public function tags():BelongsToMany {

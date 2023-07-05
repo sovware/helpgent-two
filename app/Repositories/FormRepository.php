@@ -11,6 +11,7 @@ use HelpGent\WaxFramework\Database\Query\Builder;
 class FormRepository {
     public function get( int $per_page, int $page ) {
         $forms = Form::query()
+        ->select( 'id', 'title', 'status', 'created_at', 'updated_at' )
         ->with_count(
             'responses as total_responses', function( Builder $query ) {
                 $query->where( 'status', 'active' );
@@ -23,12 +24,6 @@ class FormRepository {
         )
         ->order_by_desc( 'id' )->pagination( $per_page, $page );
 
-        $forms = array_map(
-            function( $form ) {
-                $form->available_pages = json_decode( $form->available_pages );
-                return $form;
-            }, $forms
-        );
         return [
             'forms' => $forms,
             'total' => Form::query()->count()
