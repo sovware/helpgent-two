@@ -131,6 +131,7 @@ class CreateDB implements Migration {
             `attachment_id` BIGINT UNSIGNED,
             `is_read` TINYINT NOT NULL DEFAULT 0 COMMENT 'possible values: 1, 0',
             `is_guest` TINYINT NOT NULL DEFAULT 0 COMMENT 'possible values: 1, 0',
+            `replied_by` VARCHAR(50) NOT NULL,
             `created_by` BIGINT UNSIGNED NOT NULL,
             `parent_id` BIGINT UNSIGNED NOT NULL DEFAULT 0,
             `forward_id` BIGINT UNSIGNED NOT NULL DEFAULT 0,

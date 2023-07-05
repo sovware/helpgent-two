@@ -24,6 +24,7 @@ Route::group(
                     }
                 );
                 Route::get( 'attachment', [MessageController::class, 'attachment'] );
+                Route::post( 'read', [MessageController::class, 'read'] );
                 Route::resource( '/', MessageController::class );
             }
         );

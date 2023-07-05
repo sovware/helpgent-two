@@ -18,21 +18,7 @@ class MessageRepository {
     }
 
     public function get( int $response_id, int $per_page, int $page, string $search = '' ) {
-        $select_columns = $this->selected_columns();
-
-        $messages_query = Message::query()->select( $select_columns )->with(
-            [
-                'user'              => [$this, 'user_relation'],
-                'user_guest'        => [$this, 'user_guest_relation'],
-                'parent'            => function( Builder $query )use( $select_columns ) {
-                    $query->select( $select_columns );
-                },
-                'parent.user'       => [$this, 'user_relation'],
-                'parent.user_guest' => [$this, 'user_guest_relation'],
-                'attachment',
-                'forward.attachment'
-            ]
-        )->where( 'response_id', $response_id );
+        $messages_query = Message::query()->select( $this->select_columns() )->with( $this->message_relations() )->where( 'response_id', $response_id );
 
         $count_query = Message::query()->where( 'response_id', $response_id );
 
@@ -53,6 +39,24 @@ class MessageRepository {
         return [
             'messages' => $messages,
             'total'    => $count_query->count()
+        ];
+    }
+
+    public function get_single( int $id ) {
+        return Message::query()->select( $this->select_columns() )->with( $this->message_relations() )->where( 'id', $id )->first();
+    }
+
+    protected function message_relations() {
+        return [
+            'user'              => [$this, 'user_relation'],
+            'user_guest'        => [$this, 'user_guest_relation'],
+            'parent'            => function( Builder $query ) {
+                $query->select( $this->select_columns() );
+            },
+            'parent.user'       => [$this, 'user_relation'],
+            'parent.user_guest' => [$this, 'user_guest_relation'],
+            'attachment',
+            'forward.attachment'
         ];
     }
 
@@ -84,7 +88,7 @@ class MessageRepository {
         ];
     }
 
-    protected function selected_columns() {
+    protected function select_columns() {
         $removed_message = esc_html__( "This message was removed", "helpgent" );
 
         return "id, response_id, attachment_id, is_read, is_guest, created_by, agent_trigger, parent_id, forward_id, updated_at, status, created_at,
@@ -136,6 +140,7 @@ class MessageRepository {
             'created_by'    => $message_dto->get_created_by(),
             'agent_trigger' => $message_dto->get_agent_trigger(),
             'status'        => $message_dto->get_status(),
+            'replied_by'    => $message_dto->get_replied_by(),
             'created_at'    => helpgent_now()
         ];
 
@@ -174,6 +179,17 @@ class MessageRepository {
             [
                 'message'    => $message_dto->get_message(),
                 'updated_at' => helpgent_now()
+            ]
+        );
+    }
+
+    public function update_read_status( int $response_id, array $messages_ids = [] ) {
+        $user = helpgent_get_current_user();
+        return Message::query()->where( 'response_id', $response_id )
+        ->where( 'created_by', $user->id )->where( 'is_guest', intval( $user->is_guest ) )
+        ->where_in( 'id', map_deep( $messages_ids, 'intval' ) )->update(
+            [
+                'is_read' => 1
             ]
         );
     }
