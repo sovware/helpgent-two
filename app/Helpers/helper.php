@@ -315,7 +315,7 @@ function helpgent_now() {
 }
 
 function helpgent_get_valid_guest() {
-    if ( empty( $_REQUEST['token'] ) ) { //phpcs:ignore WordPress.Security.NonceVerification.Recommended
+    if ( empty( $_REQUEST['hg-auth-token'] ) ) { //phpcs:ignore WordPress.Security.NonceVerification.Recommended
         return null;
     }
 
@@ -325,7 +325,7 @@ function helpgent_get_valid_guest() {
         return $helpgent_guest_user;
     }
 
-    $token = sanitize_text_field( wp_unslash( $_REQUEST['token'] ) ); //phpcs:ignore WordPress.Security.NonceVerification.Recommended
+    $token = sanitize_text_field( wp_unslash( $_REQUEST['hg-auth-token'] ) ); //phpcs:ignore WordPress.Security.NonceVerification.Recommended
 
     $helpgent_guest_user = Guest::query()->where( 'token', $token )->where( 'token_expires_at', '>', date( 'Y-m-d H:i:s', time() ) )->first();
 
@@ -358,7 +358,8 @@ function helpgent_get_current_user() {
             ['helpgent_guest'],
             $guest->created_at,
             true,
-            true
+            true,
+            $guest->token
         );
     } else {
         $registered_user = wp_get_current_user();
@@ -382,4 +383,46 @@ function helpgent_get_current_user() {
     $helpgent_user = $user;
 
     return $user;
+}
+
+/**
+* Get Dashboard Page Url
+*
+* @return string Dashboard Page Url
+*/
+function helpgent_get_dashboard_page_url() {
+
+    $url     = home_url();
+    $page_id = get_option( 'user_dashboard_page_id' );
+
+    if ( $page_id ) {
+        $url = get_permalink( $page_id );
+    }
+
+    return apply_filters( 'helpgent_dashboard_page_link', $url, $page_id );
+}
+
+function helpgent_get_email_placeholders( array $placeholders = [], User $user ) : array {
+    $site_name     = get_option( 'blogname' );
+    $site_url      = site_url();
+    $date_format   = get_option( 'date_format' );
+    $time_format   = get_option( 'time_format' );
+    $current_time  = current_time( 'timestamp' );
+    $dashboard_url = helpgent_get_dashboard_page_url();
+    $dashboard_url = ! empty( $user->token ) ? add_query_arg( 'hg-auth-token', $user->token, $dashboard_url ) : $dashboard_url;
+
+    $default_placeholders = [
+        '{{NAME}}'              => ! empty( $user->first_name ) ? $user->first_name . ' ' . $user->last_name : 'User',
+        '{{REPLIER_NAME}}'      => helpgent_get_setting( 'email_from' ),
+        '{{USERNAME}}'          => ! empty( $user->user_name ) ? $user->user_name : 'User',
+        '{{SITE_NAME}}'         => $site_name,
+        '{{SITE_LINK}}'         => sprintf( '<a href="%s" style="color: #1b83fb;">%s</a>', $site_url, $site_name ),
+        '{{SITE_URL}}'          => sprintf( '<a href="%s" style="color: #1b83fb;">%s</a>', $site_url, $site_url ),
+        '{{TODAY}}'             => date_i18n( $date_format, $current_time ),
+        '{{NOW}}'               => date_i18n( $date_format . ' ' . $time_format, $current_time ),
+        '{{CONVERSATION_LINK}}' => sprintf( '<a href="%s" style="color: #1b83fb;">%s</a>', $dashboard_url, $dashboard_url )
+        // '{{MESSAGE}}'
+    ];
+
+    return apply_filters( 'helpgent_email_placeholders', array_merge( $default_placeholders, $placeholders ) );
 }

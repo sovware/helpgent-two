@@ -6,6 +6,7 @@ use Exception;
 use HelpGent\App\DTO\ResponseDTO;
 use HelpGent\App\DTO\ResponseReadDTO;
 use HelpGent\App\Http\Controllers\Controller;
+use HelpGent\App\Models\Guest;
 use HelpGent\App\Repositories\FormRepository;
 use HelpGent\App\Repositories\QuestionAnswerRepository;
 use HelpGent\App\Repositories\ResponseRepository;
@@ -108,11 +109,11 @@ class ResponseController extends Controller {
     public function store( Validator $validator, WP_REST_Request $wp_rest_request ) {
         $validator->validate(
             [
-                'form_id'   => 'required|numeric',
-                'screen_id' => 'required|string',
-                'token'     => 'string',
-                'submit'    => 'accepted:1',
-                'delete'    => 'accepted:1'
+                'form_id'           => 'required|numeric',
+                'screen_id'         => 'required|string',
+                'hg-response-token' => 'string',
+                'submit'            => 'accepted:1',
+                'delete'            => 'accepted:1'
             ]
         );
 
@@ -151,7 +152,7 @@ class ResponseController extends Controller {
         $this->wp_rest_request = $wp_rest_request;
         $this->form            = $form;
 
-        if ( $wp_rest_request->has_param( 'token' ) ) {
+        if ( $wp_rest_request->has_param( 'hg-response-token' ) ) {
             return $this->process_token_request();
         }
         return $this->process_first_request();
@@ -253,7 +254,7 @@ class ResponseController extends Controller {
              */
             $field_handler->save_answer( $this->wp_rest_request, $field, $response->id );
 
-            $this->submit_form( $form_id, $response->id, $this->wp_rest_request->get_param( 'token' ) );
+            $this->submit_form( $form_id, $response, $this->wp_rest_request->get_param( 'hg-response-token' ) );
 
             return Response::send( [], 201 );
         } catch ( Exception $exception ) {
@@ -265,24 +266,44 @@ class ResponseController extends Controller {
         }
     }
 
-    private function submit_form( $form_id, $response_id, $token ) {
+    private function submit_form( $form_id, $response, $token ) {
         if ( ! $this->wp_rest_request->has_param( 'submit' ) ) {
             return;
         }
+    
+        if ( is_user_logged_in() ) {
 
-        if ( ! is_user_logged_in() && ! $this->response_repository->get_meta_value( $response_id ,'contact_info_submit' ) ) {
-            throw new Exception( esc_html__( "Guest user required contact information", 'helpgent' ), 500 );
+            $user = wp_get_current_user();
+
+            if ( $user->ID !== intval( $response->created_at ) ) {
+                $this->response_repository->update_create_by( $response->id, $user->ID );
+            }
+
+        } else {
+            $contact_info_submit = $this->response_repository->get_meta_value( $response->id ,'contact_info_submit' );
+            
+            if ( ! $contact_info_submit ) {
+                throw new Exception( esc_html__( "Guest user required contact information", 'helpgent' ), 500 );
+            }
+
+            $guest = Guest::query()->where( 'id', $response->created_at )->first();
+
+            if ( ! $guest ) {
+                throw new Exception( esc_html__( "Guest user not found", 'helpgent' ), 404 );
+            }
+
+            $_REQUEST['hg-auth-token'] = $guest->token;
         }
 
         $this->form_repository->delete_meta( $form_id, $token );
-        $this->response_repository->delete_meta( $response_id, 'contact_info_submit' );
-        $this->response_repository->update_status( $response_id, 'active' );
+        $this->response_repository->delete_meta( $response->id, 'contact_info_submit' );
+        $this->response_repository->update_status( $response->id, 'active' );
 
-        do_action( 'helpgent_after_submit_form', $response_id );
+        do_action( 'helpgent_after_submit_form', $response );
     }
 
     private function get_response_by_token() {
-        $token       = $this->wp_rest_request->get_param( 'token' );
+        $token       = $this->wp_rest_request->get_param( 'hg-response-token' );
         $response_id = $this->form_repository->get_meta_value( $this->form->id, $token );
         return $this->response_repository->get_by_id( $response_id );
     }

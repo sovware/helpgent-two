@@ -9,6 +9,7 @@ use HelpGent\App\Providers\Admin\MenuServiceProvider;
 use HelpGent\App\Providers\MediaProtectionProvider;
 use HelpGent\App\Providers\Admin\MediaProtectionProvider as AdminMediaProtectionProvider;
 use HelpGent\Database\Migrations\CreateDB;
+use HelpGent\App\Providers\EmailNotificationServiceProvider;
 use HelpGent\App\Providers\LocalizationServiceProvider;
 use HelpGent\App\Providers\PreviewServiceProvider;
 use HelpGent\App\Providers\ShortCodeServiceProvider;
@@ -33,7 +34,8 @@ return [
         MediaProtectionProvider::class,
         ShortCodeServiceProvider::class,
         PreviewServiceProvider::class,
-        ChatBubbleServiceProvider::class
+        ChatBubbleServiceProvider::class,
+        EmailNotificationServiceProvider::class
     ],
 
     'admin_providers'         => [

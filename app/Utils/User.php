@@ -21,7 +21,9 @@ class User {
 
     public bool $is_guest;
 
-    public function __construct( int $id, string $email, string $first_name, string $last_name = '', string $user_name = '', array $roles = [], string $created_at = '', bool $is_user = false, bool $is_guest = false ) {
+    public string $token;
+
+    public function __construct( int $id, string $email, string $first_name, string $last_name = '', string $user_name = '', array $roles = [], string $created_at = '', bool $is_user = false, bool $is_guest = false, string $token = '' ) {
         $this->id         = $id;
         $this->email      = $email;
         $this->first_name = $first_name;
@@ -31,6 +33,7 @@ class User {
         $this->created_at = $created_at;
         $this->is_user    = $is_user;
         $this->is_guest   = $is_guest;
+        $this->token      = $token;
     }
 
     public function get_id(): int {
@@ -103,5 +106,13 @@ class User {
 
     public function set_is_guest( bool $is_guest ): void {
         $this->is_guest = $is_guest;
+    }
+
+    public function get_token() {
+        return $this->token;
+    }
+
+    public function set_token( string $token ): void {
+        $this->token = $token;
     }
 }

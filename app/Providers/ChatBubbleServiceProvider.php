@@ -4,6 +4,7 @@ namespace HelpGent\App\Providers;
 
 use HelpGent\App\Repositories\FormRepository;
 use HelpGent\WaxFramework\Contracts\Provider;
+use HelpGentPro\App\Mail\NewMessage;
 
 class ChatBubbleServiceProvider implements Provider {
     public function boot() {
