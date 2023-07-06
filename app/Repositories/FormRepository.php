@@ -64,7 +64,13 @@ class FormRepository {
         $template = $templates[$template_key];
 
         if ( ! $template['is_pro'] ) {
+
             $demo_dir = helpgent_dir( "app/Templates/{$template_key}/demo.json" );
+
+            if ( ! is_file( $demo_dir ) ) {
+                throw new Exception( "Demo file json not found", 404 );
+            }
+
             return file_get_contents( $demo_dir );
         }
 
