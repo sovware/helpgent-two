@@ -337,10 +337,10 @@ function helpgent_get_valid_guest() {
  *
  * @return User|bool
  */
-function helpgent_get_current_user() {
+function helpgent_get_current_user( bool $hard = false ) {
     global $helpgent_user;
 
-    if ( ! is_null( $helpgent_user ) ) {
+    if ( ! $hard && ! is_null( $helpgent_user ) ) {
         return $helpgent_user;
     }
 
@@ -412,7 +412,7 @@ function helpgent_get_email_placeholders( array $placeholders = [], User $user )
     $dashboard_url = ! empty( $user->token ) ? add_query_arg( 'hg-auth-token', $user->token, $dashboard_url ) : $dashboard_url;
 
     $default_placeholders = [
-        '{{NAME}}'              => ! empty( $user->first_name ) ? $user->first_name . ' ' . $user->last_name : 'User',
+        '{{NAME}}'              => ! empty( $user->first_name ) ? $user->first_name . ( ! empty( $user->last_name ) ? ' ' . $user->last_name : '' ) : 'User',
         '{{REPLIER_NAME}}'      => helpgent_get_setting( 'email_from' ),
         '{{USERNAME}}'          => ! empty( $user->user_name ) ? $user->user_name : 'User',
         '{{SITE_NAME}}'         => $site_name,

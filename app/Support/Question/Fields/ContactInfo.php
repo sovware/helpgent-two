@@ -59,9 +59,9 @@ class ContactInfo extends Question {
                 helpgent_now()->add_days( 30 )
             );
             $guest_id  = $this->guest_repository->create( $guest_dto );
-            $this->response_repository->add_meta( $response_id, 'contact_info_submit', 1 );
         }
 
+        $this->response_repository->add_meta( $response_id, 'contact_info_submit', 1 );
         $this->response_repository->update_create_by( $response_id, $guest_id, 1 );
         $this->response_repository->update_status( $response_id, 'unverified' );
     }

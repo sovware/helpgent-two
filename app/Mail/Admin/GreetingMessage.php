@@ -1,25 +1,20 @@
 <?php
 
-namespace HelpGent\App\Mail;
+namespace HelpGent\App\Mail\Admin;
 
 use HelpGent\WaxFramework\View\View;
+use HelpGent\App\Mail\Mailable;
 
 class GreetingMessage extends Mailable {
     protected array $data;
 
-    public function __construct( bool $is_guest ) {
-        if ( $is_guest ) {
-            $message =  helpgent_get_setting( 'greeting_guest_email_body', $this->guest_email_default_body() );
-        } else {
-            $message = helpgent_get_setting( 'greeting_email_body', $this->email_default_body() );
-        }
-
+    public function __construct() {
         $this->data = [
-            'subject'                 => helpgent_get_setting( 'greeting_email_subject', "Welcome to Support" ),
+            'subject'                 => helpgent_get_setting( 'greeting_admin_email_subject', "Admin Welcome to Support" ),
             'enable_email_header'     => helpgent_get_setting( 'enable_email_header', true ),
             'header_background_color' => helpgent_get_setting( 'email_header_background_color', '#6551f2' ),
             'enable_email_footer'     => helpgent_get_setting( 'enable_email_footer', true ),
-            'message'                 => $message
+            'message'                 => helpgent_get_setting( 'greeting_admin_email_body', $this->email_default_body() )
         ];
     }
 
@@ -45,18 +40,5 @@ class GreetingMessage extends Mailable {
             
             Thanks,
             The Administrator of {{SITE_NAME}}";
-    }
-
-    private function guest_email_default_body() {
-        return "Dear {{NAME}},
-
-        Thank You For Sharing Your Concern. 
-        
-        We have received your request. A support representative will get back to you within 24 hours.
-        
-        A guest token has been generated that can be used to access the conversation and it is valid until 30 days from now. You can continue conversation from the link {{VERIFICATION_LINK}}
-        
-        Thanks,
-        The Administrator of {{SITE_NAME}}";
     }
 }

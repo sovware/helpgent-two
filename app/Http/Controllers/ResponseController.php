@@ -254,7 +254,7 @@ class ResponseController extends Controller {
              */
             $field_handler->save_answer( $this->wp_rest_request, $field, $response->id );
 
-            $this->submit_form( $form_id, $response, $this->wp_rest_request->get_param( 'hg-response-token' ) );
+            $this->submit_form( $form_id, $response->id, $this->wp_rest_request->get_param( 'hg-response-token' ) );
 
             return Response::send( [], 201 );
         } catch ( Exception $exception ) {
@@ -266,18 +266,22 @@ class ResponseController extends Controller {
         }
     }
 
-    private function submit_form( $form_id, $response, $token ) {
+    private function submit_form( $form_id, $response_id, $token ) {
         if ( ! $this->wp_rest_request->has_param( 'submit' ) ) {
             return;
         }
+
+        $response = $this->response_repository->get_by_id( $response_id );
     
         if ( is_user_logged_in() ) {
 
             $user = wp_get_current_user();
 
-            if ( $user->ID !== intval( $response->created_at ) ) {
+            if ( $user->ID !== intval( $response->created_by ) ) {
                 $this->response_repository->update_create_by( $response->id, $user->ID );
             }
+
+            $this->response_repository->update_status( $response->id, 'active' );
 
         } else {
             $contact_info_submit = $this->response_repository->get_meta_value( $response->id ,'contact_info_submit' );
@@ -286,18 +290,22 @@ class ResponseController extends Controller {
                 throw new Exception( esc_html__( "Guest user required contact information", 'helpgent' ), 500 );
             }
 
-            $guest = Guest::query()->where( 'id', $response->created_at )->first();
+            $guest = Guest::query()->where( 'id', $response->created_by )->first();
 
             if ( ! $guest ) {
                 throw new Exception( esc_html__( "Guest user not found", 'helpgent' ), 404 );
             }
 
             $_REQUEST['hg-auth-token'] = $guest->token;
+
+            $this->response_repository->update_status( $response->id, 'unverified' );
         }
 
         $this->form_repository->delete_meta( $form_id, $token );
         $this->response_repository->delete_meta( $response->id, 'contact_info_submit' );
-        $this->response_repository->update_status( $response->id, 'active' );
+        $this->response_repository->add_meta( $response->id, 'token', $token );
+
+        $response->token = $token;
 
         do_action( 'helpgent_after_submit_form', $response );
     }
