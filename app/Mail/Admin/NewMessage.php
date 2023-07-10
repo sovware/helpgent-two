@@ -1,19 +1,20 @@
 <?php
 
-namespace HelpGent\App\Mail;
+namespace HelpGent\App\Mail\Admin;
 
 use HelpGent\WaxFramework\View\View;
+use HelpGent\App\Mail\Mailable;
 
 class NewMessage extends Mailable {
     protected array $data;
 
     public function __construct() {
         $this->data = [
-            'subject'                 => helpgent_get_setting( 'new_message_email_subject', "New Message From {{REPLIER_NAME}}" ),
+            'subject'                 => helpgent_get_setting( 'new_message_admin_email_subject', "Got Message From {{REPLIER_NAME}}" ),
             'enable_email_header'     => helpgent_get_setting( 'enable_email_header', true ),
             'enable_email_footer'     => helpgent_get_setting( 'enable_email_footer', true ),
             'header_background_color' => helpgent_get_setting( 'email_header_background_color', '#6551f2' ),
-            'message'                 => helpgent_get_setting( 'new_message_email_body', $this->email_default_body() )
+            'message'                 => helpgent_get_setting( 'new_message_admin_email_body', $this->email_default_body() )
         ];
     }
 

@@ -272,7 +272,7 @@ class ResponseController extends Controller {
         }
 
         $response = $this->response_repository->get_by_id( $response_id );
-    
+
         if ( is_user_logged_in() ) {
 
             $user = wp_get_current_user();
@@ -283,9 +283,10 @@ class ResponseController extends Controller {
 
             $this->response_repository->update_status( $response->id, 'active' );
 
+            $auth_token = null;
         } else {
             $contact_info_submit = $this->response_repository->get_meta_value( $response->id ,'contact_info_submit' );
-            
+
             if ( ! $contact_info_submit ) {
                 throw new Exception( esc_html__( "Guest user required contact information", 'helpgent' ), 500 );
             }
@@ -296,7 +297,7 @@ class ResponseController extends Controller {
                 throw new Exception( esc_html__( "Guest user not found", 'helpgent' ), 404 );
             }
 
-            $_REQUEST['hg-auth-token'] = $guest->token;
+            $auth_token = $guest->token;
 
             $this->response_repository->update_status( $response->id, 'unverified' );
         }
@@ -307,7 +308,7 @@ class ResponseController extends Controller {
 
         $response->token = $token;
 
-        do_action( 'helpgent_after_submit_form', $response );
+        do_action( 'helpgent_after_submit_form', $response, $auth_token );
     }
 
     private function get_response_by_token() {

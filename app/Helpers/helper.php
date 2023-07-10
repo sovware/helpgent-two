@@ -391,7 +391,6 @@ function helpgent_get_current_user( bool $hard = false ) {
 * @return string Dashboard Page Url
 */
 function helpgent_get_dashboard_page_url() {
-
     $url     = home_url();
     $page_id = get_option( 'user_dashboard_page_id' );
 
@@ -402,27 +401,45 @@ function helpgent_get_dashboard_page_url() {
     return apply_filters( 'helpgent_dashboard_page_link', $url, $page_id );
 }
 
-function helpgent_get_email_placeholders( array $placeholders = [], User $user ) : array {
-    $site_name     = get_option( 'blogname' );
-    $site_url      = site_url();
-    $date_format   = get_option( 'date_format' );
-    $time_format   = get_option( 'time_format' );
-    $current_time  = current_time( 'timestamp' );
-    $dashboard_url = helpgent_get_dashboard_page_url();
-    $dashboard_url = ! empty( $user->token ) ? add_query_arg( 'hg-auth-token', $user->token, $dashboard_url ) : $dashboard_url;
+function helpgent_get_dashboard_page_url_with_token( string $token, bool $verification_link = false ) {
+    $dashboard_url = add_query_arg( 'hg-auth-token', $token,  helpgent_get_dashboard_page_url() );
+    
+    if ( ! $verification_link ) {
+        return $dashboard_url;
+    }
+    return add_query_arg( 'verification', true,  $dashboard_url );
+}
+
+/**
+ * Helpgent mail template common placeholders
+ * 
+ * Other Placeholders:- {{NAME}} {{USERNAME}} {{MESSAGE}} {{REPLIER_NAME}} {{CONVERSATION_LINK}} {{VERIFICATION_LINK}}
+ *
+ * @param array $placeholders
+ * @param User $user
+ * @return array
+ */
+function helpgent_get_email_placeholders( array $placeholders = [] ) : array {
+    $site_name    = get_option( 'blogname' );
+    $site_url     = site_url();
+    $date_format  = get_option( 'date_format' );
+    $time_format  = get_option( 'time_format' );
+    $current_time = current_time( 'timestamp' );
 
     $default_placeholders = [
-        '{{NAME}}'              => ! empty( $user->first_name ) ? $user->first_name . ( ! empty( $user->last_name ) ? ' ' . $user->last_name : '' ) : 'User',
-        '{{REPLIER_NAME}}'      => helpgent_get_setting( 'email_from' ),
-        '{{USERNAME}}'          => ! empty( $user->user_name ) ? $user->user_name : 'User',
-        '{{SITE_NAME}}'         => $site_name,
-        '{{SITE_LINK}}'         => sprintf( '<a href="%s" style="color: #1b83fb;">%s</a>', $site_url, $site_name ),
-        '{{SITE_URL}}'          => sprintf( '<a href="%s" style="color: #1b83fb;">%s</a>', $site_url, $site_url ),
-        '{{TODAY}}'             => date_i18n( $date_format, $current_time ),
-        '{{NOW}}'               => date_i18n( $date_format . ' ' . $time_format, $current_time ),
-        '{{CONVERSATION_LINK}}' => sprintf( '<a href="%s" style="color: #1b83fb;">%s</a>', $dashboard_url, $dashboard_url )
-        // '{{MESSAGE}}'
+        '{{SITE_NAME}}' => $site_name,
+        '{{SITE_LINK}}' => helpgent_prepare_email_link( $site_url, $site_name ),
+        '{{SITE_URL}}'  => helpgent_prepare_email_link( $site_url ),
+        '{{TODAY}}'     => date_i18n( $date_format, $current_time ),
+        '{{NOW}}'       => date_i18n( $date_format . ' ' . $time_format, $current_time )
     ];
 
     return apply_filters( 'helpgent_email_placeholders', array_merge( $default_placeholders, $placeholders ) );
+}
+
+function helpgent_prepare_email_link( string $link, string $text = '' ) {
+    if ( empty( $text ) ) {
+        $text = $link;
+    }
+    return sprintf( '<a href="%s" style="color: #1b83fb;">%s</a>', $link, $text );
 }

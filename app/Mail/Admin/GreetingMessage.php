@@ -22,7 +22,7 @@ class GreetingMessage extends Mailable {
         $data = $this->data;
 
         $this->subject = $this->prepare( $data['subject'] );
-        
+
         $data['message'] = $this->prepare( $data['message'] );
         $data['subject'] = $this->subject;
 
@@ -38,6 +38,10 @@ class GreetingMessage extends Mailable {
             
             You can continue the conversation from the link {{CONVERSATION_LINK}}
             
+            username = {{USERNAME}}
+
+            replier_name = {{REPLIER_NAME}}
+
             Thanks,
             The Administrator of {{SITE_NAME}}";
     }

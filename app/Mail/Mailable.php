@@ -20,9 +20,9 @@ abstract class Mailable {
     }
 
     public function send() {
-        $headers = $this->headers;
-        $headers = "content-type: {$this->content_type}";
-        $body    = $this->get_body();
+        $headers   = $this->headers;
+        $headers[] = "content-type: {$this->content_type}";
+        $body      = $this->get_body();
         return wp_mail( $this->to, html_entity_decode( $this->subject ), $body, $headers );
     }
 }

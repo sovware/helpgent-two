@@ -13,8 +13,6 @@ class MessageDTO {
 
     private int $is_read;
 
-    private int $is_guest;
-
     /**
      * @var int|null
      */
@@ -26,6 +24,8 @@ class MessageDTO {
     private $forward_id;
 
     private int $created_by;
+    
+    private int $is_guest;
 
     /**
      * @var int|null $agent_trigger

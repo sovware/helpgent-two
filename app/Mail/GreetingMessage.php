@@ -43,6 +43,8 @@ class GreetingMessage extends Mailable {
             
             You can continue the conversation from the link {{CONVERSATION_LINK}}
             
+            username = {{USERNAME}}
+
             Thanks,
             The Administrator of {{SITE_NAME}}";
     }
