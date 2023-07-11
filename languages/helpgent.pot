@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: HelpGent 2.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/helpgent-two\n"
-"POT-Creation-Date: 2023-07-03 07:53:33+00:00\n"
+"POT-Creation-Date: 2023-07-05 11:43:48+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,12 +13,12 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 1.0.3\n"
 
-#: app/Http/Controllers/Admin/FormController.php:81
+#: app/Http/Controllers/Admin/FormController.php:91
 msgid "Form Created Successfully!"
 msgstr ""
 
-#: app/Http/Controllers/Admin/FormController.php:157
-#: app/Http/Controllers/Admin/FormController.php:236
+#: app/Http/Controllers/Admin/FormController.php:175
+#: app/Http/Controllers/Admin/FormController.php:254
 #: app/Http/Controllers/Admin/ResponseController.php:48
 #: app/Http/Controllers/Admin/ResponseController.php:90
 #: app/Http/Controllers/Admin/TagController.php:130
@@ -26,15 +26,15 @@ msgstr ""
 msgid "Something Was Wrong!"
 msgstr ""
 
-#: app/Http/Controllers/Admin/FormController.php:164
+#: app/Http/Controllers/Admin/FormController.php:182
 msgid "Form Updated Successfully!"
 msgstr ""
 
-#: app/Http/Controllers/Admin/FormController.php:201
+#: app/Http/Controllers/Admin/FormController.php:219
 msgid "Form status updated successfully!"
 msgstr ""
 
-#: app/Http/Controllers/Admin/FormController.php:243
+#: app/Http/Controllers/Admin/FormController.php:261
 msgid "Form Deleted Successfully!"
 msgstr ""
 
@@ -93,43 +93,39 @@ msgstr ""
 msgid "Sorry, Message not found"
 msgstr ""
 
-#: app/Http/Controllers/ForwardController.php:68
+#: app/Http/Controllers/ForwardController.php:67
 msgid "Sorry, you are not allowed to send message any specific user"
 msgstr ""
 
-#: app/Http/Controllers/ForwardController.php:76
+#: app/Http/Controllers/ForwardController.php:75
 msgid "Sorry, you can't forward this message"
 msgstr ""
 
-#: app/Http/Controllers/ForwardController.php:86
+#: app/Http/Controllers/ForwardController.php:85
 msgid "Sorry, you can't forward messages in this message"
 msgstr ""
 
-#: app/Http/Controllers/ForwardController.php:112
+#: app/Http/Controllers/ForwardController.php:132
 msgid "Messages forward successfully!"
 msgstr ""
 
-#: app/Http/Controllers/ForwardController.php:121
+#: app/Http/Controllers/ForwardController.php:141
 msgid "Sorry, you are not eligible to get the users list"
 msgstr ""
 
 #: app/Http/Controllers/MessageController.php:49
-#: app/Http/Controllers/MessageController.php:106
-#: app/Http/Controllers/MessageController.php:162
-#: app/Http/Controllers/MessageController.php:216
-#: app/Http/Controllers/MessageController.php:256
+#: app/Http/Controllers/MessageController.php:107
+#: app/Http/Controllers/MessageController.php:169
+#: app/Http/Controllers/MessageController.php:248
+#: app/Http/Controllers/MessageController.php:288
 msgid "Sorry, you are not allowed access this response conversations"
-msgstr ""
-
-#: app/Http/Controllers/MessageController.php:181
-msgid "Message updated successfully!"
 msgstr ""
 
 #: app/Http/Controllers/ResponseController.php:135
 #: app/Repositories/FormRepository.php:37
-#: app/Repositories/FormRepository.php:61
-#: app/Repositories/FormRepository.php:82
-#: app/Repositories/FormRepository.php:96
+#: app/Repositories/FormRepository.php:87
+#: app/Repositories/FormRepository.php:108
+#: app/Repositories/FormRepository.php:122
 msgid "Form not found"
 msgstr ""
 
@@ -211,6 +207,10 @@ msgstr ""
 msgid "Please use a valid media driver"
 msgstr ""
 
+#: app/Repositories/FormRepository.php:61
+msgid "Template not found"
+msgstr ""
+
 #: app/Repositories/GuestRepository.php:14
 msgid "This email address already exists"
 msgstr ""
@@ -219,11 +219,11 @@ msgstr ""
 msgid "This email address is already in the user table."
 msgstr ""
 
-#: app/Repositories/MessageRepository.php:88
+#: app/Repositories/MessageRepository.php:92
 msgid "This message was removed"
 msgstr ""
 
-#: app/Repositories/MessageRepository.php:127
+#: app/Repositories/MessageRepository.php:131
 #: app/Repositories/ResponseRepository.php:142
 #: app/Repositories/ResponseRepository.php:177
 #: app/Repositories/ResponseRepository.php:199
@@ -232,13 +232,21 @@ msgstr ""
 msgid "Form response not found"
 msgstr ""
 
-#: app/Repositories/MessageRepository.php:160
-#: app/Repositories/MessageRepository.php:179
+#: app/Repositories/MessageRepository.php:165
+#: app/Repositories/MessageRepository.php:201
 msgid "Message not found."
 msgstr ""
 
-#: app/Repositories/MessageRepository.php:164
+#: app/Repositories/MessageRepository.php:171
+msgid "Sorry, you can't update this message"
+msgstr ""
+
+#: app/Repositories/MessageRepository.php:175
 msgid "Sorry, you can't update the attachment."
+msgstr ""
+
+#: app/Repositories/MessageRepository.php:207
+msgid "Sorry, you can't delete this message"
 msgstr ""
 
 #: app/Repositories/ResponseRepository.php:190
@@ -331,6 +339,10 @@ msgstr ""
 
 #: app/Support/Question/Fields/ContactInfo.php:49
 msgid "You already have an account, please enter you password to continue"
+msgstr ""
+
+#: config/templates.php:7
+msgid "Sample One"
 msgstr ""
 
 #: resources/views/admin/notice/nginx-setup-notice.php:4

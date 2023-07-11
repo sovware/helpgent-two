@@ -46,12 +46,13 @@ class FormController extends Controller {
     public function store( Validator $validator, WP_REST_Request $wp_rest_request ) {
         $validator->validate(
             [
-                'title'            => 'required|string|max:255|min:5',
-                'status'           => 'required|string|accepted:publish,draft',
-                'content'          => 'required|json',
-                'is_chat_bubble'   => 'required|accepted:0,1',
-                'is_guest_allowed' => 'required|accepted:0,1',
-                'available_pages'  => 'required|array'
+                'title'             => 'required|string|max:255|min:5',
+                'status'            => 'required|string|accepted:publish,draft',
+                'content'           => 'required|json',
+                'is_chat_bubble'    => 'required|accepted:0,1',
+                'is_guest_allowed'  => 'required|accepted:0,1',
+                'available_pages'   => 'required|array',
+                'selected_template' => 'string' 
             ]
         );
 
@@ -63,24 +64,41 @@ class FormController extends Controller {
             );
         }
 
-        $form_dto = new FormDTO(
-            $wp_rest_request->get_param( 'title' ),
-            $wp_rest_request->get_param( 'status' ),
-            $wp_rest_request->get_param( 'content' ),
-            intval( $wp_rest_request->get_param( 'is_chat_bubble' ) ),
-            $wp_rest_request->get_param( 'available_pages' ),
-            intval( $wp_rest_request->get_param( 'is_guest_allowed' ) ),
-            get_current_user_id(),
-        );
+        try {
+            $selected_template = $wp_rest_request->get_param( 'selected_template' );
 
-        $form_id = $this->form_repository->create( $form_dto );
+            if ( ! empty( $selected_template ) ) {
+                $content = $this->form_repository->get_template_content( $selected_template );
+            } else {
+                $content = $wp_rest_request->get_param( 'content' );
+            }
 
-        return Response::send(
-            [
-                'form_id' => $form_id,
-                'message' => esc_html__( 'Form Created Successfully!', 'helpgent' )
-            ]
-        );
+            $form_dto = new FormDTO(
+                $wp_rest_request->get_param( 'title' ),
+                $wp_rest_request->get_param( 'status' ),
+                $content,
+                intval( $wp_rest_request->get_param( 'is_chat_bubble' ) ),
+                $wp_rest_request->get_param( 'available_pages' ),
+                intval( $wp_rest_request->get_param( 'is_guest_allowed' ) ),
+                get_current_user_id(),
+            );
+    
+            $form_id = $this->form_repository->create( $form_dto );
+    
+            return Response::send(
+                [
+                    'form'    => $this->form_repository->get_single( $form_id ),
+                    'message' => esc_html__( 'Form Created Successfully!', 'helpgent' )
+                ]
+            );
+        } catch ( Exception $exception ) {
+            return Response::send(
+                [
+                    'message' => $exception->getMessage()
+                ],
+                $exception->getCode()
+            );
+        }
     }
 
     public function show( Validator $validator, WP_REST_Request $wp_rest_request ) {
@@ -251,5 +269,22 @@ class FormController extends Controller {
                 $exception->getCode()
             );
         }
+    }
+
+    public function templates() {
+        $templates       = helpgent_config( 'templates' );
+        $templates_url   = helpgent_url( 'app/Templates' );
+        $final_templates = [];
+
+        foreach ( $templates as $key => $template ) {
+            $template['screenshot_src'] = $templates_url . "/{$key}/screenshot.webp";
+            $final_templates[$key]      = $template;
+        }
+
+        return Response::send(
+            [
+                'templates' => $final_templates
+            ]
+        );
     }
 }

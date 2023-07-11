@@ -32,6 +32,8 @@ class MessageDTO {
      */
     private string $status;
 
+    private string $replied_by;
+
     private $agent_trigger;
 
     public function __construct( int $response_id, string $message = '', int $created_by = 0, int $attachment_id = 0, int $is_guest = 0, int $parent_id = 0, $forward_id = 0, int $is_read = 0, string $status = 'publish', $agent_trigger = null ) {
@@ -133,5 +135,13 @@ class MessageDTO {
 
     public function set_agent_trigger( int $agent_trigger ) {
         $this->agent_trigger = $agent_trigger;
+    }
+
+    public function get_replied_by() {
+        return $this->replied_by;
+    }
+
+    public function set_replied_by( string $replied_by ) {
+        $this->replied_by = $replied_by;
     }
 }

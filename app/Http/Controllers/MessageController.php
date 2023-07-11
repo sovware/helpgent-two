@@ -65,6 +65,7 @@ class MessageController extends Controller {
         $validator->validate(
             [
                 'response_id'   => 'required|numeric',
+                'replied_by'    => 'required|string|max:50',
                 'message'       => 'string',
                 'attachment_id' => 'integer',
                 'parent_id'     => 'integer|min:1'
@@ -117,6 +118,8 @@ class MessageController extends Controller {
             intval( $wp_rest_request->get_param( 'parent_id' ) )
         );
 
+        $message_dto->set_replied_by( $wp_rest_request->get_param( 'replied_by' ) );
+
         try {
             do_action( 'helpgent_before_store_message', $message_dto, $wp_rest_request );
             
@@ -127,7 +130,7 @@ class MessageController extends Controller {
             do_action( 'helpgent_after_store_message', $message_dto, $wp_rest_request );
             return Response::send(
                 [
-                    'message_id' => $message_id
+                    'message' => $this->repository->get_single( $message_id )
                 ], 201 
             );
         } catch ( Exception $exception ) {
@@ -180,11 +183,36 @@ class MessageController extends Controller {
             $this->repository->update( $message_dto );
 
             do_action( 'helpgent_before_update_message', $message_dto, $wp_rest_request );
+            return Response::send( [] );
+        } catch ( Exception $exception ) {
             return Response::send(
                 [
-                    'message' => esc_html__( "Message updated successfully!", 'helpgent' )
-                ] 
+                    'message' => $exception->getMessage()
+                ],
+                $exception->getCode()
             );
+        }
+    }
+
+    public function read( Validator $validator, WP_REST_Request $wp_rest_request ) {
+        $validator->validate(
+            [
+                'response_id' => 'required|numeric',
+                'ids'         => 'required|array'
+            ]
+        );
+
+        if ( $validator->is_fail() ) {
+            return Response::send(
+                [
+                    'messages' => $validator->errors
+                ], 422
+            );
+        }
+
+        try {
+            $this->repository->update_read_status( $wp_rest_request->get_param( 'response_id' ), $wp_rest_request->get_param( 'ids' ) );
+            return Response::send( [] );
         } catch ( Exception $exception ) {
             return Response::send(
                 [
