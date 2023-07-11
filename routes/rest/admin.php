@@ -10,7 +10,12 @@ use HelpGent\WaxFramework\Routing\Route;
 
 Route::group(
     'admin', function () {
-        Route::resource( 'form', FormController::class );
+        Route::group(
+            'form', function() {
+                Route::get( 'templates', [FormController::class, 'templates'] );
+                Route::resource( '/', FormController::class );
+            }
+        );
         Route::post( 'form/{id}/status', [FormController::class, 'update_status'] );
         Route::resource( 'tag', TagController::class, ['items' => ['show']] );
         Route::group(

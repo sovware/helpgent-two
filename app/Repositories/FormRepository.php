@@ -53,6 +53,38 @@ class FormRepository {
             ]
         );
     }
+
+    public function get_template_content( string $template_key ) {
+        $templates = helpgent_config( 'templates' );
+
+        if ( ! isset( $templates[$template_key] ) ) {
+            throw new Exception( esc_html__( 'Template not found', 'helpgent' ), 404 );
+        }
+
+        $template = $templates[$template_key];
+
+        if ( ! $template['is_pro'] ) {
+
+            $demo_dir = helpgent_dir( "app/Templates/{$template_key}/demo.json" );
+
+            if ( ! is_file( $demo_dir ) ) {
+                throw new Exception( "Demo file json not found", 404 );
+            }
+
+            return file_get_contents( $demo_dir );
+        }
+
+        if ( ! class_exists( 'HelpGentPro' ) ) {
+            throw new Exception( "HelpGent Pro version required!", 404 );
+        }
+
+        /**
+         * @var \HelpGentPro\App\Repositories\FormRepository $form_repository
+         */
+        $form_repository = helpgent_pro_singleton( \HelpGentPro\App\Repositories\FormRepository::class );
+
+        return $form_repository->get_template_content( $template_key );
+    }
     
     public function update( FormDTO $form_dto ) {
         $form = $this->get_by_id( $form_dto->get_id() );
