@@ -2,6 +2,7 @@ import { lazy, Suspense, useState } from '@wordpress/element';
 import { Spinner, FormToggle } from '@wordpress/components';
 import ReactSVG from 'react-inlinesvg';
 import PropTypes from 'prop-types';
+import getFormTableBody from '../helper/getFormTableBody.js';
 const TitleBox = lazy( () => import( './TitleBox' ) );
 const TableActions = lazy( () => import( './TableActions.js' ) );
 const WelcomeBox = lazy( () => import( './WelcomeBox.js' ) );
@@ -20,82 +21,6 @@ export default function FormTable( props ) {
 	const [ isEditModeActive, setEditModeStatus ] = useState( false );
 
 	const [ formTitleInput, setFormTitleInput ] = useState( '' );
-
-	/**
-	 * Function for load data with dom
-	 * @returns Dom of table body
-	 */
-	function tableContent() {
-		if ( isFetchError ) {
-			return <span>{ formErrorMessage }</span>;
-		}
-
-		const dateFormatOptions = {
-			year: 'numeric',
-			month: 'long',
-			day: 'numeric',
-		};
-
-		return forms.length !== 0 ? (
-			forms.map( ( form ) => (
-				<tr key={ form.id }>
-					<td>
-						<TitleBox
-							isEditModeActive={ isEditModeActive }
-							setEditModeStatus={ setEditModeStatus }
-							form={ form }
-						/>
-					</td>
-					<td className="helpgent-form-shortCode">
-						<label>
-							<input
-								type="text"
-								readOnly
-								value={ `[helpgent_form id="${ form.id }"]` }
-							/>
-						</label>
-					</td>
-					<td>{ form.total_responses }</td>
-					<td>
-						{ formatDate(
-							'en-US',
-							form.created_at,
-							dateFormatOptions
-						) }
-					</td>
-					<td>
-						<div className="helpgent-toggle helpgent-toggle-success">
-							<FormToggle />
-							<span className="helpgent-form-status">Active</span>
-						</div>
-					</td>
-					<td>
-						<Suspense fallback={ <></> }>
-							<TableActions
-								id={ form.id }
-								form={ form }
-								setEditModeStatus={ setEditModeStatus }
-								setFormTitleInput={ setFormTitleInput }
-							/>
-						</Suspense>
-					</td>
-				</tr>
-			) )
-		) : (
-			<tr>
-				<td colSpan={ 7 }>
-					<WelcomeBoxStyleWrap>
-						<Suspense fallback={ <Spinner /> }>
-							<WelcomeBox
-								isCreatePopupOpen={ isCreatePopupOpen }
-								setCreatePopupStatus={ setCreatePopupStatus }
-							/>
-						</Suspense>
-					</WelcomeBoxStyleWrap>
-				</td>
-			</tr>
-		);
-	}
 
 	return (
 		<FormTableStyle>
@@ -117,7 +42,13 @@ export default function FormTable( props ) {
 					</thead>
 					<tbody>
 						{ forms ? (
-							tableContent()
+							getFormTableBody(
+								forms,
+								isEditModeActive,
+								setEditModeStatus,
+								setFormTitleInput,
+								isFetchError
+							)
 						) : (
 							<tr>
 								<td colSpan={ 7 }>

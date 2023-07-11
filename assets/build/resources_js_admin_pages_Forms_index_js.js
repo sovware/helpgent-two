@@ -2338,7 +2338,7 @@ function CreatePopupForm() {
   });
   const {
     mutateAsync: createFormMutation
-  } = (0,_hooks_useCreateMutation_js__WEBPACK_IMPORTED_MODULE_9__["default"])('/helpgent/admin/form', 'helpgent-form', function (previousData, forms) {
+  } = (0,_hooks_useCreateMutation_js__WEBPACK_IMPORTED_MODULE_9__["default"])('/helpgent/admin/form', function (previousData, forms) {
     previousData.forms.push(forms);
     previousData.total = previousData.forms.length;
     queryClient.setQueryData(['helpgent-form'], old => previousData);
@@ -2372,9 +2372,13 @@ function CreatePopupForm() {
       isOnlySpace: value => {
         const isValid = value.trim().length !== 0;
         return isValid || 'Only spaces not allowed';
+      },
+      minLength: value => {
+        const isValid = value.trim().length >= 5;
+        return isValid || 'The title filed must be at least 5 characters.';
       }
     }
-  }))), errors.title?.type === 'required' ? (0,_helper_getValidationMessage_js__WEBPACK_IMPORTED_MODULE_10__["default"])(errors.title.message) : serverErrors.title ? (0,_helper_getValidationMessage_js__WEBPACK_IMPORTED_MODULE_10__["default"])(serverErrors.title) : null, errors.title?.type === 'isOnlySpace' ? (0,_helper_getValidationMessage_js__WEBPACK_IMPORTED_MODULE_10__["default"])(errors.title.message) : serverErrors.title ? (0,_helper_getValidationMessage_js__WEBPACK_IMPORTED_MODULE_10__["default"])(serverErrors.title) : null), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
+  }))), errors.title?.type === 'required' ? (0,_helper_getValidationMessage_js__WEBPACK_IMPORTED_MODULE_10__["default"])(errors.title.message) : serverErrors.title ? (0,_helper_getValidationMessage_js__WEBPACK_IMPORTED_MODULE_10__["default"])(serverErrors.title) : null, errors.title?.type === 'isOnlySpace' ? (0,_helper_getValidationMessage_js__WEBPACK_IMPORTED_MODULE_10__["default"])(errors.title.message) : serverErrors.title ? (0,_helper_getValidationMessage_js__WEBPACK_IMPORTED_MODULE_10__["default"])(serverErrors.title) : null, errors.title?.type === 'minLength' ? (0,_helper_getValidationMessage_js__WEBPACK_IMPORTED_MODULE_10__["default"])(errors.title.message) : serverErrors.title ? (0,_helper_getValidationMessage_js__WEBPACK_IMPORTED_MODULE_10__["default"])(serverErrors.title) : null), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
     className: "helpgent-form-group"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
     className: "helpgent-form__element-inline"
@@ -2420,9 +2424,9 @@ function CreatePopupForm() {
     defaultOptions: defaultPages
   })) : null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("button", {
     type: "submit",
-    className: `helpgent-btn helpgent-btn-md helpgent-btn-dark helpgent-btn-block ${Object.keys(errors).length !== 0 ? 'helpgent-btn-disabled' : null}`,
-    disabled: Object.keys(errors).length !== 0 ? true : false
-  }, "Create Form"), serverErrors.internal ? (0,_helper_getValidationMessage_js__WEBPACK_IMPORTED_MODULE_10__["default"])(serverErrors.internal) : null)));
+    className: `helpgent-btn helpgent-btn-md helpgent-btn-dark helpgent-btn-block ${Object.keys(errors).length !== 0 || Object.keys(serverErrors).length !== 0 ? 'helpgent-btn-disabled' : null}`,
+    disabled: Object.keys(errors).length !== 0 || Object.keys(serverErrors).length !== 0 ? true : false
+  }, "Create Form"), serverErrors.internal && (0,_helper_getValidationMessage_js__WEBPACK_IMPORTED_MODULE_10__["default"])(serverErrors.internal))));
 }
 
 /***/ }),
@@ -2661,6 +2665,9 @@ const CreatePopupStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default
         line-height: 1.38;
         color: var(--helpgent-color-dark);
    }
+   .helpgent-validate-danger{
+    display: block;
+   }
 `;
 const WelcomeBoxStyleWrap = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div`
     width: fit-content;
@@ -2743,36 +2750,35 @@ const SingleFormHeaderStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["de
 
 /***/ }),
 
-/***/ "./resources/js/admin/pages/Forms/context/FormAppStateContext.js":
-/*!***********************************************************************!*\
-  !*** ./resources/js/admin/pages/Forms/context/FormAppStateContext.js ***!
-  \***********************************************************************/
+/***/ "./resources/js/admin/pages/Forms/context/FormTableStateContext.js":
+/*!*************************************************************************!*\
+  !*** ./resources/js/admin/pages/Forms/context/FormTableStateContext.js ***!
+  \*************************************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   FormAppStateProvider: () => (/* binding */ FormAppStateProvider),
-/* harmony export */   useFormAppState: () => (/* binding */ useFormAppState)
+/* harmony export */   FormTableStateProvider: () => (/* binding */ FormTableStateProvider),
+/* harmony export */   useFormTableState: () => (/* binding */ useFormTableState)
 /* harmony export */ });
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 
 
-const FormAppStateContent = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createContext)();
-const useFormAppState = () => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useContext)(FormAppStateContent);
-const FormAppStateProvider = _ref => {
+const FormTableStateContent = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createContext)();
+const useFormTableState = () => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useContext)(FormTableStateContent);
+const FormTableStateProvider = _ref => {
   let {
     children
   } = _ref;
-  const formAppObj = {
-    formInputTitle: "",
-    layoutMode: 'mediaLeft'
+  const formTableStateObj = {
+    formInputTitle: ''
   };
-  const [formAppState, setFormAppState] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(formAppObj);
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(FormAppStateContent.Provider, {
+  const [formTableState, setFormTableState] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(formTableStateObj);
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(FormTableStateContent.Provider, {
     value: {
-      formAppState,
-      setFormAppState
+      formTableState,
+      setFormTableState
     }
   }, children);
 };
@@ -2849,16 +2855,16 @@ async function handleCreateForm(form, createFormMutation, setServerErrors, navig
     content: screenFormContent
   };
   formData.title = form.title;
-  formData.available_pages = form.available_pages;
-  formData.is_chat_bubble = form.displayChatBubble;
+  formData.available_pages = form.available_pages || [];
+  formData.is_chat_bubble = form.displayChatBubble || '0';
   try {
     const createFormResponse = await createFormMutation(formData);
     if (createFormResponse) {
-      navigate(`/forms/${createFormResponse.form_id}`);
+      navigate(`/forms/${createFormResponse.form.id}`);
     }
   } catch (error) {
     const errors = {
-      internal: error.message
+      internal: "Server Error"
     };
     setServerErrors(errors);
     console.log(error);
@@ -2925,7 +2931,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _context_FormAppStateContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./context/FormAppStateContext */ "./resources/js/admin/pages/Forms/context/FormAppStateContext.js");
+/* harmony import */ var _context_FormTableStateContext_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./context/FormTableStateContext.js */ "./resources/js/admin/pages/Forms/context/FormTableStateContext.js");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _hooks_useFetchData_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../hooks/useFetchData.js */ "./resources/js/hooks/useFetchData.js");
@@ -2948,7 +2954,7 @@ function Forms() {
   const [createPopupStatus, setCreatePopupStatus] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-page-inner"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_context_FormAppStateContext__WEBPACK_IMPORTED_MODULE_1__.FormAppStateProvider, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Suspense, {
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_context_FormTableStateContext_js__WEBPACK_IMPORTED_MODULE_1__.FormTableStateProvider, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Suspense, {
     fallback: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null)
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(PageHeader, {
     forms: forms,
@@ -8109,30 +8115,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _tanstack_react_query__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @tanstack/react-query */ "./node_modules/@tanstack/react-query/build/lib/QueryClientProvider.mjs");
-/* harmony import */ var _tanstack_react_query__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @tanstack/react-query */ "./node_modules/@tanstack/react-query/build/lib/useMutation.mjs");
+/* harmony import */ var _tanstack_react_query__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @tanstack/react-query */ "./node_modules/@tanstack/react-query/build/lib/useMutation.mjs");
 /* harmony import */ var _helper_createData_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @helper/createData.js */ "./resources/js/helper/createData.js");
 
 
 const useCreateMutation = path => {
-  const queryClient = (0,_tanstack_react_query__WEBPACK_IMPORTED_MODULE_1__.useQueryClient)();
-  return (0,_tanstack_react_query__WEBPACK_IMPORTED_MODULE_2__.useMutation)(data => (0,_helper_createData_js__WEBPACK_IMPORTED_MODULE_0__["default"])(path, data));
+  return (0,_tanstack_react_query__WEBPACK_IMPORTED_MODULE_1__.useMutation)(data => (0,_helper_createData_js__WEBPACK_IMPORTED_MODULE_0__["default"])(path, data));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (useCreateMutation);
-
-// , {
-// 	onMutate: async ( data ) => {
-// 		await queryClient.cancelQueries( [ queryKey ] );
-// 		const previousValue = queryClient.getQueryData( [ queryKey ] );
-// 		// queryClient.setQueryData([ queryKey ], (old) => {...old, old[]});
-// 		typeof callback === 'function' && callback( previousValue, data );
-// 		return previousValue;
-// 	},
-// 	onError: ( error, __, previousValue ) => {
-// 		queryClient.setQueryData( [ queryKey ], previousValue );
-// 	},
-// 	onSettled: () => queryClient.invalidateQueries( [ queryKey ] ),
-// }
 
 /***/ }),
 

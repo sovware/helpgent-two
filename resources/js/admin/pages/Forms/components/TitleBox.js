@@ -1,5 +1,10 @@
 import { useState } from '@wordpress/element';
-import { useFormAppState } from '../context/FormAppStateContext';
+import { ToastContainer } from 'react-toastify';
+import { useFormTableState } from '../context/FormTableStateContext.js';
+import useUpdateMutation from '@hooks/useUpdateMutation.js';
+import handleRenameFormTitle from '../helper/handleRenameFormTitle.js';
+import handleFormTitleInput from '../helper/handleFormTitleInput.js';
+import { formatDate } from '@helper/formatter.js';
 import ReactSVG from 'react-inlinesvg';
 import useStore from '@hooks/useStore.js';
 import { TitleBoxStyle } from './style.js';
@@ -8,21 +13,32 @@ import check from '@icon/check.svg';
 
 function titleBox( props ) {
 	const { isEditModeActive, setEditModeStatus, form } = props;
-	const { title } = form;
-	const { formAppState, setFormAppState } = useFormAppState();
+	const { id, title, created_at } = form;
+
+	const [ inputValidation, setInputValidation ] = useState( {
+		isValid: true,
+		message: '',
+	} );
+
+	const { formTableState, setFormTableState } = useFormTableState();
+
+	const { setStoreData, getStoreData } = useStore();
+	const allForms = getStoreData( [ 'helpgent-form' ] );
+
+	const dateFormatOptions = {
+		year: 'numeric',
+		month: 'long',
+		day: 'numeric',
+	};
+
+	/* Form Update Mutation */
+	const { mutateAsync: updateFormMutation, isLoading } = useUpdateMutation(
+		`/helpgent/admin/form/${ id }/rename`
+	);
 
 	function handleCancelEditMode() {
 		setEditModeStatus( false );
 	}
-
-	function handleChangeFormTitle( e ) {
-		setFormAppState( {
-			...formAppState,
-			formInputTitle: e.target.value,
-		} );
-	}
-
-	function handleRenameFormTitle() {}
 
 	return (
 		<TitleBoxStyle className="helpgent-titleBox">
@@ -32,9 +48,17 @@ function titleBox( props ) {
 						<input
 							type="text"
 							name="helpgent-title-input"
-							value={ formAppState.formInputTitle }
-							onChange={ handleChangeFormTitle }
+							value={ formTableState.formInputTitle }
+							onChange={ ( e ) =>
+								handleFormTitleInput(
+									e,
+									setInputValidation,
+									formTableState,
+									setFormTableState
+								)
+							}
 						/>
+						<span>{ inputValidation.message }</span>
 					</div>
 				) : (
 					<div className="helpgent-titleBox__content helpgent-show">
@@ -43,10 +67,15 @@ function titleBox( props ) {
 							<span className="helpgent-title">{ title }</span>
 							<ul className="helpgent-titleBox-meta">
 								<li className="helpgent-titleBox-meta__id">
-									ID #20
+									ID #{ id }
 								</li>
 								<li className="helpgent-titleBox-meta__date">
-									Created: May 29, 2023
+									Created:{ ' ' }
+									{ formatDate(
+										'en-US',
+										created_at,
+										dateFormatOptions
+									) }
 								</li>
 							</ul>
 						</div>
@@ -63,12 +92,22 @@ function titleBox( props ) {
 					</span>
 					<span
 						className="helpgent-titleBox-action-item helpgent-titleBox__actions-yes"
-						onClick={ handleRenameFormTitle }
+						onClick={ () =>
+							handleRenameFormTitle(
+								updateFormMutation,
+								id,
+								allForms,
+								formTableState,
+								setStoreData,
+								setEditModeStatus
+							)
+						}
 					>
-						<ReactSVG src={ check } />
+						{ ! isLoading && <ReactSVG src={ check } /> }
 					</span>
 				</div>
 			) }
+			<ToastContainer />
 		</TitleBoxStyle>
 	);
 }

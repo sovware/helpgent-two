@@ -113,6 +113,9 @@ const CreatePopupStyle = Styled.div`
         line-height: 1.38;
         color: var(--helpgent-color-dark);
    }
+   .helpgent-validate-danger{
+    display: block;
+   }
 `;
 
 const WelcomeBoxStyleWrap = Styled.div`

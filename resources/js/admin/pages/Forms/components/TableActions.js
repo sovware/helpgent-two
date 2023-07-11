@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useFormAppState } from '../context/FormAppStateContext';
+import { useFormTableState } from '../context/FormTableStateContext.js';
 import Dropdown from '@components/Dropdown.js';
 import ReactSVG from 'react-inlinesvg';
 import pencil from '@icon/pencil-solid.svg';
@@ -10,7 +10,7 @@ import trash from '@icon/trash.svg';
 
 export default function TableActions( props ) {
 	const { id, form, setEditModeStatus, setFormTitleInput } = props;
-	const { formAppState, setFormAppState } = useFormAppState();
+	const { formTableState, setFormTableState } = useFormTableState();
 
 	const moreDropdown = [
 		{
@@ -34,14 +34,14 @@ export default function TableActions( props ) {
 		event.preventDefault();
 		if ( name === 'rename' ) {
 			setEditModeStatus( true );
-			setFormAppState( {
-				...formAppState,
+			setFormTableState( {
+				...formTableState,
 				formInputTitle: form.title,
 			} );
 		}
 	}
 
-	//console.log(formAppState);
+	//console.log(formTableState);
 
 	return (
 		<div className="helpgent-table-action">

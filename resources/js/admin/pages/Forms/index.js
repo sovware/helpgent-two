@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { lazy, Suspense, useState } from '@wordpress/element';
-import { FormAppStateProvider } from './context/FormAppStateContext';
+import { FormTableStateProvider } from './context/FormTableStateContext.js';
 import { Spinner } from '@wordpress/components';
 import useFetchData from '../../../hooks/useFetchData.js';
 import CreatePopup from './CreatePopup.js';
@@ -18,7 +18,7 @@ export default function Forms() {
 	const [ createPopupStatus, setCreatePopupStatus ] = useState( false );
 	return (
 		<div className="helpgent-page-inner">
-			<FormAppStateProvider>
+			<FormTableStateProvider>
 				<Suspense fallback={ <></> }>
 					<PageHeader
 						forms={ forms }
@@ -39,7 +39,7 @@ export default function Forms() {
 					isCreatePopupOpen={ createPopupStatus }
 					setCreatePopupStatus={ setCreatePopupStatus }
 				/>
-			</FormAppStateProvider>
+			</FormTableStateProvider>
 		</div>
 	);
 }

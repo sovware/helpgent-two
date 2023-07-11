@@ -44,12 +44,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _context_FormAppStateContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../context/FormAppStateContext */ "./resources/js/admin/pages/Forms/context/FormAppStateContext.js");
-/* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-inlinesvg */ "./node_modules/react-inlinesvg/esm/index.js");
-/* harmony import */ var _hooks_useStore_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @hooks/useStore.js */ "./resources/js/hooks/useStore.js");
-/* harmony import */ var _style_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./style.js */ "./resources/js/admin/pages/Forms/components/style.js");
-/* harmony import */ var _icon_times_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @icon/times.svg */ "./assets/svg/icon/times.svg");
-/* harmony import */ var _icon_check_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @icon/check.svg */ "./assets/svg/icon/check.svg");
+/* harmony import */ var react_toastify__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-toastify */ "./node_modules/react-toastify/dist/react-toastify.esm.mjs");
+/* harmony import */ var _context_FormTableStateContext_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../context/FormTableStateContext.js */ "./resources/js/admin/pages/Forms/context/FormTableStateContext.js");
+/* harmony import */ var _hooks_useUpdateMutation_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @hooks/useUpdateMutation.js */ "./resources/js/hooks/useUpdateMutation.js");
+/* harmony import */ var _helper_handleRenameFormTitle_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../helper/handleRenameFormTitle.js */ "./resources/js/admin/pages/Forms/helper/handleRenameFormTitle.js");
+/* harmony import */ var _helper_formatter_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @helper/formatter.js */ "./resources/js/helper/formatter.js");
+/* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-inlinesvg */ "./node_modules/react-inlinesvg/esm/index.js");
+/* harmony import */ var _hooks_useStore_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @hooks/useStore.js */ "./resources/js/hooks/useStore.js");
+/* harmony import */ var _style_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./style.js */ "./resources/js/admin/pages/Forms/components/style.js");
+/* harmony import */ var _icon_times_svg__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @icon/times.svg */ "./assets/svg/icon/times.svg");
+/* harmony import */ var _icon_check_svg__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @icon/check.svg */ "./assets/svg/icon/check.svg");
+
+
+
+
 
 
 
@@ -65,23 +73,38 @@ function titleBox(props) {
     form
   } = props;
   const {
-    title
+    id,
+    title,
+    created_at
   } = form;
+  const [inputValidation, setInputValidation] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)({
+    isValid: true,
+    message: ""
+  });
   const {
-    formAppState,
-    setFormAppState
-  } = (0,_context_FormAppStateContext__WEBPACK_IMPORTED_MODULE_1__.useFormAppState)();
+    formTableState,
+    setFormTableState
+  } = (0,_context_FormTableStateContext_js__WEBPACK_IMPORTED_MODULE_2__.useFormTableState)();
+  const {
+    setStoreData,
+    getStoreData
+  } = (0,_hooks_useStore_js__WEBPACK_IMPORTED_MODULE_6__["default"])();
+  const allForms = getStoreData(['helpgent-form']);
+  const dateFormatOptions = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  };
+
+  /* Form Update Mutation */
+  const {
+    mutateAsync: updateFormMutation,
+    isLoading
+  } = (0,_hooks_useUpdateMutation_js__WEBPACK_IMPORTED_MODULE_3__["default"])(`/helpgent/admin/form/${id}/rename`);
   function handleCancelEditMode() {
     setEditModeStatus(false);
   }
-  function handleChangeFormTitle(e) {
-    setFormAppState({
-      ...formAppState,
-      formInputTitle: e.target.value
-    });
-  }
-  function handleRenameFormTitle() {}
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_style_js__WEBPACK_IMPORTED_MODULE_3__.TitleBoxStyle, {
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_style_js__WEBPACK_IMPORTED_MODULE_7__.TitleBoxStyle, {
     className: "helpgent-titleBox"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-titleBox__data"
@@ -90,9 +113,9 @@ function titleBox(props) {
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
     type: "text",
     name: "helpgent-title-input",
-    value: formAppState.formInputTitle,
-    onChange: handleChangeFormTitle
-  })) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    value: formTableState.formInputTitle,
+    onChange: e => handleFormTitle(e, setInputValidation, formTableState, setFormTableState)
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, inputValidation.message)) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-titleBox__content helpgent-show"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-titleBox-media"
@@ -104,23 +127,64 @@ function titleBox(props) {
     className: "helpgent-titleBox-meta"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
     className: "helpgent-titleBox-meta__id"
-  }, "ID #20"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
+  }, "ID #", id), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
     className: "helpgent-titleBox-meta__date"
-  }, "Created: May 29, 2023"))))), isEditModeActive && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, "Created: ", (0,_helper_formatter_js__WEBPACK_IMPORTED_MODULE_5__.formatDate)('en-US', created_at, dateFormatOptions)))))), isEditModeActive && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-titleBox__actions"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "helpgent-titleBox-action-item helpgent-titleBox__actions-cancel",
     onClick: handleCancelEditMode
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    src: _icon_times_svg__WEBPACK_IMPORTED_MODULE_4__["default"]
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    src: _icon_times_svg__WEBPACK_IMPORTED_MODULE_8__["default"]
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "helpgent-titleBox-action-item helpgent-titleBox__actions-yes",
-    onClick: handleRenameFormTitle
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_6__["default"], {
-    src: _icon_check_svg__WEBPACK_IMPORTED_MODULE_5__["default"]
-  }))));
+    onClick: () => (0,_helper_handleRenameFormTitle_js__WEBPACK_IMPORTED_MODULE_4__["default"])(updateFormMutation, id, allForms, setStoreData)
+  }, !isLoading && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    src: _icon_check_svg__WEBPACK_IMPORTED_MODULE_9__["default"]
+  }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_toastify__WEBPACK_IMPORTED_MODULE_1__.ToastContainer, null));
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (titleBox);
+
+/***/ }),
+
+/***/ "./resources/js/admin/pages/Forms/helper/handleRenameFormTitle.js":
+/*!************************************************************************!*\
+  !*** ./resources/js/admin/pages/Forms/helper/handleRenameFormTitle.js ***!
+  \************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ handleRenameFormTitle)
+/* harmony export */ });
+/* harmony import */ var react_toastify__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-toastify */ "./node_modules/react-toastify/dist/react-toastify.esm.mjs");
+
+async function handleRenameFormTitle(updateFormMutation, id, allForms, setStoreData) {
+  const updatedTitle = {
+    title: formTableState.formInputTitle
+  };
+  try {
+    const updateFormResponse = await updateFormMutation(updatedTitle);
+    const updatedForms = allForms.forms.map(singleForm => {
+      if (singleForm.id === id) {
+        return {
+          ...singleForm,
+          title: formTableState.formInputTitle
+        };
+      }
+      return singleForm;
+    });
+    const formData = {
+      ...allForms,
+      forms: updatedForms
+    };
+    setStoreData(['helpgent-form'], formData);
+    setEditModeStatus(false);
+    react_toastify__WEBPACK_IMPORTED_MODULE_0__.toast.success(updateFormResponse.message);
+  } catch (error) {
+    console.log(error);
+  }
+}
 
 /***/ }),
 
@@ -153,6 +217,27 @@ function useStore() {
     removeStoreData
   };
 }
+
+/***/ }),
+
+/***/ "./resources/js/hooks/useUpdateMutation.js":
+/*!*************************************************!*\
+  !*** ./resources/js/hooks/useUpdateMutation.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _tanstack_react_query__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @tanstack/react-query */ "./node_modules/@tanstack/react-query/build/lib/useMutation.mjs");
+/* harmony import */ var _helper_createData_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @helper/createData.js */ "./resources/js/helper/createData.js");
+
+
+const useUpdateMutation = path => {
+  return (0,_tanstack_react_query__WEBPACK_IMPORTED_MODULE_1__.useMutation)(data => (0,_helper_createData_js__WEBPACK_IMPORTED_MODULE_0__["default"])(path, data));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (useUpdateMutation);
 
 /***/ })
 

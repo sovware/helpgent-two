@@ -179,7 +179,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
-/* harmony import */ var _context_FormAppStateContext__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../context/FormAppStateContext */ "./resources/js/admin/pages/Forms/context/FormAppStateContext.js");
+/* harmony import */ var _context_FormTableStateContext_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../context/FormTableStateContext.js */ "./resources/js/admin/pages/Forms/context/FormTableStateContext.js");
 /* harmony import */ var _components_Dropdown_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @components/Dropdown.js */ "./resources/js/components/Dropdown.js");
 /* harmony import */ var _icon_pencil_solid_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @icon/pencil-solid.svg */ "./assets/svg/icon/pencil-solid.svg");
 /* harmony import */ var _icon_ellipsis_h_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @icon/ellipsis-h.svg */ "./assets/svg/icon/ellipsis-h.svg");
@@ -204,9 +204,9 @@ function TableActions(props) {
     setFormTitleInput
   } = props;
   const {
-    formAppState,
-    setFormAppState
-  } = (0,_context_FormAppStateContext__WEBPACK_IMPORTED_MODULE_1__.useFormAppState)();
+    formTableState,
+    setFormTableState
+  } = (0,_context_FormTableStateContext_js__WEBPACK_IMPORTED_MODULE_1__.useFormTableState)();
   const moreDropdown = [{
     name: 'responses',
     icon: _icon_comment_user_svg__WEBPACK_IMPORTED_MODULE_5__["default"],
@@ -224,14 +224,14 @@ function TableActions(props) {
     event.preventDefault();
     if (name === 'rename') {
       setEditModeStatus(true);
-      setFormAppState({
-        ...formAppState,
+      setFormTableState({
+        ...formTableState,
         formInputTitle: form.title
       });
     }
   }
 
-  //console.log(formAppState);
+  //console.log(formTableState);
 
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-table-action"
