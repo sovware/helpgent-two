@@ -121,6 +121,20 @@ class FormRepository {
         );
     }
 
+    public function update_title( int $id, string $title ) {
+        $form = $this->get_by_id( $id );
+
+        if ( ! $form ) {
+            throw new Exception( esc_html__( 'Form not found', 'helpgent' ), 404 );
+        }
+
+        return Form::query()->where( 'id', $id )->update(
+            [
+                'title' => $title
+            ]
+        );
+    }
+
     public function delete( int $id ) {
         $form = $this->get_by_id( $id );
 
