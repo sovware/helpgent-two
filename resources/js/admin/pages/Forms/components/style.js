@@ -39,7 +39,24 @@ const FormTableStyle = Styled.div`
 `;
 
 const TitleBoxStyle = Styled.div`
-   
+   .helpgent-titleBox-action-item{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        cursor: pointer ;
+        &.helpgent-titleBox__actions-yes{
+            background-color: var(--helpgent-color-success);
+        }
+        &.helpgent-titleBox__actions-cancel{
+            background-color: var(--helpgent-color-danger);
+        }
+        svg{
+            width: 10px;
+            height: 10px;
+        }
+   }
 `;
 
 const CreatePopupStyle = Styled.div`

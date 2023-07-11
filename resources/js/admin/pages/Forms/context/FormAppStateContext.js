@@ -5,6 +5,7 @@ export const useFormAppState = () => useContext( FormAppStateContent );
 
 export const FormAppStateProvider = ( { children } ) => {
 	const formAppObj = {
+		formInputTitle: '',
 		layoutMode: 'mediaLeft',
 	};
 	const [ formAppState, setFormAppState ] = useState( formAppObj );
