@@ -110,25 +110,6 @@ FormTable.propTypes = {
 
 /***/ }),
 
-/***/ "./resources/js/helper/formatter.js":
-/*!******************************************!*\
-  !*** ./resources/js/helper/formatter.js ***!
-  \******************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   formatDate: () => (/* binding */ formatDate)
-/* harmony export */ });
-function formatDate(formatType, date, options) {
-  const dataObject = new Date(date);
-  const formattedDate = dataObject.toLocaleDateString(formatType, options);
-  return formattedDate;
-}
-
-
-/***/ }),
-
 /***/ "./resources/js/hooks/forms/useForms.js":
 /*!**********************************************!*\
   !*** ./resources/js/hooks/forms/useForms.js ***!

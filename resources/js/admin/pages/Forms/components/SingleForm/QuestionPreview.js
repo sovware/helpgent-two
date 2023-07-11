@@ -1,16 +1,14 @@
-import { PreviewComponents } from './constants.js';
+import { previewComponents } from '../../../../../constants.js';
 import { QuestionPreviewStyle } from '../../../../../style.js';
 export default function QuestionPreview( props ) {
 	const { singleForm, setSingleForm, selectedQuestion } = props;
-	const { elements: questionFields } = selectedQuestion[ 0 ].fields[ 0 ];
+	const { elements: questionFields } = selectedQuestion.fields[ 0 ];
 
-	console.log( selectedQuestion[ 0 ].fields[ 0 ] );
 	const fieldObject = questionFields.reduce( ( acc, field ) => {
 		acc[ field.key ] = field;
 		return acc;
 	}, {} );
-	const SelectedComponent =
-		PreviewComponents[ selectedQuestion[ 0 ].screen_type ];
+	const SelectedComponent = previewComponents[ selectedQuestion.screen_type ];
 	return (
 		<QuestionPreviewStyle
 			style={ {

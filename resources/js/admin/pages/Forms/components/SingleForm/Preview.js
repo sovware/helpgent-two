@@ -1,4 +1,5 @@
 import ReactSVG from 'react-inlinesvg';
+import useStore from '@hooks/useStore';
 import MediaPreview from './MediaPreview';
 import QuestionPreview from './QuestionPreview';
 import PreviewDeviceControl from './PreviewDeviceControl';
@@ -11,7 +12,10 @@ export default function Preview( props ) {
 	const selectedQuestion = questions.filter(
 		( item ) => item.id === activeScreenId
 	);
-	console.log( activeScreenId, selectedQuestion );
+	const { getStoreData } = useStore();
+
+	const layoutMode = getStoreData( [ 'helpgent-layoutMode' ] );
+
 	return (
 		<PreviewStyle>
 			<div className="helpgent-preview-top">
@@ -20,7 +24,9 @@ export default function Preview( props ) {
 					Preview your changes
 				</span>
 			</div>
-			<div className="helpgent-preview-container">
+			<div
+				className={ `helpgent-preview-container helpgent-preview-${ layoutMode }` }
+			>
 				{ selectedQuestion[ 0 ].screen_type !== 'end' && (
 					<MediaPreview
 						singleForm={ singleForm }
@@ -32,7 +38,7 @@ export default function Preview( props ) {
 				<QuestionPreview
 					singleForm={ singleForm }
 					setSingleForm={ setSingleForm }
-					selectedQuestion={ selectedQuestion }
+					selectedQuestion={ selectedQuestion[ 0 ] }
 				/>
 			</div>
 			<PreviewDeviceControl />
