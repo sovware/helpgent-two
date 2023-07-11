@@ -121,10 +121,10 @@ class CreateDB implements Migration {
         ) {$charset_collate};
 
         -- -----------------------------------------------------
-        -- Table conversations
+        -- Table messages
         -- -----------------------------------------------------
 
-        CREATE TABLE {$db_prefix}conversations (
+        CREATE TABLE {$db_prefix}messages (
             `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
             `response_id` BIGINT UNSIGNED NOT NULL,
             `message` LONGTEXT,
@@ -142,12 +142,11 @@ class CreateDB implements Migration {
         ) {$charset_collate};
 
         -- -----------------------------------------------------
-        -- Table conversation forwards
+        -- Table message forwards
         -- -----------------------------------------------------
 
-        CREATE TABLE {$db_prefix}conversation_forwards (
+        CREATE TABLE {$db_prefix}message_forwards (
             `id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
-            `conversation_id` BIGINT UNSIGNED NOT NULL,
             `message` LONGTEXT,
             `attachment_id` BIGINT UNSIGNED,
             `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,

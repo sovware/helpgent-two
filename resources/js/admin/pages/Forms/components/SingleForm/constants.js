@@ -1,3 +1,4 @@
+/* Import Screens  */
 import WelcomeQuestion from '@components/questionList/WelcomeQuestion.js';
 import LongTextQuestion from '@components/questionList/LongTextQuestion.js';
 import ShortTextQuestion from '@components/questionList/ShortTextQuestion.js';
@@ -14,12 +15,40 @@ import ScoreQuestion from '@components/questionList/ScoreQuestion.js';
 import SingleSelectQuestion from '@components/questionList/SingleSelectQuestion';
 import MultiSelectQuestion from '@components/questionList/MultiSelectQuestions';
 import DropdownQuestion from '@components/questionList/DropdownQuestion';
+import PhoneNumberQuestion from '@components/questionList/PhoneNumberQuestion';
 import EndQuestion from '@components/questionList/EndQuestion.js';
 import ContactQuestion from '@components/questionList/ContactQuestion';
 import YesNoQuestion from '@components/questionList/YesNoQuestion';
 import PictureSelectQuestion from '@components/questionList/PictureSelectQuestion';
 import RatingQuestion from '@components/questionList/RatingQuestion';
 import OpenEndedQuestion from '@components/questionList/OpenEndedQuestion';
+
+/* Import Svg icons */
+import chartBar from '@icon/chart-bar.svg';
+import bar from '@icon/bar.svg';
+import hash from '@icon/hash.svg';
+import button from '@icon/button.svg';
+import upload from '@icon/upload.svg';
+import slider from '@icon/sliders.svg';
+import date from '@icon/calendar-check.svg';
+import star from '@icon/star.svg';
+import meter from '@icon/meter.svg';
+import marker from '@icon/marker.svg';
+import address from '@icon/address-book.svg';
+import envelope from '@icon/envelope.svg';
+import phone from '@icon/phone-flip.svg';
+import url from '@icon/link-alt.svg';
+import openEnded from '@icon/open-ended.svg';
+import horizontalBar from '@icon/chart-simple-horizontal.svg';
+import video from '@icon/video.svg';
+import comment from '@icon/comment.svg';
+import scrubber from '@icon/scrubber.svg';
+import checkbox from '@icon/checkbox.svg';
+import angleCircle from '@icon/angle-circle.svg';
+import toggle from '@icon/toggle.svg';
+import picture from '@icon/picture.svg';
+import arrowSquareRight from '@icon/arrow-square-right.svg';
+import arrowSquareLeft from '@icon/arrow-square-left.svg';
 
 const PreviewComponents = {
 	welcome: WelcomeQuestion,
@@ -38,6 +67,7 @@ const PreviewComponents = {
 	'single-select': SingleSelectQuestion,
 	'multi-select': MultiSelectQuestion,
 	dropdown: DropdownQuestion,
+	phone: PhoneNumberQuestion,
 	end: EndQuestion,
 	contact: ContactQuestion,
 	'yes-no': YesNoQuestion,
@@ -46,4 +76,32 @@ const PreviewComponents = {
 	'open-ended': OpenEndedQuestion,
 };
 
-export { PreviewComponents };
+const iconList = {
+	chartBar: chartBar,
+	bar: bar,
+	hash: hash,
+	button: button,
+	upload: upload,
+	slider: slider,
+	date: date,
+	star: star,
+	meter: meter,
+	marker: marker,
+	address: address,
+	envelope: envelope,
+	phone: phone,
+	url: url,
+	openEnded: openEnded,
+	horizontalBar: horizontalBar,
+	video: video,
+	comment: comment,
+	scrubber: scrubber,
+	checkbox: checkbox,
+	angleCircle: angleCircle,
+	toggle: toggle,
+	picture: picture,
+	arrowSquareRight: arrowSquareRight,
+	arrowSquareLeft: arrowSquareLeft,
+};
+
+export { PreviewComponents, iconList };

@@ -2,11 +2,11 @@
 
 namespace HelpGent\App\Http\Controllers;
 
-use HelpGent\App\DTO\ConversationDTO;
-use HelpGent\App\DTO\ConversationForwardDTO;
+use HelpGent\App\DTO\MessageDTO;
+use HelpGent\App\DTO\MessageForwardDTO;
 use HelpGent\App\DTO\ResponseDTO;
 use HelpGent\App\Http\Controllers\Controller;
-use HelpGent\App\Repositories\ConversationRepository;
+use HelpGent\App\Repositories\MessageRepository;
 use HelpGent\App\Repositories\ForwardRepository;
 use HelpGent\App\Repositories\ResponseRepository;
 use HelpGent\WaxFramework\RequestValidator\Validator;
@@ -16,23 +16,23 @@ use WP_REST_Request;
 class ForwardController extends Controller {
     public ForwardRepository $repository;
 
-    public ConversationRepository $conversation_repository;
+    public MessageRepository $message_repository;
 
     public ResponseRepository $response_repository;
 
-    public function __construct( ForwardRepository $repository, ConversationRepository $conversation_repository, ResponseRepository $response_repository ) {
-        $this->repository              = $repository;
-        $this->conversation_repository = $conversation_repository;
-        $this->response_repository     = $response_repository;
+    public function __construct( ForwardRepository $repository, MessageRepository $message_repository, ResponseRepository $response_repository ) {
+        $this->repository          = $repository;
+        $this->message_repository  = $message_repository;
+        $this->response_repository = $response_repository;
     }
 
     public function store( Validator $validator, WP_REST_Request $wp_rest_request ) {
         $validator->validate(
             [
-                'conversation_id' => 'required|numeric',
-                'forward_to'      => 'required|string|accepted:user,response',
-                'forward_to_id'   => 'required|numeric',
-                'message'         => 'string'
+                'parent_message_id' => 'required|numeric',
+                'forward_to'        => 'required|string|accepted:user,response',
+                'forward_to_id'     => 'required|numeric',
+                'message'           => 'string'
             ]
         );
 
@@ -44,22 +44,21 @@ class ForwardController extends Controller {
             );
         }
 
-        $conversation_id = (int) $wp_rest_request->get_param( 'conversation_id' );
-        $conversation    = $this->conversation_repository->get_by_id( $conversation_id );
+        $parent_message_id = (int) $wp_rest_request->get_param( 'parent_message_id' );
+        $parent_message    = $this->message_repository->get_by_id( $parent_message_id );
 
-        if ( ! $conversation ) {
+        if ( ! $parent_message ) {
             return Response::send(
                 [
-                    'message' => esc_html__( "Sorry, Conversation not found", 'helpgent' )
+                    'message' => esc_html__( "Sorry, Message not found", 'helpgent' )
                 ], 500
             );
         }
 
-        $forward_to            = $wp_rest_request->get_param( 'forward_to' );
-        $forward_to_id         = (int) $wp_rest_request->get_param( 'forward_to_id' );
-        $message               = (string) $wp_rest_request->get_param( 'message' );
-        $user                  = helpgent_get_current_user();
-        $conversation_response = $this->response_repository->get_by_id( $conversation->response_id );
+        $forward_to       = $wp_rest_request->get_param( 'forward_to' );
+        $forward_to_id    = (int) $wp_rest_request->get_param( 'forward_to_id' );
+        $user             = helpgent_get_current_user();
+        $message_response = $this->response_repository->get_by_id( $parent_message->response_id );
 
         if ( $user->is_user ) {
             if ( 'user' === $forward_to ) {
@@ -70,7 +69,7 @@ class ForwardController extends Controller {
                 );
             }
 
-            if ( intval( $conversation_response->created_by ) !== $user->id || intval( $conversation_response->is_guest ) !== intval( $user->is_guest ) ) {
+            if ( intval( $message_response->created_by ) !== $user->id || intval( $message_response->is_guest ) !== intval( $user->is_guest ) ) {
                 return Response::send(
                     [
                         'message' => esc_html__( "Sorry, you can't forward this message", 'helpgent' )
@@ -83,14 +82,14 @@ class ForwardController extends Controller {
             if ( intval( $response->created_by ) !== $user->id || intval( $response->is_guest ) !== intval( $user->is_guest ) ) {
                 return Response::send(
                     [
-                        'message' => esc_html__( "Sorry, you can't forward messages in this conversation", 'helpgent' )
+                        'message' => esc_html__( "Sorry, you can't forward messages in this message", 'helpgent' )
                     ], 500
                 );
             }
         }
 
         if ( 'user' === $forward_to ) {
-            $response_dto = new ResponseDTO( (int) $conversation_response->form_id, $forward_to_id, 0, 0, 'active' );
+            $response_dto = new ResponseDTO( (int) $message_response->form_id, $forward_to_id, 0, 0, 'active' );
             $response_id  = $this->response_repository->create( $response_dto );
 
             $user_id  = $forward_to_id;
@@ -101,11 +100,32 @@ class ForwardController extends Controller {
             $response_id = $forward_to_id;
         }
 
-        $forward_dto = new ConversationForwardDTO( $conversation->id, $conversation->message, $conversation->attachment_id );
-        $forward_id  = $this->repository->create( $forward_dto );
+        $parent_forward_id = intval( $parent_message->forward_id );
+        $message           = (string) $wp_rest_request->get_param( 'message' );
+        $message_dto       = new MessageDTO( $response_id, $message, $user_id, 0, $is_guest );
 
-        $conversation_dto = new ConversationDTO( $response_id, $message, $user_id, 0, $is_guest, 0, $forward_id );
-        $this->conversation_repository->create( $conversation_dto );
+        if ( ! empty( $message ) ) {
+            $this->message_repository->create( $message_dto );
+        }
+
+        $message_dto->set_message( '' );
+
+        if ( 0 !== $parent_forward_id ) {
+            $message_dto->set_forward_id( $parent_forward_id );
+        } else {
+            $forward = $this->repository->get_by_message( (string) $parent_message->message, intval( $parent_message->attachment_id ) );
+
+            if ( $forward ) {
+                $forward_id = $forward->id;
+            } else {
+                $forward_dto = new MessageForwardDTO( $parent_message->message, $parent_message->attachment_id );
+                $forward_id  = $this->repository->create( $forward_dto );
+            }
+
+            $message_dto->set_forward_id( $forward_id );
+        }
+
+        $this->message_repository->create( $message_dto );
 
         return Response::send(
             [

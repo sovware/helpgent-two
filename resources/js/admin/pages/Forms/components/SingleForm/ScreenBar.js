@@ -8,6 +8,7 @@ import getWelcomeType from '../../helper/getWelcomeType';
 import getOtherType from '../../helper/getOtherType';
 import getEndType from '../../helper/getEndType';
 import handleAddEndScreen from '../../helper/handleAddEndScreen';
+import handleAddQuestion from '../../helper/handleAddQuestion';
 import handleResize from '../../helper/handleResize';
 import { ScreenBarStyle } from './style.js';
 import ScreenListDropdown from './ScreenListDropdown.js';
@@ -27,8 +28,6 @@ export default function ScreenBar( props ) {
 
 	const { content } = singleForm;
 	const { questions } = JSON.parse( content );
-
-	console.log( questions );
 
 	/* Close Dropdown click on outside */
 	useEffect( () => {
@@ -57,7 +56,9 @@ export default function ScreenBar( props ) {
 					singleForm={ singleForm }
 					setSingleForm={ setSingleForm }
 					isOpenMegaDropdown={ isOpenMegaDropdown }
+					handleItemEvent={ handleAddQuestion }
 					setMegaDropdown={ setMegaDropdown }
+					activeScreenId={ activeScreenId }
 				/>
 			</div>
 			<div className="helpgent-screenBar-content">

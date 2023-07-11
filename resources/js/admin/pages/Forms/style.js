@@ -5,7 +5,7 @@ const ScreenWrapStyle = Styled.div`
 `;
 
 const SingleFormStyle = Styled.div`
-    margin: 20px 20px 0 0;
+    /* margin: 20px 20px 0 0; */
     .helpgent-page-initial{
         position: relative;
         height: 50vh;

@@ -7,21 +7,14 @@ export default function EmailQuestion( props ) {
 		layoutMode,
 		singleForm,
 		setSingleForm,
-		selectedQuestion: fileQuestion,
+		selectedQuestionField: emailQuestionField,
 	} = props;
 	const { content } = singleForm;
 	const { questions } = JSON.parse( content );
 
-	const { elements } = fileQuestion[ 0 ].fields[ 0 ];
-
 	const quillModules = {
 		toolbar: false,
 	};
-
-	const elementsObject = elements.reduce( ( acc, element ) => {
-		acc[ element.key ] = element;
-		return acc;
-	}, {} );
 
 	const {
 		label,
@@ -29,9 +22,7 @@ export default function EmailQuestion( props ) {
 		placeholder,
 		required,
 		'action-btn': actionBtn,
-	} = elementsObject;
-
-	console.log( elementsObject );
+	} = emailQuestionField;
 
 	return (
 		<div className="helpgent-question-element">

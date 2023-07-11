@@ -34,7 +34,7 @@ const DatePickerControl = ( props ) => {
 				</span>
 				<input
 					type="text"
-					className="helpgent-form__element"
+					className="helpgent-form-group__element"
 					placeholder="MM-DD-YYYY"
 					value={ date }
 					onClick={ handleOpenDatePicker }

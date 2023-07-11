@@ -11,21 +11,14 @@ export default function MultiSelectQuestion( props ) {
 		layoutMode,
 		singleForm,
 		setSingleForm,
-		selectedQuestion: singleSelectQuestion,
+		selectedQuestionField: multiSelectQuestionField,
 	} = props;
 	const { content } = singleForm;
 	const { questions } = JSON.parse( content );
-
-	const { elements } = singleSelectQuestion[ 0 ].fields[ 0 ];
 	const ref = useRef( null );
 	const quillModules = {
 		toolbar: false,
 	};
-
-	const elementsObject = elements.reduce( ( acc, element ) => {
-		acc[ element.key ] = element;
-		return acc;
-	}, {} );
 
 	const {
 		label,
@@ -34,9 +27,7 @@ export default function MultiSelectQuestion( props ) {
 		required,
 		option: selectOption,
 		'action-btn': actionBtn,
-	} = elementsObject;
-
-	console.log( selectOption.options );
+	} = multiSelectQuestionField;
 
 	return (
 		<div className="helpgent-question-element">

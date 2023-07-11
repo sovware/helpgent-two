@@ -11,21 +11,15 @@ export default function DropdownQuestion( props ) {
 		layoutMode,
 		singleForm,
 		setSingleForm,
-		selectedQuestion: dropdownQuestion,
+		selectedQuestionField: dropdownQuestionField,
 	} = props;
 	const { content } = singleForm;
 	const { questions } = JSON.parse( content );
 
-	const { elements } = dropdownQuestion[ 0 ].fields[ 0 ];
 	const ref = useRef( null );
 	const quillModules = {
 		toolbar: false,
 	};
-
-	const elementsObject = elements.reduce( ( acc, element ) => {
-		acc[ element.key ] = element;
-		return acc;
-	}, {} );
 
 	const {
 		label,
@@ -34,7 +28,7 @@ export default function DropdownQuestion( props ) {
 		required,
 		option: selectOption,
 		'action-btn': actionBtn,
-	} = elementsObject;
+	} = dropdownQuestionField;
 
 	console.log( selectOption.options );
 

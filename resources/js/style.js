@@ -406,17 +406,25 @@ const QuestionPreviewStyle = Styled.div`
     .helpgent-rating-wrapper{
         display: flex;
         align-items: center;
-        gap: 6px;
         .helpgent-rating-single{
             display: flex;
             flex-direction: column;
             align-items: center;
+            padding-right: 6px;
             svg{
                 width: 24px;
+                height: 24px;
             }
             .helpgent-rating-value{
                 display: block;
                 margin-top: 8px;
+            }
+            &--selected{
+                svg{
+                    path{
+                        fill: var(--helpgent-color-primary);
+                    }
+                }
             }
         }
     }
@@ -566,10 +574,41 @@ const MultiSelectStyle = Styled.div`
     }
 `;
 
+const CountryDialerControl = Styled.div`
+    .helpgent-select{
+        margin-right: 10px;
+    }
+    .helpgent-select__control{
+        min-height: 44px;
+    }
+    .helpgent-select__menu{
+        min-width: 220px;
+        padding: 8px;
+    }
+    .helpgent-select__option{
+        font-size: .87rem;
+        padding: 4px 5px;
+    }
+    .helpgent-select__single-value{
+        display: flex;
+        align-items: center;
+        width: 20px;
+        height: 20px;
+        margin: 0 12px 0 0;
+    }
+    .helpgent-select__indicator{
+        padding: 0 10px 0 0;
+        svg{
+            width: 18px;
+            height: 18px;
+        }
+    }
+`;
 
 export {
 	QuestionPreviewStyle,
 	ScoreQuestionStyle,
 	SingleSelectStyle,
 	MultiSelectStyle,
+	CountryDialerControl,
 };

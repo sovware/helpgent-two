@@ -9,6 +9,8 @@ export default function ScreenListDropdown( {
 	singleForm,
 	setSingleForm,
 	isOpenMegaDropdown,
+	handleItemEvent,
+	activeScreenId,
 } ) {
 	const [ screenList, setScreenList ] = useState( questions );
 
@@ -36,6 +38,8 @@ export default function ScreenListDropdown( {
 				setSingleForm={ setSingleForm }
 				type={ groupName }
 				screenList={ filteredByGroup }
+				handleItemEvent={ handleItemEvent }
+				activeScreenId={ activeScreenId }
 			/>
 		);
 	}

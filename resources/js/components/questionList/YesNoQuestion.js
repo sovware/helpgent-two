@@ -8,25 +8,12 @@ export default function YesNoQuestion(props) {
         layoutMode,
         singleForm,
         setSingleForm,
-        selectedQuestion: fileQuestion,
+        selectedQuestion: yesNoQuestionField,
     } = props;
     const { content } = singleForm;
     const { questions } = JSON.parse(content);
 
-	const { elements } = fileQuestion[0].fields[0];
-
-    const elementsObject = elements.reduce((acc, element) => {
-        acc[element.key] = element;
-        return acc;
-    }, {});
-
-    const {
-        label,
-        description,
-        placeholder,
-        required,
-        'action-btn': actionBtn,
-    } = elementsObject;
+    const required = true;
 
     const quillModules = {
         toolbar: false,

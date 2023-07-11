@@ -2,6 +2,13 @@ import { PreviewComponents } from './constants.js';
 import { QuestionPreviewStyle } from '../../../../../style.js';
 export default function QuestionPreview( props ) {
 	const { singleForm, setSingleForm, selectedQuestion } = props;
+	const { elements: questionFields } = selectedQuestion[ 0 ].fields[ 0 ];
+
+	console.log( selectedQuestion[ 0 ].fields[ 0 ] );
+	const fieldObject = questionFields.reduce( ( acc, field ) => {
+		acc[ field.key ] = field;
+		return acc;
+	}, {} );
 	const SelectedComponent =
 		PreviewComponents[ selectedQuestion[ 0 ].screen_type ];
 	return (
@@ -25,7 +32,7 @@ export default function QuestionPreview( props ) {
 				layoutMode="test"
 				singleForm={ singleForm }
 				setSingleForm={ setSingleForm }
-				selectedQuestion={ selectedQuestion }
+				selectedQuestionField={ fieldObject }
 			/>
 		</QuestionPreviewStyle>
 	);
