@@ -28,7 +28,6 @@ export default function handleResize( event, endScreenRef ) {
 	startHeight =
 		parseInt( endScreenRef.current.getBoundingClientRect().height ) -
 		offsetPadding;
-	console.log( startHeight );
 	document.documentElement.addEventListener( 'mousemove', handleDrag, false );
 	document.documentElement.addEventListener( 'mouseup', stopResize, false );
 }
