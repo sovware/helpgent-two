@@ -12,11 +12,12 @@ Route::group(
     'admin', function () {
         Route::group(
             'form', function() {
+                Route::post( '{id}/status', [FormController::class, 'update_status'] );
+                Route::post( '{id}/rename', [FormController::class, 'update_title'] );
                 Route::get( 'templates', [FormController::class, 'templates'] );
                 Route::resource( '/', FormController::class );
             }
         );
-        Route::post( 'form/{id}/status', [FormController::class, 'update_status'] );
         Route::resource( 'tag', TagController::class, ['items' => ['show']] );
         Route::group(
             'response', function () {

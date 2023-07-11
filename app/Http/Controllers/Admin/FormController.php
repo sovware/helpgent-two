@@ -230,6 +230,44 @@ class FormController extends Controller {
         }
     }
 
+    public function update_title( Validator $validator, WP_REST_Request $wp_rest_request ) {
+        $validator->validate(
+            [
+                'id'    => 'required|numeric',
+                'title' => 'required|string|max:255|min:5'
+            ]
+        );
+        
+        if ( $validator->is_fail() ) {
+            return Response::send(
+                [
+                    'messages' => $validator->errors
+                ], 422
+            );
+        }
+
+        try {
+            $this->form_repository->update_title( 
+                $wp_rest_request->get_param( 'id' ), 
+                $wp_rest_request->get_param( 'title' )
+            );
+
+            return Response::send(
+                [
+                    'message' => esc_html__( "Form title updated successfully!", 'helpgent' )
+                ]
+            );
+
+        } catch ( Exception $exception ) {
+            return Response::send(
+                [
+                    'message' => $exception->getMessage()
+                ],
+                $exception->getCode()
+            );
+        }
+    }
+
     public function delete( Validator $validator, WP_REST_Request $wp_rest_request ) {
         $validator->validate(
             [
