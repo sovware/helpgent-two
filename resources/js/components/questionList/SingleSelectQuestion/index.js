@@ -2,7 +2,7 @@ import ReactQuill from 'react-quill';
 import { useState, useRef } from '@wordpress/element';
 import { formatDate } from '@helper/formatter.js';
 import DatePickerControl from '@components/DatePickerControl.js';
-import { SingleSelectStyle } from '../../style';
+import { SingleSelectStyle } from '../../../style';
 import 'react-quill/dist/quill.snow.css';
 export default function SingleSelectQuestion( props ) {
 	const [ date, setDate ] = useState();

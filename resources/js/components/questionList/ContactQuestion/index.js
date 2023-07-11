@@ -3,8 +3,8 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { components, default as Select } from 'react-select';
 import ReactSVG from 'react-inlinesvg';
-import countries from '../../data/countries.js';
-import { CountryDialerControl } from '../../style.js';
+import countries from '../../../data/countries.js';
+import { CountryDialerControl } from '../../../style.js';
 
 export default function ContactQuestion( props ) {
 	const {

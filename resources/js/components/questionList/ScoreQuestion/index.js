@@ -3,7 +3,7 @@ import ReactQuill from 'react-quill';
 import ReactSVG from 'react-inlinesvg';
 import clock from '@icon/clock.svg';
 import 'react-quill/dist/quill.snow.css';
-import { ScoreQuestionStyle } from '../../style';
+import { ScoreQuestionStyle } from '../../../style';
 export default function ScoreQuestion( props ) {
 	const [ activeScore, setActiveScore ] = useState();
 	const {

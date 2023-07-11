@@ -9,8 +9,7 @@ export default function WelcomeQuestion( props ) {
 		setSingleForm,
 		selectedQuestionField: welcomeQuestionField,
 	} = props;
-	const { content } = singleForm;
-	const { questions } = JSON.parse( content );
+	const { questions } = JSON.parse( singleForm.content );
 
 	const quillModules = {
 		toolbar: false,
@@ -34,7 +33,7 @@ export default function WelcomeQuestion( props ) {
 			</div>
 			<div className="helpgent-question-element__action helpgent-mt-20">
 				<button className="helpgent-btn-start helpgent-btn helpgent-btn-primary helpgent-btn-md">
-					Start
+					{ welcomeQuestionField[ 'btn-text' ].button_text }
 				</button>
 				<div className="helpgent-question-time">
 					<ReactSVG src={ clock } />

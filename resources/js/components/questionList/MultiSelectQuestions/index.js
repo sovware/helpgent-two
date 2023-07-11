@@ -2,7 +2,7 @@ import ReactQuill from 'react-quill';
 import ReactSVG from 'react-inlinesvg';
 import { useState, useRef } from '@wordpress/element';
 import { CheckboxControl } from '@wordpress/components';
-import { MultiSelectStyle } from '../../style';
+import { MultiSelectStyle } from '../../../style';
 import 'react-quill/dist/quill.snow.css';
 import check from '@icon/check.svg';
 export default function MultiSelectQuestion( props ) {

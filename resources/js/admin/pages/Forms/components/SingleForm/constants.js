@@ -1,28 +1,3 @@
-/* Import Screens  */
-import WelcomeQuestion from '@components/questionList/WelcomeQuestion.js';
-import LongTextQuestion from '@components/questionList/LongTextQuestion.js';
-import ShortTextQuestion from '@components/questionList/ShortTextQuestion.js';
-import NumberQuestion from '@components/questionList/NumberQuestion.js';
-import ButtonQuestion from '@components/questionList/ButtonQuestion.js';
-import FileQuestion from '@components/questionList/FileQuestion.js';
-import EmailQuestion from '@components/questionList/EmailQuestion.js';
-import UrlQuestion from '@components/questionList/UrlQuestion.js';
-import SliderQuestion from '@components/questionList/SliderQuestion.js';
-import DateQuestion from '@components/questionList/DateQuestion.js';
-import AddressQuestion from '@components/questionList/AddressQuestion.js';
-import ResultQuestion from '@components/questionList/ResultQuestion.js';
-import ScoreQuestion from '@components/questionList/ScoreQuestion.js';
-import SingleSelectQuestion from '@components/questionList/SingleSelectQuestion';
-import MultiSelectQuestion from '@components/questionList/MultiSelectQuestions';
-import DropdownQuestion from '@components/questionList/DropdownQuestion';
-import PhoneNumberQuestion from '@components/questionList/PhoneNumberQuestion';
-import EndQuestion from '@components/questionList/EndQuestion.js';
-import ContactQuestion from '@components/questionList/ContactQuestion';
-import YesNoQuestion from '@components/questionList/YesNoQuestion';
-import PictureSelectQuestion from '@components/questionList/PictureSelectQuestion';
-import RatingQuestion from '@components/questionList/RatingQuestion';
-import OpenEndedQuestion from '@components/questionList/OpenEndedQuestion';
-
 /* Import Svg icons */
 import chartBar from '@icon/chart-bar.svg';
 import bar from '@icon/bar.svg';
@@ -50,31 +25,10 @@ import picture from '@icon/picture.svg';
 import arrowSquareRight from '@icon/arrow-square-right.svg';
 import arrowSquareLeft from '@icon/arrow-square-left.svg';
 
-const PreviewComponents = {
-	welcome: WelcomeQuestion,
-	'long-text': LongTextQuestion,
-	'short-text': ShortTextQuestion,
-	number: NumberQuestion,
-	button: ButtonQuestion,
-	upload: FileQuestion,
-	email: EmailQuestion,
-	url: UrlQuestion,
-	slider: SliderQuestion,
-	date: DateQuestion,
-	address: AddressQuestion,
-	result: ResultQuestion,
-	score: ScoreQuestion,
-	'single-select': SingleSelectQuestion,
-	'multi-select': MultiSelectQuestion,
-	dropdown: DropdownQuestion,
-	phone: PhoneNumberQuestion,
-	end: EndQuestion,
-	contact: ContactQuestion,
-	'yes-no': YesNoQuestion,
-	'picture-select': PictureSelectQuestion,
-	rating: RatingQuestion,
-	'open-ended': OpenEndedQuestion,
-};
+import RequireField from './fieldList/requireField';
+import ShowTimerField from './fieldList/ShowTimerField';
+import TimeCompleteField from './fieldList/TimeCompleteField';
+import ButtonTextField from './fieldList/ButtonTextField';
 
 const iconList = {
 	chartBar: chartBar,
@@ -104,4 +58,11 @@ const iconList = {
 	arrowSquareLeft: arrowSquareLeft,
 };
 
-export { PreviewComponents, iconList };
+const fieldList = {
+	required: RequireField,
+	showTimer: ShowTimerField,
+	timeComplete: TimeCompleteField,
+	btnText: ButtonTextField,
+};
+
+export { iconList, fieldList };

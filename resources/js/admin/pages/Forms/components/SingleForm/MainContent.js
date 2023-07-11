@@ -1,15 +1,17 @@
 import { useState, useEffect, Fragment } from '@wordpress/element';
+import useStore from '@hooks/useStore';
 import ScreenBar from './ScreenBar';
 import Preview from './Preview.js';
 import ScreenSettings from './ScreenSettings';
 import { MainContentStyle } from './style';
 
 export default function MainContent( props ) {
+	const { getStoreData, setStoreData } = useStore();
 	const [ activeScreenId, setActiveScreenId ] = useState( null );
+	//const [ layoutMode, setLayoutMode ] = useState( 'mediaLeft' ); //mediaLeft, mediaRight, mediaBehind
 	const { singleForm, setSingleForm } = props;
 	const { content } = singleForm;
 	const { questions } = JSON.parse( content );
-
 	useEffect( () => {
 		const welcomeQuestion = questions.filter(
 			( item ) => item.screen_type === 'welcome'

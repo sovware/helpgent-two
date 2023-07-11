@@ -3,7 +3,6 @@
  * @param { Object } module
  */
 export default function registerModule( moduleName, module ) {
-	console.log( 'yes' );
 	for ( let itemName of Object.keys( module ) ) {
 		//check if the moduleName already exists.
 		if ( ! window[ moduleName ] ) {

@@ -456,6 +456,36 @@ const ScreenSettingsStyle = Styled.div`
             color: var(--helpgent-color-dark);
         }
     }
+    .helpgent-media-uploader{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 160px;
+        background-color: var(--helpgent-color-bg-light);
+        .helpgent-btn-upload-trigger{
+            font-size: .93rem;
+            white-space: nowrap;
+            color: var(--color-dark);
+            background-color: var(--helpgent-color-white);
+        }
+    }
+    .helpgent-media-preview{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        video{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+    }
+    .helpgent-media-preview__src{
+        height: 100%;
+    }
 `;
 
 const PreviewDeviceControlStyle = Styled.div`

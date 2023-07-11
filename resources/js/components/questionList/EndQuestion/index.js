@@ -1,7 +1,7 @@
 import ReactSVG from 'react-inlinesvg';
 import ReactQuill from 'react-quill';
 import check from '@icon/check.svg';
-import { socialIcons } from '../../constants';
+import { socialIcons } from '../../../constants';
 
 import 'react-quill/dist/quill.snow.css';
 export default function EndQuestion( props ) {

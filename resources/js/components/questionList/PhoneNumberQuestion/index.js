@@ -3,8 +3,8 @@ import ReactQuill from 'react-quill';
 import ReactSVG from 'react-inlinesvg';
 import { components, default as Select } from 'react-select';
 import 'react-quill/dist/quill.snow.css';
-import countries from '../../data/countries.js';
-import { CountryDialerControl } from '../../style.js';
+import countries from '../../../data/countries.js';
+import { CountryDialerControl } from '../../../style.js';
 export default function PhoneNumberQuestion( props ) {
 	const {
 		layoutMode,
