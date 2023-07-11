@@ -2,6 +2,7 @@
 /node_modules
 /vendor
 /vendor-src
+/temp
 .phpunit.result.cache
 npm-debug.log
 yarn-error.log

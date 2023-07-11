@@ -1,4 +1,5 @@
 <?php
+use HelpGent\App\Providers\BackgroundProcessServiceProvider;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -33,7 +34,8 @@ return [
         MediaProtectionProvider::class,
         ShortCodeServiceProvider::class,
         PreviewServiceProvider::class,
-        ChatBubbleServiceProvider::class
+        ChatBubbleServiceProvider::class,
+        BackgroundProcessServiceProvider::class
     ],
 
     'admin_providers'         => [

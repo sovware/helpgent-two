@@ -34,6 +34,7 @@ Route::group(
         Route::group(
             'contact', function() {
                 Route::get( '/', [ContactController::class, 'index'] );
+                Route::get( '/export', [ContactController::class, 'export'] );
             }
         );
     }, ['admin']
