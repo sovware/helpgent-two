@@ -33,7 +33,6 @@ export default function CreatePopupForm() {
 
 	const { mutateAsync: createFormMutation } = useCreateMutation(
 		'/helpgent/admin/form',
-		'helpgent-form',
 		function ( previousData, forms ) {
 			previousData.forms.push( forms );
 			previousData.total = previousData.forms.length;
@@ -86,6 +85,14 @@ export default function CreatePopupForm() {
 											isValid || 'Only spaces not allowed'
 										);
 									},
+									minLength: ( value ) => {
+										const isValid =
+											value.trim().length >= 5;
+										return (
+											isValid ||
+											'The title filed must be at least 5 characters.'
+										);
+									},
 								},
 							} ) }
 						/>
@@ -95,6 +102,11 @@ export default function CreatePopupForm() {
 							? getValidationMessage( serverErrors.title )
 							: null }
 						{ errors.title?.type === 'isOnlySpace'
+							? getValidationMessage( errors.title.message )
+							: serverErrors.title
+							? getValidationMessage( serverErrors.title )
+							: null }
+						{ errors.title?.type === 'minLength'
 							? getValidationMessage( errors.title.message )
 							: serverErrors.title
 							? getValidationMessage( serverErrors.title )
@@ -168,19 +180,22 @@ export default function CreatePopupForm() {
 					<button
 						type="submit"
 						className={ `helpgent-btn helpgent-btn-md helpgent-btn-dark helpgent-btn-block ${
-							Object.keys( errors ).length !== 0
+							Object.keys( errors ).length !== 0 ||
+							Object.keys( serverErrors ).length !== 0
 								? 'helpgent-btn-disabled'
 								: null
 						}` }
 						disabled={
-							Object.keys( errors ).length !== 0 ? true : false
+							Object.keys( errors ).length !== 0 ||
+							Object.keys( serverErrors ).length !== 0
+								? true
+								: false
 						}
 					>
 						Create Form
 					</button>
-					{ serverErrors.internal
-						? getValidationMessage( serverErrors.internal )
-						: null }
+					{ serverErrors.internal &&
+						getValidationMessage( serverErrors.internal ) }
 				</form>
 			</CreateFormStyleWrap>
 		</div>

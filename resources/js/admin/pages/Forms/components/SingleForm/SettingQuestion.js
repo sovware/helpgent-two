@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, Fragment } from '@wordpress/element';
 import ReactSVG from 'react-inlinesvg';
-import { useFormAppState } from '../../context/FormAppStateContext';
+import { useSingleFormState } from '../../context/SingleFormStateContext.js';
 import ScreenListDropdown from './ScreenListDropdown';
 import handleChangeQuestionType from '../../helper/handleChangeQuestionType';
 import checkedClickedOutside from '@helper/checkClickedOutside.js';
@@ -14,9 +14,9 @@ import mediaLeft from '@icon/media-left.svg';
 import mediaRight from '@icon/media-right.svg';
 import mediaBehind from '@icon/media-behind.svg';
 export default function SettingQuestion( props ) {
-	const { formAppState, setFormAppState } = useFormAppState();
-
-	const { layoutMode } = formAppState;
+	const { singleFormState, setSingleFormState } = useSingleFormState();
+	console.log( singleFormState );
+	const { layoutMode } = singleFormState;
 
 	const ref = useRef( null );
 
@@ -113,8 +113,8 @@ export default function SettingQuestion( props ) {
 	}
 
 	function handleChangeLayout( mode ) {
-		setFormAppState( {
-			...formAppState,
+		setSingleFormState( {
+			...singleFormState,
 			layoutMode: mode,
 		} );
 	}

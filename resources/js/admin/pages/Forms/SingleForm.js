@@ -1,6 +1,6 @@
-import { useState, useEffect } from '@wordpress/element';
+import { useState, useEffect, Fragment } from '@wordpress/element';
 import { Spinner } from '@wordpress/components';
-import { FormAppStateProvider } from './context/FormAppStateContext';
+import { SingleFormStateProvider } from './context/SingleFormStateContext';
 import useStore from '../../../hooks/useStore';
 import useFetchData from '../../../hooks/useFetchData';
 import { useParams } from 'react-router-dom';
@@ -35,13 +35,13 @@ function SingleForm() {
 					) : null }
 				</div>
 			) : (
-				<FormAppStateProvider>
+				<SingleFormStateProvider>
 					<Header />
 					<MainContent
 						singleForm={ singleForm }
 						setSingleForm={ setSingleForm }
 					/>
-				</FormAppStateProvider>
+				</SingleFormStateProvider>
 			) }
 		</SingleFormStyle>
 	);
