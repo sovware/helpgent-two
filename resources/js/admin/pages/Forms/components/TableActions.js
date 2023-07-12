@@ -12,7 +12,7 @@ import penNib from '@icon/pen-nib.svg';
 import trash from '@icon/trash.svg';
 
 export default function TableActions( props ) {
-	const { id, form, setEditModeStatus } = props;
+	const { id, form, setRenameFormId } = props;
 	const { formTableState, setFormTableState } = useFormTableState();
 
 	const { setStoreData, getStoreData } = useStore();
@@ -46,7 +46,7 @@ export default function TableActions( props ) {
 	async function handleDropdownTrigger( event, name ) {
 		event.preventDefault();
 		if ( name === 'rename' ) {
-			setEditModeStatus( true );
+			setRenameFormId( id );
 			setFormTableState( {
 				...formTableState,
 				formInputTitle: form.title,

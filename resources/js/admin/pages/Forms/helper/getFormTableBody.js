@@ -14,8 +14,8 @@ import { WelcomeBoxStyleWrap } from '../components/style';
  */
 export default function getFormTableBody(
 	forms,
-	isEditModeActive,
-	setEditModeStatus,
+	renameFormId,
+	setRenameFormId,
 	isFetchError,
 	isCreatePopupOpen,
 	setCreatePopupStatus
@@ -42,8 +42,8 @@ export default function getFormTableBody(
 			<tr key={ form.id }>
 				<td>
 					<TitleBox
-						isEditModeActive={ isEditModeActive }
-						setEditModeStatus={ setEditModeStatus }
+						renameFormId={ renameFormId }
+						setRenameFormId={ setRenameFormId }
 						form={ form }
 					/>
 				</td>
@@ -72,7 +72,7 @@ export default function getFormTableBody(
 						<TableActions
 							id={ form.id }
 							form={ form }
-							setEditModeStatus={ setEditModeStatus }
+							setRenameFormId={ setRenameFormId }
 						/>
 					</Suspense>
 				</td>
