@@ -1,6 +1,6 @@
 import { toast } from 'react-toastify';
 export default async function handleRenameFormTitle(
-	updateFormMutation,
+	renameFormMutation,
 	id,
 	allForms,
 	formTableState,
@@ -12,7 +12,7 @@ export default async function handleRenameFormTitle(
 	};
 
 	try {
-		const updateFormResponse = await updateFormMutation( updatedTitle );
+		const updateFormResponse = await renameFormMutation( updatedTitle );
 		const updatedForms = allForms.forms.map( ( singleForm ) => {
 			if ( singleForm.id === id ) {
 				return {

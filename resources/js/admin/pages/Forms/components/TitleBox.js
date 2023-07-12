@@ -32,7 +32,7 @@ function titleBox( props ) {
 	};
 
 	/* Form Update Mutation */
-	const { mutateAsync: updateFormMutation, isLoading } = useUpdateMutation(
+	const { mutateAsync: renameFormMutation, isLoading } = useUpdateMutation(
 		`/helpgent/admin/form/${ id }/rename`
 	);
 
@@ -94,7 +94,7 @@ function titleBox( props ) {
 						className="helpgent-titleBox-action-item helpgent-titleBox__actions-yes"
 						onClick={ () =>
 							handleRenameFormTitle(
-								updateFormMutation,
+								renameFormMutation,
 								id,
 								allForms,
 								formTableState,
