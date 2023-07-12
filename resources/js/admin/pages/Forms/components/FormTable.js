@@ -1,4 +1,5 @@
 import { lazy, Suspense, useState } from '@wordpress/element';
+import { ToastContainer } from 'react-toastify';
 import { Spinner, FormToggle } from '@wordpress/components';
 import ReactSVG from 'react-inlinesvg';
 import PropTypes from 'prop-types';
@@ -33,7 +34,9 @@ export default function FormTable( props ) {
 								forms,
 								isEditModeActive,
 								setEditModeStatus,
-								isFetchError
+								isFetchError,
+								isCreatePopupOpen,
+								setCreatePopupStatus
 							)
 						) : (
 							<tr>
@@ -45,6 +48,7 @@ export default function FormTable( props ) {
 					</tbody>
 				</table>
 			</div>
+			<ToastContainer />
 		</FormTableStyle>
 	);
 }
