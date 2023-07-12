@@ -24,6 +24,12 @@ const FormTableStyle = Styled.div`
         min-height: 200px;
     }
     .helpgent-table{
+        thead{
+            tr{
+                background: #e8e8e8;
+                border-radius: 10px;
+            }
+        }
         th{
             &.helpgent-head-name{
                 width: 200px;
@@ -39,7 +45,7 @@ const FormTableStyle = Styled.div`
 `;
 
 const TitleBoxStyle = Styled.div`
-   
+
 `;
 
 const CreatePopupStyle = Styled.div`
@@ -75,7 +81,7 @@ const CreatePopupStyle = Styled.div`
         text-decoration: none;
         background-color: var(--helpgent-color-bg-gray);
         &:hover{
-            background-color: 
+            background-color:
         }
    }
    .helpgent-createPopup__action-icon{
@@ -175,7 +181,7 @@ const CreateFormStyleWrap = Styled.div`
 `;
 
 const SingleFormHeaderStyle = Styled.div`
-    
+
 `;
 
 export {

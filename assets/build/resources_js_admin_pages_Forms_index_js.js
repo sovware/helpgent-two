@@ -2920,6 +2920,12 @@ const FormTableStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"]
         min-height: 200px;
     }
     .helpgent-table{
+        thead{
+            tr{
+                background: #e8e8e8;
+                border-radius: 10px;
+            }
+        }
         th{
             &.helpgent-head-name{
                 width: 200px;
@@ -2934,7 +2940,7 @@ const FormTableStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"]
     }
 `;
 const TitleBoxStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div`
-   
+
 `;
 const CreatePopupStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div`
     width: fit-content;
@@ -2969,7 +2975,7 @@ const CreatePopupStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default
         text-decoration: none;
         background-color: var(--helpgent-color-bg-gray);
         &:hover{
-            background-color: 
+            background-color:
         }
    }
    .helpgent-createPopup__action-icon{
@@ -3066,7 +3072,7 @@ const CreateFormStyleWrap = styled_components__WEBPACK_IMPORTED_MODULE_0__["defa
     }
 `;
 const SingleFormHeaderStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div`
-    
+
 `;
 
 

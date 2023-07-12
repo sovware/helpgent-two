@@ -86,7 +86,7 @@ export default function FormTable( props ) {
 
 	return (
 		<FormTableStyle>
-			<div className="helpgent-table-wrap helpgent-table-responsive">
+			<div className="helpgent-table-wrap helpgent-table-forms-list helpgent-table-responsive">
 				<table className="helpgent-table">
 					<thead>
 						<tr>
