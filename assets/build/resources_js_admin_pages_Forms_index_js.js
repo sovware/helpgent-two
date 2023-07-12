@@ -2923,7 +2923,13 @@ const FormTableStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"]
         position: relative;
         min-height: 200px;
     }
+    .helpgent-table-loader{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     .helpgent-table{
+        min-height: inherit;
         thead{
             border-bottom: 10px solid transparent;
             tr{
@@ -3020,24 +3026,82 @@ const FormTableStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"]
     }
 `;
 const TitleBoxStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div`
-   .helpgent-titleBox-action-item{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    .helpgent-titleBox__editor{
+        input{
+            border-top: 0px none;
+            border-right: 0px none;
+            border-bottom: 1px solid #ededed;
+            border-left: 0px none;
+            border-image: initial;
+            background-color: transparent;
+            border-radius: 0px;
+            padding: 4px 0;
+            line-height: 2;
+            min-height: 30px;
+            color: #2c3338;
+            transition: 0.3s ease;
+            &:active,
+            &:focus{
+                border: 0 none;
+                border-bottom: 1px solid #000000;
+                outline: 0;
+                box-shadow: none;
+            }
+        }
+    }
+    .helpgent-titleBox__actions{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .helpgent-titleBox-action-item{
         display: flex;
         align-items: center;
         justify-content: center;
         width: 32px;
         height: 32px;
         cursor: pointer ;
+        border-radius: 50%;
+        transition: 0.3s ease;
         &.helpgent-titleBox__actions-yes{
             background-color: var(--helpgent-color-success);
+            border: 1px solid var(--helpgent-color-success);
         }
         &.helpgent-titleBox__actions-cancel{
             background-color: var(--helpgent-color-danger);
+            border: 1px solid var(--helpgent-color-danger);
         }
         svg{
             width: 10px;
             height: 10px;
+            path{
+                fill: #fff;
+                transition: 0.3s ease;
+            }
         }
-   }
+        .helpgent-circle-loader {
+            border-color: #fff;
+            border-bottom-color: transparent;
+            transition: 0.3s ease;
+        }
+        &:hover{
+            background: none;
+            svg{
+                path{
+                    fill: #000;
+                }
+            }
+            .helpgent-circle-loader {
+                border-color: var(--helpgent-primary-color);
+                border-bottom-color: transparent;
+            }
+        }
+    }
+
    .helpgent-titleBox-text{
         .helpgent-title{
             font-size: 15px;

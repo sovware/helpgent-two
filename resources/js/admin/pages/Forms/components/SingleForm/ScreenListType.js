@@ -8,7 +8,7 @@ export default function ScreenListType( {
 	screenList,
 	handleItemEvent,
 	activeScreenId,
-	handler
+	handler,
 } ) {
 	const { content } = singleForm;
 	const { questions } = JSON.parse( content );

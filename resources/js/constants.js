@@ -106,7 +106,7 @@ const questions = [
 	OpenEndedQuestionObj,
 	PictureSelectQuestionObj,
 	RatingQuestionObj,
-	YesNoQuestionObj
+	YesNoQuestionObj,
 ];
 
 const initialQuestions = questions.filter(

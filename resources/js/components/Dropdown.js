@@ -19,27 +19,31 @@ export default function Dropdown( {
 	function handleDropdown( e ) {
 		e.preventDefault();
 		setDropDownOpen( ! isDropdownOpen );
-		const parent = e.target.closest('.helpgent-dropdown');
+		const parent = e.target.closest( '.helpgent-dropdown' );
 		const parentRect = parent.getBoundingClientRect();
-		const dropdownContent = parent.querySelector('.helpgent-dropdown__content');
-		dropdownContent.style.top = `${parentRect.top + 20}px`;
-		if(parent.classList.contains('helpgent-dropdown-right')){
-			dropdownContent.style.left = `${parentRect.left}px`;
-		}else if(parent.classList.contains('helpgent-dropdown-left')){
-			dropdownContent.style.right = `calc(100% - ${parentRect.right}px)`;
+		const dropdownContent = parent.querySelector(
+			'.helpgent-dropdown__content'
+		);
+		dropdownContent.style.top = `${ parentRect.top + 20 }px`;
+		if ( parent.classList.contains( 'helpgent-dropdown-right' ) ) {
+			dropdownContent.style.left = `${ parentRect.left }px`;
+		} else if ( parent.classList.contains( 'helpgent-dropdown-left' ) ) {
+			dropdownContent.style.right = `calc(100% - ${ parentRect.right }px)`;
 		}
 	}
 
-	function handleScroll(){
-		const parent = document.querySelector('.helpgent-dropdown-open');
-		if(parent){
+	function handleScroll() {
+		const parent = document.querySelector( '.helpgent-dropdown-open' );
+		if ( parent ) {
 			const parentRect = parent.getBoundingClientRect();
-			const dropdownContent = parent.querySelector('.helpgent-dropdown__content');
-			dropdownContent.style.top = `${parentRect.top + 20}px`;
+			const dropdownContent = parent.querySelector(
+				'.helpgent-dropdown__content'
+			);
+			dropdownContent.style.top = `${ parentRect.top + 20 }px`;
 		}
 	}
 
-	document.addEventListener('scroll', handleScroll);
+	document.addEventListener( 'scroll', handleScroll );
 
 	/* Close Dropdown click on outside */
 	useEffect( () => {

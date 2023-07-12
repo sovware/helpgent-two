@@ -6,57 +6,62 @@ import microphone from '@icon/microphone.svg';
 import text from '@icon/text.svg';
 import monitor from '@icon/monitor.svg';
 
-export default function OpenEndedQuestion(props) {
-    const {
-        layoutMode,
-        singleForm,
-        setSingleForm,
-        selectedQuestion: openEndedQuestionField,
-    } = props;
-    const { content } = singleForm;
-    const { questions } = JSON.parse(content);
+export default function OpenEndedQuestion( props ) {
+	const {
+		layoutMode,
+		singleForm,
+		setSingleForm,
+		selectedQuestion: openEndedQuestionField,
+	} = props;
+	const { content } = singleForm;
+	const { questions } = JSON.parse( content );
 
-    const quillModules = {
-        toolbar: false,
-    };
+	const quillModules = {
+		toolbar: false,
+	};
 
-    return (
-        <div className="helpgent-question-element">
-            <div className="helpgent-question-element__text">
-                <div className="helpgent-question-element__label">
-                    <ReactQuill
-                        modules={quillModules}
-                        placeholder={`Hello there! 👋`}
-                    />
-                </div>
-                <div className="helpgent-question-element__description">
-                    <ReactQuill modules={quillModules} placeholder="Please leave your questions below" />
-                </div>
-            </div>
-            <div className="helpgent-question-element__action">
-                <div className="helpgent-form-group helpgent-form-group-column">
-                    <h2>How would you like to contact?</h2>
-                    <div className="helpgent-open-ended-question-types">
-                        <button className="helpgent-open-ended-btn">
-                            <ReactSVG src={videoCameraAlt} />
-                            <span>Video</span>
-                        </button>
-                        <button className="helpgent-open-ended-btn">
-                            <ReactSVG src={microphone} />
-                            <span>Voice</span>
-                        </button>
-                        <button className="helpgent-open-ended-btn">
-                            <ReactSVG src={text} />
-                            <span>Text</span>
-                        </button>
-                        <button className="helpgent-open-ended-btn">
-                            <ReactSVG src={monitor} />
-                            <span>Screen</span>
-                        </button>
-                    </div>
-                    <span className="helpgent-open-ended-notice">You can review it before sending</span>
-                </div>
-            </div>
-        </div>
-    );
+	return (
+		<div className="helpgent-question-element">
+			<div className="helpgent-question-element__text">
+				<div className="helpgent-question-element__label">
+					<ReactQuill
+						modules={ quillModules }
+						placeholder={ `Hello there! 👋` }
+					/>
+				</div>
+				<div className="helpgent-question-element__description">
+					<ReactQuill
+						modules={ quillModules }
+						placeholder="Please leave your questions below"
+					/>
+				</div>
+			</div>
+			<div className="helpgent-question-element__action">
+				<div className="helpgent-form-group helpgent-form-group-column">
+					<h2>How would you like to contact?</h2>
+					<div className="helpgent-open-ended-question-types">
+						<button className="helpgent-open-ended-btn">
+							<ReactSVG src={ videoCameraAlt } />
+							<span>Video</span>
+						</button>
+						<button className="helpgent-open-ended-btn">
+							<ReactSVG src={ microphone } />
+							<span>Voice</span>
+						</button>
+						<button className="helpgent-open-ended-btn">
+							<ReactSVG src={ text } />
+							<span>Text</span>
+						</button>
+						<button className="helpgent-open-ended-btn">
+							<ReactSVG src={ monitor } />
+							<span>Screen</span>
+						</button>
+					</div>
+					<span className="helpgent-open-ended-notice">
+						You can review it before sending
+					</span>
+				</div>
+			</div>
+		</div>
+	);
 }

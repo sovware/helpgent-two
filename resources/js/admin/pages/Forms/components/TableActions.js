@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import { useFormTableState } from '../context/FormTableStateContext.js';
+import useDeleteMutation from '../../../../hooks/useDeleteMutation.js';
+import useStore from '@hooks/useStore.js';
 import Dropdown from '@components/Dropdown.js';
 import ReactSVG from 'react-inlinesvg';
 import pencil from '@icon/pencil-solid.svg';
@@ -11,6 +14,9 @@ import trash from '@icon/trash.svg';
 export default function TableActions( props ) {
 	const { id, form, setEditModeStatus } = props;
 	const { formTableState, setFormTableState } = useFormTableState();
+
+	const { setStoreData, getStoreData } = useStore();
+	const forms = getStoreData( [ 'helpgent-form' ] );
 
 	const moreDropdown = [
 		{
@@ -30,7 +36,14 @@ export default function TableActions( props ) {
 		},
 	];
 
-	function handleDropdownTrigger( event, name ) {
+	/* Form Delete Mutation */
+	const {
+		mutateAsync: deleteFormMutation,
+		isLoading,
+		error,
+	} = useDeleteMutation( `/helpgent/admin/form/${ id }` );
+
+	async function handleDropdownTrigger( event, name ) {
 		event.preventDefault();
 		if ( name === 'rename' ) {
 			setEditModeStatus( true );
@@ -38,10 +51,30 @@ export default function TableActions( props ) {
 				...formTableState,
 				formInputTitle: form.title,
 			} );
+		} else if ( name === 'delete' ) {
+			try {
+				const deleteFormResponse = await deleteFormMutation();
+
+				const updatedForms = forms.forms.filter(
+					( singleForm ) => singleForm.id !== id
+				);
+
+				const formData = {
+					...forms,
+					forms: updatedForms,
+				};
+				setStoreData( [ 'helpgent-form' ], formData );
+				toast.success( deleteFormResponse.message, {
+					autoClose: 3000,
+				} );
+			} catch ( error ) {
+				console.log( error );
+				toast.success( 'Server Error', {
+					autoClose: 3000,
+				} );
+			}
 		}
 	}
-
-	//console.log(formTableState);
 
 	return (
 		<div className="helpgent-table-action">

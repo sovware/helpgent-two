@@ -4,8 +4,10 @@ import { formatDate } from '../../../../helper/formatter';
 import handleUpdateFormStatus from './handleUpdateFormStatus';
 import useUpdateMutation from '@hooks/useUpdateMutation.js';
 import FormTableStatus from '../components/FormTableStatus';
+import WelcomeBox from '../components/WelcomeBox';
 import { Spinner, FormToggle } from '@wordpress/components';
 import { lazy, Suspense, useState } from '@wordpress/element';
+import { WelcomeBoxStyleWrap } from '../components/style';
 /**
  * Function for load data with dom
  * @returns Dom of table body
@@ -14,7 +16,9 @@ export default function getFormTableBody(
 	forms,
 	isEditModeActive,
 	setEditModeStatus,
-	isFetchError
+	isFetchError,
+	isCreatePopupOpen,
+	setCreatePopupStatus
 ) {
 	if ( isFetchError ) {
 		return <span>{ formErrorMessage }</span>;

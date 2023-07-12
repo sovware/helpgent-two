@@ -64,7 +64,9 @@ export default function ContactQuestion( props ) {
 				<div className="helpgent-question-element__label">
 					<ReactQuill
 						modules={ quillModules }
-						placeholder={ `Contact Info ${ required ? '*' : null }` }
+						placeholder={ `Contact Info ${
+							required ? '*' : null
+						}` }
 					/>
 				</div>
 				<div className="helpgent-question-element__description">
@@ -165,12 +167,11 @@ export default function ContactQuestion( props ) {
 					</CountryDialerControl>
 				</div>
 
-
-				{/* { actionBtn.isActive && (
+				{ /* { actionBtn.isActive && (
 					<button className="helpgent-btn-next helpgent-btn helpgent-btn-primary helpgent-btn-md">
 						{ actionBtn.button_text }
 					</button>
-				) } */}
+				) } */ }
 			</div>
 		</div>
 	);
