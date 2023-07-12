@@ -2,9 +2,7 @@
 
 namespace HelpGent\App\Http\Controllers\Admin;
 
-use HelpGent\App\Async\ExportCSV;
 use HelpGent\App\Http\Controllers\Controller;
-use HelpGent\App\Models\Guest;
 use HelpGent\App\Repositories\ContactRepository;
 use HelpGent\WaxFramework\RequestValidator\Validator;
 use HelpGent\WaxFramework\Routing\Response;
