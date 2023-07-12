@@ -1994,6 +1994,81 @@ var SvgInstagram = function SvgInstagram(props) {
 
 /***/ }),
 
+/***/ "./assets/svg/icon/microphone.svg":
+/*!****************************************!*\
+  !*** ./assets/svg/icon/microphone.svg ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgMicrophone),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _g;
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var SvgMicrophone = function SvgMicrophone(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    width: 18.684,
+    height: 24.001
+  }, props), _g || (_g = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("g", {
+    "data-name": "Group 2701",
+    fill: "#fff"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    "data-name": "Path 1240",
+    d: "M9.885 16.663a5.332 5.332 0 0 0 4.727-5.38V5.379a5.649 5.649 0 0 0-.164-1.361A5.268 5.268 0 0 0 4.069 5.462v5.819a6.237 6.237 0 0 0 .107 1.145 5.334 5.334 0 0 0 5.709 4.237Zm1.025-8.438a.651.651 0 0 1-.681.54 3.729 3.729 0 0 1-.667-.064 3.172 3.172 0 0 0-1.057.064.68.68 0 0 1-.4-1.3 3.1 3.1 0 0 1 .429-.121 2.544 2.544 0 0 1 .667-.067 3.164 3.164 0 0 1 1.231.22.642.642 0 0 1 .479.731ZM6.921 5.84a.7.7 0 0 1 .475-.571 5.7 5.7 0 0 1 1.775-.237 8.068 8.068 0 0 1 2.009.3.475.475 0 0 1 .283.739.83.83 0 0 1-.985.392 3.331 3.331 0 0 0-2.537.02c-.369.15-1.137-.222-1.02-.643Z"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    "data-name": "Path 1241",
+    d: "M18.672 10.795c0-.552.013-1.02-.005-1.488a.8.8 0 0 0-.831-.777.8.8 0 0 0-.816.761c-.024.608-.012 1.217-.015 1.825a8.305 8.305 0 0 1-.2 1.895 7.628 7.628 0 0 1-11.29 4.9 7.5 7.5 0 0 1-3.837-6.714c-.011-.637.011-1.275-.015-1.911a.8.8 0 0 0-.825-.753.785.785 0 0 0-.817.758 21.438 21.438 0 0 0 .107 3.533 9.373 9.373 0 0 0 8.151 7.793c.177.02.231.077.228.257-.011.74-.008 1.48 0 2.22a.842.842 0 1 0 1.679-.011v-1.939c0-.476 0-.468.461-.537a9.07 9.07 0 0 0 6.891-4.784 9.324 9.324 0 0 0 1.134-5.028Z"
+  }))));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxOC42ODQiIGhlaWdodD0iMjQuMDAxIiB2aWV3Qm94PSIwIDAgMTguNjg0IDI0LjAwMSI+DQogIDxnIGlkPSJHcm91cF8yNzAxIiBkYXRhLW5hbWU9Ikdyb3VwIDI3MDEiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC04MDkuNjIyIC01MjQuODcyKSI+DQogICAgPHBhdGggaWQ9IlBhdGhfMTI0MCIgZGF0YS1uYW1lPSJQYXRoIDEyNDAiIGQ9Ik04MTguNDksNTQxLjUzNWE1LjMzMiw1LjMzMiwwLDAsMCw0LjcyNy01LjM4cTAtMS40NjIsMC0yLjkyNCwwLTEuNDksMC0yLjk4YTUuNjQ5LDUuNjQ5LDAsMCwwLS4xNjQtMS4zNjEsNS4yNjgsNS4yNjgsMCwwLDAtMTAuMzc5LDEuNDQ0cTAsMi45MDgsMCw1LjgxOWE2LjIzNyw2LjIzNywwLDAsMCwuMTA3LDEuMTQ1QTUuMzM0LDUuMzM0LDAsMCwwLDgxOC40OSw1NDEuNTM1Wm0xLjAyNS04LjQzOGEuNjUxLjY1MSwwLDAsMS0uNjgxLjU0LDMuNzI5LDMuNzI5LDAsMCwxLS42NjctLjA2NCwzLjE3MiwzLjE3MiwwLDAsMC0xLjA1Ny4wNjQuNjc5LjY3OSwwLDAsMS0uNC0xLjMsMy4xLDMuMSwwLDAsMSwuNDI5LS4xMjEsMi41NDQsMi41NDQsMCwwLDEsLjY2Ny0uMDY3LDMuMTY0LDMuMTY0LDAsMCwxLDEuMjMxLjIyQS42NDIuNjQyLDAsMCwxLDgxOS41MTYsNTMzLjFabS0zLjk4OS0yLjM4NWEuNy43LDAsMCwxLC40NzUtLjU3MSw1LjcsNS43LDAsMCwxLDEuNzc1LS4yMzcsOC4wNjgsOC4wNjgsMCwwLDEsMi4wMDkuMy40NzUuNDc1LDAsMCwxLC4yODMuNzM5LjgzLjgzLDAsMCwxLS45ODUuMzkyLDMuMzMxLDMuMzMxLDAsMCwwLTIuNTM3LjAyQzgxNi4xNzcsNTMxLjUwNSw4MTUuNDA5LDUzMS4xMzMsODE1LjUyNiw1MzAuNzEyWiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMS4wMTcgMCkiIGZpbGw9IiNmZmYiLz4NCiAgICA8cGF0aCBpZD0iUGF0aF8xMjQxIiBkYXRhLW5hbWU9IlBhdGggMTI0MSIgZD0iTTgyOC4yOTQsNTMzLjUzNGMwLS41NTIuMDEzLTEuMDItLjAwNS0xLjQ4OGEuOC44LDAsMCwwLS44MzEtLjc3Ny44LjgsMCwwLDAtLjgxNi43NjFjLS4wMjQuNjA4LS4wMTIsMS4yMTctLjAxNSwxLjgyNWE4LjMwNSw4LjMwNSwwLDAsMS0uMiwxLjg5NSw3LjYyOCw3LjYyOCwwLDAsMS0xMS4yOSw0LjksNy41LDcuNSwwLDAsMS0zLjgzNy02LjcxNGMtLjAxMS0uNjM3LjAxMS0xLjI3NS0uMDE1LTEuOTExYS44LjgsMCwwLDAtLjgyNS0uNzUzLjc4NS43ODUsMCwwLDAtLjgxNy43NTgsMjEuNDM4LDIxLjQzOCwwLDAsMCwuMTA3LDMuNTMzLDkuMzczLDkuMzczLDAsMCwwLDguMTUxLDcuNzkzYy4xNzcuMDIuMjMxLjA3Ny4yMjguMjU3LS4wMTEuNzQtLjAwOCwxLjQ4LDAsMi4yMmEuODQyLjg0MiwwLDEsMCwxLjY3OS0uMDExYzAtLjY0NSwwLTEuMjkyLDAtMS45MzksMC0uNDc2LDAtLjQ2OC40NjEtLjUzN2E5LjA3LDkuMDcsMCwwLDAsNi44OTEtNC43ODRBOS4zMjQsOS4zMjQsMCwwLDAsODI4LjI5NCw1MzMuNTM0WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAyLjEzMykiIGZpbGw9IiNmZmYiLz4NCiAgPC9nPg0KPC9zdmc+DQo=");
+
+/***/ }),
+
+/***/ "./assets/svg/icon/monitor.svg":
+/*!*************************************!*\
+  !*** ./assets/svg/icon/monitor.svg ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgMonitor),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path, _path2, _path3;
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var SvgMonitor = function SvgMonitor(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    "data-name": "Icon feather-monitor",
+    xmlns: "http://www.w3.org/2000/svg",
+    width: 27.5,
+    height: 25
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    "data-name": "Path 1480",
+    d: "M3.75 0h20a3.754 3.754 0 0 1 3.75 3.75v12.5A3.754 3.754 0 0 1 23.75 20h-20A3.754 3.754 0 0 1 0 16.25V3.75A3.754 3.754 0 0 1 3.75 0Zm20 17.5A1.251 1.251 0 0 0 25 16.25V3.75a1.251 1.251 0 0 0-1.25-1.25h-20A1.251 1.251 0 0 0 2.5 3.75v12.5a1.251 1.251 0 0 0 1.25 1.25Z"
+  })), _path2 || (_path2 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    "data-name": "Path 1481",
+    d: "M18.75 25h-10a1.25 1.25 0 1 1 0-2.5h10a1.25 1.25 0 1 1 0 2.5Z"
+  })), _path3 || (_path3 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    "data-name": "Path 1482",
+    d: "M13.75 25a1.25 1.25 0 0 1-1.25-1.25v-5a1.25 1.25 0 1 1 2.5 0v5A1.25 1.25 0 0 1 13.75 25Z"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyBpZD0iSWNvbl9mZWF0aGVyLW1vbml0b3IiIGRhdGEtbmFtZT0iSWNvbiBmZWF0aGVyLW1vbml0b3IiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjI3LjUiIGhlaWdodD0iMjUiIHZpZXdCb3g9IjAgMCAyNy41IDI1Ij4NCiAgPHBhdGggaWQ9IlBhdGhfMTQ4MCIgZGF0YS1uYW1lPSJQYXRoIDE0ODAiIGQ9Ik01LjI1LDNoMjBBMy43NTQsMy43NTQsMCwwLDEsMjksNi43NXYxMi41QTMuNzU0LDMuNzU0LDAsMCwxLDI1LjI1LDIzaC0yMEEzLjc1NCwzLjc1NCwwLDAsMSwxLjUsMTkuMjVWNi43NUEzLjc1NCwzLjc1NCwwLDAsMSw1LjI1LDNabTIwLDE3LjVhMS4yNTEsMS4yNTEsMCwwLDAsMS4yNS0xLjI1VjYuNzVBMS4yNTEsMS4yNTEsMCwwLDAsMjUuMjUsNS41aC0yMEExLjI1MSwxLjI1MSwwLDAsMCw0LDYuNzV2MTIuNUExLjI1MSwxLjI1MSwwLDAsMCw1LjI1LDIwLjVaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMS41IC0zKSIvPg0KICA8cGF0aCBpZD0iUGF0aF8xNDgxIiBkYXRhLW5hbWU9IlBhdGggMTQ4MSIgZD0iTTIxLjc1LDMyLjVoLTEwYTEuMjUsMS4yNSwwLDEsMSwwLTIuNWgxMGExLjI1LDEuMjUsMCwxLDEsMCwyLjVaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMyAtNy41KSIvPg0KICA8cGF0aCBpZD0iUGF0aF8xNDgyIiBkYXRhLW5hbWU9IlBhdGggMTQ4MiIgZD0iTTE3Ljc1LDMxLjVhMS4yNSwxLjI1LDAsMCwxLTEuMjUtMS4yNXYtNWExLjI1LDEuMjUsMCwxLDEsMi41LDB2NUExLjI1LDEuMjUsMCwwLDEsMTcuNzUsMzEuNVoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC00IC02LjUpIi8+DQo8L3N2Zz4NCg==");
+
+/***/ }),
+
 /***/ "./assets/svg/icon/pencil-plus.svg":
 /*!*****************************************!*\
   !*** ./assets/svg/icon/pencil-plus.svg ***!
@@ -2030,6 +2105,77 @@ var SvgPencilPlus = function SvgPencilPlus(props) {
 
 /***/ }),
 
+/***/ "./assets/svg/icon/picture.svg":
+/*!*************************************!*\
+  !*** ./assets/svg/icon/picture.svg ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgPicture),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path, _circle;
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var SvgPicture = function SvgPicture(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    width: 16,
+    height: 16
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    "data-name": "Path 1507",
+    d: "M13 0H3a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V3a3 3 0 0 0-3-3ZM3 2h10a1 1 0 0 1 1 1v10a1 1 0 0 1-.293.707L7.885 7.885a2.667 2.667 0 0 0-3.771 0L2 10V3a1 1 0 0 1 1-1Z",
+    fill: "#6e6e6e"
+  })), _circle || (_circle = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("circle", {
+    "data-name": "Ellipse 270",
+    cx: 2.5,
+    cy: 2.5,
+    r: 2.5,
+    transform: "translate(7.526 2.895)",
+    fill: "#6e6e6e"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyBpZD0icGljdHVyZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiI+DQogIDxwYXRoIGlkPSJQYXRoXzE1MDciIGRhdGEtbmFtZT0iUGF0aCAxNTA3IiBkPSJNMTMsMEgzQTMsMywwLDAsMCwwLDNWMTNhMywzLDAsMCwwLDMsM0gxM2EzLDMsMCwwLDAsMy0zVjNBMywzLDAsMCwwLDEzLDBaTTMsMkgxM2ExLDEsMCwwLDEsMSwxVjEzYTEsMSwwLDAsMS0uMjkzLjcwN0w3Ljg4NSw3Ljg4NWEyLjY2NywyLjY2NywwLDAsMC0zLjc3MSwwTDIsMTBWM0ExLDEsMCwwLDEsMywyWiIgZmlsbD0iIzZlNmU2ZSIvPg0KICA8Y2lyY2xlIGlkPSJFbGxpcHNlXzI3MCIgZGF0YS1uYW1lPSJFbGxpcHNlIDI3MCIgY3g9IjIuNSIgY3k9IjIuNSIgcj0iMi41IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg3LjUyNiAyLjg5NSkiIGZpbGw9IiM2ZTZlNmUiLz4NCjwvc3ZnPg0K");
+
+/***/ }),
+
+/***/ "./assets/svg/icon/plus.svg":
+/*!**********************************!*\
+  !*** ./assets/svg/icon/plus.svg ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgPlus),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path;
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var SvgPlus = function SvgPlus(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    width: 10,
+    height: 10
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    "data-name": "Icon awesome-plus",
+    d: "M9.286 3.929H6.071V.714A.714.714 0 0 0 5.357 0h-.714a.714.714 0 0 0-.714.714v3.215H.714A.714.714 0 0 0 0 4.643v.714a.714.714 0 0 0 .714.714h3.215v3.214a.714.714 0 0 0 .714.714h.714a.714.714 0 0 0 .714-.714V6.071h3.215A.714.714 0 0 0 10 5.357v-.714a.714.714 0 0 0-.714-.714Z",
+    fill: "#6551f2"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMCIgaGVpZ2h0PSIxMCIgdmlld0JveD0iMCAwIDEwIDEwIj4NCiAgPHBhdGggaWQ9Ikljb25fYXdlc29tZS1wbHVzIiBkYXRhLW5hbWU9Ikljb24gYXdlc29tZS1wbHVzIiBkPSJNOS4yODYsNi4xNzlINi4wNzFWMi45NjRhLjcxNC43MTQsMCwwLDAtLjcxNC0uNzE0SDQuNjQzYS43MTQuNzE0LDAsMCwwLS43MTQuNzE0VjYuMTc5SC43MTRBLjcxNC43MTQsMCwwLDAsMCw2Ljg5M3YuNzE0YS43MTQuNzE0LDAsMCwwLC43MTQuNzE0SDMuOTI5djMuMjE0YS43MTQuNzE0LDAsMCwwLC43MTQuNzE0aC43MTRhLjcxNC43MTQsMCwwLDAsLjcxNC0uNzE0VjguMzIxSDkuMjg2QS43MTQuNzE0LDAsMCwwLDEwLDcuNjA3VjYuODkzQS43MTQuNzE0LDAsMCwwLDkuMjg2LDYuMTc5WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAtMi4yNSkiIGZpbGw9IiM2NTUxZjIiLz4NCjwvc3ZnPg0K");
+
+/***/ }),
+
 /***/ "./assets/svg/icon/question-circle.svg":
 /*!*********************************************!*\
   !*** ./assets/svg/icon/question-circle.svg ***!
@@ -2059,6 +2205,72 @@ var SvgQuestionCircle = function SvgQuestionCircle(props) {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij4NCiAgPHBhdGggaWQ9Ikljb25fYXdlc29tZS1xdWVzdGlvbi1jaXJjbGUiIGRhdGEtbmFtZT0iSWNvbiBhd2Vzb21lLXF1ZXN0aW9uLWNpcmNsZSIgZD0iTTE2LjU2Myw4LjU2M2E4LDgsMCwxLDEtOC04QTgsOCwwLDAsMSwxNi41NjMsOC41NjNaTTguNzc3LDMuMjA4YTQuMTc4LDQuMTc4LDAsMCwwLTMuNzYsMi4wNTcuMzg4LjM4OCwwLDAsMCwuMDg4LjUyNGwxLjExOS44NDlhLjM4Ny4zODcsMCwwLDAsLjUzOC0uMDY4Yy41NzYtLjczMS45NzEtMS4xNTUsMS44NDgtMS4xNTUuNjU5LDAsMS40NzQuNDI0LDEuNDc0LDEuMDYzLDAsLjQ4My0uNC43MzEtMS4wNDksMS4xQzguMjc2LDgsNy4yNzIsOC41MjgsNy4yNzIsOS44NTN2LjEyOWEuMzg3LjM4NywwLDAsMCwuMzg3LjM4N0g5LjQ2NmEuMzg3LjM4NywwLDAsMCwuMzg3LS4zODdWOS45MzljMC0uOTE4LDIuNjgzLS45NTYsMi42ODMtMy40NDFDMTIuNTM2LDQuNjI3LDEwLjYsMy4yMDgsOC43NzcsMy4yMDhabS0uMjE1LDhhMS40ODQsMS40ODQsMCwxLDAsMS40ODQsMS40ODRBMS40ODYsMS40ODYsMCwwLDAsOC41NjMsMTEuMjA4WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTAuNTYzIC0wLjU2MykiIGZpbGw9IiM2ZTZlNmUiLz4NCjwvc3ZnPg0K");
+
+/***/ }),
+
+/***/ "./assets/svg/icon/star-alt.svg":
+/*!**************************************!*\
+  !*** ./assets/svg/icon/star-alt.svg ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgStarAlt),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path;
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var SvgStarAlt = function SvgStarAlt(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    width: 26.041,
+    height: 25
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    "data-name": "Icon awesome-star",
+    d: "M11.733 1.801 8.804 7.739l-6.554.956a1.436 1.436 0 0 0-.794 2.449l4.742 4.621-1.119 6.526a1.435 1.435 0 0 0 2.078 1.51l5.863-3.082 5.859 3.082a1.436 1.436 0 0 0 2.081-1.512l-1.122-6.527 4.742-4.621a1.436 1.436 0 0 0-.794-2.449l-6.554-.956-2.924-5.935a1.437 1.437 0 0 0-2.575 0Z",
+    fill: "#fff",
+    stroke: "#a2a2a2",
+    strokeWidth: 2
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNi4wNDEiIGhlaWdodD0iMjUiIHZpZXdCb3g9IjAgMCAyNi4wNDEgMjUiPg0KICA8cGF0aCBpZD0iSWNvbl9hd2Vzb21lLXN0YXIiIGRhdGEtbmFtZT0iSWNvbiBhd2Vzb21lLXN0YXIiIGQ9Ik0xMi4xNTQuOCw5LjIyNSw2LjczOGwtNi41NTQuOTU2YTEuNDM2LDEuNDM2LDAsMCwwLS43OTQsMi40NDlsNC43NDIsNC42MjFMNS41LDIxLjI5QTEuNDM1LDEuNDM1LDAsMCwwLDcuNTc4LDIyLjhsNS44NjMtMy4wODJMMTkuMywyMi44YTEuNDM2LDEuNDM2LDAsMCwwLDIuMDgxLTEuNTEybC0xLjEyMi02LjUyNyw0Ljc0Mi00LjYyMWExLjQzNiwxLjQzNiwwLDAsMC0uNzk0LTIuNDQ5bC02LjU1NC0uOTU2TDE0LjcyOS44YTEuNDM3LDEuNDM3LDAsMCwwLTIuNTc1LDBaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMC40MjEgMS4wMDEpIiBmaWxsPSIjZmZmIiBzdHJva2U9IiNhMmEyYTIiIHN0cm9rZS13aWR0aD0iMiIvPg0KPC9zdmc+DQo=");
+
+/***/ }),
+
+/***/ "./assets/svg/icon/star.svg":
+/*!**********************************!*\
+  !*** ./assets/svg/icon/star.svg ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgStar),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path;
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var SvgStar = function SvgStar(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    width: 16,
+    height: 15.314
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    "data-name": "Icon awesome-star",
+    d: "M7.142.533 5.189 4.492.82 5.129a.957.957 0 0 0-.529 1.633l3.161 3.08-.748 4.351a.956.956 0 0 0 1.388 1.008l3.909-2.055 3.908 2.055a.957.957 0 0 0 1.388-1.008l-.748-4.35 3.161-3.08a.957.957 0 0 0-.529-1.633l-4.369-.637L8.859.533a.958.958 0 0 0-1.717 0Z",
+    fill: "#6e6e6e"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNS4zMTQiIHZpZXdCb3g9IjAgMCAxNiAxNS4zMTQiPg0KICA8cGF0aCBpZD0iSWNvbl9hd2Vzb21lLXN0YXIiIGRhdGEtbmFtZT0iSWNvbiBhd2Vzb21lLXN0YXIiIGQ9Ik04LjU4My41MzIsNi42Myw0LjQ5MWwtNC4zNjkuNjM3YS45NTcuOTU3LDAsMCwwLS41MjksMS42MzNsMy4xNjEsMy4wOC0uNzQ4LDQuMzUxQS45NTYuOTU2LDAsMCwwLDUuNTMzLDE1LjJsMy45MDktMi4wNTVMMTMuMzUsMTUuMmEuOTU3Ljk1NywwLDAsMCwxLjM4OC0xLjAwOEwxMy45OSw5Ljg0MmwzLjE2MS0zLjA4YS45NTcuOTU3LDAsMCwwLS41MjktMS42MzNsLTQuMzY5LS42MzdMMTAuMy41MzJhLjk1OC45NTgsMCwwLDAtMS43MTcsMFoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xLjQ0MSAwLjAwMSkiIGZpbGw9IiM2ZTZlNmUiLz4NCjwvc3ZnPg0K");
 
 /***/ }),
 
@@ -2092,6 +2304,109 @@ var SvgTemplate = function SvgTemplate(props) {
 
 /***/ }),
 
+/***/ "./assets/svg/icon/text.svg":
+/*!**********************************!*\
+  !*** ./assets/svg/icon/text.svg ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgText),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path;
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var SvgText = function SvgText(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    width: 24,
+    height: 24
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    "data-name": "text (1)",
+    d: "M19 0H5a5.006 5.006 0 0 0-5 5v14a5.006 5.006 0 0 0 5 5h14a5.006 5.006 0 0 0 5-5V5a5.006 5.006 0 0 0-5-5Zm-2 10a1 1 0 0 1-1-1 1 1 0 0 0-1-1h-2v8h1a1 1 0 0 1 0 2h-4a1 1 0 0 1 0-2h1V8H9a1 1 0 0 0-1 1 1 1 0 0 1-2 0 3 3 0 0 1 3-3h6a3 3 0 0 1 3 3 1 1 0 0 1-1 1Z",
+    fill: "#fff"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij4NCiAgPHBhdGggaWQ9InRleHRfMV8iIGRhdGEtbmFtZT0idGV4dCAoMSkiIGQ9Ik0xOSwwSDVBNS4wMDYsNS4wMDYsMCwwLDAsMCw1VjE5YTUuMDA2LDUuMDA2LDAsMCwwLDUsNUgxOWE1LjAwNiw1LjAwNiwwLDAsMCw1LTVWNUE1LjAwNiw1LjAwNiwwLDAsMCwxOSwwWk0xNywxMGExLDEsMCwwLDEtMS0xLDEsMSwwLDAsMC0xLTFIMTN2OGgxYTEsMSwwLDAsMSwwLDJIMTBhMSwxLDAsMCwxLDAtMmgxVjhIOUExLDEsMCwwLDAsOCw5LDEsMSwwLDAsMSw2LDksMywzLDAsMCwxLDksNmg2YTMsMywwLDAsMSwzLDNBMSwxLDAsMCwxLDE3LDEwWiIgZmlsbD0iI2ZmZiIvPg0KPC9zdmc+DQo=");
+
+/***/ }),
+
+/***/ "./assets/svg/icon/times.svg":
+/*!***********************************!*\
+  !*** ./assets/svg/icon/times.svg ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgTimes),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path;
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var SvgTimes = function SvgTimes(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    width: 6,
+    height: 5.999
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M3.706 3.004 5.854.861a.501.501 0 1 0-.709-.709L3 2.295.857.147a.501.501 0 0 0-.709.709l2.148 2.148L.148 5.142a.501.501 0 1 0 .709.709L3 3.704l2.143 2.148a.501.501 0 1 0 .709-.709Z",
+    fill: "#3c3c3c"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2IiBoZWlnaHQ9IjUuOTk5IiB2aWV3Qm94PSIwIDAgNiA1Ljk5OSI+DQogIDxwYXRoIGlkPSJ0aW1lcyIgZD0iTTkuNyw5bDIuMTQ4LTIuMTQzYS41LjUsMCwxLDAtLjcwOS0uNzA5TDguOTk0LDguMjkxLDYuODUxLDYuMTQzYS41LjUsMCwwLDAtLjcwOS43MDlMOC4yOSw5LDYuMTQyLDExLjEzOGEuNS41LDAsMSwwLC43MDkuNzA5TDguOTk0LDkuN2wyLjE0MywyLjE0OGEuNS41LDAsMSwwLC43MDktLjcwOVoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC01Ljk5NCAtNS45OTYpIiBmaWxsPSIjM2MzYzNjIi8+DQo8L3N2Zz4NCg==");
+
+/***/ }),
+
+/***/ "./assets/svg/icon/trash.svg":
+/*!***********************************!*\
+  !*** ./assets/svg/icon/trash.svg ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgTrash),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _g;
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var SvgTrash = function SvgTrash(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    width: 14.667,
+    height: 16
+  }, props), _g || (_g = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("g", {
+    "data-name": "trash (1)",
+    fill: "#6e6e6e"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    "data-name": "Path 1508",
+    d: "M14.667 3a1 1 0 0 0-1-1h-2.518a3 3 0 0 0-2.816-2h-2a3 3 0 0 0-2.816 2H1a1 1 0 0 0-1 1 1 1 0 0 0 1 1h.333v8.333A3.667 3.667 0 0 0 5 16h4.667a3.667 3.667 0 0 0 3.667-3.667V4h.333a1 1 0 0 0 1-1Zm-3.333 9.333A1.667 1.667 0 0 1 9.667 14H5a1.667 1.667 0 0 1-1.667-1.667V4h8Z"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    "data-name": "Path 1509",
+    d: "M5.667 12a1 1 0 0 0 1-1V7a1 1 0 0 0-2 0v4a1 1 0 0 0 1 1Z"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    "data-name": "Path 1510",
+    d: "M9 12a1 1 0 0 0 1-1V7a1 1 0 0 0-2 0v4a1 1 0 0 0 1 1Z"
+  }))));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNC42NjciIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNC42NjcgMTYiPg0KICA8ZyBpZD0idHJhc2hfMV8iIGRhdGEtbmFtZT0idHJhc2ggKDEpIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjEuMzMzKSI+DQogICAgPHBhdGggaWQ9IlBhdGhfMTUwOCIgZGF0YS1uYW1lPSJQYXRoIDE1MDgiIGQ9Ik0zNiwzYTEsMSwwLDAsMC0xLTFIMzIuNDgyYTMsMywwLDAsMC0yLjgxNi0yaC0yQTMsMywwLDAsMCwyNC44NSwySDIyLjMzM2ExLDEsMCwwLDAtMSwxaDBhMSwxLDAsMCwwLDEsMWguMzMzdjguMzMzQTMuNjY3LDMuNjY3LDAsMCwwLDI2LjMzMywxNkgzMWEzLjY2NywzLjY2NywwLDAsMCwzLjY2Ny0zLjY2N1Y0SDM1QTEsMSwwLDAsMCwzNiwzWm0tMy4zMzMsOS4zMzNBMS42NjcsMS42NjcsMCwwLDEsMzEsMTRIMjYuMzMzYTEuNjY3LDEuNjY3LDAsMCwxLTEuNjY3LTEuNjY3VjRoOFoiIGZpbGw9IiM2ZTZlNmUiLz4NCiAgICA8cGF0aCBpZD0iUGF0aF8xNTA5IiBkYXRhLW5hbWU9IlBhdGggMTUwOSIgZD0iTTE3MS42NjcsMTk4YTEsMSwwLDAsMCwxLTF2LTRhMSwxLDAsMCwwLTIsMHY0QTEsMSwwLDAsMCwxNzEuNjY3LDE5OFoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xNDQuNjY3IC0xODYpIiBmaWxsPSIjNmU2ZTZlIi8+DQogICAgPHBhdGggaWQ9IlBhdGhfMTUxMCIgZGF0YS1uYW1lPSJQYXRoIDE1MTAiIGQ9Ik0yNzguMzMzLDE5OGExLDEsMCwwLDAsMS0xdi00YTEsMSwwLDAsMC0yLDB2NEExLDEsMCwwLDAsMjc4LjMzMywxOThaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjQ4IC0xODYpIiBmaWxsPSIjNmU2ZTZlIi8+DQogIDwvZz4NCjwvc3ZnPg0K");
+
+/***/ }),
+
 /***/ "./assets/svg/icon/twitter.svg":
 /*!*************************************!*\
   !*** ./assets/svg/icon/twitter.svg ***!
@@ -2120,6 +2435,37 @@ var SvgTwitter = function SvgTwitter(props) {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxMi45OTUiIHZpZXdCb3g9IjAgMCAxNiAxMi45OTUiPg0KICA8cGF0aCBpZD0idHdpdHRlciIgZD0iTTE0LjM1NSw1MS4zMjFjLjAxLjE0Mi4wMS4yODQuMDEuNDI2YTkuMjY2LDkuMjY2LDAsMCwxLTkuMzMsOS4zM0E5LjI2Nyw5LjI2NywwLDAsMSwwLDU5LjZhNi43ODMsNi43ODMsMCwwLDAsLjc5Mi4wNDEsNi41NjcsNi41NjcsMCwwLDAsNC4wNzEtMS40QTMuMjg1LDMuMjg1LDAsMCwxLDEuOCw1NS45N2E0LjEzNSw0LjEzNSwwLDAsMCwuNjE5LjA1MSwzLjQ2OCwzLjQ2OCwwLDAsMCwuODYzLS4xMTJBMy4yOCwzLjI4LDAsMCwxLC42NSw1Mi42OTF2LS4wNDFhMy4zLDMuMywwLDAsMCwxLjQ4Mi40MTYsMy4yODQsMy4yODQsMCwwLDEtMS4wMTUtNC4zODYsOS4zMjEsOS4zMjEsMCwwLDAsNi43NjEsMy40MzEsMy43LDMuNywwLDAsMS0uMDgxLS43NTEsMy4yODIsMy4yODIsMCwwLDEsNS42NzUtMi4yNDQsNi40NTYsNi40NTYsMCwwLDAsMi4wODEtLjc5MiwzLjI3LDMuMjcsMCwwLDEtMS40NDIsMS44MDdBNi41NzQsNi41NzQsMCwwLDAsMTYsNDkuNjI1LDcuMDQ5LDcuMDQ5LDAsMCwxLDE0LjM1NSw1MS4zMjFaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIC00OC4wODIpIiBmaWxsPSIjZmZmIi8+DQo8L3N2Zz4NCg==");
+
+/***/ }),
+
+/***/ "./assets/svg/icon/video-camera-alt.svg":
+/*!**********************************************!*\
+  !*** ./assets/svg/icon/video-camera-alt.svg ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   ReactComponent: () => (/* binding */ SvgVideoCameraAlt),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _path;
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var SvgVideoCameraAlt = function SvgVideoCameraAlt(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
+    xmlns: "http://www.w3.org/2000/svg",
+    width: 24,
+    height: 18
+  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+    d: "M22.925 2.695a1.934 1.934 0 0 0-2.037.183L18.944 4.76A5.505 5.505 0 0 0 13.5 0h-8A5.506 5.506 0 0 0 0 5.5v7A5.507 5.507 0 0 0 5.5 18h8a5.505 5.505 0 0 0 5.441-4.736l1.947 1.846a1.937 1.937 0 0 0 2.145.126A2.077 2.077 0 0 0 24 13.42V4.434a1.933 1.933 0 0 0-1.075-1.739ZM16 12.5a2.5 2.5 0 0 1-2.5 2.5h-8A2.5 2.5 0 0 1 3 12.5v-7A2.5 2.5 0 0 1 5.5 3h8A2.5 2.5 0 0 1 16 5.5v7Z",
+    fill: "#fff"
+  })));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIxOCIgdmlld0JveD0iMCAwIDI0IDE4Ij4NCiAgPHBhdGggaWQ9InZpZGVvLWNhbWVyYS1hbHQiIGQ9Ik0yMi45MjUsNS42OTVhMS45MzQsMS45MzQsMCwwLDAtMi4wMzcuMTgzTDE4Ljk0NCw3Ljc2QTUuNTA1LDUuNTA1LDAsMCwwLDEzLjUsM2gtOEE1LjUwNiw1LjUwNiwwLDAsMCwwLDguNXY3QTUuNTA3LDUuNTA3LDAsMCwwLDUuNSwyMWg4YTUuNTA1LDUuNTA1LDAsMCwwLDUuNDQxLTQuNzM2bDEuOTQ3LDEuODQ2YTEuOTM3LDEuOTM3LDAsMCwwLDIuMTQ1LjEyNkEyLjA3NywyLjA3NywwLDAsMCwyNCwxNi40MlY3LjQzNEExLjkzMywxLjkzMywwLDAsMCwyMi45MjUsNS42OTVaTTE2LDE1LjVBMi41LDIuNSwwLDAsMSwxMy41LDE4aC04QTIuNSwyLjUsMCwwLDEsMywxNS41di03QTIuNSwyLjUsMCwwLDEsNS41LDZoOEEyLjUsMi41LDAsMCwxLDE2LDguNXY3WiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAtMykiIGZpbGw9IiNmZmYiLz4NCjwvc3ZnPg0K");
 
 /***/ }),
 
@@ -2577,37 +2923,216 @@ const FormTableStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"]
         position: relative;
         min-height: 200px;
     }
+    .helpgent-table-loader{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     .helpgent-table{
+        min-height: inherit;
+        thead{
+            border-bottom: 10px solid transparent;
+            tr{
+                background: #e8e8e8;
+                border-radius: 10px;
+                th{
+                    padding: 16px 15px 10px;
+                }
+            }
+        }
+        tbody{
+            tr{
+                transition: 0.3s ease;
+                &:hover{
+                    background: #EFEFEF;
+                }
+                td{
+                    padding: 11px 15px;
+                    font-weight: 500;
+                    .helpgent-toggle{
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                    }
+                    .is-checked{
+                        & + .helpgent-form-status{
+                            color: var(--helpgent-color-primary);
+                        }
+                    }
+                }
+                .helpgent-form-shortcode{
+                    input {
+                        border: 0 none;
+                        background: var(--helpgent-color-bg-deep);
+                        color: var(--helpgent-color-dark);
+                        border-radius: 5px;
+                    }
+                }
+                .helpgent-table-action{
+                    display: flex;
+                    align-items: center;
+                    gap: 0 20px;
+                    .helpgent-btn{
+                        padding: 0 15px;
+                        height: 34px;
+                        font-size: 14px;
+                        font-weight: 500;
+                        &:hover{
+                            background: var(--helpgent-color-dark);
+                            color: var(--helpgent-color-white);
+                        }
+                    }
+                    .helpgent-dropdown{
+                        line-height: 0;
+                        .helpgent-dropdown__toggle{
+                            height: 35px;
+                            padding: 0 10px;
+                            border-radius: 10px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                        &.helpgent-dropdown-open{
+                            .helpgent-dropdown__toggle{
+                                background: var(--helpgent-color-bg-deep);
+                            }
+                        }
+                        &__content{
+                            li:last-child{
+                                border-top: 1px solid #e6e6e6;
+                                a{
+                                    margin-top: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
         th{
             &.helpgent-head-name{
-                width: 200px;
+                width: 300px;
             }
             &.helpgent-head-shortcode{
                 width: 210px;
             }
             &.helpgent-head-status{
-                width: 80px;
+                width: 150px;
+            }
+            &.helpgent-head-action{
+                width: 115px;
             }
         }
     }
 `;
 const TitleBoxStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div`
-   .helpgent-titleBox-action-item{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    .helpgent-titleBox__editor{
+        input{
+            border-top: 0px none;
+            border-right: 0px none;
+            border-bottom: 1px solid #ededed;
+            border-left: 0px none;
+            border-image: initial;
+            background-color: transparent;
+            border-radius: 0px;
+            padding: 4px 0;
+            line-height: 2;
+            min-height: 30px;
+            color: #2c3338;
+            transition: 0.3s ease;
+            &:active,
+            &:focus{
+                border: 0 none;
+                border-bottom: 1px solid #000000;
+                outline: 0;
+                box-shadow: none;
+            }
+        }
+    }
+    .helpgent-titleBox__actions{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .helpgent-titleBox-action-item{
         display: flex;
         align-items: center;
         justify-content: center;
         width: 32px;
         height: 32px;
         cursor: pointer ;
+        border-radius: 50%;
+        transition: 0.3s ease;
         &.helpgent-titleBox__actions-yes{
             background-color: var(--helpgent-color-success);
+            border: 1px solid var(--helpgent-color-success);
         }
         &.helpgent-titleBox__actions-cancel{
             background-color: var(--helpgent-color-danger);
+            border: 1px solid var(--helpgent-color-danger);
         }
         svg{
             width: 10px;
             height: 10px;
+            path{
+                fill: #fff;
+                transition: 0.3s ease;
+            }
+        }
+        .helpgent-circle-loader {
+            border-color: #fff;
+            border-bottom-color: transparent;
+            transition: 0.3s ease;
+        }
+        &:hover{
+            background: none;
+            svg{
+                path{
+                    fill: #000;
+                }
+            }
+            .helpgent-circle-loader {
+                border-color: var(--helpgent-primary-color);
+                border-bottom-color: transparent;
+            }
+        }
+    }
+
+   .helpgent-titleBox-text{
+        .helpgent-title{
+            font-size: 15px;
+            font-weight: 600;
+        }
+   }
+   .helpgent-titleBox-meta{
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin: 5px 0 0;
+        .helpgent-titleBox-meta__id{
+            position: relative;
+            &::after{
+                content: '';
+                width: 2px;
+                height: 2px;
+                background: #6e6e6e;
+                border-radius: 50%;
+                display: block;
+                position: absolute;
+                right: -7px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+        li{
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--helpgent-color-light-gray);
+            margin: 0;
         }
    }
 `;
@@ -2644,7 +3169,7 @@ const CreatePopupStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default
         text-decoration: none;
         background-color: var(--helpgent-color-bg-gray);
         &:hover{
-            background-color: 
+            background-color:
         }
    }
    .helpgent-createPopup__action-icon{
@@ -2744,7 +3269,7 @@ const CreateFormStyleWrap = styled_components__WEBPACK_IMPORTED_MODULE_0__["defa
     }
 `;
 const SingleFormHeaderStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div`
-    
+
 `;
 
 
@@ -3594,6 +4119,272 @@ const question = {
   layout: 'content-right'
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (question);
+
+/***/ }),
+
+/***/ "./resources/js/components/questionList/ContactQuestion/index.js":
+/*!***********************************************************************!*\
+  !*** ./resources/js/components/questionList/ContactQuestion/index.js ***!
+  \***********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ContactQuestion)
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_quill__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-quill */ "./node_modules/react-quill/lib/index.js");
+/* harmony import */ var react_quill__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_quill__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-quill/dist/quill.snow.css */ "./node_modules/react-quill/dist/quill.snow.css");
+/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/index-6ea50319.esm.js");
+/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-select */ "./node_modules/react-select/dist/react-select.esm.js");
+/* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-inlinesvg */ "./node_modules/react-inlinesvg/esm/index.js");
+/* harmony import */ var _data_countries_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../data/countries.js */ "./resources/js/data/countries.js");
+/* harmony import */ var _style_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../style.js */ "./resources/js/style.js");
+
+
+
+
+
+
+
+
+function ContactQuestion(props) {
+  const {
+    layoutMode,
+    singleForm,
+    setSingleForm,
+    selectedQuestion: contactQuestionField
+  } = props;
+  const {
+    content
+  } = singleForm;
+  const {
+    questions
+  } = JSON.parse(content);
+  const required = true;
+  const quillModules = {
+    toolbar: false
+  };
+  const [phoneInput, setPhoneInput] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)({
+    dialCode: _data_countries_js__WEBPACK_IMPORTED_MODULE_3__["default"][0].dial_code,
+    number: ''
+  });
+  const Option = optionProps => {
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_select__WEBPACK_IMPORTED_MODULE_5__.c.Option, optionProps, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, optionProps.data.name));
+  };
+  const countryOptions = _data_countries_js__WEBPACK_IMPORTED_MODULE_3__["default"].map(country => {
+    return {
+      label: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        src: country.flag
+      }),
+      value: country.dial_code,
+      name: country.name
+    };
+  });
+  function handleSelectCountry(selectedCountry) {
+    setPhoneInput({
+      ...phoneInput,
+      dialCode: selectedCountry.value
+    });
+  }
+  function handleChangeNumber(event) {
+    const onlyNumber = event.target.value.replace(/^\(\+\d+\)\s*/, '');
+    setPhoneInput({
+      ...phoneInput,
+      number: onlyNumber
+    });
+  }
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element__text"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element__label"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)((react_quill__WEBPACK_IMPORTED_MODULE_1___default()), {
+    modules: quillModules,
+    placeholder: `Contact Info ${required ? '*' : null}`
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element__description"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)((react_quill__WEBPACK_IMPORTED_MODULE_1___default()), {
+    modules: quillModules,
+    placeholder: "Type a description"
+  }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element__action"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-form-group helpgent-form-group-column"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
+    htmlFor: "helpgent-contact-name-1",
+    className: "helpgent-form-group__label"
+  }, "First name", ' ', (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "helpgent-required-sign"
+  }, "*")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "text",
+    id: "helpgent-contact-name-1",
+    className: "helpgent-form-group__element",
+    placeholder: "First name"
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-form-group helpgent-form-group-column"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
+    htmlFor: "helpgent-contact-name-2",
+    className: "helpgent-form-group__label"
+  }, "Last name", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "helpgent-required-sign"
+  }, "*")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "text",
+    id: "helpgent-contact-name-2",
+    className: "helpgent-form-group__element",
+    placeholder: "Address"
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-form-group helpgent-form-group-column"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
+    htmlFor: "helpgent-contact-email",
+    className: "helpgent-form-group__label"
+  }, "Email"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "email",
+    id: "helpgent-contact-email",
+    className: "helpgent-form-group__element",
+    placeholder: "Email"
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-form-group helpgent-form-group-column"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
+    htmlFor: "helpgent-contact-company",
+    className: "helpgent-form-group__label"
+  }, "Company"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "text",
+    id: "helpgent-contact-company",
+    className: "helpgent-form-group__element",
+    placeholder: "Company"
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-form-group helpgent-form-group-column helpgent-mb-0"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
+    htmlFor: "helpgent-contact-company",
+    className: "helpgent-form-group__label"
+  }, "Mobile Number"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_style_js__WEBPACK_IMPORTED_MODULE_4__.CountryDialerControl, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-form-group helpgent-mb-0"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_select__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    options: countryOptions,
+    defaultValue: countryOptions[0],
+    components: {
+      Option
+    },
+    inputId: "helpgent-country-select",
+    className: "helpgent-select",
+    classNamePrefix: "helpgent-select",
+    isSearchable: false,
+    onChange: handleSelectCountry
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
+    type: "text",
+    className: "helpgent-form-group__element",
+    placeholder: "(555) 555-5555",
+    value: `(${phoneInput.dialCode}) ${phoneInput.number}`,
+    onChange: handleChangeNumber
+  }))))));
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/questionList/ContactQuestion/question.js":
+/*!**************************************************************************!*\
+  !*** ./resources/js/components/questionList/ContactQuestion/question.js ***!
+  \**************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! uuid */ "./node_modules/uuid/dist/esm-browser/v4.js");
+/* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.js */ "./resources/js/components/questionList/ContactQuestion/index.js");
+
+
+const contact = {
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_1__["default"])(),
+  title: 'Contact info',
+  screen_type: 'contact',
+  icon: 'address',
+  isPro: false,
+  isComing: false,
+  position: {
+    x: -150,
+    y: 0
+  },
+  fields: [/* Text Field */
+  {
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_1__["default"])(),
+    //string
+    type: 'text',
+    // elementor, gutenburg, shortcode
+    elements: [{
+      key: 'greeting-text',
+      greeting_text: ''
+    }, {
+      key: 'description',
+      label: ''
+    }, {
+      key: 'required',
+      is_required: '0'
+    }, {
+      key: 'show-timer',
+      is_show_timer: '0'
+    }, {
+      key: 'time-mins',
+      time_in_mins: ''
+    }, {
+      key: 'time-complete',
+      is_time_to_complete: '0'
+    }, {
+      key: 'btn-text',
+      button_text: 'Submit'
+    }],
+    allowedRules: [],
+    fieldDesign: [{
+      labelStyle: [{
+        key: 'font-family',
+        font_family: ''
+      }, {
+        key: 'font-size',
+        font_size: ''
+      }, {
+        key: 'font-weight',
+        font_weight: ''
+      }, {
+        key: 'text-color',
+        text_color: ''
+      }]
+    }, {
+      buttonStyle: [{
+        key: 'btn-color',
+        button_color: ''
+      }, {
+        key: 'btn-radius',
+        button_radius: ''
+      }, {
+        key: 'btn-text-color',
+        text_color: ''
+      }, {
+        key: 'font-size',
+        font_size: ''
+      }]
+    }, {
+      mediaStyle: [{
+        is_video_overlay: '0'
+      }, {
+        key: 'overlay-color',
+        overlay_color: ''
+      }, {
+        key: 'overlay-opacity',
+        overlay_opacity: ''
+      }]
+    }],
+    fieldLogic: []
+  }],
+  groupName: 'contact',
+  medias: [],
+  layout: 'content-right'
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (contact);
 
 /***/ }),
 
@@ -5063,6 +5854,195 @@ const question = {
 
 /***/ }),
 
+/***/ "./resources/js/components/questionList/OpenEndedQuestion/index.js":
+/*!*************************************************************************!*\
+  !*** ./resources/js/components/questionList/OpenEndedQuestion/index.js ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ OpenEndedQuestion)
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_quill__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-quill */ "./node_modules/react-quill/lib/index.js");
+/* harmony import */ var react_quill__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_quill__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-quill/dist/quill.snow.css */ "./node_modules/react-quill/dist/quill.snow.css");
+/* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-inlinesvg */ "./node_modules/react-inlinesvg/esm/index.js");
+/* harmony import */ var _icon_video_camera_alt_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @icon/video-camera-alt.svg */ "./assets/svg/icon/video-camera-alt.svg");
+/* harmony import */ var _icon_microphone_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @icon/microphone.svg */ "./assets/svg/icon/microphone.svg");
+/* harmony import */ var _icon_text_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @icon/text.svg */ "./assets/svg/icon/text.svg");
+/* harmony import */ var _icon_monitor_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @icon/monitor.svg */ "./assets/svg/icon/monitor.svg");
+
+
+
+
+
+
+
+
+function OpenEndedQuestion(props) {
+  const {
+    layoutMode,
+    singleForm,
+    setSingleForm,
+    selectedQuestion: openEndedQuestionField
+  } = props;
+  const {
+    content
+  } = singleForm;
+  const {
+    questions
+  } = JSON.parse(content);
+  const quillModules = {
+    toolbar: false
+  };
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element__text"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element__label"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)((react_quill__WEBPACK_IMPORTED_MODULE_1___default()), {
+    modules: quillModules,
+    placeholder: `Hello there! 👋`
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element__description"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)((react_quill__WEBPACK_IMPORTED_MODULE_1___default()), {
+    modules: quillModules,
+    placeholder: "Please leave your questions below"
+  }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element__action"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-form-group helpgent-form-group-column"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", null, "How would you like to contact?"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-open-ended-question-types"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    className: "helpgent-open-ended-btn"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    src: _icon_video_camera_alt_svg__WEBPACK_IMPORTED_MODULE_3__["default"]
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, "Video")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    className: "helpgent-open-ended-btn"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    src: _icon_microphone_svg__WEBPACK_IMPORTED_MODULE_4__["default"]
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, "Voice")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    className: "helpgent-open-ended-btn"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    src: _icon_text_svg__WEBPACK_IMPORTED_MODULE_5__["default"]
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, "Text")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    className: "helpgent-open-ended-btn"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    src: _icon_monitor_svg__WEBPACK_IMPORTED_MODULE_6__["default"]
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, "Screen"))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "helpgent-open-ended-notice"
+  }, "You can review it before sending"))));
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/questionList/OpenEndedQuestion/question.js":
+/*!****************************************************************************!*\
+  !*** ./resources/js/components/questionList/OpenEndedQuestion/question.js ***!
+  \****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! uuid */ "./node_modules/uuid/dist/esm-browser/v4.js");
+/* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.js */ "./resources/js/components/questionList/OpenEndedQuestion/index.js");
+
+
+const openEnded = {
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_1__["default"])(),
+  title: 'Open Ended',
+  screen_type: 'open-ended',
+  icon: 'openEnded',
+  isPro: false,
+  position: {
+    x: -150,
+    y: 0
+  },
+  fields: [/* Text Field */
+  {
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_1__["default"])(),
+    //string
+    type: 'text',
+    // elementor, gutenburg, shortcode
+    elements: [{
+      key: 'greeting-text',
+      greeting_text: ''
+    }, {
+      key: 'description',
+      label: ''
+    }, {
+      key: 'required',
+      is_required: '0'
+    }, {
+      key: 'show-timer',
+      is_show_timer: '0'
+    }, {
+      key: 'time-mins',
+      time_in_mins: ''
+    }, {
+      key: 'time-complete',
+      is_time_to_complete: '0'
+    }, {
+      key: 'btn-text',
+      button_text: 'Submit'
+    }],
+    allowedRules: [],
+    fieldDesign: [{
+      labelStyle: [{
+        key: 'font-family',
+        font_family: ''
+      }, {
+        key: 'font-size',
+        font_size: ''
+      }, {
+        key: 'font-weight',
+        font_weight: ''
+      }, {
+        key: 'text-color',
+        text_color: ''
+      }]
+    }, {
+      buttonStyle: [{
+        key: 'btn-color',
+        button_color: ''
+      }, {
+        key: 'btn-radius',
+        button_radius: ''
+      }, {
+        key: 'btn-text-color',
+        text_color: ''
+      }, {
+        key: 'font-size',
+        font_size: ''
+      }]
+    }, {
+      mediaStyle: [{
+        is_video_overlay: '0'
+      }, {
+        key: 'overlay-color',
+        overlay_color: ''
+      }, {
+        key: 'overlay-opacity',
+        overlay_opacity: ''
+      }]
+    }],
+    fieldLogic: []
+  }],
+  groupName: 'answer',
+  medias: [],
+  layout: 'content-right'
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (openEnded);
+
+/***/ }),
+
 /***/ "./resources/js/components/questionList/PhoneNumberQuestion/index.js":
 /*!***************************************************************************!*\
   !*** ./resources/js/components/questionList/PhoneNumberQuestion/index.js ***!
@@ -5283,6 +6263,405 @@ const question = {
   layout: 'content-right'
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (question);
+
+/***/ }),
+
+/***/ "./resources/js/components/questionList/PictureSelectQuestion/index.js":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/components/questionList/PictureSelectQuestion/index.js ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ PictureSelectQuestion)
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_quill__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-quill */ "./node_modules/react-quill/lib/index.js");
+/* harmony import */ var react_quill__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_quill__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-quill/dist/quill.snow.css */ "./node_modules/react-quill/dist/quill.snow.css");
+/* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-inlinesvg */ "./node_modules/react-inlinesvg/esm/index.js");
+/* harmony import */ var _icon_picture_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @icon/picture.svg */ "./assets/svg/icon/picture.svg");
+/* harmony import */ var _icon_trash_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @icon/trash.svg */ "./assets/svg/icon/trash.svg");
+/* harmony import */ var _icon_plus_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @icon/plus.svg */ "./assets/svg/icon/plus.svg");
+/* harmony import */ var _icon_times_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @icon/times.svg */ "./assets/svg/icon/times.svg");
+
+
+
+
+
+
+
+
+function PictureSelectQuestion(props) {
+  const {
+    layoutMode,
+    singleForm,
+    setSingleForm,
+    selectedQuestion: pictureSelectQuestionField
+  } = props;
+  const {
+    content
+  } = singleForm;
+  const {
+    questions
+  } = JSON.parse(content);
+  const quillModules = {
+    toolbar: false
+  };
+  const builderMode = true;
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element__text"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element__label"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)((react_quill__WEBPACK_IMPORTED_MODULE_1___default()), {
+    modules: quillModules,
+    placeholder: `Select Picture`
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element__description"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)((react_quill__WEBPACK_IMPORTED_MODULE_1___default()), {
+    modules: quillModules,
+    placeholder: "Type a description"
+  }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element__action"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-form-group helpgent-form-group-column"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-select-picture-list"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-select-picture-single"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("a", {
+    href: "",
+    className: "helpgent-select-picture-single__remove"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    src: _icon_times_svg__WEBPACK_IMPORTED_MODULE_6__["default"]
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-select-picture-single__img"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
+    src: "http://via.placeholder.com/44x420",
+    alt: ""
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-select-picture-single__action"
+  }, builderMode && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    className: "helpgent-select-picture-single__action__btn"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    src: _icon_picture_svg__WEBPACK_IMPORTED_MODULE_3__["default"]
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    className: "helpgent-select-picture-single__action__btn"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    src: _icon_trash_svg__WEBPACK_IMPORTED_MODULE_4__["default"]
+  }))))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-select-picture-single__caption"
+  }, "First Answer")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-select-picture-single helpgent-select-picture-single--add-new"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
+    className: "helpgent-select-picture-single__add-picture"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    src: _icon_plus_svg__WEBPACK_IMPORTED_MODULE_5__["default"]
+  })), "Add new"))))));
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/questionList/PictureSelectQuestion/question.js":
+/*!********************************************************************************!*\
+  !*** ./resources/js/components/questionList/PictureSelectQuestion/question.js ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! uuid */ "./node_modules/uuid/dist/esm-browser/v4.js");
+/* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.js */ "./resources/js/components/questionList/PictureSelectQuestion/index.js");
+
+
+const pictureSelect = {
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_1__["default"])(),
+  title: 'Picture select',
+  screen_type: 'picture-select',
+  icon: 'picture',
+  isPro: true,
+  isComing: false,
+  position: {
+    x: -150,
+    y: 0
+  },
+  fields: [/* Text Field */
+  {
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_1__["default"])(),
+    //string
+    type: 'text',
+    // elementor, gutenburg, shortcode
+    elements: [{
+      key: 'greeting-text',
+      greeting_text: ''
+    }, {
+      key: 'description',
+      label: ''
+    }, {
+      key: 'required',
+      is_required: '0'
+    }, {
+      key: 'show-timer',
+      is_show_timer: '0'
+    }, {
+      key: 'time-mins',
+      time_in_mins: ''
+    }, {
+      key: 'time-complete',
+      is_time_to_complete: '0'
+    }, {
+      key: 'btn-text',
+      button_text: 'Submit'
+    }],
+    allowedRules: [],
+    fieldDesign: [{
+      labelStyle: [{
+        key: 'font-family',
+        font_family: ''
+      }, {
+        key: 'font-size',
+        font_size: ''
+      }, {
+        key: 'font-weight',
+        font_weight: ''
+      }, {
+        key: 'text-color',
+        text_color: ''
+      }]
+    }, {
+      buttonStyle: [{
+        key: 'btn-color',
+        button_color: ''
+      }, {
+        key: 'btn-radius',
+        button_radius: ''
+      }, {
+        key: 'btn-text-color',
+        text_color: ''
+      }, {
+        key: 'font-size',
+        font_size: ''
+      }]
+    }, {
+      mediaStyle: [{
+        is_video_overlay: '0'
+      }, {
+        key: 'overlay-color',
+        overlay_color: ''
+      }, {
+        key: 'overlay-opacity',
+        overlay_opacity: ''
+      }]
+    }],
+    fieldLogic: []
+  }],
+  groupName: 'choices',
+  medias: [],
+  layout: 'content-right'
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (pictureSelect);
+
+/***/ }),
+
+/***/ "./resources/js/components/questionList/RatingQuestion/index.js":
+/*!**********************************************************************!*\
+  !*** ./resources/js/components/questionList/RatingQuestion/index.js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ RatingQuestion)
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_quill__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-quill */ "./node_modules/react-quill/lib/index.js");
+/* harmony import */ var react_quill__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_quill__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-quill/dist/quill.snow.css */ "./node_modules/react-quill/dist/quill.snow.css");
+/* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-inlinesvg */ "./node_modules/react-inlinesvg/esm/index.js");
+/* harmony import */ var _icon_star_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @icon/star.svg */ "./assets/svg/icon/star.svg");
+/* harmony import */ var _icon_star_alt_svg__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @icon/star-alt.svg */ "./assets/svg/icon/star-alt.svg");
+
+
+
+
+
+
+
+function RatingQuestion(props) {
+  const {
+    layoutMode,
+    singleForm,
+    setSingleForm,
+    selectedQuestion: ratingQuestionField
+  } = props;
+  const {
+    content
+  } = singleForm;
+  const {
+    questions
+  } = JSON.parse(content);
+  const quillModules = {
+    toolbar: false
+  };
+  const ratingAmount = 5;
+  let [score, setScore] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+  let [ratingIndex, setRatingIndex] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(score);
+  let [ratingSelected, setRatingSelected] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  function handleClick(event, index) {
+    let selectedIndex = event.target.closest('.helpgent-rating-single').dataset.key;
+    setRatingIndex(index + 1);
+    setScore(selectedIndex);
+    setRatingSelected(true);
+  }
+  function handleMouseLeave() {
+    ratingSelected ? setRatingIndex(score) : setRatingIndex(null);
+  }
+  function handleMouseOver(index) {
+    setRatingIndex(index + 1);
+  }
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element__text"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element__label"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)((react_quill__WEBPACK_IMPORTED_MODULE_1___default()), {
+    modules: quillModules,
+    placeholder: "Your question here"
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element__description"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)((react_quill__WEBPACK_IMPORTED_MODULE_1___default()), {
+    modules: quillModules,
+    placeholder: "Type a description"
+  }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element__action"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-form-group helpgent-form-group-column"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-form-group helpgent-rating-wrapper"
+  }, [...Array(ratingAmount)].map((_, index) => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: `helpgent-rating-single${index < ratingIndex ? ' helpgent-rating-single--selected' : ''}`,
+    "data-key": index + 1,
+    onMouseEnter: () => handleMouseOver(index),
+    onMouseLeave: handleMouseLeave,
+    onClick: event => handleClick(event, index),
+    key: index
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    src: index < ratingIndex ? _icon_star_svg__WEBPACK_IMPORTED_MODULE_3__["default"] : _icon_star_alt_svg__WEBPACK_IMPORTED_MODULE_4__["default"]
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "helpgent-rating-value"
+  }, index + 1)))))));
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/questionList/RatingQuestion/question.js":
+/*!*************************************************************************!*\
+  !*** ./resources/js/components/questionList/RatingQuestion/question.js ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! uuid */ "./node_modules/uuid/dist/esm-browser/v4.js");
+/* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.js */ "./resources/js/components/questionList/RatingQuestion/index.js");
+
+
+const rating = {
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_1__["default"])(),
+  title: 'Rating (Stars)',
+  screen_type: 'rating',
+  icon: 'star',
+  isPro: true,
+  isComing: false,
+  position: {
+    x: -150,
+    y: 0
+  },
+  fields: [/* Text Field */
+  {
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_1__["default"])(),
+    //string
+    type: 'text',
+    // elementor, gutenburg, shortcode
+    elements: [{
+      key: 'greeting-text',
+      greeting_text: ''
+    }, {
+      key: 'description',
+      label: ''
+    }, {
+      key: 'required',
+      is_required: '0'
+    }, {
+      key: 'show-timer',
+      is_show_timer: '0'
+    }, {
+      key: 'time-mins',
+      time_in_mins: ''
+    }, {
+      key: 'time-complete',
+      is_time_to_complete: '0'
+    }, {
+      key: 'btn-text',
+      button_text: 'Submit'
+    }],
+    allowedRules: [],
+    fieldDesign: [{
+      labelStyle: [{
+        key: 'font-family',
+        font_family: ''
+      }, {
+        key: 'font-size',
+        font_size: ''
+      }, {
+        key: 'font-weight',
+        font_weight: ''
+      }, {
+        key: 'text-color',
+        text_color: ''
+      }]
+    }, {
+      buttonStyle: [{
+        key: 'btn-color',
+        button_color: ''
+      }, {
+        key: 'btn-radius',
+        button_radius: ''
+      }, {
+        key: 'btn-text-color',
+        text_color: ''
+      }, {
+        key: 'font-size',
+        font_size: ''
+      }]
+    }, {
+      mediaStyle: [{
+        is_video_overlay: '0'
+      }, {
+        key: 'overlay-color',
+        overlay_color: ''
+      }, {
+        key: 'overlay-opacity',
+        overlay_opacity: ''
+      }]
+    }],
+    fieldLogic: []
+  }],
+  groupName: 'rating',
+  medias: [],
+  layout: 'content-right'
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (rating);
 
 /***/ }),
 
@@ -6538,6 +7917,196 @@ const question = {
 
 /***/ }),
 
+/***/ "./resources/js/components/questionList/YesNoQuestion/index.js":
+/*!*********************************************************************!*\
+  !*** ./resources/js/components/questionList/YesNoQuestion/index.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ YesNoQuestion)
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_quill__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-quill */ "./node_modules/react-quill/lib/index.js");
+/* harmony import */ var react_quill__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_quill__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-quill/dist/quill.snow.css */ "./node_modules/react-quill/dist/quill.snow.css");
+
+
+
+
+
+function YesNoQuestion(props) {
+  const {
+    layoutMode,
+    singleForm,
+    setSingleForm,
+    selectedQuestion: yesNoQuestionField
+  } = props;
+  const {
+    content
+  } = singleForm;
+  const {
+    questions
+  } = JSON.parse(content);
+  const required = true;
+  const quillModules = {
+    toolbar: false
+  };
+  const [questionAnswer, setQuestionAnswer] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(true);
+  const handleQuestionToggle = () => {
+    setQuestionAnswer(state => !state);
+  };
+  const handleAlternativeToggle = () => {
+    setQuestionAnswer(state => !state);
+  };
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element__text"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element__label"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)((react_quill__WEBPACK_IMPORTED_MODULE_2___default()), {
+    modules: quillModules,
+    placeholder: `Your question here! ${required ? '*' : null}`
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element__description"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)((react_quill__WEBPACK_IMPORTED_MODULE_2___default()), {
+    modules: quillModules,
+    placeholder: "Type a description"
+  }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element__action"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-form-group helpgent-form-group-column"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-form__element-inline helpgent-form__element-inline--yes-no-toggler helpgent-mb-10"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-toggle"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.FormToggle, {
+    checked: questionAnswer,
+    onChange: handleQuestionToggle
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "helpgent-form__label"
+  }, "Yes")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-form__element-inline helpgent-form__element-inline--yes-no-toggler"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-toggle"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.FormToggle, {
+    checked: !questionAnswer,
+    onChange: handleAlternativeToggle
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "helpgent-form__label"
+  }, "No")))));
+}
+
+/***/ }),
+
+/***/ "./resources/js/components/questionList/YesNoQuestion/question.js":
+/*!************************************************************************!*\
+  !*** ./resources/js/components/questionList/YesNoQuestion/question.js ***!
+  \************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! uuid */ "./node_modules/uuid/dist/esm-browser/v4.js");
+/* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.js */ "./resources/js/components/questionList/YesNoQuestion/index.js");
+
+
+const yesNo = {
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_1__["default"])(),
+  title: 'Yes/No',
+  screen_type: 'yes-no',
+  icon: 'toggle',
+  isPro: false,
+  isComing: false,
+  position: {
+    x: -150,
+    y: 0
+  },
+  fields: [/* Text Field */
+  {
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_1__["default"])(),
+    //string
+    type: 'text',
+    // elementor, gutenburg, shortcode
+    elements: [{
+      key: 'greeting-text',
+      greeting_text: ''
+    }, {
+      key: 'description',
+      label: ''
+    }, {
+      key: 'required',
+      is_required: '0'
+    }, {
+      key: 'show-timer',
+      is_show_timer: '0'
+    }, {
+      key: 'time-mins',
+      time_in_mins: ''
+    }, {
+      key: 'time-complete',
+      is_time_to_complete: '0'
+    }, {
+      key: 'btn-text',
+      button_text: 'Submit'
+    }],
+    allowedRules: [],
+    fieldDesign: [{
+      labelStyle: [{
+        key: 'font-family',
+        font_family: ''
+      }, {
+        key: 'font-size',
+        font_size: ''
+      }, {
+        key: 'font-weight',
+        font_weight: ''
+      }, {
+        key: 'text-color',
+        text_color: ''
+      }]
+    }, {
+      buttonStyle: [{
+        key: 'btn-color',
+        button_color: ''
+      }, {
+        key: 'btn-radius',
+        button_radius: ''
+      }, {
+        key: 'btn-text-color',
+        text_color: ''
+      }, {
+        key: 'font-size',
+        font_size: ''
+      }]
+    }, {
+      mediaStyle: [{
+        is_video_overlay: '0'
+      }, {
+        key: 'overlay-color',
+        overlay_color: ''
+      }, {
+        key: 'overlay-opacity',
+        overlay_opacity: ''
+      }]
+    }],
+    fieldLogic: []
+  }],
+  groupName: 'choices',
+  medias: [],
+  layout: 'content-right'
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (yesNo);
+
+/***/ }),
+
 /***/ "./resources/js/constants.js":
 /*!***********************************!*\
   !*** ./resources/js/constants.js ***!
@@ -6554,7 +8123,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! react-inlinesvg */ "./node_modules/react-inlinesvg/esm/index.js");
+/* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_51__ = __webpack_require__(/*! react-inlinesvg */ "./node_modules/react-inlinesvg/esm/index.js");
 /* harmony import */ var _icon_facebook_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @icon/facebook.svg */ "./assets/svg/icon/facebook.svg");
 /* harmony import */ var _icon_twitter_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @icon/twitter.svg */ "./assets/svg/icon/twitter.svg");
 /* harmony import */ var _icon_youtube_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @icon/youtube.svg */ "./assets/svg/icon/youtube.svg");
@@ -6577,24 +8146,34 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_questionList_DropdownQuestion__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @components/questionList/DropdownQuestion */ "./resources/js/components/questionList/DropdownQuestion/index.js");
 /* harmony import */ var _components_questionList_PhoneNumberQuestion__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! @components/questionList/PhoneNumberQuestion */ "./resources/js/components/questionList/PhoneNumberQuestion/index.js");
 /* harmony import */ var _components_questionList_EndQuestion__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! @components/questionList/EndQuestion */ "./resources/js/components/questionList/EndQuestion/index.js");
-/* harmony import */ var _components_questionList_AddressQuestion_question_js__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @components/questionList/AddressQuestion/question.js */ "./resources/js/components/questionList/AddressQuestion/question.js");
-/* harmony import */ var _components_questionList_ButtonQuestion_question_js__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @components/questionList/ButtonQuestion/question.js */ "./resources/js/components/questionList/ButtonQuestion/question.js");
-/* harmony import */ var _components_questionList_DateQuestion_question_js__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @components/questionList/DateQuestion/question.js */ "./resources/js/components/questionList/DateQuestion/question.js");
-/* harmony import */ var _components_questionList_DropdownQuestion_question_js__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @components/questionList/DropdownQuestion/question.js */ "./resources/js/components/questionList/DropdownQuestion/question.js");
-/* harmony import */ var _components_questionList_EmailQuestion_question_js__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @components/questionList/EmailQuestion/question.js */ "./resources/js/components/questionList/EmailQuestion/question.js");
-/* harmony import */ var _components_questionList_EndQuestion_question_js__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @components/questionList/EndQuestion/question.js */ "./resources/js/components/questionList/EndQuestion/question.js");
-/* harmony import */ var _components_questionList_FileQuestion_question_js__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @components/questionList/FileQuestion/question.js */ "./resources/js/components/questionList/FileQuestion/question.js");
-/* harmony import */ var _components_questionList_LongTextQuestion_question_js__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @components/questionList/LongTextQuestion/question.js */ "./resources/js/components/questionList/LongTextQuestion/question.js");
-/* harmony import */ var _components_questionList_MultiSelectQuestions_question_js__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @components/questionList/MultiSelectQuestions/question.js */ "./resources/js/components/questionList/MultiSelectQuestions/question.js");
-/* harmony import */ var _components_questionList_NumberQuestion_question_js__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @components/questionList/NumberQuestion/question.js */ "./resources/js/components/questionList/NumberQuestion/question.js");
-/* harmony import */ var _components_questionList_PhoneNumberQuestion_question_js__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @components/questionList/PhoneNumberQuestion/question.js */ "./resources/js/components/questionList/PhoneNumberQuestion/question.js");
-/* harmony import */ var _components_questionList_ResultQuestion_question_js__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @components/questionList/ResultQuestion/question.js */ "./resources/js/components/questionList/ResultQuestion/question.js");
-/* harmony import */ var _components_questionList_ScoreQuestion_question_js__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @components/questionList/ScoreQuestion/question.js */ "./resources/js/components/questionList/ScoreQuestion/question.js");
-/* harmony import */ var _components_questionList_ShortTextQuestion_question_js__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! @components/questionList/ShortTextQuestion/question.js */ "./resources/js/components/questionList/ShortTextQuestion/question.js");
-/* harmony import */ var _components_questionList_SingleSelectQuestion_question_js__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! @components/questionList/SingleSelectQuestion/question.js */ "./resources/js/components/questionList/SingleSelectQuestion/question.js");
-/* harmony import */ var _components_questionList_SliderQuestion_question_js__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! @components/questionList/SliderQuestion/question.js */ "./resources/js/components/questionList/SliderQuestion/question.js");
-/* harmony import */ var _components_questionList_UrlQuestion_question_js__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! @components/questionList/UrlQuestion/question.js */ "./resources/js/components/questionList/UrlQuestion/question.js");
-/* harmony import */ var _components_questionList_WelcomeQuestion_question_js__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! @components/questionList/WelcomeQuestion/question.js */ "./resources/js/components/questionList/WelcomeQuestion/question.js");
+/* harmony import */ var _components_questionList_ContactQuestion__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! @components/questionList/ContactQuestion */ "./resources/js/components/questionList/ContactQuestion/index.js");
+/* harmony import */ var _components_questionList_OpenEndedQuestion__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! @components/questionList/OpenEndedQuestion */ "./resources/js/components/questionList/OpenEndedQuestion/index.js");
+/* harmony import */ var _components_questionList_PictureSelectQuestion__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! @components/questionList/PictureSelectQuestion */ "./resources/js/components/questionList/PictureSelectQuestion/index.js");
+/* harmony import */ var _components_questionList_RatingQuestion__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! @components/questionList/RatingQuestion */ "./resources/js/components/questionList/RatingQuestion/index.js");
+/* harmony import */ var _components_questionList_YesNoQuestion__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! @components/questionList/YesNoQuestion */ "./resources/js/components/questionList/YesNoQuestion/index.js");
+/* harmony import */ var _components_questionList_AddressQuestion_question_js__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! @components/questionList/AddressQuestion/question.js */ "./resources/js/components/questionList/AddressQuestion/question.js");
+/* harmony import */ var _components_questionList_ButtonQuestion_question_js__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! @components/questionList/ButtonQuestion/question.js */ "./resources/js/components/questionList/ButtonQuestion/question.js");
+/* harmony import */ var _components_questionList_DateQuestion_question_js__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! @components/questionList/DateQuestion/question.js */ "./resources/js/components/questionList/DateQuestion/question.js");
+/* harmony import */ var _components_questionList_DropdownQuestion_question_js__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @components/questionList/DropdownQuestion/question.js */ "./resources/js/components/questionList/DropdownQuestion/question.js");
+/* harmony import */ var _components_questionList_EmailQuestion_question_js__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @components/questionList/EmailQuestion/question.js */ "./resources/js/components/questionList/EmailQuestion/question.js");
+/* harmony import */ var _components_questionList_EndQuestion_question_js__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @components/questionList/EndQuestion/question.js */ "./resources/js/components/questionList/EndQuestion/question.js");
+/* harmony import */ var _components_questionList_FileQuestion_question_js__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @components/questionList/FileQuestion/question.js */ "./resources/js/components/questionList/FileQuestion/question.js");
+/* harmony import */ var _components_questionList_LongTextQuestion_question_js__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @components/questionList/LongTextQuestion/question.js */ "./resources/js/components/questionList/LongTextQuestion/question.js");
+/* harmony import */ var _components_questionList_MultiSelectQuestions_question_js__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! @components/questionList/MultiSelectQuestions/question.js */ "./resources/js/components/questionList/MultiSelectQuestions/question.js");
+/* harmony import */ var _components_questionList_NumberQuestion_question_js__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! @components/questionList/NumberQuestion/question.js */ "./resources/js/components/questionList/NumberQuestion/question.js");
+/* harmony import */ var _components_questionList_PhoneNumberQuestion_question_js__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! @components/questionList/PhoneNumberQuestion/question.js */ "./resources/js/components/questionList/PhoneNumberQuestion/question.js");
+/* harmony import */ var _components_questionList_ResultQuestion_question_js__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! @components/questionList/ResultQuestion/question.js */ "./resources/js/components/questionList/ResultQuestion/question.js");
+/* harmony import */ var _components_questionList_ScoreQuestion_question_js__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! @components/questionList/ScoreQuestion/question.js */ "./resources/js/components/questionList/ScoreQuestion/question.js");
+/* harmony import */ var _components_questionList_ShortTextQuestion_question_js__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! @components/questionList/ShortTextQuestion/question.js */ "./resources/js/components/questionList/ShortTextQuestion/question.js");
+/* harmony import */ var _components_questionList_SingleSelectQuestion_question_js__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! @components/questionList/SingleSelectQuestion/question.js */ "./resources/js/components/questionList/SingleSelectQuestion/question.js");
+/* harmony import */ var _components_questionList_SliderQuestion_question_js__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! @components/questionList/SliderQuestion/question.js */ "./resources/js/components/questionList/SliderQuestion/question.js");
+/* harmony import */ var _components_questionList_UrlQuestion_question_js__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! @components/questionList/UrlQuestion/question.js */ "./resources/js/components/questionList/UrlQuestion/question.js");
+/* harmony import */ var _components_questionList_WelcomeQuestion_question_js__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! @components/questionList/WelcomeQuestion/question.js */ "./resources/js/components/questionList/WelcomeQuestion/question.js");
+/* harmony import */ var _components_questionList_ContactQuestion_question_js__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! @components/questionList/ContactQuestion/question.js */ "./resources/js/components/questionList/ContactQuestion/question.js");
+/* harmony import */ var _components_questionList_OpenEndedQuestion_question_js__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! @components/questionList/OpenEndedQuestion/question.js */ "./resources/js/components/questionList/OpenEndedQuestion/question.js");
+/* harmony import */ var _components_questionList_PictureSelectQuestion_question_js__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! @components/questionList/PictureSelectQuestion/question.js */ "./resources/js/components/questionList/PictureSelectQuestion/question.js");
+/* harmony import */ var _components_questionList_RatingQuestion_question_js__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! @components/questionList/RatingQuestion/question.js */ "./resources/js/components/questionList/RatingQuestion/question.js");
+/* harmony import */ var _components_questionList_YesNoQuestion_question_js__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(/*! @components/questionList/YesNoQuestion/question.js */ "./resources/js/components/questionList/YesNoQuestion/question.js");
 
 
 
@@ -6604,6 +8183,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* Import Screens  */
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -6660,25 +8249,30 @@ const previewComponents = {
   'multi-select': _components_questionList_MultiSelectQuestions__WEBPACK_IMPORTED_MODULE_19__["default"],
   dropdown: _components_questionList_DropdownQuestion__WEBPACK_IMPORTED_MODULE_20__["default"],
   phone: _components_questionList_PhoneNumberQuestion__WEBPACK_IMPORTED_MODULE_21__["default"],
-  end: _components_questionList_EndQuestion__WEBPACK_IMPORTED_MODULE_22__["default"]
+  end: _components_questionList_EndQuestion__WEBPACK_IMPORTED_MODULE_22__["default"],
+  contact: _components_questionList_ContactQuestion__WEBPACK_IMPORTED_MODULE_23__["default"],
+  'open-ended': _components_questionList_OpenEndedQuestion__WEBPACK_IMPORTED_MODULE_24__["default"],
+  'picture-select': _components_questionList_PictureSelectQuestion__WEBPACK_IMPORTED_MODULE_25__["default"],
+  rating: _components_questionList_RatingQuestion__WEBPACK_IMPORTED_MODULE_26__["default"],
+  'yes-no': _components_questionList_YesNoQuestion__WEBPACK_IMPORTED_MODULE_27__["default"]
 };
 
 /* question Array */
-const questions = [_components_questionList_AddressQuestion_question_js__WEBPACK_IMPORTED_MODULE_23__["default"], _components_questionList_ButtonQuestion_question_js__WEBPACK_IMPORTED_MODULE_24__["default"], _components_questionList_DateQuestion_question_js__WEBPACK_IMPORTED_MODULE_25__["default"], _components_questionList_DropdownQuestion_question_js__WEBPACK_IMPORTED_MODULE_26__["default"], _components_questionList_EmailQuestion_question_js__WEBPACK_IMPORTED_MODULE_27__["default"], _components_questionList_EndQuestion_question_js__WEBPACK_IMPORTED_MODULE_28__["default"], _components_questionList_FileQuestion_question_js__WEBPACK_IMPORTED_MODULE_29__["default"], _components_questionList_LongTextQuestion_question_js__WEBPACK_IMPORTED_MODULE_30__["default"], _components_questionList_MultiSelectQuestions_question_js__WEBPACK_IMPORTED_MODULE_31__["default"], _components_questionList_NumberQuestion_question_js__WEBPACK_IMPORTED_MODULE_32__["default"], _components_questionList_PhoneNumberQuestion_question_js__WEBPACK_IMPORTED_MODULE_33__["default"], _components_questionList_ResultQuestion_question_js__WEBPACK_IMPORTED_MODULE_34__["default"], _components_questionList_ScoreQuestion_question_js__WEBPACK_IMPORTED_MODULE_35__["default"], _components_questionList_ShortTextQuestion_question_js__WEBPACK_IMPORTED_MODULE_36__["default"], _components_questionList_SingleSelectQuestion_question_js__WEBPACK_IMPORTED_MODULE_37__["default"], _components_questionList_SliderQuestion_question_js__WEBPACK_IMPORTED_MODULE_38__["default"], _components_questionList_UrlQuestion_question_js__WEBPACK_IMPORTED_MODULE_39__["default"], _components_questionList_WelcomeQuestion_question_js__WEBPACK_IMPORTED_MODULE_40__["default"]];
+const questions = [_components_questionList_AddressQuestion_question_js__WEBPACK_IMPORTED_MODULE_28__["default"], _components_questionList_ButtonQuestion_question_js__WEBPACK_IMPORTED_MODULE_29__["default"], _components_questionList_DateQuestion_question_js__WEBPACK_IMPORTED_MODULE_30__["default"], _components_questionList_DropdownQuestion_question_js__WEBPACK_IMPORTED_MODULE_31__["default"], _components_questionList_EmailQuestion_question_js__WEBPACK_IMPORTED_MODULE_32__["default"], _components_questionList_EndQuestion_question_js__WEBPACK_IMPORTED_MODULE_33__["default"], _components_questionList_FileQuestion_question_js__WEBPACK_IMPORTED_MODULE_34__["default"], _components_questionList_LongTextQuestion_question_js__WEBPACK_IMPORTED_MODULE_35__["default"], _components_questionList_MultiSelectQuestions_question_js__WEBPACK_IMPORTED_MODULE_36__["default"], _components_questionList_NumberQuestion_question_js__WEBPACK_IMPORTED_MODULE_37__["default"], _components_questionList_PhoneNumberQuestion_question_js__WEBPACK_IMPORTED_MODULE_38__["default"], _components_questionList_ResultQuestion_question_js__WEBPACK_IMPORTED_MODULE_39__["default"], _components_questionList_ScoreQuestion_question_js__WEBPACK_IMPORTED_MODULE_40__["default"], _components_questionList_ShortTextQuestion_question_js__WEBPACK_IMPORTED_MODULE_41__["default"], _components_questionList_SingleSelectQuestion_question_js__WEBPACK_IMPORTED_MODULE_42__["default"], _components_questionList_SliderQuestion_question_js__WEBPACK_IMPORTED_MODULE_43__["default"], _components_questionList_UrlQuestion_question_js__WEBPACK_IMPORTED_MODULE_44__["default"], _components_questionList_WelcomeQuestion_question_js__WEBPACK_IMPORTED_MODULE_45__["default"], _components_questionList_ContactQuestion_question_js__WEBPACK_IMPORTED_MODULE_46__["default"], _components_questionList_OpenEndedQuestion_question_js__WEBPACK_IMPORTED_MODULE_47__["default"], _components_questionList_PictureSelectQuestion_question_js__WEBPACK_IMPORTED_MODULE_48__["default"], _components_questionList_RatingQuestion_question_js__WEBPACK_IMPORTED_MODULE_49__["default"], _components_questionList_YesNoQuestion_question_js__WEBPACK_IMPORTED_MODULE_50__["default"]];
 const initialQuestions = questions.filter(item => item.screen_type === 'welcome' || item.screen_type === 'end');
 const filteredEndScreen = questions.filter(item => item.screen_type === 'end');
 const endQuestion = filteredEndScreen[0];
 const socialIcons = {
-  facebook: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_41__["default"], {
+  facebook: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_51__["default"], {
     src: _icon_facebook_svg__WEBPACK_IMPORTED_MODULE_1__["default"]
   }),
-  twitter: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_41__["default"], {
+  twitter: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_51__["default"], {
     src: _icon_twitter_svg__WEBPACK_IMPORTED_MODULE_2__["default"]
   }),
-  youtube: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_41__["default"], {
+  youtube: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_51__["default"], {
     src: _icon_youtube_svg__WEBPACK_IMPORTED_MODULE_3__["default"]
   }),
-  instagram: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_41__["default"], {
+  instagram: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_51__["default"], {
     src: _icon_instagram_svg__WEBPACK_IMPORTED_MODULE_4__["default"]
   })
 };
@@ -8261,7 +9855,7 @@ const QuestionPreviewStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["def
                     color: var(--helpgent-label-color);
                 }
             }
-            
+
             p{
                 font-size: 20px;
                 font-weight: 600;
@@ -8353,7 +9947,7 @@ const QuestionPreviewStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["def
     .helpgent-form-group{
         margin-bottom: 22px;
     }
-    
+
     .helpgent-form-group__element{
         min-height: 44px;
         border-radius: 10px;
@@ -8374,6 +9968,209 @@ const QuestionPreviewStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["def
         font-size: .93rem;
         font-weight: 500;
         color: var(--helpgent-color-dark);
+    }
+    .helpgent-form__element-inline--yes-no-toggler{
+        padding: 12px 16px;
+        border-radius: 10px;
+        background: var(--helpgent-color-bg-light);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    //Picture Select Question
+    .helpgent-select-picture-list{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .helpgent-select-picture-single{
+        width: 160px;
+        border: 1px solid var(--helpgent-color-bg-gray);
+        border-radius: 12px;
+        padding: 10px;
+        box-sizing: border-box;
+        position: relative;
+        &__remove{
+            width: 22px;
+            height: 22px;
+            background: var(--helpgent-color-danger);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            right: -9px;
+            top: -11px;
+            border-radius: 50%;
+            visibility: hidden;
+            opacity: 0;
+            transition: 0.3s ease;
+        }
+        &__img{
+            position: relative;
+            img{
+                border-radius: 10px;
+                width: 100%;
+                max-height: 120px;
+                object-fit: cover;
+            }
+        }
+        &__action{
+            position: absolute;
+            right: 8px;
+            top: 8px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            visibility: hidden;
+            opacity: 0;
+            transition: 0.3s ease;
+            button{
+                padding: 0;
+                margin: 0;
+                background: #fff;
+                border-radius: 6px;
+                width: 30px;
+                height: 30px;
+                align-items: center;
+                justify-content: center;
+                border: 0 none;
+                display: flex;
+                cursor: pointer;
+                svg{
+                    width: 13px;
+                }
+            }
+        }
+        &__caption{
+            font-size: 13px;
+            margin-top: 5px;
+            color: var(--helpgent-color-gray);
+        }
+        &--add-new{
+            border-style: dashed;
+            border-width: 2px;
+            min-height: 166px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        &__add-picture{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0;
+            margin: 0;
+            cursor: pointer;
+            background: none;
+            border: 0 none;
+            color: var(--helpgent-color-gray);
+            font-size: 13px;
+            &::after{
+                position: absolute;
+                content: '';
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+            }
+            span{
+                display: block;
+                width: 30px;
+                height: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                margin-bottom: 5px;
+                background: var(--helpgent-color-extra-light);
+                svg{
+                    width: 10px;
+                    path{
+                        fill: #fff;
+                    }
+                }
+            }
+        }
+        &:hover{
+            .helpgent-select-picture-single__remove,
+            .helpgent-select-picture-single__action
+            {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+
+    //Open-ended question
+    .helpgent-open-ended-question-types{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        .helpgent-open-ended-btn{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: var(--helpgent-color-primary);
+            border-radius: 14px;
+            min-height: 85px;
+            border: 0 none;
+            cursor: pointer;
+            &:focus{
+                outline: 0;
+                border: 0 none;
+            }
+            svg{
+                width: 24px;
+                path{
+                    fill: var(--helpgent-color-white);
+                }
+            }
+            span{
+                font-size: 14px;
+                font-weight: 500;
+                margin-top: 12px;
+                color: var(--helpgent-color-white);
+            }
+        }
+    }
+    .helpgent-open-ended-notice{
+        display: block;
+        margin-top: 10px;
+        font-size: 13px;
+    }
+
+    //Rating Question
+    .helpgent-rating-wrapper{
+        display: flex;
+        align-items: center;
+        .helpgent-rating-single{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-right: 6px;
+            svg{
+                width: 24px;
+                height: 24px;
+            }
+            .helpgent-rating-value{
+                display: block;
+                margin-top: 8px;
+            }
+            &--selected{
+                svg{
+                    path{
+                        fill: var(--helpgent-color-primary);
+                    }
+                }
+            }
+        }
     }
 `;
 const ScoreQuestionStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div`
@@ -8397,7 +10194,7 @@ const ScoreQuestionStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["defau
         cursor: pointer;
         transition: .2s ease-in-out;
         border: 1px solid var(--helpgent-color-bg-gray);
-        
+
         &:hover,
         &.helpgent-active{
             color: var(--helpgent-color-white);
@@ -8413,7 +10210,7 @@ const ScoreQuestionStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["defau
             font-size: .93rem;
             color: var(--helpgent-color-gray);
         }
-    }   
+    }
 `;
 const SingleSelectStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div`
     line-height: 1.25;
@@ -8522,7 +10319,7 @@ const MultiSelectStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default
 `;
 const CountryDialerControl = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div`
     .helpgent-select{
-        margin-right: 10px;    
+        margin-right: 10px;
     }
     .helpgent-select__control{
         min-height: 44px;

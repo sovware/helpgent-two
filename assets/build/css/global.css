@@ -197,8 +197,8 @@
 }
 .helpgent-btn.helpgent-btn-light {
   color: var(--helpgent-color-text);
-  background-color: var(--helpgent-color-light);
-  border: 1px solid var(--helpgent-color-light);
+  background-color: var(--helpgent-color-bg-deep);
+  border: 1px solid var(--helpgent-color-bg-deep);
 }
 .helpgent-btn.helpgent-btn-light:hover {
   color: var(--helpgent-color-dark);
@@ -634,10 +634,8 @@ svg.components-spinner path {
 }
 
 .helpgent-dropdown__content {
-  position: absolute;
-  width: calc(100% - 16px);
-  left: 0;
-  top: 20px;
+  position: fixed;
+  width: auto;
   padding: 8px;
   border-radius: 10px;
   display: none;
@@ -676,7 +674,7 @@ svg.components-spinner path {
 /* Dropdown Placement */
 .helpgent-dropdown.helpgent-dropdown-right .helpgent-dropdown__content {
   left: auto;
-  right: 0;
+  right: auto;
 }
 
 .wpwax-helpgent-body .helpgent-dropdown .helpgent-dropdown__toggle:focus:not(.wp-block-button__link):not(.wp-block-file__button),

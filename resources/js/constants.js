@@ -25,6 +25,11 @@ import MultiSelectQuestion from '@components/questionList/MultiSelectQuestions';
 import DropdownQuestion from '@components/questionList/DropdownQuestion';
 import PhoneNumberQuestion from '@components/questionList/PhoneNumberQuestion';
 import EndQuestion from '@components/questionList/EndQuestion';
+import ContactQuestion from '@components/questionList/ContactQuestion';
+import OpenEndedQuestion from '@components/questionList/OpenEndedQuestion';
+import PictureSelectQuestion from '@components/questionList/PictureSelectQuestion';
+import RatingQuestion from '@components/questionList/RatingQuestion';
+import YesNoQuestion from '@components/questionList/YesNoQuestion';
 
 import AddressQuestionObj from '@components/questionList/AddressQuestion/question.js';
 import ButtonQuestionObj from '@components/questionList/ButtonQuestion/question.js';
@@ -44,6 +49,11 @@ import SingleSelectQuestionObj from '@components/questionList/SingleSelectQuesti
 import SliderQuestionObj from '@components/questionList/SliderQuestion/question.js';
 import UrlQuestionObj from '@components/questionList/UrlQuestion/question.js';
 import WelcomeQuestionObj from '@components/questionList/WelcomeQuestion/question.js';
+import ContactQuestionObj from '@components/questionList/ContactQuestion/question.js';
+import OpenEndedQuestionObj from '@components/questionList/OpenEndedQuestion/question.js';
+import PictureSelectQuestionObj from '@components/questionList/PictureSelectQuestion/question.js';
+import RatingQuestionObj from '@components/questionList/RatingQuestion/question.js';
+import YesNoQuestionObj from '@components/questionList/YesNoQuestion/question.js';
 
 /* Register */
 const previewComponents = {
@@ -65,6 +75,11 @@ const previewComponents = {
 	dropdown: DropdownQuestion,
 	phone: PhoneNumberQuestion,
 	end: EndQuestion,
+	contact: ContactQuestion,
+	'open-ended': OpenEndedQuestion,
+	'picture-select': PictureSelectQuestion,
+	rating: RatingQuestion,
+	'yes-no': YesNoQuestion,
 };
 
 /* question Array */
@@ -87,6 +102,11 @@ const questions = [
 	SliderQuestionObj,
 	UrlQuestionObj,
 	WelcomeQuestionObj,
+	ContactQuestionObj,
+	OpenEndedQuestionObj,
+	PictureSelectQuestionObj,
+	RatingQuestionObj,
+	YesNoQuestionObj,
 ];
 
 const initialQuestions = questions.filter(

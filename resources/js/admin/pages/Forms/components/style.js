@@ -23,38 +23,217 @@ const FormTableStyle = Styled.div`
         position: relative;
         min-height: 200px;
     }
+    .helpgent-table-loader{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     .helpgent-table{
+        min-height: inherit;
+        thead{
+            border-bottom: 10px solid transparent;
+            tr{
+                background: #e8e8e8;
+                border-radius: 10px;
+                th{
+                    padding: 16px 15px 10px;
+                }
+            }
+        }
+        tbody{
+            tr{
+                transition: 0.3s ease;
+                &:hover{
+                    background: #EFEFEF;
+                }
+                td{
+                    padding: 11px 15px;
+                    font-weight: 500;
+                    .helpgent-toggle{
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                    }
+                    .is-checked{
+                        & + .helpgent-form-status{
+                            color: var(--helpgent-color-primary);
+                        }
+                    }
+                }
+                .helpgent-form-shortcode{
+                    input {
+                        border: 0 none;
+                        background: var(--helpgent-color-bg-deep);
+                        color: var(--helpgent-color-dark);
+                        border-radius: 5px;
+                    }
+                }
+                .helpgent-table-action{
+                    display: flex;
+                    align-items: center;
+                    gap: 0 20px;
+                    .helpgent-btn{
+                        padding: 0 15px;
+                        height: 34px;
+                        font-size: 14px;
+                        font-weight: 500;
+                        &:hover{
+                            background: var(--helpgent-color-dark);
+                            color: var(--helpgent-color-white);
+                        }
+                    }
+                    .helpgent-dropdown{
+                        line-height: 0;
+                        .helpgent-dropdown__toggle{
+                            height: 35px;
+                            padding: 0 10px;
+                            border-radius: 10px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                        &.helpgent-dropdown-open{
+                            .helpgent-dropdown__toggle{
+                                background: var(--helpgent-color-bg-deep);
+                            }
+                        }
+                        &__content{
+                            li:last-child{
+                                border-top: 1px solid #e6e6e6;
+                                a{
+                                    margin-top: 5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
         th{
             &.helpgent-head-name{
-                width: 200px;
+                width: 300px;
             }
             &.helpgent-head-shortcode{
                 width: 210px;
             }
             &.helpgent-head-status{
-                width: 80px;
+                width: 150px;
+            }
+            &.helpgent-head-action{
+                width: 115px;
             }
         }
     }
 `;
 
 const TitleBoxStyle = Styled.div`
-   .helpgent-titleBox-action-item{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    .helpgent-titleBox__editor{
+        input{
+            border-top: 0px none;
+            border-right: 0px none;
+            border-bottom: 1px solid #ededed;
+            border-left: 0px none;
+            border-image: initial;
+            background-color: transparent;
+            border-radius: 0px;
+            padding: 4px 0;
+            line-height: 2;
+            min-height: 30px;
+            color: #2c3338;
+            transition: 0.3s ease;
+            &:active,
+            &:focus{
+                border: 0 none;
+                border-bottom: 1px solid #000000;
+                outline: 0;
+                box-shadow: none;
+            }
+        }
+    }
+    .helpgent-titleBox__actions{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .helpgent-titleBox-action-item{
         display: flex;
         align-items: center;
         justify-content: center;
         width: 32px;
         height: 32px;
         cursor: pointer ;
+        border-radius: 50%;
+        transition: 0.3s ease;
         &.helpgent-titleBox__actions-yes{
             background-color: var(--helpgent-color-success);
+            border: 1px solid var(--helpgent-color-success);
         }
         &.helpgent-titleBox__actions-cancel{
             background-color: var(--helpgent-color-danger);
+            border: 1px solid var(--helpgent-color-danger);
         }
         svg{
             width: 10px;
             height: 10px;
+            path{
+                fill: #fff;
+                transition: 0.3s ease;
+            }
+        }
+        .helpgent-circle-loader {
+            border-color: #fff;
+            border-bottom-color: transparent;
+            transition: 0.3s ease;
+        }
+        &:hover{
+            background: none;
+            svg{
+                path{
+                    fill: #000;
+                }
+            }
+            .helpgent-circle-loader {
+                border-color: var(--helpgent-primary-color);
+                border-bottom-color: transparent;
+            }
+        }
+    }
+
+   .helpgent-titleBox-text{
+        .helpgent-title{
+            font-size: 15px;
+            font-weight: 600;
+        }
+   }
+   .helpgent-titleBox-meta{
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin: 5px 0 0;
+        .helpgent-titleBox-meta__id{
+            position: relative;
+            &::after{
+                content: '';
+                width: 2px;
+                height: 2px;
+                background: #6e6e6e;
+                border-radius: 50%;
+                display: block;
+                position: absolute;
+                right: -7px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+        li{
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--helpgent-color-light-gray);
+            margin: 0;
         }
    }
 `;
@@ -92,7 +271,7 @@ const CreatePopupStyle = Styled.div`
         text-decoration: none;
         background-color: var(--helpgent-color-bg-gray);
         &:hover{
-            background-color: 
+            background-color:
         }
    }
    .helpgent-createPopup__action-icon{
@@ -195,7 +374,7 @@ const CreateFormStyleWrap = Styled.div`
 `;
 
 const SingleFormHeaderStyle = Styled.div`
-    
+
 `;
 
 export {
