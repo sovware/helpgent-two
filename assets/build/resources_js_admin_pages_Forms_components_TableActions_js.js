@@ -200,8 +200,7 @@ function TableActions(props) {
   const {
     id,
     form,
-    setEditModeStatus,
-    setFormTitleInput
+    setEditModeStatus
   } = props;
   const {
     formTableState,

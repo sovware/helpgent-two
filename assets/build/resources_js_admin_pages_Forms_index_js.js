@@ -2864,7 +2864,7 @@ async function handleCreateForm(form, createFormMutation, setServerErrors, navig
     }
   } catch (error) {
     const errors = {
-      internal: "Server Error"
+      internal: 'Server Error'
     };
     setServerErrors(errors);
     console.log(error);
