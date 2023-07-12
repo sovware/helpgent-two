@@ -4541,7 +4541,8 @@ function ScreenListType(_ref) {
     type,
     screenList,
     handleItemEvent,
-    activeScreenId
+    activeScreenId,
+    handler
   } = _ref;
   const {
     content

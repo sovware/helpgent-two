@@ -66,7 +66,7 @@ export default function ScreenItem( {
 					? 'helpgent-screen__item helpgent-active'
 					: 'helpgent-screen__item'
 			}
-			onClick={ () => handler( question ) }
+			onClick={ () => handler( question )}
 		>
 			<div className="helpgent-screen__content">
 				<div className="helpgent-screen__icon">
