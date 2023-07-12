@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { lazy, Suspense, useState } from '@wordpress/element';
+import { FormTableStateProvider } from './context/FormTableStateContext.js';
 import { Spinner } from '@wordpress/components';
 import useFetchData from '../../../hooks/useFetchData.js';
 import CreatePopup from './CreatePopup.js';
@@ -17,26 +18,28 @@ export default function Forms() {
 	const [ createPopupStatus, setCreatePopupStatus ] = useState( false );
 	return (
 		<div className="helpgent-page-inner">
-			<Suspense fallback={ <></> }>
-				<PageHeader
-					forms={ forms }
+			<FormTableStateProvider>
+				<Suspense fallback={ <></> }>
+					<PageHeader
+						forms={ forms }
+						isCreatePopupOpen={ createPopupStatus }
+						setCreatePopupStatus={ setCreatePopupStatus }
+					/>
+				</Suspense>
+				<Suspense fallback={ <Spinner /> }>
+					<FormTable
+						forms={ forms }
+						isFetchError={ isFetchError }
+						formErrorMessage={ formErrorMessage }
+						isCreatePopupOpen={ createPopupStatus }
+						setCreatePopupStatus={ setCreatePopupStatus }
+					/>
+				</Suspense>
+				<CreatePopup
 					isCreatePopupOpen={ createPopupStatus }
 					setCreatePopupStatus={ setCreatePopupStatus }
 				/>
-			</Suspense>
-			<Suspense fallback={ <Spinner /> }>
-				<FormTable
-					forms={ forms }
-					isFetchError={ isFetchError }
-					formErrorMessage={ formErrorMessage }
-					isCreatePopupOpen={ createPopupStatus }
-					setCreatePopupStatus={ setCreatePopupStatus }
-				/>
-			</Suspense>
-			<CreatePopup
-				isCreatePopupOpen={ createPopupStatus }
-				setCreatePopupStatus={ setCreatePopupStatus }
-			/>
+			</FormTableStateProvider>
 		</div>
 	);
 }
