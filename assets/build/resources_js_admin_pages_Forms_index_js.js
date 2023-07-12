@@ -2925,11 +2925,12 @@ const FormTableStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"]
     }
     .helpgent-table{
         thead{
+            border-bottom: 10px solid transparent;
             tr{
                 background: #e8e8e8;
                 border-radius: 10px;
                 th{
-                    padding: 16px 15px;
+                    padding: 16px 15px 10px;
                 }
             }
         }
@@ -2942,6 +2943,16 @@ const FormTableStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"]
                 td{
                     padding: 11px 15px;
                     font-weight: 500;
+                    .helpgent-toggle{
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                    }
+                    .is-checked{
+                        & + .helpgent-form-status{
+                            color: var(--helpgent-color-primary);
+                        }
+                    }
                 }
                 .helpgent-form-shortcode{
                     input {
@@ -2949,6 +2960,45 @@ const FormTableStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"]
                         background: var(--helpgent-color-bg-deep);
                         color: var(--helpgent-color-dark);
                         border-radius: 5px;
+                    }
+                }
+                .helpgent-table-action{
+                    display: flex;
+                    align-items: center;
+                    gap: 0 20px;
+                    .helpgent-btn{
+                        padding: 0 15px;
+                        height: 34px;
+                        font-size: 14px;
+                        font-weight: 500;
+                        &:hover{
+                            background: var(--helpgent-color-dark);
+                            color: var(--helpgent-color-white);
+                        }
+                    }
+                    .helpgent-dropdown{
+                        line-height: 0;
+                        .helpgent-dropdown__toggle{
+                            height: 35px;
+                            padding: 0 10px;
+                            border-radius: 10px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                        &.helpgent-dropdown-open{
+                            .helpgent-dropdown__toggle{
+                                background: var(--helpgent-color-bg-deep);
+                            }
+                        }
+                        &__content{
+                            li:last-child{
+                                border-top: 1px solid #e6e6e6;
+                                a{
+                                    margin-top: 5px;
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -2961,7 +3011,10 @@ const FormTableStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"]
                 width: 210px;
             }
             &.helpgent-head-status{
-                width: 80px;
+                width: 150px;
+            }
+            &.helpgent-head-action{
+                width: 115px;
             }
         }
     }
@@ -3262,8 +3315,9 @@ async function handleCreateForm(form, createFormMutation, setServerErrors, navig
     is_guest_allowed: '0',
     content: screenFormContent
   };
+  const pageIds = form.available_pages && form.available_pages.map(page => page.value);
   formData.title = form.title;
-  formData.available_pages = form.available_pages || [];
+  formData.available_pages = pageIds || [];
   formData.is_chat_bubble = form.displayChatBubble || '0';
   try {
     const createFormResponse = await createFormMutation(formData);
@@ -3275,7 +3329,6 @@ async function handleCreateForm(form, createFormMutation, setServerErrors, navig
       internal: 'Server Error'
     };
     setServerErrors(errors);
-    console.log(error);
   }
 }
 

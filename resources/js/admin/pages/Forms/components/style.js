@@ -25,11 +25,12 @@ const FormTableStyle = Styled.div`
     }
     .helpgent-table{
         thead{
+            border-bottom: 10px solid transparent;
             tr{
                 background: #e8e8e8;
                 border-radius: 10px;
                 th{
-                    padding: 16px 15px;
+                    padding: 16px 15px 10px;
                 }
             }
         }
@@ -42,6 +43,16 @@ const FormTableStyle = Styled.div`
                 td{
                     padding: 11px 15px;
                     font-weight: 500;
+                    .helpgent-toggle{
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                    }
+                    .is-checked{
+                        & + .helpgent-form-status{
+                            color: var(--helpgent-color-primary);
+                        }
+                    }
                 }
                 .helpgent-form-shortcode{
                     input {
@@ -49,6 +60,45 @@ const FormTableStyle = Styled.div`
                         background: var(--helpgent-color-bg-deep);
                         color: var(--helpgent-color-dark);
                         border-radius: 5px;
+                    }
+                }
+                .helpgent-table-action{
+                    display: flex;
+                    align-items: center;
+                    gap: 0 20px;
+                    .helpgent-btn{
+                        padding: 0 15px;
+                        height: 34px;
+                        font-size: 14px;
+                        font-weight: 500;
+                        &:hover{
+                            background: var(--helpgent-color-dark);
+                            color: var(--helpgent-color-white);
+                        }
+                    }
+                    .helpgent-dropdown{
+                        line-height: 0;
+                        .helpgent-dropdown__toggle{
+                            height: 35px;
+                            padding: 0 10px;
+                            border-radius: 10px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+                        &.helpgent-dropdown-open{
+                            .helpgent-dropdown__toggle{
+                                background: var(--helpgent-color-bg-deep);
+                            }
+                        }
+                        &__content{
+                            li:last-child{
+                                border-top: 1px solid #e6e6e6;
+                                a{
+                                    margin-top: 5px;
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -61,7 +111,10 @@ const FormTableStyle = Styled.div`
                 width: 210px;
             }
             &.helpgent-head-status{
-                width: 80px;
+                width: 150px;
+            }
+            &.helpgent-head-action{
+                width: 115px;
             }
         }
     }

@@ -1,6 +1,9 @@
 import TitleBox from '../components/TitleBox';
 import TableActions from '../components/TableActions';
 import { formatDate } from '../../../../helper/formatter';
+import handleUpdateFormStatus from './handleUpdateFormStatus';
+import useUpdateMutation from '@hooks/useUpdateMutation.js';
+import FormTableStatus from '../components/FormTableStatus';
 import { Spinner, FormToggle } from '@wordpress/components';
 import { lazy, Suspense, useState } from '@wordpress/element';
 /**
@@ -11,7 +14,6 @@ export default function getFormTableBody(
 	forms,
 	isEditModeActive,
 	setEditModeStatus,
-	setFormTitleInput,
 	isFetchError
 ) {
 	if ( isFetchError ) {
@@ -23,6 +25,13 @@ export default function getFormTableBody(
 		month: 'long',
 		day: 'numeric',
 	};
+
+	function handleToggleFormStatus( id, status ) {
+		const { mutateAsync: updateStatusFormMutation, isLoading } =
+			useUpdateMutation( `/helpgent/admin/form/${ id }/status` );
+
+		handleUpdateFormStatus( id, updateStatusFormMutation, forms, status );
+	}
 
 	return forms.length !== 0 ? (
 		forms.map( ( form ) => (
@@ -52,10 +61,7 @@ export default function getFormTableBody(
 					) }
 				</td>
 				<td>
-					<div className="helpgent-toggle helpgent-toggle-success">
-						<FormToggle />
-						<span className="helpgent-form-status">Active</span>
-					</div>
+					<FormTableStatus id={ form.id } status={ form.status } />
 				</td>
 				<td>
 					<Suspense fallback={ <></> }>
@@ -63,7 +69,6 @@ export default function getFormTableBody(
 							id={ form.id }
 							form={ form }
 							setEditModeStatus={ setEditModeStatus }
-							setFormTitleInput={ setFormTitleInput }
 						/>
 					</Suspense>
 				</td>

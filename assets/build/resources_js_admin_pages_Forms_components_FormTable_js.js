@@ -140,11 +140,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
-/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _helper_getFormTableBody_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../helper/getFormTableBody.js */ "./resources/js/admin/pages/Forms/helper/getFormTableBody.js");
-/* harmony import */ var _helper_formatter_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @helper/formatter.js */ "./resources/js/helper/formatter.js");
-/* harmony import */ var _style_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./style.js */ "./resources/js/admin/pages/Forms/components/style.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _hooks_useUpdateMutation_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @hooks/useUpdateMutation.js */ "./resources/js/hooks/useUpdateMutation.js");
+/* harmony import */ var _helper_getFormTableBody_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../helper/getFormTableBody.js */ "./resources/js/admin/pages/Forms/helper/getFormTableBody.js");
+/* harmony import */ var _helper_getFormTableHead_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../helper/getFormTableHead.js */ "./resources/js/admin/pages/Forms/helper/getFormTableHead.js");
+/* harmony import */ var _helper_formatter_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @helper/formatter.js */ "./resources/js/helper/formatter.js");
+/* harmony import */ var _style_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./style.js */ "./resources/js/admin/pages/Forms/components/style.js");
+
+
 
 
 
@@ -165,34 +169,73 @@ function FormTable(props) {
     setCreatePopupStatus
   } = props;
   const [isEditModeActive, setEditModeStatus] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
-  const [formTitleInput, setFormTitleInput] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)('');
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_style_js__WEBPACK_IMPORTED_MODULE_4__.FormTableStyle, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_style_js__WEBPACK_IMPORTED_MODULE_6__.FormTableStyle, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-table-wrap helpgent-table-forms-list helpgent-table-responsive"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("table", {
     className: "helpgent-table"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("thead", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("tr", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("th", {
-    className: "helpgent-head-name"
-  }, "Name"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("th", {
-    className: "helpgent-head-shortCode"
-  }, "ShortCode"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("th", {
-    className: "helpgent-head-response"
-  }, "Responses"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("th", {
-    className: "helpgent-head-created"
-  }, "Updated"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("th", {
-    className: "helpgent-head-status"
-  }, "Status"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("th", {
-    className: "helpgent-head-action"
-  }, "Action"))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("tbody", null, forms ? (0,_helper_getFormTableBody_js__WEBPACK_IMPORTED_MODULE_2__["default"])(forms, isEditModeActive, setEditModeStatus, setFormTitleInput, isFetchError) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("tr", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("thead", null, (0,_helper_getFormTableHead_js__WEBPACK_IMPORTED_MODULE_4__["default"])()), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("tbody", null, forms ? (0,_helper_getFormTableBody_js__WEBPACK_IMPORTED_MODULE_3__["default"])(forms, isEditModeActive, setEditModeStatus, isFetchError) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("tr", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
     colSpan: 7
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Spinner, null)))))));
 }
 FormTable.propTypes = {
-  forms: (prop_types__WEBPACK_IMPORTED_MODULE_5___default().array),
-  isFetchError: (prop_types__WEBPACK_IMPORTED_MODULE_5___default().bool),
-  formErrorMessage: (prop_types__WEBPACK_IMPORTED_MODULE_5___default().string),
-  isCreatePopupOpen: (prop_types__WEBPACK_IMPORTED_MODULE_5___default().bool),
-  setCreatePopupStatus: (prop_types__WEBPACK_IMPORTED_MODULE_5___default().func)
+  forms: (prop_types__WEBPACK_IMPORTED_MODULE_7___default().array),
+  isFetchError: (prop_types__WEBPACK_IMPORTED_MODULE_7___default().bool),
+  formErrorMessage: (prop_types__WEBPACK_IMPORTED_MODULE_7___default().string),
+  isCreatePopupOpen: (prop_types__WEBPACK_IMPORTED_MODULE_7___default().bool),
+  setCreatePopupStatus: (prop_types__WEBPACK_IMPORTED_MODULE_7___default().func)
 };
+
+/***/ }),
+
+/***/ "./resources/js/admin/pages/Forms/components/FormTableStatus.js":
+/*!**********************************************************************!*\
+  !*** ./resources/js/admin/pages/Forms/components/FormTableStatus.js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ FormTableStatus)
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _hooks_useStore_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @hooks/useStore.js */ "./resources/js/hooks/useStore.js");
+/* harmony import */ var _hooks_useUpdateMutation_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @hooks/useUpdateMutation.js */ "./resources/js/hooks/useUpdateMutation.js");
+/* harmony import */ var _helper_handleUpdateFormStatus__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../helper/handleUpdateFormStatus */ "./resources/js/admin/pages/Forms/helper/handleUpdateFormStatus.js");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+
+function FormTableStatus(props) {
+  const {
+    id,
+    status
+  } = props;
+  const statusText = status === 'publish' ? 'Active' : 'Inactive';
+  const {
+    setStoreData,
+    getStoreData
+  } = (0,_hooks_useStore_js__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  const forms = getStoreData(['helpgent-form']);
+
+  /* Form Update Mutation */
+  const {
+    mutateAsync: updateStatusFormMutation,
+    isLoading
+  } = (0,_hooks_useUpdateMutation_js__WEBPACK_IMPORTED_MODULE_2__["default"])(`/helpgent/admin/form/${id}/status`);
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-toggle helpgent-toggle-success"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.FormToggle, {
+    onChange: () => (0,_helper_handleUpdateFormStatus__WEBPACK_IMPORTED_MODULE_3__["default"])(id, forms, status, updateStatusFormMutation, setStoreData),
+    checked: status === 'publish'
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "helpgent-form-status"
+  }, statusText));
+}
 
 /***/ }),
 
@@ -230,8 +273,7 @@ function TableActions(props) {
   const {
     id,
     form,
-    setEditModeStatus,
-    setFormTitleInput
+    setEditModeStatus
   } = props;
   const {
     formTableState,
@@ -346,7 +388,7 @@ function titleBox(props) {
 
   /* Form Update Mutation */
   const {
-    mutateAsync: updateFormMutation,
+    mutateAsync: renameFormMutation,
     isLoading
   } = (0,_hooks_useUpdateMutation_js__WEBPACK_IMPORTED_MODULE_3__["default"])(`/helpgent/admin/form/${id}/rename`);
   function handleCancelEditMode() {
@@ -386,7 +428,7 @@ function titleBox(props) {
     src: _icon_times_svg__WEBPACK_IMPORTED_MODULE_9__["default"]
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "helpgent-titleBox-action-item helpgent-titleBox__actions-yes",
-    onClick: () => (0,_helper_handleRenameFormTitle_js__WEBPACK_IMPORTED_MODULE_4__["default"])(updateFormMutation, id, allForms, formTableState, setStoreData, setEditModeStatus)
+    onClick: () => (0,_helper_handleRenameFormTitle_js__WEBPACK_IMPORTED_MODULE_4__["default"])(renameFormMutation, id, allForms, formTableState, setStoreData, setEditModeStatus)
   }, !isLoading && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_11__["default"], {
     src: _icon_check_svg__WEBPACK_IMPORTED_MODULE_10__["default"]
   }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_toastify__WEBPACK_IMPORTED_MODULE_1__.ToastContainer, null));
@@ -410,8 +452,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_TitleBox__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/TitleBox */ "./resources/js/admin/pages/Forms/components/TitleBox.js");
 /* harmony import */ var _components_TableActions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/TableActions */ "./resources/js/admin/pages/Forms/components/TableActions.js");
 /* harmony import */ var _helper_formatter__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../helper/formatter */ "./resources/js/helper/formatter.js");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _handleUpdateFormStatus__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./handleUpdateFormStatus */ "./resources/js/admin/pages/Forms/helper/handleUpdateFormStatus.js");
+/* harmony import */ var _hooks_useUpdateMutation_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @hooks/useUpdateMutation.js */ "./resources/js/hooks/useUpdateMutation.js");
+/* harmony import */ var _components_FormTableStatus__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/FormTableStatus */ "./resources/js/admin/pages/Forms/components/FormTableStatus.js");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_7__);
+
+
+
 
 
 
@@ -422,7 +470,7 @@ __webpack_require__.r(__webpack_exports__);
  * Function for load data with dom
  * @returns Dom of table body
  */
-function getFormTableBody(forms, isEditModeActive, setEditModeStatus, setFormTitleInput, isFetchError) {
+function getFormTableBody(forms, isEditModeActive, setEditModeStatus, isFetchError) {
   if (isFetchError) {
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, formErrorMessage);
   }
@@ -431,6 +479,13 @@ function getFormTableBody(forms, isEditModeActive, setEditModeStatus, setFormTit
     month: 'long',
     day: 'numeric'
   };
+  function handleToggleFormStatus(id, status) {
+    const {
+      mutateAsync: updateStatusFormMutation,
+      isLoading
+    } = (0,_hooks_useUpdateMutation_js__WEBPACK_IMPORTED_MODULE_5__["default"])(`/helpgent/admin/form/${id}/status`);
+    (0,_handleUpdateFormStatus__WEBPACK_IMPORTED_MODULE_4__["default"])(id, updateStatusFormMutation, forms, status);
+  }
   return forms.length !== 0 ? forms.map(form => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("tr", {
     key: form.id
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_TitleBox__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -443,25 +498,54 @@ function getFormTableBody(forms, isEditModeActive, setEditModeStatus, setFormTit
     type: "text",
     readOnly: true,
     value: `[helpgent_form id="${form.id}"]`
-  }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", null, form.total_responses), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", null, (0,_helper_formatter__WEBPACK_IMPORTED_MODULE_3__.formatDate)('en-US', form.created_at, dateFormatOptions)), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "helpgent-toggle helpgent-toggle-success"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.FormToggle, null), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "helpgent-form-status"
-  }, "Active"))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Suspense, {
+  }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", null, form.total_responses), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", null, (0,_helper_formatter__WEBPACK_IMPORTED_MODULE_3__.formatDate)('en-US', form.created_at, dateFormatOptions)), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_FormTableStatus__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    id: form.id,
+    status: form.status
+  })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Suspense, {
     fallback: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null)
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_TableActions__WEBPACK_IMPORTED_MODULE_2__["default"], {
     id: form.id,
     form: form,
-    setEditModeStatus: setEditModeStatus,
-    setFormTitleInput: setFormTitleInput
+    setEditModeStatus: setEditModeStatus
   }))))) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("tr", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
     colSpan: 7
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(WelcomeBoxStyleWrap, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Suspense, {
-    fallback: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_4__.Spinner, null)
+    fallback: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_7__.Spinner, null)
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(WelcomeBox, {
     isCreatePopupOpen: isCreatePopupOpen,
     setCreatePopupStatus: setCreatePopupStatus
   })))));
+}
+
+/***/ }),
+
+/***/ "./resources/js/admin/pages/Forms/helper/getFormTableHead.js":
+/*!*******************************************************************!*\
+  !*** ./resources/js/admin/pages/Forms/helper/getFormTableHead.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ getFormTableHead)
+/* harmony export */ });
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+
+function getFormTableHead() {
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("tr", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("th", {
+    className: "helpgent-head-name"
+  }, "Name"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("th", {
+    className: "helpgent-head-shortCode"
+  }, "ShortCode"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("th", {
+    className: "helpgent-head-response"
+  }, "Responses"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("th", {
+    className: "helpgent-head-created"
+  }, "Updated"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("th", {
+    className: "helpgent-head-status"
+  }, "Status"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("th", {
+    className: "helpgent-head-action"
+  }, "Action"));
 }
 
 /***/ }),
@@ -519,12 +603,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react_toastify__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-toastify */ "./node_modules/react-toastify/dist/react-toastify.esm.mjs");
 
-async function handleRenameFormTitle(updateFormMutation, id, allForms, formTableState, setStoreData, setEditModeStatus) {
+async function handleRenameFormTitle(renameFormMutation, id, allForms, formTableState, setStoreData, setEditModeStatus) {
   const updatedTitle = {
     title: formTableState.formInputTitle
   };
   try {
-    const updateFormResponse = await updateFormMutation(updatedTitle);
+    const updateFormResponse = await renameFormMutation(updatedTitle);
     const updatedForms = allForms.forms.map(singleForm => {
       if (singleForm.id === id) {
         return {
@@ -541,6 +625,49 @@ async function handleRenameFormTitle(updateFormMutation, id, allForms, formTable
     setStoreData(['helpgent-form'], formData);
     setEditModeStatus(false);
     react_toastify__WEBPACK_IMPORTED_MODULE_0__.toast.success(updateFormResponse.message);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+/***/ }),
+
+/***/ "./resources/js/admin/pages/Forms/helper/handleUpdateFormStatus.js":
+/*!*************************************************************************!*\
+  !*** ./resources/js/admin/pages/Forms/helper/handleUpdateFormStatus.js ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ handleUpdateFormStatus)
+/* harmony export */ });
+/* harmony import */ var react_toastify__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-toastify */ "./node_modules/react-toastify/dist/react-toastify.esm.mjs");
+
+async function handleUpdateFormStatus(id, forms, status, updateStatusFormMutation, setStoreData) {
+  const newStatus = status === 'publish' ? 'draft' : 'publish';
+  const updatedStatusObj = {
+    status: newStatus
+  };
+  try {
+    const updateFormResponse = await updateStatusFormMutation(updatedStatusObj);
+    const updatedForms = forms.forms.map(singleForm => {
+      if (singleForm.id === id) {
+        return {
+          ...singleForm,
+          status: newStatus
+        };
+      }
+      return singleForm;
+    });
+    const formData = {
+      ...forms,
+      forms: updatedForms
+    };
+    setStoreData(['helpgent-form'], formData);
+    react_toastify__WEBPACK_IMPORTED_MODULE_0__.toast.success(updateFormResponse.message, {
+      autoClose: 3000
+    });
   } catch (error) {
     console.log(error);
   }
@@ -582,7 +709,25 @@ function Dropdown(_ref) {
   function handleDropdown(e) {
     e.preventDefault();
     setDropDownOpen(!isDropdownOpen);
+    const parent = e.target.closest('.helpgent-dropdown');
+    const parentRect = parent.getBoundingClientRect();
+    const dropdownContent = parent.querySelector('.helpgent-dropdown__content');
+    dropdownContent.style.top = `${parentRect.top + 20}px`;
+    if (parent.classList.contains('helpgent-dropdown-right')) {
+      dropdownContent.style.left = `${parentRect.left}px`;
+    } else if (parent.classList.contains('helpgent-dropdown-left')) {
+      dropdownContent.style.right = `calc(100% - ${parentRect.right}px)`;
+    }
   }
+  function handleScroll() {
+    const parent = document.querySelector('.helpgent-dropdown-open');
+    if (parent) {
+      const parentRect = parent.getBoundingClientRect();
+      const dropdownContent = parent.querySelector('.helpgent-dropdown__content');
+      dropdownContent.style.top = `${parentRect.top + 20}px`;
+    }
+  }
+  document.addEventListener('scroll', handleScroll);
 
   /* Close Dropdown click on outside */
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {

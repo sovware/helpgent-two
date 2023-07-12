@@ -203,8 +203,8 @@
 
     &.helpgent-btn-light {
         color: var(--helpgent-color-text);
-        background-color: var(--helpgent-color-light);
-        border: 1px solid var(--helpgent-color-light);
+        background-color: var(--helpgent-color-bg-deep);
+        border: 1px solid var(--helpgent-color-bg-deep);
         &:hover {
             color: var(--helpgent-color-dark);
             background-color: #cfd1d4;
@@ -703,10 +703,8 @@ svg.components-spinner{
 }
 
 .helpgent-dropdown__content {
-    position: absolute;
-    width: calc(100% - 16px);
-    left: 0;
-    top: 20px;
+    position: fixed;
+    width: auto;
     padding: 8px;
     border-radius: 10px;
     display: none;
@@ -753,7 +751,7 @@ svg.components-spinner{
     &.helpgent-dropdown-right{
         .helpgent-dropdown__content{
             left: auto;
-            right: 0;
+            right: auto;
         }
     }
 }

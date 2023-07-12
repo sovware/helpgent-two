@@ -9,7 +9,7 @@ import penNib from '@icon/pen-nib.svg';
 import trash from '@icon/trash.svg';
 
 export default function TableActions( props ) {
-	const { id, form, setEditModeStatus, setFormTitleInput } = props;
+	const { id, form, setEditModeStatus } = props;
 	const { formTableState, setFormTableState } = useFormTableState();
 
 	const moreDropdown = [
