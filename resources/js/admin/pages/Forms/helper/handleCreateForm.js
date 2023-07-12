@@ -12,8 +12,12 @@ export default async function handleCreateForm(
 		is_guest_allowed: '0',
 		content: screenFormContent,
 	};
+
+	const pageIds =
+		form.available_pages &&
+		form.available_pages.map( ( page ) => page.value );
 	formData.title = form.title;
-	formData.available_pages = form.available_pages || [];
+	formData.available_pages = pageIds || [];
 	formData.is_chat_bubble = form.displayChatBubble || '0';
 
 	try {
@@ -26,6 +30,5 @@ export default async function handleCreateForm(
 			internal: 'Server Error',
 		};
 		setServerErrors( errors );
-		console.log( error );
 	}
 }
