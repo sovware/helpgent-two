@@ -1,5 +1,6 @@
 import { useState, useEffect, Fragment } from '@wordpress/element';
 import { Spinner } from '@wordpress/components';
+import { ToastContainer } from 'react-toastify';
 import { SingleFormStateProvider } from './context/SingleFormStateContext';
 import useStore from '../../../hooks/useStore';
 import useFetchData from '../../../hooks/useFetchData';
@@ -21,7 +22,6 @@ function SingleForm() {
 		setSingleForm( data );
 	}, [ isLoading ] );
 
-	//console.log( isLoading, data, singleForm );
 	return (
 		<SingleFormStyle>
 			{ ! singleForm || isLoading || isError ? (
@@ -41,6 +41,7 @@ function SingleForm() {
 						singleForm={ singleForm }
 						setSingleForm={ setSingleForm }
 					/>
+					<ToastContainer />
 				</SingleFormStateProvider>
 			) }
 		</SingleFormStyle>

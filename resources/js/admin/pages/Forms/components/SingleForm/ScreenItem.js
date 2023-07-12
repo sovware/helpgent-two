@@ -19,8 +19,7 @@ export default function ScreenItem( {
 } ) {
 	const { getStoreData, setStoreData } = useStore();
 	const { form } = getStoreData( [ 'helpgent-single-form' ] );
-	const { content } = form;
-	const { questions } = JSON.parse( content );
+	const { questions } = JSON.parse( form.content );
 
 	const { id, icon, title, isPro, isComing } = question;
 

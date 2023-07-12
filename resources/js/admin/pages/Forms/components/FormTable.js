@@ -21,7 +21,7 @@ export default function FormTable( props ) {
 		setCreatePopupStatus,
 	} = props;
 
-	const [ isEditModeActive, setEditModeStatus ] = useState( false );
+	const [ renameFormId, setRenameFormId ] = useState( null );
 
 	return (
 		<FormTableStyle>
@@ -32,8 +32,8 @@ export default function FormTable( props ) {
 						{ forms ? (
 							getFormTableBody(
 								forms,
-								isEditModeActive,
-								setEditModeStatus,
+								renameFormId,
+								setRenameFormId,
 								isFetchError,
 								isCreatePopupOpen,
 								setCreatePopupStatus

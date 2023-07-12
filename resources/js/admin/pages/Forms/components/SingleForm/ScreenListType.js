@@ -1,4 +1,3 @@
-import { v4 as uuidv4 } from 'uuid';
 import ScreenItem from './ScreenItem.js';
 
 export default function ScreenListType( {
@@ -14,23 +13,40 @@ export default function ScreenListType( {
 	const hasWelcomeQuestion = questions.filter(
 		( item ) => item.screen_type === 'welcome'
 	);
-	// function handleAddQuestion( item ) {
-	// 	item.id = uuidv4();
-	// 	if ( item.type === 'welcome' && hasWelcomeQuestion !== 0 ) {
-	// 		return;
-	// 	}
-	// 	questions.push( item );
 
-	// 	const updatedForm = {
-	// 		...singleForm,
-	// 		content: JSON.stringify( { questions: questions } ),
-	// 	};
-	// 	setSingleForm( updatedForm );
-	// }
+	function getTypeText( type ) {
+		let typeText = '';
+		switch ( type ) {
+			case 'basic':
+				typeText = 'Basic';
+				break;
+			case 'contact':
+				typeText = 'Contact';
+				break;
+			case 'choices':
+				typeText = 'Choices';
+				break;
+			case 'rating':
+				typeText = 'Rating & Ranking';
+				break;
+			case 'answer':
+				typeText = 'Answers';
+				break;
+			case 'initial':
+				typeText = 'Screens';
+				break;
+			default:
+				break;
+		}
+		return typeText;
+	}
+
 	return (
 		screenList.length !== 0 && (
 			<div className="helpgent-screen-type">
-				<span className="helpgent-screen-type__title">{ type }</span>
+				<span className="helpgent-screen-type__title">
+					{ getTypeText( type ) }
+				</span>
 				{ screenList.map( ( item, index ) => (
 					<ScreenItem
 						question={ item }
