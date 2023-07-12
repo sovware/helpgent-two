@@ -28,11 +28,34 @@ const FormTableStyle = Styled.div`
             tr{
                 background: #e8e8e8;
                 border-radius: 10px;
+                th{
+                    padding: 16px 15px;
+                }
+            }
+        }
+        tbody{
+            tr{
+                transition: 0.3s ease;
+                &:hover{
+                    background: #EFEFEF;
+                }
+                td{
+                    padding: 11px 15px;
+                    font-weight: 500;
+                }
+                .helpgent-form-shortcode{
+                    input {
+                        border: 0 none;
+                        background: var(--helpgent-color-bg-deep);
+                        color: var(--helpgent-color-dark);
+                        border-radius: 5px;
+                    }
+                }
             }
         }
         th{
             &.helpgent-head-name{
-                width: 200px;
+                width: 300px;
             }
             &.helpgent-head-shortcode{
                 width: 210px;
@@ -45,7 +68,57 @@ const FormTableStyle = Styled.div`
 `;
 
 const TitleBoxStyle = Styled.div`
-
+   .helpgent-titleBox-action-item{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        cursor: pointer ;
+        &.helpgent-titleBox__actions-yes{
+            background-color: var(--helpgent-color-success);
+        }
+        &.helpgent-titleBox__actions-cancel{
+            background-color: var(--helpgent-color-danger);
+        }
+        svg{
+            width: 10px;
+            height: 10px;
+        }
+   }
+   .helpgent-titleBox-text{
+        .helpgent-title{
+            font-size: 15px;
+            font-weight: 600;
+        }
+   }
+   .helpgent-titleBox-meta{
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin: 5px 0 0;
+        .helpgent-titleBox-meta__id{
+            position: relative;
+            &::after{
+                content: '';
+                width: 2px;
+                height: 2px;
+                background: #6e6e6e;
+                border-radius: 50%;
+                display: block;
+                position: absolute;
+                right: -7px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+        li{
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--helpgent-color-light-gray);
+            margin: 0;
+        }
+   }
 `;
 
 const CreatePopupStyle = Styled.div`
@@ -101,6 +174,9 @@ const CreatePopupStyle = Styled.div`
         margin-top: 20px;
         line-height: 1.38;
         color: var(--helpgent-color-dark);
+   }
+   .helpgent-validate-danger{
+    display: block;
    }
 `;
 
