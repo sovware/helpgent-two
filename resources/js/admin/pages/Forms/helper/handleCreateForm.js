@@ -1,3 +1,4 @@
+import { toast } from 'react-toastify';
 import { initialQuestions } from '../../../../constants';
 export default async function handleCreateForm(
 	form,
@@ -25,6 +26,7 @@ export default async function handleCreateForm(
 		if ( createFormResponse ) {
 			navigate( `/forms/${ createFormResponse.form.id }` );
 		}
+		toast.success( createFormResponse.message );
 	} catch ( error ) {
 		const errors = {
 			internal: 'Server Error',

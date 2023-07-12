@@ -3368,11 +3368,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ handleCreateForm)
 /* harmony export */ });
-/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../constants */ "./resources/js/constants.js");
+/* harmony import */ var react_toastify__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-toastify */ "./node_modules/react-toastify/dist/react-toastify.esm.mjs");
+/* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../constants */ "./resources/js/constants.js");
+
 
 async function handleCreateForm(form, createFormMutation, setServerErrors, navigate) {
   const screenFormContent = JSON.stringify({
-    questions: _constants__WEBPACK_IMPORTED_MODULE_0__.initialQuestions
+    questions: _constants__WEBPACK_IMPORTED_MODULE_1__.initialQuestions
   });
   const formData = {
     status: 'draft',
@@ -3388,6 +3390,7 @@ async function handleCreateForm(form, createFormMutation, setServerErrors, navig
     if (createFormResponse) {
       navigate(`/forms/${createFormResponse.form.id}`);
     }
+    react_toastify__WEBPACK_IMPORTED_MODULE_0__.toast.success(createFormResponse.message);
   } catch (error) {
     const errors = {
       internal: 'Server Error'
@@ -4983,7 +4986,9 @@ function EndQuestion(props) {
     layoutMode,
     singleForm,
     setSingleForm,
-    selectedQuestionField: endQuestionField
+    selectedQuestionField: endQuestionField,
+    socialLinks,
+    externalButton
   } = props;
   const {
     content
@@ -4994,6 +4999,7 @@ function EndQuestion(props) {
   const quillModules = {
     toolbar: false
   };
+  console.log(endQuestionField);
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-question-element helpgent-question--end"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -5002,15 +5008,17 @@ function EndQuestion(props) {
     src: _icon_check_svg__WEBPACK_IMPORTED_MODULE_2__["default"]
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-question-element__text"
-  }, elements.map((item, index) => {
-    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      className: item.label || item.label === '' ? 'helpgent-question-element__label' : 'helpgent-question-element__description',
-      key: index
-    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)((react_quill__WEBPACK_IMPORTED_MODULE_1___default()), {
-      modules: quillModules,
-      placeholder: "Type your thank text here!*"
-    }));
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element__label"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)((react_quill__WEBPACK_IMPORTED_MODULE_1___default()), {
+    modules: quillModules,
+    placeholder: "Type your greeting text here!*"
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    className: "helpgent-question-element__description"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)((react_quill__WEBPACK_IMPORTED_MODULE_1___default()), {
+    modules: quillModules,
+    placeholder: "Type description here!*"
+  }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-question-element__social"
   }, socialLinks.map((item, index) => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: `helpgent-question-element__social-item helpgent-question-element__social-${item}`,

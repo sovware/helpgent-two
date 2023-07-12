@@ -5,7 +5,7 @@ export const useSingleFormState = () => useContext( SingleFormStateContent );
 
 export const SingleFormStateProvider = ( { children } ) => {
 	const singleFormObj = {
-		layoutMode: 'mediaLeft',
+		layoutMode: 'mediaLeft', //mediaLeft, mediaRight, mediaBehind
 	};
 	const [ singleFormState, setSingleFormState ] = useState( singleFormObj );
 

@@ -187,12 +187,12 @@ function FormTable(props) {
     isCreatePopupOpen,
     setCreatePopupStatus
   } = props;
-  const [isEditModeActive, setEditModeStatus] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
+  const [renameFormId, setRenameFormId] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_style_js__WEBPACK_IMPORTED_MODULE_7__.FormTableStyle, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-table-wrap helpgent-table-forms-list helpgent-table-responsive"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("table", {
     className: "helpgent-table"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("thead", null, (0,_helper_getFormTableHead_js__WEBPACK_IMPORTED_MODULE_5__["default"])()), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("tbody", null, forms ? (0,_helper_getFormTableBody_js__WEBPACK_IMPORTED_MODULE_4__["default"])(forms, isEditModeActive, setEditModeStatus, isFetchError, isCreatePopupOpen, setCreatePopupStatus) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("tr", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("thead", null, (0,_helper_getFormTableHead_js__WEBPACK_IMPORTED_MODULE_5__["default"])()), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("tbody", null, forms ? (0,_helper_getFormTableBody_js__WEBPACK_IMPORTED_MODULE_4__["default"])(forms, renameFormId, setRenameFormId, isFetchError, isCreatePopupOpen, setCreatePopupStatus) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("tr", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
     colSpan: 7
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     class: "helpgent-table-loader"
@@ -300,7 +300,7 @@ function TableActions(props) {
   const {
     id,
     form,
-    setEditModeStatus
+    setRenameFormId
   } = props;
   const {
     formTableState,
@@ -334,7 +334,7 @@ function TableActions(props) {
   async function handleDropdownTrigger(event, name) {
     event.preventDefault();
     if (name === 'rename') {
-      setEditModeStatus(true);
+      setRenameFormId(id);
       setFormTableState({
         ...formTableState,
         formInputTitle: form.title
@@ -412,8 +412,8 @@ __webpack_require__.r(__webpack_exports__);
 
 function titleBox(props) {
   const {
-    isEditModeActive,
-    setEditModeStatus,
+    renameFormId,
+    setRenameFormId,
     form
   } = props;
   const {
@@ -446,13 +446,13 @@ function titleBox(props) {
     isLoading
   } = (0,_hooks_useUpdateMutation_js__WEBPACK_IMPORTED_MODULE_3__["default"])(`/helpgent/admin/form/${id}/rename`);
   function handleCancelEditMode() {
-    setEditModeStatus(false);
+    setRenameFormId(null);
   }
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_style_js__WEBPACK_IMPORTED_MODULE_8__.TitleBoxStyle, {
     className: "helpgent-titleBox"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-titleBox__data"
-  }, isEditModeActive ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, renameFormId === id ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-titleBox__editor"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
     type: "text",
@@ -473,7 +473,7 @@ function titleBox(props) {
     className: "helpgent-titleBox-meta__id"
   }, "ID #", id), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("li", {
     className: "helpgent-titleBox-meta__date"
-  }, "Created:", ' ', (0,_helper_formatter_js__WEBPACK_IMPORTED_MODULE_6__.formatDate)('en-US', created_at, dateFormatOptions)))))), isEditModeActive && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  }, "Created:", ' ', (0,_helper_formatter_js__WEBPACK_IMPORTED_MODULE_6__.formatDate)('en-US', created_at, dateFormatOptions)))))), renameFormId === id && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-titleBox__actions"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "helpgent-titleBox-action-item helpgent-titleBox__actions-cancel",
@@ -576,7 +576,7 @@ __webpack_require__.r(__webpack_exports__);
  * Function for load data with dom
  * @returns Dom of table body
  */
-function getFormTableBody(forms, isEditModeActive, setEditModeStatus, isFetchError, isCreatePopupOpen, setCreatePopupStatus) {
+function getFormTableBody(forms, renameFormId, setRenameFormId, isFetchError, isCreatePopupOpen, setCreatePopupStatus) {
   if (isFetchError) {
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, formErrorMessage);
   }
@@ -595,8 +595,8 @@ function getFormTableBody(forms, isEditModeActive, setEditModeStatus, isFetchErr
   return forms.length !== 0 ? forms.map(form => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("tr", {
     key: form.id
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_TitleBox__WEBPACK_IMPORTED_MODULE_1__["default"], {
-    isEditModeActive: isEditModeActive,
-    setEditModeStatus: setEditModeStatus,
+    renameFormId: renameFormId,
+    setRenameFormId: setRenameFormId,
     form: form
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
     className: "helpgent-form-shortcode"
@@ -612,7 +612,7 @@ function getFormTableBody(forms, isEditModeActive, setEditModeStatus, isFetchErr
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_TableActions__WEBPACK_IMPORTED_MODULE_2__["default"], {
     id: form.id,
     form: form,
-    setEditModeStatus: setEditModeStatus
+    setRenameFormId: setRenameFormId
   }))))) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("tr", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
     colSpan: 7
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_style__WEBPACK_IMPORTED_MODULE_9__.WelcomeBoxStyleWrap, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Suspense, {

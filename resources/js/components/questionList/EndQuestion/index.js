@@ -10,6 +10,8 @@ export default function EndQuestion( props ) {
 		singleForm,
 		setSingleForm,
 		selectedQuestionField: endQuestionField,
+		socialLinks,
+		externalButton,
 	} = props;
 	const { content } = singleForm;
 	const { questions } = JSON.parse( content );
@@ -18,29 +20,26 @@ export default function EndQuestion( props ) {
 		toolbar: false,
 	};
 
+	console.log( endQuestionField );
+
 	return (
 		<div className="helpgent-question-element helpgent-question--end">
 			<div className="helpgent-question-element__icon">
 				<ReactSVG src={ check } />
 			</div>
 			<div className="helpgent-question-element__text">
-				{ elements.map( ( item, index ) => {
-					return (
-						<div
-							className={
-								item.label || item.label === ''
-									? 'helpgent-question-element__label'
-									: 'helpgent-question-element__description'
-							}
-							key={ index }
-						>
-							<ReactQuill
-								modules={ quillModules }
-								placeholder="Type your thank text here!*"
-							/>
-						</div>
-					);
-				} ) }
+				<div className="helpgent-question-element__label">
+					<ReactQuill
+						modules={ quillModules }
+						placeholder="Type your greeting text here!*"
+					/>
+				</div>
+				<div className="helpgent-question-element__description">
+					<ReactQuill
+						modules={ quillModules }
+						placeholder="Type description here!*"
+					/>
+				</div>
 			</div>
 			<div className="helpgent-question-element__social">
 				{ socialLinks.map( ( item, index ) => (

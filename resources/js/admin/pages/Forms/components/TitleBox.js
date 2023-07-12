@@ -12,7 +12,7 @@ import times from '@icon/times.svg';
 import check from '@icon/check.svg';
 
 function titleBox( props ) {
-	const { isEditModeActive, setEditModeStatus, form } = props;
+	const { renameFormId, setRenameFormId, form } = props;
 	const { id, title, created_at } = form;
 
 	const [ inputValidation, setInputValidation ] = useState( {
@@ -37,13 +37,13 @@ function titleBox( props ) {
 	);
 
 	function handleCancelEditMode() {
-		setEditModeStatus( false );
+		setRenameFormId( null );
 	}
 
 	return (
 		<TitleBoxStyle className="helpgent-titleBox">
 			<div className="helpgent-titleBox__data">
-				{ isEditModeActive ? (
+				{ renameFormId === id ? (
 					<div className="helpgent-titleBox__editor">
 						<input
 							type="text"
@@ -82,7 +82,7 @@ function titleBox( props ) {
 					</div>
 				) }
 			</div>
-			{ isEditModeActive && (
+			{ renameFormId === id && (
 				<div className="helpgent-titleBox__actions">
 					<span
 						className="helpgent-titleBox-action-item helpgent-titleBox__actions-cancel"

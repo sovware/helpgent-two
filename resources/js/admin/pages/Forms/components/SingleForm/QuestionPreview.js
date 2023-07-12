@@ -2,7 +2,11 @@ import { previewComponents } from '../../../../../constants.js';
 import { QuestionPreviewStyle } from '../../../../../style.js';
 export default function QuestionPreview( props ) {
 	const { singleForm, setSingleForm, selectedQuestion } = props;
-	const { elements: questionFields } = selectedQuestion.fields[ 0 ];
+	const {
+		elements: questionFields,
+		socials,
+		externalButton,
+	} = selectedQuestion.fields[ 0 ];
 
 	const fieldObject = questionFields.reduce( ( acc, field ) => {
 		acc[ field.key ] = field;
@@ -31,6 +35,8 @@ export default function QuestionPreview( props ) {
 				singleForm={ singleForm }
 				setSingleForm={ setSingleForm }
 				selectedQuestionField={ fieldObject }
+				socialLinks={ socials }
+				externalButton={ externalButton }
 			/>
 		</QuestionPreviewStyle>
 	);
