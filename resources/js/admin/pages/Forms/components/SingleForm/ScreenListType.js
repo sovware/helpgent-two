@@ -52,7 +52,6 @@ export default function ScreenListType( {
 						handler={ () =>
 							handleItemEvent(
 								item,
-								singleForm,
 								singleFormState,
 								setSingleFormState
 							)

@@ -9,9 +9,9 @@ import { useSingleFormState } from '../../context/SingleFormStateContext';
 import getWelcomeType from '../../helper/getWelcomeType';
 import getOtherType from '../../helper/getOtherType';
 import getEndType from '../../helper/getEndType';
-import handleAddEndScreen from '../../helper/handleAddEndScreen';
 import handleAddQuestion from '../../helper/handleAddQuestion';
 import handleResize from '../../helper/handleResize';
+import endQuestion from '@components/questionList/EndQuestion/question.js';
 import { ScreenBarStyle } from './style.js';
 import ScreenListDropdown from './ScreenListDropdown.js';
 import plus from '@icon/plus.svg';
@@ -110,20 +110,24 @@ export default function ScreenBar() {
 						<div className="helpgent-screenBar-end-head__title">
 							Endings
 						</div>
-						<a
-							href="#"
+						<div
 							className="helpgent-screenBar-end-head__add"
-							onClick={ ( e ) =>
-								handleAddEndScreen(
-									e,
-									questions,
+							onClick={ () =>
+								// handleAddEndScreen(
+								// 	e,
+								// 	questions,
+								// 	singleFormState,
+								// 	setSingleFormState
+								// )
+								handleAddQuestion(
+									endQuestion,
 									singleFormState,
 									setSingleFormState
 								)
 							}
 						>
 							+ Add
-						</a>
+						</div>
 					</div>
 					<DragDropContext
 						onDragEnd={ ( results ) =>
