@@ -40,7 +40,7 @@ export default function updateQuestion(
 		if ( question.id === screenId ) {
 			return {
 				...question,
-				[itemType]: updatedItem,
+				[ itemType ]: updatedItem,
 			};
 		}
 		return question;

@@ -52,7 +52,7 @@ export default function SettingQuestion( props ) {
 		fieldObject.required.is_required = requiredStatus === '0' ? '1' : '0';
 
 		updateQuestion(
-			"fields",
+			'fields',
 			fields,
 			activeScreenId,
 			singleFormState,
@@ -64,8 +64,8 @@ export default function SettingQuestion( props ) {
 		fieldObject[ 'show-timer' ].is_show_timer =
 			showTimerStatus === '0' ? '1' : '0';
 
-			updateQuestion(
-			"fields",
+		updateQuestion(
+			'fields',
 			fields,
 			activeScreenId,
 			singleFormState,
@@ -77,8 +77,8 @@ export default function SettingQuestion( props ) {
 		fieldObject.required.is_time_to_complete =
 			timeToCompleteStatus === '0' ? '1' : '0';
 
-			updateQuestion(
-			"fields",
+		updateQuestion(
+			'fields',
 			fields,
 			activeScreenId,
 			singleFormState,
@@ -90,7 +90,7 @@ export default function SettingQuestion( props ) {
 		fieldObject[ 'btn-text' ].button_text = event.target.value;
 
 		updateQuestion(
-			"fields",
+			'fields',
 			fields,
 			activeScreenId,
 			singleFormState,

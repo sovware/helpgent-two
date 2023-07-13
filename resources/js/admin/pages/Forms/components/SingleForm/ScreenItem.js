@@ -21,7 +21,7 @@ export default function ScreenItem( {
 	isActive,
 } ) {
 	const ref = useRef( null );
-	const [ isActiveRename, setRenameField ] = useState(false);
+	const [ isActiveRename, setRenameField ] = useState( false );
 	const { singleFormState, setSingleFormState } = useSingleFormState();
 	const { singleForm } = singleFormState;
 	const { questions } = JSON.parse( singleForm.content );
@@ -87,19 +87,19 @@ export default function ScreenItem( {
 				singleForm: updatedForm,
 				activeScreenId: previousElement.id,
 			} );
-		}else if('rename'){
-			setRenameField(true)
+		} else if ( 'rename' ) {
+			setRenameField( true );
 		}
 	}
 
-	function handleRenameScreen(event){
+	function handleRenameScreen( event ) {
 		updateQuestion(
-			"title",
+			'title',
 			event.target.value,
 			id,
 			singleFormState,
 			setSingleFormState
-		)
+		);
 	}
 
 	return (
@@ -143,12 +143,15 @@ export default function ScreenItem( {
 					handleDropdownTrigger={ handleDropdownTrigger }
 				/>
 			) }
-			{
-				isActiveRename && 
-					<div className="helpgent-rename-screen">
-						<input type="text" value={ title } onChange={handleRenameScreen}/>
-					</div>
-			}
+			{ isActiveRename && (
+				<div className="helpgent-rename-screen">
+					<input
+						type="text"
+						value={ title }
+						onChange={ handleRenameScreen }
+					/>
+				</div>
+			) }
 		</ScreenItemStyle>
 	);
 }
