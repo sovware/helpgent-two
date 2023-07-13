@@ -4168,16 +4168,16 @@ __webpack_require__.r(__webpack_exports__);
 function ContactQuestion(props) {
   const {
     layoutMode,
-    singleForm,
-    setSingleForm,
-    selectedQuestion: contactQuestionField
+    singleFormState,
+    setSingleFormState,
+    selectedQuestionField: contactQuestionField
   } = props;
   const {
-    content
-  } = singleForm;
+    singleForm
+  } = singleFormState;
   const {
     questions
-  } = JSON.parse(content);
+  } = JSON.parse(singleForm.content);
   const required = true;
   const quillModules = {
     toolbar: false
@@ -5900,16 +5900,16 @@ __webpack_require__.r(__webpack_exports__);
 function OpenEndedQuestion(props) {
   const {
     layoutMode,
-    singleForm,
-    setSingleForm,
-    selectedQuestion: openEndedQuestionField
+    singleFormState,
+    setSingleFormState,
+    selectedQuestionField: openEndedQuestionField
   } = props;
   const {
-    content
-  } = singleForm;
+    singleForm
+  } = singleFormState;
   const {
     questions
-  } = JSON.parse(content);
+  } = JSON.parse(singleForm.content);
   const quillModules = {
     toolbar: false
   };
@@ -6312,16 +6312,16 @@ __webpack_require__.r(__webpack_exports__);
 function PictureSelectQuestion(props) {
   const {
     layoutMode,
-    singleForm,
-    setSingleForm,
-    selectedQuestion: pictureSelectQuestionField
+    singleFormState,
+    setSingleFormState,
+    selectedQuestionField: pictureSelectQuestionField
   } = props;
   const {
-    content
-  } = singleForm;
+    singleForm
+  } = singleFormState;
   const {
     questions
-  } = JSON.parse(content);
+  } = JSON.parse(singleForm.content);
   const quillModules = {
     toolbar: false
   };
@@ -6512,16 +6512,16 @@ __webpack_require__.r(__webpack_exports__);
 function RatingQuestion(props) {
   const {
     layoutMode,
-    singleForm,
-    setSingleForm,
-    selectedQuestion: ratingQuestionField
+    singleFormState,
+    setSingleFormState,
+    selectedQuestionField: ratingQuestionField
   } = props;
   const {
-    content
-  } = singleForm;
+    singleForm
+  } = singleFormState;
   const {
     questions
-  } = JSON.parse(content);
+  } = JSON.parse(singleForm.content);
   const quillModules = {
     toolbar: false
   };
@@ -7960,16 +7960,16 @@ __webpack_require__.r(__webpack_exports__);
 function YesNoQuestion(props) {
   const {
     layoutMode,
-    singleForm,
-    setSingleForm,
-    selectedQuestion: yesNoQuestionField
+    singleFormState,
+    setSingleFormState,
+    selectedQuestionField: yesNoQuestionField
   } = props;
   const {
-    content
-  } = singleForm;
+    singleForm
+  } = singleFormState;
   const {
     questions
-  } = JSON.parse(content);
+  } = JSON.parse(singleForm.content);
   const required = true;
   const quillModules = {
     toolbar: false

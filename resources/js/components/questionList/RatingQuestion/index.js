@@ -8,12 +8,12 @@ import starAlt from '@icon/star-alt.svg';
 export default function RatingQuestion( props ) {
 	const {
 		layoutMode,
-		singleForm,
-		setSingleForm,
-		selectedQuestion: ratingQuestionField,
+		singleFormState,
+		setSingleFormState,
+		selectedQuestionField: ratingQuestionField,
 	} = props;
-	const { content } = singleForm;
-	const { questions } = JSON.parse( content );
+	const { singleForm } = singleFormState;
+	const { questions } = JSON.parse( singleForm.content );
 
 	const quillModules = {
 		toolbar: false,
