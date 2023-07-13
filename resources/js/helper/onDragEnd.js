@@ -1,5 +1,9 @@
-const onDragEnd = ( results, questions, singleForm, setSingleForm ) => {
-	console.log( results );
+const onDragEnd = (
+	results,
+	questions,
+	singleFormState,
+	setSingleFormState
+) => {
 	const { destination, source, draggableId, type } = results;
 	if ( ! destination ) {
 		return;
@@ -10,7 +14,7 @@ const onDragEnd = ( results, questions, singleForm, setSingleForm ) => {
 	) {
 		return;
 	}
-	//console.log(questions);
+
 	const welcomeQuestion = questions.filter(
 		( item ) => item.screen_type === 'welcome'
 	);
@@ -35,22 +39,15 @@ const onDragEnd = ( results, questions, singleForm, setSingleForm ) => {
 		...otherQuestions,
 		...endQuestions,
 	];
-	//const newTestQuestion = Array.from(testQuestion);
-	//console.log(otherQuestions);
-
-	//const [removedTestQuestion] = newTestQuestion.splice(source.index,1);
-
-	//newQuestionOrder.unshift(welcomeQuestion);
-
-	//console.log(updatedOrderedQuestion, otherQuestions);
-	//setTestQuestion(newTestQuestion)
+	const { singleForm } = singleFormState;
 	const updatedForm = {
 		...singleForm,
 		content: JSON.stringify( { questions: updatedOrderedQuestion } ),
 	};
-	setSingleForm( updatedForm );
-
-	//setStoreData( [ 'helpgent-single-form' ], { form: updatedForm } );
+	setSingleFormState( {
+		...singleFormState,
+		singleForm: updatedForm,
+	} );
 };
 
 export default onDragEnd;

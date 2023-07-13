@@ -3,15 +3,23 @@ import ScreenItem from '../components/SingleForm/ScreenItem.js';
 
 export default function getEndType(
 	questions,
-	activeScreenId,
-	setActiveScreenId
+	singleFormState,
+	setSingleFormState
 ) {
 	const otherType = questions.filter(
 		( question ) => question.screen_type === 'end'
 	);
+
+	const { activeScreenId } = singleFormState;
+
 	function handleActivateQuestion( question ) {
-		setActiveScreenId( question.id );
+		console.log( 'tr' );
+		setSingleFormState( {
+			...singleFormState,
+			activeScreenId: question.id,
+		} );
 	}
+
 	return otherType.map( ( item, index ) => (
 		<Draggable draggableId={ item.id } index={ index } key={ item.id }>
 			{ ( provided ) => (

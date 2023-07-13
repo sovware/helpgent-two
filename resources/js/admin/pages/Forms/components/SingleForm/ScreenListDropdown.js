@@ -6,11 +6,8 @@ import search from '../../../../../../../assets/svg/icon/search.svg';
 import { MegaDropdownStyle } from './style.js';
 
 export default function ScreenListDropdown( {
-	singleForm,
-	setSingleForm,
 	isOpenMegaDropdown,
 	handleItemEvent,
-	activeScreenId,
 } ) {
 	const [ screenList, setScreenList ] = useState( questions );
 
@@ -34,12 +31,9 @@ export default function ScreenListDropdown( {
 		);
 		return (
 			<ScreenListType
-				singleForm={ singleForm }
-				setSingleForm={ setSingleForm }
 				type={ groupName }
 				screenList={ filteredByGroup }
 				handleItemEvent={ handleItemEvent }
-				activeScreenId={ activeScreenId }
 			/>
 		);
 	}

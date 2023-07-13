@@ -1,5 +1,10 @@
 import { v4 as uuidv4 } from 'uuid';
-export default function handleAddQuestion( item, singleForm, setSingleForm ) {
+export default function handleAddQuestion(
+	item,
+	singleForm,
+	appState,
+	setAppState
+) {
 	const { questions } = JSON.parse( singleForm.content );
 	item.id = uuidv4();
 	if ( item.type === 'welcome' && hasWelcomeQuestion !== 0 ) {
@@ -11,5 +16,8 @@ export default function handleAddQuestion( item, singleForm, setSingleForm ) {
 		...singleForm,
 		content: JSON.stringify( { questions: questions } ),
 	};
-	setSingleForm( updatedForm );
+	setAppState( {
+		...appState,
+		singleForm: updatedForm,
+	} );
 }

@@ -28,6 +28,7 @@ class ContactRepository {
 
         $guests = Guest::query( 'guests' )->select( 'guests.id', 'guests.first_name', 'guests.last_name', 'guests.email', '"guest" as user_type', 'guests.number', 'guests.company' )->to_sql();
 
+        //phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
         $contacts = $wpdb->get_results( "({$users}) union all ({$guests}) limit {$per_page} offset {$offset}" );
 
         $user_ids = [];

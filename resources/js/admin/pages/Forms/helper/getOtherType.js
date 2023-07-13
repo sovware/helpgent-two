@@ -6,16 +6,21 @@ import arrowSquareLeft from '@icon/arrow-square-left.svg';
 
 export default function getotherQuestion(
 	questions,
-	activeScreenId,
-	setActiveScreenId
+	singleFormState,
+	setSingleFormState
 ) {
 	const otherQuestion = questions.filter(
 		( question ) =>
 			question.screen_type !== 'welcome' && question.screen_type !== 'end'
 	);
 
+	const { activeScreenId } = singleFormState;
+
 	function handleActivateQuestion( question ) {
-		setActiveScreenId( question.id );
+		setSingleFormState( {
+			...singleFormState,
+			activeScreenId: question.id,
+		} );
 	}
 
 	return otherQuestion.map( ( item, index ) => (

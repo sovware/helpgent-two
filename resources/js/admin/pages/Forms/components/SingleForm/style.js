@@ -114,9 +114,11 @@ const FormStyle = Styled.div`
 `;
 
 const ScreenBarStyle = Styled.div`
+    position: relative;
     width: 280px;
     border-radius: 14px;
     background-color: var(--helpgent-color-white);
+    
     .helpgent-screenBar-header{
         position: relative;
         display: flex;
@@ -149,9 +151,6 @@ const ScreenBarStyle = Styled.div`
         flex-flow: column;
         justify-content: space-between;
         height: calc( 70vh );
-        .helpgent-screen__item{
-            padding: 6px;
-        }
         .helpgent-screen__icon{
             width: 36px;
             height: 36px;
@@ -220,10 +219,10 @@ const MainContentStyle = Styled.div`
 `;
 
 const ScreenItemStyle = Styled.div`
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px;
     border-radius: 10px;
     cursor: pointer;
     transition: background-color .3s ease-in-out;
@@ -239,6 +238,14 @@ const ScreenItemStyle = Styled.div`
         .helpgent-screen__title{
             color: var( --helpgent-color-white );
         }
+    }
+    .helpgent-screen__inner{
+        width: 100%;
+        padding: 6px;
+    }
+    .helpgent-screen-dropdown{
+        position: absolute;
+        right: 15px;
     }
     .helpgent-screen__content{
         display: flex;
@@ -288,7 +295,7 @@ const ScreenItemStyle = Styled.div`
         }
     }
     .helpgent-dropdown__toggle{
-        padding: 2px 14px;
+        padding: 2px 0;
     }
 `;
 

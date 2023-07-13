@@ -3734,16 +3734,16 @@ __webpack_require__.r(__webpack_exports__);
 function AddressQuestion(props) {
   const {
     layoutMode,
-    singleForm,
-    setSingleForm,
+    singleFormState,
+    setSingleFormState,
     selectedQuestionField: addressQuestionField
   } = props;
   const {
-    content
-  } = singleForm;
+    singleForm
+  } = singleFormState;
   const {
     questions
-  } = JSON.parse(content);
+  } = JSON.parse(singleForm.content);
   const quillModules = {
     toolbar: false
   };
@@ -4013,16 +4013,16 @@ __webpack_require__.r(__webpack_exports__);
 function ButtonQuestion(props) {
   const {
     layoutMode,
-    singleForm,
-    setSingleForm,
+    singleFormState,
+    setSingleFormState,
     selectedQuestionField: buttonQuestionField
   } = props;
   const {
-    content
-  } = singleForm;
+    singleForm
+  } = singleFormState;
   const {
     questions
-  } = JSON.parse(content);
+  } = JSON.parse(singleForm.content);
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-question-element"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -4431,16 +4431,16 @@ function DateQuestion(props) {
   const [isActivePicker, setActivePicker] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
   const {
     layoutMode,
-    singleForm,
-    setSingleForm,
+    singleFormState,
+    setSingleFormState,
     selectedQuestionField: dateQuestionField
   } = props;
   const {
-    content
-  } = singleForm;
+    singleForm
+  } = singleFormState;
   const {
     questions
-  } = JSON.parse(content);
+  } = JSON.parse(singleForm.content);
   const ref = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
   const quillModules = {
     toolbar: false
@@ -4624,16 +4624,16 @@ function DropdownQuestion(props) {
   const [date, setDate] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)();
   const {
     layoutMode,
-    singleForm,
-    setSingleForm,
+    singleFormState,
+    setSingleFormState,
     selectedQuestionField: dropdownQuestionField
   } = props;
   const {
-    content
-  } = singleForm;
+    singleForm
+  } = singleFormState;
   const {
     questions
-  } = JSON.parse(content);
+  } = JSON.parse(singleForm.content);
   const ref = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
   const quillModules = {
     toolbar: false
@@ -4821,16 +4821,16 @@ __webpack_require__.r(__webpack_exports__);
 function EmailQuestion(props) {
   const {
     layoutMode,
-    singleForm,
-    setSingleForm,
+    singleFormState,
+    setSingleFormState,
     selectedQuestionField: emailQuestionField
   } = props;
   const {
-    content
-  } = singleForm;
+    singleForm
+  } = singleFormState;
   const {
     questions
-  } = JSON.parse(content);
+  } = JSON.parse(singleForm.content);
   const quillModules = {
     toolbar: false
   };
@@ -4999,18 +4999,18 @@ __webpack_require__.r(__webpack_exports__);
 function EndQuestion(props) {
   const {
     layoutMode,
-    singleForm,
-    setSingleForm,
+    singleFormState,
+    setSingleFormState,
     selectedQuestionField: endQuestionField,
     socialLinks,
     externalButton
   } = props;
   const {
-    content
-  } = singleForm;
+    singleForm
+  } = singleFormState;
   const {
     questions
-  } = JSON.parse(content);
+  } = JSON.parse(singleForm.content);
   const quillModules = {
     toolbar: false
   };
@@ -5166,16 +5166,16 @@ __webpack_require__.r(__webpack_exports__);
 function FileQuestion(props) {
   const {
     layoutMode,
-    singleForm,
-    setSingleForm,
+    singleFormState,
+    setSingleFormState,
     selectedQuestionField: fileQuestionField
   } = props;
   const {
-    content
-  } = singleForm;
+    singleForm
+  } = singleFormState;
   const {
     questions
-  } = JSON.parse(content);
+  } = JSON.parse(singleForm.content);
   const quillModules = {
     toolbar: false
   };
@@ -5349,16 +5349,16 @@ __webpack_require__.r(__webpack_exports__);
 function LongTextQuestion(props) {
   const {
     layoutMode,
-    singleForm,
-    setSingleForm,
+    singleFormState,
+    setSingleFormState,
     selectedQuestionField: longTextQuestionField
   } = props;
   const {
-    content
-  } = singleForm;
+    singleForm
+  } = singleFormState;
   const {
     questions
-  } = JSON.parse(content);
+  } = JSON.parse(singleForm.content);
   const quillModules = {
     toolbar: false
   };
@@ -5526,16 +5526,16 @@ function MultiSelectQuestion(props) {
   const [date, setDate] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)();
   const {
     layoutMode,
-    singleForm,
-    setSingleForm,
+    singleFormState,
+    setSingleFormState,
     selectedQuestionField: multiSelectQuestionField
   } = props;
   const {
-    content
-  } = singleForm;
+    singleForm
+  } = singleFormState;
   const {
     questions
-  } = JSON.parse(content);
+  } = JSON.parse(singleForm.content);
   const ref = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
   const quillModules = {
     toolbar: false
@@ -5724,16 +5724,16 @@ __webpack_require__.r(__webpack_exports__);
 function NumberQuestion(props) {
   const {
     layoutMode,
-    singleForm,
-    setSingleForm,
+    singleFormState,
+    setSingleFormState,
     selectedQuestionField: numberQuestionField
   } = props;
   const {
-    content
-  } = singleForm;
+    singleForm
+  } = singleFormState;
   const {
     questions
-  } = JSON.parse(content);
+  } = JSON.parse(singleForm.content);
   const quillModules = {
     toolbar: false
   };
@@ -6089,8 +6089,8 @@ __webpack_require__.r(__webpack_exports__);
 function PhoneNumberQuestion(props) {
   const {
     layoutMode,
-    singleForm,
-    setSingleForm,
+    singleFormState,
+    setSingleFormState,
     selectedQuestionField: phoneQuestionField
   } = props;
   const [phoneInput, setPhoneInput] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)({
@@ -6098,11 +6098,11 @@ function PhoneNumberQuestion(props) {
     number: ''
   });
   const {
-    content
-  } = singleForm;
+    singleForm
+  } = singleFormState;
   const {
     questions
-  } = JSON.parse(content);
+  } = JSON.parse(singleForm.content);
   const quillModules = {
     toolbar: false
   };
@@ -6704,16 +6704,16 @@ __webpack_require__.r(__webpack_exports__);
 function ResultQuestion(props) {
   const {
     layoutMode,
-    singleForm,
-    setSingleForm,
+    singleFormState,
+    setSingleFormState,
     selectedQuestionField: resultQuestionField
   } = props;
   const {
-    content
-  } = singleForm;
+    singleForm
+  } = singleFormState;
   const {
     questions
-  } = JSON.parse(content);
+  } = JSON.parse(singleForm.content);
   const quillModules = {
     toolbar: false
   };
@@ -6868,16 +6868,16 @@ function ScoreQuestion(props) {
   const [activeScore, setActiveScore] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)();
   const {
     layoutMode,
-    singleForm,
-    setSingleForm,
+    singleFormState,
+    setSingleFormState,
     selectedQuestionField: scoreQuestionField
   } = props;
   const {
-    content
-  } = singleForm;
+    singleForm
+  } = singleFormState;
   const {
     questions
-  } = JSON.parse(content);
+  } = JSON.parse(singleForm.content);
   const quillModules = {
     toolbar: false
   };
@@ -7058,16 +7058,16 @@ __webpack_require__.r(__webpack_exports__);
 function ShortTextQuestion(props) {
   const {
     layoutMode,
-    singleForm,
-    setSingleForm,
+    singleFormState,
+    setSingleFormState,
     selectedQuestionField: shortTextQuestionField
   } = props;
   const {
-    content
-  } = singleForm;
+    singleForm
+  } = singleFormState;
   const {
     questions
-  } = JSON.parse(content);
+  } = JSON.parse(singleForm.content);
   const quillModules = {
     toolbar: false
   };
@@ -7233,16 +7233,16 @@ function SingleSelectQuestion(props) {
   const [isActivePicker, setActivePicker] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
   const {
     layoutMode,
-    singleForm,
-    setSingleForm,
+    singleFormState,
+    setSingleFormState,
     selectedQuestionField: singleSelectQuestionField
   } = props;
   const {
-    content
-  } = singleForm;
+    singleForm
+  } = singleFormState;
   const {
     questions
-  } = JSON.parse(content);
+  } = JSON.parse(singleForm.content);
   const ref = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
   const quillModules = {
     toolbar: false
@@ -7452,16 +7452,16 @@ __webpack_require__.r(__webpack_exports__);
 function SliderQuestion(props) {
   const {
     layoutMode,
-    singleForm,
-    setSingleForm,
+    singleFormState,
+    setSingleFormState,
     selectedQuestionField: sliderQuestionField
   } = props;
   const {
-    content
-  } = singleForm;
+    singleForm
+  } = singleFormState;
   const {
     questions
-  } = JSON.parse(content);
+  } = JSON.parse(singleForm.content);
   const quillModules = {
     toolbar: false
   };
@@ -7623,16 +7623,16 @@ __webpack_require__.r(__webpack_exports__);
 function UrlQuestion(props) {
   const {
     layoutMode,
-    singleForm,
-    setSingleForm,
+    singleFormState,
+    setSingleFormState,
     selectedQuestionField: urlQuestionField
   } = props;
   const {
-    content
-  } = singleForm;
+    singleForm
+  } = singleFormState;
   const {
     questions
-  } = JSON.parse(content);
+  } = JSON.parse(singleForm.content);
   const quillModules = {
     toolbar: false
   };
@@ -7795,10 +7795,13 @@ __webpack_require__.r(__webpack_exports__);
 function WelcomeQuestion(props) {
   const {
     layoutMode,
-    singleForm,
-    setSingleForm,
+    singleFormState,
+    setSingleFormState,
     selectedQuestionField: welcomeQuestionField
   } = props;
+  const {
+    singleForm
+  } = singleFormState;
   const {
     questions
   } = JSON.parse(singleForm.content);

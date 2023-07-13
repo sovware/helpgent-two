@@ -3,8 +3,8 @@ let frame;
 export default function handleOpenUploader(
 	medias,
 	activeScreenId,
-	singleForm,
-	setSingleForm
+	singleFormState,
+	setSingleFormState
 ) {
 	// If the media frame already exists, reopen it.
 	if ( frame ) {
@@ -36,7 +36,7 @@ export default function handleOpenUploader(
 
 		medias = [];
 		medias.push( newMedia );
-
+		const { singleForm } = appState;
 		const { questions } = JSON.parse( singleForm.content );
 		const updatedQuestions = questions.map( ( question ) => {
 			if ( question.id === activeScreenId ) {
@@ -53,7 +53,10 @@ export default function handleOpenUploader(
 			content: JSON.stringify( { questions: updatedQuestions } ),
 		};
 
-		setSingleForm( updatedForm );
+		setSingleFormState( {
+			...singleFormState,
+			singleForm: updatedForm,
+		} );
 	} );
 
 	// Finally, open the modal on click

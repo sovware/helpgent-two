@@ -4,6 +4,8 @@ import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 import onDragEnd from '@helper/onDragEnd';
 import checkedClickedOutside from '@helper/checkClickedOutside.js';
 import ReactSVG from 'react-inlinesvg';
+import { useAppState } from '../../../../Context';
+import { useSingleFormState } from '../../context/SingleFormStateContext';
 import getWelcomeType from '../../helper/getWelcomeType';
 import getOtherType from '../../helper/getOtherType';
 import getEndType from '../../helper/getEndType';
@@ -14,9 +16,8 @@ import { ScreenBarStyle } from './style.js';
 import ScreenListDropdown from './ScreenListDropdown.js';
 import plus from '@icon/plus.svg';
 
-export default function ScreenBar( props ) {
-	const { singleForm, setSingleForm, activeScreenId, setActiveScreenId } =
-		props;
+export default function ScreenBar() {
+	const { singleFormState, setSingleFormState } = useSingleFormState();
 	const ref = useRef( null );
 	const endScreenRef = useRef( null );
 	const [ isOpenMegaDropdown, setMegaDropdown ] = useState( false );
@@ -25,9 +26,9 @@ export default function ScreenBar( props ) {
 		e.preventDefault();
 		setMegaDropdown( ! isOpenMegaDropdown );
 	}
-
-	const { content } = singleForm;
-	const { questions } = JSON.parse( content );
+	//const { appState, setAppState } = useAppState();
+	const { singleForm } = singleFormState;
+	const { questions } = JSON.parse( singleForm.content );
 
 	/* Close Dropdown click on outside */
 	useEffect( () => {
@@ -53,27 +54,24 @@ export default function ScreenBar( props ) {
 					Add screen
 				</Link>
 				<ScreenListDropdown
-					singleForm={ singleForm }
-					setSingleForm={ setSingleForm }
 					isOpenMegaDropdown={ isOpenMegaDropdown }
 					handleItemEvent={ handleAddQuestion }
 					setMegaDropdown={ setMegaDropdown }
-					activeScreenId={ activeScreenId }
 				/>
 			</div>
 			<div className="helpgent-screenBar-content">
 				{ getWelcomeType(
 					questions,
-					activeScreenId,
-					setActiveScreenId
+					singleFormState,
+					setSingleFormState
 				) }
 				<DragDropContext
 					onDragEnd={ ( results ) =>
 						onDragEnd(
 							results,
 							questions,
-							singleForm,
-							setSingleForm
+							singleFormState,
+							setSingleFormState
 						)
 					}
 				>
@@ -89,8 +87,8 @@ export default function ScreenBar( props ) {
 							>
 								{ getOtherType(
 									questions,
-									activeScreenId,
-									setActiveScreenId
+									singleFormState,
+									setSingleFormState
 								) }
 								{ provided.placeholder }
 							</div>
@@ -119,8 +117,8 @@ export default function ScreenBar( props ) {
 								handleAddEndScreen(
 									e,
 									questions,
-									singleForm,
-									setSingleForm
+									singleFormState,
+									setSingleFormState
 								)
 							}
 						>
@@ -132,8 +130,8 @@ export default function ScreenBar( props ) {
 							onDragEnd(
 								results,
 								questions,
-								singleForm,
-								setSingleForm
+								singleFormState,
+								setSingleFormState
 							)
 						}
 					>
@@ -149,8 +147,8 @@ export default function ScreenBar( props ) {
 								>
 									{ getEndType(
 										questions,
-										activeScreenId,
-										setActiveScreenId
+										singleFormState,
+										setSingleFormState
 									) }
 									{ provided.placeholder }
 								</div>

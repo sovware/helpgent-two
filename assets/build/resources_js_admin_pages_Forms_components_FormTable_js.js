@@ -859,7 +859,10 @@ function Dropdown(_ref) {
       key: i
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, {
       href: "#",
-      onClick: e => handleDropdownTrigger(e, item.name)
+      onClick: e => {
+        setDropDownOpen(false);
+        return handleDropdownTrigger(e, item.name);
+      }
     }, item.icon ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
       className: "helpgent-dropdown-item-icon"
     }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_3__["default"], {
