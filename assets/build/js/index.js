@@ -4501,8 +4501,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const Messenger = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.lazy)(() => __webpack_require__.e(/*! import() */ "resources_js_admin_pages_Messenger_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/Messenger */ "./resources/js/admin/pages/Messenger/index.js")));
-const Forms = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.lazy)(() => Promise.all(/*! import() */[__webpack_require__.e("vendors-node_modules_react-quill_dist_quill_snow_css-node_modules_prop-types_index_js-node_mo-c9d182"), __webpack_require__.e("vendors-node_modules_react-toastify_dist_ReactToastify_css-node_modules_tanstack_react-query_-d677a6"), __webpack_require__.e("resources_js_admin_pages_Forms_index_js")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/Forms */ "./resources/js/admin/pages/Forms/index.js")));
-const SingleForm = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.lazy)(() => Promise.all(/*! import() */[__webpack_require__.e("vendors-node_modules_react-quill_dist_quill_snow_css-node_modules_prop-types_index_js-node_mo-c9d182"), __webpack_require__.e("vendors-node_modules_react-beautiful-dnd_dist_react-beautiful-dnd_esm_js"), __webpack_require__.e("resources_js_admin_pages_Forms_SingleForm_js")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/Forms/SingleForm.js */ "./resources/js/admin/pages/Forms/SingleForm.js")));
+const Forms = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.lazy)(() => Promise.all(/*! import() */[__webpack_require__.e("vendors-node_modules_react-quill_dist_quill_snow_css-node_modules_prop-types_index_js-node_mo-01801b"), __webpack_require__.e("vendors-node_modules_react-toastify_dist_ReactToastify_css-node_modules_tanstack_react-query_-d677a6"), __webpack_require__.e("resources_js_admin_pages_Forms_index_js")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/Forms */ "./resources/js/admin/pages/Forms/index.js")));
+const SingleForm = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.lazy)(() => Promise.all(/*! import() */[__webpack_require__.e("vendors-node_modules_react-quill_dist_quill_snow_css-node_modules_prop-types_index_js-node_mo-01801b"), __webpack_require__.e("vendors-node_modules_react-beautiful-dnd_dist_react-beautiful-dnd_esm_js"), __webpack_require__.e("resources_js_admin_pages_Forms_SingleForm_js")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/Forms/SingleForm.js */ "./resources/js/admin/pages/Forms/SingleForm.js")));
 const FormMap = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.lazy)(() => __webpack_require__.e(/*! import() */ "resources_js_admin_pages_Forms_FormsMap_js").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/Forms/FormsMap.js */ "./resources/js/admin/pages/Forms/FormsMap.js")));
 const Analytics = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.lazy)(() => __webpack_require__.e(/*! import() */ "resources_js_admin_pages_Analytics_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/Analytics */ "./resources/js/admin/pages/Analytics/index.js")));
 const Settings = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.lazy)(() => __webpack_require__.e(/*! import() */ "resources_js_admin_pages_Settings_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/Settings */ "./resources/js/admin/pages/Settings/index.js")));
@@ -12780,6 +12780,7 @@ function combine (array, callback) {
 /******/ 					script.setAttribute("nonce", __webpack_require__.nc);
 /******/ 				}
 /******/ 				script.setAttribute("data-webpack", dataWebpackPrefix + key);
+/******/ 		
 /******/ 				script.src = url;
 /******/ 			}
 /******/ 			inProgress[url] = [done];
@@ -12905,7 +12906,7 @@ function combine (array, callback) {
 /******/ 		};
 /******/ 		
 /******/ 		__webpack_require__.f.miniCss = (chunkId, promises) => {
-/******/ 			var cssChunks = {"vendors-node_modules_react-quill_dist_quill_snow_css-node_modules_prop-types_index_js-node_mo-c9d182":1,"vendors-node_modules_react-toastify_dist_ReactToastify_css-node_modules_tanstack_react-query_-d677a6":1};
+/******/ 			var cssChunks = {"vendors-node_modules_react-quill_dist_quill_snow_css-node_modules_prop-types_index_js-node_mo-01801b":1,"vendors-node_modules_react-toastify_dist_ReactToastify_css-node_modules_tanstack_react-query_-d677a6":1};
 /******/ 			if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 			else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 				promises.push(installedCssChunks[chunkId] = loadStylesheet(chunkId).then(() => {

@@ -20,7 +20,7 @@ export default function WelcomeBox( props ) {
 				You can select a template to assist you, or start from scratch.
 			</p>
 			<button
-				className="helpgent-btn helpgent-btn-md helpgent-btn-dark helpgent-btn-create"
+				className="helpgent-btn helpgent-btn-md helpgent-btn-primary helpgent-btn-create"
 				onClick={ () => setCreatePopupStatus( ! isCreatePopupOpen ) }
 			>
 				Create My First Form

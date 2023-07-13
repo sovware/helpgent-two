@@ -79,7 +79,7 @@ export default function getFormTableBody(
 			</tr>
 		) )
 	) : (
-		<tr>
+		<tr className="helpgent-welcome-wrapper">
 			<td colSpan={ 7 }>
 				<WelcomeBoxStyleWrap>
 					<Suspense fallback={ <Spinner /> }>

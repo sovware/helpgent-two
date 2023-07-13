@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import ReactSVG from 'react-inlinesvg';
 import arrowSmall from '../../../../../../../assets/svg/icon/arrow-small-left.svg';
 import pencilDash from '../../../../../../../assets/svg/icon/pencil-dash.svg';
+import eyeIcon from '../../../../../../../assets/svg/icon/eye.svg';
 import { HeaderStyle } from './style';
 
 export default function Header() {
@@ -19,7 +20,7 @@ export default function Header() {
 			<div className="helpgent-single-form-header__middle">
 				<ul className="helpgent-single-form-header__tab">
 					<li>
-						<Link className="helpgent-single-form-header__tab-link">
+						<Link className="helpgent-single-form-header__tab-link helpgent-active">
 							Editor
 						</Link>
 					</li>
@@ -32,8 +33,8 @@ export default function Header() {
 			</div>
 			<div className="helpgent-single-form-header__right">
 				<div className="helpgent-single-form-header__action">
-					<button className="helpgent-btn helpgent-btn-light">
-						Preview
+					<button className="helpgent-btn helpgent-btn-gray">
+						<ReactSVG src={ eyeIcon }></ReactSVG> Preview
 					</button>
 					<button className="helpgent-btn helpgent-btn-primary">
 						Publish

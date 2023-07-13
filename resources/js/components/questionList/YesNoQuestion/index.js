@@ -6,12 +6,12 @@ import 'react-quill/dist/quill.snow.css';
 export default function YesNoQuestion( props ) {
 	const {
 		layoutMode,
-		singleForm,
-		setSingleForm,
-		selectedQuestion: yesNoQuestionField,
+		singleFormState,
+		setSingleFormState,
+		selectedQuestionField: yesNoQuestionField,
 	} = props;
-	const { content } = singleForm;
-	const { questions } = JSON.parse( content );
+	const { singleForm } = singleFormState;
+	const { questions } = JSON.parse( singleForm.content );
 
 	const required = true;
 

@@ -263,6 +263,11 @@ const QuestionPreviewStyle = Styled.div`
             visibility: hidden;
             opacity: 0;
             transition: 0.3s ease;
+            svg{
+                path{
+                    fill: #fff;
+                }
+            }
         }
         &__img{
             position: relative;

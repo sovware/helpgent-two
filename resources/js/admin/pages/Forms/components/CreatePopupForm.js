@@ -69,7 +69,7 @@ export default function CreatePopupForm() {
 					<div className="helpgent-form-group">
 						<input
 							type="text"
-							className="helpgent-form__element"
+							className="helpgent-form-group__element"
 							name="title"
 							placeholder="Form Name"
 							{ ...register( 'title', {
@@ -179,7 +179,7 @@ export default function CreatePopupForm() {
 
 					<button
 						type="submit"
-						className={ `helpgent-btn helpgent-btn-md helpgent-btn-dark helpgent-btn-block ${
+						className={ `helpgent-btn helpgent-btn-md helpgent-btn-primary helpgent-btn-block ${
 							Object.keys( errors ).length !== 0 ||
 							Object.keys( serverErrors ).length !== 0
 								? 'helpgent-btn-disabled'

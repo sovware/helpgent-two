@@ -15,7 +15,7 @@ const HeaderStyle = Styled.div`
         text-decoration: none;
         padding-right: 20px;
         margin-right: 20px;
-        color: var(--helpgent-color-text);
+        color: var(--helpgent-color-info);
         &:after{
             position: absolute;
             right: 0;
@@ -29,7 +29,7 @@ const HeaderStyle = Styled.div`
             position: relative;
             top: -1px;
             path {
-                fill: var(--helpgent-color-text);
+                fill: var(--helpgent-color-info);
             }
         }
     }
@@ -53,6 +53,7 @@ const HeaderStyle = Styled.div`
     .helpgent-single-form-header__tab{
         display: flex;
         align-items: center;
+        gap: 30px;
         padding: 0;
         margin: 0;
         list-style: none;
@@ -63,12 +64,13 @@ const HeaderStyle = Styled.div`
     }
     .helpgent-single-form-header__tab-link{
         position: relative;
-        font-size: .93rem;
+        font-size: 14px;
+        font-weight: 600;
         display: inline-block;
         text-decoration: none;
-        padding: 30px 15px;
+        padding: 30px 0;
         transition: color .3s ease-in;
-        color: var(--helpgent-color-text);
+        color: var(--helpgent-color-gray);
         &:focus{
             outline: none;
             box-shadow: 0 0;
@@ -95,10 +97,20 @@ const HeaderStyle = Styled.div`
             }
         }
     }
+    .helpgent-single-form-header__action{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        .helpgent-btn{
+            svg{
+                margin:0 8px 0 0;
+            }
+        }
+    }
 `;
 
 const FormStyle = Styled.div`
-    
+
 `;
 
 const ScreenBarStyle = Styled.div`
@@ -363,6 +375,7 @@ const PreviewStyle = Styled.div`
         display: flex;
         justify-content: center;
         align-items: center;
+        margin-top: 50px;
         margin-bottom: 30px;
         svg{
             margin-right: 10px;
@@ -469,6 +482,7 @@ const ScreenSettingsStyle = Styled.div`
         align-items: center;
         justify-content: center;
         min-height: 160px;
+        border-radius: 12px;
         background-color: var(--helpgent-color-bg-light);
         .helpgent-btn-upload-trigger{
             font-size: .93rem;
@@ -492,6 +506,11 @@ const ScreenSettingsStyle = Styled.div`
     }
     .helpgent-media-preview__src{
         height: 100%;
+    }
+    .helpgent-layout-actions{
+        display: flex;
+        align-items: center;
+        gap: 20px;
     }
 `;
 

@@ -39,6 +39,7 @@
     --helpgent-color-bg-badge-success: rgba(37,128,8,.2);
     --helpgent-color-bg-badge-gray: #B1B1B1;
     --helpgent-footer-text-font-size: 'medium';
+    --helpgent-color-border-light: #e6e6e6;
 }
 
 /* Spacing */
@@ -213,8 +214,8 @@
 
     &.helpgent-btn-gray {
         color: var(--helpgent-color-dark);
-        background-color: var(--helpgent-color-border-lighter);
-        border: 1px solid var(--helpgent-color-border-lighter);
+        background-color: var(--helpgent-color-bg-light);
+        border: 1px solid var(--helpgent-color-bg-light);
         &:hover {
             background-color: var(--helpgent-color-white);
         }
@@ -396,7 +397,7 @@ svg.components-spinner{
         color: var(--helpgent-color-dark);
         border: 2px solid transparent;
         margin: 0;
-        background-color: var(--helpgent-color-bg-general);
+        background-color: var(--helpgent-color-bg-light);
         @media only screen and (max-width: 1199px) {
             padding: 6px 16px;
             min-height: 38px;
@@ -445,16 +446,15 @@ svg.components-spinner{
     position: relative;
 
     &.helpgent-form-icon-left {
+        .helpgent-form-group__element{
+            padding-left: 40px;
+        }
         .helpgent-input-icon {
             position: absolute;
             left: 16px;
-            top: 50%;
+            top: 52%;
             line-height: 1;
             transform: translateY(-50%);
-        }
-
-        .helpgent-form__element {
-            padding-left: 40px;
         }
     }
 
@@ -829,7 +829,12 @@ svg.components-spinner{
 .helpgent-select__control{
     .helpgent-select__multi-value{
         border-radius: 4px;
-        background-color: var(--helpgent-color-bg-deep);
+        background-color: var(--helpgent-color-light-gray);
+        margin: 0;
+    }
+    .helpgent-select__input-container{
+        margin: 0;
+        padding: 0;
     }
     .helpgent-select__multi-value__label{
         font-size: .67rem;
@@ -866,15 +871,20 @@ svg.components-spinner{
     .helpgent-select__control{
         border: 0 none;
         border-radius: 12px;
-        min-height: 50px;
+        min-height: 30px;
+        padding-top: 10px;
+        padding-bottom: 10px;
         cursor: pointer;
         background-color: var(--helpgent-color-bg-gray);
+        max-height: 100px;
+        overflow: hidden;
     }
     .helpgent-select__control--is-focused{
         box-shadow: 0 0 0 2px var(--helpgent-color-dark);
     }
     .helpgent-select__value-container{
-        padding: 2px 15px;
+        padding: 0 15px;
+        gap: 5px 10px;
     }
     .helpgent-select__indicator-separator{
         display: none;
@@ -885,6 +895,7 @@ svg.components-spinner{
         color: var(--helpgent-color-dark);
     }
     .helpgent-select__indicator {
+        padding: 0;
         padding-right: 15px;
         color: #3C3C3C;
     }
@@ -1277,6 +1288,10 @@ svg.components-spinner{
                 top: 30px;
                 right: 30px;
                 background-color: var(--helpgent-color-bg-gray);
+                svg{
+                    width: 18px;
+                    height: 18px;
+                }
             }
         }
         .components-modal__content{
@@ -1895,9 +1910,12 @@ svg.components-spinner{
 .helpgent-create-form-modal{
     .helpgent-form-group{
         flex-direction: column;
-        .helpgent-form__element{
+        &__element{
             font-size: 16px;
             min-height: 50px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 12px;
         }
     }
     .helpgent-btn {
@@ -2202,6 +2220,64 @@ svg.components-spinner{
 // }
 
 /* Animation Keyframe */
+
+//Screen Settings
+.helpgent-screen-setting-wrap{
+    .helpgent-screen-setting-block__label{
+        font-size: 12px;
+        display: block;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: var(--helpgent-color-light-gray);
+        margin-bottom: 20px;
+        letter-spacing: 1.2px;
+    }
+    .helpgent-toggle{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        &__label{
+            font-size: 14px;
+            font-weight: 500;
+            color: #030308;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+    .helpgent-screen-setting-block{
+        .helpgent-field-element:last-child{
+            .helpgent-toggle,
+            .helpgent-form-group{
+                margin-bottom: 0;
+            }
+        }
+    }
+    .helpgent-field-element__label{
+        font-size: 14px;
+        font-weight: 500;
+        color: #030308;
+        margin-bottom: 7px;
+        display: block;
+    }
+    .helpgent-media-actions{
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        .helpgent-btn{
+            svg{
+                margin-right: 10px;
+            }
+        }
+        .helpgent-btn-replace{
+            padding: 0 20px;
+        }
+        .helpgent-btn-remove{
+            padding: 0 3px;
+        }
+    }
+}
 
 @keyframes shimmerEffect {
 
