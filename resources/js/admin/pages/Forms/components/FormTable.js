@@ -25,7 +25,7 @@ export default function FormTable( props ) {
 
 	return (
 		<FormTableStyle>
-			<div className="helpgent-table-wrap helpgent-table-responsive-">
+			<div className="helpgent-table-wrap helpgent-table-forms-list helpgent-table-responsive">
 				<table className="helpgent-table">
 					<thead>{ getFormTableHead() }</thead>
 					<tbody>
@@ -41,7 +41,9 @@ export default function FormTable( props ) {
 						) : (
 							<tr>
 								<td colSpan={ 7 }>
-									<Spinner />
+									<div class="helpgent-table-loader">
+										<Spinner />
+									</div>
 								</td>
 							</tr>
 						) }

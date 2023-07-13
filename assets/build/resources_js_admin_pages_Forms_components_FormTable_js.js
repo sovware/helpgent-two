@@ -143,77 +143,6 @@ var SvgPencilSolid = function SvgPencilSolid(props) {
 
 /***/ }),
 
-/***/ "./assets/svg/icon/times.svg":
-/*!***********************************!*\
-  !*** ./assets/svg/icon/times.svg ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   ReactComponent: () => (/* binding */ SvgTimes),
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _path;
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-var SvgTimes = function SvgTimes(props) {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
-    xmlns: "http://www.w3.org/2000/svg",
-    width: 6,
-    height: 5.999
-  }, props), _path || (_path = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
-    d: "M3.706 3.004 5.854.861a.501.501 0 1 0-.709-.709L3 2.295.857.147a.501.501 0 0 0-.709.709l2.148 2.148L.148 5.142a.501.501 0 1 0 .709.709L3 3.704l2.143 2.148a.501.501 0 1 0 .709-.709Z",
-    fill: "#3c3c3c"
-  })));
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2IiBoZWlnaHQ9IjUuOTk5IiB2aWV3Qm94PSIwIDAgNiA1Ljk5OSI+DQogIDxwYXRoIGlkPSJ0aW1lcyIgZD0iTTkuNyw5bDIuMTQ4LTIuMTQzYS41LjUsMCwxLDAtLjcwOS0uNzA5TDguOTk0LDguMjkxLDYuODUxLDYuMTQzYS41LjUsMCwwLDAtLjcwOS43MDlMOC4yOSw5LDYuMTQyLDExLjEzOGEuNS41LDAsMSwwLC43MDkuNzA5TDguOTk0LDkuN2wyLjE0MywyLjE0OGEuNS41LDAsMSwwLC43MDktLjcwOVoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC01Ljk5NCAtNS45OTYpIiBmaWxsPSIjM2MzYzNjIi8+DQo8L3N2Zz4NCg==");
-
-/***/ }),
-
-/***/ "./assets/svg/icon/trash.svg":
-/*!***********************************!*\
-  !*** ./assets/svg/icon/trash.svg ***!
-  \***********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   ReactComponent: () => (/* binding */ SvgTrash),
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-var _g;
-function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-var SvgTrash = function SvgTrash(props) {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("svg", _extends({
-    xmlns: "http://www.w3.org/2000/svg",
-    width: 14.667,
-    height: 16
-  }, props), _g || (_g = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("g", {
-    "data-name": "trash (1)",
-    fill: "#6e6e6e"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
-    "data-name": "Path 1508",
-    d: "M14.667 3a1 1 0 0 0-1-1h-2.518a3 3 0 0 0-2.816-2h-2a3 3 0 0 0-2.816 2H1a1 1 0 0 0-1 1 1 1 0 0 0 1 1h.333v8.333A3.667 3.667 0 0 0 5 16h4.667a3.667 3.667 0 0 0 3.667-3.667V4h.333a1 1 0 0 0 1-1Zm-3.333 9.333A1.667 1.667 0 0 1 9.667 14H5a1.667 1.667 0 0 1-1.667-1.667V4h8Z"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
-    "data-name": "Path 1509",
-    d: "M5.667 12a1 1 0 0 0 1-1V7a1 1 0 0 0-2 0v4a1 1 0 0 0 1 1Z"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
-    "data-name": "Path 1510",
-    d: "M9 12a1 1 0 0 0 1-1V7a1 1 0 0 0-2 0v4a1 1 0 0 0 1 1Z"
-  }))));
-};
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNC42NjciIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNC42NjcgMTYiPg0KICA8ZyBpZD0idHJhc2hfMV8iIGRhdGEtbmFtZT0idHJhc2ggKDEpIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjEuMzMzKSI+DQogICAgPHBhdGggaWQ9IlBhdGhfMTUwOCIgZGF0YS1uYW1lPSJQYXRoIDE1MDgiIGQ9Ik0zNiwzYTEsMSwwLDAsMC0xLTFIMzIuNDgyYTMsMywwLDAsMC0yLjgxNi0yaC0yQTMsMywwLDAsMCwyNC44NSwySDIyLjMzM2ExLDEsMCwwLDAtMSwxaDBhMSwxLDAsMCwwLDEsMWguMzMzdjguMzMzQTMuNjY3LDMuNjY3LDAsMCwwLDI2LjMzMywxNkgzMWEzLjY2NywzLjY2NywwLDAsMCwzLjY2Ny0zLjY2N1Y0SDM1QTEsMSwwLDAsMCwzNiwzWm0tMy4zMzMsOS4zMzNBMS42NjcsMS42NjcsMCwwLDEsMzEsMTRIMjYuMzMzYTEuNjY3LDEuNjY3LDAsMCwxLTEuNjY3LTEuNjY3VjRoOFoiIGZpbGw9IiM2ZTZlNmUiLz4NCiAgICA8cGF0aCBpZD0iUGF0aF8xNTA5IiBkYXRhLW5hbWU9IlBhdGggMTUwOSIgZD0iTTE3MS42NjcsMTk4YTEsMSwwLDAsMCwxLTF2LTRhMSwxLDAsMCwwLTIsMHY0QTEsMSwwLDAsMCwxNzEuNjY3LDE5OFoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xNDQuNjY3IC0xODYpIiBmaWxsPSIjNmU2ZTZlIi8+DQogICAgPHBhdGggaWQ9IlBhdGhfMTUxMCIgZGF0YS1uYW1lPSJQYXRoIDE1MTAiIGQ9Ik0yNzguMzMzLDE5OGExLDEsMCwwLDAsMS0xdi00YTEsMSwwLDAsMC0yLDB2NEExLDEsMCwwLDAsMjc4LjMzMywxOThaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjQ4IC0xODYpIiBmaWxsPSIjNmU2ZTZlIi8+DQogIDwvZz4NCjwvc3ZnPg0K");
-
-/***/ }),
-
 /***/ "./resources/js/admin/pages/Forms/components/FormTable.js":
 /*!****************************************************************!*\
   !*** ./resources/js/admin/pages/Forms/components/FormTable.js ***!
@@ -260,12 +189,14 @@ function FormTable(props) {
   } = props;
   const [renameFormId, setRenameFormId] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_style_js__WEBPACK_IMPORTED_MODULE_7__.FormTableStyle, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    className: "helpgent-table-wrap helpgent-table-responsive-"
+    className: "helpgent-table-wrap helpgent-table-forms-list helpgent-table-responsive"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("table", {
     className: "helpgent-table"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("thead", null, (0,_helper_getFormTableHead_js__WEBPACK_IMPORTED_MODULE_5__["default"])()), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("tbody", null, forms ? (0,_helper_getFormTableBody_js__WEBPACK_IMPORTED_MODULE_4__["default"])(forms, renameFormId, setRenameFormId, isFetchError, isCreatePopupOpen, setCreatePopupStatus) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("tr", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
     colSpan: 7
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Spinner, null)))))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_toastify__WEBPACK_IMPORTED_MODULE_1__.ToastContainer, null));
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    class: "helpgent-table-loader"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Spinner, null))))))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_toastify__WEBPACK_IMPORTED_MODULE_1__.ToastContainer, null));
 }
 FormTable.propTypes = {
   forms: (prop_types__WEBPACK_IMPORTED_MODULE_8___default().array),
@@ -552,7 +483,9 @@ function titleBox(props) {
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "helpgent-titleBox-action-item helpgent-titleBox__actions-yes",
     onClick: () => (0,_helper_handleRenameFormTitle_js__WEBPACK_IMPORTED_MODULE_4__["default"])(renameFormMutation, id, allForms, formTableState, setStoreData, setEditModeStatus)
-  }, !isLoading && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_11__["default"], {
+  }, isLoading ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "helpgent-circle-loader"
+  }) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_11__["default"], {
     src: _icon_check_svg__WEBPACK_IMPORTED_MODULE_10__["default"]
   }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_toastify__WEBPACK_IMPORTED_MODULE_1__.ToastContainer, null));
 }
@@ -666,7 +599,7 @@ function getFormTableBody(forms, renameFormId, setRenameFormId, isFetchError, is
     setRenameFormId: setRenameFormId,
     form: form
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
-    className: "helpgent-form-shortCode"
+    className: "helpgent-form-shortcode"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
     type: "text",
     readOnly: true,
@@ -882,7 +815,25 @@ function Dropdown(_ref) {
   function handleDropdown(e) {
     e.preventDefault();
     setDropDownOpen(!isDropdownOpen);
+    const parent = e.target.closest('.helpgent-dropdown');
+    const parentRect = parent.getBoundingClientRect();
+    const dropdownContent = parent.querySelector('.helpgent-dropdown__content');
+    dropdownContent.style.top = `${parentRect.top + 20}px`;
+    if (parent.classList.contains('helpgent-dropdown-right')) {
+      dropdownContent.style.left = `${parentRect.left}px`;
+    } else if (parent.classList.contains('helpgent-dropdown-left')) {
+      dropdownContent.style.right = `calc(100% - ${parentRect.right}px)`;
+    }
   }
+  function handleScroll() {
+    const parent = document.querySelector('.helpgent-dropdown-open');
+    if (parent) {
+      const parentRect = parent.getBoundingClientRect();
+      const dropdownContent = parent.querySelector('.helpgent-dropdown__content');
+      dropdownContent.style.top = `${parentRect.top + 20}px`;
+    }
+  }
+  document.addEventListener('scroll', handleScroll);
 
   /* Close Dropdown click on outside */
   (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {

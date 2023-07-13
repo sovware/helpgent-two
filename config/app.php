@@ -33,7 +33,7 @@ return [
         MediaProtectionProvider::class,
         ShortCodeServiceProvider::class,
         PreviewServiceProvider::class,
-        ChatBubbleServiceProvider::class
+        ChatBubbleServiceProvider::class,
     ],
 
     'admin_providers'         => [

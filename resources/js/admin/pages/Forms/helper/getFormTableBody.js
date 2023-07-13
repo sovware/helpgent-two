@@ -47,7 +47,7 @@ export default function getFormTableBody(
 						form={ form }
 					/>
 				</td>
-				<td className="helpgent-form-shortCode">
+				<td className="helpgent-form-shortcode">
 					<label>
 						<input
 							type="text"

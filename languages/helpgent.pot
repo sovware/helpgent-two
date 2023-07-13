@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: HelpGent 2.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/helpgent-two\n"
-"POT-Creation-Date: 2023-07-05 11:43:48+00:00\n"
+"POT-Creation-Date: 2023-07-12 09:49:06+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,12 +13,16 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 1.0.3\n"
 
+#: app/Http/Controllers/Admin/ContactController.php:51
+msgid "Contact list exported successfully!"
+msgstr ""
+
 #: app/Http/Controllers/Admin/FormController.php:91
 msgid "Form Created Successfully!"
 msgstr ""
 
 #: app/Http/Controllers/Admin/FormController.php:175
-#: app/Http/Controllers/Admin/FormController.php:254
+#: app/Http/Controllers/Admin/FormController.php:292
 #: app/Http/Controllers/Admin/ResponseController.php:48
 #: app/Http/Controllers/Admin/ResponseController.php:90
 #: app/Http/Controllers/Admin/TagController.php:130
@@ -34,7 +38,11 @@ msgstr ""
 msgid "Form status updated successfully!"
 msgstr ""
 
-#: app/Http/Controllers/Admin/FormController.php:261
+#: app/Http/Controllers/Admin/FormController.php:257
+msgid "Form title updated successfully!"
+msgstr ""
+
+#: app/Http/Controllers/Admin/FormController.php:299
 msgid "Form Deleted Successfully!"
 msgstr ""
 
@@ -123,9 +131,10 @@ msgstr ""
 
 #: app/Http/Controllers/ResponseController.php:135
 #: app/Repositories/FormRepository.php:37
-#: app/Repositories/FormRepository.php:87
-#: app/Repositories/FormRepository.php:108
-#: app/Repositories/FormRepository.php:122
+#: app/Repositories/FormRepository.php:93
+#: app/Repositories/FormRepository.php:114
+#: app/Repositories/FormRepository.php:128
+#: app/Repositories/FormRepository.php:142
 msgid "Form not found"
 msgstr ""
 
@@ -343,6 +352,10 @@ msgstr ""
 
 #: config/templates.php:7
 msgid "Sample One"
+msgstr ""
+
+#: config/templates.php:12
+msgid "Sample Two"
 msgstr ""
 
 #: resources/views/admin/notice/nginx-setup-notice.php:4

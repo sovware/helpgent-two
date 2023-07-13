@@ -103,7 +103,11 @@ function titleBox( props ) {
 							)
 						}
 					>
-						{ ! isLoading && <ReactSVG src={ check } /> }
+						{ isLoading ? (
+							<span className="helpgent-circle-loader"></span>
+						) : (
+							<ReactSVG src={ check } />
+						) }
 					</span>
 				</div>
 			) }
