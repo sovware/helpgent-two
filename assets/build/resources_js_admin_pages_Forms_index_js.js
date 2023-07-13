@@ -2770,7 +2770,7 @@ function CreatePopupForm() {
     defaultOptions: defaultPages
   })) : null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("button", {
     type: "submit",
-    className: `helpgent-btn helpgent-btn-md helpgent-btn-dark helpgent-btn-block ${Object.keys(errors).length !== 0 || Object.keys(serverErrors).length !== 0 ? 'helpgent-btn-disabled' : null}`,
+    className: `helpgent-btn helpgent-btn-md helpgent-btn-primary helpgent-btn-block ${Object.keys(errors).length !== 0 || Object.keys(serverErrors).length !== 0 ? 'helpgent-btn-disabled' : null}`,
     disabled: Object.keys(errors).length !== 0 || Object.keys(serverErrors).length !== 0 ? true : false
   }, "Create Form"), serverErrors.internal && (0,_helper_getValidationMessage_js__WEBPACK_IMPORTED_MODULE_10__["default"])(serverErrors.internal))));
 }
@@ -2927,9 +2927,9 @@ const FormTableStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"]
         display: flex;
         align-items: center;
         justify-content: center;
+        padding-top: 50px;
     }
     .helpgent-table{
-        min-height: inherit;
         thead{
             border-bottom: 10px solid transparent;
             tr{
@@ -2945,6 +2945,11 @@ const FormTableStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"]
                 transition: 0.3s ease;
                 &:hover{
                     background: #EFEFEF;
+                }
+                &.helpgent-welcome-wrapper{
+                    &:hover{
+                        background: none;
+                    }
                 }
                 td{
                     padding: 11px 15px;
@@ -3145,13 +3150,15 @@ const CreatePopupStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default
     }
    .helpgent-createPopup__header{
         h4{
-            font-size: 2rem;
+            font-size: 30px;
+            font-weight: 600;
             margin: 0;
             line-height: 1.27;
             color: var(--helpgent-color-dark);
         }
         p{
-            font-size: 1.07rem;
+            font-size: 16px;
+            font-weight: 400;
         }
    }
    .helpgent-createPopup__actions{
@@ -3180,11 +3187,14 @@ const CreatePopupStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default
     height: 80px;
     border-radius: 20px;
     background-color: var(--helpgent-color-white);
+    svg{
+        fill: var(--helpgent-color-primary);
+    }
    }
    .helpgent-createPopup__action-text{
         display: block;
-        font-size: 1rem;
-        font-weight: 600;
+        font-size: 16px;
+        font-weight: 500;
         max-width: 96px;
         margin-top: 20px;
         line-height: 1.38;
@@ -3213,13 +3223,15 @@ const WelcomeBoxStyleWrap = styled_components__WEBPACK_IMPORTED_MODULE_0__["defa
         margin-right: 10px;
     }
     .helpgent-welcome-top__title{
-        font-size: 1.47rem;
+        font-size: 22px;
+        font-weight: 600;
         margin: 0;
         color: var(--helpgent-color-dark);
     }
     p{
-        font-size: 1.07rem;
+        font-size: 16px;
         margin: 0;
+        font-weight: 400;
     }
     .helpgent-btn-create{
         padding: 0 30px;
@@ -3232,7 +3244,7 @@ const CreateFormStyleWrap = styled_components__WEBPACK_IMPORTED_MODULE_0__["defa
     text-align: left;
     margin-top: 50px;
     .helpgent-form-group{
-        min-width: 450px;
+        width: 450px;
     }
     .helpgent-tooltip-toggle{
         position: relative;

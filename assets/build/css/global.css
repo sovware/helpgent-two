@@ -40,6 +40,7 @@
   --helpgent-color-bg-badge-success: rgba(37,128,8,.2);
   --helpgent-color-bg-badge-gray: #B1B1B1;
   --helpgent-footer-text-font-size: "medium";
+  --helpgent-color-border-light: #e6e6e6;
 }
 
 /* Spacing */
@@ -727,7 +728,12 @@ svg.components-spinner path {
 
 .helpgent-select__control .helpgent-select__multi-value {
   border-radius: 4px;
-  background-color: var(--helpgent-color-bg-deep);
+  background-color: var(--helpgent-color-light-gray);
+  margin: 0;
+}
+.helpgent-select__control .helpgent-select__input-container {
+  margin: 0;
+  padding: 0;
 }
 .helpgent-select__control .helpgent-select__multi-value__label {
   font-size: 0.67rem;
@@ -760,15 +766,20 @@ svg.components-spinner path {
 .helpgent-select .helpgent-select__control {
   border: 0 none;
   border-radius: 12px;
-  min-height: 50px;
+  min-height: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
   cursor: pointer;
   background-color: var(--helpgent-color-bg-gray);
+  max-height: 100px;
+  overflow: auto;
 }
 .helpgent-select .helpgent-select__control--is-focused {
   box-shadow: 0 0 0 2px var(--helpgent-color-dark);
 }
 .helpgent-select .helpgent-select__value-container {
-  padding: 2px 15px;
+  padding: 0 15px;
+  gap: 5px 10px;
 }
 .helpgent-select .helpgent-select__indicator-separator {
   display: none;
@@ -779,6 +790,7 @@ svg.components-spinner path {
   color: var(--helpgent-color-dark);
 }
 .helpgent-select .helpgent-select__indicator {
+  padding: 0;
   padding-right: 15px;
   color: #3C3C3C;
 }
@@ -1123,6 +1135,10 @@ svg.components-spinner path {
   top: 30px;
   right: 30px;
   background-color: var(--helpgent-color-bg-gray);
+}
+.helpgent-modal.helpgent-create-modal-wrap .components-modal__header .components-button svg {
+  width: 18px;
+  height: 18px;
 }
 .helpgent-modal.helpgent-create-modal-wrap .components-modal__content {
   padding-bottom: 30px;

@@ -179,7 +179,7 @@ export default function CreatePopupForm() {
 
 					<button
 						type="submit"
-						className={ `helpgent-btn helpgent-btn-md helpgent-btn-dark helpgent-btn-block ${
+						className={ `helpgent-btn helpgent-btn-md helpgent-btn-primary helpgent-btn-block ${
 							Object.keys( errors ).length !== 0 ||
 							Object.keys( serverErrors ).length !== 0
 								? 'helpgent-btn-disabled'

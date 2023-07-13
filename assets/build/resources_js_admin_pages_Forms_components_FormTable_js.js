@@ -528,7 +528,7 @@ function WelcomeBox(props) {
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h4", {
     className: "helpgent-welcome-top__title"
   }, "Welcome Abdur Rahim!")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "You can select a template to assist you, or start from scratch."), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
-    className: "helpgent-btn helpgent-btn-md helpgent-btn-dark helpgent-btn-create",
+    className: "helpgent-btn helpgent-btn-md helpgent-btn-primary helpgent-btn-create",
     onClick: () => setCreatePopupStatus(!isCreatePopupOpen)
   }, "Create My First Form"));
 }
@@ -613,7 +613,9 @@ function getFormTableBody(forms, renameFormId, setRenameFormId, isFetchError, is
     id: form.id,
     form: form,
     setRenameFormId: setRenameFormId
-  }))))) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("tr", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
+  }))))) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("tr", {
+    className: "helpgent-welcome-wrapper"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
     colSpan: 7
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_style__WEBPACK_IMPORTED_MODULE_9__.WelcomeBoxStyleWrap, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Suspense, {
     fallback: (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_8__.Spinner, null)

@@ -27,9 +27,9 @@ const FormTableStyle = Styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
+        padding-top: 50px;
     }
     .helpgent-table{
-        min-height: inherit;
         thead{
             border-bottom: 10px solid transparent;
             tr{
@@ -45,6 +45,11 @@ const FormTableStyle = Styled.div`
                 transition: 0.3s ease;
                 &:hover{
                     background: #EFEFEF;
+                }
+                &.helpgent-welcome-wrapper{
+                    &:hover{
+                        background: none;
+                    }
                 }
                 td{
                     padding: 11px 15px;
@@ -247,13 +252,15 @@ const CreatePopupStyle = Styled.div`
     }
    .helpgent-createPopup__header{
         h4{
-            font-size: 2rem;
+            font-size: 30px;
+            font-weight: 600;
             margin: 0;
             line-height: 1.27;
             color: var(--helpgent-color-dark);
         }
         p{
-            font-size: 1.07rem;
+            font-size: 16px;
+            font-weight: 400;
         }
    }
    .helpgent-createPopup__actions{
@@ -282,11 +289,14 @@ const CreatePopupStyle = Styled.div`
     height: 80px;
     border-radius: 20px;
     background-color: var(--helpgent-color-white);
+    svg{
+        fill: var(--helpgent-color-primary);
+    }
    }
    .helpgent-createPopup__action-text{
         display: block;
-        font-size: 1rem;
-        font-weight: 600;
+        font-size: 16px;
+        font-weight: 500;
         max-width: 96px;
         margin-top: 20px;
         line-height: 1.38;
@@ -316,13 +326,15 @@ const WelcomeBoxStyleWrap = Styled.div`
         margin-right: 10px;
     }
     .helpgent-welcome-top__title{
-        font-size: 1.47rem;
+        font-size: 22px;
+        font-weight: 600;
         margin: 0;
         color: var(--helpgent-color-dark);
     }
     p{
-        font-size: 1.07rem;
+        font-size: 16px;
         margin: 0;
+        font-weight: 400;
     }
     .helpgent-btn-create{
         padding: 0 30px;
@@ -336,7 +348,7 @@ const CreateFormStyleWrap = Styled.div`
     text-align: left;
     margin-top: 50px;
     .helpgent-form-group{
-        min-width: 450px;
+        width: 450px;
     }
     .helpgent-tooltip-toggle{
         position: relative;
