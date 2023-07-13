@@ -15,3 +15,4 @@ phpcs-report.xml
 /assets/css/*.js
 __*/
 /assets/build
+.lock

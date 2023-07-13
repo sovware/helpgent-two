@@ -27,19 +27,8 @@ const question = {
 					is_required: '0',
 				},
 				{
-					key: 'show-timer',
-					is_show_timer: '0',
-				},
-				{
-					key: 'time-mins',
-					time_in_mins: '',
-				},
-				{
-					key: 'time-complete',
-					is_time_to_complete: '0',
-				},
-				{
-					key: 'btn-text',
+					key: 'action-btn',
+					isActive: false,
 					button_text: 'Submit',
 				},
 			],

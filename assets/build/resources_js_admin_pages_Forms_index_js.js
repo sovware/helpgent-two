@@ -4153,16 +4153,16 @@ __webpack_require__.r(__webpack_exports__);
 function ContactQuestion(props) {
   const {
     layoutMode,
-    singleForm,
-    setSingleForm,
+    singleFormState,
+    setSingleFormState,
     selectedQuestion: contactQuestionField
   } = props;
   const {
-    content
-  } = singleForm;
+    singleForm
+  } = singleFormState;
   const {
     questions
-  } = JSON.parse(content);
+  } = JSON.parse(singleForm.content);
   const required = true;
   const quillModules = {
     toolbar: false
@@ -5042,12 +5042,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! uuid */ "./node_modules/uuid/dist/esm-browser/v4.js");
-/* harmony import */ var _index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./index.js */ "./resources/js/components/questionList/EndQuestion/index.js");
-
+/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! uuid */ "./node_modules/uuid/dist/esm-browser/v4.js");
 
 const question = {
-  id: (0,uuid__WEBPACK_IMPORTED_MODULE_1__["default"])(),
+  id: (0,uuid__WEBPACK_IMPORTED_MODULE_0__["default"])(),
   title: 'End',
   screen_type: 'end',
   icon: 'arrowSquareLeft',
@@ -5059,7 +5057,7 @@ const question = {
   },
   fields: [/* Text Field */
   {
-    id: (0,uuid__WEBPACK_IMPORTED_MODULE_1__["default"])(),
+    id: (0,uuid__WEBPACK_IMPORTED_MODULE_0__["default"])(),
     //string
     type: 'text',
     // elementor, gutenburg, shortcode
@@ -5885,16 +5883,16 @@ __webpack_require__.r(__webpack_exports__);
 function OpenEndedQuestion(props) {
   const {
     layoutMode,
-    singleForm,
-    setSingleForm,
+    singleFormState,
+    setSingleFormState,
     selectedQuestion: openEndedQuestionField
   } = props;
   const {
-    content
-  } = singleForm;
+    singleForm
+  } = singleFormState;
   const {
     questions
-  } = JSON.parse(content);
+  } = JSON.parse(singleForm.content);
   const quillModules = {
     toolbar: false
   };
@@ -6297,16 +6295,16 @@ __webpack_require__.r(__webpack_exports__);
 function PictureSelectQuestion(props) {
   const {
     layoutMode,
-    singleForm,
-    setSingleForm,
+    singleFormState,
+    setSingleFormState,
     selectedQuestion: pictureSelectQuestionField
   } = props;
   const {
-    content
-  } = singleForm;
+    singleForm
+  } = singleFormState;
   const {
     questions
-  } = JSON.parse(content);
+  } = JSON.parse(singleForm.content);
   const quillModules = {
     toolbar: false
   };
@@ -6497,16 +6495,16 @@ __webpack_require__.r(__webpack_exports__);
 function RatingQuestion(props) {
   const {
     layoutMode,
-    singleForm,
-    setSingleForm,
+    singleFormState,
+    setSingleFormState,
     selectedQuestion: ratingQuestionField
   } = props;
   const {
-    content
-  } = singleForm;
+    singleForm
+  } = singleFormState;
   const {
     questions
-  } = JSON.parse(content);
+  } = JSON.parse(singleForm.content);
   const quillModules = {
     toolbar: false
   };
@@ -7126,16 +7124,8 @@ const question = {
       key: 'required',
       is_required: '0'
     }, {
-      key: 'show-timer',
-      is_show_timer: '0'
-    }, {
-      key: 'time-mins',
-      time_in_mins: ''
-    }, {
-      key: 'time-complete',
-      is_time_to_complete: '0'
-    }, {
-      key: 'btn-text',
+      key: 'action-btn',
+      isActive: false,
       button_text: 'Submit'
     }],
     allowedRules: [],

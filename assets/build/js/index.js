@@ -4500,6 +4500,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+//import SingleForm from './pages/Forms/SingleForm.js';
+
 const Messenger = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.lazy)(() => __webpack_require__.e(/*! import() */ "resources_js_admin_pages_Messenger_index_js").then(__webpack_require__.bind(__webpack_require__, /*! ./pages/Messenger */ "./resources/js/admin/pages/Messenger/index.js")));
 const Forms = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.lazy)(() => Promise.all(/*! import() */[__webpack_require__.e("vendors-node_modules_react-quill_dist_quill_snow_css-node_modules_prop-types_index_js-node_mo-c9d182"), __webpack_require__.e("vendors-node_modules_react-toastify_dist_ReactToastify_css-node_modules_tanstack_react-query_-d677a6"), __webpack_require__.e("resources_js_admin_pages_Forms_index_js")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/Forms */ "./resources/js/admin/pages/Forms/index.js")));
 const SingleForm = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.lazy)(() => Promise.all(/*! import() */[__webpack_require__.e("vendors-node_modules_react-quill_dist_quill_snow_css-node_modules_prop-types_index_js-node_mo-c9d182"), __webpack_require__.e("vendors-node_modules_react-beautiful-dnd_dist_react-beautiful-dnd_esm_js"), __webpack_require__.e("resources_js_admin_pages_Forms_SingleForm_js")]).then(__webpack_require__.bind(__webpack_require__, /*! ./pages/Forms/SingleForm.js */ "./resources/js/admin/pages/Forms/SingleForm.js")));

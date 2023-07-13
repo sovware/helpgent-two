@@ -195,7 +195,7 @@ function FormTable(props) {
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("thead", null, (0,_helper_getFormTableHead_js__WEBPACK_IMPORTED_MODULE_5__["default"])()), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("tbody", null, forms ? (0,_helper_getFormTableBody_js__WEBPACK_IMPORTED_MODULE_4__["default"])(forms, renameFormId, setRenameFormId, isFetchError, isCreatePopupOpen, setCreatePopupStatus) : (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("tr", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("td", {
     colSpan: 7
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    class: "helpgent-table-loader"
+    className: "helpgent-table-loader"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Spinner, null))))))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_toastify__WEBPACK_IMPORTED_MODULE_1__.ToastContainer, null));
 }
 FormTable.propTypes = {
