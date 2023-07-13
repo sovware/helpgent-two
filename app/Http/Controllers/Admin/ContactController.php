@@ -32,10 +32,22 @@ class ContactController extends Controller {
         }
 
         return Response::send(
-            $this->contact_repository->get(
-                intval( $wp_rest_request->get_param( 'per_page' ) ), 
-                intval( $wp_rest_request->get_param( 'page' ) ), 
-            )
+            [
+                'total'    => $this->contact_repository->total(),
+                'contacts' => $this->contact_repository->get(
+                    intval( $wp_rest_request->get_param( 'per_page' ) ),
+                    intval( $wp_rest_request->get_param( 'page' ) )
+                ),
+            ]
+        );
+    }
+
+    public function export() {
+        return Response::send(
+            [
+                'csv_path' =>  $this->contact_repository->export(),
+                'message'  => esc_html__( 'Contact list exported successfully!', 'helpgent' )
+            ]
         );
     }
 }
