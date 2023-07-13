@@ -1,7 +1,9 @@
+import { useSingleFormState } from '../../context/SingleFormStateContext';
 import { previewComponents } from '../../../../../constants.js';
 import { QuestionPreviewStyle } from '../../../../../style.js';
 export default function QuestionPreview( props ) {
-	const { singleForm, setSingleForm, selectedQuestion } = props;
+	const { selectedQuestion } = props;
+	const { singleFormState, setSingleFormState } = useSingleFormState();
 	const {
 		elements: questionFields,
 		socials,
@@ -31,9 +33,9 @@ export default function QuestionPreview( props ) {
 			} }
 		>
 			<SelectedComponent
+				singleFormState={ singleFormState }
+				setSingleFormState={ setSingleFormState }
 				layoutMode="test"
-				singleForm={ singleForm }
-				setSingleForm={ setSingleForm }
 				selectedQuestionField={ fieldObject }
 				socialLinks={ socials }
 				externalButton={ externalButton }

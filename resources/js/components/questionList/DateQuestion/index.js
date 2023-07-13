@@ -8,12 +8,12 @@ export default function DateQuestion( props ) {
 	const [ isActivePicker, setActivePicker ] = useState( false );
 	const {
 		layoutMode,
-		singleForm,
-		setSingleForm,
+		singleFormState,
+		setSingleFormState,
 		selectedQuestionField: dateQuestionField,
 	} = props;
-	const { content } = singleForm;
-	const { questions } = JSON.parse( content );
+	const { singleForm } = singleFormState;
+	const { questions } = JSON.parse( singleForm.content );
 
 	const ref = useRef( null );
 	const quillModules = {

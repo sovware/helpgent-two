@@ -6,6 +6,8 @@ export const useSingleFormState = () => useContext( SingleFormStateContent );
 export const SingleFormStateProvider = ( { children } ) => {
 	const singleFormObj = {
 		layoutMode: 'mediaLeft', //mediaLeft, mediaRight, mediaBehind
+		singleForm: null,
+		activeScreenId: null,
 	};
 	const [ singleFormState, setSingleFormState ] = useState( singleFormObj );
 

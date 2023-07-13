@@ -3,10 +3,11 @@ import { endQuestion } from '../../../../constants.js';
 export default function handleAddEndScreen(
 	event,
 	questions,
-	singleForm,
-	setSingleForm
+	singleFormState,
+	setSingleFormState
 ) {
 	event.preventDefault();
+	const { singleForm } = singleFormState;
 	const newEndQuestion = {
 		...endQuestion,
 		id: uuidv4(),
@@ -17,5 +18,8 @@ export default function handleAddEndScreen(
 		content: JSON.stringify( { questions: questions } ),
 	};
 
-	setSingleForm( updatedForm );
+	setSingleFormState( {
+		...singleFormState,
+		singleForm: updatedForm,
+	} );
 }

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, Fragment } from '@wordpress/element';
 import ReactSVG from 'react-inlinesvg';
-import { useSingleFormState } from '../../context/SingleFormStateContext.js';
+import { useAppState } from '../../../../Context.js';
+import { useSingleFormState } from '../../context/SingleFormStateContext';
 import ScreenListDropdown from './ScreenListDropdown';
 import handleChangeQuestionType from '../../helper/handleChangeQuestionType';
 import checkedClickedOutside from '@helper/checkClickedOutside.js';
@@ -15,13 +16,13 @@ import mediaRight from '@icon/media-right.svg';
 import mediaBehind from '@icon/media-behind.svg';
 export default function SettingQuestion( props ) {
 	const { singleFormState, setSingleFormState } = useSingleFormState();
-	console.log( singleFormState );
-	const { layoutMode } = singleFormState;
+	const { appState, setAppState } = useAppState();
+	const { singleForm, layoutMode } = singleFormState;
 
 	const ref = useRef( null );
 
 	const [ isDropdownOpen, setDropdownOpen ] = useState( false );
-	const { singleForm, setSingleForm, activeScreen } = props;
+	const { activeScreen } = props;
 	const { questions } = JSON.parse( singleForm.content );
 
 	const { id: activeScreenId, icon, title, fields, medias } = activeScreen;
@@ -53,8 +54,8 @@ export default function SettingQuestion( props ) {
 		updateQuestionFields(
 			fields,
 			activeScreenId,
-			singleForm,
-			setSingleForm
+			singleFormState,
+			setSingleFormState
 		);
 	}
 
@@ -65,8 +66,8 @@ export default function SettingQuestion( props ) {
 		updateQuestionFields(
 			fields,
 			activeScreenId,
-			singleForm,
-			setSingleForm
+			singleFormState,
+			setSingleFormState
 		);
 	}
 
@@ -77,8 +78,8 @@ export default function SettingQuestion( props ) {
 		updateQuestionFields(
 			fields,
 			activeScreenId,
-			singleForm,
-			setSingleForm
+			singleFormState,
+			setSingleFormState
 		);
 	}
 
@@ -88,8 +89,8 @@ export default function SettingQuestion( props ) {
 		updateQuestionFields(
 			fields,
 			activeScreenId,
-			singleForm,
-			setSingleForm
+			singleFormState,
+			setSingleFormState
 		);
 	}
 
@@ -153,11 +154,8 @@ export default function SettingQuestion( props ) {
 							</span>
 						</div>
 						<ScreenListDropdown
-							singleForm={ singleForm }
-							setSingleForm={ setSingleForm }
 							isOpenMegaDropdown={ isDropdownOpen }
 							handleItemEvent={ handleChangeQuestionType }
-							activeScreenId={ activeScreenId }
 						/>
 					</div>
 				</div>
@@ -204,8 +202,8 @@ export default function SettingQuestion( props ) {
 							handleOpenUploader(
 								medias,
 								activeScreenId,
-								singleForm,
-								setSingleForm
+								singleFormState,
+								setSingleFormState
 							)
 						}
 					>
@@ -228,8 +226,8 @@ export default function SettingQuestion( props ) {
 										handleOpenUploader(
 											medias,
 											activeScreenId,
-											singleForm,
-											setSingleForm
+											singleFormState,
+											setSingleFormState
 										)
 									}
 								>

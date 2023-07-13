@@ -7,14 +7,14 @@ import 'react-quill/dist/quill.snow.css';
 export default function EndQuestion( props ) {
 	const {
 		layoutMode,
-		singleForm,
-		setSingleForm,
+		singleFormState,
+		setSingleFormState,
 		selectedQuestionField: endQuestionField,
 		socialLinks,
 		externalButton,
 	} = props;
-	const { content } = singleForm;
-	const { questions } = JSON.parse( content );
+	const { singleForm } = singleFormState;
+	const { questions } = JSON.parse( singleForm.content );
 
 	const quillModules = {
 		toolbar: false,

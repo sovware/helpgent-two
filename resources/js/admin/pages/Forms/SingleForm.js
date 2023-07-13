@@ -2,8 +2,9 @@ import { useState, useEffect, Fragment } from '@wordpress/element';
 import { Spinner } from '@wordpress/components';
 import { ToastContainer } from 'react-toastify';
 import { SingleFormStateProvider } from './context/SingleFormStateContext';
-import useStore from '../../../hooks/useStore';
 import useFetchData from '../../../hooks/useFetchData';
+import { useAppState } from '../../Context';
+import { useSingleFormState } from './context/SingleFormStateContext';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Header from './components/SingleForm/Header';
@@ -17,10 +18,18 @@ function SingleForm() {
 		`/helpgent/admin/form/${ id }`,
 		'form'
 	);
-	const [ singleForm, setSingleForm ] = useState( null );
+	const { appState, setAppState } = useAppState();
+	const { singleFormState, setSingleFormState } = useSingleFormState();
+	const { singleForm } = singleFormState;
+	//const [ singleFodrm, setSingleForm ] = useState( null );
 	useEffect( () => {
-		setSingleForm( data );
+		setSingleFormState( {
+			...singleFormState,
+			singleForm: data,
+		} );
 	}, [ isLoading ] );
+
+	console.log( singleFormState );
 
 	return (
 		<SingleFormStyle>
@@ -35,14 +44,11 @@ function SingleForm() {
 					) : null }
 				</div>
 			) : (
-				<SingleFormStateProvider>
+				<Fragment>
 					<Header />
-					<MainContent
-						singleForm={ singleForm }
-						setSingleForm={ setSingleForm }
-					/>
+					<MainContent />
 					<ToastContainer />
-				</SingleFormStateProvider>
+				</Fragment>
 			) }
 		</SingleFormStyle>
 	);

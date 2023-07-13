@@ -5,10 +5,11 @@ import 'react-quill/dist/quill.snow.css';
 export default function WelcomeQuestion( props ) {
 	const {
 		layoutMode,
-		singleForm,
-		setSingleForm,
+		singleFormState,
+		setSingleFormState,
 		selectedQuestionField: welcomeQuestionField,
 	} = props;
+	const { singleForm } = singleFormState;
 	const { questions } = JSON.parse( singleForm.content );
 
 	const quillModules = {

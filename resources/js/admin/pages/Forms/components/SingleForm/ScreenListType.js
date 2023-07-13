@@ -1,15 +1,14 @@
 import ScreenItem from './ScreenItem.js';
+import { useSingleFormState } from '../../context/SingleFormStateContext.js';
 
 export default function ScreenListType( {
-	singleForm,
-	setSingleForm,
 	type,
 	screenList,
 	handleItemEvent,
-	activeScreenId,
 } ) {
-	const { content } = singleForm;
-	const { questions } = JSON.parse( content );
+	const { singleFormState, setSingleFormState } = useSingleFormState();
+	const { singleForm } = singleFormState;
+	const { questions } = JSON.parse( singleForm.content );
 	const hasWelcomeQuestion = questions.filter(
 		( item ) => item.screen_type === 'welcome'
 	);
@@ -54,8 +53,8 @@ export default function ScreenListType( {
 							handleItemEvent(
 								item,
 								singleForm,
-								setSingleForm,
-								activeScreenId
+								singleFormState,
+								setSingleFormState
 							)
 						}
 						key={ index }

@@ -1,9 +1,10 @@
 export default function updateQuestionFields(
 	fields,
 	activeScreenId,
-	singleForm,
-	setSingleForm
+	singleFormState,
+	setSingleFormState
 ) {
+	const { singleForm } = appState;
 	const { questions } = JSON.parse( singleForm.content );
 	const updatedQuestions = questions.map( ( question ) => {
 		if ( question.id === activeScreenId ) {
@@ -20,5 +21,8 @@ export default function updateQuestionFields(
 		content: JSON.stringify( { questions: updatedQuestions } ),
 	};
 
-	setSingleForm( updatedForm );
+	setSingleFormState( {
+		...singleFormState,
+		singleForm: updatedForm,
+	} );
 }
