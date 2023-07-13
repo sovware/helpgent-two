@@ -5,6 +5,7 @@ import checkedClickedOutside from '@helper/checkClickedOutside';
 import Dropdown from '../../../../../components/Dropdown.js';
 import Badge from '../../../../../components/Badge.js';
 import updateQuestion from '../../helper/updateQuestion';
+import handleAddQuestion from '../../helper/handleAddQuestion';
 import { iconList } from './constants.js';
 import ellipsisH from '../../../../../../../assets/svg/icon/ellipsis-h.svg';
 import pen from '../../../../../../../assets/svg/icon/pen-nib.svg';
@@ -87,8 +88,17 @@ export default function ScreenItem( {
 				singleForm: updatedForm,
 				activeScreenId: previousElement.id,
 			} );
-		} else if ( 'rename' ) {
+		} else if ( name === 'rename' ) {
 			setRenameField( true );
+		} else if ( name === 'duplicate' ) {
+			const duplicateQuestion = questions.filter(
+				( item ) => item.id === id
+			)[ 0 ];
+			handleAddQuestion(
+				duplicateQuestion,
+				singleFormState,
+				setSingleFormState
+			);
 		}
 	}
 
