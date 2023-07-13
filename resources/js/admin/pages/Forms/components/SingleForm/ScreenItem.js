@@ -125,18 +125,20 @@ export default function ScreenItem( {
 		>
 			<div
 				className="helpgent-screen__inner"
-				onClick={ () => handler( question ) }
+				onClick={ () =>
+					handler( question, singleFormState, setSingleFormState )
+				}
 			>
 				<div className="helpgent-screen__content">
 					<div className="helpgent-screen__icon">
 						<ReactSVG src={ iconList[ icon ] } />
 					</div>
 					<h4 className="helpgent-screen__title">
-						{ /* { index && (
+						{ index && (
 							<span className="helpgent-screen__counter">
 								{ index }.
 							</span>
-						) } */ }
+						) }
 						{ title }
 						{ isPro && <Badge type="success" text="PRO" /> }
 						{ isComing && <Badge type="gray" text="Coming Soon" /> }

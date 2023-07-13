@@ -13,7 +13,6 @@ export default function getEndType(
 	const { activeScreenId } = singleFormState;
 
 	function handleActivateQuestion( question ) {
-		console.log( 'tr' );
 		setSingleFormState( {
 			...singleFormState,
 			activeScreenId: question.id,

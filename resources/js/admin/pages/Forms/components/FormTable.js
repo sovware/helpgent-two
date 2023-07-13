@@ -41,7 +41,7 @@ export default function FormTable( props ) {
 						) : (
 							<tr>
 								<td colSpan={ 7 }>
-									<div class="helpgent-table-loader">
+									<div className="helpgent-table-loader">
 										<Spinner />
 									</div>
 								</td>

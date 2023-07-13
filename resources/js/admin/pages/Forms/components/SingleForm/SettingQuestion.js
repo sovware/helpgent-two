@@ -193,6 +193,15 @@ export default function SettingQuestion( props ) {
 							buttonText={ btnText }
 						/>
 					) }
+					{ fieldObject[ 'action-btn' ] && (
+						<fieldList.btnText
+							handleToggleActionButton={
+								handleToggleActionButton
+							}
+							handleUpdateButtonText={ handleUpdateButtonText }
+							buttonText={ btnText }
+						/>
+					) }
 				</div>
 			</div>
 			<div className="helpgent-screen-setting-block">

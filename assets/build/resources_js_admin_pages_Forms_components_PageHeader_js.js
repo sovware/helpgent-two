@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunkhelpgent"] = self["webpackChunkhelpgent"] || []).push([["resources_js_admin_pages_Forms_components_PageHeader_js"],{
+(globalThis["webpackChunkhelpgent"] = globalThis["webpackChunkhelpgent"] || []).push([["resources_js_admin_pages_Forms_components_PageHeader_js"],{
 
 /***/ "./resources/js/admin/pages/Forms/components/PageHeader.js":
 /*!*****************************************************************!*\

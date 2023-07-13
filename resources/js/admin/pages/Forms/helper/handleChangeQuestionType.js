@@ -1,31 +1,27 @@
-//import { questions } from "../../../../constants";
 export default function handleChangeQuestionType(
 	item,
-	singleForm,
-	setSingleForm,
-	activeId
+	singleFormState,
+	setSingleFormState
 ) {
+	const { singleForm, activeScreenId } = singleFormState;
 	const { questions } = JSON.parse( singleForm.content );
 
-	//const selectedQuestion = questions.filter(question=> question.screen_type === item.screen_type)[0];
-
-	//console.log(activeId, item, selectedQuestion);
-
 	const updatedQuestions = questions.map( ( question ) => {
-		if ( question.id === activeId ) {
+		if ( question.id === activeScreenId ) {
 			return {
 				...item,
-				id: activeId,
+				id: activeScreenId,
 			};
 		}
 		return question;
 	} );
 
-	console.log( activeId, updatedQuestions );
-
 	const updatedForm = {
 		...singleForm,
 		content: JSON.stringify( { questions: updatedQuestions } ),
 	};
-	setSingleForm( updatedForm );
+	setSingleFormState( {
+		...singleFormState,
+		singleForm: updatedForm,
+	} );
 }

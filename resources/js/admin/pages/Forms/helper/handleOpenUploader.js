@@ -36,7 +36,7 @@ export default function handleOpenUploader(
 
 		medias = [];
 		medias.push( newMedia );
-		const { singleForm } = appState;
+		const { singleForm } = setSingleFormState;
 		const { questions } = JSON.parse( singleForm.content );
 		const updatedQuestions = questions.map( ( question ) => {
 			if ( question.id === activeScreenId ) {
