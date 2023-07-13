@@ -45,7 +45,7 @@ const onDragEnd = (
 		content: JSON.stringify( { questions: updatedOrderedQuestion } ),
 	};
 	setSingleFormState( {
-		...appState,
+		...singleFormState,
 		singleForm: updatedForm,
 	} );
 };

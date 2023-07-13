@@ -5,7 +5,7 @@ import { useSingleFormState } from '../../context/SingleFormStateContext';
 import ScreenListDropdown from './ScreenListDropdown';
 import handleChangeQuestionType from '../../helper/handleChangeQuestionType';
 import checkedClickedOutside from '@helper/checkClickedOutside.js';
-import updateQuestionFields from '../../helper/updateQuestionFields.js';
+import updateQuestion from '../../helper/updateQuestion.js';
 import handleOpenUploader from '../../helper/handleOpenUploader';
 import { iconList, fieldList } from './constants.js';
 import angleDown from '@icon/angle-small-down.svg';
@@ -51,7 +51,8 @@ export default function SettingQuestion( props ) {
 	function handleRequire() {
 		fieldObject.required.is_required = requiredStatus === '0' ? '1' : '0';
 
-		updateQuestionFields(
+		updateQuestion(
+			"fields",
 			fields,
 			activeScreenId,
 			singleFormState,
@@ -63,7 +64,8 @@ export default function SettingQuestion( props ) {
 		fieldObject[ 'show-timer' ].is_show_timer =
 			showTimerStatus === '0' ? '1' : '0';
 
-		updateQuestionFields(
+			updateQuestion(
+			"fields",
 			fields,
 			activeScreenId,
 			singleFormState,
@@ -75,7 +77,8 @@ export default function SettingQuestion( props ) {
 		fieldObject.required.is_time_to_complete =
 			timeToCompleteStatus === '0' ? '1' : '0';
 
-		updateQuestionFields(
+			updateQuestion(
+			"fields",
 			fields,
 			activeScreenId,
 			singleFormState,
@@ -86,7 +89,8 @@ export default function SettingQuestion( props ) {
 	function handleUpdateButtonText( event ) {
 		fieldObject[ 'btn-text' ].button_text = event.target.value;
 
-		updateQuestionFields(
+		updateQuestion(
+			"fields",
 			fields,
 			activeScreenId,
 			singleFormState,

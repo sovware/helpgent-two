@@ -76,9 +76,10 @@ export default function Dropdown( {
 							<li key={ i }>
 								<Link
 									href="#"
-									onClick={ ( e ) =>
-										handleDropdownTrigger( e, item.name )
-									}
+									onClick={( e ) =>{
+										setDropDownOpen(false); 
+										return handleDropdownTrigger( e, item.name );
+									}}
 								>
 									{ item.icon ? (
 										<span className="helpgent-dropdown-item-icon">

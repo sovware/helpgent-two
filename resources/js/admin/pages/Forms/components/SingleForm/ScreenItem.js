@@ -1,8 +1,10 @@
 import { useState, useRef, useEffect } from '@wordpress/element';
 import ReactSVG from 'react-inlinesvg';
 import { useSingleFormState } from '../../context/SingleFormStateContext';
+import checkedClickedOutside from '@helper/checkClickedOutside';
 import Dropdown from '../../../../../components/Dropdown.js';
 import Badge from '../../../../../components/Badge.js';
+import updateQuestion from '../../helper/updateQuestion';
 import { iconList } from './constants.js';
 import ellipsisH from '../../../../../../../assets/svg/icon/ellipsis-h.svg';
 import pen from '../../../../../../../assets/svg/icon/pen-nib.svg';
@@ -18,10 +20,17 @@ export default function ScreenItem( {
 	isDisabled,
 	isActive,
 } ) {
+	const ref = useRef( null );
+	const [ isActiveRename, setRenameField ] = useState(false);
 	const { singleFormState, setSingleFormState } = useSingleFormState();
 	const { singleForm } = singleFormState;
 	const { questions } = JSON.parse( singleForm.content );
 	const { id, icon, title, isPro, isComing } = question;
+
+	/* Close Dropdown click on outside */
+	useEffect( () => {
+		checkedClickedOutside( isActiveRename, setRenameField, ref );
+	}, [ isActiveRename ] );
 
 	const getDropdownOption = () => {
 		let moreDropdown = [
@@ -69,8 +78,6 @@ export default function ScreenItem( {
 				}
 			}
 
-			console.log( questions, previousElement );
-
 			const updatedForm = {
 				...singleForm,
 				content: JSON.stringify( { questions: newQuestionList } ),
@@ -80,7 +87,19 @@ export default function ScreenItem( {
 				singleForm: updatedForm,
 				activeScreenId: previousElement.id,
 			} );
+		}else if('rename'){
+			setRenameField(true)
 		}
+	}
+
+	function handleRenameScreen(event){
+		updateQuestion(
+			"title",
+			event.target.value,
+			id,
+			singleFormState,
+			setSingleFormState
+		)
 	}
 
 	return (
@@ -92,6 +111,7 @@ export default function ScreenItem( {
 					? 'helpgent-screen__item helpgent-active'
 					: 'helpgent-screen__item'
 			}
+			ref={ ref }
 		>
 			<div
 				className="helpgent-screen__inner"
@@ -123,6 +143,12 @@ export default function ScreenItem( {
 					handleDropdownTrigger={ handleDropdownTrigger }
 				/>
 			) }
+			{
+				isActiveRename && 
+					<div className="helpgent-rename-screen">
+						<input type="text" value={ title } onChange={handleRenameScreen}/>
+					</div>
+			}
 		</ScreenItemStyle>
 	);
 }
