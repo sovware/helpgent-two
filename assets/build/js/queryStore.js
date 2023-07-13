@@ -161,7 +161,7 @@ function infiniteQueryBehavior() {
         }; // Get query function
 
 
-        const queryFn = context.options.queryFn || (() => Promise.reject('Missing queryFn'));
+        const queryFn = context.options.queryFn || (() => Promise.reject("Missing queryFn for queryKey '" + context.options.queryHash + "'"));
 
         const buildNewPages = (pages, param, page, previous) => {
           newPageParams = previous ? [param, ...newPageParams] : [...newPageParams, param];
@@ -344,7 +344,7 @@ class Mutation extends _removable_mjs__WEBPACK_IMPORTED_MODULE_0__.Removable {
   }
 
   addObserver(observer) {
-    if (this.observers.indexOf(observer) === -1) {
+    if (!this.observers.includes(observer)) {
       this.observers.push(observer); // Stop the mutation from being garbage collected
 
       this.clearGcTimeout();
@@ -813,6 +813,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const onlineEvents = ['online', 'offline'];
 class OnlineManager extends _subscribable_mjs__WEBPACK_IMPORTED_MODULE_0__.Subscribable {
   constructor() {
     super();
@@ -824,12 +825,14 @@ class OnlineManager extends _subscribable_mjs__WEBPACK_IMPORTED_MODULE_0__.Subsc
         const listener = () => onOnline(); // Listen to online
 
 
-        window.addEventListener('online', listener, false);
-        window.addEventListener('offline', listener, false);
+        onlineEvents.forEach(event => {
+          window.addEventListener(event, listener, false);
+        });
         return () => {
           // Be sure to unsubscribe if a new handler is set
-          window.removeEventListener('online', listener);
-          window.removeEventListener('offline', listener);
+          onlineEvents.forEach(event => {
+            window.removeEventListener(event, listener);
+          });
         };
       }
 
@@ -1045,7 +1048,7 @@ class Query extends _removable_mjs__WEBPACK_IMPORTED_MODULE_0__.Removable {
   }
 
   addObserver(observer) {
-    if (this.observers.indexOf(observer) === -1) {
+    if (!this.observers.includes(observer)) {
       this.observers.push(observer); // Stop the query from being garbage collected
 
       this.clearGcTimeout();
@@ -1058,7 +1061,7 @@ class Query extends _removable_mjs__WEBPACK_IMPORTED_MODULE_0__.Removable {
   }
 
   removeObserver(observer) {
-    if (this.observers.indexOf(observer) !== -1) {
+    if (this.observers.includes(observer)) {
       this.observers = this.observers.filter(x => x !== observer);
 
       if (!this.observers.length) {
@@ -1165,7 +1168,7 @@ class Query extends _removable_mjs__WEBPACK_IMPORTED_MODULE_0__.Removable {
 
     const fetchFn = () => {
       if (!this.options.queryFn) {
-        return Promise.reject('Missing queryFn');
+        return Promise.reject("Missing queryFn for queryKey '" + this.options.queryHash + "'");
       }
 
       this.abortSignalConsumed = false;
@@ -2249,7 +2252,7 @@ function isValidTimeout(value) {
   return typeof value === 'number' && value >= 0 && value !== Infinity;
 }
 function difference(array1, array2) {
-  return array1.filter(x => array2.indexOf(x) === -1);
+  return array1.filter(x => !array2.includes(x));
 }
 function replaceAt(array, index, value) {
   const copy = array.slice(0);

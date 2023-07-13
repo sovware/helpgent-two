@@ -1,5 +1,5 @@
 "use strict";
-(globalThis["webpackChunkhelpgent"] = globalThis["webpackChunkhelpgent"] || []).push([["resources_js_admin_pages_Forms_components_FormTable_js"],{
+(self["webpackChunkhelpgent"] = self["webpackChunkhelpgent"] || []).push([["resources_js_admin_pages_Forms_components_FormTable_js"],{
 
 /***/ "./assets/svg/icon/comment-user.svg":
 /*!******************************************!*\
@@ -801,14 +801,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-function Dropdown(_ref) {
-  let {
-    className,
-    dropDownIcon,
-    dropdownList,
-    placement,
-    handleDropdownTrigger
-  } = _ref;
+function Dropdown({
+  className,
+  dropDownIcon,
+  dropdownList,
+  placement,
+  handleDropdownTrigger
+}) {
   const ref = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
   const [isDropdownOpen, setDropDownOpen] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
   const dropdownClassName = `helpgent-dropdown ${isDropdownOpen ? 'helpgent-dropdown-open ' : ''}${className && className} helpgent-dropdown-${placement}`;

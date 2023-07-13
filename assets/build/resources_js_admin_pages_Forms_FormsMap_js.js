@@ -1,4 +1,4 @@
-(globalThis["webpackChunkhelpgent"] = globalThis["webpackChunkhelpgent"] || []).push([["resources_js_admin_pages_Forms_FormsMap_js"],{
+(self["webpackChunkhelpgent"] = self["webpackChunkhelpgent"] || []).push([["resources_js_admin_pages_Forms_FormsMap_js"],{
 
 /***/ "./resources/js/admin/pages/Forms/FormsMap.js":
 /*!****************************************************!*\

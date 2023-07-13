@@ -1,5 +1,5 @@
 "use strict";
-(globalThis["webpackChunkhelpgent"] = globalThis["webpackChunkhelpgent"] || []).push([["resources_js_admin_pages_Messenger_index_js"],{
+(self["webpackChunkhelpgent"] = self["webpackChunkhelpgent"] || []).push([["resources_js_admin_pages_Messenger_index_js"],{
 
 /***/ "./resources/js/admin/pages/Messenger/index.js":
 /*!*****************************************************!*\

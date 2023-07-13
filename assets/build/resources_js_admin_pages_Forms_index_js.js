@@ -1,5 +1,5 @@
 "use strict";
-(globalThis["webpackChunkhelpgent"] = globalThis["webpackChunkhelpgent"] || []).push([["resources_js_admin_pages_Forms_index_js"],{
+(self["webpackChunkhelpgent"] = self["webpackChunkhelpgent"] || []).push([["resources_js_admin_pages_Forms_index_js"],{
 
 /***/ "./assets/svg/icon/calendar.svg":
 /*!**************************************!*\
@@ -2626,27 +2626,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ CreatePopupForm)
 /* harmony export */ });
-/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
-/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
-/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
-/* harmony import */ var _tanstack_react_query__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @tanstack/react-query */ "./node_modules/@tanstack/react-query/build/lib/QueryClientProvider.mjs");
-/* harmony import */ var react_hook_form__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! react-hook-form */ "./node_modules/react-hook-form/dist/index.esm.mjs");
-/* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! react-inlinesvg */ "./node_modules/react-inlinesvg/esm/index.js");
-/* harmony import */ var react_select_async__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-select/async */ "./node_modules/react-select/async/dist/react-select-async.esm.js");
-/* harmony import */ var _helper_createSelectOptions_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../helper/createSelectOptions.js */ "./resources/js/admin/pages/Forms/helper/createSelectOptions.js");
-/* harmony import */ var _helper_handleCreateForm_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../helper/handleCreateForm.js */ "./resources/js/admin/pages/Forms/helper/handleCreateForm.js");
-/* harmony import */ var _helper_handleChatBubbleToggle__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../helper/handleChatBubbleToggle */ "./resources/js/admin/pages/Forms/helper/handleChatBubbleToggle.js");
-/* harmony import */ var _helper_handleLoadPages__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../helper/handleLoadPages */ "./resources/js/admin/pages/Forms/helper/handleLoadPages.js");
-/* harmony import */ var _helper_handlePageSelection_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../helper/handlePageSelection.js */ "./resources/js/admin/pages/Forms/helper/handlePageSelection.js");
-/* harmony import */ var _hooks_useCreateMutation_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../../../hooks/useCreateMutation.js */ "./resources/js/hooks/useCreateMutation.js");
-/* harmony import */ var _helper_getValidationMessage_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @helper/getValidationMessage.js */ "./resources/js/helper/getValidationMessage.js");
-/* harmony import */ var _CreatePopupHeader__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./CreatePopupHeader */ "./resources/js/admin/pages/Forms/components/CreatePopupHeader.js");
-/* harmony import */ var _assets_svg_icon_question_circle_svg__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../../../../../assets/svg/icon/question-circle.svg */ "./assets/svg/icon/question-circle.svg");
-/* harmony import */ var _style_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./style.js */ "./resources/js/admin/pages/Forms/components/style.js");
-
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var _tanstack_react_query__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @tanstack/react-query */ "./node_modules/@tanstack/react-query/build/lib/QueryClientProvider.mjs");
+/* harmony import */ var react_hook_form__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! react-hook-form */ "./node_modules/react-hook-form/dist/index.esm.mjs");
+/* harmony import */ var react_inlinesvg__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! react-inlinesvg */ "./node_modules/react-inlinesvg/esm/index.js");
+/* harmony import */ var react_select_async__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-select/async */ "./node_modules/react-select/async/dist/react-select-async.esm.js");
+/* harmony import */ var _helper_createSelectOptions_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../helper/createSelectOptions.js */ "./resources/js/admin/pages/Forms/helper/createSelectOptions.js");
+/* harmony import */ var _helper_handleCreateForm_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../helper/handleCreateForm.js */ "./resources/js/admin/pages/Forms/helper/handleCreateForm.js");
+/* harmony import */ var _helper_handleChatBubbleToggle__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../helper/handleChatBubbleToggle */ "./resources/js/admin/pages/Forms/helper/handleChatBubbleToggle.js");
+/* harmony import */ var _helper_handleLoadPages__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../helper/handleLoadPages */ "./resources/js/admin/pages/Forms/helper/handleLoadPages.js");
+/* harmony import */ var _helper_handlePageSelection_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../helper/handlePageSelection.js */ "./resources/js/admin/pages/Forms/helper/handlePageSelection.js");
+/* harmony import */ var _hooks_useCreateMutation_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../../../hooks/useCreateMutation.js */ "./resources/js/hooks/useCreateMutation.js");
+/* harmony import */ var _helper_getValidationMessage_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @helper/getValidationMessage.js */ "./resources/js/helper/getValidationMessage.js");
+/* harmony import */ var _CreatePopupHeader__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./CreatePopupHeader */ "./resources/js/admin/pages/Forms/components/CreatePopupHeader.js");
+/* harmony import */ var _assets_svg_icon_question_circle_svg__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../../../../../assets/svg/icon/question-circle.svg */ "./assets/svg/icon/question-circle.svg");
+/* harmony import */ var _style_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./style.js */ "./resources/js/admin/pages/Forms/components/style.js");
 
 
 
@@ -2666,12 +2664,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function CreatePopupForm() {
-  const navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_14__.useNavigate)();
-  const queryClient = (0,_tanstack_react_query__WEBPACK_IMPORTED_MODULE_15__.useQueryClient)();
-  const [defaultPages, setDefaultPages] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)([]);
-  const [selectedPages, setSelectedPages] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(null);
-  const [serverErrors, setServerErrors] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)({});
-  const [displayChatBubble, setDisplayChatBubble] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(false);
+  const navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_13__.useNavigate)();
+  const queryClient = (0,_tanstack_react_query__WEBPACK_IMPORTED_MODULE_14__.useQueryClient)();
+  const [defaultPages, setDefaultPages] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)([]);
+  const [selectedPages, setSelectedPages] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(null);
+  const [serverErrors, setServerErrors] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)({});
+  const [displayChatBubble, setDisplayChatBubble] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useState)(false);
   const {
     register,
     handleSubmit,
@@ -2679,80 +2677,81 @@ function CreatePopupForm() {
     formState: {
       errors
     }
-  } = (0,react_hook_form__WEBPACK_IMPORTED_MODULE_16__.useForm)({
+  } = (0,react_hook_form__WEBPACK_IMPORTED_MODULE_15__.useForm)({
     mode: 'all'
   });
   const {
     mutateAsync: createFormMutation
-  } = (0,_hooks_useCreateMutation_js__WEBPACK_IMPORTED_MODULE_9__["default"])('/helpgent/admin/form', function (previousData, forms) {
+  } = (0,_hooks_useCreateMutation_js__WEBPACK_IMPORTED_MODULE_8__["default"])('/helpgent/admin/form', function (previousData, forms) {
     previousData.forms.push(forms);
     previousData.total = previousData.forms.length;
     queryClient.setQueryData(['helpgent-form'], old => previousData);
   });
-  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useEffect)(() => {
+  (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
     const fetchDefaultPages = async () => {
-      const initialPages = await (0,_helper_handleLoadPages__WEBPACK_IMPORTED_MODULE_7__["default"])('');
+      const initialPages = await (0,_helper_handleLoadPages__WEBPACK_IMPORTED_MODULE_6__["default"])('');
       setDefaultPages(initialPages);
     };
     fetchDefaultPages();
   }, []);
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-createPopup"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_CreatePopupHeader__WEBPACK_IMPORTED_MODULE_11__["default"], {
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_CreatePopupHeader__WEBPACK_IMPORTED_MODULE_10__["default"], {
     title: "Let\u2019s get started"
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_style_js__WEBPACK_IMPORTED_MODULE_13__.CreateFormStyleWrap, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("form", {
-    onSubmit: handleSubmit(formData => (0,_helper_handleCreateForm_js__WEBPACK_IMPORTED_MODULE_5__["default"])(formData, createFormMutation, setServerErrors, navigate))
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_style_js__WEBPACK_IMPORTED_MODULE_12__.CreateFormStyleWrap, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("form", {
+    onSubmit: handleSubmit(formData => (0,_helper_handleCreateForm_js__WEBPACK_IMPORTED_MODULE_4__["default"])(formData, createFormMutation, setServerErrors, navigate))
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-form-group"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("input", (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("input", {
     type: "text",
     className: "helpgent-form__element",
     name: "title",
-    placeholder: "Form Name"
-  }, register('title', {
-    required: {
-      value: true,
-      message: 'The title field is required'
-    },
-    validate: {
-      isOnlySpace: value => {
-        const isValid = value.trim().length !== 0;
-        return isValid || 'Only spaces not allowed';
+    placeholder: "Form Name",
+    ...register('title', {
+      required: {
+        value: true,
+        message: 'The title field is required'
       },
-      minLength: value => {
-        const isValid = value.trim().length >= 5;
-        return isValid || 'The title filed must be at least 5 characters.';
+      validate: {
+        isOnlySpace: value => {
+          const isValid = value.trim().length !== 0;
+          return isValid || 'Only spaces not allowed';
+        },
+        minLength: value => {
+          const isValid = value.trim().length >= 5;
+          return isValid || 'The title filed must be at least 5 characters.';
+        }
       }
-    }
-  }))), errors.title?.type === 'required' ? (0,_helper_getValidationMessage_js__WEBPACK_IMPORTED_MODULE_10__["default"])(errors.title.message) : serverErrors.title ? (0,_helper_getValidationMessage_js__WEBPACK_IMPORTED_MODULE_10__["default"])(serverErrors.title) : null, errors.title?.type === 'isOnlySpace' ? (0,_helper_getValidationMessage_js__WEBPACK_IMPORTED_MODULE_10__["default"])(errors.title.message) : serverErrors.title ? (0,_helper_getValidationMessage_js__WEBPACK_IMPORTED_MODULE_10__["default"])(serverErrors.title) : null, errors.title?.type === 'minLength' ? (0,_helper_getValidationMessage_js__WEBPACK_IMPORTED_MODULE_10__["default"])(errors.title.message) : serverErrors.title ? (0,_helper_getValidationMessage_js__WEBPACK_IMPORTED_MODULE_10__["default"])(serverErrors.title) : null), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
+    })
+  }), errors.title?.type === 'required' ? (0,_helper_getValidationMessage_js__WEBPACK_IMPORTED_MODULE_9__["default"])(errors.title.message) : serverErrors.title ? (0,_helper_getValidationMessage_js__WEBPACK_IMPORTED_MODULE_9__["default"])(serverErrors.title) : null, errors.title?.type === 'isOnlySpace' ? (0,_helper_getValidationMessage_js__WEBPACK_IMPORTED_MODULE_9__["default"])(errors.title.message) : serverErrors.title ? (0,_helper_getValidationMessage_js__WEBPACK_IMPORTED_MODULE_9__["default"])(serverErrors.title) : null, errors.title?.type === 'minLength' ? (0,_helper_getValidationMessage_js__WEBPACK_IMPORTED_MODULE_9__["default"])(errors.title.message) : serverErrors.title ? (0,_helper_getValidationMessage_js__WEBPACK_IMPORTED_MODULE_9__["default"])(serverErrors.title) : null), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-form-group"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-form__element-inline"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("span", {
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "helpgent-form__label"
-  }, "Display as a chat bubble?", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Tooltip, {
+  }, "Display as a chat bubble?", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     text: "More information"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("span", {
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "helpgent-tooltip-toggle"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_17__["default"], {
-    src: _assets_svg_icon_question_circle_svg__WEBPACK_IMPORTED_MODULE_12__["default"]
-  })))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_16__["default"], {
+    src: _assets_svg_icon_question_circle_svg__WEBPACK_IMPORTED_MODULE_11__["default"]
+  })))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-toggle"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.FormToggle, {
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.FormToggle, {
     checked: displayChatBubble,
-    onChange: () => (0,_helper_handleChatBubbleToggle__WEBPACK_IMPORTED_MODULE_6__["default"])(setDisplayChatBubble, setValue, displayChatBubble)
-  })))), displayChatBubble ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("div", {
+    onChange: () => (0,_helper_handleChatBubbleToggle__WEBPACK_IMPORTED_MODULE_5__["default"])(setDisplayChatBubble, setValue, displayChatBubble)
+  })))), displayChatBubble ? (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-form-group"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("label", {
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
     htmlFor: "helpgent-page-select",
     className: "helpgent-form__label"
-  }, "Select pages", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Tooltip, {
+  }, "Select pages", (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.Tooltip, {
     text: "More information"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("span", {
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "helpgent-tooltip-toggle"
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_17__["default"], {
-    src: _assets_svg_icon_question_circle_svg__WEBPACK_IMPORTED_MODULE_12__["default"]
-  })))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)(react_select_async__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_inlinesvg__WEBPACK_IMPORTED_MODULE_16__["default"], {
+    src: _assets_svg_icon_question_circle_svg__WEBPACK_IMPORTED_MODULE_11__["default"]
+  })))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_select_async__WEBPACK_IMPORTED_MODULE_2__["default"], {
     cacheOptions: true,
     inputId: "helpgent-page-select",
     className: "helpgent-select",
@@ -2762,17 +2761,17 @@ function CreatePopupForm() {
     closeMenuOnSelect: false,
     hideSelectedOptions: false,
     components: {
-      Option: _helper_createSelectOptions_js__WEBPACK_IMPORTED_MODULE_4__["default"]
+      Option: _helper_createSelectOptions_js__WEBPACK_IMPORTED_MODULE_3__["default"]
     },
-    onChange: selectEvent => (0,_helper_handlePageSelection_js__WEBPACK_IMPORTED_MODULE_8__["default"])(selectEvent, setSelectedPages, selectedPages, setValue),
+    onChange: selectEvent => (0,_helper_handlePageSelection_js__WEBPACK_IMPORTED_MODULE_7__["default"])(selectEvent, setSelectedPages, selectedPages, setValue),
     allowSelectAll: true,
-    loadOptions: _helper_handleLoadPages__WEBPACK_IMPORTED_MODULE_7__["default"],
+    loadOptions: _helper_handleLoadPages__WEBPACK_IMPORTED_MODULE_6__["default"],
     defaultOptions: defaultPages
-  })) : null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("button", {
+  })) : null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("button", {
     type: "submit",
     className: `helpgent-btn helpgent-btn-md helpgent-btn-dark helpgent-btn-block ${Object.keys(errors).length !== 0 || Object.keys(serverErrors).length !== 0 ? 'helpgent-btn-disabled' : null}`,
     disabled: Object.keys(errors).length !== 0 || Object.keys(serverErrors).length !== 0 ? true : false
-  }, "Create Form"), serverErrors.internal && (0,_helper_getValidationMessage_js__WEBPACK_IMPORTED_MODULE_10__["default"])(serverErrors.internal))));
+  }, "Create Form"), serverErrors.internal && (0,_helper_getValidationMessage_js__WEBPACK_IMPORTED_MODULE_9__["default"])(serverErrors.internal))));
 }
 
 /***/ }),
@@ -2907,12 +2906,9 @@ const PageHeaderStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"
         color: var(--helpgent-color-dark);
     }
     .helpgent-page-header-btn{
-        ${_ref => {
-  let {
-    theme
-  } = _ref;
-  return theme.direction === 'ltr' ? 'margin-left' : 'margin-right';
-}}: 20px;
+        ${({
+  theme
+}) => theme.direction === 'ltr' ? 'margin-left' : 'margin-right'}: 20px;
     }
 `;
 const FormTableStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div`
@@ -3292,10 +3288,9 @@ __webpack_require__.r(__webpack_exports__);
 
 const FormTableStateContent = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createContext)();
 const useFormTableState = () => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.useContext)(FormTableStateContent);
-const FormTableStateProvider = _ref => {
-  let {
-    children
-  } = _ref;
+const FormTableStateProvider = ({
+  children
+}) => {
   const formTableStateObj = {
     formInputTitle: ''
   };
@@ -3330,7 +3325,9 @@ __webpack_require__.r(__webpack_exports__);
 
 const Option = props => {
   const handleChangeOption = () => {};
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_select__WEBPACK_IMPORTED_MODULE_2__.c.Option, props, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_Checkbox_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_select__WEBPACK_IMPORTED_MODULE_2__.c.Option, {
+    ...props
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_components_Checkbox_js__WEBPACK_IMPORTED_MODULE_1__["default"], {
     id: `helpgent-${props.value}`,
     label: props.label,
     onChange: handleChangeOption,
@@ -3415,16 +3412,13 @@ __webpack_require__.r(__webpack_exports__);
 
 async function handleLoadPages(inputValue) {
   const availablePages = await (0,_helper_fetchData__WEBPACK_IMPORTED_MODULE_0__["default"])(`/helpgent/admin/page/?search=${inputValue}`);
-  const availableOptions = availablePages.pages.map(_ref => {
-    let {
-      id,
-      title
-    } = _ref;
-    return {
-      value: id,
-      label: title
-    };
-  });
+  const availableOptions = availablePages.pages.map(({
+    id,
+    title
+  }) => ({
+    value: id,
+    label: title
+  }));
   return availableOptions;
 }
 
@@ -3520,18 +3514,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_1__);
 
 
-const Checkbox = _ref => {
-  let {
-    id,
-    name,
-    label,
-    value,
-    checked,
-    onChange,
-    disabled,
-    currentCheckboxId,
-    loader
-  } = _ref;
+const Checkbox = ({
+  id,
+  name,
+  label,
+  value,
+  checked,
+  onChange,
+  disabled,
+  currentCheckboxId,
+  loader
+}) => {
   //console.log(checked);
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "helpgent-checkbox"
@@ -4172,7 +4165,9 @@ function ContactQuestion(props) {
     number: ''
   });
   const Option = optionProps => {
-    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_select__WEBPACK_IMPORTED_MODULE_5__.c.Option, optionProps, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, optionProps.data.name));
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_select__WEBPACK_IMPORTED_MODULE_5__.c.Option, {
+      ...optionProps
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, optionProps.data.name));
   };
   const countryOptions = _data_countries_js__WEBPACK_IMPORTED_MODULE_3__["default"].map(country => {
     return {
@@ -6092,7 +6087,9 @@ function PhoneNumberQuestion(props) {
     toolbar: false
   };
   const Option = optionProps => {
-    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_select__WEBPACK_IMPORTED_MODULE_5__.c.Option, optionProps, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, optionProps.data.name));
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(react_select__WEBPACK_IMPORTED_MODULE_5__.c.Option, {
+      ...optionProps
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", null, optionProps.data.name));
   };
   const countryOptions = _data_countries_js__WEBPACK_IMPORTED_MODULE_3__["default"].map(country => {
     return {
@@ -9696,16 +9693,13 @@ __webpack_require__.r(__webpack_exports__);
 async function handleLoadCountries(inputValue) {
   console.log(inputValue);
   const availableCountries = _data_countries_js__WEBPACK_IMPORTED_MODULE_0__["default"].filter(country => country.name.toLowerCase().includes(inputValue.toLowerCase()));
-  return availableCountries.map(_ref => {
-    let {
-      name,
-      code
-    } = _ref;
-    return {
-      value: code,
-      label: name
-    };
-  });
+  return availableCountries.map(({
+    name,
+    code
+  }) => ({
+    value: code,
+    label: name
+  }));
 }
 
 /***/ }),
