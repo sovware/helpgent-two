@@ -223,7 +223,7 @@ export default function SettingQuestion( props ) {
 							</div>
 							<div className="helpgent-media-actions">
 								<span
-									className="helpgent-btn helpgent-btn-replace"
+									className="helpgent-btn helpgent-btn-white helpgent-btn-replace"
 									onClick={ () =>
 										handleOpenUploader(
 											medias,
@@ -237,7 +237,7 @@ export default function SettingQuestion( props ) {
 									Replace
 								</span>
 								<span
-									className="helpgent-btn helpgent-btn-remove"
+									className="helpgent-btn helpgent-btn-white helpgent-btn-remove"
 									onClick={ handleRemoveMedia }
 								>
 									<ReactSVG src={ trash } />

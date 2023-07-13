@@ -69,7 +69,7 @@ export default function CreatePopupForm() {
 					<div className="helpgent-form-group">
 						<input
 							type="text"
-							className="helpgent-form__element"
+							className="helpgent-form-group__element"
 							name="title"
 							placeholder="Form Name"
 							{ ...register( 'title', {

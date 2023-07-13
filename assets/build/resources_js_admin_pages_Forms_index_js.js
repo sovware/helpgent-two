@@ -2706,7 +2706,7 @@ function CreatePopupForm() {
     className: "helpgent-form-group"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.createElement)("input", (0,_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
     type: "text",
-    className: "helpgent-form__element",
+    className: "helpgent-form-group__element",
     name: "title",
     placeholder: "Form Name"
   }, register('title', {
@@ -3257,7 +3257,7 @@ const CreateFormStyleWrap = styled_components__WEBPACK_IMPORTED_MODULE_0__["defa
     .helpgent-form__element,
     .helpgent-form__element-inline{
         border-radius: 12px;
-        background-color: var(--helpgent-color-bg-gray);
+        background-color: var(--helpgent-color-bg-light);
     }
     .helpgent-form__element{
         &::placeholder{
@@ -3278,6 +3278,9 @@ const CreateFormStyleWrap = styled_components__WEBPACK_IMPORTED_MODULE_0__["defa
     }
     .helpgent-select {
         margin-top: 12px;
+        &__control{
+            background-color: var(--helpgent-color-bg-light);
+        }
     }
 `;
 const SingleFormHeaderStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div`
@@ -10019,6 +10022,11 @@ const QuestionPreviewStyle = styled_components__WEBPACK_IMPORTED_MODULE_0__["def
             visibility: hidden;
             opacity: 0;
             transition: 0.3s ease;
+            svg{
+                path{
+                    fill: #fff;
+                }
+            }
         }
         &__img{
             position: relative;

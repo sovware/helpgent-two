@@ -214,8 +214,8 @@
 
     &.helpgent-btn-gray {
         color: var(--helpgent-color-dark);
-        background-color: var(--helpgent-color-border-lighter);
-        border: 1px solid var(--helpgent-color-border-lighter);
+        background-color: var(--helpgent-color-bg-light);
+        border: 1px solid var(--helpgent-color-bg-light);
         &:hover {
             background-color: var(--helpgent-color-white);
         }
@@ -397,7 +397,7 @@ svg.components-spinner{
         color: var(--helpgent-color-dark);
         border: 2px solid transparent;
         margin: 0;
-        background-color: var(--helpgent-color-bg-general);
+        background-color: var(--helpgent-color-bg-light);
         @media only screen and (max-width: 1199px) {
             padding: 6px 16px;
             min-height: 38px;
@@ -446,16 +446,15 @@ svg.components-spinner{
     position: relative;
 
     &.helpgent-form-icon-left {
+        .helpgent-form-group__element{
+            padding-left: 40px;
+        }
         .helpgent-input-icon {
             position: absolute;
             left: 16px;
-            top: 50%;
+            top: 52%;
             line-height: 1;
             transform: translateY(-50%);
-        }
-
-        .helpgent-form__element {
-            padding-left: 40px;
         }
     }
 
@@ -878,7 +877,7 @@ svg.components-spinner{
         cursor: pointer;
         background-color: var(--helpgent-color-bg-gray);
         max-height: 100px;
-        overflow: auto;
+        overflow: hidden;
     }
     .helpgent-select__control--is-focused{
         box-shadow: 0 0 0 2px var(--helpgent-color-dark);
@@ -1911,9 +1910,12 @@ svg.components-spinner{
 .helpgent-create-form-modal{
     .helpgent-form-group{
         flex-direction: column;
-        .helpgent-form__element{
+        &__element{
             font-size: 16px;
             min-height: 50px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 12px;
         }
     }
     .helpgent-btn {
@@ -2218,6 +2220,64 @@ svg.components-spinner{
 // }
 
 /* Animation Keyframe */
+
+//Screen Settings
+.helpgent-screen-setting-wrap{
+    .helpgent-screen-setting-block__label{
+        font-size: 12px;
+        display: block;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: var(--helpgent-color-light-gray);
+        margin-bottom: 20px;
+        letter-spacing: 1.2px;
+    }
+    .helpgent-toggle{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        &__label{
+            font-size: 14px;
+            font-weight: 500;
+            color: #030308;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+    .helpgent-screen-setting-block{
+        .helpgent-field-element:last-child{
+            .helpgent-toggle,
+            .helpgent-form-group{
+                margin-bottom: 0;
+            }
+        }
+    }
+    .helpgent-field-element__label{
+        font-size: 14px;
+        font-weight: 500;
+        color: #030308;
+        margin-bottom: 7px;
+        display: block;
+    }
+    .helpgent-media-actions{
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        .helpgent-btn{
+            svg{
+                margin-right: 10px;
+            }
+        }
+        .helpgent-btn-replace{
+            padding: 0 20px;
+        }
+        .helpgent-btn-remove{
+            padding: 0 3px;
+        }
+    }
+}
 
 @keyframes shimmerEffect {
 

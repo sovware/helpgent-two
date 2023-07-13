@@ -361,7 +361,7 @@ const CreateFormStyleWrap = Styled.div`
     .helpgent-form__element,
     .helpgent-form__element-inline{
         border-radius: 12px;
-        background-color: var(--helpgent-color-bg-gray);
+        background-color: var(--helpgent-color-bg-light);
     }
     .helpgent-form__element{
         &::placeholder{
@@ -382,6 +382,9 @@ const CreateFormStyleWrap = Styled.div`
     }
     .helpgent-select {
         margin-top: 12px;
+        &__control{
+            background-color: var(--helpgent-color-bg-light);
+        }
     }
 `;
 
