@@ -1,23 +1,19 @@
 import { useState, useEffect } from '@wordpress/element';
+import { useSingleFormState } from '../../context/SingleFormStateContext';
 import SettingQuestion from './SettingQuestion.js';
 import { ScreenSettingsStyle } from './style.js';
-export default function ScreenSettings( props ) {
-	const { singleForm, setSingleForm, activeScreenId } = props;
+export default function ScreenSettings() {
+	const { singleFormState, setSingleFormState } = useSingleFormState();
+	const { singleForm, activeScreenId } = singleFormState;
 	const { questions } = JSON.parse( singleForm.content );
 	const activeScreen = questions.filter(
 		( item ) => item.id === activeScreenId
 	);
 	const [ screenSettingType, setScreenSettingType ] = useState( 'question' );
 
-	function getScreenSettingContent( props ) {
+	function getScreenSettingContent() {
 		if ( screenSettingType === 'question' ) {
-			return (
-				<SettingQuestion
-					singleForm={ singleForm }
-					setSingleForm={ setSingleForm }
-					activeScreen={ activeScreen[ 0 ] }
-				/>
-			);
+			return <SettingQuestion activeScreen={ activeScreen[ 0 ] } />;
 		}
 	}
 

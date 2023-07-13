@@ -6,12 +6,12 @@ import 'react-quill/dist/quill.snow.css';
 export default function SliderQuestion( props ) {
 	const {
 		layoutMode,
-		singleForm,
-		setSingleForm,
+		singleFormState,
+		setSingleFormState,
 		selectedQuestionField: sliderQuestionField,
 	} = props;
-	const { content } = singleForm;
-	const { questions } = JSON.parse( content );
+	const { singleForm } = singleFormState;
+	const { questions } = JSON.parse( singleForm.content );
 
 	const quillModules = {
 		toolbar: false,

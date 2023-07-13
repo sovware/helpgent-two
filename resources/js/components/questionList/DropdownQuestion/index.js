@@ -9,12 +9,12 @@ export default function DropdownQuestion( props ) {
 	const [ date, setDate ] = useState();
 	const {
 		layoutMode,
-		singleForm,
-		setSingleForm,
+		singleFormState,
+		setSingleFormState,
 		selectedQuestionField: dropdownQuestionField,
 	} = props;
-	const { content } = singleForm;
-	const { questions } = JSON.parse( content );
+	const { singleForm } = singleFormState;
+	const { questions } = JSON.parse( singleForm.content );
 
 	const ref = useRef( null );
 	const quillModules = {

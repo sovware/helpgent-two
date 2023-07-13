@@ -5,14 +5,19 @@ import arrowSquareLeft from '@icon/arrow-square-left.svg';
 
 export default function getWelcomeType(
 	questions,
-	activeScreenId,
-	setActiveScreenId
+	singleFormState,
+	setSingleFormState
 ) {
 	const welcomeQuestion = questions.filter(
 		( question ) => question.screen_type === 'welcome'
 	);
+	const { activeScreenId } = singleFormState;
 	function handleActivateQuestion( question ) {
-		setActiveScreenId( question.id );
+		console.log( 'tr' );
+		setSingleFormState( {
+			...singleFormState,
+			activeScreenId: question.id,
+		} );
 	}
 	return (
 		welcomeQuestion.length !== 0 && (

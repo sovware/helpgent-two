@@ -8,16 +8,16 @@ import { CountryDialerControl } from '../../../style.js';
 export default function PhoneNumberQuestion( props ) {
 	const {
 		layoutMode,
-		singleForm,
-		setSingleForm,
+		singleFormState,
+		setSingleFormState,
 		selectedQuestionField: phoneQuestionField,
 	} = props;
 	const [ phoneInput, setPhoneInput ] = useState( {
 		dialCode: countries[ 0 ].dial_code,
 		number: '',
 	} );
-	const { content } = singleForm;
-	const { questions } = JSON.parse( content );
+	const { singleForm } = singleFormState;
+	const { questions } = JSON.parse( singleForm.content );
 
 	const quillModules = {
 		toolbar: false,

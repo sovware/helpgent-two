@@ -1,11 +1,12 @@
 import ReactSVG from 'react-inlinesvg';
+import { useSingleFormState } from '../../context/SingleFormStateContext';
 import play from '@icon/play.svg';
 import expand from '@icon/expand.svg';
 import { MediaPreviewStyle } from './style.js';
 export default function MediaPreview( props ) {
-	const { singleForm, setSingleForm, activeScreenId } = props;
-	const { content } = singleForm;
-	const { questions } = JSON.parse( content );
+	const { singleFormState, activeScreenId } = useSingleFormState();
+	const { singleForm } = singleFormState;
+	const { questions } = JSON.parse( singleForm.content );
 	const selectedQuestion = questions.filter(
 		( item ) => item.id === activeScreenId
 	);
